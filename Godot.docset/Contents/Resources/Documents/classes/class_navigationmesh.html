@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="NavigationMesh" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_navigationmesh.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object A mesh to approximate the walkable areas and obstacles. Description: A navigation mesh is a collection of polygons that define which areas of an environment ar..." property="og:description"/>
+<meta content="A mesh to approximate the walkable areas and obstacles. A navigation mesh is a collection of polygons that define which areas of an environment are traversable to aid agents in pathfinding through complicated spaces...." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) NavigationMesh — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigationmesh.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_navigationmesh.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_navigationmesh.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_navigationmesh.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_navigationmesh.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_navigationmesh.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_navigationmesh.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_navigationmesh.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_navigationmesh.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_navigationmesh.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_navigationmesh.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_navigationmesh.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_navigationmesh.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_navigationmesh.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigationmesh.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigationmesh.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_navigationmeshinstance.html" rel="next" title="NavigationMeshInstance"/>
+<link href="class_navigation2d.html" rel="prev" title="Navigation2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>NavigationMesh</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="navigationmesh">
+<span id="class-navigationmesh"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/NavigationMesh¶"></a>NavigationMesh<a class="headerlink" href="#navigationmesh" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A mesh to approximate the walkable areas and obstacles.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A navigation mesh is a collection of polygons that define which areas of an environment are traversable to aid agents in pathfinding through complicated spaces.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/124">3D Navmesh Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 61%"/>
+<col style="width: 5%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-agent-height"><span class="std std-ref">agent/height</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-agent-max-climb"><span class="std std-ref">agent/max_climb</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.9</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-agent-max-slope"><span class="std std-ref">agent/max_slope</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-agent-radius"><span class="std std-ref">agent/radius</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-cell-height"><span class="std std-ref">cell/height</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-cell-size"><span class="std std-ref">cell/size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-detail-sample-distance"><span class="std std-ref">detail/sample_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-detail-sample-max-error"><span class="std std-ref">detail/sample_max_error</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-edge-max-error"><span class="std std-ref">edge/max_error</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-edge-max-length"><span class="std std-ref">edge/max_length</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-filter-filter-walkable-low-height-spans"><span class="std std-ref">filter/filter_walkable_low_height_spans</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-filter-ledge-spans"><span class="std std-ref">filter/ledge_spans</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-filter-low-hanging-obstacles"><span class="std std-ref">filter/low_hanging_obstacles</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-geometry-collision-mask"><span class="std std-ref">geometry/collision_mask</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-navigationmesh-parsedgeometrytype"><span class="std std-ref">ParsedGeometryType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-geometry-parsed-geometry-type"><span class="std std-ref">geometry/parsed_geometry_type</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-navigationmesh-sourcegeometrymode"><span class="std std-ref">SourceGeometryMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-geometry-source-geometry-mode"><span class="std std-ref">geometry/source_geometry_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-geometry-source-group-name"><span class="std std-ref">geometry/source_group_name</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-polygon-verts-per-poly"><span class="std std-ref">polygon/verts_per_poly</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-region-merge-size"><span class="std std-ref">region/merge_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-region-min-size"><span class="std std-ref">region/min_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-navigationmesh-samplepartitiontype"><span class="std std-ref">SamplePartitionType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-property-sample-partition-type-sample-partition-type"><span class="std std-ref">sample_partition_type/sample_partition_type</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-add-polygon"><span class="std std-ref">add_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> polygon <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-clear-polygons"><span class="std std-ref">clear_polygons</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-create-from-mesh"><span class="std std-ref">create_from_mesh</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> mesh <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-get-collision-mask-bit"><span class="std std-ref">get_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-get-polygon"><span class="std std-ref">get_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-get-polygon-count"><span class="std std-ref">get_polygon_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-get-vertices"><span class="std std-ref">get_vertices</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-set-collision-mask-bit"><span class="std std-ref">set_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigationmesh-method-set-vertices"><span class="std std-ref">set_vertices</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> vertices <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-navigationmesh-constant-sample-partition-max"><span id="class-navigationmesh-constant-sample-partition-layers"></span><span id="class-navigationmesh-constant-sample-partition-monotone"></span><span id="class-navigationmesh-constant-sample-partition-watershed"></span><span id="enum-navigationmesh-samplepartitiontype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SamplePartitionType"></a>SamplePartitionType</strong>:</p>
+<ul class="simple">
+<li><p><strong>SAMPLE_PARTITION_WATERSHED</strong> = <strong>0</strong> --- Watershed partitioning. Generally the best choice if you precompute the navigation mesh, use this if you have large open areas.</p></li>
+<li><p><strong>SAMPLE_PARTITION_MONOTONE</strong> = <strong>1</strong> --- Monotone partitioning. Use this if you want fast navigation mesh generation.</p></li>
+<li><p><strong>SAMPLE_PARTITION_LAYERS</strong> = <strong>2</strong> --- Layer partitioning. Good choice to use for tiled navigation mesh with medium and small sized tiles.</p></li>
+<li><p><strong>SAMPLE_PARTITION_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-navigationmesh-samplepartitiontype"><span class="std std-ref">SamplePartitionType</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-navigationmesh-constant-parsed-geometry-max"><span id="class-navigationmesh-constant-parsed-geometry-both"></span><span id="class-navigationmesh-constant-parsed-geometry-static-colliders"></span><span id="class-navigationmesh-constant-parsed-geometry-mesh-instances"></span><span id="enum-navigationmesh-parsedgeometrytype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ParsedGeometryType"></a>ParsedGeometryType</strong>:</p>
+<ul class="simple">
+<li><p><strong>PARSED_GEOMETRY_MESH_INSTANCES</strong> = <strong>0</strong> --- Parses mesh instances as geometry. This includes <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a>, <a class="reference internal" href="class_csgshape.html#class-csgshape"><span class="std std-ref">CSGShape</span></a>, and <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> nodes.</p></li>
+<li><p><strong>PARSED_GEOMETRY_STATIC_COLLIDERS</strong> = <strong>1</strong> --- Parses <a class="reference internal" href="class_staticbody.html#class-staticbody"><span class="std std-ref">StaticBody</span></a> colliders as geometry. The collider should be in any of the layers specified by <a class="reference internal" href="#class-navigationmesh-property-geometry-collision-mask"><span class="std std-ref">geometry/collision_mask</span></a>.</p></li>
+<li><p><strong>PARSED_GEOMETRY_BOTH</strong> = <strong>2</strong> --- Both <a class="reference internal" href="#class-navigationmesh-constant-parsed-geometry-mesh-instances"><span class="std std-ref">PARSED_GEOMETRY_MESH_INSTANCES</span></a> and <a class="reference internal" href="#class-navigationmesh-constant-parsed-geometry-static-colliders"><span class="std std-ref">PARSED_GEOMETRY_STATIC_COLLIDERS</span></a>.</p></li>
+<li><p><strong>PARSED_GEOMETRY_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-navigationmesh-parsedgeometrytype"><span class="std std-ref">ParsedGeometryType</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-navigationmesh-constant-source-geometry-max"><span id="class-navigationmesh-constant-source-geometry-groups-explicit"></span><span id="class-navigationmesh-constant-source-geometry-groups-with-children"></span><span id="class-navigationmesh-constant-source-geometry-navmesh-children"></span><span id="enum-navigationmesh-sourcegeometrymode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SourceGeometryMode"></a>SourceGeometryMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>SOURCE_GEOMETRY_NAVMESH_CHILDREN</strong> = <strong>0</strong> --- Scans the child nodes of <a class="reference internal" href="class_navigationmeshinstance.html#class-navigationmeshinstance"><span class="std std-ref">NavigationMeshInstance</span></a> recursively for geometry.</p></li>
+<li><p><strong>SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN</strong> = <strong>1</strong> --- Scans nodes in a group and their child nodes recursively for geometry. The group is specified by <a class="reference internal" href="#class-navigationmesh-property-geometry-source-group-name"><span class="std std-ref">geometry/source_group_name</span></a>.</p></li>
+<li><p><strong>SOURCE_GEOMETRY_GROUPS_EXPLICIT</strong> = <strong>2</strong> --- Uses nodes in a group for geometry. The group is specified by <a class="reference internal" href="#class-navigationmesh-property-geometry-source-group-name"><span class="std std-ref">geometry/source_group_name</span></a>.</p></li>
+<li><p><strong>SOURCE_GEOMETRY_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-navigationmesh-sourcegeometrymode"><span class="std std-ref">SourceGeometryMode</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-navigationmesh-property-agent-height">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/agent/height"></a>agent/height</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_agent_height(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_agent_height()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum floor to ceiling height that will still allow the floor area to be considered walkable.</p>
+<p><strong>Note:</strong> While baking, this value will be rounded up to the nearest multiple of <a class="reference internal" href="#class-navigationmesh-property-cell-height"><span class="std std-ref">cell/height</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-agent-max-climb">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/agent/max_climb"></a>agent/max_climb</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_agent_max_climb(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_agent_max_climb()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum ledge height that is considered to still be traversable.</p>
+<p><strong>Note:</strong> While baking, this value will be rounded down to the nearest multiple of <a class="reference internal" href="#class-navigationmesh-property-cell-height"><span class="std std-ref">cell/height</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-agent-max-slope">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/agent/max_slope"></a>agent/max_slope</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_agent_max_slope(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_agent_max_slope()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum slope that is considered walkable, in degrees.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-agent-radius">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/agent/radius"></a>agent/radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.6</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_agent_radius(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_agent_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The distance to erode/shrink the walkable area of the heightfield away from obstructions.</p>
+<p><strong>Note:</strong> While baking, this value will be rounded up to the nearest multiple of <a class="reference internal" href="#class-navigationmesh-property-cell-size"><span class="std std-ref">cell/size</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-cell-height">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell/height"></a>cell/height</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cell_height(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cell_height()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The Y axis cell size to use for fields.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-cell-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell/size"></a>cell/size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cell_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cell_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The XZ plane cell size to use for fields.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-detail-sample-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/detail/sample_distance"></a>detail/sample_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_detail_sample_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_detail_sample_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The sampling distance to use when generating the detail mesh, in cell unit.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-detail-sample-max-error">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/detail/sample_max_error"></a>detail/sample_max_error</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_detail_sample_max_error(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_detail_sample_max_error()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum distance the detail mesh surface should deviate from heightfield, in cell unit.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-edge-max-error">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/edge/max_error"></a>edge/max_error</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_edge_max_error(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_edge_max_error()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum distance a simplfied contour's border edges should deviate the original raw contour.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-edge-max-length">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/edge/max_length"></a>edge/max_length</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_edge_max_length(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_edge_max_length()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum allowed length for contour edges along the border of the mesh.</p>
+<p><strong>Note:</strong> While baking, this value will be rounded up to the nearest multiple of <a class="reference internal" href="#class-navigationmesh-property-cell-size"><span class="std std-ref">cell/size</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-filter-filter-walkable-low-height-spans">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/filter/filter_walkable_low_height_spans"></a>filter/filter_walkable_low_height_spans</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_filter_walkable_low_height_spans(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_filter_walkable_low_height_spans()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, marks walkable spans as not walkable if the clearance above the span is less than <a class="reference internal" href="#class-navigationmesh-property-agent-height"><span class="std std-ref">agent/height</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-filter-ledge-spans">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/filter/ledge_spans"></a>filter/ledge_spans</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_filter_ledge_spans(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_filter_ledge_spans()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, marks spans that are ledges as non-walkable.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-filter-low-hanging-obstacles">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/filter/low_hanging_obstacles"></a>filter/low_hanging_obstacles</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_filter_low_hanging_obstacles(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_filter_low_hanging_obstacles()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, marks non-walkable spans as walkable if their maximum is within <a class="reference internal" href="#class-navigationmesh-property-agent-max-climb"><span class="std std-ref">agent/max_climb</span></a> of a walkable neighbor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-geometry-collision-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/geometry/collision_mask"></a>geometry/collision_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_mask(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The physics layers to scan for static colliders.</p>
+<p>Only used when <a class="reference internal" href="#class-navigationmesh-property-geometry-parsed-geometry-type"><span class="std std-ref">geometry/parsed_geometry_type</span></a> is <a class="reference internal" href="#class-navigationmesh-constant-parsed-geometry-static-colliders"><span class="std std-ref">PARSED_GEOMETRY_STATIC_COLLIDERS</span></a> or <a class="reference internal" href="#class-navigationmesh-constant-parsed-geometry-both"><span class="std std-ref">PARSED_GEOMETRY_BOTH</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-geometry-parsed-geometry-type">
+<li><p><a class="reference internal" href="#enum-navigationmesh-parsedgeometrytype"><span class="std std-ref">ParsedGeometryType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/geometry/parsed_geometry_type"></a>geometry/parsed_geometry_type</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_parsed_geometry_type(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_parsed_geometry_type()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Determines which type of nodes will be parsed as geometry. See <a class="reference internal" href="#enum-navigationmesh-parsedgeometrytype"><span class="std std-ref">ParsedGeometryType</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-geometry-source-geometry-mode">
+<li><p><a class="reference internal" href="#enum-navigationmesh-sourcegeometrymode"><span class="std std-ref">SourceGeometryMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/geometry/source_geometry_mode"></a>geometry/source_geometry_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_source_geometry_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_source_geometry_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The source of the geometry used when baking. See <a class="reference internal" href="#enum-navigationmesh-sourcegeometrymode"><span class="std std-ref">SourceGeometryMode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-geometry-source-group-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/geometry/source_group_name"></a>geometry/source_group_name</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_source_group_name(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_source_group_name()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the group to scan for geometry.</p>
+<p>Only used when <a class="reference internal" href="#class-navigationmesh-property-geometry-source-geometry-mode"><span class="std std-ref">geometry/source_geometry_mode</span></a> is <a class="reference internal" href="#class-navigationmesh-constant-source-geometry-groups-with-children"><span class="std std-ref">SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN</span></a> or <a class="reference internal" href="#class-navigationmesh-constant-source-geometry-groups-explicit"><span class="std std-ref">SOURCE_GEOMETRY_GROUPS_EXPLICIT</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-polygon-verts-per-poly">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/polygon/verts_per_poly"></a>polygon/verts_per_poly</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_verts_per_poly(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_verts_per_poly()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum number of vertices allowed for polygons generated during the contour to polygon conversion process.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-region-merge-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/region/merge_size"></a>region/merge_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_region_merge_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_region_merge_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Any regions with a size smaller than this will be merged with larger regions if possible.</p>
+<p><strong>Note:</strong> This value will be squared to calculate the number of cells. For example, a value of 20 will set the number of cells to 400.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-region-min-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/region/min_size"></a>region/min_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_region_min_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_region_min_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum size of a region for it to be created.</p>
+<p><strong>Note:</strong> This value will be squared to calculate the minimum number of cells allowed to form isolated island areas. For example, a value of 8 will set the number of cells to 64.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-property-sample-partition-type-sample-partition-type">
+<li><p><a class="reference internal" href="#enum-navigationmesh-samplepartitiontype"><span class="std std-ref">SamplePartitionType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/sample_partition_type/sample_partition_type"></a>sample_partition_type/sample_partition_type</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sample_partition_type(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sample_partition_type()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Partitioning algorithm for creating the navigation mesh polys. See <a class="reference internal" href="#enum-navigationmesh-samplepartitiontype"><span class="std std-ref">SamplePartitionType</span></a> for possible values.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-navigationmesh-method-add-polygon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_polygon"></a>add_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> polygon <strong>)</strong></p></li>
+</ul>
+<p>Adds a polygon using the indices of the vertices you get when calling <a class="reference internal" href="#class-navigationmesh-method-get-vertices"><span class="std std-ref">get_vertices</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-clear-polygons">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_polygons"></a>clear_polygons</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears the array of polygons, but it doesn't clear the array of vertices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-create-from-mesh">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_from_mesh"></a>create_from_mesh</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> mesh <strong>)</strong></p></li>
+</ul>
+<p>Initializes the navigation mesh by setting the vertices and indices according to a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-get-collision-mask-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_mask_bit"></a>get_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> of the <a class="reference internal" href="#class-navigationmesh-property-geometry-collision-mask"><span class="std std-ref">geometry/collision_mask</span></a> is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-get-polygon">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_polygon"></a>get_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> containing the indices of the vertices of a created polygon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-get-polygon-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_polygon_count"></a>get_polygon_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of polygons in the navigation mesh.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-get-vertices">
+<li><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertices"></a>get_vertices</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> containing all the vertices being used to create the polygons.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-set-collision-mask-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_mask_bit"></a>set_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, sets the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the <a class="reference internal" href="#class-navigationmesh-property-geometry-collision-mask"><span class="std std-ref">geometry/collision_mask</span></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, clears the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the <a class="reference internal" href="#class-navigationmesh-property-geometry-collision-mask"><span class="std std-ref">geometry/collision_mask</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigationmesh-method-set-vertices">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertices"></a>set_vertices</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> vertices <strong>)</strong></p></li>
+</ul>
+<p>Sets the vertices that can be then indexed to create polygons with the <a class="reference internal" href="#class-navigationmesh-method-add-polygon"><span class="std std-ref">add_polygon</span></a> method.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_navigation2d.html" rel="prev" title="Navigation2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_navigationmeshinstance.html" rel="next" title="NavigationMeshInstance">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

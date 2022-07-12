@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ReflectionProbe" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_reflectionprobe.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Captures its surroundings to create fast, accurate reflections from a given point. Description: Capture its surroundings as a dual para..." property="og:description"/>
+<meta content="Captures its surroundings to create fast, accurate reflections from a given point. Capture its surroundings as a dual paraboloid image, and stores versions of it with increasing levels of blur to simulate different ma..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ReflectionProbe — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_reflectionprobe.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_reflectionprobe.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_reflectionprobe.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_reflectionprobe.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_reflectionprobe.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_reflectionprobe.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_reflectionprobe.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_reflectionprobe.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_reflectionprobe.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_reflectionprobe.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_reflectionprobe.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_reflectionprobe.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_reflectionprobe.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_reflectionprobe.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_reflectionprobe.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_reflectionprobe.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_regex.html" rel="next" title="RegEx"/>
+<link href="class_referencerect.html" rel="prev" title="ReferenceRect"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ReflectionProbe</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="reflectionprobe">
+<span id="class-reflectionprobe"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ReflectionProbe¶"></a>ReflectionProbe<a class="headerlink" href="#reflectionprobe" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Captures its surroundings to create fast, accurate reflections from a given point.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Capture its surroundings as a dual paraboloid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> is used to create high-quality reflections at a low performance cost (when <a class="reference internal" href="#class-reflectionprobe-property-update-mode"><span class="std std-ref">update_mode</span></a> is <a class="reference internal" href="#class-reflectionprobe-constant-update-once"><span class="std std-ref">UPDATE_ONCE</span></a>). <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>s can be blended together and with the rest of the scene smoothly. <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>s can also be combined with <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a> and screen-space reflections (<a class="reference internal" href="class_environment.html#class-environment-property-ss-reflections-enabled"><span class="std std-ref">Environment.ss_reflections_enabled</span></a>) to get more accurate reflections in specific areas. <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>s render all objects within their <a class="reference internal" href="#class-reflectionprobe-property-cull-mask"><span class="std std-ref">cull_mask</span></a>, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them as-is.</p>
+<p><strong>Note:</strong> Unlike <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a>, <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>s only source their environment from a <a class="reference internal" href="class_worldenvironment.html#class-worldenvironment"><span class="std std-ref">WorldEnvironment</span></a> node. If you specify an <a class="reference internal" href="class_environment.html#class-environment"><span class="std std-ref">Environment</span></a> resource within a <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a> node, it will be ignored by the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>. This can lead to incorrect lighting within the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code>.</p>
+<p><strong>Note:</strong> By default, Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-reflections-atlas-subdiv"><span class="std std-ref">ProjectSettings.rendering/quality/reflections/atlas_subdiv</span></a>.</p>
+<p><strong>Note:</strong> The GLES2 backend will only display two reflection probes at the same time for a single mesh. If possible, split up large meshes that span over multiple reflection probes into smaller ones.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/reflection_probes.html"><span class="doc">Reflection probes</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 54%"/>
+<col style="width: 15%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-box-projection"><span class="std std-ref">box_projection</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-cull-mask"><span class="std std-ref">cull_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1048575</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-enable-shadows"><span class="std std-ref">enable_shadows</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-extents"><span class="std std-ref">extents</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-intensity"><span class="std std-ref">intensity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-interior-ambient-color"><span class="std std-ref">interior_ambient_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-interior-ambient-contrib"><span class="std std-ref">interior_ambient_contrib</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-interior-ambient-energy"><span class="std std-ref">interior_ambient_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-interior-enable"><span class="std std-ref">interior_enable</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-max-distance"><span class="std std-ref">max_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-origin-offset"><span class="std std-ref">origin_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-reflectionprobe-updatemode"><span class="std std-ref">UpdateMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-reflectionprobe-property-update-mode"><span class="std std-ref">update_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-reflectionprobe-constant-update-always"><span id="class-reflectionprobe-constant-update-once"></span><span id="enum-reflectionprobe-updatemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/UpdateMode"></a>UpdateMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>UPDATE_ONCE</strong> = <strong>0</strong> --- Update the probe once on the next frame (recommended for most objects). The corresponding radiance map will be generated over the following six frames. This takes more time to update than <a class="reference internal" href="#class-reflectionprobe-constant-update-always"><span class="std std-ref">UPDATE_ALWAYS</span></a>, but it has a lower performance cost and can result in higher-quality reflections. The ReflectionProbe is updated when its transform changes, but not when nearby geometry changes. You can force a <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> update by moving the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> slightly in any direction.</p></li>
+<li><p><strong>UPDATE_ALWAYS</strong> = <strong>1</strong> --- Update the probe every frame. This provides better results for fast-moving dynamic objects (such as cars). However, it has a significant performance cost. Due to the cost, it's recommended to only use one ReflectionProbe with <a class="reference internal" href="#class-reflectionprobe-constant-update-always"><span class="std std-ref">UPDATE_ALWAYS</span></a> at most per scene. For all other use cases, use <a class="reference internal" href="#class-reflectionprobe-constant-update-once"><span class="std std-ref">UPDATE_ONCE</span></a>.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-reflectionprobe-property-box-projection">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/box_projection"></a>box_projection</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_enable_box_projection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_box_projection_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables box projection. This makes reflections look more correct in rectangle-shaped rooms by offsetting the reflection center depending on the camera's location.</p>
+<p><strong>Note:</strong> To better fit rectangle-shaped rooms that are not aligned to the grid, you can rotate the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-cull-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cull_mask"></a>cull_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1048575</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cull_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cull_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the cull mask which determines what objects are drawn by this probe. Every <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> with a layer included in this cull mask will be rendered by the probe. To improve performance, it is best to only include large objects which are likely to take up a lot of space in the reflection.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-enable-shadows">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/enable_shadows"></a>enable_shadows</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_enable_shadows(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>are_shadows_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, computes shadows in the reflection probe. This makes the reflection probe slower to render; you may want to disable this if using the <a class="reference internal" href="#class-reflectionprobe-constant-update-always"><span class="std std-ref">UPDATE_ALWAYS</span></a> <a class="reference internal" href="#class-reflectionprobe-property-update-mode"><span class="std std-ref">update_mode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-extents">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extents"></a>extents</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_extents(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_extents()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of the reflection probe. The larger the extents the more space covered by the probe which will lower the perceived resolution. It is best to keep the extents only as large as you need them.</p>
+<p><strong>Note:</strong> To better fit areas that are not aligned to the grid, you can rotate the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-intensity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/intensity"></a>intensity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_intensity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_intensity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Defines the reflection intensity. Intensity modulates the strength of the reflection.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-interior-ambient-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/interior_ambient_color"></a>interior_ambient_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_interior_ambient(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_interior_ambient()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the ambient light color to be used when this probe is set to <a class="reference internal" href="#class-reflectionprobe-property-interior-enable"><span class="std std-ref">interior_enable</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-interior-ambient-contrib">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/interior_ambient_contrib"></a>interior_ambient_contrib</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_interior_ambient_probe_contribution(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_interior_ambient_probe_contribution()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the contribution value for how much the reflection affects the ambient light for this reflection probe when set to <a class="reference internal" href="#class-reflectionprobe-property-interior-enable"><span class="std std-ref">interior_enable</span></a>. Useful so that ambient light matches the color of the room.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-interior-ambient-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/interior_ambient_energy"></a>interior_ambient_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_interior_ambient_energy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_interior_ambient_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the energy multiplier for this reflection probe's ambient light contribution when set to <a class="reference internal" href="#class-reflectionprobe-property-interior-enable"><span class="std std-ref">interior_enable</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-interior-enable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/interior_enable"></a>interior_enable</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_as_interior(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_set_as_interior()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, reflections will ignore sky contribution. Ambient lighting is then controlled by the <code class="docutils literal notranslate"><span class="pre">interior_ambient_*</span></code> properties.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-max-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/max_distance"></a>max_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum distance away from the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> an object can be before it is culled. Decrease this to improve performance, especially when using the <a class="reference internal" href="#class-reflectionprobe-constant-update-always"><span class="std std-ref">UPDATE_ALWAYS</span></a> <a class="reference internal" href="#class-reflectionprobe-property-update-mode"><span class="std std-ref">update_mode</span></a>.</p>
+<p><strong>Note:</strong> The maximum reflection distance is always at least equal to the <a class="reference internal" href="#class-reflectionprobe-property-extents"><span class="std std-ref">extents</span></a>. This means that decreasing <a class="reference internal" href="#class-reflectionprobe-property-max-distance"><span class="std std-ref">max_distance</span></a> will not always cull objects from reflections, especially if the reflection probe's <a class="reference internal" href="#class-reflectionprobe-property-extents"><span class="std std-ref">extents</span></a> are already large.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-origin-offset">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/origin_offset"></a>origin_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_origin_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_origin_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the origin offset to be used when this <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> is in <a class="reference internal" href="#class-reflectionprobe-property-box-projection"><span class="std std-ref">box_projection</span></a> mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the amount of objects that "get in the way" of the reflection.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-reflectionprobe-property-update-mode">
+<li><p><a class="reference internal" href="#enum-reflectionprobe-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/update_mode"></a>update_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_update_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_update_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets how frequently the <code class="docutils literal notranslate"><span class="pre">ReflectionProbe</span></code> is updated. Can be <a class="reference internal" href="#class-reflectionprobe-constant-update-once"><span class="std std-ref">UPDATE_ONCE</span></a> or <a class="reference internal" href="#class-reflectionprobe-constant-update-always"><span class="std std-ref">UPDATE_ALWAYS</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_referencerect.html" rel="prev" title="ReferenceRect"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_regex.html" rel="next" title="RegEx">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

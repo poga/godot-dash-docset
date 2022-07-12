@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Transform2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_transform2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="2D transformation (2×3 matrix). Description: 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consis..." property="og:description"/>
+<meta content="2D transformation (2×3 matrix). 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of three Vector2 values: x, y,..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Transform2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_transform2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_transform2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_transform2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_transform2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_transform2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_transform2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_transform2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_transform2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_transform2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_transform2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_transform2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_transform2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_transform2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_transform2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_transform2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_transform2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_translation.html" rel="next" title="Translation"/>
+<link href="class_transform.html" rel="prev" title="Transform"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Transform2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="transform2d">
+<span id="class-transform2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Transform2D¶"></a>Transform2D<a class="headerlink" href="#transform2d" title="Permalink to this headline">¶</a></h1>
+<p>2D transformation (2×3 matrix).</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of three <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> values: <a class="reference internal" href="#class-transform2d-property-x"><span class="std std-ref">x</span></a>, <a class="reference internal" href="#class-transform2d-property-y"><span class="std std-ref">y</span></a>, and the <a class="reference internal" href="#class-transform2d-property-origin"><span class="std std-ref">origin</span></a>.</p>
+<p>For more information, read the "Matrices and transforms" documentation article.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/math/index.html"><span class="doc">Math</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/math/matrices_and_transforms.html"><span class="doc">Matrices and transforms</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/584">Matrix Transform Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/583">2.5D Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 49%"/>
+<col style="width: 21%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-property-origin"><span class="std std-ref">origin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-property-x"><span class="std std-ref">x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-property-y"><span class="std std-ref">y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-transform2d"><span class="std std-ref">Transform2D</span></a> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-transform2d"><span class="std std-ref">Transform2D</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> x_axis, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> y_axis, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> origin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-transform2d"><span class="std std-ref">Transform2D</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rotation, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-affine-inverse"><span class="std std-ref">affine_inverse</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-basis-xform"><span class="std std-ref">basis_xform</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> v <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-basis-xform-inv"><span class="std std-ref">basis_xform_inv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> v <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-get-origin"><span class="std std-ref">get_origin</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-get-rotation"><span class="std std-ref">get_rotation</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-get-scale"><span class="std std-ref">get_scale</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-interpolate-with"><span class="std std-ref">interpolate_with</span></a> <strong>(</strong> <a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-inverse"><span class="std std-ref">inverse</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a> <strong>(</strong> <a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-orthonormalized"><span class="std std-ref">orthonormalized</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-rotated"><span class="std std-ref">rotated</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-scaled"><span class="std std-ref">scaled</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-translated"><span class="std std-ref">translated</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-xform"><span class="std std-ref">xform</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> v <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-transform2d-method-xform-inv"><span class="std std-ref">xform_inv</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> v <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-transform2d-constant-flip-x"></span><span id="class-transform2d-constant-identity"></span><ul class="simple" id="class-transform2d-constant-flip-y">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/IDENTITY"></a>IDENTITY</strong> = <strong>Transform2D( 1, 0, 0, 1, 0, 0 )</strong> --- The identity <code class="docutils literal notranslate"><span class="pre">Transform2D</span></code> with no translation, rotation or scaling applied. When applied to other data structures, <a class="reference internal" href="#class-transform2d-constant-identity"><span class="std std-ref">IDENTITY</span></a> performs no transformation.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/FLIP_X"></a>FLIP_X</strong> = <strong>Transform2D( -1, 0, 0, 1, 0, 0 )</strong> --- The <code class="docutils literal notranslate"><span class="pre">Transform2D</span></code> that will flip something along the X axis.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/FLIP_Y"></a>FLIP_Y</strong> = <strong>Transform2D( 1, 0, 0, -1, 0, 0 )</strong> --- The <code class="docutils literal notranslate"><span class="pre">Transform2D</span></code> that will flip something along the Y axis.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-transform2d-property-origin">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/origin"></a>origin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The origin vector (column 2, the third column). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">2</span></code>. The origin vector represents translation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-property-x">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/x"></a>x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The basis matrix's X vector (column 0). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-property-y">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/y"></a>y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The basis matrix's Y vector (column 1). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-transform2d-method-transform2d">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Transform2D"></a>Transform2D</strong> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs the transform from a 3D <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Transform2D"></a>Transform2D</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> x_axis, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> y_axis, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> origin <strong>)</strong></p></li>
+</ul>
+<p>Constructs the transform from 3 <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> values representing <a class="reference internal" href="#class-transform2d-property-x"><span class="std std-ref">x</span></a>, <a class="reference internal" href="#class-transform2d-property-y"><span class="std std-ref">y</span></a>, and the <a class="reference internal" href="#class-transform2d-property-origin"><span class="std std-ref">origin</span></a> (the three column vectors).</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Transform2D"></a>Transform2D</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rotation, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Constructs the transform from a given angle (in radians) and position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-affine-inverse">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/affine_inverse"></a>affine_inverse</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-basis-xform">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/basis_xform"></a>basis_xform</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Returns a vector transformed (multiplied) by the basis matrix.</p>
+<p>This method does not account for translation (the origin vector).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-basis-xform-inv">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/basis_xform_inv"></a>basis_xform_inv</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Returns a vector transformed (multiplied) by the inverse basis matrix.</p>
+<p>This method does not account for translation (the origin vector).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-get-origin">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_origin"></a>get_origin</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the transform's origin (translation).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-get-rotation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_rotation"></a>get_rotation</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the transform's rotation (in radians).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-get-scale">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_scale"></a>get_scale</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the scale.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-interpolate-with">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_with"></a>interpolate_with</strong> <strong>(</strong> <a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Returns a transform interpolated between this transform and another by a given <code class="docutils literal notranslate"><span class="pre">weight</span></code> (on the range of 0.0 to 1.0).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-inverse">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/inverse"></a>inverse</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use <a class="reference internal" href="#class-transform2d-method-affine-inverse"><span class="std std-ref">affine_inverse</span></a> for transforms with scaling).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-is-equal-approx">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_equal_approx"></a>is_equal_approx</strong> <strong>(</strong> <a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this transform and <code class="docutils literal notranslate"><span class="pre">transform</span></code> are approximately equal, by calling <code class="docutils literal notranslate"><span class="pre">is_equal_approx</span></code> on each component.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-orthonormalized">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/orthonormalized"></a>orthonormalized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors (scale of 1 or -1).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-rotated">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotated"></a>rotated</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></li>
+</ul>
+<p>Rotates the transform by the given angle (in radians), using matrix multiplication.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-scaled">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/scaled"></a>scaled</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Scales the transform by the given scale factor, using matrix multiplication.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-translated">
+<li><p><a class="reference internal" href="#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/translated"></a>translated</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Translates the transform by the given offset, relative to the transform's basis vectors.</p>
+<p>Unlike <a class="reference internal" href="#class-transform2d-method-rotated"><span class="std std-ref">rotated</span></a> and <a class="reference internal" href="#class-transform2d-method-scaled"><span class="std std-ref">scaled</span></a>, this does not use matrix multiplication.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-xform">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xform"></a>xform</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Transforms the given <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a>, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a>, or <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> by this transform.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-transform2d-method-xform-inv">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xform_inv"></a>xform_inv</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Inverse-transforms the given <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a>, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a>, or <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> by this transform, under the assumption that the transformation is composed of rotation and translation (no scaling). Equivalent to calling <code class="docutils literal notranslate"><span class="pre">inverse().xform(v)</span></code> on this transform. For affine transformations (e.g. with scaling) see <a class="reference internal" href="#class-transform2d-method-affine-inverse"><span class="std std-ref">affine_inverse</span></a> method.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_transform.html" rel="prev" title="Transform"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_translation.html" rel="next" title="Translation">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

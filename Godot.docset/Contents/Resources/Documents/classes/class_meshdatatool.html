@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="MeshDataTool" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_meshdatatool.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Helper tool to access and edit Mesh data. Description: MeshDataTool provides access to individual vertices in a Mesh. It allows users to read and edit vertex data of mes..." property="og:description"/>
+<meta content="Helper tool to access and edit Mesh data. MeshDataTool provides access to individual vertices in a Mesh. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges. To use Mesh..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) MeshDataTool — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_meshdatatool.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_meshdatatool.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_meshdatatool.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_meshdatatool.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_meshdatatool.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_meshdatatool.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_meshdatatool.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_meshdatatool.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_meshdatatool.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_meshdatatool.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_meshdatatool.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_meshdatatool.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_meshdatatool.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_meshdatatool.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_meshdatatool.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_meshdatatool.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_meshinstance.html" rel="next" title="MeshInstance"/>
+<link href="class_mesh.html" rel="prev" title="Mesh"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>MeshDataTool</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="meshdatatool">
+<span id="class-meshdatatool"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/MeshDataTool¶"></a>MeshDataTool<a class="headerlink" href="#meshdatatool" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Helper tool to access and edit <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> data.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>MeshDataTool provides access to individual vertices in a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges.</p>
+<p>To use MeshDataTool, load a mesh with <a class="reference internal" href="#class-meshdatatool-method-create-from-surface"><span class="std std-ref">create_from_surface</span></a>. When you are finished editing the data commit the data to a mesh with <a class="reference internal" href="#class-meshdatatool-method-commit-to-surface"><span class="std std-ref">commit_to_surface</span></a>.</p>
+<p>Below is an example of how MeshDataTool may be used.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">mesh</span> <span class="o">=</span> <span class="n">ArrayMesh</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">add_surface_from_arrays</span><span class="p">(</span><span class="n">Mesh</span><span class="o">.</span><span class="n">PRIMITIVE_TRIANGLES</span><span class="p">,</span> <span class="n">CubeMesh</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="o">.</span><span class="n">get_mesh_arrays</span><span class="p">())</span>
+<span class="k">var</span> <span class="n">mdt</span> <span class="o">=</span> <span class="n">MeshDataTool</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">mdt</span><span class="o">.</span><span class="n">create_from_surface</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mdt</span><span class="o">.</span><span class="n">get_vertex_count</span><span class="p">()):</span>
+    <span class="k">var</span> <span class="n">vertex</span> <span class="o">=</span> <span class="n">mdt</span><span class="o">.</span><span class="n">get_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1"># In this example we extend the mesh by one unit, which results in separated faces as it is flat shaded.</span>
+    <span class="n">vertex</span> <span class="o">+=</span> <span class="n">mdt</span><span class="o">.</span><span class="n">get_vertex_normal</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1"># Save your change.</span>
+    <span class="n">mdt</span><span class="o">.</span><span class="n">set_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vertex</span><span class="p">)</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">surface_remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mdt</span><span class="o">.</span><span class="n">commit_to_surface</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">mi</span> <span class="o">=</span> <span class="n">MeshInstance</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">mi</span><span class="o">.</span><span class="n">mesh</span> <span class="o">=</span> <span class="n">mesh</span>
+<span class="n">add_child</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a>, <a class="reference internal" href="class_immediategeometry.html#class-immediategeometry"><span class="std std-ref">ImmediateGeometry</span></a> and <a class="reference internal" href="class_surfacetool.html#class-surfacetool"><span class="std std-ref">SurfaceTool</span></a> for procedural geometry generation.</p>
+<p><strong>Note:</strong> Godot uses clockwise <a class="reference external" href="https://learnopengl.com/Advanced-OpenGL/Face-culling">winding order</a> for front faces of triangle primitive modes.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-commit-to-surface"><span class="std std-ref">commit_to_surface</span></a> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> mesh <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-create-from-surface"><span class="std std-ref">create_from_surface</span></a> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> mesh, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-edge-count"><span class="std std-ref">get_edge_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-edge-faces"><span class="std std-ref">get_edge_faces</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-edge-meta"><span class="std std-ref">get_edge_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-edge-vertex"><span class="std std-ref">get_edge_vertex</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> vertex <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-face-count"><span class="std std-ref">get_face_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-face-edge"><span class="std std-ref">get_face_edge</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> edge <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-face-meta"><span class="std std-ref">get_face_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-face-normal"><span class="std std-ref">get_face_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-face-vertex"><span class="std std-ref">get_face_vertex</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> vertex <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-format"><span class="std std-ref">get_format</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-material"><span class="std std-ref">get_material</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex"><span class="std std-ref">get_vertex</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-bones"><span class="std std-ref">get_vertex_bones</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-color"><span class="std std-ref">get_vertex_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-count"><span class="std std-ref">get_vertex_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-edges"><span class="std std-ref">get_vertex_edges</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-faces"><span class="std std-ref">get_vertex_faces</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-meta"><span class="std std-ref">get_vertex_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-normal"><span class="std std-ref">get_vertex_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-tangent"><span class="std std-ref">get_vertex_tangent</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-uv"><span class="std std-ref">get_vertex_uv</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-uv2"><span class="std std-ref">get_vertex_uv2</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-get-vertex-weights"><span class="std std-ref">get_vertex_weights</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-edge-meta"><span class="std std-ref">set_edge_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-face-meta"><span class="std std-ref">set_face_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-material"><span class="std std-ref">set_material</span></a> <strong>(</strong> <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex"><span class="std std-ref">set_vertex</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> vertex <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-bones"><span class="std std-ref">set_vertex_bones</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> bones <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-color"><span class="std std-ref">set_vertex_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-meta"><span class="std std-ref">set_vertex_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-normal"><span class="std std-ref">set_vertex_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> normal <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-tangent"><span class="std std-ref">set_vertex_tangent</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> tangent <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-uv"><span class="std std-ref">set_vertex_uv</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-uv2"><span class="std std-ref">set_vertex_uv2</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv2 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-meshdatatool-method-set-vertex-weights"><span class="std std-ref">set_vertex_weights</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> weights <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-meshdatatool-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all data currently in MeshDataTool.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-commit-to-surface">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit_to_surface"></a>commit_to_surface</strong> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> mesh <strong>)</strong></p></li>
+</ul>
+<p>Adds a new surface to specified <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> with edited data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-create-from-surface">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_from_surface"></a>create_from_surface</strong> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> mesh, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface <strong>)</strong></p></li>
+</ul>
+<p>Uses specified surface of given <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> to populate data for MeshDataTool.</p>
+<p>Requires <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> with primitive type <a class="reference internal" href="class_mesh.html#class-mesh-constant-primitive-triangles"><span class="std std-ref">Mesh.PRIMITIVE_TRIANGLES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-edge-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edge_count"></a>get_edge_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of edges in this <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-edge-faces">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edge_faces"></a>get_edge_faces</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns array of faces that touch given edge.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-edge-meta">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edge_meta"></a>get_edge_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns meta information assigned to given edge.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-edge-vertex">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edge_vertex"></a>get_edge_vertex</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> vertex <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns index of specified vertex connected to given edge.</p>
+<p>Vertex argument can only be 0 or 1 because edges are comprised of two vertices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-face-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_face_count"></a>get_face_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of faces in this <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-face-edge">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_face_edge"></a>get_face_edge</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> edge <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns specified edge associated with given face.</p>
+<p>Edge argument must be either 0, 1, or 2 because a face only has three edges.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-face-meta">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_face_meta"></a>get_face_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the metadata associated with the given face.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-face-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_face_normal"></a>get_face_normal</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Calculates and returns the face normal of the given face.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-face-vertex">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_face_vertex"></a>get_face_vertex</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> vertex <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the specified vertex of the given face.</p>
+<p>Vertex argument must be either 0, 1, or 2 because faces contain three vertices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-format">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_format"></a>get_format</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>'s format. Format is an integer made up of <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> format flags combined together. For example, a mesh containing both vertices and normals would return a format of <code class="docutils literal notranslate"><span class="pre">3</span></code> because <a class="reference internal" href="class_arraymesh.html#class-arraymesh-constant-array-format-vertex"><span class="std std-ref">ArrayMesh.ARRAY_FORMAT_VERTEX</span></a> is <code class="docutils literal notranslate"><span class="pre">1</span></code> and <a class="reference internal" href="class_arraymesh.html#class-arraymesh-constant-array-format-normal"><span class="std std-ref">ArrayMesh.ARRAY_FORMAT_NORMAL</span></a> is <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>See <a class="reference internal" href="class_arraymesh.html#enum-arraymesh-arrayformat"><span class="std std-ref">ArrayFormat</span></a> for a list of format flags.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-material">
+<li><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_material"></a>get_material</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the material assigned to the <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex"></a>get_vertex</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the vertex at given index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-bones">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_bones"></a>get_vertex_bones</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the bones of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_color"></a>get_vertex_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the color of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_count"></a>get_vertex_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the total number of vertices in <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-edges">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_edges"></a>get_vertex_edges</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of edges that share the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-faces">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_faces"></a>get_vertex_faces</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of faces that share the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-meta">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_meta"></a>get_vertex_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the metadata associated with the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_normal"></a>get_vertex_normal</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the normal of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-tangent">
+<li><p><a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_tangent"></a>get_vertex_tangent</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tangent of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-uv">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_uv"></a>get_vertex_uv</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the UV of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-uv2">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_uv2"></a>get_vertex_uv2</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the UV2 of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-get-vertex-weights">
+<li><p><a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vertex_weights"></a>get_vertex_weights</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns bone weights of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-edge-meta">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_edge_meta"></a>set_edge_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></li>
+</ul>
+<p>Sets the metadata of the given edge.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-face-meta">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_face_meta"></a>set_face_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></li>
+</ul>
+<p>Sets the metadata of the given face.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_material"></a>set_material</strong> <strong>(</strong> <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></li>
+</ul>
+<p>Sets the material to be used by newly-constructed <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex"></a>set_vertex</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> vertex <strong>)</strong></p></li>
+</ul>
+<p>Sets the position of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-bones">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_bones"></a>set_vertex_bones</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> bones <strong>)</strong></p></li>
+</ul>
+<p>Sets the bones of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-color">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_color"></a>set_vertex_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Sets the color of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-meta">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_meta"></a>set_vertex_meta</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></li>
+</ul>
+<p>Sets the metadata associated with the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-normal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_normal"></a>set_vertex_normal</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> normal <strong>)</strong></p></li>
+</ul>
+<p>Sets the normal of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-tangent">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_tangent"></a>set_vertex_tangent</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> tangent <strong>)</strong></p></li>
+</ul>
+<p>Sets the tangent of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-uv">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_uv"></a>set_vertex_uv</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv <strong>)</strong></p></li>
+</ul>
+<p>Sets the UV of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-uv2">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_uv2"></a>set_vertex_uv2</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv2 <strong>)</strong></p></li>
+</ul>
+<p>Sets the UV2 of the given vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-meshdatatool-method-set-vertex-weights">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_vertex_weights"></a>set_vertex_weights</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> weights <strong>)</strong></p></li>
+</ul>
+<p>Sets the bone weights of the given vertex.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_mesh.html" rel="prev" title="Mesh"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_meshinstance.html" rel="next" title="MeshInstance">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

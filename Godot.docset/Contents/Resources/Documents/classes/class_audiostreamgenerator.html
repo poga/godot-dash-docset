@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AudioStreamGenerator" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_audiostreamgenerator.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: AudioStream&lt; Resource&lt; Reference&lt; Object Audio stream that generates sounds procedurally. Description: This audio stream does not play back sounds, but expects a script to generate audio ..." property="og:description"/>
+<meta content="Audio stream that generates sounds procedurally. This audio stream does not play back sounds, but expects a script to generate audio data for it instead. See also AudioStreamGeneratorPlayback. See also AudioEffectSpec..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AudioStreamGenerator — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamgenerator.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_audiostreamgenerator.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_audiostreamgenerator.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_audiostreamgenerator.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_audiostreamgenerator.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_audiostreamgenerator.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_audiostreamgenerator.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_audiostreamgenerator.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_audiostreamgenerator.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_audiostreamgenerator.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_audiostreamgenerator.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_audiostreamgenerator.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_audiostreamgenerator.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_audiostreamgenerator.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamgenerator.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamgenerator.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_audiostreamgeneratorplayback.html" rel="next" title="AudioStreamGeneratorPlayback"/>
+<link href="class_audiostream.html" rel="prev" title="AudioStream"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AudioStreamGenerator</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="audiostreamgenerator">
+<span id="class-audiostreamgenerator"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AudioStreamGenerator¶"></a>AudioStreamGenerator<a class="headerlink" href="#audiostreamgenerator" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Audio stream that generates sounds procedurally.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This audio stream does not play back sounds, but expects a script to generate audio data for it instead. See also <a class="reference internal" href="class_audiostreamgeneratorplayback.html#class-audiostreamgeneratorplayback"><span class="std std-ref">AudioStreamGeneratorPlayback</span></a>.</p>
+<p>See also <a class="reference internal" href="class_audioeffectspectrumanalyzer.html#class-audioeffectspectrumanalyzer"><span class="std std-ref">AudioEffectSpectrumAnalyzer</span></a> for performing real-time audio spectrum analysis.</p>
+<p><strong>Note:</strong> Due to performance constraints, this class is best used from C# or from a compiled language via GDNative. If you still want to use this class from GDScript, consider using a lower <a class="reference internal" href="#class-audiostreamgenerator-property-mix-rate"><span class="std std-ref">mix_rate</span></a> such as 11,025 Hz or 22,050 Hz.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/526">Audio Generator Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/article/godot-32-will-get-new-audio-features">Godot 3.2 will get new audio features</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 65%"/>
+<col style="width: 12%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamgenerator-property-buffer-length"><span class="std std-ref">buffer_length</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamgenerator-property-mix-rate"><span class="std std-ref">mix_rate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">44100.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audiostreamgenerator-property-buffer-length">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/buffer_length"></a>buffer_length</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_buffer_length(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_buffer_length()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The length of the buffer to generate (in seconds). Lower values result in less latency, but require the script to generate audio data faster, resulting in increased CPU usage and more risk for audio cracking if the CPU can't keep up.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamgenerator-property-mix-rate">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mix_rate"></a>mix_rate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">44100.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mix_rate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mix_rate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The sample rate to use (in Hz). Higher values are more demanding for the CPU to generate, but result in better quality.</p>
+<p>In games, common sample rates in use are <code class="docutils literal notranslate"><span class="pre">11025</span></code>, <code class="docutils literal notranslate"><span class="pre">16000</span></code>, <code class="docutils literal notranslate"><span class="pre">22050</span></code>, <code class="docutils literal notranslate"><span class="pre">32000</span></code>, <code class="docutils literal notranslate"><span class="pre">44100</span></code>, and <code class="docutils literal notranslate"><span class="pre">48000</span></code>.</p>
+<p>According to the <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon sampling theorem</a>, there is no quality difference to human hearing when going past 40,000 Hz (since most humans can only hear up to ~20,000 Hz, often less). If you are generating lower-pitched sounds such as voices, lower sample rates such as <code class="docutils literal notranslate"><span class="pre">32000</span></code> or <code class="docutils literal notranslate"><span class="pre">22050</span></code> may be usable with no loss in quality.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_audiostream.html" rel="prev" title="AudioStream"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_audiostreamgeneratorplayback.html" rel="next" title="AudioStreamGeneratorPlayback">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

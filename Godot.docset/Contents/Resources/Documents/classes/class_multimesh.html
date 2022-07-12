@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="MultiMesh" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_multimesh.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Provides high-performance mesh instancing. Description: MultiMesh provides low-level mesh instancing. Drawing thousands of MeshInstance nodes can be slow, sinc..." property="og:description"/>
+<meta content="Provides high-performance mesh instancing. MultiMesh provides low-level mesh instancing. Drawing thousands of MeshInstance nodes can be slow, since each object is submitted to the GPU then drawn individually. MultiMes..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) MultiMesh — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_multimesh.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_multimesh.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_multimesh.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_multimesh.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_multimesh.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_multimesh.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_multimesh.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_multimesh.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_multimesh.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_multimesh.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_multimesh.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_multimesh.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_multimesh.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_multimesh.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_multimesh.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_multimesh.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_multimeshinstance.html" rel="next" title="MultiMeshInstance"/>
+<link href="class_mobilevrinterface.html" rel="prev" title="MobileVRInterface"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>MultiMesh</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="multimesh">
+<span id="class-multimesh"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/MultiMesh¶"></a>MultiMesh<a class="headerlink" href="#multimesh" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Provides high-performance mesh instancing.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>MultiMesh provides low-level mesh instancing. Drawing thousands of <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a> nodes can be slow, since each object is submitted to the GPU then drawn individually.</p>
+<p>MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.</p>
+<p>As a drawback, if the instances are too far away from each other, performance may be reduced as every single instance will always render (they are spatially indexed as one, for the whole object).</p>
+<p>Since instances may have any behavior, the AABB used for visibility must be provided by the user.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/performance/vertex_animation/animating_thousands_of_fish.html"><span class="doc">Animating thousands of fish with MultiMeshInstance</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/performance/using_multimesh.html"><span class="doc">Optimization using MultiMeshes</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 55%"/>
+<col style="width: 5%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-multimesh-colorformat"><span class="std std-ref">ColorFormat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-color-format"><span class="std std-ref">color_format</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-multimesh-customdataformat"><span class="std std-ref">CustomDataFormat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-custom-data-format"><span class="std std-ref">custom_data_format</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-instance-count"><span class="std std-ref">instance_count</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-mesh"><span class="std std-ref">mesh</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-multimesh-transformformat"><span class="std std-ref">TransformFormat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-transform-format"><span class="std std-ref">transform_format</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-property-visible-instance-count"><span class="std std-ref">visible_instance_count</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-get-aabb"><span class="std std-ref">get_aabb</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-get-instance-color"><span class="std std-ref">get_instance_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-get-instance-custom-data"><span class="std std-ref">get_instance_custom_data</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-get-instance-transform"><span class="std std-ref">get_instance_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-get-instance-transform-2d"><span class="std std-ref">get_instance_transform_2d</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-set-as-bulk-array"><span class="std std-ref">set_as_bulk_array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> array <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-set-instance-color"><span class="std std-ref">set_instance_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-set-instance-custom-data"><span class="std std-ref">set_instance_custom_data</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> custom_data <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-set-instance-transform"><span class="std std-ref">set_instance_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-multimesh-method-set-instance-transform-2d"><span class="std std-ref">set_instance_transform_2d</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-multimesh-constant-transform-3d"><span id="class-multimesh-constant-transform-2d"></span><span id="enum-multimesh-transformformat"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TransformFormat"></a>TransformFormat</strong>:</p>
+<ul class="simple">
+<li><p><strong>TRANSFORM_2D</strong> = <strong>0</strong> --- Use this when using 2D transforms.</p></li>
+<li><p><strong>TRANSFORM_3D</strong> = <strong>1</strong> --- Use this when using 3D transforms.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-multimesh-constant-color-float"><span id="class-multimesh-constant-color-8bit"></span><span id="class-multimesh-constant-color-none"></span><span id="enum-multimesh-colorformat"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ColorFormat"></a>ColorFormat</strong>:</p>
+<ul class="simple">
+<li><p><strong>COLOR_NONE</strong> = <strong>0</strong> --- Use when you are not using per-instance <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>s.</p></li>
+<li><p><strong>COLOR_8BIT</strong> = <strong>1</strong> --- Compress <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> data into 8 bits when passing to shader. This uses less memory and can be faster, but the <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> loses precision.</p></li>
+<li><p><strong>COLOR_FLOAT</strong> = <strong>2</strong> --- The <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> passed into <a class="reference internal" href="#class-multimesh-method-set-instance-color"><span class="std std-ref">set_instance_color</span></a> will use 4 floats. Use this for highest precision <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-multimesh-constant-custom-data-float"><span id="class-multimesh-constant-custom-data-8bit"></span><span id="class-multimesh-constant-custom-data-none"></span><span id="enum-multimesh-customdataformat"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CustomDataFormat"></a>CustomDataFormat</strong>:</p>
+<ul class="simple">
+<li><p><strong>CUSTOM_DATA_NONE</strong> = <strong>0</strong> --- Use when you are not using per-instance custom data.</p></li>
+<li><p><strong>CUSTOM_DATA_8BIT</strong> = <strong>1</strong> --- Compress custom_data into 8 bits when passing to shader. This uses less memory and can be faster, but loses precision and range. Floats packed into 8 bits can only represent values between 0 and 1, numbers outside that range will be clamped.</p></li>
+<li><p><strong>CUSTOM_DATA_FLOAT</strong> = <strong>2</strong> --- The <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> passed into <a class="reference internal" href="#class-multimesh-method-set-instance-custom-data"><span class="std std-ref">set_instance_custom_data</span></a> will use 4 floats. Use this for highest precision.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-multimesh-property-color-format">
+<li><p><a class="reference internal" href="#enum-multimesh-colorformat"><span class="std std-ref">ColorFormat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/color_format"></a>color_format</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_color_format(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_color_format()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Format of colors in color array that gets passed to shader.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-property-custom-data-format">
+<li><p><a class="reference internal" href="#enum-multimesh-customdataformat"><span class="std std-ref">CustomDataFormat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/custom_data_format"></a>custom_data_format</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_custom_data_format(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_custom_data_format()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Format of custom data in custom data array that gets passed to shader.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-property-instance-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/instance_count"></a>instance_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_instance_count(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_instance_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of instances that will get drawn. This clears and (re)sizes the buffers. By default, all instances are drawn but you can limit this with <a class="reference internal" href="#class-multimesh-property-visible-instance-count"><span class="std std-ref">visible_instance_count</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-property-mesh">
+<li><p><a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mesh"></a>mesh</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_mesh(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_mesh()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Mesh to be drawn.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-property-transform-format">
+<li><p><a class="reference internal" href="#enum-multimesh-transformformat"><span class="std std-ref">TransformFormat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transform_format"></a>transform_format</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_transform_format(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_transform_format()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Format of transform used to transform mesh, either 2D or 3D.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-property-visible-instance-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/visible_instance_count"></a>visible_instance_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_visible_instance_count(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_visible_instance_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Limits the number of instances drawn, -1 draws all instances. Changing this does not change the sizes of the buffers.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-multimesh-method-get-aabb">
+<li><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_aabb"></a>get_aabb</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the visibility axis-aligned bounding box in local space. See also <a class="reference internal" href="class_visualinstance.html#class-visualinstance-method-get-transformed-aabb"><span class="std std-ref">VisualInstance.get_transformed_aabb</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-get-instance-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_instance_color"></a>get_instance_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a specific instance's color.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-get-instance-custom-data">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_instance_custom_data"></a>get_instance_custom_data</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the custom data that has been set for a specific instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-get-instance-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_instance_transform"></a>get_instance_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> of a specific instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-get-instance-transform-2d">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_instance_transform_2d"></a>get_instance_transform_2d</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> of a specific instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-set-as-bulk-array">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_as_bulk_array"></a>set_as_bulk_array</strong> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> array <strong>)</strong></p></li>
+</ul>
+<p>Sets all data related to the instances in one go. This is especially useful when loading the data from disk or preparing the data from GDNative.</p>
+<p>All data is packed in one large float array. An array may look like this: Transform for instance 1, color data for instance 1, custom data for instance 1, transform for instance 2, color data for instance 2, etc...</p>
+<p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> is stored as 12 floats, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> is stored as 8 floats, <code class="docutils literal notranslate"><span class="pre">COLOR_8BIT</span></code> / <code class="docutils literal notranslate"><span class="pre">CUSTOM_DATA_8BIT</span></code> is stored as 1 float (4 bytes as is) and <code class="docutils literal notranslate"><span class="pre">COLOR_FLOAT</span></code> / <code class="docutils literal notranslate"><span class="pre">CUSTOM_DATA_FLOAT</span></code> is stored as 4 floats.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-set-instance-color">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_instance_color"></a>set_instance_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Sets the color of a specific instance by <em>multiplying</em> the mesh's existing vertex colors.</p>
+<p>For the color to take effect, ensure that <a class="reference internal" href="#class-multimesh-property-color-format"><span class="std std-ref">color_format</span></a> is non-<code class="docutils literal notranslate"><span class="pre">null</span></code> on the <code class="docutils literal notranslate"><span class="pre">MultiMesh</span></code> and <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-property-vertex-color-use-as-albedo"><span class="std std-ref">SpatialMaterial.vertex_color_use_as_albedo</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code> on the material.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-set-instance-custom-data">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_instance_custom_data"></a>set_instance_custom_data</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> custom_data <strong>)</strong></p></li>
+</ul>
+<p>Sets custom data for a specific instance. Although <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> is used, it is just a container for 4 floating point numbers. The format of the number can change depending on the <a class="reference internal" href="#enum-multimesh-customdataformat"><span class="std std-ref">CustomDataFormat</span></a> used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-set-instance-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_instance_transform"></a>set_instance_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> for a specific instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-multimesh-method-set-instance-transform-2d">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_instance_transform_2d"></a>set_instance_transform_2d</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> instance, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> for a specific instance.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_mobilevrinterface.html" rel="prev" title="MobileVRInterface"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_multimeshinstance.html" rel="next" title="MultiMeshInstance">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

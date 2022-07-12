@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="UPNPDevice" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_upnpdevice.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object UPNP device. Description: UPNP device. See UPNP for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappi..." property="og:description"/>
+<meta content="UPNP device. UPNP device. See UPNP for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) UPNPDevice — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnpdevice.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_upnpdevice.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_upnpdevice.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_upnpdevice.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_upnpdevice.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_upnpdevice.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_upnpdevice.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_upnpdevice.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_upnpdevice.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_upnpdevice.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_upnpdevice.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_upnpdevice.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_upnpdevice.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_upnpdevice.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnpdevice.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnpdevice.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_variant.html" rel="next" title="Variant"/>
+<link href="class_upnp.html" rel="prev" title="UPNP"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>UPNPDevice</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="upnpdevice">
+<span id="class-upnpdevice"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/UPNPDevice¶"></a>UPNPDevice<a class="headerlink" href="#upnpdevice" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>UPNP device.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>UPNP device. See <a class="reference internal" href="class_upnp.html#class-upnp"><span class="std std-ref">UPNP</span></a> for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 57%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-description-url"><span class="std std-ref">description_url</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-igd-control-url"><span class="std std-ref">igd_control_url</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-igd-our-addr"><span class="std std-ref">igd_our_addr</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-igd-service-type"><span class="std std-ref">igd_service_type</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-upnpdevice-igdstatus"><span class="std std-ref">IGDStatus</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-igd-status"><span class="std std-ref">igd_status</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-property-service-type"><span class="std std-ref">service_type</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-method-add-port-mapping"><span class="std std-ref">add_port_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port_internal=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> desc="", <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration=0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-method-delete-port-mapping"><span class="std std-ref">delete_port_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP" <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-method-is-valid-gateway"><span class="std std-ref">is_valid_gateway</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnpdevice-method-query-external-address"><span class="std std-ref">query_external_address</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-upnpdevice-constant-igd-status-unknown-error"><span id="class-upnpdevice-constant-igd-status-malloc-error"></span><span id="class-upnpdevice-constant-igd-status-invalid-control"></span><span id="class-upnpdevice-constant-igd-status-unknown-device"></span><span id="class-upnpdevice-constant-igd-status-disconnected"></span><span id="class-upnpdevice-constant-igd-status-no-igd"></span><span id="class-upnpdevice-constant-igd-status-no-urls"></span><span id="class-upnpdevice-constant-igd-status-http-empty"></span><span id="class-upnpdevice-constant-igd-status-http-error"></span><span id="class-upnpdevice-constant-igd-status-ok"></span><span id="enum-upnpdevice-igdstatus"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/IGDStatus"></a>IGDStatus</strong>:</p>
+<ul class="simple">
+<li><p><strong>IGD_STATUS_OK</strong> = <strong>0</strong> --- OK.</p></li>
+<li><p><strong>IGD_STATUS_HTTP_ERROR</strong> = <strong>1</strong> --- HTTP error.</p></li>
+<li><p><strong>IGD_STATUS_HTTP_EMPTY</strong> = <strong>2</strong> --- Empty HTTP response.</p></li>
+<li><p><strong>IGD_STATUS_NO_URLS</strong> = <strong>3</strong> --- Returned response contained no URLs.</p></li>
+<li><p><strong>IGD_STATUS_NO_IGD</strong> = <strong>4</strong> --- Not a valid IGD.</p></li>
+<li><p><strong>IGD_STATUS_DISCONNECTED</strong> = <strong>5</strong> --- Disconnected.</p></li>
+<li><p><strong>IGD_STATUS_UNKNOWN_DEVICE</strong> = <strong>6</strong> --- Unknown device.</p></li>
+<li><p><strong>IGD_STATUS_INVALID_CONTROL</strong> = <strong>7</strong> --- Invalid control.</p></li>
+<li><p><strong>IGD_STATUS_MALLOC_ERROR</strong> = <strong>8</strong> --- Memory allocation error.</p></li>
+<li><p><strong>IGD_STATUS_UNKNOWN_ERROR</strong> = <strong>9</strong> --- Unknown error.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-upnpdevice-property-description-url">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/description_url"></a>description_url</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_description_url(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_description_url()</p></td>
+</tr>
+</tbody>
+</table>
+<p>URL to the device description.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-property-igd-control-url">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/igd_control_url"></a>igd_control_url</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_igd_control_url(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_igd_control_url()</p></td>
+</tr>
+</tbody>
+</table>
+<p>IDG control URL.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-property-igd-our-addr">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/igd_our_addr"></a>igd_our_addr</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_igd_our_addr(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_igd_our_addr()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Address of the local machine in the network connecting it to this <code class="docutils literal notranslate"><span class="pre">UPNPDevice</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-property-igd-service-type">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/igd_service_type"></a>igd_service_type</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_igd_service_type(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_igd_service_type()</p></td>
+</tr>
+</tbody>
+</table>
+<p>IGD service type.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-property-igd-status">
+<li><p><a class="reference internal" href="#enum-upnpdevice-igdstatus"><span class="std std-ref">IGDStatus</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/igd_status"></a>igd_status</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_igd_status(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_igd_status()</p></td>
+</tr>
+</tbody>
+</table>
+<p>IGD status. See <a class="reference internal" href="#enum-upnpdevice-igdstatus"><span class="std std-ref">IGDStatus</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-property-service-type">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/service_type"></a>service_type</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_service_type(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_service_type()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Service type.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-upnpdevice-method-add-port-mapping">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_port_mapping"></a>add_port_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port_internal=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> desc="", <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration=0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Adds a port mapping to forward the given external port on this <code class="docutils literal notranslate"><span class="pre">UPNPDevice</span></code> for the given protocol to the local machine. See <a class="reference internal" href="class_upnp.html#class-upnp-method-add-port-mapping"><span class="std std-ref">UPNP.add_port_mapping</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-method-delete-port-mapping">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/delete_port_mapping"></a>delete_port_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP" <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Deletes the port mapping identified by the given port and protocol combination on this device. See <a class="reference internal" href="class_upnp.html#class-upnp-method-delete-port-mapping"><span class="std std-ref">UPNP.delete_port_mapping</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-method-is-valid-gateway">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_gateway"></a>is_valid_gateway</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnpdevice-method-query-external-address">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/query_external_address"></a>query_external_address</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the external IP address of this <code class="docutils literal notranslate"><span class="pre">UPNPDevice</span></code> or an empty string.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_upnp.html" rel="prev" title="UPNP"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_variant.html" rel="next" title="Variant">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

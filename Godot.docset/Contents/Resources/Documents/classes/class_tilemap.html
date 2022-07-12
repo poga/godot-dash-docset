@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="TileMap" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_tilemap.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object Node for 2D tile-based maps. Description: Node for 2D tile-based maps. Tilemaps use a TileSet which contain a list of tiles (textures plus optional collis..." property="og:description"/>
+<meta content="Node for 2D tile-based maps. Node for 2D tile-based maps. Tilemaps use a TileSet which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) TileMap — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tilemap.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_tilemap.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_tilemap.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_tilemap.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_tilemap.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_tilemap.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_tilemap.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_tilemap.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_tilemap.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_tilemap.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_tilemap.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_tilemap.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_tilemap.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_tilemap.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tilemap.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tilemap.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_tileset.html" rel="next" title="TileSet"/>
+<link href="class_thread.html" rel="prev" title="Thread"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>TileMap</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="tilemap">
+<span id="class-tilemap"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/TileMap¶"></a>TileMap<a class="headerlink" href="#tilemap" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Node for 2D tile-based maps.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Node for 2D tile-based maps. Tilemaps use a <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> which contain a list of tiles (textures plus optional collision, navigation, and/or occluder shapes) which are used to create grid-based maps.</p>
+<p>When doing physics queries against the tilemap, the cell coordinates are encoded as <code class="docutils literal notranslate"><span class="pre">metadata</span></code> for each detected collision shape returned by methods such as <a class="reference internal" href="class_physics2ddirectspacestate.html#class-physics2ddirectspacestate-method-intersect-shape"><span class="std std-ref">Physics2DDirectSpaceState.intersect_shape</span></a>, <a class="reference internal" href="class_physics2ddirectbodystate.html#class-physics2ddirectbodystate-method-get-contact-collider-shape-metadata"><span class="std std-ref">Physics2DDirectBodyState.get_contact_collider_shape_metadata</span></a>, etc.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/2d/using_tilemaps.html"><span class="doc">Using TileMaps</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/120">2D Platformer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/112">2D Isometric Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/111">2D Hexagonal Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/519">2D Navigation Astar Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/520">2D Role Playing Game Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/113">2D Kinematic Character Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 49%"/>
+<col style="width: 24%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-clip-uv"><span class="std std-ref">cell_clip_uv</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-custom-transform"><span class="std std-ref">cell_custom_transform</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Transform2D(</span> <span class="pre">64,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">64,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-tilemap-halfoffset"><span class="std std-ref">HalfOffset</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-half-offset"><span class="std std-ref">cell_half_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-quadrant-size"><span class="std std-ref">cell_quadrant_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-size"><span class="std std-ref">cell_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">64,</span> <span class="pre">64</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-tilemap-tileorigin"><span class="std std-ref">TileOrigin</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-tile-origin"><span class="std std-ref">cell_tile_origin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-cell-y-sort"><span class="std std-ref">cell_y_sort</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-centered-textures"><span class="std std-ref">centered_textures</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-bounce"><span class="std std-ref">collision_bounce</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-friction"><span class="std std-ref">collision_friction</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-layer"><span class="std std-ref">collision_layer</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-mask"><span class="std std-ref">collision_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-use-kinematic"><span class="std std-ref">collision_use_kinematic</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-collision-use-parent"><span class="std std-ref">collision_use_parent</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-compatibility-mode"><span class="std std-ref">compatibility_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-tilemap-mode"><span class="std std-ref">Mode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-mode"><span class="std std-ref">mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-occluder-light-mask"><span class="std std-ref">occluder_light_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-show-collision"><span class="std std-ref">show_collision</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-property-tile-set"><span class="std std-ref">tile_set</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%"/>
+<col style="width: 91%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-fix-invalid-tiles"><span class="std std-ref">fix_invalid_tiles</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-cell"><span class="std std-ref">get_cell</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-cell-autotile-coord"><span class="std std-ref">get_cell_autotile_coord</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-cellv"><span class="std std-ref">get_cellv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-collision-layer-bit"><span class="std std-ref">get_collision_layer_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-collision-mask-bit"><span class="std std-ref">get_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-used-cells"><span class="std std-ref">get_used_cells</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-used-cells-by-id"><span class="std std-ref">get_used_cells_by_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-get-used-rect"><span class="std std-ref">get_used_rect</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-is-cell-transposed"><span class="std std-ref">is_cell_transposed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-is-cell-x-flipped"><span class="std std-ref">is_cell_x_flipped</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-is-cell-y-flipped"><span class="std std-ref">is_cell_y_flipped</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-map-to-world"><span class="std std-ref">map_to_world</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> map_position, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ignore_half_ofs=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-set-cell"><span class="std std-ref">set_cell</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tile, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_x=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_y=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-set-cellv"><span class="std std-ref">set_cellv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tile, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_x=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_y=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-set-collision-layer-bit"><span class="std std-ref">set_collision_layer_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-set-collision-mask-bit"><span class="std std-ref">set_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-update-bitmask-area"><span class="std std-ref">update_bitmask_area</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-update-bitmask-region"><span class="std std-ref">update_bitmask_region</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> start=Vector2( 0, 0 ), <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> end=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-update-dirty-quadrants"><span class="std std-ref">update_dirty_quadrants</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tilemap-method-world-to-map"><span class="std std-ref">world_to_map</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> world_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tilemap-signal-settings-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/settings_changed"></a>settings_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tilemap setting has changed.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-tilemap-constant-mode-custom"><span id="class-tilemap-constant-mode-isometric"></span><span id="class-tilemap-constant-mode-square"></span><span id="enum-tilemap-mode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Mode"></a>Mode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MODE_SQUARE</strong> = <strong>0</strong> --- Orthogonal orientation mode.</p></li>
+<li><p><strong>MODE_ISOMETRIC</strong> = <strong>1</strong> --- Isometric orientation mode.</p></li>
+<li><p><strong>MODE_CUSTOM</strong> = <strong>2</strong> --- Custom orientation mode.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tilemap-constant-half-offset-negative-y"><span id="class-tilemap-constant-half-offset-negative-x"></span><span id="class-tilemap-constant-half-offset-disabled"></span><span id="class-tilemap-constant-half-offset-y"></span><span id="class-tilemap-constant-half-offset-x"></span><span id="enum-tilemap-halfoffset"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/HalfOffset"></a>HalfOffset</strong>:</p>
+<ul class="simple">
+<li><p><strong>HALF_OFFSET_X</strong> = <strong>0</strong> --- Half offset on the X coordinate.</p></li>
+<li><p><strong>HALF_OFFSET_Y</strong> = <strong>1</strong> --- Half offset on the Y coordinate.</p></li>
+<li><p><strong>HALF_OFFSET_DISABLED</strong> = <strong>2</strong> --- Half offset disabled.</p></li>
+<li><p><strong>HALF_OFFSET_NEGATIVE_X</strong> = <strong>3</strong> --- Half offset on the X coordinate (negative).</p></li>
+<li><p><strong>HALF_OFFSET_NEGATIVE_Y</strong> = <strong>4</strong> --- Half offset on the Y coordinate (negative).</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tilemap-constant-tile-origin-bottom-left"><span id="class-tilemap-constant-tile-origin-center"></span><span id="class-tilemap-constant-tile-origin-top-left"></span><span id="enum-tilemap-tileorigin"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TileOrigin"></a>TileOrigin</strong>:</p>
+<ul class="simple">
+<li><p><strong>TILE_ORIGIN_TOP_LEFT</strong> = <strong>0</strong> --- Tile origin at its top-left corner.</p></li>
+<li><p><strong>TILE_ORIGIN_CENTER</strong> = <strong>1</strong> --- Tile origin at its center.</p></li>
+<li><p><strong>TILE_ORIGIN_BOTTOM_LEFT</strong> = <strong>2</strong> --- Tile origin at its bottom-left corner.</p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tilemap-constant-invalid-cell">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/INVALID_CELL"></a>INVALID_CELL</strong> = <strong>-1</strong> --- Returned when a cell doesn't exist.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tilemap-property-cell-clip-uv">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_clip_uv"></a>cell_clip_uv</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_clip_uv(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_clip_uv()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the cell's UVs will be clipped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-custom-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_custom_transform"></a>cell_custom_transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Transform2D(</span> <span class="pre">64,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">64,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_custom_transform(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_custom_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The custom <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> to be applied to the TileMap's cells.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-half-offset">
+<li><p><a class="reference internal" href="#enum-tilemap-halfoffset"><span class="std std-ref">HalfOffset</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_half_offset"></a>cell_half_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_half_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_half_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Amount to offset alternating tiles. See <a class="reference internal" href="#enum-tilemap-halfoffset"><span class="std std-ref">HalfOffset</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-quadrant-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_quadrant_size"></a>cell_quadrant_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_quadrant_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_quadrant_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-size">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_size"></a>cell_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">64,</span> <span class="pre">64</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cell_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cell_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The TileMap's cell size.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-tile-origin">
+<li><p><a class="reference internal" href="#enum-tilemap-tileorigin"><span class="std std-ref">TileOrigin</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_tile_origin"></a>cell_tile_origin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tile_origin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tile_origin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Position for tile origin. See <a class="reference internal" href="#enum-tilemap-tileorigin"><span class="std std-ref">TileOrigin</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-cell-y-sort">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cell_y_sort"></a>cell_y_sort</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_y_sort_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_y_sort_mode_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the TileMap's direct children will be drawn in order of their Y coordinate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-centered-textures">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/centered_textures"></a>centered_textures</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_centered_textures(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_centered_textures_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the textures will be centered in the middle of each tile. This is useful for certain isometric or top-down modes when textures are made larger or smaller than the tiles (e.g. to avoid flickering on tile edges). The offset is still applied, but from the center of the tile. If used, <a class="reference internal" href="#class-tilemap-property-compatibility-mode"><span class="std std-ref">compatibility_mode</span></a> is ignored.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the texture position start in the top-left corner unless <a class="reference internal" href="#class-tilemap-property-compatibility-mode"><span class="std std-ref">compatibility_mode</span></a> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-bounce">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_bounce"></a>collision_bounce</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_bounce(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_bounce()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Bounce value for static body collisions (see <code class="docutils literal notranslate"><span class="pre">collision_use_kinematic</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-friction">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_friction"></a>collision_friction</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_friction(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_friction()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Friction value for static body collisions (see <code class="docutils literal notranslate"><span class="pre">collision_use_kinematic</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-layer">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_layer"></a>collision_layer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_layer(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_layer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The collision layer(s) for all colliders in the TileMap. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks">Collision layers and masks</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_mask"></a>collision_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The collision mask(s) for all colliders in the TileMap. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks">Collision layers and masks</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-use-kinematic">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_use_kinematic"></a>collision_use_kinematic</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_use_kinematic(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_use_kinematic()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, TileMap collisions will be handled as a kinematic body. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, collisions will be handled as static body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-collision-use-parent">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_use_parent"></a>collision_use_parent</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_use_parent(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_use_parent()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this tilemap's collision shape will be added to the collision shape of the parent. The parent has to be a <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-compatibility-mode">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/compatibility_mode"></a>compatibility_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_compatibility_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_compatibility_mode_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the compatibility with the tilemaps made in Godot 3.1 or earlier is maintained (textures move when the tile origin changes and rotate if the texture size is not homogeneous). This mode presents problems when doing <code class="docutils literal notranslate"><span class="pre">flip_h</span></code>, <code class="docutils literal notranslate"><span class="pre">flip_v</span></code> and <code class="docutils literal notranslate"><span class="pre">transpose</span></code> tile operations on non-homogeneous isometric tiles (e.g. 2:1), in which the texture could not coincide with the collision, thus it is not recommended for isometric or non-square tiles.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the textures do not move when doing <code class="docutils literal notranslate"><span class="pre">flip_h</span></code>, <code class="docutils literal notranslate"><span class="pre">flip_v</span></code> operations if no offset is used, nor when changing the tile origin.</p>
+<p>The compatibility mode doesn't work with the <a class="reference internal" href="#class-tilemap-property-centered-textures"><span class="std std-ref">centered_textures</span></a> option, because displacing textures with the <a class="reference internal" href="#class-tilemap-property-cell-tile-origin"><span class="std std-ref">cell_tile_origin</span></a> option or in irregular tiles is not relevant when centering those textures.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-mode">
+<li><p><a class="reference internal" href="#enum-tilemap-mode"><span class="std std-ref">Mode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mode"></a>mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The TileMap orientation mode. See <a class="reference internal" href="#enum-tilemap-mode"><span class="std std-ref">Mode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-occluder-light-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/occluder_light_mask"></a>occluder_light_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_occluder_light_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_occluder_light_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The light mask assigned to all light occluders in the TileMap. The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-show-collision">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/show_collision"></a>show_collision</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_show_collision(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_show_collision_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collision shapes are visible in the editor. Doesn't affect collision shapes visibility at runtime. To show collision shapes at runtime, enable <strong>Visible Collision Shapes</strong> in the <strong>Debug</strong> menu instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-property-tile-set">
+<li><p><a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tile_set"></a>tile_set</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_tileset(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_tileset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The assigned <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tilemap-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all cells.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-fix-invalid-tiles">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/fix_invalid_tiles"></a>fix_invalid_tiles</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears cells that do not exist in the tileset.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-cell">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_cell"></a>get_cell</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile index of the given cell. If no tile exists in the cell, returns <a class="reference internal" href="#class-tilemap-constant-invalid-cell"><span class="std std-ref">INVALID_CELL</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-cell-autotile-coord">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_cell_autotile_coord"></a>get_cell_autotile_coord</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the coordinate (subtile column and row) of the autotile variation in the tileset. Returns a zero vector if the cell doesn't have autotiling.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-cellv">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_cellv"></a>get_cellv</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile index of the cell given by a Vector2. If no tile exists in the cell, returns <a class="reference internal" href="#class-tilemap-constant-invalid-cell"><span class="std std-ref">INVALID_CELL</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-collision-layer-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_layer_bit"></a>get_collision_layer_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given collision layer bit is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-collision-mask-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_mask_bit"></a>get_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given collision mask bit is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-used-cells">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_used_cells"></a>get_used_cells</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> array with the positions of all cells containing a tile from the tileset (i.e. a tile index different from <code class="docutils literal notranslate"><span class="pre">-1</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-used-cells-by-id">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_used_cells_by_id"></a>get_used_cells_by_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of all cells with the given tile index specified in <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-get-used-rect">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_used_rect"></a>get_used_rect</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a rectangle enclosing the used (non-empty) tiles of the map.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-is-cell-transposed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_cell_transposed"></a>is_cell_transposed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given cell is transposed, i.e. the X and Y axes are swapped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-is-cell-x-flipped">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_cell_x_flipped"></a>is_cell_x_flipped</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given cell is flipped in the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-is-cell-y-flipped">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_cell_y_flipped"></a>is_cell_y_flipped</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given cell is flipped in the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-map-to-world">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/map_to_world"></a>map_to_world</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> map_position, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ignore_half_ofs=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the local position of the top left corner of the cell corresponding to the given tilemap (grid-based) coordinates.</p>
+<p>To get the global position, use <a class="reference internal" href="class_node2d.html#class-node2d-method-to-global"><span class="std std-ref">Node2D.to_global</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">local_position</span> <span class="o">=</span> <span class="n">my_tilemap</span><span class="o">.</span><span class="n">map_to_world</span><span class="p">(</span><span class="n">map_position</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">global_position</span> <span class="o">=</span> <span class="n">my_tilemap</span><span class="o">.</span><span class="n">to_global</span><span class="p">(</span><span class="n">local_position</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Optionally, the tilemap's half offset can be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-set-cell">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_cell"></a>set_cell</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> x, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> y, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tile, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_x=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_y=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile index for the given cell.</p>
+<p>An index of <code class="docutils literal notranslate"><span class="pre">-1</span></code> clears the cell.</p>
+<p>Optionally, the tile can also be flipped, transposed, or given autotile coordinates. The autotile coordinate refers to the column and row of the subtile.</p>
+<p><strong>Note:</strong> Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.</p>
+<p>If you need these to be immediately updated, you can call <a class="reference internal" href="#class-tilemap-method-update-dirty-quadrants"><span class="std std-ref">update_dirty_quadrants</span></a>.</p>
+<p>Overriding this method also overrides it internally, allowing custom logic to be implemented when tiles are placed/removed:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">set_cell</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">flip_x</span><span class="o">=</span><span class="bp">false</span><span class="p">,</span> <span class="n">flip_y</span><span class="o">=</span><span class="bp">false</span><span class="p">,</span> <span class="n">transpose</span><span class="o">=</span><span class="bp">false</span><span class="p">,</span> <span class="n">autotile_coord</span><span class="o">=</span><span class="nb nb-Type">Vector2</span><span class="p">()):</span>
+    <span class="c1"># Write your custom logic here.</span>
+    <span class="c1"># To call the default method:</span>
+    <span class="o">.</span><span class="n">set_cell</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">flip_x</span><span class="p">,</span> <span class="n">flip_y</span><span class="p">,</span> <span class="n">transpose</span><span class="p">,</span> <span class="n">autotile_coord</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-set-cellv">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_cellv"></a>set_cellv</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tile, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_x=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip_y=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile index for the cell given by a Vector2.</p>
+<p>An index of <code class="docutils literal notranslate"><span class="pre">-1</span></code> clears the cell.</p>
+<p>Optionally, the tile can also be flipped, transposed, or given autotile coordinates. The autotile coordinate refers to the column and row of the subtile.</p>
+<p><strong>Note:</strong> Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.</p>
+<p>If you need these to be immediately updated, you can call <a class="reference internal" href="#class-tilemap-method-update-dirty-quadrants"><span class="std std-ref">update_dirty_quadrants</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-set-collision-layer-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_layer_bit"></a>set_collision_layer_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the given collision layer bit.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-set-collision-mask-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_mask_bit"></a>set_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the given collision mask bit.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-update-bitmask-area">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_bitmask_area"></a>update_bitmask_area</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based X and Y coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-update-bitmask-region">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_bitmask_region"></a>update_bitmask_region</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> start=Vector2( 0, 0 ), <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> end=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Applies autotiling rules to the cells in the given region (specified by grid-based X and Y coordinates).</p>
+<p>Calling with invalid (or missing) parameters applies autotiling rules for the entire tilemap.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-update-dirty-quadrants">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_dirty_quadrants"></a>update_dirty_quadrants</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Updates the tile map's quadrants, allowing things such as navigation and collision shapes to be immediately used if modified.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tilemap-method-world-to-map">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/world_to_map"></a>world_to_map</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> world_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tilemap (grid-based) coordinates corresponding to the given local position.</p>
+<p>To use this with a global position, first determine the local position with <a class="reference internal" href="class_node2d.html#class-node2d-method-to-local"><span class="std std-ref">Node2D.to_local</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">local_position</span> <span class="o">=</span> <span class="n">my_tilemap</span><span class="o">.</span><span class="n">to_local</span><span class="p">(</span><span class="n">global_position</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">map_position</span> <span class="o">=</span> <span class="n">my_tilemap</span><span class="o">.</span><span class="n">world_to_map</span><span class="p">(</span><span class="n">local_position</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_thread.html" rel="prev" title="Thread"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_tileset.html" rel="next" title="TileSet">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

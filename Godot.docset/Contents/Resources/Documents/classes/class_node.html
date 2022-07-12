@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Node" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_node.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Inherited By: AnimationPlayer, AnimationTree, AnimationTreePlayer, AudioStreamPlayer, CanvasItem, CanvasLayer, EditorFileSystem, EditorInterface, EditorPlugin, EditorResourcePrevie..." property="og:description"/>
+<meta content="Base class for all scene objects. Nodes are Godot's building blocks. They can be assigned as the child of another node, resulting in a tree arrangement. A given node can contain any number of nodes as children with th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Node — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_node.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_node.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_node.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_node.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_node.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_node.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_node.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_node.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_node.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_node.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_node.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_node.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_node.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_node2d.html" rel="next" title="Node2D"/>
+<link href="class_ninepatchrect.html" rel="prev" title="NinePatchRect"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Node</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="node">
+<span id="class-node"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Node¶"></a>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a>, <a class="reference internal" href="class_animationtree.html#class-animationtree"><span class="std std-ref">AnimationTree</span></a>, <a class="reference internal" href="class_animationtreeplayer.html#class-animationtreeplayer"><span class="std std-ref">AnimationTreePlayer</span></a>, <a class="reference internal" href="class_audiostreamplayer.html#class-audiostreamplayer"><span class="std std-ref">AudioStreamPlayer</span></a>, <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a>, <a class="reference internal" href="class_canvaslayer.html#class-canvaslayer"><span class="std std-ref">CanvasLayer</span></a>, <a class="reference internal" href="class_editorfilesystem.html#class-editorfilesystem"><span class="std std-ref">EditorFileSystem</span></a>, <a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a>, <a class="reference internal" href="class_editorplugin.html#class-editorplugin"><span class="std std-ref">EditorPlugin</span></a>, <a class="reference internal" href="class_editorresourcepreview.html#class-editorresourcepreview"><span class="std std-ref">EditorResourcePreview</span></a>, <a class="reference internal" href="class_httprequest.html#class-httprequest"><span class="std std-ref">HTTPRequest</span></a>, <a class="reference internal" href="class_instanceplaceholder.html#class-instanceplaceholder"><span class="std std-ref">InstancePlaceholder</span></a>, <a class="reference internal" href="class_resourcepreloader.html#class-resourcepreloader"><span class="std std-ref">ResourcePreloader</span></a>, <a class="reference internal" href="class_skeletonik.html#class-skeletonik"><span class="std std-ref">SkeletonIK</span></a>, <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a>, <a class="reference internal" href="class_timer.html#class-timer"><span class="std std-ref">Timer</span></a>, <a class="reference internal" href="class_tween.html#class-tween"><span class="std std-ref">Tween</span></a>, <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a>, <a class="reference internal" href="class_worldenvironment.html#class-worldenvironment"><span class="std std-ref">WorldEnvironment</span></a></p>
+<p>Base class for all <em>scene</em> objects.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Nodes are Godot's building blocks. They can be assigned as the child of another node, resulting in a tree arrangement. A given node can contain any number of nodes as children with the requirement that all siblings (direct children of a node) should have unique names.</p>
+<p>A tree of nodes is called a <em>scene</em>. Scenes can be saved to the disk and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of Godot projects.</p>
+<p><strong>Scene tree:</strong> The <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> contains the active tree of nodes. When a node is added to the scene tree, it receives the <a class="reference internal" href="#class-node-constant-notification-enter-tree"><span class="std std-ref">NOTIFICATION_ENTER_TREE</span></a> notification and its <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> callback is triggered. Child nodes are always added <em>after</em> their parent node, i.e. the <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> callback of a parent node will be triggered before its child's.</p>
+<p>Once all nodes have been added in the scene tree, they receive the <a class="reference internal" href="#class-node-constant-notification-ready"><span class="std std-ref">NOTIFICATION_READY</span></a> notification and their respective <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> callbacks are triggered. For groups of nodes, the <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> callback is called in reverse order, starting with the children and moving up to the parent nodes.</p>
+<p>This means that when adding a node to the scene tree, the following order will be used for the callbacks: <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> of the parent, <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> of the children, <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> of the children and finally <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> of the parent (recursively for the entire scene tree).</p>
+<p><strong>Processing:</strong> Nodes can override the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback <a class="reference internal" href="#class-node-method-process"><span class="std std-ref">_process</span></a>, toggled with <a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a>) happens as fast as possible and is dependent on the frame rate, so the processing time <em>delta</em> (in seconds) is passed as an argument. Physics processing (callback <a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a>, toggled with <a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a>) happens a fixed number of times per second (60 by default) and is useful for code related to the physics engine.</p>
+<p>Nodes can also process input events. When present, the <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the <a class="reference internal" href="#class-node-method-unhandled-input"><span class="std std-ref">_unhandled_input</span></a> function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> nodes), ensuring that the node only receives the events that were meant for it.</p>
+<p>To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with the <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a> property. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.</p>
+<p>Finally, when a node is freed with <a class="reference internal" href="class_object.html#class-object-method-free"><span class="std std-ref">Object.free</span></a> or <a class="reference internal" href="#class-node-method-queue-free"><span class="std std-ref">queue_free</span></a>, it will also free all its children.</p>
+<p><strong>Groups:</strong> Nodes can be added to as many groups as you want to be easy to manage, you could create groups like "enemies" or "collectables" for example, depending on your game. See <a class="reference internal" href="#class-node-method-add-to-group"><span class="std std-ref">add_to_group</span></a>, <a class="reference internal" href="#class-node-method-is-in-group"><span class="std std-ref">is_in_group</span></a> and <a class="reference internal" href="#class-node-method-remove-from-group"><span class="std std-ref">remove_from_group</span></a>. You can then retrieve all nodes in these groups, iterate them and even call methods on groups via the methods on <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<p><strong>Networking with nodes:</strong> After connecting to a server (or making one, see <a class="reference internal" href="class_networkedmultiplayerenet.html#class-networkedmultiplayerenet"><span class="std std-ref">NetworkedMultiplayerENet</span></a>), it is possible to use the built-in RPC (remote procedure call) system to communicate over the network. By calling <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> with a method name, it will be called locally and in all connected peers (peers = clients and the server that accepts connections). To identify which node receives the RPC call, Godot will use its <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> (make sure node names are the same on all peers). Also, take a look at the high-level networking tutorial and corresponding demos.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../getting_started/step_by_step/nodes_and_scenes.html"><span class="doc">Nodes and Scenes</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/godotengine/godot-demo-projects/">All Demos</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 56%"/>
+<col style="width: 6%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-custom-multiplayer"><span class="std std-ref">custom_multiplayer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-filename"><span class="std std-ref">filename</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-multiplayer"><span class="std std-ref">multiplayer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-name"><span class="std std-ref">name</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-node-pausemode"><span class="std std-ref">PauseMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-pause-mode"><span class="std std-ref">pause_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-property-process-priority"><span class="std std-ref">process_priority</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-exit-tree"><span class="std std-ref">_exit_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-configuration-warning"><span class="std std-ref">_get_configuration_warning</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-process"><span class="std std-ref">_process</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-unhandled-input"><span class="std std-ref">_unhandled_input</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-unhandled-key-input"><span class="std std-ref">_unhandled_key_input</span></a> <strong>(</strong> <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> legible_unique_name=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-add-child-below-node"><span class="std std-ref">add_child_below_node</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> child_node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> legible_unique_name=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-add-to-group"><span class="std std-ref">add_to_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> persistent=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-can-process"><span class="std std-ref">can_process</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-duplicate"><span class="std std-ref">duplicate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=15 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-find-node"><span class="std std-ref">find_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mask, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recursive=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> owned=true <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-find-parent"><span class="std std-ref">find_parent</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mask <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-child"><span class="std std-ref">get_child</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-child-count"><span class="std std-ref">get_child_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-children"><span class="std std-ref">get_children</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-groups"><span class="std std-ref">get_groups</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-index"><span class="std std-ref">get_index</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-network-master"><span class="std std-ref">get_network_master</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-node-and-resource"><span class="std std-ref">get_node_and_resource</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-node-or-null"><span class="std std-ref">get_node_or_null</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-parent"><span class="std std-ref">get_parent</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-path"><span class="std std-ref">get_path</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-path-to"><span class="std std-ref">get_path_to</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-physics-process-delta-time"><span class="std std-ref">get_physics_process_delta_time</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-position-in-parent"><span class="std std-ref">get_position_in_parent</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-process-delta-time"><span class="std std-ref">get_process_delta_time</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-scene-instance-load-placeholder"><span class="std std-ref">get_scene_instance_load_placeholder</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-tree"><span class="std std-ref">get_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-get-viewport"><span class="std std-ref">get_viewport</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-has-node"><span class="std std-ref">has_node</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-has-node-and-resource"><span class="std std-ref">has_node_and_resource</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-a-parent-of"><span class="std std-ref">is_a_parent_of</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-displayed-folded"><span class="std std-ref">is_displayed_folded</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-greater-than"><span class="std std-ref">is_greater_than</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-in-group"><span class="std std-ref">is_in_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-inside-tree"><span class="std std-ref">is_inside_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-network-master"><span class="std std-ref">is_network_master</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-physics-processing"><span class="std std-ref">is_physics_processing</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-physics-processing-internal"><span class="std std-ref">is_physics_processing_internal</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-processing"><span class="std std-ref">is_processing</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-processing-input"><span class="std std-ref">is_processing_input</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-processing-internal"><span class="std std-ref">is_processing_internal</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-processing-unhandled-input"><span class="std std-ref">is_processing_unhandled_input</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-is-processing-unhandled-key-input"><span class="std std-ref">is_processing_unhandled_key_input</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-move-child"><span class="std std-ref">move_child</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> child_node, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-print-stray-nodes"><span class="std std-ref">print_stray_nodes</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-print-tree"><span class="std std-ref">print_tree</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-print-tree-pretty"><span class="std std-ref">print_tree_pretty</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-propagate-call"><span class="std std-ref">propagate_call</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> args=[  ], <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> parent_first=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-propagate-notification"><span class="std std-ref">propagate_notification</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-queue-free"><span class="std std-ref">queue_free</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-raise"><span class="std std-ref">raise</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-remove-and-skip"><span class="std std-ref">remove_and_skip</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-remove-child"><span class="std std-ref">remove_child</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-remove-from-group"><span class="std std-ref">remove_from_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-replace-by"><span class="std std-ref">replace_by</span></a> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> keep_data=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-request-ready"><span class="std std-ref">request_ready</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rpc-config"><span class="std std-ref">rpc_config</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-rpc-id"><span class="std std-ref">rpc_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-rpc-unreliable"><span class="std std-ref">rpc_unreliable</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node-method-rpc-unreliable-id"><span class="std std-ref">rpc_unreliable_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rset"><span class="std std-ref">rset</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rset-config"><span class="std std-ref">rset_config</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rset-id"><span class="std std-ref">rset_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rset-unreliable"><span class="std std-ref">rset_unreliable</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-rset-unreliable-id"><span class="std std-ref">rset_unreliable_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-display-folded"><span class="std std-ref">set_display_folded</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> fold <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-network-master"><span class="std std-ref">set_network_master</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recursive=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-physics-process-internal"><span class="std std-ref">set_physics_process_internal</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-process-input"><span class="std std-ref">set_process_input</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-process-internal"><span class="std std-ref">set_process_internal</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-process-unhandled-input"><span class="std std-ref">set_process_unhandled_input</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-process-unhandled-key-input"><span class="std std-ref">set_process_unhandled_key_input</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-set-scene-instance-load-placeholder"><span class="std std-ref">set_scene_instance_load_placeholder</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> load_placeholder <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node-method-update-configuration-warning"><span class="std std-ref">update_configuration_warning</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-node-signal-ready">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/ready"></a>ready</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the node is ready.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-signal-renamed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/renamed"></a>renamed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the node is renamed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-signal-tree-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tree_entered"></a>tree_entered</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the node enters the tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-signal-tree-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tree_exited"></a>tree_exited</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted after the node exits the tree and is no longer active.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-signal-tree-exiting">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tree_exiting"></a>tree_exiting</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the node is still active but about to exit the tree. This is the right place for de-initialization (or a "destructor", if you will).</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-node-constant-pause-mode-process"><span id="class-node-constant-pause-mode-stop"></span><span id="class-node-constant-pause-mode-inherit"></span><span id="enum-node-pausemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/PauseMode"></a>PauseMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>PAUSE_MODE_INHERIT</strong> = <strong>0</strong> --- Inherits pause mode from the node's parent. For the root node, it is equivalent to <a class="reference internal" href="#class-node-constant-pause-mode-stop"><span class="std std-ref">PAUSE_MODE_STOP</span></a>. Default.</p></li>
+<li><p><strong>PAUSE_MODE_STOP</strong> = <strong>1</strong> --- Stops processing when the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> is paused.</p></li>
+<li><p><strong>PAUSE_MODE_PROCESS</strong> = <strong>2</strong> --- Continue to process regardless of the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> pause state.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-node-constant-duplicate-use-instancing"><span id="class-node-constant-duplicate-scripts"></span><span id="class-node-constant-duplicate-groups"></span><span id="class-node-constant-duplicate-signals"></span><span id="enum-node-duplicateflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DuplicateFlags"></a>DuplicateFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>DUPLICATE_SIGNALS</strong> = <strong>1</strong> --- Duplicate the node's signals.</p></li>
+<li><p><strong>DUPLICATE_GROUPS</strong> = <strong>2</strong> --- Duplicate the node's groups.</p></li>
+<li><p><strong>DUPLICATE_SCRIPTS</strong> = <strong>4</strong> --- Duplicate the node's scripts.</p></li>
+<li><p><strong>DUPLICATE_USE_INSTANCING</strong> = <strong>8</strong> --- Duplicate using instancing.</p></li>
+</ul>
+<p>An instance stays linked to the original so when the original changes, the instance changes too.</p>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-node-constant-notification-app-resumed"></span><span id="class-node-constant-notification-os-ime-update"></span><span id="class-node-constant-notification-crash"></span><span id="class-node-constant-notification-wm-about"></span><span id="class-node-constant-notification-translation-changed"></span><span id="class-node-constant-notification-os-memory-warning"></span><span id="class-node-constant-notification-wm-unfocus-request"></span><span id="class-node-constant-notification-wm-go-back-request"></span><span id="class-node-constant-notification-wm-quit-request"></span><span id="class-node-constant-notification-wm-focus-out"></span><span id="class-node-constant-notification-wm-focus-in"></span><span id="class-node-constant-notification-wm-mouse-exit"></span><span id="class-node-constant-notification-wm-mouse-enter"></span><span id="class-node-constant-notification-post-enter-tree"></span><span id="class-node-constant-notification-internal-physics-process"></span><span id="class-node-constant-notification-internal-process"></span><span id="class-node-constant-notification-path-changed"></span><span id="class-node-constant-notification-drag-end"></span><span id="class-node-constant-notification-drag-begin"></span><span id="class-node-constant-notification-instanced"></span><span id="class-node-constant-notification-unparented"></span><span id="class-node-constant-notification-parented"></span><span id="class-node-constant-notification-process"></span><span id="class-node-constant-notification-physics-process"></span><span id="class-node-constant-notification-unpaused"></span><span id="class-node-constant-notification-paused"></span><span id="class-node-constant-notification-ready"></span><span id="class-node-constant-notification-moved-in-parent"></span><span id="class-node-constant-notification-exit-tree"></span><span id="class-node-constant-notification-enter-tree"></span><ul class="simple" id="class-node-constant-notification-app-paused">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_ENTER_TREE"></a>NOTIFICATION_ENTER_TREE</strong> = <strong>10</strong> --- Notification received when the node enters a <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_EXIT_TREE"></a>NOTIFICATION_EXIT_TREE</strong> = <strong>11</strong> --- Notification received when the node is about to exit a <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_MOVED_IN_PARENT"></a>NOTIFICATION_MOVED_IN_PARENT</strong> = <strong>12</strong> --- Notification received when the node is moved in the parent.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_READY"></a>NOTIFICATION_READY</strong> = <strong>13</strong> --- Notification received when the node is ready. See <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PAUSED"></a>NOTIFICATION_PAUSED</strong> = <strong>14</strong> --- Notification received when the node is paused.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_UNPAUSED"></a>NOTIFICATION_UNPAUSED</strong> = <strong>15</strong> --- Notification received when the node is unpaused.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PHYSICS_PROCESS"></a>NOTIFICATION_PHYSICS_PROCESS</strong> = <strong>16</strong> --- Notification received every frame when the physics process flag is set (see <a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a>).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PROCESS"></a>NOTIFICATION_PROCESS</strong> = <strong>17</strong> --- Notification received every frame when the process flag is set (see <a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a>).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PARENTED"></a>NOTIFICATION_PARENTED</strong> = <strong>18</strong> --- Notification received when a node is set as a child of another node.</p></li>
+</ul>
+<p><strong>Note:</strong> This doesn't mean that a node entered the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_UNPARENTED"></a>NOTIFICATION_UNPARENTED</strong> = <strong>19</strong> --- Notification received when a node is unparented (parent removed it from the list of children).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_INSTANCED"></a>NOTIFICATION_INSTANCED</strong> = <strong>20</strong> --- Notification received when the node is instanced.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_DRAG_BEGIN"></a>NOTIFICATION_DRAG_BEGIN</strong> = <strong>21</strong> --- Notification received when a drag begins.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_DRAG_END"></a>NOTIFICATION_DRAG_END</strong> = <strong>22</strong> --- Notification received when a drag ends.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PATH_CHANGED"></a>NOTIFICATION_PATH_CHANGED</strong> = <strong>23</strong> --- Notification received when the node's <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> changed.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_INTERNAL_PROCESS"></a>NOTIFICATION_INTERNAL_PROCESS</strong> = <strong>25</strong> --- Notification received every frame when the internal process flag is set (see <a class="reference internal" href="#class-node-method-set-process-internal"><span class="std std-ref">set_process_internal</span></a>).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_INTERNAL_PHYSICS_PROCESS"></a>NOTIFICATION_INTERNAL_PHYSICS_PROCESS</strong> = <strong>26</strong> --- Notification received every frame when the internal physics process flag is set (see <a class="reference internal" href="#class-node-method-set-physics-process-internal"><span class="std std-ref">set_physics_process_internal</span></a>).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_POST_ENTER_TREE"></a>NOTIFICATION_POST_ENTER_TREE</strong> = <strong>27</strong> --- Notification received when the node is ready, just before <a class="reference internal" href="#class-node-constant-notification-ready"><span class="std std-ref">NOTIFICATION_READY</span></a> is received. Unlike the latter, it's sent every time the node enters tree, instead of only once.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_MOUSE_ENTER"></a>NOTIFICATION_WM_MOUSE_ENTER</strong> = <strong>1002</strong> --- Notification received from the OS when the mouse enters the game window.</p></li>
+</ul>
+<p>Implemented on desktop and web platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_MOUSE_EXIT"></a>NOTIFICATION_WM_MOUSE_EXIT</strong> = <strong>1003</strong> --- Notification received from the OS when the mouse leaves the game window.</p></li>
+</ul>
+<p>Implemented on desktop and web platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_FOCUS_IN"></a>NOTIFICATION_WM_FOCUS_IN</strong> = <strong>1004</strong> --- Notification received from the OS when the game window is focused.</p></li>
+</ul>
+<p>Implemented on all platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_FOCUS_OUT"></a>NOTIFICATION_WM_FOCUS_OUT</strong> = <strong>1005</strong> --- Notification received from the OS when the game window is unfocused.</p></li>
+</ul>
+<p>Implemented on all platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_QUIT_REQUEST"></a>NOTIFICATION_WM_QUIT_REQUEST</strong> = <strong>1006</strong> --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).</p></li>
+</ul>
+<p>Implemented on desktop platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_GO_BACK_REQUEST"></a>NOTIFICATION_WM_GO_BACK_REQUEST</strong> = <strong>1007</strong> --- Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_UNFOCUS_REQUEST"></a>NOTIFICATION_WM_UNFOCUS_REQUEST</strong> = <strong>1008</strong> --- Notification received from the OS when an unfocus request is sent (e.g. another OS window wants to take the focus).</p></li>
+</ul>
+<p>No supported platforms currently send this notification.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_OS_MEMORY_WARNING"></a>NOTIFICATION_OS_MEMORY_WARNING</strong> = <strong>1009</strong> --- Notification received from the OS when the application is exceeding its allocated memory.</p></li>
+</ul>
+<p>Specific to the iOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_TRANSLATION_CHANGED"></a>NOTIFICATION_TRANSLATION_CHANGED</strong> = <strong>1010</strong> --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like <a class="reference internal" href="class_object.html#class-object-method-tr"><span class="std std-ref">Object.tr</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_ABOUT"></a>NOTIFICATION_WM_ABOUT</strong> = <strong>1011</strong> --- Notification received from the OS when a request for "About" information is sent.</p></li>
+</ul>
+<p>Specific to the macOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_CRASH"></a>NOTIFICATION_CRASH</strong> = <strong>1012</strong> --- Notification received from Godot's crash handler when the engine is about to crash.</p></li>
+</ul>
+<p>Implemented on desktop platforms if the crash handler is enabled.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_OS_IME_UPDATE"></a>NOTIFICATION_OS_IME_UPDATE</strong> = <strong>1013</strong> --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).</p></li>
+</ul>
+<p>Specific to the macOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_APP_RESUMED"></a>NOTIFICATION_APP_RESUMED</strong> = <strong>1014</strong> --- Notification received from the OS when the app is resumed.</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_APP_PAUSED"></a>NOTIFICATION_APP_PAUSED</strong> = <strong>1015</strong> --- Notification received from the OS when the app is paused.</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-node-property-custom-multiplayer">
+<li><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/custom_multiplayer"></a>custom_multiplayer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_custom_multiplayer(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_custom_multiplayer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The override to the default <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a>. Set to <code class="docutils literal notranslate"><span class="pre">null</span></code> to use the default <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> one.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-filename">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/filename"></a>filename</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_filename(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_filename()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If a scene is instantiated from a file, its topmost node contains the absolute file path from which it was loaded in <a class="reference internal" href="#class-node-property-filename"><span class="std std-ref">filename</span></a> (e.g. <code class="docutils literal notranslate"><span class="pre">res://levels/1.tscn</span></code>). Otherwise, <a class="reference internal" href="#class-node-property-filename"><span class="std std-ref">filename</span></a> is set to an empty string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-multiplayer">
+<li><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/multiplayer"></a>multiplayer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_multiplayer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> instance associated with this node. Either the <a class="reference internal" href="#class-node-property-custom-multiplayer"><span class="std std-ref">custom_multiplayer</span></a>, or the default SceneTree one (if inside tree).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/name"></a>name</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_name(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_name()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the node. This name is unique among the siblings (other child nodes from the same parent). When set to an existing name, the node will be automatically renamed.</p>
+<p><strong>Note:</strong> Auto-generated names might include the <code class="docutils literal notranslate"><span class="pre">@</span></code> character, which is reserved for unique names when using <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a>. When setting the name manually, any <code class="docutils literal notranslate"><span class="pre">@</span></code> will be removed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-owner">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/owner"></a>owner</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 64%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_owner(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_owner()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>), all the nodes it owns will be saved with it. This allows for the creation of complex <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>s, with instancing and subinstancing.</p>
+<p><strong>Note:</strong> If you want a child to be persisted to a <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>, you must set <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a> in addition to calling <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a>. This is typically relevant for <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/misc/running_code_in_the_editor.html">tool scripts</a> and <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/plugins/editor/index.html">editor plugins</a>. If <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a> is called without setting <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a>, the newly added <code class="docutils literal notranslate"><span class="pre">Node</span></code> will not be visible in the scene tree, though it will be visible in the 2D/3D view.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-pause-mode">
+<li><p><a class="reference internal" href="#enum-node-pausemode"><span class="std std-ref">PauseMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/pause_mode"></a>pause_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pause_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_pause_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pause mode. How the node will behave if the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> is paused.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-property-process-priority">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/process_priority"></a>process_priority</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_process_priority(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_process_priority()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The node's priority in the execution order of the enabled processing callbacks (i.e. <a class="reference internal" href="#class-node-constant-notification-process"><span class="std std-ref">NOTIFICATION_PROCESS</span></a>, <a class="reference internal" href="#class-node-constant-notification-physics-process"><span class="std std-ref">NOTIFICATION_PHYSICS_PROCESS</span></a> and their internal counterparts). Nodes whose process priority value is <em>lower</em> will have their processing callbacks executed first.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-node-method-enter-tree">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_enter_tree"></a>_enter_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when the node enters the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> (e.g. upon instancing, scene changing, or after calling <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a> in a script). If the node has children, its <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a> callback will be called first, and then that of the children.</p>
+<p>Corresponds to the <a class="reference internal" href="#class-node-constant-notification-enter-tree"><span class="std std-ref">NOTIFICATION_ENTER_TREE</span></a> notification in <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-exit-tree">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_exit_tree"></a>_exit_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when the node is about to leave the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> (e.g. upon freeing, scene changing, or after calling <a class="reference internal" href="#class-node-method-remove-child"><span class="std std-ref">remove_child</span></a> in a script). If the node has children, its <a class="reference internal" href="#class-node-method-exit-tree"><span class="std std-ref">_exit_tree</span></a> callback will be called last, after all its children have left the tree.</p>
+<p>Corresponds to the <a class="reference internal" href="#class-node-constant-notification-exit-tree"><span class="std std-ref">NOTIFICATION_EXIT_TREE</span></a> notification in <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a> and signal <a class="reference internal" href="#class-node-signal-tree-exiting"><span class="std std-ref">tree_exiting</span></a>. To get notified when the node has already left the active tree, connect to the <a class="reference internal" href="#class-node-signal-tree-exited"><span class="std std-ref">tree_exited</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-configuration-warning">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_get_configuration_warning"></a>_get_configuration_warning</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>The string returned from this method is displayed as a warning in the Scene Dock if the script that overrides it is a <code class="docutils literal notranslate"><span class="pre">tool</span></code> script.</p>
+<p>Returning an empty string produces no warning.</p>
+<p>Call <a class="reference internal" href="#class-node-method-update-configuration-warning"><span class="std std-ref">update_configuration_warning</span></a> when the warning needs to be updated for this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_input"></a>_input</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when there is an input event. The input event propagates up through the node tree until a node consumes it.</p>
+<p>It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="reference internal" href="#class-node-method-set-process-input"><span class="std std-ref">set_process_input</span></a>.</p>
+<p>To consume the input event and stop it propagating further to other nodes, <a class="reference internal" href="class_scenetree.html#class-scenetree-method-set-input-as-handled"><span class="std std-ref">SceneTree.set_input_as_handled</span></a> can be called.</p>
+<p>For gameplay input, <a class="reference internal" href="#class-node-method-unhandled-input"><span class="std std-ref">_unhandled_input</span></a> and <a class="reference internal" href="#class-node-method-unhandled-key-input"><span class="std std-ref">_unhandled_key_input</span></a> are usually a better fit as they allow the GUI to intercept the events first.</p>
+<p><strong>Note:</strong> This method is only called if the node is present in the scene tree (i.e. if it's not orphan).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-physics-process">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_physics_process"></a>_physics_process</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the <code class="docutils literal notranslate"><span class="pre">delta</span></code> variable should be constant. <code class="docutils literal notranslate"><span class="pre">delta</span></code> is in seconds.</p>
+<p>It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a>.</p>
+<p>Corresponds to the <a class="reference internal" href="#class-node-constant-notification-physics-process"><span class="std std-ref">NOTIFICATION_PHYSICS_PROCESS</span></a> notification in <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a>.</p>
+<p><strong>Note:</strong> This method is only called if the node is present in the scene tree (i.e. if it's not orphan).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-process">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_process"></a>_process</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="docutils literal notranslate"><span class="pre">delta</span></code> time since the previous frame is not constant. <code class="docutils literal notranslate"><span class="pre">delta</span></code> is in seconds.</p>
+<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a>.</p>
+<p>Corresponds to the <a class="reference internal" href="#class-node-constant-notification-process"><span class="std std-ref">NOTIFICATION_PROCESS</span></a> notification in <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a>.</p>
+<p><strong>Note:</strong> This method is only called if the node is present in the scene tree (i.e. if it's not orphan).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-ready">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_ready"></a>_ready</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+<p>Corresponds to the <a class="reference internal" href="#class-node-constant-notification-ready"><span class="std std-ref">NOTIFICATION_READY</span></a> notification in <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a>. See also the <code class="docutils literal notranslate"><span class="pre">onready</span></code> keyword for variables.</p>
+<p>Usually used for initialization. For even earlier initialization, <a class="reference internal" href="class_object.html#class-object-method-init"><span class="std std-ref">Object._init</span></a> may be used. See also <a class="reference internal" href="#class-node-method-enter-tree"><span class="std std-ref">_enter_tree</span></a>.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> may be called only once for each node. After removing a node from the scene tree and adding again, <code class="docutils literal notranslate"><span class="pre">_ready</span></code> will not be called for the second time. This can be bypassed with requesting another call with <a class="reference internal" href="#class-node-method-request-ready"><span class="std std-ref">request_ready</span></a>, which may be called anywhere before adding the node again.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-unhandled-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_unhandled_input"></a>_unhandled_input</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> hasn't been consumed by <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> or any GUI. The input event propagates up through the node tree until a node consumes it.</p>
+<p>It is only called if unhandled input processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="reference internal" href="#class-node-method-set-process-unhandled-input"><span class="std std-ref">set_process_unhandled_input</span></a>.</p>
+<p>To consume the input event and stop it propagating further to other nodes, <a class="reference internal" href="class_scenetree.html#class-scenetree-method-set-input-as-handled"><span class="std std-ref">SceneTree.set_input_as_handled</span></a> can be called.</p>
+<p>For gameplay input, this and <a class="reference internal" href="#class-node-method-unhandled-key-input"><span class="std std-ref">_unhandled_key_input</span></a> are usually a better fit than <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> as they allow the GUI to intercept the events first.</p>
+<p><strong>Note:</strong> This method is only called if the node is present in the scene tree (i.e. if it's not orphan).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-unhandled-key-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_unhandled_key_input"></a>_unhandled_key_input</strong> <strong>(</strong> <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when an <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> hasn't been consumed by <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> or any GUI. The input event propagates up through the node tree until a node consumes it.</p>
+<p>It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="reference internal" href="#class-node-method-set-process-unhandled-key-input"><span class="std std-ref">set_process_unhandled_key_input</span></a>.</p>
+<p>To consume the input event and stop it propagating further to other nodes, <a class="reference internal" href="class_scenetree.html#class-scenetree-method-set-input-as-handled"><span class="std std-ref">SceneTree.set_input_as_handled</span></a> can be called.</p>
+<p>For gameplay input, this and <a class="reference internal" href="#class-node-method-unhandled-input"><span class="std std-ref">_unhandled_input</span></a> are usually a better fit than <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> as they allow the GUI to intercept the events first.</p>
+<p><strong>Note:</strong> This method is only called if the node is present in the scene tree (i.e. if it's not orphan).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-add-child">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_child"></a>add_child</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> legible_unique_name=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">legible_unique_name</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the child node will have a human-readable name based on the name of the node being instanced instead of its type.</p>
+<p><strong>Note:</strong> If the child node already has a parent, the function will fail. Use <a class="reference internal" href="#class-node-method-remove-child"><span class="std std-ref">remove_child</span></a> first to remove the node from its current parent. For example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">child_node</span><span class="o">.</span><span class="n">get_parent</span><span class="p">():</span>
+    <span class="n">child_node</span><span class="o">.</span><span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">remove_child</span><span class="p">(</span><span class="n">child_node</span><span class="p">)</span>
+<span class="n">add_child</span><span class="p">(</span><span class="n">child_node</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> If you want a child to be persisted to a <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>, you must set <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a> in addition to calling <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a>. This is typically relevant for <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/misc/running_code_in_the_editor.html">tool scripts</a> and <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/plugins/editor/index.html">editor plugins</a>. If <a class="reference internal" href="#class-node-method-add-child"><span class="std std-ref">add_child</span></a> is called without setting <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a>, the newly added <code class="docutils literal notranslate"><span class="pre">Node</span></code> will not be visible in the scene tree, though it will be visible in the 2D/3D view.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-add-child-below-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_child_below_node"></a>add_child_below_node</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> child_node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> legible_unique_name=false <strong>)</strong></p></li>
+</ul>
+<p>Adds <code class="docutils literal notranslate"><span class="pre">child_node</span></code> as a child. The child is placed below the given <code class="docutils literal notranslate"><span class="pre">node</span></code> in the list of children.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">legible_unique_name</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the child node will have a human-readable name based on the name of the node being instanced instead of its type.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-add-to-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_to_group"></a>add_to_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> persistent=false <strong>)</strong></p></li>
+</ul>
+<p>Adds the node to a group. Groups are helpers to name and organize a subset of nodes, for example "enemies" or "collectables". A node can be in any number of groups. Nodes can be assigned a group at any time, but will not be added until they are inside the scene tree (see <a class="reference internal" href="#class-node-method-is-inside-tree"><span class="std std-ref">is_inside_tree</span></a>). See notes in the description, and the group methods in <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">persistent</span></code> option is used when packing node to <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a> and saving to file. Non-persistent groups aren't stored.</p>
+<p><strong>Note:</strong> For performance reasons, the order of node groups is <em>not</em> guaranteed. The order of node groups should not be relied upon as it can vary across project runs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-can-process">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/can_process"></a>can_process</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node can process while the scene tree is paused (see <a class="reference internal" href="#class-node-property-pause-mode"><span class="std std-ref">pause_mode</span></a>). Always returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the scene tree is not paused, and <code class="docutils literal notranslate"><span class="pre">false</span></code> if the node is not in the tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-duplicate">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/duplicate"></a>duplicate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=15 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Duplicates the node, returning a new node.</p>
+<p>You can fine-tune the behavior using the <code class="docutils literal notranslate"><span class="pre">flags</span></code> (see <a class="reference internal" href="#enum-node-duplicateflags"><span class="std std-ref">DuplicateFlags</span></a>).</p>
+<p><strong>Note:</strong> It will not work properly if the node contains a script with constructor arguments (i.e. needs to supply arguments to <a class="reference internal" href="class_object.html#class-object-method-init"><span class="std std-ref">Object._init</span></a> method). In that case, the node will be duplicated without a script.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-find-node">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_node"></a>find_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mask, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recursive=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> owned=true <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Finds a descendant of this node whose name matches <code class="docutils literal notranslate"><span class="pre">mask</span></code> as in <a class="reference internal" href="class_string.html#class-string-method-match"><span class="std std-ref">String.match</span></a> (i.e. case-sensitive, but <code class="docutils literal notranslate"><span class="pre">"*"</span></code> matches zero or more characters and <code class="docutils literal notranslate"><span class="pre">"?"</span></code> matches any single character except <code class="docutils literal notranslate"><span class="pre">"."</span></code>). Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if no matching <code class="docutils literal notranslate"><span class="pre">Node</span></code> is found.</p>
+<p><strong>Note:</strong> It does not match against the full path, just against individual node names.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">owned</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.</p>
+<p><strong>Note:</strong> As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using <a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a> instead. To avoid using <a class="reference internal" href="#class-node-method-find-node"><span class="std std-ref">find_node</span></a> too often, consider caching the node reference into a variable.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-find-parent">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_parent"></a>find_parent</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mask <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Finds the first parent of the current node whose name matches <code class="docutils literal notranslate"><span class="pre">mask</span></code> as in <a class="reference internal" href="class_string.html#class-string-method-match"><span class="std std-ref">String.match</span></a> (i.e. case-sensitive, but <code class="docutils literal notranslate"><span class="pre">"*"</span></code> matches zero or more characters and <code class="docutils literal notranslate"><span class="pre">"?"</span></code> matches any single character except <code class="docutils literal notranslate"><span class="pre">"."</span></code>).</p>
+<p><strong>Note:</strong> It does not match against the full path, just against individual node names.</p>
+<p><strong>Note:</strong> As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using <a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a> instead. To avoid using <a class="reference internal" href="#class-node-method-find-parent"><span class="std std-ref">find_parent</span></a> too often, consider caching the node reference into a variable.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-child">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_child"></a>get_child</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a child node by its index (see <a class="reference internal" href="#class-node-method-get-child-count"><span class="std std-ref">get_child_count</span></a>). This method is often used for iterating all children of a node.</p>
+<p>To access a child node via its name, use <a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-child-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_child_count"></a>get_child_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of child nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-children">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_children"></a>get_children</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of references to node's children.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-groups">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_groups"></a>get_groups</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array listing the groups that the node is a member of.</p>
+<p><strong>Note:</strong> For performance reasons, the order of node groups is <em>not</em> guaranteed. The order of node groups should not be relied upon as it can vary across project runs.</p>
+<p><strong>Note:</strong> The engine uses some group names internally (all starting with an underscore). To avoid conflicts with internal groups, do not add custom groups whose name starts with an underscore. To exclude internal groups while looping over <a class="reference internal" href="#class-node-method-get-groups"><span class="std std-ref">get_groups</span></a>, use the following snippet:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stores the node's non-internal groups only (as an array of Strings).</span>
+<span class="k">var</span> <span class="n">non_internal_groups</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">get_groups</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">group</span><span class="o">.</span><span class="n">begins_with</span><span class="p">(</span><span class="s2">"_"</span><span class="p">):</span>
+        <span class="n">non_internal_groups</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_index"></a>get_index</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the node's index, i.e. its position among the siblings of its parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-network-master">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_network_master"></a>get_network_master</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the peer ID of the network master for this node. See <a class="reference internal" href="#class-node-method-set-network-master"><span class="std std-ref">set_network_master</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-node">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node"></a>get_node</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Fetches a node. The <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> can be either a relative path (from the current node) or an absolute path (in the scene tree) to a node. If the path does not exist, a <code class="docutils literal notranslate"><span class="pre">null</span> <span class="pre">instance</span></code> is returned and an error is logged. Attempts to access methods on the return value will result in an "Attempt to call &lt;method&gt; on a null instance." error.</p>
+<p><strong>Note:</strong> Fetching absolute paths only works when the node is inside the scene tree (see <a class="reference internal" href="#class-node-method-is-inside-tree"><span class="std std-ref">is_inside_tree</span></a>).</p>
+<p><strong>Example:</strong> Assume your current node is Character and the following tree:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">root</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Character</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Character</span><span class="o">/</span><span class="n">Sword</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Character</span><span class="o">/</span><span class="n">Backpack</span><span class="o">/</span><span class="n">Dagger</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">MyGame</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Swamp</span><span class="o">/</span><span class="n">Alligator</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Swamp</span><span class="o">/</span><span class="n">Mosquito</span>
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">Swamp</span><span class="o">/</span><span class="n">Goblin</span>
+</pre></div>
+</div>
+<p>Possible paths are:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">get_node</span><span class="p">(</span><span class="s2">"Sword"</span><span class="p">)</span>
+<span class="n">get_node</span><span class="p">(</span><span class="s2">"Backpack/Dagger"</span><span class="p">)</span>
+<span class="n">get_node</span><span class="p">(</span><span class="s2">"../Swamp/Alligator"</span><span class="p">)</span>
+<span class="n">get_node</span><span class="p">(</span><span class="s2">"/root/MyGame"</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-node-and-resource">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_and_resource"></a>get_node_and_resource</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Fetches a node and one of its resources as specified by the <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>'s subname (e.g. <code class="docutils literal notranslate"><span class="pre">Area2D/CollisionShape2D:shape</span></code>). If several nested resources are specified in the <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>, the last one will be fetched.</p>
+<p>The return value is an array of size 3: the first index points to the <code class="docutils literal notranslate"><span class="pre">Node</span></code> (or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found), the second index points to the <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> (or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found), and the third index is the remaining <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>, if any.</p>
+<p>For example, assuming that <code class="docutils literal notranslate"><span class="pre">Area2D/CollisionShape2D</span></code> is a valid node and that its <code class="docutils literal notranslate"><span class="pre">shape</span></code> property has been assigned a <a class="reference internal" href="class_rectangleshape2d.html#class-rectangleshape2d"><span class="std std-ref">RectangleShape2D</span></a> resource, one could have this kind of output:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_node_and_resource</span><span class="p">(</span><span class="s2">"Area2D/CollisionShape2D"</span><span class="p">))</span> <span class="c1"># [[CollisionShape2D:1161], Null, ]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_node_and_resource</span><span class="p">(</span><span class="s2">"Area2D/CollisionShape2D:shape"</span><span class="p">))</span> <span class="c1"># [[CollisionShape2D:1161], [RectangleShape2D:1156], ]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_node_and_resource</span><span class="p">(</span><span class="s2">"Area2D/CollisionShape2D:shape:extents"</span><span class="p">))</span> <span class="c1"># [[CollisionShape2D:1161], [RectangleShape2D:1156], :extents]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-node-or-null">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_or_null"></a>get_node_or_null</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Similar to <a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a>, but does not log an error if <code class="docutils literal notranslate"><span class="pre">path</span></code> does not point to a valid <code class="docutils literal notranslate"><span class="pre">Node</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-parent">
+<li><p><a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_parent"></a>get_parent</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the parent node of the current node, or a <code class="docutils literal notranslate"><span class="pre">null</span> <span class="pre">instance</span></code> if the node lacks a parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-path">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_path"></a>get_path</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the absolute path of the current node. This only works if the current node is inside the scene tree (see <a class="reference internal" href="#class-node-method-is-inside-tree"><span class="std std-ref">is_inside_tree</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-path-to">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_path_to"></a>get_path_to</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the relative <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> from this node to the specified <code class="docutils literal notranslate"><span class="pre">node</span></code>. Both nodes must be in the same scene or the function will fail.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-physics-process-delta-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_physics_process_delta_time"></a>get_physics_process_delta_time</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the time elapsed (in seconds) since the last physics-bound frame (see <a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a>). This is always a constant value in physics processing unless the frames per second is changed via <a class="reference internal" href="class_engine.html#class-engine-property-iterations-per-second"><span class="std std-ref">Engine.iterations_per_second</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-position-in-parent">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_position_in_parent"></a>get_position_in_parent</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the node's order in the scene tree branch. For example, if called on the first child node the position is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-process-delta-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_process_delta_time"></a>get_process_delta_time</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the time elapsed (in seconds) since the last process callback. This value may vary from frame to frame.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-scene-instance-load-placeholder">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_scene_instance_load_placeholder"></a>get_scene_instance_load_placeholder</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this is an instance load placeholder. See <a class="reference internal" href="class_instanceplaceholder.html#class-instanceplaceholder"><span class="std std-ref">InstancePlaceholder</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-tree">
+<li><p><a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tree"></a>get_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> that contains this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-get-viewport">
+<li><p><a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_viewport"></a>get_viewport</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the node's <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-has-node">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_node"></a>has_node</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node that the <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> points to exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-has-node-and-resource">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_node_and_resource"></a>has_node_and_resource</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> points to a valid node and its subname points to a valid resource, e.g. <code class="docutils literal notranslate"><span class="pre">Area2D/CollisionShape2D:shape</span></code>. Properties with a non-<a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> type (e.g. nodes or primitive math types) are not considered resources.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-a-parent-of">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_a_parent_of"></a>is_a_parent_of</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given node is a direct or indirect child of the current node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-displayed-folded">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_displayed_folded"></a>is_displayed_folded</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is folded (collapsed) in the Scene dock.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-greater-than">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_greater_than"></a>is_greater_than</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given node occurs later in the scene hierarchy than the current node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-in-group">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_in_group"></a>is_in_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this node is in the specified group. See notes in the description, and the group methods in <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-inside-tree">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_inside_tree"></a>is_inside_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this node is currently inside a <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-network-master">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_network_master"></a>is_network_master</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the local system is the master of this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-physics-processing">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_physics_processing"></a>is_physics_processing</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if physics processing is enabled (see <a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-physics-processing-internal">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_physics_processing_internal"></a>is_physics_processing_internal</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if internal physics processing is enabled (see <a class="reference internal" href="#class-node-method-set-physics-process-internal"><span class="std std-ref">set_physics_process_internal</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-processing">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_processing"></a>is_processing</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if processing is enabled (see <a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-processing-input">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_processing_input"></a>is_processing_input</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is processing input (see <a class="reference internal" href="#class-node-method-set-process-input"><span class="std std-ref">set_process_input</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-processing-internal">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_processing_internal"></a>is_processing_internal</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if internal processing is enabled (see <a class="reference internal" href="#class-node-method-set-process-internal"><span class="std std-ref">set_process_internal</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-processing-unhandled-input">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_processing_unhandled_input"></a>is_processing_unhandled_input</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is processing unhandled input (see <a class="reference internal" href="#class-node-method-set-process-unhandled-input"><span class="std std-ref">set_process_unhandled_input</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-is-processing-unhandled-key-input">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_processing_unhandled_key_input"></a>is_processing_unhandled_key_input</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is processing unhandled key input (see <a class="reference internal" href="#class-node-method-set-process-unhandled-key-input"><span class="std std-ref">set_process_unhandled_key_input</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-move-child">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_child"></a>move_child</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> child_node, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_position <strong>)</strong></p></li>
+</ul>
+<p>Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-print-stray-nodes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/print_stray_nodes"></a>print_stray_nodes</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Prints all stray nodes (nodes outside the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>). Used for debugging. Works only in debug builds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-print-tree">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/print_tree"></a>print_tree</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Prints the tree to stdout. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the <a class="reference internal" href="#class-node-method-get-node"><span class="std std-ref">get_node</span></a> function.</p>
+<p><strong>Example output:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">TheGame</span>
+<span class="n">TheGame</span><span class="o">/</span><span class="n">Menu</span>
+<span class="n">TheGame</span><span class="o">/</span><span class="n">Menu</span><span class="o">/</span><span class="n">Label</span>
+<span class="n">TheGame</span><span class="o">/</span><span class="n">Menu</span><span class="o">/</span><span class="n">Camera2D</span>
+<span class="n">TheGame</span><span class="o">/</span><span class="n">SplashScreen</span>
+<span class="n">TheGame</span><span class="o">/</span><span class="n">SplashScreen</span><span class="o">/</span><span class="n">Camera2D</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-print-tree-pretty">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/print_tree_pretty"></a>print_tree_pretty</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Similar to <a class="reference internal" href="#class-node-method-print-tree"><span class="std std-ref">print_tree</span></a>, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees.</p>
+<p><strong>Example output:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">┖╴</span><span class="n">TheGame</span>
+   <span class="err">┠╴</span><span class="n">Menu</span>
+   <span class="err">┃</span>  <span class="err">┠╴</span><span class="n">Label</span>
+   <span class="err">┃</span>  <span class="err">┖╴</span><span class="n">Camera2D</span>
+   <span class="err">┖╴</span><span class="n">SplashScreen</span>
+      <span class="err">┖╴</span><span class="n">Camera2D</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-propagate-call">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/propagate_call"></a>propagate_call</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> args=[  ], <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> parent_first=false <strong>)</strong></p></li>
+</ul>
+<p>Calls the given method (if present) with the arguments given in <code class="docutils literal notranslate"><span class="pre">args</span></code> on this node and recursively on all its children. If the <code class="docutils literal notranslate"><span class="pre">parent_first</span></code> argument is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the method will be called on the current node first, then on all its children. If <code class="docutils literal notranslate"><span class="pre">parent_first</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the children will be called first.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-propagate-notification">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/propagate_notification"></a>propagate_notification</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what <strong>)</strong></p></li>
+</ul>
+<p>Notifies the current node and all its children recursively by calling <a class="reference internal" href="class_object.html#id3"><span class="std std-ref">Object.notification</span></a> on all of them.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-queue-free">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue_free"></a>queue_free</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to <a class="reference internal" href="class_object.html#class-object-method-free"><span class="std std-ref">Object.free</span></a>. Use <a class="reference internal" href="class_object.html#class-object-method-is-queued-for-deletion"><span class="std std-ref">Object.is_queued_for_deletion</span></a> to check whether a node will be deleted at the end of the frame.</p>
+<p><strong>Important:</strong> If you have a variable pointing to a node, it will <em>not</em> be assigned to <code class="docutils literal notranslate"><span class="pre">null</span></code> once the node is freed. Instead, it will point to a <em>previously freed instance</em> and you should validate it with <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-is-instance-valid"><span class="std std-ref">@GDScript.is_instance_valid</span></a> before attempting to call its methods or access its properties.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-raise">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/raise"></a>raise</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Moves this node to the bottom of parent node's children hierarchy. This is often useful in GUIs (<a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> nodes), because their order of drawing depends on their order in the tree. The top Node is drawn first, then any siblings below the top Node in the hierarchy are successively drawn on top of it. After using <code class="docutils literal notranslate"><span class="pre">raise</span></code>, a Control will be drawn on top of its siblings.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-remove-and-skip">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_and_skip"></a>remove_and_skip</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes a node and sets all its children as children of the parent node (if it exists). All event subscriptions that pass by the removed node will be unsubscribed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-remove-child">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_child"></a>remove_child</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Removes a child node. The node is NOT deleted and must be deleted manually.</p>
+<p><strong>Note:</strong> This function may set the <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a> of the removed Node (or its descendants) to be <code class="docutils literal notranslate"><span class="pre">null</span></code>, if that <a class="reference internal" href="#class-node-property-owner"><span class="std std-ref">owner</span></a> is no longer a parent or ancestor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-remove-from-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_from_group"></a>remove_from_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong></p></li>
+</ul>
+<p>Removes a node from a group. See notes in the description, and the group methods in <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-replace-by">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/replace_by"></a>replace_by</strong> <strong>(</strong> <a class="reference internal" href="#class-node"><span class="std std-ref">Node</span></a> node, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> keep_data=false <strong>)</strong></p></li>
+</ul>
+<p>Replaces a node in a scene by the given one. Subscriptions that pass through this node will be lost.</p>
+<p>Note that the replaced node is not automatically freed, so you either need to keep it in a variable for later use or free it using <a class="reference internal" href="class_object.html#class-object-method-free"><span class="std std-ref">Object.free</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-request-ready">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/request_ready"></a>request_ready</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Requests that <code class="docutils literal notranslate"><span class="pre">_ready</span></code> be called again. Note that the method won't be called immediately, but is scheduled for when the node is added to the scene tree again (see <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a>). <code class="docutils literal notranslate"><span class="pre">_ready</span></code> is called only for the node which requested it, which means that you need to request ready for each child if you want them to call <code class="docutils literal notranslate"><span class="pre">_ready</span></code> too (in which case, <code class="docutils literal notranslate"><span class="pre">_ready</span></code> will be called in the same order as it would normally).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rpc">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rpc"></a>rpc</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Sends a remote procedure call request for the given <code class="docutils literal notranslate"><span class="pre">method</span></code> to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see <a class="reference internal" href="#class-node-method-rpc-config"><span class="std std-ref">rpc_config</span></a>. Methods are not exposed to RPCs by default. See also <a class="reference internal" href="#class-node-method-rset"><span class="std std-ref">rset</span></a> and <a class="reference internal" href="#class-node-method-rset-config"><span class="std std-ref">rset_config</span></a> for properties. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p><strong>Note:</strong> You can only safely use RPCs on clients after you received the <code class="docutils literal notranslate"><span class="pre">connected_to_server</span></code> signal from the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>. You also need to keep track of the connection state, either by the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> signals like <code class="docutils literal notranslate"><span class="pre">server_disconnected</span></code> or by checking <code class="docutils literal notranslate"><span class="pre">SceneTree.network_peer.get_connection_status()</span> <span class="pre">==</span> <span class="pre">CONNECTION_CONNECTED</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rpc-config">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rpc_config"></a>rpc_config</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Changes the RPC mode for the given <code class="docutils literal notranslate"><span class="pre">method</span></code> to the given <code class="docutils literal notranslate"><span class="pre">mode</span></code>. See <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a>. An alternative is annotating methods and properties with the corresponding keywords (<code class="docutils literal notranslate"><span class="pre">remote</span></code>, <code class="docutils literal notranslate"><span class="pre">master</span></code>, <code class="docutils literal notranslate"><span class="pre">puppet</span></code>, <code class="docutils literal notranslate"><span class="pre">remotesync</span></code>, <code class="docutils literal notranslate"><span class="pre">mastersync</span></code>, <code class="docutils literal notranslate"><span class="pre">puppetsync</span></code>). By default, methods are not exposed to networking (and RPCs). See also <a class="reference internal" href="#class-node-method-rset"><span class="std std-ref">rset</span></a> and <a class="reference internal" href="#class-node-method-rset-config"><span class="std std-ref">rset_config</span></a> for properties.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rpc-id">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rpc_id"></a>rpc_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Sends a <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> to a specific peer identified by <code class="docutils literal notranslate"><span class="pre">peer_id</span></code> (see <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-method-set-target-peer"><span class="std std-ref">NetworkedMultiplayerPeer.set_target_peer</span></a>). Returns <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rpc-unreliable">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rpc_unreliable"></a>rpc_unreliable</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Sends a <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> using an unreliable protocol. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rpc-unreliable-id">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rpc_unreliable_id"></a>rpc_unreliable_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Sends a <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> to a specific peer identified by <code class="docutils literal notranslate"><span class="pre">peer_id</span></code> using an unreliable protocol (see <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-method-set-target-peer"><span class="std std-ref">NetworkedMultiplayerPeer.set_target_peer</span></a>). Returns <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rset"></a>rset</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Remotely changes a property's value on other peers (and locally). Behaviour depends on the RPC configuration for the given property, see <a class="reference internal" href="#class-node-method-rset-config"><span class="std std-ref">rset_config</span></a>. See also <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> for RPCs for methods, most information applies to this method as well.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rset-config">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rset_config"></a>rset_config</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Changes the RPC mode for the given <code class="docutils literal notranslate"><span class="pre">property</span></code> to the given <code class="docutils literal notranslate"><span class="pre">mode</span></code>. See <a class="reference internal" href="class_multiplayerapi.html#enum-multiplayerapi-rpcmode"><span class="std std-ref">RPCMode</span></a>. An alternative is annotating methods and properties with the corresponding keywords (<code class="docutils literal notranslate"><span class="pre">remote</span></code>, <code class="docutils literal notranslate"><span class="pre">master</span></code>, <code class="docutils literal notranslate"><span class="pre">puppet</span></code>, <code class="docutils literal notranslate"><span class="pre">remotesync</span></code>, <code class="docutils literal notranslate"><span class="pre">mastersync</span></code>, <code class="docutils literal notranslate"><span class="pre">puppetsync</span></code>). By default, properties are not exposed to networking (and RPCs). See also <a class="reference internal" href="#class-node-method-rpc"><span class="std std-ref">rpc</span></a> and <a class="reference internal" href="#class-node-method-rpc-config"><span class="std std-ref">rpc_config</span></a> for methods.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rset-id">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rset_id"></a>rset_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Remotely changes the property's value on a specific peer identified by <code class="docutils literal notranslate"><span class="pre">peer_id</span></code> (see <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-method-set-target-peer"><span class="std std-ref">NetworkedMultiplayerPeer.set_target_peer</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rset-unreliable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rset_unreliable"></a>rset_unreliable</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Remotely changes the property's value on other peers (and locally) using an unreliable protocol.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-rset-unreliable-id">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rset_unreliable_id"></a>rset_unreliable_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> peer_id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Remotely changes property's value on a specific peer identified by <code class="docutils literal notranslate"><span class="pre">peer_id</span></code> using an unreliable protocol (see <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-method-set-target-peer"><span class="std std-ref">NetworkedMultiplayerPeer.set_target_peer</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-display-folded">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_display_folded"></a>set_display_folded</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> fold <strong>)</strong></p></li>
+</ul>
+<p>Sets the folded state of the node in the Scene dock.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-network-master">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_network_master"></a>set_network_master</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recursive=true <strong>)</strong></p></li>
+</ul>
+<p>Sets the node's network master to the peer with the given peer ID. The network master is the peer that has authority over the node on the network. Useful in conjunction with the <code class="docutils literal notranslate"><span class="pre">master</span></code> and <code class="docutils literal notranslate"><span class="pre">puppet</span></code> keywords. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If <code class="docutils literal notranslate"><span class="pre">recursive</span></code>, the given peer is recursively set as the master for all children of this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-physics-process">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_physics_process"></a>set_physics_process</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a <a class="reference internal" href="#class-node-constant-notification-physics-process"><span class="std std-ref">NOTIFICATION_PHYSICS_PROCESS</span></a> at a fixed (usually 60 FPS, see <a class="reference internal" href="class_engine.html#class-engine-property-iterations-per-second"><span class="std std-ref">Engine.iterations_per_second</span></a> to change) interval (and the <a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a> callback will be called if exists). Enabled automatically if <a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a> is overridden. Any calls to this before <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> will be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-physics-process-internal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_physics_process_internal"></a>set_physics_process_internal</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables internal physics for this node. Internal physics processing happens in isolation from the normal <a class="reference internal" href="#class-node-method-physics-process"><span class="std std-ref">_physics_process</span></a> calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or physics processing is disabled for scripting (<a class="reference internal" href="#class-node-method-set-physics-process"><span class="std std-ref">set_physics_process</span></a>). Only useful for advanced uses to manipulate built-in nodes' behavior.</p>
+<p><strong>Warning:</strong> Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-process">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_process"></a>set_process</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables processing. When a node is being processed, it will receive a <a class="reference internal" href="#class-node-constant-notification-process"><span class="std std-ref">NOTIFICATION_PROCESS</span></a> on every drawn frame (and the <a class="reference internal" href="#class-node-method-process"><span class="std std-ref">_process</span></a> callback will be called if exists). Enabled automatically if <a class="reference internal" href="#class-node-method-process"><span class="std std-ref">_process</span></a> is overridden. Any calls to this before <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> will be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-process-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_process_input"></a>set_process_input</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables input processing. This is not required for GUI controls! Enabled automatically if <a class="reference internal" href="#class-node-method-input"><span class="std std-ref">_input</span></a> is overridden. Any calls to this before <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> will be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-process-internal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_process_internal"></a>set_process_internal</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal <a class="reference internal" href="#class-node-method-process"><span class="std std-ref">_process</span></a> calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (<a class="reference internal" href="#class-node-method-set-process"><span class="std std-ref">set_process</span></a>). Only useful for advanced uses to manipulate built-in nodes' behavior.</p>
+<p><strong>Warning:</strong> Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-process-unhandled-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_process_unhandled_input"></a>set_process_unhandled_input</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables unhandled input processing. This is not required for GUI controls! It enables the node to receive all input that was not previously handled (usually by a <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>). Enabled automatically if <a class="reference internal" href="#class-node-method-unhandled-input"><span class="std std-ref">_unhandled_input</span></a> is overridden. Any calls to this before <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> will be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-process-unhandled-key-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_process_unhandled_key_input"></a>set_process_unhandled_key_input</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables unhandled key input processing. Enabled automatically if <a class="reference internal" href="#class-node-method-unhandled-key-input"><span class="std std-ref">_unhandled_key_input</span></a> is overridden. Any calls to this before <a class="reference internal" href="#class-node-method-ready"><span class="std std-ref">_ready</span></a> will be ignored.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-set-scene-instance-load-placeholder">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_scene_instance_load_placeholder"></a>set_scene_instance_load_placeholder</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> load_placeholder <strong>)</strong></p></li>
+</ul>
+<p>Sets whether this is an instance load placeholder. See <a class="reference internal" href="class_instanceplaceholder.html#class-instanceplaceholder"><span class="std std-ref">InstancePlaceholder</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node-method-update-configuration-warning">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_configuration_warning"></a>update_configuration_warning</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Updates the warning displayed for this node in the Scene Dock.</p>
+<p>Use <a class="reference internal" href="#class-node-method-get-configuration-warning"><span class="std std-ref">_get_configuration_warning</span></a> to setup the warning message to display.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_ninepatchrect.html" rel="prev" title="NinePatchRect"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_node2d.html" rel="next" title="Node2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

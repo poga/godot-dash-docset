@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorInterface" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorinterface.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Godot editor's interface. Description: EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, renderi..." property="og:description"/>
+<meta content="Godot editor's interface. EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and o..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorInterface — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinterface.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorinterface.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorinterface.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorinterface.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorinterface.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorinterface.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorinterface.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorinterface.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorinterface.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorinterface.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorinterface.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorinterface.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorinterface.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorinterface.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinterface.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinterface.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editornavigationmeshgenerator.html" rel="next" title="EditorNavigationMeshGenerator"/>
+<link href="class_editorinspectorplugin.html" rel="prev" title="EditorInspectorPlugin"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorInterface</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorinterface">
+<span id="class-editorinterface"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorInterface¶"></a>EditorInterface<a class="headerlink" href="#editorinterface" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Godot editor's interface.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to <a class="reference internal" href="class_editorsettings.html#class-editorsettings"><span class="std std-ref">EditorSettings</span></a>, <a class="reference internal" href="class_editorfilesystem.html#class-editorfilesystem"><span class="std std-ref">EditorFileSystem</span></a>, <a class="reference internal" href="class_editorresourcepreview.html#class-editorresourcepreview"><span class="std std-ref">EditorResourcePreview</span></a>, <a class="reference internal" href="class_scripteditor.html#class-scripteditor"><span class="std std-ref">ScriptEditor</span></a>, the editor viewport, and information about scenes.</p>
+<p><strong>Note:</strong> This class shouldn't be instantiated directly. Instead, access the singleton using <a class="reference internal" href="class_editorplugin.html#class-editorplugin-method-get-editor-interface"><span class="std std-ref">EditorPlugin.get_editor_interface</span></a>.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-property-distraction-free-mode"><span class="std std-ref">distraction_free_mode</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-edit-node"><span class="std std-ref">edit_node</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-edit-resource"><span class="std std-ref">edit_resource</span></a> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-edit-script"><span class="std std-ref">edit_script</span></a> <strong>(</strong> <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> script, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> line=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> column=0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> grab_focus=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-base-control"><span class="std std-ref">get_base_control</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-current-path"><span class="std std-ref">get_current_path</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-edited-scene-root"><span class="std std-ref">get_edited_scene_root</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-editor-scale"><span class="std std-ref">get_editor_scale</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_editorsettings.html#class-editorsettings"><span class="std std-ref">EditorSettings</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-editor-settings"><span class="std std-ref">get_editor_settings</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-editor-viewport"><span class="std std-ref">get_editor_viewport</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_filesystemdock.html#class-filesystemdock"><span class="std std-ref">FileSystemDock</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-file-system-dock"><span class="std std-ref">get_file_system_dock</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-inspector"><span class="std std-ref">get_inspector</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-open-scenes"><span class="std std-ref">get_open_scenes</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-playing-scene"><span class="std std-ref">get_playing_scene</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_editorfilesystem.html#class-editorfilesystem"><span class="std std-ref">EditorFileSystem</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-resource-filesystem"><span class="std std-ref">get_resource_filesystem</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_editorresourcepreview.html#class-editorresourcepreview"><span class="std std-ref">EditorResourcePreview</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-resource-previewer"><span class="std std-ref">get_resource_previewer</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_scripteditor.html#class-scripteditor"><span class="std std-ref">ScriptEditor</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-script-editor"><span class="std std-ref">get_script_editor</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-selected-path"><span class="std std-ref">get_selected_path</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_editorselection.html#class-editorselection"><span class="std std-ref">EditorSelection</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-get-selection"><span class="std std-ref">get_selection</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-inspect-object"><span class="std std-ref">inspect_object</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> for_property="", <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> inspector_only=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-is-playing-scene"><span class="std std-ref">is_playing_scene</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-is-plugin-enabled"><span class="std std-ref">is_plugin_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plugin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-make-mesh-previews"><span class="std std-ref">make_mesh_previews</span></a> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> meshes, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> preview_size <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-open-scene-from-path"><span class="std std-ref">open_scene_from_path</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-play-current-scene"><span class="std std-ref">play_current_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-play-custom-scene"><span class="std std-ref">play_custom_scene</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-play-main-scene"><span class="std std-ref">play_main_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-reload-scene-from-path"><span class="std std-ref">reload_scene_from_path</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-save-scene"><span class="std std-ref">save_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-save-scene-as"><span class="std std-ref">save_scene_as</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_preview=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-select-file"><span class="std std-ref">select_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-set-main-screen-editor"><span class="std std-ref">set_main_screen_editor</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-set-plugin-enabled"><span class="std std-ref">set_plugin_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plugin, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinterface-method-stop-playing-scene"><span class="std std-ref">stop_playing_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorinterface-property-distraction-free-mode">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/distraction_free_mode"></a>distraction_free_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_distraction_free_mode(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_distraction_free_mode_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables distraction-free mode which hides side docks to increase the space available for the main view.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorinterface-method-edit-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/edit_node"></a>edit_node</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Edits the given <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>. The node will be also selected if it's inside the scene tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-edit-resource">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/edit_resource"></a>edit_resource</strong> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource <strong>)</strong></p></li>
+</ul>
+<p>Edits the given <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a>. If the resource is a <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> you can also edit it with <a class="reference internal" href="#class-editorinterface-method-edit-script"><span class="std std-ref">edit_script</span></a> to specify the line and column position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-edit-script">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/edit_script"></a>edit_script</strong> <strong>(</strong> <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> script, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> line=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> column=0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> grab_focus=true <strong>)</strong></p></li>
+</ul>
+<p>Edits the given <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a>. The line and column on which to open the script can also be specified. The script will be open with the user-configured editor for the script's language which may be an external editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-base-control">
+<li><p><a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_base_control"></a>get_base_control</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-current-path">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_path"></a>get_current_path</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current path being viewed in the <a class="reference internal" href="class_filesystemdock.html#class-filesystemdock"><span class="std std-ref">FileSystemDock</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-edited-scene-root">
+<li><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edited_scene_root"></a>get_edited_scene_root</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the edited (current) scene's root <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-editor-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_editor_scale"></a>get_editor_scale</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the actual scale of the editor UI (<code class="docutils literal notranslate"><span class="pre">1.0</span></code> being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.</p>
+<p><strong>Note:</strong> This value is set via the <code class="docutils literal notranslate"><span class="pre">interface/editor/display_scale</span></code> and <code class="docutils literal notranslate"><span class="pre">interface/editor/custom_display_scale</span></code> editor settings. Editor must be restarted for changes to be properly applied.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-editor-settings">
+<li><p><a class="reference internal" href="class_editorsettings.html#class-editorsettings"><span class="std std-ref">EditorSettings</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_editor_settings"></a>get_editor_settings</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_editorsettings.html#class-editorsettings"><span class="std std-ref">EditorSettings</span></a> instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-editor-viewport">
+<li><p><a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_editor_viewport"></a>get_editor_viewport</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the main editor control. Use this as a parent for main screens.</p>
+<p><strong>Note:</strong> This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render a part of the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-file-system-dock">
+<li><p><a class="reference internal" href="class_filesystemdock.html#class-filesystemdock"><span class="std std-ref">FileSystemDock</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_file_system_dock"></a>get_file_system_dock</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_filesystemdock.html#class-filesystemdock"><span class="std std-ref">FileSystemDock</span></a> instance.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render a part of the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-inspector">
+<li><p><a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_inspector"></a>get_inspector</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a> instance.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render a part of the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-open-scenes">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_open_scenes"></a>get_open_scenes</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> with the file paths of the currently opened scenes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-playing-scene">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_playing_scene"></a>get_playing_scene</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the scene that is being played. If no scene is currently being played, returns an empty string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-resource-filesystem">
+<li><p><a class="reference internal" href="class_editorfilesystem.html#class-editorfilesystem"><span class="std std-ref">EditorFileSystem</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_resource_filesystem"></a>get_resource_filesystem</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_editorfilesystem.html#class-editorfilesystem"><span class="std std-ref">EditorFileSystem</span></a> instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-resource-previewer">
+<li><p><a class="reference internal" href="class_editorresourcepreview.html#class-editorresourcepreview"><span class="std std-ref">EditorResourcePreview</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_resource_previewer"></a>get_resource_previewer</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_editorresourcepreview.html#class-editorresourcepreview"><span class="std std-ref">EditorResourcePreview</span></a> instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-script-editor">
+<li><p><a class="reference internal" href="class_scripteditor.html#class-scripteditor"><span class="std std-ref">ScriptEditor</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_script_editor"></a>get_script_editor</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_scripteditor.html#class-scripteditor"><span class="std std-ref">ScriptEditor</span></a> instance.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render a part of the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-selected-path">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_selected_path"></a>get_selected_path</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the path of the directory currently selected in the <a class="reference internal" href="class_filesystemdock.html#class-filesystemdock"><span class="std std-ref">FileSystemDock</span></a>. If a file is selected, its base directory will be returned using <a class="reference internal" href="class_string.html#class-string-method-get-base-dir"><span class="std std-ref">String.get_base_dir</span></a> instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-get-selection">
+<li><p><a class="reference internal" href="class_editorselection.html#class-editorselection"><span class="std std-ref">EditorSelection</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_selection"></a>get_selection</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the editor's <a class="reference internal" href="class_editorselection.html#class-editorselection"><span class="std std-ref">EditorSelection</span></a> instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-inspect-object">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/inspect_object"></a>inspect_object</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> for_property="", <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> inspector_only=false <strong>)</strong></p></li>
+</ul>
+<p>Shows the given property on the given <code class="docutils literal notranslate"><span class="pre">object</span></code> in the editor's Inspector dock. If <code class="docutils literal notranslate"><span class="pre">inspector_only</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, plugins will not attempt to edit <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-is-playing-scene">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_playing_scene"></a>is_playing_scene</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a scene is currently being played, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. Paused scenes are considered as being played.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-is-plugin-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_plugin_enabled"></a>is_plugin_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plugin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified <code class="docutils literal notranslate"><span class="pre">plugin</span></code> is enabled. The plugin name is the same as its directory name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-make-mesh-previews">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_mesh_previews"></a>make_mesh_previews</strong> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> meshes, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> preview_size <strong>)</strong></p></li>
+</ul>
+<p>Returns mesh previews rendered at the given size as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-open-scene-from-path">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open_scene_from_path"></a>open_scene_from_path</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></li>
+</ul>
+<p>Opens the scene at the given path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-play-current-scene">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play_current_scene"></a>play_current_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Plays the currently active scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-play-custom-scene">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play_custom_scene"></a>play_custom_scene</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></li>
+</ul>
+<p>Plays the scene specified by its filepath.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-play-main-scene">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play_main_scene"></a>play_main_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Plays the main scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-reload-scene-from-path">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reload_scene_from_path"></a>reload_scene_from_path</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scene_filepath <strong>)</strong></p></li>
+</ul>
+<p>Reloads the scene at the given path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-save-scene">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/save_scene"></a>save_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Saves the scene. Returns either <code class="docutils literal notranslate"><span class="pre">OK</span></code> or <code class="docutils literal notranslate"><span class="pre">ERR_CANT_CREATE</span></code> (see <a class="reference internal" href="class_%40globalscope.html#class-globalscope"><span class="std std-ref">@GlobalScope</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-save-scene-as">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/save_scene_as"></a>save_scene_as</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_preview=true <strong>)</strong></p></li>
+</ul>
+<p>Saves the scene as a file at <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-select-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/select_file"></a>select_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong></p></li>
+</ul>
+<p>Selects the file, with the path provided by <code class="docutils literal notranslate"><span class="pre">file</span></code>, in the FileSystem dock.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-set-main-screen-editor">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_main_screen_editor"></a>set_main_screen_editor</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets the editor's current main screen to the one specified in <code class="docutils literal notranslate"><span class="pre">name</span></code>. <code class="docutils literal notranslate"><span class="pre">name</span></code> must match the text of the tab in question exactly (<code class="docutils literal notranslate"><span class="pre">2D</span></code>, <code class="docutils literal notranslate"><span class="pre">3D</span></code>, <code class="docutils literal notranslate"><span class="pre">Script</span></code>, <code class="docutils literal notranslate"><span class="pre">AssetLib</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-set-plugin-enabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_plugin_enabled"></a>set_plugin_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plugin, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>Sets the enabled status of a plugin. The plugin name is the same as its directory name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinterface-method-stop-playing-scene">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop_playing_scene"></a>stop_playing_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops the scene that is currently playing.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorinspectorplugin.html" rel="prev" title="EditorInspectorPlugin"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editornavigationmeshgenerator.html" rel="next" title="EditorNavigationMeshGenerator">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="SpriteBase3D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_spritebase3d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: GeometryInstance&lt; VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Inherited By: AnimatedSprite3D, Sprite3D 2D sprite node in 3D environment. Description: A node that displays 2D textu..." property="og:description"/>
+<meta content="2D sprite node in 3D environment. A node that displays 2D texture information in a 3D environment. AlphaCutMode alpha_cut 0 Vector3.Axis axis 2 BillboardMode billboard 0 bool centered true bool double_sided true bool..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) SpriteBase3D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spritebase3d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_spritebase3d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_spritebase3d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_spritebase3d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_spritebase3d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_spritebase3d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_spritebase3d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_spritebase3d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_spritebase3d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_spritebase3d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_spritebase3d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_spritebase3d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_spritebase3d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_spritebase3d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spritebase3d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spritebase3d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_spriteframes.html" rel="next" title="SpriteFrames"/>
+<link href="class_sprite3d.html" rel="prev" title="Sprite3D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>SpriteBase3D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="spritebase3d">
+<span id="class-spritebase3d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/SpriteBase3D¶"></a>SpriteBase3D<a class="headerlink" href="#spritebase3d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance"><span class="std std-ref">GeometryInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_animatedsprite3d.html#class-animatedsprite3d"><span class="std std-ref">AnimatedSprite3D</span></a>, <a class="reference internal" href="class_sprite3d.html#class-sprite3d"><span class="std std-ref">Sprite3D</span></a></p>
+<p>2D sprite node in 3D environment.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A node that displays 2D texture information in a 3D environment.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 43%"/>
+<col style="width: 17%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-spritebase3d-alphacutmode"><span class="std std-ref">AlphaCutMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-alpha-cut"><span class="std std-ref">alpha_cut</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Vector3.Axis</p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-axis"><span class="std std-ref">axis</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_spatialmaterial.html#enum-spatialmaterial-billboardmode"><span class="std std-ref">BillboardMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-billboard"><span class="std std-ref">billboard</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-centered"><span class="std std-ref">centered</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-double-sided"><span class="std std-ref">double_sided</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-flip-h"><span class="std std-ref">flip_h</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-flip-v"><span class="std std-ref">flip_v</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-modulate"><span class="std std-ref">modulate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-offset"><span class="std std-ref">offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-opacity"><span class="std std-ref">opacity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-pixel-size"><span class="std std-ref">pixel_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-shaded"><span class="std std-ref">shaded</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-property-transparent"><span class="std std-ref">transparent</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_trianglemesh.html#class-trianglemesh"><span class="std std-ref">TriangleMesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-method-generate-triangle-mesh"><span class="std std-ref">generate_triangle_mesh</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-method-get-draw-flag"><span class="std std-ref">get_draw_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-spritebase3d-drawflags"><span class="std std-ref">DrawFlags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-method-get-item-rect"><span class="std std-ref">get_item_rect</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spritebase3d-method-set-draw-flag"><span class="std std-ref">set_draw_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-spritebase3d-drawflags"><span class="std std-ref">DrawFlags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-spritebase3d-constant-flag-max"><span id="class-spritebase3d-constant-flag-double-sided"></span><span id="class-spritebase3d-constant-flag-shaded"></span><span id="class-spritebase3d-constant-flag-transparent"></span><span id="enum-spritebase3d-drawflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DrawFlags"></a>DrawFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>FLAG_TRANSPARENT</strong> = <strong>0</strong> --- If set, the texture's transparency and the opacity are used to make those parts of the sprite invisible.</p></li>
+<li><p><strong>FLAG_SHADED</strong> = <strong>1</strong> --- If set, lights in the environment affect the sprite.</p></li>
+<li><p><strong>FLAG_DOUBLE_SIDED</strong> = <strong>2</strong> --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.</p></li>
+<li><p><strong>FLAG_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-spritebase3d-drawflags"><span class="std std-ref">DrawFlags</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-spritebase3d-constant-alpha-cut-opaque-prepass"><span id="class-spritebase3d-constant-alpha-cut-discard"></span><span id="class-spritebase3d-constant-alpha-cut-disabled"></span><span id="enum-spritebase3d-alphacutmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AlphaCutMode"></a>AlphaCutMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>ALPHA_CUT_DISABLED</strong> = <strong>0</strong></p></li>
+<li><p><strong>ALPHA_CUT_DISCARD</strong> = <strong>1</strong></p></li>
+<li><p><strong>ALPHA_CUT_OPAQUE_PREPASS</strong> = <strong>2</strong></p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-spritebase3d-property-alpha-cut">
+<li><p><a class="reference internal" href="#enum-spritebase3d-alphacutmode"><span class="std std-ref">AlphaCutMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/alpha_cut"></a>alpha_cut</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_alpha_cut_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_alpha_cut_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-axis">
+<li><p>Vector3.Axis <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis"></a>axis</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The direction in which the front of the texture faces.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-billboard">
+<li><p><a class="reference internal" href="class_spatialmaterial.html#enum-spatialmaterial-billboardmode"><span class="std std-ref">BillboardMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/billboard"></a>billboard</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_billboard_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_billboard_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-centered">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/centered"></a>centered</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_centered(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_centered()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, texture will be centered.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-double-sided">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/double_sided"></a>double_sided</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_draw_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, texture can be seen from the back as well, if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is invisible when looking at it from behind.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-flip-h">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flip_h"></a>flip_h</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flip_h(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_flipped_h()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, texture is flipped horizontally.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-flip-v">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flip_v"></a>flip_v</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flip_v(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_flipped_v()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, texture is flipped vertically.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/modulate"></a>modulate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_modulate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_modulate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>A color value used to <em>multiply</em> the texture's colors. Can be used for mood-coloring or to simulate the color of light.</p>
+<p><strong>Note:</strong> If a <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance-property-material-override"><span class="std std-ref">GeometryInstance.material_override</span></a> is defined on the <code class="docutils literal notranslate"><span class="pre">SpriteBase3D</span></code>, the material override must be configured to take vertex colors into account for albedo. Otherwise, the color defined in <a class="reference internal" href="#class-spritebase3d-property-modulate"><span class="std std-ref">modulate</span></a> will be ignored. For a <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a>, <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-property-vertex-color-use-as-albedo"><span class="std std-ref">SpatialMaterial.vertex_color_use_as_albedo</span></a> must be <code class="docutils literal notranslate"><span class="pre">true</span></code>. For a <a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a>, <code class="docutils literal notranslate"><span class="pre">ALBEDO</span> <span class="pre">*=</span> <span class="pre">COLOR.rgb;[/color]</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">inserted</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">shader's</span> <span class="pre">[code]fragment()</span></code> function.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/offset"></a>offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The texture's drawing offset.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-opacity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/opacity"></a>opacity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_opacity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_opacity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The texture's visibility on a scale from <code class="docutils literal notranslate"><span class="pre">0</span></code> (fully invisible) to <code class="docutils literal notranslate"><span class="pre">1</span></code> (fully visible). <a class="reference internal" href="#class-spritebase3d-property-opacity"><span class="std std-ref">opacity</span></a> is a multiplier for the <a class="reference internal" href="#class-spritebase3d-property-modulate"><span class="std std-ref">modulate</span></a> color's alpha channel.</p>
+<p><strong>Note:</strong> If a <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance-property-material-override"><span class="std std-ref">GeometryInstance.material_override</span></a> is defined on the <code class="docutils literal notranslate"><span class="pre">SpriteBase3D</span></code>, the material override must be configured to take vertex colors into account for albedo. Otherwise, the opacity defined in <a class="reference internal" href="#class-spritebase3d-property-opacity"><span class="std std-ref">opacity</span></a> will be ignored. For a <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a>, <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-property-vertex-color-use-as-albedo"><span class="std std-ref">SpatialMaterial.vertex_color_use_as_albedo</span></a> must be <code class="docutils literal notranslate"><span class="pre">true</span></code>. For a <a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a>, <code class="docutils literal notranslate"><span class="pre">ALPHA</span> <span class="pre">*=</span> <span class="pre">COLOR.a;[/color]</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">inserted</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">shader's</span> <span class="pre">[code]fragment()</span></code> function.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-pixel-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/pixel_size"></a>pixel_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pixel_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_pixel_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of one pixel's width on the sprite to scale it in 3D.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-shaded">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shaded"></a>shaded</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_draw_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <a class="reference internal" href="class_light.html#class-light"><span class="std std-ref">Light</span></a> in the <a class="reference internal" href="class_environment.html#class-environment"><span class="std std-ref">Environment</span></a> has effects on the sprite.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-property-transparent">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transparent"></a>transparent</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_draw_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the texture's transparency and the opacity are used to make those parts of the sprite invisible.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-spritebase3d-method-generate-triangle-mesh">
+<li><p><a class="reference internal" href="class_trianglemesh.html#class-trianglemesh"><span class="std std-ref">TriangleMesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generate_triangle_mesh"></a>generate_triangle_mesh</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-method-get-draw-flag">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_draw_flag"></a>get_draw_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-spritebase3d-drawflags"><span class="std std-ref">DrawFlags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of the specified flag.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-method-get-item-rect">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_rect"></a>get_item_rect</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the rectangle representing this sprite.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spritebase3d-method-set-draw-flag">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_draw_flag"></a>set_draw_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-spritebase3d-drawflags"><span class="std std-ref">DrawFlags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the specified flag will be enabled.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_sprite3d.html" rel="prev" title="Sprite3D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_spriteframes.html" rel="next" title="SpriteFrames">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Array" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_array.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="A generic array datatype. Description: A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the b..." property="og:description"/>
+<meta content="A generic array datatype. A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the la..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Array — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_array.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_array.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_array.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_array.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_array.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_array.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_array.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_array.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_array.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_array.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_array.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_array.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_array.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_array.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_array.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_array.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_arraymesh.html" rel="next" title="ArrayMesh"/>
+<link href="class_area2d.html" rel="prev" title="Area2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Array</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="array">
+<span id="class-array"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Array¶"></a>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h1>
+<p>A generic array datatype.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"One"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Four"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># One.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 3.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Four.</span>
+<span class="n">array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Three"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Three.</span>
+</pre></div>
+</div>
+<p>Arrays can be concatenated using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">array1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"One"</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">var</span> <span class="n">array2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"Four"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array1</span> <span class="o">+</span> <span class="n">array2</span><span class="p">)</span> <span class="c1"># ["One", 2, 3, "Four"]</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Concatenating with the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator will create a new array, which has a cost. If you want to append another array to an existing array, <a class="reference internal" href="#class-array-method-append-array"><span class="std std-ref">append_array</span></a> is more efficient.</p>
+<p><strong>Note:</strong> Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use <a class="reference internal" href="#class-array-method-duplicate"><span class="std std-ref">duplicate</span></a>.</p>
+<p><strong>Note:</strong> When declaring an array with <code class="docutils literal notranslate"><span class="pre">const</span></code>, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using <code class="docutils literal notranslate"><span class="pre">const</span></code> will only prevent assigning the constant with another value after it was initialized.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 87%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-array"><span class="std std-ref">Array</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-append"><span class="std std-ref">append</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-append-array"><span class="std std-ref">append_array</span></a> <strong>(</strong> <a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> array <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-back"><span class="std std-ref">back</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-bsearch"><span class="std std-ref">bsearch</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> before=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-bsearch-custom"><span class="std std-ref">bsearch_custom</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> func, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> before=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-count"><span class="std std-ref">count</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-duplicate"><span class="std std-ref">duplicate</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-empty"><span class="std std-ref">empty</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-erase"><span class="std std-ref">erase</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-find"><span class="std std-ref">find</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-find-last"><span class="std std-ref">find_last</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-front"><span class="std std-ref">front</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-has"><span class="std std-ref">has</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-hash"><span class="std std-ref">hash</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-insert"><span class="std std-ref">insert</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-invert"><span class="std std-ref">invert</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-max"><span class="std std-ref">max</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-min"><span class="std std-ref">min</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-pop-at"><span class="std std-ref">pop_at</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-pop-back"><span class="std std-ref">pop_back</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-pop-front"><span class="std std-ref">pop_front</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-push-back"><span class="std std-ref">push_back</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-push-front"><span class="std std-ref">push_front</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-remove"><span class="std std-ref">remove</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-resize"><span class="std std-ref">resize</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-rfind"><span class="std std-ref">rfind</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-shuffle"><span class="std std-ref">shuffle</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-size"><span class="std std-ref">size</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-array-method-slice"><span class="std std-ref">slice</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> begin, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> end, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> step=1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-sort"><span class="std std-ref">sort</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-array-method-sort-custom"><span class="std std-ref">sort_custom</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> func <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-array-method-array">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Array"></a>Array</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs an array from a <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-append">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/append"></a>append</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Appends an element at the end of the array (alias of <a class="reference internal" href="#class-array-method-push-back"><span class="std std-ref">push_back</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-append-array">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/append_array"></a>append_array</strong> <strong>(</strong> <a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> array <strong>)</strong></p></li>
+</ul>
+<p>Appends another array at the end of this array.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">var</span> <span class="n">array2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">array1</span><span class="o">.</span><span class="n">append_array</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array1</span><span class="p">)</span> <span class="c1"># Prints [1, 2, 3, 4, 5, 6].</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-back">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/back"></a>back</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the last element of the array. Prints an error and returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the array is empty.</p>
+<p><strong>Note:</strong> Calling this function is not the same as writing <code class="docutils literal notranslate"><span class="pre">array[-1]</span></code>. If the array is empty, accessing by index will pause project execution when running from the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-bsearch">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bsearch"></a>bsearch</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> before=true <strong>)</strong></p></li>
+</ul>
+<p>Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a <code class="docutils literal notranslate"><span class="pre">before</span></code> specifier can be passed. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the returned index comes after all existing entries of the value in the array.</p>
+<p><strong>Note:</strong> Calling <a class="reference internal" href="#class-array-method-bsearch"><span class="std std-ref">bsearch</span></a> on an unsorted array results in unexpected behavior.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-bsearch-custom">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bsearch_custom"></a>bsearch_custom</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> func, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> before=true <strong>)</strong></p></li>
+</ul>
+<p>Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method declared in the <code class="docutils literal notranslate"><span class="pre">obj</span></code>. Optionally, a <code class="docutils literal notranslate"><span class="pre">before</span></code> specifier can be passed. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the first argument is less than the second, and return <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">cardinal_to_algebraic</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">a</span><span class="p">:</span>
+        <span class="s2">"one"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="s2">"two"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">2</span>
+        <span class="s2">"three"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">3</span>
+        <span class="s2">"four"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">4</span>
+        <span class="n">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">func</span> <span class="n">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cardinal_to_algebraic</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">cardinal_to_algebraic</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">]</span>
+    <span class="c1"># `compare` is defined in this object, so we use `self` as the `obj` parameter.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">bsearch_custom</span><span class="p">(</span><span class="s2">"three"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"compare"</span><span class="p">,</span> <span class="bp">true</span><span class="p">))</span> <span class="c1"># Expected value is 2.</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Calling <a class="reference internal" href="#class-array-method-bsearch-custom"><span class="std std-ref">bsearch_custom</span></a> on an unsorted array results in unexpected behavior.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears the array. This is equivalent to using <a class="reference internal" href="#class-array-method-resize"><span class="std std-ref">resize</span></a> with a size of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/count"></a>count</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of times an element is in the array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-duplicate">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/duplicate"></a>duplicate</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the array.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">deep</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, a deep copy is performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-empty">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/empty"></a>empty</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the array is empty.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-erase">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/erase"></a>erase</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use <a class="reference internal" href="#class-array-method-remove"><span class="std std-ref">remove</span></a> instead.</p>
+<p><strong>Note:</strong> This method acts in-place and doesn't return a value.</p>
+<p><strong>Note:</strong> On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-find">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find"></a>find</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></li>
+</ul>
+<p>Searches the array for a value and returns its index or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not found. Optionally, the initial search index can be passed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-find-last">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_last"></a>find_last</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Searches the array in reverse order for a value and returns its index or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not found.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-front">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/front"></a>front</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the first element of the array. Prints an error and returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the array is empty.</p>
+<p><strong>Note:</strong> Calling this function is not the same as writing <code class="docutils literal notranslate"><span class="pre">array[0]</span></code>. If the array is empty, accessing by index will pause project execution when running from the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-has">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has"></a>has</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the array contains the given value.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">"inside"</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">"inside"</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="p">[</span><span class="s2">"inside"</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">"outside"</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="p">[</span><span class="s2">"inside"</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="p">[</span><span class="s2">"inside"</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s2">"7"</span><span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> This is equivalent to using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator as follows:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Will evaluate to `true`.</span>
+<span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-hash">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hash"></a>hash</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a hashed 32-bit integer value representing the array and its contents.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">Array</span></code>s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does <em>not</em> imply the arrays are equal, because different arrays can have identical hash values due to hash collisions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-insert">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/insert"></a>insert</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (<code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">==</span> <span class="pre">size()</span></code>).</p>
+<p><strong>Note:</strong> This method acts in-place and doesn't return a value.</p>
+<p><strong>Note:</strong> On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-invert">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/invert"></a>invert</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Reverses the order of the elements in the array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-max">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/max"></a>max</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, <code class="docutils literal notranslate"><span class="pre">null</span></code> is returned.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-min">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/min"></a>min</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, <code class="docutils literal notranslate"><span class="pre">null</span></code> is returned.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-pop-at">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pop_at"></a>pop_at</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Removes and returns the element of the array at index <code class="docutils literal notranslate"><span class="pre">position</span></code>. If negative, <code class="docutils literal notranslate"><span class="pre">position</span></code> is considered relative to the end of the array. Leaves the array untouched and returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the array is empty or if it's accessed out of bounds. An error message is printed when the array is accessed out of bounds, but not when the array is empty.</p>
+<p><strong>Note:</strong> On large arrays, this method can be slower than <a class="reference internal" href="#class-array-method-pop-back"><span class="std std-ref">pop_back</span></a> as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower <a class="reference internal" href="#class-array-method-pop-at"><span class="std std-ref">pop_at</span></a> will be.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-pop-back">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pop_back"></a>pop_back</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes and returns the last element of the array. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the array is empty, without printing an error message. See also <a class="reference internal" href="#class-array-method-pop-front"><span class="std std-ref">pop_front</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-pop-front">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pop_front"></a>pop_front</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes and returns the first element of the array. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the array is empty, without printing an error message. See also <a class="reference internal" href="#class-array-method-pop-back"><span class="std std-ref">pop_back</span></a>.</p>
+<p><strong>Note:</strong> On large arrays, this method is much slower than <a class="reference internal" href="#class-array-method-pop-back"><span class="std std-ref">pop_back</span></a> as it will reindex all the array's elements every time it's called. The larger the array, the slower <a class="reference internal" href="#class-array-method-pop-front"><span class="std std-ref">pop_front</span></a> will be.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-push-back">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/push_back"></a>push_back</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Appends an element at the end of the array. See also <a class="reference internal" href="#class-array-method-push-front"><span class="std std-ref">push_front</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-push-front">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/push_front"></a>push_front</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Adds an element at the beginning of the array. See also <a class="reference internal" href="#class-array-method-push-back"><span class="std std-ref">push_back</span></a>.</p>
+<p><strong>Note:</strong> On large arrays, this method is much slower than <a class="reference internal" href="#class-array-method-push-back"><span class="std std-ref">push_back</span></a> as it will reindex all the array's elements every time it's called. The larger the array, the slower <a class="reference internal" href="#class-array-method-push-front"><span class="std std-ref">push_front</span></a> will be.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-remove">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove"></a>remove</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use <a class="reference internal" href="#class-array-method-erase"><span class="std std-ref">erase</span></a> instead.</p>
+<p><strong>Note:</strong> This method acts in-place and doesn't return a value.</p>
+<p><strong>Note:</strong> On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-resize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/resize"></a>resize</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-rfind">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rfind"></a>rfind</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></li>
+</ul>
+<p>Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-shuffle">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shuffle"></a>shuffle</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Shuffles the array such that the items will have a random order. This method uses the global random number generator common to methods such as <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-randi"><span class="std std-ref">@GDScript.randi</span></a>. Call <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-randomize"><span class="std std-ref">@GDScript.randomize</span></a> to ensure that a new seed will be used each time if you want non-reproducible shuffling.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/size"></a>size</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of elements in the array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-slice">
+<li><p><a class="reference internal" href="#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slice"></a>slice</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> begin, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> end, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> step=1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></li>
+</ul>
+<p>Duplicates the subset described in the function and returns it in an array, deeply copying the array if <code class="docutils literal notranslate"><span class="pre">deep</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Lower and upper index are inclusive, with the <code class="docutils literal notranslate"><span class="pre">step</span></code> describing the change between indices while slicing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-sort">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sort"></a>sort</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Sorts the array.</p>
+<p><strong>Note:</strong> Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"string1"</span><span class="p">,</span> <span class="s2">"string2"</span><span class="p">,</span> <span class="s2">"string10"</span><span class="p">,</span> <span class="s2">"string11"</span><span class="p">]</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">strings</span><span class="p">)</span> <span class="c1"># Prints [string1, string10, string11, string2]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-array-method-sort-custom">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sort_custom"></a>sort_custom</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> func <strong>)</strong></p></li>
+</ul>
+<p>Sorts the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>For two elements <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, if the given method returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, element <code class="docutils literal notranslate"><span class="pre">b</span></code> will be after element <code class="docutils literal notranslate"><span class="pre">a</span></code> in the array.</p>
+<p><strong>Note:</strong> You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">MyCustomSorter</span><span class="p">:</span>
+    <span class="k">static</span> <span class="k">func</span> <span class="n">sort_ascending</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">true</span>
+        <span class="k">return</span> <span class="bp">false</span>
+
+<span class="k">var</span> <span class="n">my_items</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"Potato"</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s2">"Rice"</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"Tomato"</span><span class="p">]]</span>
+<span class="n">my_items</span><span class="o">.</span><span class="n">sort_custom</span><span class="p">(</span><span class="n">MyCustomSorter</span><span class="p">,</span> <span class="s2">"sort_ascending"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_items</span><span class="p">)</span> <span class="c1"># Prints [[4, Tomato], [5, Potato], [9, Rice]].</span>
+</pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_area2d.html" rel="prev" title="Area2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_arraymesh.html" rel="next" title="ArrayMesh">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

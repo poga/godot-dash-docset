@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Generic6DOFJoint" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_generic6dofjoint.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Joint&lt; Spatial&lt; Node&lt; Object The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation. Description: The first 3 DOF a..." property="og:description"/>
+<meta content="The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation. The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latt..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Generic6DOFJoint — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_generic6dofjoint.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_generic6dofjoint.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_generic6dofjoint.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_generic6dofjoint.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_generic6dofjoint.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_generic6dofjoint.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_generic6dofjoint.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_generic6dofjoint.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_generic6dofjoint.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_generic6dofjoint.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_generic6dofjoint.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_generic6dofjoint.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_generic6dofjoint.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_generic6dofjoint.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_generic6dofjoint.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_generic6dofjoint.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_geometry.html" rel="next" title="Geometry"/>
+<link href="class_gdscriptfunctionstate.html" rel="prev" title="GDScriptFunctionState"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Generic6DOFJoint</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="generic6dofjoint">
+<span id="class-generic6dofjoint"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Generic6DOFJoint¶"></a>Generic6DOFJoint<a class="headerlink" href="#generic6dofjoint" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 74%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-damping"><span class="std std-ref">angular_limit_x/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-enabled"><span class="std std-ref">angular_limit_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-erp"><span class="std std-ref">angular_limit_x/erp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-force-limit"><span class="std std-ref">angular_limit_x/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-lower-angle"><span class="std std-ref">angular_limit_x/lower_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-restitution"><span class="std std-ref">angular_limit_x/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-softness"><span class="std std-ref">angular_limit_x/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-x-upper-angle"><span class="std std-ref">angular_limit_x/upper_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-damping"><span class="std std-ref">angular_limit_y/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-enabled"><span class="std std-ref">angular_limit_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-erp"><span class="std std-ref">angular_limit_y/erp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-force-limit"><span class="std std-ref">angular_limit_y/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-lower-angle"><span class="std std-ref">angular_limit_y/lower_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-restitution"><span class="std std-ref">angular_limit_y/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-softness"><span class="std std-ref">angular_limit_y/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-y-upper-angle"><span class="std std-ref">angular_limit_y/upper_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-damping"><span class="std std-ref">angular_limit_z/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-enabled"><span class="std std-ref">angular_limit_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-erp"><span class="std std-ref">angular_limit_z/erp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-force-limit"><span class="std std-ref">angular_limit_z/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-lower-angle"><span class="std std-ref">angular_limit_z/lower_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-restitution"><span class="std std-ref">angular_limit_z/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-softness"><span class="std std-ref">angular_limit_z/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-limit-z-upper-angle"><span class="std std-ref">angular_limit_z/upper_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-x-enabled"><span class="std std-ref">angular_motor_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-x-force-limit"><span class="std std-ref">angular_motor_x/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-x-target-velocity"><span class="std std-ref">angular_motor_x/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-y-enabled"><span class="std std-ref">angular_motor_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-y-force-limit"><span class="std std-ref">angular_motor_y/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-y-target-velocity"><span class="std std-ref">angular_motor_y/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-z-enabled"><span class="std std-ref">angular_motor_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-z-force-limit"><span class="std std-ref">angular_motor_z/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-motor-z-target-velocity"><span class="std std-ref">angular_motor_z/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-x-damping"><span class="std std-ref">angular_spring_x/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-x-enabled"><span class="std std-ref">angular_spring_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-x-equilibrium-point"><span class="std std-ref">angular_spring_x/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-x-stiffness"><span class="std std-ref">angular_spring_x/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-y-damping"><span class="std std-ref">angular_spring_y/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-y-enabled"><span class="std std-ref">angular_spring_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-y-equilibrium-point"><span class="std std-ref">angular_spring_y/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-y-stiffness"><span class="std std-ref">angular_spring_y/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-z-damping"><span class="std std-ref">angular_spring_z/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-z-enabled"><span class="std std-ref">angular_spring_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-z-equilibrium-point"><span class="std std-ref">angular_spring_z/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-angular-spring-z-stiffness"><span class="std std-ref">angular_spring_z/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-damping"><span class="std std-ref">linear_limit_x/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-enabled"><span class="std std-ref">linear_limit_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-lower-distance"><span class="std std-ref">linear_limit_x/lower_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-restitution"><span class="std std-ref">linear_limit_x/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-softness"><span class="std std-ref">linear_limit_x/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-x-upper-distance"><span class="std std-ref">linear_limit_x/upper_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-damping"><span class="std std-ref">linear_limit_y/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-enabled"><span class="std std-ref">linear_limit_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-lower-distance"><span class="std std-ref">linear_limit_y/lower_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-restitution"><span class="std std-ref">linear_limit_y/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-softness"><span class="std std-ref">linear_limit_y/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-y-upper-distance"><span class="std std-ref">linear_limit_y/upper_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-damping"><span class="std std-ref">linear_limit_z/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-enabled"><span class="std std-ref">linear_limit_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-lower-distance"><span class="std std-ref">linear_limit_z/lower_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-restitution"><span class="std std-ref">linear_limit_z/restitution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-softness"><span class="std std-ref">linear_limit_z/softness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-limit-z-upper-distance"><span class="std std-ref">linear_limit_z/upper_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-x-enabled"><span class="std std-ref">linear_motor_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-x-force-limit"><span class="std std-ref">linear_motor_x/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-x-target-velocity"><span class="std std-ref">linear_motor_x/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-y-enabled"><span class="std std-ref">linear_motor_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-y-force-limit"><span class="std std-ref">linear_motor_y/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-y-target-velocity"><span class="std std-ref">linear_motor_y/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-z-enabled"><span class="std std-ref">linear_motor_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-z-force-limit"><span class="std std-ref">linear_motor_z/force_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-motor-z-target-velocity"><span class="std std-ref">linear_motor_z/target_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-x-damping"><span class="std std-ref">linear_spring_x/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-x-enabled"><span class="std std-ref">linear_spring_x/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-x-equilibrium-point"><span class="std std-ref">linear_spring_x/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-x-stiffness"><span class="std std-ref">linear_spring_x/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-y-damping"><span class="std std-ref">linear_spring_y/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-y-enabled"><span class="std std-ref">linear_spring_y/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-y-equilibrium-point"><span class="std std-ref">linear_spring_y/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-y-stiffness"><span class="std std-ref">linear_spring_y/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-z-damping"><span class="std std-ref">linear_spring_z/damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-z-enabled"><span class="std std-ref">linear_spring_z/enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-z-equilibrium-point"><span class="std std-ref">linear_spring_z/equilibrium_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-property-linear-spring-z-stiffness"><span class="std std-ref">linear_spring_z/stiffness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-flag-x"><span class="std std-ref">get_flag_x</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-flag-y"><span class="std std-ref">get_flag_y</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-flag-z"><span class="std std-ref">get_flag_z</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-param-x"><span class="std std-ref">get_param_x</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-param-y"><span class="std std-ref">get_param_y</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-get-param-z"><span class="std std-ref">get_param_z</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-flag-x"><span class="std std-ref">set_flag_x</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-flag-y"><span class="std std-ref">set_flag_y</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-flag-z"><span class="std std-ref">set_flag_z</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-param-x"><span class="std std-ref">set_param_x</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-param-y"><span class="std std-ref">set_param_y</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-generic6dofjoint-method-set-param-z"><span class="std std-ref">set_param_z</span></a> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-generic6dofjoint-constant-param-max"><span id="class-generic6dofjoint-constant-param-angular-spring-equilibrium-point"></span><span id="class-generic6dofjoint-constant-param-angular-spring-damping"></span><span id="class-generic6dofjoint-constant-param-angular-spring-stiffness"></span><span id="class-generic6dofjoint-constant-param-angular-motor-force-limit"></span><span id="class-generic6dofjoint-constant-param-angular-motor-target-velocity"></span><span id="class-generic6dofjoint-constant-param-angular-erp"></span><span id="class-generic6dofjoint-constant-param-angular-force-limit"></span><span id="class-generic6dofjoint-constant-param-angular-restitution"></span><span id="class-generic6dofjoint-constant-param-angular-damping"></span><span id="class-generic6dofjoint-constant-param-angular-limit-softness"></span><span id="class-generic6dofjoint-constant-param-angular-upper-limit"></span><span id="class-generic6dofjoint-constant-param-angular-lower-limit"></span><span id="class-generic6dofjoint-constant-param-linear-spring-equilibrium-point"></span><span id="class-generic6dofjoint-constant-param-linear-spring-damping"></span><span id="class-generic6dofjoint-constant-param-linear-spring-stiffness"></span><span id="class-generic6dofjoint-constant-param-linear-motor-force-limit"></span><span id="class-generic6dofjoint-constant-param-linear-motor-target-velocity"></span><span id="class-generic6dofjoint-constant-param-linear-damping"></span><span id="class-generic6dofjoint-constant-param-linear-restitution"></span><span id="class-generic6dofjoint-constant-param-linear-limit-softness"></span><span id="class-generic6dofjoint-constant-param-linear-upper-limit"></span><span id="class-generic6dofjoint-constant-param-linear-lower-limit"></span><span id="enum-generic6dofjoint-param"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Param"></a>Param</strong>:</p>
+<ul class="simple">
+<li><p><strong>PARAM_LINEAR_LOWER_LIMIT</strong> = <strong>0</strong> --- The minimum difference between the pivot points' axes.</p></li>
+<li><p><strong>PARAM_LINEAR_UPPER_LIMIT</strong> = <strong>1</strong> --- The maximum difference between the pivot points' axes.</p></li>
+<li><p><strong>PARAM_LINEAR_LIMIT_SOFTNESS</strong> = <strong>2</strong> --- A factor applied to the movement across the axes. The lower, the slower the movement.</p></li>
+<li><p><strong>PARAM_LINEAR_RESTITUTION</strong> = <strong>3</strong> --- The amount of restitution on the axes' movement. The lower, the more momentum gets lost.</p></li>
+<li><p><strong>PARAM_LINEAR_DAMPING</strong> = <strong>4</strong> --- The amount of damping that happens at the linear motion across the axes.</p></li>
+<li><p><strong>PARAM_LINEAR_MOTOR_TARGET_VELOCITY</strong> = <strong>5</strong> --- The velocity the linear motor will try to reach.</p></li>
+<li><p><strong>PARAM_LINEAR_MOTOR_FORCE_LIMIT</strong> = <strong>6</strong> --- The maximum force the linear motor will apply while trying to reach the velocity target.</p></li>
+<li><p><strong>PARAM_LINEAR_SPRING_STIFFNESS</strong> = <strong>7</strong></p></li>
+<li><p><strong>PARAM_LINEAR_SPRING_DAMPING</strong> = <strong>8</strong></p></li>
+<li><p><strong>PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT</strong> = <strong>9</strong></p></li>
+<li><p><strong>PARAM_ANGULAR_LOWER_LIMIT</strong> = <strong>10</strong> --- The minimum rotation in negative direction to break loose and rotate around the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_UPPER_LIMIT</strong> = <strong>11</strong> --- The minimum rotation in positive direction to break loose and rotate around the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_LIMIT_SOFTNESS</strong> = <strong>12</strong> --- The speed of all rotations across the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_DAMPING</strong> = <strong>13</strong> --- The amount of rotational damping across the axes. The lower, the more dampening occurs.</p></li>
+<li><p><strong>PARAM_ANGULAR_RESTITUTION</strong> = <strong>14</strong> --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.</p></li>
+<li><p><strong>PARAM_ANGULAR_FORCE_LIMIT</strong> = <strong>15</strong> --- The maximum amount of force that can occur, when rotating around the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_ERP</strong> = <strong>16</strong> --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.</p></li>
+<li><p><strong>PARAM_ANGULAR_MOTOR_TARGET_VELOCITY</strong> = <strong>17</strong> --- Target speed for the motor at the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_MOTOR_FORCE_LIMIT</strong> = <strong>18</strong> --- Maximum acceleration for the motor at the axes.</p></li>
+<li><p><strong>PARAM_ANGULAR_SPRING_STIFFNESS</strong> = <strong>19</strong></p></li>
+<li><p><strong>PARAM_ANGULAR_SPRING_DAMPING</strong> = <strong>20</strong></p></li>
+<li><p><strong>PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT</strong> = <strong>21</strong></p></li>
+<li><p><strong>PARAM_MAX</strong> = <strong>22</strong> --- Represents the size of the <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-generic6dofjoint-constant-flag-max"><span id="class-generic6dofjoint-constant-flag-enable-linear-motor"></span><span id="class-generic6dofjoint-constant-flag-enable-motor"></span><span id="class-generic6dofjoint-constant-flag-enable-angular-spring"></span><span id="class-generic6dofjoint-constant-flag-enable-linear-spring"></span><span id="class-generic6dofjoint-constant-flag-enable-angular-limit"></span><span id="class-generic6dofjoint-constant-flag-enable-linear-limit"></span><span id="enum-generic6dofjoint-flag"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Flag"></a>Flag</strong>:</p>
+<ul class="simple">
+<li><p><strong>FLAG_ENABLE_LINEAR_LIMIT</strong> = <strong>0</strong> --- If enabled, linear motion is possible within the given limits.</p></li>
+<li><p><strong>FLAG_ENABLE_ANGULAR_LIMIT</strong> = <strong>1</strong> --- If enabled, rotational motion is possible within the given limits.</p></li>
+<li><p><strong>FLAG_ENABLE_LINEAR_SPRING</strong> = <strong>3</strong></p></li>
+<li><p><strong>FLAG_ENABLE_ANGULAR_SPRING</strong> = <strong>2</strong></p></li>
+<li><p><strong>FLAG_ENABLE_MOTOR</strong> = <strong>4</strong> --- If enabled, there is a rotational motor across these axes.</p></li>
+<li><p><strong>FLAG_ENABLE_LINEAR_MOTOR</strong> = <strong>5</strong> --- If enabled, there is a linear motor across these axes.</p></li>
+<li><p><strong>FLAG_MAX</strong> = <strong>6</strong> --- Represents the size of the <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/damping"></a>angular_limit_x/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational damping across the X axis.</p>
+<p>The lower, the longer an impulse from one side takes to travel to the other side.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/enabled"></a>angular_limit_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, rotation across the X axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-erp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/erp"></a>angular_limit_x/erp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When rotating across the X axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/force_limit"></a>angular_limit_x/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum amount of force that can occur, when rotating around the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-lower-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/lower_angle"></a>angular_limit_x/lower_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in negative direction to break loose and rotate around the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/restitution"></a>angular_limit_x/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational restitution across the X axis. The lower, the more restitution occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/softness"></a>angular_limit_x/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed of all rotations across the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-x-upper-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_x/upper_angle"></a>angular_limit_x/upper_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in positive direction to break loose and rotate around the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/damping"></a>angular_limit_y/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational damping across the Y axis. The lower, the more dampening occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/enabled"></a>angular_limit_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, rotation across the Y axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-erp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/erp"></a>angular_limit_y/erp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When rotating across the Y axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/force_limit"></a>angular_limit_y/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum amount of force that can occur, when rotating around the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-lower-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/lower_angle"></a>angular_limit_y/lower_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in negative direction to break loose and rotate around the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/restitution"></a>angular_limit_y/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational restitution across the Y axis. The lower, the more restitution occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/softness"></a>angular_limit_y/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed of all rotations across the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-y-upper-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_y/upper_angle"></a>angular_limit_y/upper_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in positive direction to break loose and rotate around the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/damping"></a>angular_limit_z/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational damping across the Z axis. The lower, the more dampening occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/enabled"></a>angular_limit_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, rotation across the Z axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-erp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/erp"></a>angular_limit_z/erp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When rotating across the Z axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/force_limit"></a>angular_limit_z/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum amount of force that can occur, when rotating around the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-lower-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/lower_angle"></a>angular_limit_z/lower_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in negative direction to break loose and rotate around the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/restitution"></a>angular_limit_z/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of rotational restitution across the Z axis. The lower, the more restitution occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/softness"></a>angular_limit_z/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed of all rotations across the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-limit-z-upper-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_limit_z/upper_angle"></a>angular_limit_z/upper_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum rotation in positive direction to break loose and rotate around the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_x/enabled"></a>angular_motor_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, a rotating motor at the X axis is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-x-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_x/force_limit"></a>angular_motor_x/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum acceleration for the motor at the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-x-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_x/target_velocity"></a>angular_motor_x/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Target speed for the motor at the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_y/enabled"></a>angular_motor_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, a rotating motor at the Y axis is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-y-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_y/force_limit"></a>angular_motor_y/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum acceleration for the motor at the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-y-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_y/target_velocity"></a>angular_motor_y/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Target speed for the motor at the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_z/enabled"></a>angular_motor_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, a rotating motor at the Z axis is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-z-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_z/force_limit"></a>angular_motor_z/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">300.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum acceleration for the motor at the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-motor-z-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_motor_z/target_velocity"></a>angular_motor_z/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Target speed for the motor at the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-x-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_x/damping"></a>angular_spring_x/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_x/enabled"></a>angular_spring_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-x-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_x/equilibrium_point"></a>angular_spring_x/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-x-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_x/stiffness"></a>angular_spring_x/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-y-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_y/damping"></a>angular_spring_y/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_y/enabled"></a>angular_spring_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-y-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_y/equilibrium_point"></a>angular_spring_y/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-y-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_y/stiffness"></a>angular_spring_y/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-z-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_z/damping"></a>angular_spring_z/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_z/enabled"></a>angular_spring_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-z-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_z/equilibrium_point"></a>angular_spring_z/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-angular-spring-z-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_spring_z/stiffness"></a>angular_spring_z/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/damping"></a>linear_limit_x/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of damping that happens at the X motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/enabled"></a>linear_limit_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the linear motion across the X axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-lower-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/lower_distance"></a>linear_limit_x/lower_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum difference between the pivot points' X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/restitution"></a>linear_limit_x/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of restitution on the X axis movement. The lower, the more momentum gets lost.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/softness"></a>linear_limit_x/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>A factor applied to the movement across the X axis. The lower, the slower the movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-x-upper-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_x/upper_distance"></a>linear_limit_x/upper_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum difference between the pivot points' X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/damping"></a>linear_limit_y/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of damping that happens at the Y motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/enabled"></a>linear_limit_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the linear motion across the Y axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-lower-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/lower_distance"></a>linear_limit_y/lower_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum difference between the pivot points' Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/restitution"></a>linear_limit_y/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of restitution on the Y axis movement. The lower, the more momentum gets lost.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/softness"></a>linear_limit_y/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>A factor applied to the movement across the Y axis. The lower, the slower the movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-y-upper-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_y/upper_distance"></a>linear_limit_y/upper_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum difference between the pivot points' Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/damping"></a>linear_limit_z/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of damping that happens at the Z motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/enabled"></a>linear_limit_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the linear motion across the Z axis is limited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-lower-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/lower_distance"></a>linear_limit_z/lower_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum difference between the pivot points' Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-restitution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/restitution"></a>linear_limit_z/restitution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of restitution on the Z axis movement. The lower, the more momentum gets lost.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-softness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/softness"></a>linear_limit_z/softness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>A factor applied to the movement across the Z axis. The lower, the slower the movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-limit-z-upper-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_limit_z/upper_distance"></a>linear_limit_z/upper_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum difference between the pivot points' Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_x/enabled"></a>linear_motor_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, then there is a linear motor on the X axis. It will attempt to reach the target velocity while staying within the force limits.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-x-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_x/force_limit"></a>linear_motor_x/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum force the linear motor can apply on the X axis while trying to reach the target velocity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-x-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_x/target_velocity"></a>linear_motor_x/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed that the linear motor will attempt to reach on the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_y/enabled"></a>linear_motor_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, then there is a linear motor on the Y axis. It will attempt to reach the target velocity while staying within the force limits.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-y-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_y/force_limit"></a>linear_motor_y/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum force the linear motor can apply on the Y axis while trying to reach the target velocity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-y-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_y/target_velocity"></a>linear_motor_y/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed that the linear motor will attempt to reach on the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_z/enabled"></a>linear_motor_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, then there is a linear motor on the Z axis. It will attempt to reach the target velocity while staying within the force limits.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-z-force-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_z/force_limit"></a>linear_motor_z/force_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum force the linear motor can apply on the Z axis while trying to reach the target velocity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-motor-z-target-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_motor_z/target_velocity"></a>linear_motor_z/target_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed that the linear motor will attempt to reach on the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-x-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_x/damping"></a>linear_spring_x/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-x-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_x/enabled"></a>linear_spring_x/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-x-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_x/equilibrium_point"></a>linear_spring_x/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-x-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_x/stiffness"></a>linear_spring_x/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_x(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_x()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-y-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_y/damping"></a>linear_spring_y/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-y-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_y/enabled"></a>linear_spring_y/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-y-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_y/equilibrium_point"></a>linear_spring_y/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-y-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_y/stiffness"></a>linear_spring_y/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_y(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_y()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-z-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_z/damping"></a>linear_spring_z/damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-z-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_z/enabled"></a>linear_spring_z/enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-z-equilibrium-point">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_z/equilibrium_point"></a>linear_spring_z/equilibrium_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-property-linear-spring-z-stiffness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_spring_z/stiffness"></a>linear_spring_z/stiffness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_z(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_z()</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-generic6dofjoint-method-get-flag-x">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_flag_x"></a>get_flag_x</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-get-flag-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_flag_y"></a>get_flag_y</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-get-flag-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_flag_z"></a>get_flag_z</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-get-param-x">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param_x"></a>get_param_x</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-get-param-y">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param_y"></a>get_param_y</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-get-param-z">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param_z"></a>get_param_z</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-flag-x">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_flag_x"></a>set_flag_x</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-flag-y">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_flag_y"></a>set_flag_y</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-flag-z">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_flag_z"></a>set_flag_z</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-flag"><span class="std std-ref">Flag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-param-x">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param_x"></a>set_param_x</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-param-y">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param_y"></a>set_param_y</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-generic6dofjoint-method-set-param-z">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param_z"></a>set_param_z</strong> <strong>(</strong> <a class="reference internal" href="#enum-generic6dofjoint-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_gdscriptfunctionstate.html" rel="prev" title="GDScriptFunctionState"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_geometry.html" rel="next" title="Geometry">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

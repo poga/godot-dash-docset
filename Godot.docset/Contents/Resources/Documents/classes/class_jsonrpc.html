@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="JSONRPC" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_jsonrpc.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object A helper to handle dictionaries which look like JSONRPC documents. Description: JSON-RPC is a standard which wraps a method call in a JSON object. The object has a particular struc..." property="og:description"/>
+<meta content="A helper to handle dictionaries which look like JSONRPC documents. JSON-RPC is a standard which wraps a method call in a JSON object. The object has a particular structure and identifies which method is called, the pa..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) JSONRPC — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_jsonrpc.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_jsonrpc.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_jsonrpc.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_jsonrpc.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_jsonrpc.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_jsonrpc.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_jsonrpc.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_jsonrpc.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_jsonrpc.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_jsonrpc.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_jsonrpc.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_jsonrpc.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_jsonrpc.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_jsonrpc.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_jsonrpc.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_jsonrpc.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_kinematicbody.html" rel="next" title="KinematicBody"/>
+<link href="class_jsonparseresult.html" rel="prev" title="JSONParseResult"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>JSONRPC</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="jsonrpc">
+<span id="class-jsonrpc"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/JSONRPC¶"></a>JSONRPC<a class="headerlink" href="#jsonrpc" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A helper to handle dictionaries which look like JSONRPC documents.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.jsonrpc.org/">JSON-RPC</a> is a standard which wraps a method call in a <a class="reference internal" href="class_json.html#class-json"><span class="std std-ref">JSON</span></a> object. The object has a particular structure and identifies which method is called, the parameters to that function, and carries an ID to keep track of responses. This class implements that standard on top of <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a>; you will have to convert between a <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> and <a class="reference internal" href="class_json.html#class-json"><span class="std std-ref">JSON</span></a> with other functions.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-make-notification"><span class="std std-ref">make_notification</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> params <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-make-request"><span class="std std-ref">make_request</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> params, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-make-response"><span class="std std-ref">make_response</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> result, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-make-response-error"><span class="std std-ref">make_response_error</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> code, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> message, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id=null <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-process-action"><span class="std std-ref">process_action</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recurse=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-process-string"><span class="std std-ref">process_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-jsonrpc-method-set-scope"><span class="std std-ref">set_scope</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scope, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-jsonrpc-constant-internal-error"><span id="class-jsonrpc-constant-invalid-params"></span><span id="class-jsonrpc-constant-method-not-found"></span><span id="class-jsonrpc-constant-invalid-request"></span><span id="class-jsonrpc-constant-parse-error"></span><span id="enum-jsonrpc-errorcode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ErrorCode"></a>ErrorCode</strong>:</p>
+<ul class="simple">
+<li><p><strong>PARSE_ERROR</strong> = <strong>-32700</strong></p></li>
+<li><p><strong>INVALID_REQUEST</strong> = <strong>-32600</strong></p></li>
+<li><p><strong>METHOD_NOT_FOUND</strong> = <strong>-32601</strong> --- A method call was requested but no function of that name existed in the JSONRPC subclass.</p></li>
+<li><p><strong>INVALID_PARAMS</strong> = <strong>-32602</strong></p></li>
+<li><p><strong>INTERNAL_ERROR</strong> = <strong>-32603</strong></p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-jsonrpc-method-make-notification">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_notification"></a>make_notification</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> params <strong>)</strong></p></li>
+</ul>
+<p>Returns a dictionary in the form of a JSON-RPC notification. Notifications are one-shot messages which do not expect a response.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: Name of the method being called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: An array or dictionary of parameters being passed to the method.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-make-request">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_request"></a>make_request</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> params, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a server with the expectation of a response. The ID field is used for the server to specify which exact request it is responding to.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: Name of the method being called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: An array or dictionary of parameters being passed to the method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Uniquely identifies this request. The server is expected to send a response with the same ID.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-make-response">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_response"></a>make_response</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> result, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>When a server has received and processed a request, it is expected to send a response. If you did not want a response then you need to have sent a Notification instead.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: The return value of the function which was called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The ID of the request this response is targeted to.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-make-response-error">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_response_error"></a>make_response_error</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> code, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> message, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id=null <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Creates a response which indicates a previous reply has failed in some way.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code>: The error code corresponding to what kind of error this is. See the <a class="reference internal" href="#enum-jsonrpc-errorcode"><span class="std std-ref">ErrorCode</span></a> constants.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: A custom message about this error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The request this error is a response to.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-process-action">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/process_action"></a>process_action</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> recurse=false <strong>)</strong></p></li>
+</ul>
+<p>Given a Dictionary which takes the form of a JSON-RPC request: unpack the request and run it. Methods are resolved by looking at the field called "method" and looking for an equivalently named function in the JSONRPC object. If one is found that method is called.</p>
+<p>To add new supported methods extend the JSONRPC class and call <a class="reference internal" href="#class-jsonrpc-method-process-action"><span class="std std-ref">process_action</span></a> on your subclass.</p>
+<p><code class="docutils literal notranslate"><span class="pre">action</span></code>: The action to be run, as a Dictionary in the form of a JSON-RPC request or notification.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-process-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/process_string"></a>process_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-jsonrpc-method-set-scope">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_scope"></a>set_scope</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> scope, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target <strong>)</strong></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_jsonparseresult.html" rel="prev" title="JSONParseResult"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_kinematicbody.html" rel="next" title="KinematicBody">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

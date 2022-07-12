@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="TileSet" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_tileset.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Tile library for tilemaps. Description: A TileSet is a library of tiles for a TileMap. It contains a list of tiles, each consisting of a sprite and optional co..." property="og:description"/>
+<meta content="Tile library for tilemaps. A TileSet is a library of tiles for a TileMap. It contains a list of tiles, each consisting of a sprite and optional collision shapes. Tiles are referenced by a unique integer ID. Using Tile..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) TileSet — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tileset.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_tileset.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_tileset.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_tileset.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_tileset.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_tileset.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_tileset.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_tileset.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_tileset.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_tileset.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_tileset.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_tileset.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_tileset.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_tileset.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tileset.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tileset.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_timer.html" rel="next" title="Timer"/>
+<link href="class_tilemap.html" rel="prev" title="TileMap"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>TileSet</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="tileset">
+<span id="class-tileset"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/TileSet¶"></a>TileSet<a class="headerlink" href="#tileset" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Tile library for tilemaps.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A TileSet is a library of tiles for a <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>. It contains a list of tiles, each consisting of a sprite and optional collision shapes.</p>
+<p>Tiles are referenced by a unique integer ID.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/2d/using_tilemaps.html"><span class="doc">Using TileMaps</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/120">2D Platformer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/112">2D Isometric Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/111">2D Hexagonal Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/519">2D Navigation Astar Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/520">2D Role Playing Game Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/113">2D Kinematic Character Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-forward-atlas-subtile-selection"><span class="std std-ref">_forward_atlas_subtile_selection</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> atlastile_id, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> tilemap, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> tile_location <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-forward-subtile-selection"><span class="std std-ref">_forward_subtile_selection</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> autotile_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bitmask, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> tilemap, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> tile_location <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-is-tile-bound"><span class="std std-ref">_is_tile_bound</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> drawn_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> neighbor_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-clear-bitmask-map"><span class="std std-ref">autotile_clear_bitmask_map</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-bitmask"><span class="std std-ref">autotile_get_bitmask</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-bitmask-mode"><span class="std std-ref">autotile_get_bitmask_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-icon-coordinate"><span class="std std-ref">autotile_get_icon_coordinate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-light-occluder"><span class="std std-ref">autotile_get_light_occluder</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-navigation-polygon"><span class="std std-ref">autotile_get_navigation_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-size"><span class="std std-ref">autotile_get_size</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-spacing"><span class="std std-ref">autotile_get_spacing</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-subtile-priority"><span class="std std-ref">autotile_get_subtile_priority</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-get-z-index"><span class="std std-ref">autotile_get_z_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-bitmask"><span class="std std-ref">autotile_set_bitmask</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> bitmask, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flag <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-bitmask-mode"><span class="std std-ref">autotile_set_bitmask_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-icon-coordinate"><span class="std std-ref">autotile_set_icon_coordinate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-light-occluder"><span class="std std-ref">autotile_set_light_occluder</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> light_occluder, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-navigation-polygon"><span class="std std-ref">autotile_set_navigation_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> navigation_polygon, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-size"><span class="std std-ref">autotile_set_size</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-spacing"><span class="std std-ref">autotile_set_spacing</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> spacing <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-subtile-priority"><span class="std std-ref">autotile_set_subtile_priority</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> priority <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-autotile-set-z-index"><span class="std std-ref">autotile_set_z_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> z_index <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-create-tile"><span class="std std-ref">create_tile</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-find-tile-by-name"><span class="std std-ref">find_tile_by_name</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-get-last-unused-tile-id"><span class="std std-ref">get_last_unused_tile_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-get-tiles-ids"><span class="std std-ref">get_tiles_ids</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-remove-tile"><span class="std std-ref">remove_tile</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-add-shape"><span class="std std-ref">tile_add_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> shape_transform, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> one_way=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-light-occluder"><span class="std std-ref">tile_get_light_occluder</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-material"><span class="std std-ref">tile_get_material</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-modulate"><span class="std std-ref">tile_get_modulate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-name"><span class="std std-ref">tile_get_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-navigation-polygon"><span class="std std-ref">tile_get_navigation_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-navigation-polygon-offset"><span class="std std-ref">tile_get_navigation_polygon_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-normal-map"><span class="std std-ref">tile_get_normal_map</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-occluder-offset"><span class="std std-ref">tile_get_occluder_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-region"><span class="std std-ref">tile_get_region</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape"><span class="std std-ref">tile_get_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape-count"><span class="std std-ref">tile_get_shape_count</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape-offset"><span class="std std-ref">tile_get_shape_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape-one-way"><span class="std std-ref">tile_get_shape_one_way</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape-one-way-margin"><span class="std std-ref">tile_get_shape_one_way_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shape-transform"><span class="std std-ref">tile_get_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-shapes"><span class="std std-ref">tile_get_shapes</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-texture"><span class="std std-ref">tile_get_texture</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-texture-offset"><span class="std std-ref">tile_get_texture_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-tile-mode"><span class="std std-ref">tile_get_tile_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-get-z-index"><span class="std std-ref">tile_get_z_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-light-occluder"><span class="std std-ref">tile_set_light_occluder</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> light_occluder <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-material"><span class="std std-ref">tile_set_material</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a> material <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-modulate"><span class="std std-ref">tile_set_modulate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-name"><span class="std std-ref">tile_set_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-navigation-polygon"><span class="std std-ref">tile_set_navigation_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> navigation_polygon <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-navigation-polygon-offset"><span class="std std-ref">tile_set_navigation_polygon_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> navigation_polygon_offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-normal-map"><span class="std std-ref">tile_set_normal_map</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-occluder-offset"><span class="std std-ref">tile_set_occluder_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> occluder_offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-region"><span class="std std-ref">tile_set_region</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> region <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shape"><span class="std std-ref">tile_set_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shape-offset"><span class="std std-ref">tile_set_shape_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> shape_offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shape-one-way"><span class="std std-ref">tile_set_shape_one_way</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> one_way <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shape-one-way-margin"><span class="std std-ref">tile_set_shape_one_way_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> one_way <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shape-transform"><span class="std std-ref">tile_set_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> shape_transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-shapes"><span class="std std-ref">tile_set_shapes</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> shapes <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-texture"><span class="std std-ref">tile_set_texture</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-texture-offset"><span class="std std-ref">tile_set_texture_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> texture_offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-tile-mode"><span class="std std-ref">tile_set_tile_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a> tilemode <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tileset-method-tile-set-z-index"><span class="std std-ref">tile_set_z_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> z_index <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-tileset-constant-bitmask-3x3"><span id="class-tileset-constant-bitmask-3x3-minimal"></span><span id="class-tileset-constant-bitmask-2x2"></span><span id="enum-tileset-bitmaskmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BitmaskMode"></a>BitmaskMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BITMASK_2X2</strong> = <strong>0</strong></p></li>
+<li><p><strong>BITMASK_3X3_MINIMAL</strong> = <strong>1</strong></p></li>
+<li><p><strong>BITMASK_3X3</strong> = <strong>2</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tileset-constant-bind-bottomright"><span id="class-tileset-constant-bind-bottom"></span><span id="class-tileset-constant-bind-bottomleft"></span><span id="class-tileset-constant-bind-right"></span><span id="class-tileset-constant-bind-center"></span><span id="class-tileset-constant-bind-left"></span><span id="class-tileset-constant-bind-topright"></span><span id="class-tileset-constant-bind-top"></span><span id="class-tileset-constant-bind-topleft"></span><span id="enum-tileset-autotilebindings"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AutotileBindings"></a>AutotileBindings</strong>:</p>
+<ul class="simple">
+<li><p><strong>BIND_TOPLEFT</strong> = <strong>1</strong></p></li>
+<li><p><strong>BIND_TOP</strong> = <strong>2</strong></p></li>
+<li><p><strong>BIND_TOPRIGHT</strong> = <strong>4</strong></p></li>
+<li><p><strong>BIND_LEFT</strong> = <strong>8</strong></p></li>
+<li><p><strong>BIND_CENTER</strong> = <strong>16</strong></p></li>
+<li><p><strong>BIND_RIGHT</strong> = <strong>32</strong></p></li>
+<li><p><strong>BIND_BOTTOMLEFT</strong> = <strong>64</strong></p></li>
+<li><p><strong>BIND_BOTTOM</strong> = <strong>128</strong></p></li>
+<li><p><strong>BIND_BOTTOMRIGHT</strong> = <strong>256</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tileset-constant-atlas-tile"><span id="class-tileset-constant-auto-tile"></span><span id="class-tileset-constant-single-tile"></span><span id="enum-tileset-tilemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TileMode"></a>TileMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>SINGLE_TILE</strong> = <strong>0</strong></p></li>
+<li><p><strong>AUTO_TILE</strong> = <strong>1</strong></p></li>
+<li><p><strong>ATLAS_TILE</strong> = <strong>2</strong></p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tileset-method-forward-atlas-subtile-selection">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_forward_atlas_subtile_selection"></a>_forward_atlas_subtile_selection</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> atlastile_id, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> tilemap, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> tile_location <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-forward-subtile-selection">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_forward_subtile_selection"></a>_forward_subtile_selection</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> autotile_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bitmask, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> tilemap, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> tile_location <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-is-tile-bound">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_is_tile_bound"></a>_is_tile_bound</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> drawn_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> neighbor_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Determines when the auto-tiler should consider two different auto-tile IDs to be bound together.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">neighbor_id</span></code> will be <code class="docutils literal notranslate"><span class="pre">-1</span></code> (<a class="reference internal" href="class_tilemap.html#class-tilemap-constant-invalid-cell"><span class="std std-ref">TileMap.INVALID_CELL</span></a>) when checking a tile against an empty neighbor tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-clear-bitmask-map">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_clear_bitmask_map"></a>autotile_clear_bitmask_map</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Clears all bitmask information of the autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-bitmask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_bitmask"></a>autotile_get_bitmask</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Returns the bitmask of the subtile from an autotile given its coordinates.</p>
+<p>The value is the sum of the values in <a class="reference internal" href="#enum-tileset-autotilebindings"><span class="std std-ref">AutotileBindings</span></a> present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-bitmask-mode">
+<li><p><a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_bitmask_mode"></a>autotile_get_bitmask_mode</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a> of the autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-icon-coordinate">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_icon_coordinate"></a>autotile_get_icon_coordinate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the subtile that's being used as an icon in an atlas/autotile given its coordinates.</p>
+<p>The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-light-occluder">
+<li><p><a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_light_occluder"></a>autotile_get_light_occluder</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the light occluder of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-navigation-polygon">
+<li><p><a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_navigation_polygon"></a>autotile_get_navigation_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the navigation polygon of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-size">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_size"></a>autotile_get_size</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the size of the subtiles in an atlas/autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-spacing">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_spacing"></a>autotile_get_spacing</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the spacing between subtiles of the atlas/autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-subtile-priority">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_subtile_priority"></a>autotile_get_subtile_priority</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Returns the priority of the subtile from an autotile given its coordinates.</p>
+<p>When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-get-z-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_get_z_index"></a>autotile_get_z_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Returns the drawing index of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-bitmask">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_bitmask"></a>autotile_set_bitmask</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> bitmask, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flag <strong>)</strong></p></li>
+</ul>
+<p>Sets the bitmask of the subtile from an autotile given its coordinates.</p>
+<p>The value is the sum of the values in <a class="reference internal" href="#enum-tileset-autotilebindings"><span class="std std-ref">AutotileBindings</span></a> present in the subtile (e.g. a value of 5 means the bitmask has bindings in both the top left and top right).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-bitmask-mode">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_bitmask_mode"></a>autotile_set_bitmask_mode</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="#enum-tileset-bitmaskmode"><span class="std std-ref">BitmaskMode</span></a> of the autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-icon-coordinate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_icon_coordinate"></a>autotile_set_icon_coordinate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Sets the subtile that will be used as an icon in an atlas/autotile given its coordinates.</p>
+<p>The subtile defined as the icon will be used as a fallback when the atlas/autotile's bitmask information is incomplete. It will also be used to represent it in the TileSet editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-light-occluder">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_light_occluder"></a>autotile_set_light_occluder</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> light_occluder, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Sets the light occluder of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-navigation-polygon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_navigation_polygon"></a>autotile_set_navigation_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> navigation_polygon, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord <strong>)</strong></p></li>
+</ul>
+<p>Sets the navigation polygon of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-size">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_size"></a>autotile_set_size</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Sets the size of the subtiles in an atlas/autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-spacing">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_spacing"></a>autotile_set_spacing</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> spacing <strong>)</strong></p></li>
+</ul>
+<p>Sets the spacing between subtiles of the atlas/autotile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-subtile-priority">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_subtile_priority"></a>autotile_set_subtile_priority</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> priority <strong>)</strong></p></li>
+</ul>
+<p>Sets the priority of the subtile from an autotile given its coordinates.</p>
+<p>When more than one subtile has the same bitmask value, one of them will be picked randomly for drawing. Its priority will define how often it will be picked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-autotile-set-z-index">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/autotile_set_z_index"></a>autotile_set_z_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> coord, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> z_index <strong>)</strong></p></li>
+</ul>
+<p>Sets the drawing index of the subtile from an atlas/autotile given its coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all tiles.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-create-tile">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_tile"></a>create_tile</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Creates a new tile with the given ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-find-tile-by-name">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_tile_by_name"></a>find_tile_by_name</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the first tile matching the given name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-get-last-unused-tile-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_last_unused_tile_id"></a>get_last_unused_tile_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the ID following the last currently used ID, useful when creating a new tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-get-tiles-ids">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tiles_ids"></a>get_tiles_ids</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of all currently used tile IDs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-remove-tile">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_tile"></a>remove_tile</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Removes the given tile ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-add-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_add_shape"></a>tile_add_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> shape_transform, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> one_way=false, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> autotile_coord=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Adds a shape to the tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-light-occluder">
+<li><p><a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_light_occluder"></a>tile_get_light_occluder</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's light occluder.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-material">
+<li><p><a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_material"></a>tile_get_material</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's material.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_modulate"></a>tile_get_modulate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's modulation color.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_name"></a>tile_get_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-navigation-polygon">
+<li><p><a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_navigation_polygon"></a>tile_get_navigation_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the navigation polygon of the tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-navigation-polygon-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_navigation_polygon_offset"></a>tile_get_navigation_polygon_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the offset of the tile's navigation polygon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-normal-map">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_normal_map"></a>tile_get_normal_map</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's normal map texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-occluder-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_occluder_offset"></a>tile_get_occluder_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the offset of the tile's light occluder.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-region">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_region"></a>tile_get_region</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile sub-region in the texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape">
+<li><p><a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape"></a>tile_get_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a tile's given shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape_count"></a>tile_get_shape_count</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of shapes assigned to a tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape_offset"></a>tile_get_shape_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the offset of a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape-one-way">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape_one_way"></a>tile_get_shape_one_way</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the one-way collision value of a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape-one-way-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape_one_way_margin"></a>tile_get_shape_one_way_margin</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shape-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shape_transform"></a>tile_get_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> of a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-shapes">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_shapes"></a>tile_get_shapes</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an array of dictionaries describing the tile's shapes.</p>
+<p><strong>Dictionary structure in the array returned by this method:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"autotile_coord"</span><span class="p">:</span> <span class="nb nb-Type">Vector2</span><span class="p">,</span>
+    <span class="s2">"one_way"</span><span class="p">:</span> <span class="nb nb-Type">bool</span><span class="p">,</span>
+    <span class="s2">"one_way_margin"</span><span class="p">:</span> <span class="nb nb-Type">int</span><span class="p">,</span>
+    <span class="s2">"shape"</span><span class="p">:</span> <span class="n">CollisionShape2D</span><span class="p">,</span>
+    <span class="s2">"shape_transform"</span><span class="p">:</span> <span class="nb nb-Type">Transform2D</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_texture"></a>tile_get_texture</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-texture-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_texture_offset"></a>tile_get_texture_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the texture offset of the tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-tile-mode">
+<li><p><a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_tile_mode"></a>tile_get_tile_mode</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's <a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-get-z-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_get_z_index"></a>tile_get_z_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tile's Z index (drawing layer).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-light-occluder">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_light_occluder"></a>tile_set_light_occluder</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_occluderpolygon2d.html#class-occluderpolygon2d"><span class="std std-ref">OccluderPolygon2D</span></a> light_occluder <strong>)</strong></p></li>
+</ul>
+<p>Sets a light occluder for the tile.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_material"></a>tile_set_material</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a> material <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's material.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-modulate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_modulate"></a>tile_set_modulate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's modulation color.</p>
+<p><strong>Note:</strong> Modulation is performed by setting the tile's vertex color. To access this in a shader, use <code class="docutils literal notranslate"><span class="pre">COLOR</span></code> rather than <code class="docutils literal notranslate"><span class="pre">MODULATE</span></code> (which instead accesses the <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>'s <a class="reference internal" href="class_canvasitem.html#class-canvasitem-property-modulate"><span class="std std-ref">CanvasItem.modulate</span></a> property).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-name">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_name"></a>tile_set_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-navigation-polygon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_navigation_polygon"></a>tile_set_navigation_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> navigation_polygon <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's navigation polygon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-navigation-polygon-offset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_navigation_polygon_offset"></a>tile_set_navigation_polygon_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> navigation_polygon_offset <strong>)</strong></p></li>
+</ul>
+<p>Sets an offset for the tile's navigation polygon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-normal-map">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_normal_map"></a>tile_set_normal_map</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's normal map texture.</p>
+<p><strong>Note:</strong> Godot expects the normal map to use X+, Y-, and Z+ coordinates. See <a class="reference external" href="http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates">this page</a> for a comparison of normal map coordinates expected by popular engines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-occluder-offset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_occluder_offset"></a>tile_set_occluder_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> occluder_offset <strong>)</strong></p></li>
+</ul>
+<p>Sets an offset for the tile's light occluder.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-region">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_region"></a>tile_set_region</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> region <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's sub-region in the texture. This is common in texture atlases.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shape"></a>tile_set_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape <strong>)</strong></p></li>
+</ul>
+<p>Sets a shape for the tile, enabling collision.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shape-offset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shape_offset"></a>tile_set_shape_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> shape_offset <strong>)</strong></p></li>
+</ul>
+<p>Sets the offset of a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shape-one-way">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shape_one_way"></a>tile_set_shape_one_way</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> one_way <strong>)</strong></p></li>
+</ul>
+<p>Enables one-way collision on a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shape-one-way-margin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shape_one_way_margin"></a>tile_set_shape_one_way_margin</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> one_way <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shape-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shape_transform"></a>tile_set_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> shape_transform <strong>)</strong></p></li>
+</ul>
+<p>Sets a <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> on a tile's shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-shapes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_shapes"></a>tile_set_shapes</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> shapes <strong>)</strong></p></li>
+</ul>
+<p>Sets an array of shapes for the tile, enabling collision.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-texture">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_texture"></a>tile_set_texture</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-texture-offset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_texture_offset"></a>tile_set_texture_offset</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> texture_offset <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's texture offset.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-tile-mode">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_tile_mode"></a>tile_set_tile_mode</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a> tilemode <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's <a class="reference internal" href="#enum-tileset-tilemode"><span class="std std-ref">TileMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tileset-method-tile-set-z-index">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tile_set_z_index"></a>tile_set_z_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> z_index <strong>)</strong></p></li>
+</ul>
+<p>Sets the tile's drawing index.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_tilemap.html" rel="prev" title="TileMap"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_timer.html" rel="next" title="Timer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

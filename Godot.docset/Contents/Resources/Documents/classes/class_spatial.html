@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Spatial" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_spatial.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Inherited By: ARVRAnchor, ARVRController, ARVROrigin, AudioStreamPlayer3D, BoneAttachment, Camera, CollisionObject, CollisionPolygon, CollisionShape, CullInstance, GridMap, J..." property="og:description"/>
+<meta content="Most basic 3D game object, parent of all 3D-related nodes. Most basic 3D game object, with a 3D Transform and visibility settings. All other 3D game objects inherit from Spatial. Use Spatial as a parent node to move,..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Spatial — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spatial.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_spatial.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_spatial.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_spatial.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_spatial.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_spatial.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_spatial.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_spatial.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_spatial.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_spatial.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_spatial.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_spatial.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_spatial.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_spatial.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spatial.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_spatial.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_spatialgizmo.html" rel="next" title="SpatialGizmo"/>
+<link href="class_softbody.html" rel="prev" title="SoftBody"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Spatial</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="spatial">
+<span id="class-spatial"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Spatial¶"></a>Spatial<a class="headerlink" href="#spatial" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_arvranchor.html#class-arvranchor"><span class="std std-ref">ARVRAnchor</span></a>, <a class="reference internal" href="class_arvrcontroller.html#class-arvrcontroller"><span class="std std-ref">ARVRController</span></a>, <a class="reference internal" href="class_arvrorigin.html#class-arvrorigin"><span class="std std-ref">ARVROrigin</span></a>, <a class="reference internal" href="class_audiostreamplayer3d.html#class-audiostreamplayer3d"><span class="std std-ref">AudioStreamPlayer3D</span></a>, <a class="reference internal" href="class_boneattachment.html#class-boneattachment"><span class="std std-ref">BoneAttachment</span></a>, <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a>, <a class="reference internal" href="class_collisionobject.html#class-collisionobject"><span class="std std-ref">CollisionObject</span></a>, <a class="reference internal" href="class_collisionpolygon.html#class-collisionpolygon"><span class="std std-ref">CollisionPolygon</span></a>, <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a>, <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a>, <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>, <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a>, <a class="reference internal" href="class_listener.html#class-listener"><span class="std std-ref">Listener</span></a>, <a class="reference internal" href="class_navigation.html#class-navigation"><span class="std std-ref">Navigation</span></a>, <a class="reference internal" href="class_navigationmeshinstance.html#class-navigationmeshinstance"><span class="std std-ref">NavigationMeshInstance</span></a>, <a class="reference internal" href="class_occluder.html#class-occluder"><span class="std std-ref">Occluder</span></a>, <a class="reference internal" href="class_path.html#class-path"><span class="std std-ref">Path</span></a>, <a class="reference internal" href="class_pathfollow.html#class-pathfollow"><span class="std std-ref">PathFollow</span></a>, <a class="reference internal" href="class_portal.html#class-portal"><span class="std std-ref">Portal</span></a>, <a class="reference internal" href="class_position3d.html#class-position3d"><span class="std std-ref">Position3D</span></a>, <a class="reference internal" href="class_proximitygroup.html#class-proximitygroup"><span class="std std-ref">ProximityGroup</span></a>, <a class="reference internal" href="class_raycast.html#class-raycast"><span class="std std-ref">RayCast</span></a>, <a class="reference internal" href="class_remotetransform.html#class-remotetransform"><span class="std std-ref">RemoteTransform</span></a>, <a class="reference internal" href="class_room.html#class-room"><span class="std std-ref">Room</span></a>, <a class="reference internal" href="class_roomgroup.html#class-roomgroup"><span class="std std-ref">RoomGroup</span></a>, <a class="reference internal" href="class_roommanager.html#class-roommanager"><span class="std std-ref">RoomManager</span></a>, <a class="reference internal" href="class_skeleton.html#class-skeleton"><span class="std std-ref">Skeleton</span></a>, <a class="reference internal" href="class_springarm.html#class-springarm"><span class="std std-ref">SpringArm</span></a>, <a class="reference internal" href="class_vehiclewheel.html#class-vehiclewheel"><span class="std std-ref">VehicleWheel</span></a></p>
+<p>Most basic 3D game object, parent of all 3D-related nodes.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Most basic 3D game object, with a 3D <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> and visibility settings. All other 3D game objects inherit from Spatial. Use <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> as a parent node to move, scale, rotate and show/hide children in a 3D project.</p>
+<p>Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the <code class="docutils literal notranslate"><span class="pre">Spatial</span></code>'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> object itself is referred to as object-local coordinate system.</p>
+<p><strong>Note:</strong> Unless otherwise specified, all methods that have angle parameters must have angles specified as <em>radians</em>. To convert degrees to radians, use <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-deg2rad"><span class="std std-ref">@GDScript.deg2rad</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/introduction_to_3d.html"><span class="doc">Introduction to 3D</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/godotengine/godot-demo-projects/tree/master/3d">All 3D Demos</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 41%"/>
+<col style="width: 33%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_spatialgizmo.html#class-spatialgizmo"><span class="std std-ref">SpatialGizmo</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-gizmo"><span class="std std-ref">gizmo</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-global-transform"><span class="std std-ref">global_transform</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-rotation"><span class="std std-ref">rotation</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-rotation-degrees"><span class="std std-ref">rotation_degrees</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-scale"><span class="std std-ref">scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-transform"><span class="std std-ref">transform</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Transform(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-translation"><span class="std std-ref">translation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-property-visible"><span class="std std-ref">visible</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-force-update-transform"><span class="std std-ref">force_update_transform</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-spatial"><span class="std std-ref">Spatial</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-get-parent-spatial"><span class="std std-ref">get_parent_spatial</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_world.html#class-world"><span class="std std-ref">World</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-get-world"><span class="std std-ref">get_world</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-global-rotate"><span class="std std-ref">global_rotate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-global-scale"><span class="std std-ref">global_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-global-translate"><span class="std std-ref">global_translate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-hide"><span class="std std-ref">hide</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-is-local-transform-notification-enabled"><span class="std std-ref">is_local_transform_notification_enabled</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-is-scale-disabled"><span class="std std-ref">is_scale_disabled</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-is-set-as-toplevel"><span class="std std-ref">is_set_as_toplevel</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-is-transform-notification-enabled"><span class="std std-ref">is_transform_notification_enabled</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-is-visible-in-tree"><span class="std std-ref">is_visible_in_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-look-at"><span class="std std-ref">look_at</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> target, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-look-at-from-position"><span class="std std-ref">look_at_from_position</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> target, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-orthonormalize"><span class="std std-ref">orthonormalize</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-rotate"><span class="std std-ref">rotate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-rotate-object-local"><span class="std std-ref">rotate_object_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-rotate-x"><span class="std std-ref">rotate_x</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-rotate-y"><span class="std std-ref">rotate_y</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-rotate-z"><span class="std std-ref">rotate_z</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-scale-object-local"><span class="std std-ref">scale_object_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-as-toplevel"><span class="std std-ref">set_as_toplevel</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-disable-scale"><span class="std std-ref">set_disable_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-identity"><span class="std std-ref">set_identity</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-ignore-transform-notification"><span class="std std-ref">set_ignore_transform_notification</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-notify-local-transform"><span class="std std-ref">set_notify_local_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-set-notify-transform"><span class="std std-ref">set_notify_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-show"><span class="std std-ref">show</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-to-global"><span class="std std-ref">to_global</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-to-local"><span class="std std-ref">to_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> global_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-translate"><span class="std std-ref">translate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-translate-object-local"><span class="std std-ref">translate_object_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-spatial-method-update-gizmo"><span class="std std-ref">update_gizmo</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-spatial-signal-gameplay-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/gameplay_entered"></a>gameplay_entered</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted by portal system gameplay monitor when a node enters the gameplay area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-signal-gameplay-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/gameplay_exited"></a>gameplay_exited</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted by portal system gameplay monitor when a node exits the gameplay area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-signal-visibility-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/visibility_changed"></a>visibility_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when node visibility changes.</p>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-spatial-constant-notification-enter-gameplay"></span><span id="class-spatial-constant-notification-visibility-changed"></span><span id="class-spatial-constant-notification-exit-world"></span><span id="class-spatial-constant-notification-enter-world"></span><span id="class-spatial-constant-notification-transform-changed"></span><ul class="simple" id="class-spatial-constant-notification-exit-gameplay">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_TRANSFORM_CHANGED"></a>NOTIFICATION_TRANSFORM_CHANGED</strong> = <strong>2000</strong> --- Spatial nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.</p></li>
+</ul>
+<p>In order for <a class="reference internal" href="#class-spatial-constant-notification-transform-changed"><span class="std std-ref">NOTIFICATION_TRANSFORM_CHANGED</span></a> to work, users first need to ask for it, with <a class="reference internal" href="#class-spatial-method-set-notify-transform"><span class="std std-ref">set_notify_transform</span></a>. The notification is also sent if the node is in the editor context and it has a valid gizmo.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_ENTER_WORLD"></a>NOTIFICATION_ENTER_WORLD</strong> = <strong>41</strong> --- Spatial nodes receives this notification when they are registered to new <a class="reference internal" href="class_world.html#class-world"><span class="std std-ref">World</span></a> resource.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_EXIT_WORLD"></a>NOTIFICATION_EXIT_WORLD</strong> = <strong>42</strong> --- Spatial nodes receives this notification when they are unregistered from current <a class="reference internal" href="class_world.html#class-world"><span class="std std-ref">World</span></a> resource.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_VISIBILITY_CHANGED"></a>NOTIFICATION_VISIBILITY_CHANGED</strong> = <strong>43</strong> --- Spatial nodes receives this notification when their visibility changes.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_ENTER_GAMEPLAY"></a>NOTIFICATION_ENTER_GAMEPLAY</strong> = <strong>45</strong> --- Spatial nodes receives this notification if the portal system gameplay monitor detects they have entered the gameplay area.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_EXIT_GAMEPLAY"></a>NOTIFICATION_EXIT_GAMEPLAY</strong> = <strong>46</strong> --- Spatial nodes receives this notification if the portal system gameplay monitor detects they have exited the gameplay area.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-spatial-property-gizmo">
+<li><p><a class="reference internal" href="class_spatialgizmo.html#class-spatialgizmo"><span class="std std-ref">SpatialGizmo</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gizmo"></a>gizmo</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 64%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_gizmo(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_gizmo()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_spatialgizmo.html#class-spatialgizmo"><span class="std std-ref">SpatialGizmo</span></a> for this node. Used for example in <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> as custom visualization and editing handles in Editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-global-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_transform"></a>global_transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_transform(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>World space (global) <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> of this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-rotation">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/rotation"></a>rotation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_rotation(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_rotation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rotation part of the local transformation in radians, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).</p>
+<p><strong>Note:</strong> In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> data structure not because the rotation is a vector, but only because <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-rotation-degrees">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/rotation_degrees"></a>rotation_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_rotation_degrees(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_rotation_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rotation part of the local transformation in degrees, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-scale">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scale"></a>scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Scale part of the local transformation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transform"></a>transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Transform(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_transform(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Local space <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> of this node, with respect to the parent node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-translation">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/translation"></a>translation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_translation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_translation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Local translation of this node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-property-visible">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/visible"></a>visible</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_visible(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_visible()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this node is drawn. The node is only visible if all of its antecedents are visible as well (in other words, <a class="reference internal" href="#class-spatial-method-is-visible-in-tree"><span class="std std-ref">is_visible_in_tree</span></a> must return <code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-spatial-method-force-update-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/force_update_transform"></a>force_update_transform</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-get-parent-spatial">
+<li><p><a class="reference internal" href="#class-spatial"><span class="std std-ref">Spatial</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_parent_spatial"></a>get_parent_spatial</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the parent <code class="docutils literal notranslate"><span class="pre">Spatial</span></code>, or an empty <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> if no parent exists or parent is not of type <code class="docutils literal notranslate"><span class="pre">Spatial</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-get-world">
+<li><p><a class="reference internal" href="class_world.html#class-world"><span class="std std-ref">World</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_world"></a>get_world</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current <a class="reference internal" href="class_world.html#class-world"><span class="std std-ref">World</span></a> resource this <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> node is registered to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-global-rotate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/global_rotate"></a>global_rotate</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the global (world) transformation around axis, a unit <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a>, by specified angle in radians. The rotation axis is in global coordinate system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-global-scale">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/global_scale"></a>global_scale</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Scales the global (world) transformation by the given <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale factors.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-global-translate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/global_translate"></a>global_translate</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Moves the global (world) transformation by <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset. The offset is in global coordinate system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-hide">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hide"></a>hide</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Disables rendering of this node. Changes <a class="reference internal" href="#class-spatial-property-visible"><span class="std std-ref">visible</span></a> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-is-local-transform-notification-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_local_transform_notification_enabled"></a>is_local_transform_notification_enabled</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether node notifies about its local transformation changes. <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> will not propagate this by default.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-is-scale-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_scale_disabled"></a>is_scale_disabled</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether this node uses a scale of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> or its local transformation scale.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-is-set-as-toplevel">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_set_as_toplevel"></a>is_set_as_toplevel</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether this node is set as Toplevel, that is whether it ignores its parent nodes transformations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-is-transform-notification-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_transform_notification_enabled"></a>is_transform_notification_enabled</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether the node notifies about its global and local transformation changes. <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> will not propagate this by default.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-is-visible-in-tree">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_visible_in_tree"></a>is_visible_in_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is present in the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>, its <a class="reference internal" href="#class-spatial-property-visible"><span class="std std-ref">visible</span></a> property is <code class="docutils literal notranslate"><span class="pre">true</span></code> and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-look-at">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/look_at"></a>look_at</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> target, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up <strong>)</strong></p></li>
+</ul>
+<p>Rotates the node so that the local forward axis (-Z) points toward the <code class="docutils literal notranslate"><span class="pre">target</span></code> position.</p>
+<p>The local up axis (+Y) points as close to the <code class="docutils literal notranslate"><span class="pre">up</span></code> vector as possible while staying perpendicular to the local forward axis. The resulting transform is orthogonal, and the scale is preserved. Non-uniform scaling may not work correctly.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">target</span></code> position cannot be the same as the node's position, the <code class="docutils literal notranslate"><span class="pre">up</span></code> vector cannot be zero, and the direction from the node's position to the <code class="docutils literal notranslate"><span class="pre">target</span></code> vector cannot be parallel to the <code class="docutils literal notranslate"><span class="pre">up</span></code> vector.</p>
+<p>Operations take place in global space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-look-at-from-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/look_at_from_position"></a>look_at_from_position</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> target, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up <strong>)</strong></p></li>
+</ul>
+<p>Moves the node to the specified <code class="docutils literal notranslate"><span class="pre">position</span></code>, and then rotates itself to point toward the <code class="docutils literal notranslate"><span class="pre">target</span></code> as per <a class="reference internal" href="#class-spatial-method-look-at"><span class="std std-ref">look_at</span></a>. Operations take place in global space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-orthonormalize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/orthonormalize"></a>orthonormalize</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-rotate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate"></a>rotate</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the local transformation around axis, a unit <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a>, by specified angle in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-rotate-object-local">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate_object_local"></a>rotate_object_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the local transformation around axis, a unit <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a>, by specified angle in radians. The rotation axis is in object-local coordinate system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-rotate-x">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate_x"></a>rotate_x</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the local transformation around the X axis by angle in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-rotate-y">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate_y"></a>rotate_y</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the local transformation around the Y axis by angle in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-rotate-z">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate_z"></a>rotate_z</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Rotates the local transformation around the Z axis by angle in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-scale-object-local">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/scale_object_local"></a>scale_object_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Scales the local transformation by given 3D scale factors in object-local coordinate system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-as-toplevel">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_as_toplevel"></a>set_as_toplevel</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Makes the node ignore its parents transformations. Node transformations are only in global space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-disable-scale">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_disable_scale"></a>set_disable_scale</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disable <strong>)</strong></p></li>
+</ul>
+<p>Sets whether the node uses a scale of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> or its local transformation scale. Changes to the local transformation scale are preserved.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-identity">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_identity"></a>set_identity</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Reset all transformations for this node (sets its <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> to the identity matrix).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-ignore-transform-notification">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_ignore_transform_notification"></a>set_ignore_transform_notification</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>Sets whether the node ignores notification that its transformation (global or local) changed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-notify-local-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_notify_local_transform"></a>set_notify_local_transform</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets whether the node notifies about its local transformation changes. <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> will not propagate this by default.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-set-notify-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_notify_transform"></a>set_notify_transform</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets whether the node notifies about its global and local transformation changes. <code class="docutils literal notranslate"><span class="pre">Spatial</span></code> will not propagate this by default, unless it is in the editor context and it has a valid gizmo.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-show">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/show"></a>show</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Enables rendering of this node. Changes <a class="reference internal" href="#class-spatial-property-visible"><span class="std std-ref">visible</span></a> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-to-global">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_global"></a>to_global</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Transforms <code class="docutils literal notranslate"><span class="pre">local_point</span></code> from this node's local space to world space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-to-local">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_local"></a>to_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> global_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Transforms <code class="docutils literal notranslate"><span class="pre">global_point</span></code> from world space to this node's local space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-translate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/translate"></a>translate</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Changes the node's position by the given offset <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a>.</p>
+<p>Note that the translation <code class="docutils literal notranslate"><span class="pre">offset</span></code> is affected by the node's scale, so if scaled by e.g. <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>, a translation by an offset of <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> would actually add 20 (<code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">10</span></code>) to the X coordinate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-translate-object-local">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/translate_object_local"></a>translate_object_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Changes the node's position by the given offset <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> in local space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-spatial-method-update-gizmo">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_gizmo"></a>update_gizmo</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Updates the <a class="reference internal" href="class_spatialgizmo.html#class-spatialgizmo"><span class="std std-ref">SpatialGizmo</span></a> of this node.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_softbody.html" rel="prev" title="SoftBody"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_spatialgizmo.html" rel="next" title="SpatialGizmo">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

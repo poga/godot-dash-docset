@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ARVRController" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_arvrcontroller.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object A spatial node representing a spatially-tracked controller. Description: This is a helper spatial node that is linked to the tracking of controllers. It also offers ..." property="og:description"/>
+<meta content="A spatial node representing a spatially-tracked controller. This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ARVRController — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arvrcontroller.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_arvrcontroller.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_arvrcontroller.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_arvrcontroller.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_arvrcontroller.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_arvrcontroller.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_arvrcontroller.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_arvrcontroller.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_arvrcontroller.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_arvrcontroller.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_arvrcontroller.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_arvrcontroller.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_arvrcontroller.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_arvrcontroller.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arvrcontroller.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arvrcontroller.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_arvrinterface.html" rel="next" title="ARVRInterface"/>
+<link href="class_arvrcamera.html" rel="prev" title="ARVRCamera"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ARVRController</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="arvrcontroller">
+<span id="class-arvrcontroller"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ARVRController¶"></a>ARVRController<a class="headerlink" href="#arvrcontroller" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A spatial node representing a spatially-tracked controller.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This is a helper spatial node that is linked to the tracking of controllers. It also offers several handy passthroughs to the state of buttons and such on the controllers.</p>
+<p>Controllers are linked by their ID. You can create controller nodes before the controllers are available. If your game always uses two controllers (one for each hand), you can predefine the controllers with ID 1 and 2; they will become active as soon as the controllers are identified. If you expect additional controllers to be used, you should react to the signals and add ARVRController nodes to your scene.</p>
+<p>The position of the controller node is automatically updated by the <a class="reference internal" href="class_arvrserver.html#class-arvrserver"><span class="std std-ref">ARVRServer</span></a>. This makes this node ideal to add child nodes to visualize the controller.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/vr/index.html"><span class="doc">XR (AR/VR)</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 65%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-property-controller-id"><span class="std std-ref">controller_id</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-property-rumble"><span class="std std-ref">rumble</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-controller-name"><span class="std std-ref">get_controller_name</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_arvrpositionaltracker.html#enum-arvrpositionaltracker-trackerhand"><span class="std std-ref">TrackerHand</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-hand"><span class="std std-ref">get_hand</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-is-active"><span class="std std-ref">get_is_active</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-joystick-axis"><span class="std std-ref">get_joystick_axis</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-joystick-id"><span class="std std-ref">get_joystick_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-get-mesh"><span class="std std-ref">get_mesh</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arvrcontroller-method-is-button-pressed"><span class="std std-ref">is_button_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-arvrcontroller-signal-button-pressed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/button_pressed"></a>button_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a button on this controller is pressed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-signal-button-release">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/button_release"></a>button_release</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a button on this controller is released.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-signal-mesh-updated">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/mesh_updated"></a>mesh_updated</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> mesh <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the mesh associated with the controller changes or when one becomes available. Generally speaking this will be a static mesh after becoming available.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-arvrcontroller-property-controller-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/controller_id"></a>controller_id</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_controller_id(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_controller_id()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The controller's ID.</p>
+<p>A controller ID of 0 is unbound and will always result in an inactive node. Controller ID 1 is reserved for the first controller that identifies itself as the left-hand controller and ID 2 is reserved for the first controller that identifies itself as the right-hand controller.</p>
+<p>For any other controller that the <a class="reference internal" href="class_arvrserver.html#class-arvrserver"><span class="std std-ref">ARVRServer</span></a> detects, we continue with controller ID 3.</p>
+<p>When a controller is turned off, its slot is freed. This ensures controllers will keep the same ID even when controllers with lower IDs are turned off.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-property-rumble">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/rumble"></a>rumble</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_rumble(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_rumble()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The degree to which the controller vibrates. Ranges from <code class="docutils literal notranslate"><span class="pre">0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">1.0</span></code> with precision <code class="docutils literal notranslate"><span class="pre">.01</span></code>. If changed, updates <a class="reference internal" href="class_arvrpositionaltracker.html#class-arvrpositionaltracker-property-rumble"><span class="std std-ref">ARVRPositionalTracker.rumble</span></a> accordingly.</p>
+<p>This is a useful property to animate if you want the controller to vibrate for a limited duration.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-arvrcontroller-method-get-controller-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_controller_name"></a>get_controller_name</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If active, returns the name of the associated controller if provided by the AR/VR SDK used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-get-hand">
+<li><p><a class="reference internal" href="class_arvrpositionaltracker.html#enum-arvrpositionaltracker-trackerhand"><span class="std std-ref">TrackerHand</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_hand"></a>get_hand</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the hand holding this controller, if known. See <a class="reference internal" href="class_arvrpositionaltracker.html#enum-arvrpositionaltracker-trackerhand"><span class="std std-ref">TrackerHand</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-get-is-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_is_active"></a>get_is_active</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the bound controller is active. ARVR systems attempt to track active controllers.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-get-joystick-axis">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joystick_axis"></a>get_joystick_axis</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of the given axis for things like triggers, touchpads, etc. that are embedded into the controller.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-get-joystick-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joystick_id"></a>get_joystick_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the ID of the joystick object bound to this. Every controller tracked by the <a class="reference internal" href="class_arvrserver.html#class-arvrserver"><span class="std std-ref">ARVRServer</span></a> that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-get-mesh">
+<li><p><a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_mesh"></a>get_mesh</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If provided by the <a class="reference internal" href="class_arvrinterface.html#class-arvrinterface"><span class="std std-ref">ARVRInterface</span></a>, this returns a mesh associated with the controller. This can be used to visualize the controller.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arvrcontroller-method-is-button-pressed">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_button_pressed"></a>is_button_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the button at index <code class="docutils literal notranslate"><span class="pre">button</span></code> is pressed. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a>, in particular the <code class="docutils literal notranslate"><span class="pre">JOY_VR_*</span></code> constants.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_arvrcamera.html" rel="prev" title="ARVRCamera"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_arvrinterface.html" rel="next" title="ARVRInterface">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

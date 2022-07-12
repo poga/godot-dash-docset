@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Object" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_object.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherited By: ARVRServer, AudioServer, CameraServer, ClassDB, EditorFileSystemDirectory, EditorNavigationMeshGenerator, EditorSelection, EditorVCSInterface, Engine, Geometry, GodotSharp, IP, Input,..." property="og:description"/>
+<meta content="Base class for all non-built-in types. Every class which is not a built-in type inherits from this class. You can construct Objects from scripting languages, using Object.new() in GDScript, new Object in C#, or the &amp;q..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Object — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_object.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_object.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_object.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_object.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_object.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_object.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_object.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_object.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_object.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_object.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_object.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_object.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_object.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_object.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_object.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_object.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_occluder.html" rel="next" title="Occluder"/>
+<link href="class_noisetexture.html" rel="prev" title="NoiseTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Object</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="object">
+<span id="class-object"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Object¶"></a>Object<a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_arvrserver.html#class-arvrserver"><span class="std std-ref">ARVRServer</span></a>, <a class="reference internal" href="class_audioserver.html#class-audioserver"><span class="std std-ref">AudioServer</span></a>, <a class="reference internal" href="class_cameraserver.html#class-cameraserver"><span class="std std-ref">CameraServer</span></a>, <a class="reference internal" href="class_classdb.html#class-classdb"><span class="std std-ref">ClassDB</span></a>, <a class="reference internal" href="class_editorfilesystemdirectory.html#class-editorfilesystemdirectory"><span class="std std-ref">EditorFileSystemDirectory</span></a>, <a class="reference internal" href="class_editornavigationmeshgenerator.html#class-editornavigationmeshgenerator"><span class="std std-ref">EditorNavigationMeshGenerator</span></a>, <a class="reference internal" href="class_editorselection.html#class-editorselection"><span class="std std-ref">EditorSelection</span></a>, <a class="reference internal" href="class_editorvcsinterface.html#class-editorvcsinterface"><span class="std std-ref">EditorVCSInterface</span></a>, <a class="reference internal" href="class_engine.html#class-engine"><span class="std std-ref">Engine</span></a>, <a class="reference internal" href="class_geometry.html#class-geometry"><span class="std std-ref">Geometry</span></a>, <a class="reference internal" href="class_godotsharp.html#class-godotsharp"><span class="std std-ref">GodotSharp</span></a>, <a class="reference internal" href="class_ip.html#class-ip"><span class="std std-ref">IP</span></a>, <a class="reference internal" href="class_input.html#class-input"><span class="std std-ref">Input</span></a>, <a class="reference internal" href="class_inputmap.html#class-inputmap"><span class="std std-ref">InputMap</span></a>, <a class="reference internal" href="class_jnisingleton.html#class-jnisingleton"><span class="std std-ref">JNISingleton</span></a>, <a class="reference internal" href="class_json.html#class-json"><span class="std std-ref">JSON</span></a>, <a class="reference internal" href="class_jsonrpc.html#class-jsonrpc"><span class="std std-ref">JSONRPC</span></a>, <a class="reference internal" href="class_javaclasswrapper.html#class-javaclasswrapper"><span class="std std-ref">JavaClassWrapper</span></a>, <a class="reference internal" href="class_javascript.html#class-javascript"><span class="std std-ref">JavaScript</span></a>, <a class="reference internal" href="class_mainloop.html#class-mainloop"><span class="std std-ref">MainLoop</span></a>, <a class="reference internal" href="class_marshalls.html#class-marshalls"><span class="std std-ref">Marshalls</span></a>, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, <a class="reference internal" href="class_os.html#class-os"><span class="std std-ref">OS</span></a>, <a class="reference internal" href="class_performance.html#class-performance"><span class="std std-ref">Performance</span></a>, <a class="reference internal" href="class_physics2ddirectbodystate.html#class-physics2ddirectbodystate"><span class="std std-ref">Physics2DDirectBodyState</span></a>, <a class="reference internal" href="class_physics2ddirectspacestate.html#class-physics2ddirectspacestate"><span class="std std-ref">Physics2DDirectSpaceState</span></a>, <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>, <a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a>, <a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a>, <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>, <a class="reference internal" href="class_projectsettings.html#class-projectsettings"><span class="std std-ref">ProjectSettings</span></a>, <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a>, <a class="reference internal" href="class_resourceloader.html#class-resourceloader"><span class="std std-ref">ResourceLoader</span></a>, <a class="reference internal" href="class_resourcesaver.html#class-resourcesaver"><span class="std std-ref">ResourceSaver</span></a>, <a class="reference internal" href="class_translationserver.html#class-translationserver"><span class="std std-ref">TranslationServer</span></a>, <a class="reference internal" href="class_treeitem.html#class-treeitem"><span class="std std-ref">TreeItem</span></a>, <a class="reference internal" href="class_undoredo.html#class-undoredo"><span class="std std-ref">UndoRedo</span></a>, <a class="reference internal" href="class_visualscripteditor.html#class-visualscripteditor"><span class="std std-ref">VisualScriptEditor</span></a>, <a class="reference internal" href="class_visualserver.html#class-visualserver"><span class="std std-ref">VisualServer</span></a></p>
+<p>Base class for all non-built-in types.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Every class which is not a built-in type inherits from this class.</p>
+<p>You can construct Objects from scripting languages, using <code class="docutils literal notranslate"><span class="pre">Object.new()</span></code> in GDScript, <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Object</span></code> in C#, or the "Construct Object" node in VisualScript.</p>
+<p>Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the <a class="reference internal" href="#class-object-method-free"><span class="std std-ref">free</span></a> method from your script or delete the instance from C++.</p>
+<p>Some classes that extend Object add memory management. This is the case of <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a>, which counts references and deletes itself automatically when no longer referenced. <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, another fundamental type, deletes all its children when freed from memory.</p>
+<p>Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in <a class="reference internal" href="#class-object-method-get-property-list"><span class="std std-ref">_get_property_list</span></a> and handled in <a class="reference internal" href="#class-object-method-get"><span class="std std-ref">_get</span></a> and <a class="reference internal" href="#class-object-method-set"><span class="std std-ref">_set</span></a>. However, scripting languages and C++ have simpler means to export them.</p>
+<p>Property membership can be tested directly in GDScript using <code class="docutils literal notranslate"><span class="pre">in</span></code>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">n</span> <span class="o">=</span> <span class="n">Node2D</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"position"</span> <span class="ow">in</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># Prints "True".</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"other_property"</span> <span class="ow">in</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># Prints "False".</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator will evaluate to <code class="docutils literal notranslate"><span class="pre">true</span></code> as long as the key exists, even if the value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p>Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See <a class="reference internal" href="#class-object-method-notification"><span class="std std-ref">_notification</span></a>.</p>
+<p><strong>Note:</strong> Unlike references to a <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a>, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> for data classes instead of <code class="docutils literal notranslate"><span class="pre">Object</span></code>.</p>
+<p><strong>Note:</strong> Due to a bug, you can't create a "plain" Object using <code class="docutils literal notranslate"><span class="pre">Object.new()</span></code>. Instead, use <code class="docutils literal notranslate"><span class="pre">ClassDB.instance("Object")</span></code>. This bug only applies to Object itself, not any of its descendents like <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/best_practices/node_alternatives.html"><span class="doc">When and how to avoid using nodes for everything</span></a></p></li>
+<li><p><a class="reference external" href="../tutorials/scripting/gdscript/gdscript_exports.html#advanced-exports">#advanced-exports</a> in <a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html"><span class="doc">GDScript exports</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get"><span class="std std-ref">_get</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-property-list"><span class="std std-ref">_get_property_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-init"><span class="std std-ref">_init</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-notification"><span class="std std-ref">_notification</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-set"><span class="std std-ref">_set</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-to-string"><span class="std std-ref">_to_string</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-add-user-signal"><span class="std std-ref">add_user_signal</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arguments=[  ] <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-call"><span class="std std-ref">call</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-call-deferred"><span class="std std-ref">call_deferred</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-callv"><span class="std std-ref">callv</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arg_array <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-can-translate-messages"><span class="std std-ref">can_translate_messages</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-connect"><span class="std std-ref">connect</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> binds=[  ], <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-disconnect"><span class="std std-ref">disconnect</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-emit-signal"><span class="std std-ref">emit_signal</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-free"><span class="std std-ref">free</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#id1"><span class="std std-ref">get</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-class"><span class="std std-ref">get_class</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-incoming-connections"><span class="std std-ref">get_incoming_connections</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-indexed"><span class="std std-ref">get_indexed</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-instance-id"><span class="std std-ref">get_instance_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-meta"><span class="std std-ref">get_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-meta-list"><span class="std std-ref">get_meta_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-method-list"><span class="std std-ref">get_method_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#id2"><span class="std std-ref">get_property_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-script"><span class="std std-ref">get_script</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-signal-connection-list"><span class="std std-ref">get_signal_connection_list</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-get-signal-list"><span class="std std-ref">get_signal_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-has-meta"><span class="std std-ref">has_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-has-method"><span class="std std-ref">has_method</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-has-signal"><span class="std std-ref">has_signal</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-has-user-signal"><span class="std std-ref">has_user_signal</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-is-blocking-signals"><span class="std std-ref">is_blocking_signals</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-is-class"><span class="std std-ref">is_class</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> class <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-is-connected"><span class="std std-ref">is_connected</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-is-queued-for-deletion"><span class="std std-ref">is_queued_for_deletion</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#id3"><span class="std std-ref">notification</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> reversed=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-property-list-changed-notify"><span class="std std-ref">property_list_changed_notify</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-remove-meta"><span class="std std-ref">remove_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#id4"><span class="std std-ref">set</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-block-signals"><span class="std std-ref">set_block_signals</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-deferred"><span class="std std-ref">set_deferred</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-indexed"><span class="std std-ref">set_indexed</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-message-translation"><span class="std std-ref">set_message_translation</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-meta"><span class="std std-ref">set_meta</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-object-method-set-script"><span class="std std-ref">set_script</span></a> <strong>(</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> script <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#id5"><span class="std std-ref">to_string</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-object-method-tr"><span class="std std-ref">tr</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> message <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-object-signal-script-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/script_changed"></a>script_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever the object's script is changed.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-object-constant-connect-reference-counted"><span id="class-object-constant-connect-oneshot"></span><span id="class-object-constant-connect-persist"></span><span id="class-object-constant-connect-deferred"></span><span id="enum-object-connectflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ConnectFlags"></a>ConnectFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>CONNECT_DEFERRED</strong> = <strong>1</strong> --- Connects a signal in deferred mode. This way, signal emissions are stored in a queue, then set on idle time.</p></li>
+<li><p><strong>CONNECT_PERSIST</strong> = <strong>2</strong> --- Persisting connections are saved when the object is serialized to file.</p></li>
+<li><p><strong>CONNECT_ONESHOT</strong> = <strong>4</strong> --- One-shot connections disconnect themselves after emission.</p></li>
+<li><p><strong>CONNECT_REFERENCE_COUNTED</strong> = <strong>8</strong> --- Connect a signal as reference-counted. This means that a given signal can be connected several times to the same target, and will only be fully disconnected once no references are left.</p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-object-constant-notification-postinitialize"></span><ul class="simple" id="class-object-constant-notification-predelete">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_POSTINITIALIZE"></a>NOTIFICATION_POSTINITIALIZE</strong> = <strong>0</strong> --- Called right when the object is initialized. Not available in script.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_PREDELETE"></a>NOTIFICATION_PREDELETE</strong> = <strong>1</strong> --- Called before the object is about to be deleted.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-object-method-get">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_get"></a>_get</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method which can be overridden to customize the return value of <a class="reference internal" href="#id1"><span class="std std-ref">get</span></a>.</p>
+<p>Returns the given property. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the <code class="docutils literal notranslate"><span class="pre">property</span></code> does not exist.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-property-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_get_property_list"></a>_get_property_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method which can be overridden to customize the return value of <a class="reference internal" href="#id2"><span class="std std-ref">get_property_list</span></a>.</p>
+<p>Returns the object's property list as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of dictionaries.</p>
+<p>Each property's <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> must contain at least <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-variant-type"><span class="std std-ref">Variant.Type</span></a>) entries. Optionally, it can also include <code class="docutils literal notranslate"><span class="pre">hint:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-propertyhint"><span class="std std-ref">PropertyHint</span></a>), <code class="docutils literal notranslate"><span class="pre">hint_string:</span> <span class="pre">String</span></code>, and <code class="docutils literal notranslate"><span class="pre">usage:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-propertyusageflags"><span class="std std-ref">PropertyUsageFlags</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-init">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_init"></a>_init</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when the object is initialized in memory. Can be defined to take in parameters, that are passed in when constructing.</p>
+<p><strong>Note:</strong> If <a class="reference internal" href="#class-object-method-init"><span class="std std-ref">_init</span></a> is defined with required parameters, then explicit construction is the only valid means of creating an Object of the class. If any other means (such as <a class="reference internal" href="class_packedscene.html#class-packedscene-method-instance"><span class="std std-ref">PackedScene.instance</span></a>) is used, then initialization will fail.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-notification">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_notification"></a>_notification</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called whenever the object receives a notification, which is identified in <code class="docutils literal notranslate"><span class="pre">what</span></code> by a constant. The base <code class="docutils literal notranslate"><span class="pre">Object</span></code> has two constants <a class="reference internal" href="#class-object-constant-notification-postinitialize"><span class="std std-ref">NOTIFICATION_POSTINITIALIZE</span></a> and <a class="reference internal" href="#class-object-constant-notification-predelete"><span class="std std-ref">NOTIFICATION_PREDELETE</span></a>, but subclasses such as <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> define a lot more notifications which are also received by this method.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_set"></a>_set</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method which can be overridden to customize the return value of <a class="reference internal" href="#id4"><span class="std std-ref">set</span></a>.</p>
+<p>Sets a property. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <code class="docutils literal notranslate"><span class="pre">property</span></code> exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-to-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_to_string"></a>_to_string</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method which can be overridden to customize the return value of <a class="reference internal" href="#id5"><span class="std std-ref">to_string</span></a>, and thus the object's representation where it is converted to a string, e.g. with <code class="docutils literal notranslate"><span class="pre">print(obj)</span></code>.</p>
+<p>Returns a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> representing the object. If not overridden, defaults to <code class="docutils literal notranslate"><span class="pre">"[ClassName:RID]"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-add-user-signal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_user_signal"></a>add_user_signal</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arguments=[  ] <strong>)</strong></p></li>
+</ul>
+<p>Adds a user-defined <code class="docutils literal notranslate"><span class="pre">signal</span></code>. Arguments are optional, but can be added as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of dictionaries, each containing <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-variant-type"><span class="std std-ref">Variant.Type</span></a>) entries.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-call">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/call"></a>call</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Calls the <code class="docutils literal notranslate"><span class="pre">method</span></code> on the object and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">call</span><span class="p">(</span><span class="s2">"set"</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mf">42.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-call-deferred">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/call_deferred"></a>call_deferred</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Calls the <code class="docutils literal notranslate"><span class="pre">method</span></code> on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">call_deferred</span><span class="p">(</span><span class="s2">"set"</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mf">42.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-callv">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/callv"></a>callv</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arg_array <strong>)</strong></p></li>
+</ul>
+<p>Calls the <code class="docutils literal notranslate"><span class="pre">method</span></code> on the object and returns the result. Contrarily to <a class="reference internal" href="#class-object-method-call"><span class="std std-ref">call</span></a>, this method does not support a variable number of arguments but expects all parameters to be via a single <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">callv</span><span class="p">(</span><span class="s2">"set"</span><span class="p">,</span> <span class="p">[</span> <span class="s2">"position"</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mf">42.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="p">])</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-can-translate-messages">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/can_translate_messages"></a>can_translate_messages</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the object can translate strings. See <a class="reference internal" href="#class-object-method-set-message-translation"><span class="std std-ref">set_message_translation</span></a> and <a class="reference internal" href="#class-object-method-tr"><span class="std std-ref">tr</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-connect">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/connect"></a>connect</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> binds=[  ], <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=0 <strong>)</strong></p></li>
+</ul>
+<p>Connects a <code class="docutils literal notranslate"><span class="pre">signal</span></code> to a <code class="docutils literal notranslate"><span class="pre">method</span></code> on a <code class="docutils literal notranslate"><span class="pre">target</span></code> object. Pass optional <code class="docutils literal notranslate"><span class="pre">binds</span></code> to the call as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of parameters. These parameters will be passed to the method after any parameter used in the call to <a class="reference internal" href="#class-object-method-emit-signal"><span class="std std-ref">emit_signal</span></a>. Use <code class="docutils literal notranslate"><span class="pre">flags</span></code> to set deferred or one-shot connections. See <a class="reference internal" href="#enum-object-connectflags"><span class="std std-ref">ConnectFlags</span></a> constants.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">signal</span></code> can only be connected once to a <code class="docutils literal notranslate"><span class="pre">method</span></code>. It will print an error if already connected, unless the signal was connected with <a class="reference internal" href="#class-object-constant-connect-reference-counted"><span class="std std-ref">CONNECT_REFERENCE_COUNTED</span></a>. To avoid this, first, use <a class="reference internal" href="#class-object-method-is-connected"><span class="std std-ref">is_connected</span></a> to check for existing connections.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">target</span></code> is destroyed in the game's lifecycle, the connection will be lost.</p>
+<p>Examples:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">connect</span><span class="p">(</span><span class="s2">"pressed"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_on_Button_pressed"</span><span class="p">)</span> <span class="c1"># BaseButton signal</span>
+<span class="n">connect</span><span class="p">(</span><span class="s2">"text_entered"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_on_LineEdit_text_entered"</span><span class="p">)</span> <span class="c1"># LineEdit signal</span>
+<span class="n">connect</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_on_Player_hit"</span><span class="p">,</span> <span class="p">[</span> <span class="n">weapon_type</span><span class="p">,</span> <span class="n">damage</span> <span class="p">])</span> <span class="c1"># User-defined signal</span>
+</pre></div>
+</div>
+<p>An example of the relationship between <code class="docutils literal notranslate"><span class="pre">binds</span></code> passed to <a class="reference internal" href="#class-object-method-connect"><span class="std std-ref">connect</span></a> and parameters used when calling <a class="reference internal" href="#class-object-method-emit-signal"><span class="std std-ref">emit_signal</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">connect</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_on_Player_hit"</span><span class="p">,</span> <span class="p">[</span> <span class="n">weapon_type</span><span class="p">,</span> <span class="n">damage</span> <span class="p">])</span> <span class="c1"># weapon_type and damage are passed last</span>
+<span class="n">emit_signal</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">,</span> <span class="s2">"Dark lord"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># "Dark lord" and 5 are passed first</span>
+<span class="k">func</span> <span class="n">_on_Player_hit</span><span class="p">(</span><span class="n">hit_by</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">weapon_type</span><span class="p">,</span> <span class="n">damage</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hit by </span><span class="si">%s</span><span class="s2"> (lvl </span><span class="si">%d</span><span class="s2">) with weapon </span><span class="si">%s</span><span class="s2"> for </span><span class="si">%d</span><span class="s2"> damage"</span> <span class="o">%</span> <span class="p">[</span><span class="n">hit_by</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">weapon_type</span><span class="p">,</span> <span class="n">damage</span><span class="p">])</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-disconnect">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disconnect"></a>disconnect</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></li>
+</ul>
+<p>Disconnects a <code class="docutils literal notranslate"><span class="pre">signal</span></code> from a <code class="docutils literal notranslate"><span class="pre">method</span></code> on the given <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
+<p>If you try to disconnect a connection that does not exist, the method will print an error. Use <a class="reference internal" href="#class-object-method-is-connected"><span class="std std-ref">is_connected</span></a> to ensure that the connection exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-emit-signal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/emit_signal"></a>emit_signal</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Emits the given <code class="docutils literal notranslate"><span class="pre">signal</span></code>. The signal must exist, so it should be a built-in signal of this class or one of its parent classes, or a user-defined signal. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">emit_signal</span><span class="p">(</span><span class="s2">"hit"</span><span class="p">,</span> <span class="n">weapon_type</span><span class="p">,</span> <span class="n">damage</span><span class="p">)</span>
+<span class="n">emit_signal</span><span class="p">(</span><span class="s2">"game_over"</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-free">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/free"></a>free</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Deletes the object from memory immediately. For <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>s, you may want to use <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a> to queue the node for safe deletion at the end of the current frame.</p>
+<p><strong>Important:</strong> If you have a variable pointing to an object, it will <em>not</em> be assigned to <code class="docutils literal notranslate"><span class="pre">null</span></code> once the object is freed. Instead, it will point to a <em>previously freed instance</em> and you should validate it with <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-is-instance-valid"><span class="std std-ref">@GDScript.is_instance_valid</span></a> before attempting to call its methods or access its properties.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id1">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get"></a>get</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value of the given <code class="docutils literal notranslate"><span class="pre">property</span></code>. If the <code class="docutils literal notranslate"><span class="pre">property</span></code> doesn't exist, this will return <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p><strong>Note:</strong> In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-class">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_class"></a>get_class</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's class as a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>. See also <a class="reference internal" href="#class-object-method-is-class"><span class="std std-ref">is_class</span></a>.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-object-method-get-class"><span class="std std-ref">get_class</span></a> does not take <code class="docutils literal notranslate"><span class="pre">class_name</span></code> declarations into account. If the object has a <code class="docutils literal notranslate"><span class="pre">class_name</span></code> defined, the base class name will be returned instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-incoming-connections">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_incoming_connections"></a>get_incoming_connections</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of dictionaries with information about signals that are connected to the object.</p>
+<p>Each <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> contains three String entries:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> is a reference to the signal emitter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signal_name</span></code> is the name of the connected signal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method_name</span></code> is the name of the method to which the signal is connected.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-indexed">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_indexed"></a>get_indexed</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the object's property indexed by the given <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>. The node path should be relative to the current object and can use the colon character (<code class="docutils literal notranslate"><span class="pre">:</span></code>) to access nested properties. Examples: <code class="docutils literal notranslate"><span class="pre">"position:x"</span></code> or <code class="docutils literal notranslate"><span class="pre">"material:next_pass:blend_mode"</span></code>.</p>
+<p><strong>Note:</strong> Even though the method takes <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> argument, it doesn't support actual paths to <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>s in the scene tree, only colon-separated sub-property paths. For the purpose of nodes, use <a class="reference internal" href="class_node.html#class-node-method-get-node-and-resource"><span class="std std-ref">Node.get_node_and_resource</span></a> instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-instance-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_instance_id"></a>get_instance_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's unique instance ID.</p>
+<p>This ID can be saved in <a class="reference internal" href="class_encodedobjectasid.html#class-encodedobjectasid"><span class="std std-ref">EncodedObjectAsID</span></a>, and can be used to retrieve the object instance with <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-instance-from-id"><span class="std std-ref">@GDScript.instance_from_id</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-meta">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_meta"></a>get_meta</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's metadata entry for the given <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-meta-list">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_meta_list"></a>get_meta_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's metadata as a <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-method-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_method_list"></a>get_method_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's methods and their signatures as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id2">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_property_list"></a>get_property_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's property list as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of dictionaries.</p>
+<p>Each property's <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> contain at least <code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-variant-type"><span class="std std-ref">Variant.Type</span></a>) entries. Optionally, it can also include <code class="docutils literal notranslate"><span class="pre">hint:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-propertyhint"><span class="std std-ref">PropertyHint</span></a>), <code class="docutils literal notranslate"><span class="pre">hint_string:</span> <span class="pre">String</span></code>, and <code class="docutils literal notranslate"><span class="pre">usage:</span> <span class="pre">int</span></code> (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-propertyusageflags"><span class="std std-ref">PropertyUsageFlags</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-script">
+<li><p><a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_script"></a>get_script</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> instance, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if none is assigned.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-signal-connection-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_signal_connection_list"></a>get_signal_connection_list</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of connections for the given <code class="docutils literal notranslate"><span class="pre">signal</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-get-signal-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_signal_list"></a>get_signal_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the list of signals as an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of dictionaries.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-has-meta">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_meta"></a>has_meta</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a metadata entry is found with the given <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-has-method">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_method"></a>has_method</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the object contains the given <code class="docutils literal notranslate"><span class="pre">method</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-has-signal">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_signal"></a>has_signal</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given <code class="docutils literal notranslate"><span class="pre">signal</span></code> exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-has-user-signal">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_user_signal"></a>has_user_signal</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given user-defined <code class="docutils literal notranslate"><span class="pre">signal</span></code> exists. Only signals added using <a class="reference internal" href="#class-object-method-add-user-signal"><span class="std std-ref">add_user_signal</span></a> are taken into account.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-is-blocking-signals">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_blocking_signals"></a>is_blocking_signals</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if signal emission blocking is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-is-class">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_class"></a>is_class</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> class <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the object inherits from the given <code class="docutils literal notranslate"><span class="pre">class</span></code>. See also <a class="reference internal" href="#class-object-method-get-class"><span class="std std-ref">get_class</span></a>.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-object-method-is-class"><span class="std std-ref">is_class</span></a> does not take <code class="docutils literal notranslate"><span class="pre">class_name</span></code> declarations into account. If the object has a <code class="docutils literal notranslate"><span class="pre">class_name</span></code> defined, <a class="reference internal" href="#class-object-method-is-class"><span class="std std-ref">is_class</span></a> will return <code class="docutils literal notranslate"><span class="pre">false</span></code> for that name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-is-connected">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_connected"></a>is_connected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> signal, <a class="reference internal" href="#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a connection exists for a given <code class="docutils literal notranslate"><span class="pre">signal</span></code>, <code class="docutils literal notranslate"><span class="pre">target</span></code>, and <code class="docutils literal notranslate"><span class="pre">method</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-is-queued-for-deletion">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_queued_for_deletion"></a>is_queued_for_deletion</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a> method was called for the object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id3">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/notification"></a>notification</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> what, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> reversed=false <strong>)</strong></p></li>
+</ul>
+<p>Send a given notification to the object, which will also trigger a call to the <a class="reference internal" href="#class-object-method-notification"><span class="std std-ref">_notification</span></a> method of all classes that the object inherits from.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, <a class="reference internal" href="#class-object-method-notification"><span class="std std-ref">_notification</span></a> is called first on the object's own class, and then up to its successive parent classes. If <code class="docutils literal notranslate"><span class="pre">reversed</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, <a class="reference internal" href="#class-object-method-notification"><span class="std std-ref">_notification</span></a> is called first on the highest ancestor (<code class="docutils literal notranslate"><span class="pre">Object</span></code> itself), and then down to its successive inheriting classes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-property-list-changed-notify">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/property_list_changed_notify"></a>property_list_changed_notify</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Notify the editor that the property list has changed, so that editor plugins can take the new values into account. Does nothing on export builds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-remove-meta">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_meta"></a>remove_meta</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Removes a given entry from the object's metadata. See also <a class="reference internal" href="#class-object-method-set-meta"><span class="std std-ref">set_meta</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id4">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set"></a>set</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Assigns a new value to the given property. If the <code class="docutils literal notranslate"><span class="pre">property</span></code> does not exist or the given value's type doesn't match, nothing will happen.</p>
+<p><strong>Note:</strong> In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-block-signals">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_block_signals"></a>set_block_signals</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, signal emission is blocked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-deferred">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_deferred"></a>set_deferred</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling <a class="reference internal" href="#id4"><span class="std std-ref">set</span></a> via <a class="reference internal" href="#class-object-method-call-deferred"><span class="std std-ref">call_deferred</span></a>, i.e. <code class="docutils literal notranslate"><span class="pre">call_deferred("set",</span> <span class="pre">property,</span> <span class="pre">value)</span></code>.</p>
+<p><strong>Note:</strong> In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-indexed">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_indexed"></a>set_indexed</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Assigns a new value to the property identified by the <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>. The node path should be relative to the current object and can use the colon character (<code class="docutils literal notranslate"><span class="pre">:</span></code>) to access nested properties. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">set_indexed</span><span class="p">(</span><span class="s2">"position"</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">set_indexed</span><span class="p">(</span><span class="s2">"position:y"</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="c1"># (42, -10)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-message-translation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_message_translation"></a>set_message_translation</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Defines whether the object can translate strings (with calls to <a class="reference internal" href="#class-object-method-tr"><span class="std std-ref">tr</span></a>). Enabled by default.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-meta">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_meta"></a>set_meta</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Adds, changes or removes a given entry in the object's metadata. Metadata are serialized and can take any <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value.</p>
+<p>To remove a given entry from the object's metadata, use <a class="reference internal" href="#class-object-method-remove-meta"><span class="std std-ref">remove_meta</span></a>. Metadata is also removed if its value is set to <code class="docutils literal notranslate"><span class="pre">null</span></code>. This means you can also use <code class="docutils literal notranslate"><span class="pre">set_meta("name",</span> <span class="pre">null)</span></code> to remove metadata for <code class="docutils literal notranslate"><span class="pre">"name"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-set-script">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_script"></a>set_script</strong> <strong>(</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> script <strong>)</strong></p></li>
+</ul>
+<p>Assigns a script to the object. Each object can have a single script assigned to it, which are used to extend its functionality.</p>
+<p>If the object already had a script, the previous script instance will be freed and its variables and state will be lost. The new script's <a class="reference internal" href="#class-object-method-init"><span class="std std-ref">_init</span></a> method will be called.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id5">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_string"></a>to_string</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> representing the object. If not overridden, defaults to <code class="docutils literal notranslate"><span class="pre">"[ClassName:RID]"</span></code>.</p>
+<p>Override the method <a class="reference internal" href="#class-object-method-to-string"><span class="std std-ref">_to_string</span></a> to customize the <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> representation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-object-method-tr">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tr"></a>tr</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> message <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Translates a message using translation catalogs configured in the Project Settings.</p>
+<p>Only works if message translation is enabled (which it is by default), otherwise it returns the <code class="docutils literal notranslate"><span class="pre">message</span></code> unchanged. See <a class="reference internal" href="#class-object-method-set-message-translation"><span class="std std-ref">set_message_translation</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_noisetexture.html" rel="prev" title="NoiseTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_occluder.html" rel="next" title="Occluder">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

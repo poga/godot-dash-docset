@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="RigidBody" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_rigidbody.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: PhysicsBody&lt; CollisionObject&lt; Spatial&lt; Node&lt; Object Inherited By: VehicleBody Physics Body whose position is determined through physics simulation in 3D space. Description: This is the no..." property="og:description"/>
+<meta content="Physics Body whose position is determined through physics simulation in 3D space. This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead, you can apply force..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) RigidBody — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_rigidbody.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_rigidbody.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_rigidbody.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_rigidbody.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_rigidbody.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_rigidbody.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_rigidbody.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_rigidbody.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_rigidbody.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_rigidbody.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_rigidbody.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_rigidbody.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_rigidbody.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_rigidbody.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_rigidbody.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_rigidbody.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_rigidbody2d.html" rel="next" title="RigidBody2D"/>
+<link href="class_rid.html" rel="prev" title="RID"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>RigidBody</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="rigidbody">
+<span id="class-rigidbody"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/RigidBody¶"></a>RigidBody<a class="headerlink" href="#rigidbody" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_collisionobject.html#class-collisionobject"><span class="std std-ref">CollisionObject</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_vehiclebody.html#class-vehiclebody"><span class="std std-ref">VehicleBody</span></a></p>
+<p>Physics Body whose position is determined through physics simulation in 3D space.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This is the node that implements full 3D physics. This means that you do not control a RigidBody directly. Instead, you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.</p>
+<p>A RigidBody has 4 behavior <a class="reference internal" href="#class-rigidbody-property-mode"><span class="std std-ref">mode</span></a>s: Rigid, Static, Character, and Kinematic.</p>
+<p><strong>Note:</strong> Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use <a class="reference internal" href="#class-rigidbody-method-integrate-forces"><span class="std std-ref">_integrate_forces</span></a>, which allows you to directly access the physics state.</p>
+<p>If you need to override the default physics behavior, you can write a custom force integration function. See <a class="reference internal" href="#class-rigidbody-property-custom-integrator"><span class="std std-ref">custom_integrator</span></a>.</p>
+<p>With Bullet physics (the default), the center of mass is the RigidBody3D center. With GodotPhysics, the center of mass is the average of the <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a> centers.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/physics/physics_introduction.html"><span class="doc">Physics introduction</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/524">3D Truck Town Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/675">3D Physics Tests Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 55%"/>
+<col style="width: 15%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-angular-damp"><span class="std std-ref">angular_damp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-angular-velocity"><span class="std std-ref">angular_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-angular-x"><span class="std std-ref">axis_lock_angular_x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-angular-y"><span class="std std-ref">axis_lock_angular_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-angular-z"><span class="std std-ref">axis_lock_angular_z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-linear-x"><span class="std std-ref">axis_lock_linear_x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-linear-y"><span class="std std-ref">axis_lock_linear_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-axis-lock-linear-z"><span class="std std-ref">axis_lock_linear_z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-bounce"><span class="std std-ref">bounce</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-can-sleep"><span class="std std-ref">can_sleep</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-continuous-cd"><span class="std std-ref">continuous_cd</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-custom-integrator"><span class="std std-ref">custom_integrator</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-friction"><span class="std std-ref">friction</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-gravity-scale"><span class="std std-ref">gravity_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-linear-damp"><span class="std std-ref">linear_damp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-linear-velocity"><span class="std std-ref">linear_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-mass"><span class="std std-ref">mass</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-rigidbody-mode"><span class="std std-ref">Mode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-mode"><span class="std std-ref">mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_physicsmaterial.html#class-physicsmaterial"><span class="std std-ref">PhysicsMaterial</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-physics-material-override"><span class="std std-ref">physics_material_override</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-sleeping"><span class="std std-ref">sleeping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-property-weight"><span class="std std-ref">weight</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9.8</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-integrate-forces"><span class="std std-ref">_integrate_forces</span></a> <strong>(</strong> <a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a> state <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-add-central-force"><span class="std std-ref">add_central_force</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-add-force"><span class="std std-ref">add_force</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-add-torque"><span class="std std-ref">add_torque</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-apply-central-impulse"><span class="std std-ref">apply_central_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-apply-impulse"><span class="std std-ref">apply_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-apply-torque-impulse"><span class="std std-ref">apply_torque_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-get-axis-lock"><span class="std std-ref">get_axis_lock</span></a> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-get-colliding-bodies"><span class="std std-ref">get_colliding_bodies</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-get-inverse-inertia-tensor"><span class="std std-ref">get_inverse_inertia_tensor</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-set-axis-lock"><span class="std std-ref">set_axis_lock</span></a> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-rigidbody-method-set-axis-velocity"><span class="std std-ref">set_axis_velocity</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis_velocity <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-rigidbody-signal-body-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_entered"></a>body_entered</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a collision with another <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> occurs. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a> to be set high enough to detect all the collisions. <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>s are detected if the <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a> has Collision <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-signal-body-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_exited"></a>body_exited</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the collision with another <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> ends. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a> to be set high enough to detect all the collisions. <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>s are detected if the <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a> has Collision <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-signal-body-shape-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_shape_entered"></a>body_shape_entered</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_rid, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> body_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when one of this RigidBody's <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s collides with another <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>'s <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a> to be set high enough to detect all the collisions. <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>s are detected if the <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a> has Collision <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a>'s <a class="reference internal" href="class_collisionobject.html#class-collisionobject"><span class="std std-ref">CollisionObject</span></a> used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_shape_index</span></code> the index of the <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>. Get the <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a> node with <code class="docutils literal notranslate"><span class="pre">body.shape_owner_get_owner(body_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> of this RigidBody used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>. Get the <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+<p><strong>Note:</strong> Bullet physics cannot identify the shape index when using a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a>. Don't use multiple <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a>s when using a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a> with Bullet physics if you need shape indices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-signal-body-shape-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_shape_exited"></a>body_shape_exited</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_rid, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> body_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the collision between one of this RigidBody's <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s and another <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>'s <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s ends. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a> to be set high enough to detect all the collisions. <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>s are detected if the <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a> has Collision <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_meshlibrary.html#class-meshlibrary"><span class="std std-ref">MeshLibrary</span></a>'s <a class="reference internal" href="class_collisionobject.html#class-collisionobject"><span class="std std-ref">CollisionObject</span></a> used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>. <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>s are detected if the Meshes have <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_shape_index</span></code> the index of the <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> of the other <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> or <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>. Get the <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a> node with <code class="docutils literal notranslate"><span class="pre">body.shape_owner_get_owner(body_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> of this RigidBody used by the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>. Get the <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+<p><strong>Note:</strong> Bullet physics cannot identify the shape index when using a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a>. Don't use multiple <a class="reference internal" href="class_collisionshape.html#class-collisionshape"><span class="std std-ref">CollisionShape</span></a>s when using a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a> with Bullet physics if you need shape indices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-signal-sleeping-state-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/sleeping_state_changed"></a>sleeping_state_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the physics engine changes the body's sleeping state.</p>
+<p><strong>Note:</strong> Changing the value <a class="reference internal" href="#class-rigidbody-property-sleeping"><span class="std std-ref">sleeping</span></a> will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or <code class="docutils literal notranslate"><span class="pre">emit_signal("sleeping_state_changed")</span></code> is used.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-rigidbody-constant-mode-kinematic"><span id="class-rigidbody-constant-mode-character"></span><span id="class-rigidbody-constant-mode-static"></span><span id="class-rigidbody-constant-mode-rigid"></span><span id="enum-rigidbody-mode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Mode"></a>Mode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MODE_RIGID</strong> = <strong>0</strong> --- Rigid body mode. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.</p></li>
+<li><p><strong>MODE_STATIC</strong> = <strong>1</strong> --- Static mode. The body behaves like a <a class="reference internal" href="class_staticbody.html#class-staticbody"><span class="std std-ref">StaticBody</span></a>, and can only move by user code.</p></li>
+<li><p><strong>MODE_CHARACTER</strong> = <strong>2</strong> --- Character body mode. This behaves like a rigid body, but can not rotate.</p></li>
+<li><p><strong>MODE_KINEMATIC</strong> = <strong>3</strong> --- Kinematic body mode. The body behaves like a <a class="reference internal" href="class_kinematicbody.html#class-kinematicbody"><span class="std std-ref">KinematicBody</span></a>, and can only move by user code.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-rigidbody-property-angular-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_damp"></a>angular_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_angular_damp(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_angular_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Damps RigidBody's rotational forces. If this value is different from -1.0 it will be added to any linear damp derived from the world or areas.</p>
+<p>See <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-physics-3d-default-angular-damp"><span class="std std-ref">ProjectSettings.physics/3d/default_angular_damp</span></a> for more details about damping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-angular-velocity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_velocity"></a>angular_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_angular_velocity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_angular_velocity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's rotational velocity in axis-angle format. The magnitude of the vector is the rotation rate in <em>radians</em> per second.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-angular-x">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_angular_x"></a>axis_lock_angular_x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's rotation in the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-angular-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_angular_y"></a>axis_lock_angular_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's rotation in the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-angular-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_angular_z"></a>axis_lock_angular_z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's rotation in the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-linear-x">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_linear_x"></a>axis_lock_linear_x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's movement in the X axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-linear-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_linear_y"></a>axis_lock_linear_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's movement in the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-axis-lock-linear-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_linear_z"></a>axis_lock_linear_z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's movement in the Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-bounce">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bounce"></a>bounce</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_bounce(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_bounce()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's bounciness. Values range from <code class="docutils literal notranslate"><span class="pre">0</span></code> (no bounce) to <code class="docutils literal notranslate"><span class="pre">1</span></code> (full bounciness).</p>
+<p>Deprecated, use <a class="reference internal" href="class_physicsmaterial.html#class-physicsmaterial-property-bounce"><span class="std std-ref">PhysicsMaterial.bounce</span></a> instead via <a class="reference internal" href="#class-rigidbody-property-physics-material-override"><span class="std std-ref">physics_material_override</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-can-sleep">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/can_sleep"></a>can_sleep</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_can_sleep(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_able_to_sleep()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the body can enter sleep mode when there is no movement. See <a class="reference internal" href="#class-rigidbody-property-sleeping"><span class="std std-ref">sleeping</span></a>.</p>
+<p><strong>Note:</strong> A RigidBody3D will never enter sleep mode automatically if its <a class="reference internal" href="#class-rigidbody-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-rigidbody-constant-mode-character"><span class="std std-ref">MODE_CHARACTER</span></a>. It can still be put to sleep manually by setting its <a class="reference internal" href="#class-rigidbody-property-sleeping"><span class="std std-ref">sleeping</span></a> property to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-contact-monitor">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/contact_monitor"></a>contact_monitor</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_contact_monitor(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_contact_monitor_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the RigidBody will emit signals when it collides with another RigidBody. See also <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-contacts-reported">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/contacts_reported"></a>contacts_reported</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_contacts_reported(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_contacts_reported()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum number of contacts that will be recorded. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><strong>Note:</strong> The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-continuous-cd">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/continuous_cd"></a>continuous_cd</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_continuous_collision_detection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_continuous_collision_detection()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, continuous collision detection is used.</p>
+<p>Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. Continuous collision detection is more precise, and misses fewer impacts by small, fast-moving objects. Not using continuous collision detection is faster to compute, but can miss small, fast-moving objects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-custom-integrator">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/custom_integrator"></a>custom_integrator</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_custom_integrator(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_custom_integrator()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the <a class="reference internal" href="#class-rigidbody-method-integrate-forces"><span class="std std-ref">_integrate_forces</span></a> function, if defined.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-friction">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/friction"></a>friction</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_friction(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_friction()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's friction, from 0 (frictionless) to 1 (max friction).</p>
+<p>Deprecated, use <a class="reference internal" href="class_physicsmaterial.html#class-physicsmaterial-property-friction"><span class="std std-ref">PhysicsMaterial.friction</span></a> instead via <a class="reference internal" href="#class-rigidbody-property-physics-material-override"><span class="std std-ref">physics_material_override</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-gravity-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity_scale"></a>gravity_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_gravity_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is multiplied by the global 3D gravity setting found in <strong>Project &gt; Project Settings &gt; Physics &gt; 3d</strong> to produce RigidBody's gravity. For example, a value of 1 will be normal gravity, 2 will apply double gravity, and 0.5 will apply half gravity to this object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-linear-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_damp"></a>linear_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_linear_damp(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_linear_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's linear damp. Cannot be less than -1.0. If this value is different from -1.0 it will be added to any linear damp derived from the world or areas.</p>
+<p>See <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-physics-3d-default-linear-damp"><span class="std std-ref">ProjectSettings.physics/3d/default_linear_damp</span></a> for more details about damping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-linear-velocity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_velocity"></a>linear_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_linear_velocity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_linear_velocity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's linear velocity in units per second. Can be used sporadically, but <strong>don't set this every frame</strong>, because physics may run in another thread and runs at a different granularity. Use <a class="reference internal" href="#class-rigidbody-method-integrate-forces"><span class="std std-ref">_integrate_forces</span></a> as your process loop for precise control of the body state.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-mass">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mass"></a>mass</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mass(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mass()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's mass.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-mode">
+<li><p><a class="reference internal" href="#enum-rigidbody-mode"><span class="std std-ref">Mode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mode"></a>mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body mode. See <a class="reference internal" href="#enum-rigidbody-mode"><span class="std std-ref">Mode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-physics-material-override">
+<li><p><a class="reference internal" href="class_physicsmaterial.html#class-physicsmaterial"><span class="std std-ref">PhysicsMaterial</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/physics_material_override"></a>physics_material_override</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_physics_material_override(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_physics_material_override()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The physics material override for the body.</p>
+<p>If a material is assigned to this property, it will be used instead of any other physics material, such as an inherited one.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-sleeping">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/sleeping"></a>sleeping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sleeping(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_sleeping()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the <a class="reference internal" href="#class-rigidbody-method-apply-impulse"><span class="std std-ref">apply_impulse</span></a> or <a class="reference internal" href="#class-rigidbody-method-add-force"><span class="std std-ref">add_force</span></a> methods.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-property-weight">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/weight"></a>weight</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9.8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_weight(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_weight()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's weight based on its mass and the global 3D gravity. Global values are set in <strong>Project &gt; Project Settings &gt; Physics &gt; 3d</strong>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-rigidbody-method-integrate-forces">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_integrate_forces"></a>_integrate_forces</strong> <strong>(</strong> <a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a> state <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but the <a class="reference internal" href="#class-rigidbody-property-custom-integrator"><span class="std std-ref">custom_integrator</span></a> property allows you to disable the default behavior and do fully custom force integration for a body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-add-central-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_central_force"></a>add_central_force</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></li>
+</ul>
+<p>Adds a constant directional force (i.e. acceleration) without affecting rotation.</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">add_force(force,</span> <span class="pre">Vector3(0,0,0))</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-add-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_force"></a>add_force</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Adds a constant directional force (i.e. acceleration).</p>
+<p>The position uses the rotation of the global coordinate system, but is centered at the object's origin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-add-torque">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_torque"></a>add_torque</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></li>
+</ul>
+<p>Adds a constant rotational force (i.e. a motor) without affecting position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-apply-central-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_central_impulse"></a>apply_central_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<p>Applies a directional impulse without affecting rotation.</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">apply_impulse(Vector3(0,0,0),</span> <span class="pre">impulse)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-apply-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_impulse"></a>apply_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<p>Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-apply-torque-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_torque_impulse"></a>apply_torque_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<p>Applies a torque impulse which will be affected by the body mass and shape. This will rotate the body around the <code class="docutils literal notranslate"><span class="pre">impulse</span></code> vector passed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-get-axis-lock">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_axis_lock"></a>get_axis_lock</strong> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified linear or rotational axis is locked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-get-colliding-bodies">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_colliding_bodies"></a>get_colliding_bodies</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a list of the bodies colliding with this one. Requires <a class="reference internal" href="#class-rigidbody-property-contact-monitor"><span class="std std-ref">contact_monitor</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and <a class="reference internal" href="#class-rigidbody-property-contacts-reported"><span class="std std-ref">contacts_reported</span></a> to be set high enough to detect all the collisions.</p>
+<p><strong>Note:</strong> The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-get-inverse-inertia-tensor">
+<li><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_inverse_inertia_tensor"></a>get_inverse_inertia_tensor</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverse inertia tensor basis. This is used to calculate the angular acceleration resulting from a torque applied to the RigidBody.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-set-axis-lock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_axis_lock"></a>set_axis_lock</strong> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></li>
+</ul>
+<p>Locks the specified linear or rotational axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-rigidbody-method-set-axis-velocity">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_axis_velocity"></a>set_axis_velocity</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis_velocity <strong>)</strong></p></li>
+</ul>
+<p>Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_rid.html" rel="prev" title="RID"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_rigidbody2d.html" rel="next" title="RigidBody2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

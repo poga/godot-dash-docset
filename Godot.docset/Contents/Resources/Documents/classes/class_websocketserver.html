@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="WebSocketServer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_websocketserver.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: WebSocketMultiplayerPeer&lt; NetworkedMultiplayerPeer&lt; PacketPeer&lt; Reference&lt; Object A WebSocket server implementation. Description: This class implements a WebSocket server that can also su..." property="og:description"/>
+<meta content="A WebSocket server implementation. This class implements a WebSocket server that can also support the high-level multiplayer API. After starting the server (listen), you will need to NetworkedMultiplayerPeer.poll it a..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) WebSocketServer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_websocketserver.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_websocketserver.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_websocketserver.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_websocketserver.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_websocketserver.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_websocketserver.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_websocketserver.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_websocketserver.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_websocketserver.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_websocketserver.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_websocketserver.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_websocketserver.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_websocketserver.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_websocketserver.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_websocketserver.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_websocketserver.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_webxrinterface.html" rel="next" title="WebXRInterface"/>
+<link href="class_websocketpeer.html" rel="prev" title="WebSocketPeer"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>WebSocketServer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="websocketserver">
+<span id="class-websocketserver"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/WebSocketServer¶"></a>WebSocketServer<a class="headerlink" href="#websocketserver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_websocketmultiplayerpeer.html#class-websocketmultiplayerpeer"><span class="std std-ref">WebSocketMultiplayerPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer"><span class="std std-ref">NetworkedMultiplayerPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_packetpeer.html#class-packetpeer"><span class="std std-ref">PacketPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A WebSocket server implementation.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This class implements a WebSocket server that can also support the high-level multiplayer API.</p>
+<p>After starting the server (<a class="reference internal" href="#class-websocketserver-method-listen"><span class="std std-ref">listen</span></a>), you will need to <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-method-poll"><span class="std std-ref">NetworkedMultiplayerPeer.poll</span></a> it at regular intervals (e.g. inside <a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a>). When clients connect, disconnect, or send data, you will receive the appropriate signal.</p>
+<p><strong>Note:</strong> Not available in HTML5 exports.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 58%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-property-bind-ip"><span class="std std-ref">bind_ip</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"*"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-property-ca-chain"><span class="std std-ref">ca_chain</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-property-handshake-timeout"><span class="std std-ref">handshake_timeout</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-property-private-key"><span class="std std-ref">private_key</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-property-ssl-certificate"><span class="std std-ref">ssl_certificate</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-disconnect-peer"><span class="std std-ref">disconnect_peer</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> code=1000, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> reason="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-get-peer-address"><span class="std std-ref">get_peer_address</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-get-peer-port"><span class="std std-ref">get_peer_port</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-has-peer"><span class="std std-ref">has_peer</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-is-listening"><span class="std std-ref">is_listening</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-listen"><span class="std std-ref">listen</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> protocols=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> gd_mp_api=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-websocketserver-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-websocketserver-signal-client-close-request">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/client_close_request"></a>client_close_request</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> code, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> reason <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a client requests a clean close. You should keep polling until you get a <a class="reference internal" href="#class-websocketserver-signal-client-disconnected"><span class="std std-ref">client_disconnected</span></a> signal with the same <code class="docutils literal notranslate"><span class="pre">id</span></code> to achieve the clean close. See <a class="reference internal" href="class_websocketpeer.html#class-websocketpeer-method-close"><span class="std std-ref">WebSocketPeer.close</span></a> for more details.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-signal-client-connected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/client_connected"></a>client_connected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> protocol <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-signal-client-disconnected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/client_disconnected"></a>client_disconnected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> was_clean_close <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a client disconnects. <code class="docutils literal notranslate"><span class="pre">was_clean_close</span></code> will be <code class="docutils literal notranslate"><span class="pre">true</span></code> if the connection was shutdown cleanly.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-signal-data-received">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/data_received"></a>data_received</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a new message is received.</p>
+<p><strong>Note:</strong> This signal is <em>not</em> emitted when used as high-level multiplayer peer.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-websocketserver-property-bind-ip">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bind_ip"></a>bind_ip</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"*"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bind_ip(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bind_ip()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When not set to <code class="docutils literal notranslate"><span class="pre">*</span></code> will restrict incoming connections to the specified IP address. Setting <code class="docutils literal notranslate"><span class="pre">bind_ip</span></code> to <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> will cause the server to listen only to the local host.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-property-ca-chain">
+<li><p><a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ca_chain"></a>ca_chain</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_ca_chain(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_ca_chain()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When using SSL (see <a class="reference internal" href="#class-websocketserver-property-private-key"><span class="std std-ref">private_key</span></a> and <a class="reference internal" href="#class-websocketserver-property-ssl-certificate"><span class="std std-ref">ssl_certificate</span></a>), you can set this to a valid <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> to be provided as additional CA chain information during the SSL handshake.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-property-handshake-timeout">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/handshake_timeout"></a>handshake_timeout</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_handshake_timeout(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_handshake_timeout()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The time in seconds before a pending client (i.e. a client that has not yet finished the HTTP handshake) is considered stale and forcefully disconnected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-property-private-key">
+<li><p><a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/private_key"></a>private_key</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_private_key(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_private_key()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When set to a valid <a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> (along with <a class="reference internal" href="#class-websocketserver-property-ssl-certificate"><span class="std std-ref">ssl_certificate</span></a>) will cause the server to require SSL instead of regular TCP (i.e. the <code class="docutils literal notranslate"><span class="pre">wss://</span></code> protocol).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-property-ssl-certificate">
+<li><p><a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssl_certificate"></a>ssl_certificate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_ssl_certificate(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_ssl_certificate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When set to a valid <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> (along with <a class="reference internal" href="#class-websocketserver-property-private-key"><span class="std std-ref">private_key</span></a>) will cause the server to require SSL instead of regular TCP (i.e. the <code class="docutils literal notranslate"><span class="pre">wss://</span></code> protocol).</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-websocketserver-method-disconnect-peer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disconnect_peer"></a>disconnect_peer</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> code=1000, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> reason="" <strong>)</strong></p></li>
+</ul>
+<p>Disconnects the peer identified by <code class="docutils literal notranslate"><span class="pre">id</span></code> from the server. See <a class="reference internal" href="class_websocketpeer.html#class-websocketpeer-method-close"><span class="std std-ref">WebSocketPeer.close</span></a> for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-get-peer-address">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_peer_address"></a>get_peer_address</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the IP address of the given peer.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-get-peer-port">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_peer_port"></a>get_peer_port</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the remote port of the given peer.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-has-peer">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_peer"></a>has_peer</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a peer with the given ID is connected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-is-listening">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_listening"></a>is_listening</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the server is actively listening on a port.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-listen">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/listen"></a>listen</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> protocols=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> gd_mp_api=false <strong>)</strong></p></li>
+</ul>
+<p>Starts listening on the given port.</p>
+<p>You can specify the desired subprotocols via the "protocols" array. If the list empty (default), no sub-protocol will be requested.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">gd_mp_api</span></code>, the server will behave like a network peer for the <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a>, connections from non-Godot clients will not work, and <a class="reference internal" href="#class-websocketserver-signal-data-received"><span class="std std-ref">data_received</span></a> will not be emitted.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">false</span></code> is passed instead (default), you must call <a class="reference internal" href="class_packetpeer.html#class-packetpeer"><span class="std std-ref">PacketPeer</span></a> functions (<code class="docutils literal notranslate"><span class="pre">put_packet</span></code>, <code class="docutils literal notranslate"><span class="pre">get_packet</span></code>, etc.), on the <a class="reference internal" href="class_websocketpeer.html#class-websocketpeer"><span class="std std-ref">WebSocketPeer</span></a> returned via <code class="docutils literal notranslate"><span class="pre">get_peer(id)</span></code> to communicate with the peer with given <code class="docutils literal notranslate"><span class="pre">id</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">get_peer(id).get_available_packet_count</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-websocketserver-method-stop">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop"></a>stop</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops the server and clear its state.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_websocketpeer.html" rel="prev" title="WebSocketPeer"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_webxrinterface.html" rel="next" title="WebXRInterface">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

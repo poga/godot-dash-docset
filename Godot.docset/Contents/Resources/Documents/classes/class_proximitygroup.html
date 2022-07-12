@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ProximityGroup" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_proximitygroup.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object General-purpose 3D proximity detection node. Description: General-purpose proximity detection node. ProximityGroup can be used for approximate distance checks, which..." property="og:description"/>
+<meta content="General-purpose 3D proximity detection node. General-purpose proximity detection node. ProximityGroup can be used for approximate distance checks, which are faster than exact distance checks using Vector3.distance_to..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ProximityGroup — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_proximitygroup.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_proximitygroup.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_proximitygroup.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_proximitygroup.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_proximitygroup.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_proximitygroup.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_proximitygroup.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_proximitygroup.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_proximitygroup.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_proximitygroup.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_proximitygroup.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_proximitygroup.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_proximitygroup.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_proximitygroup.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_proximitygroup.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_proximitygroup.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_proxytexture.html" rel="next" title="ProxyTexture"/>
+<link href="class_projectsettings.html" rel="prev" title="ProjectSettings"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ProximityGroup</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="proximitygroup">
+<span id="class-proximitygroup"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ProximityGroup¶"></a>ProximityGroup<a class="headerlink" href="#proximitygroup" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>General-purpose 3D proximity detection node.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>General-purpose proximity detection node. <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> can be used for <em>approximate</em> distance checks, which are faster than exact distance checks using <a class="reference internal" href="class_vector3.html#class-vector3-method-distance-to"><span class="std std-ref">Vector3.distance_to</span></a> or <a class="reference internal" href="class_vector3.html#class-vector3-method-distance-squared-to"><span class="std std-ref">Vector3.distance_squared_to</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> nodes are automatically grouped together, as long as they share the same <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a> and intersect with each other. By calling the <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a>, you can invoke a specified method with various parameters to all intersecting members.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> is cuboid-shaped and consists of a cluster of <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> coordinates. The coordinates are automatically calculated by calling <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a>. To allow <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> to find its peers (and perform automatic grouping), you need to define its <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a> to a non-empty <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>. As soon as this object's shape intersects with another <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> object' shape, and both share the same <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a>, they will belong together for as long as they intersect.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> doesn't rely the physics engine, you don't need to add any other node as a child (unlike <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> uses the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> groups in the background by calling the method <a class="reference internal" href="class_node.html#class-node-method-add-to-group"><span class="std std-ref">Node.add_to_group</span></a> internally. The <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> group names are constructed by combining the <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a> with its coordinates, which are calculated using the <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a> you defined beforehand.</p>
+<p><strong>Example:</strong> A <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> node named <code class="docutils literal notranslate"><span class="pre">"PlanetEarth"</span></code> at position <code class="docutils literal notranslate"><span class="pre">Vector3(6,</span> <span class="pre">6,</span> <span class="pre">6)</span></code> with a <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a> set to <code class="docutils literal notranslate"><span class="pre">"planets"</span></code> and a <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a> of <code class="docutils literal notranslate"><span class="pre">Vector3(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> will create the following <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> group names:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="s2">"planets|5|4|3"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|4"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|5"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|6"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|7"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|8"</span>
+<span class="o">-</span> <span class="s2">"planets|5|4|9"</span>
+<span class="o">-</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>If there is another <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> named <code class="docutils literal notranslate"><span class="pre">"PlanetMars"</span></code> with group name <code class="docutils literal notranslate"><span class="pre">"planets"</span></code>, and one of its coordinates is <code class="docutils literal notranslate"><span class="pre">Vector3(5,</span> <span class="pre">4,</span> <span class="pre">7)</span></code>, it would normally create the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> group called <code class="docutils literal notranslate"><span class="pre">"planets|5|4|7"</span></code>. However, since this group name already exists, this <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> object will be <em>added</em> to the existing one. <code class="docutils literal notranslate"><span class="pre">"PlanetEarth"</span></code> is already in this group. As long as both nodes don't change their transform and stop intersecting (or exit the scene tree), they are grouped together. As long as this intersection exists, any call to <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a> will affect <em>both</em> <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> nodes.</p>
+<p>There are 3 caveats to keep in mind when using <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code>:</p>
+<ul class="simple">
+<li><p>The larger the grid radius, the more coordinates and the more <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> groups are created. This can have a performance impact if too many groups are created.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> node is transformed in any way (or is removed from the scene tree), the groupings will have to be recalculated. This can also have a performance impact.</p></li>
+<li><p>If your <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a> is smaller than <code class="docutils literal notranslate"><span class="pre">Vector3(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>, it will be rounded up to <code class="docutils literal notranslate"><span class="pre">Vector3(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>. Therefore, small grid radius values may lead to unwanted groupings.</p></li>
+</ul>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> will be removed in Godot 4.0 in favor of more effective and faster <a class="reference internal" href="class_visibilitynotifier.html#class-visibilitynotifier"><span class="std std-ref">VisibilityNotifier</span></a> functionality. For most use cases, <a class="reference internal" href="class_vector3.html#class-vector3-method-distance-to"><span class="std std-ref">Vector3.distance_to</span></a> or <a class="reference internal" href="class_vector3.html#class-vector3-method-distance-squared-to"><span class="std std-ref">Vector3.distance_squared_to</span></a> are fast enough too, especially if you call them less often using a <a class="reference internal" href="class_timer.html#class-timer"><span class="std std-ref">Timer</span></a> node.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 46%"/>
+<col style="width: 16%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-proximitygroup-dispatchmode"><span class="std std-ref">DispatchMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-proximitygroup-property-dispatch-mode"><span class="std std-ref">dispatch_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%"/>
+<col style="width: 96%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> parameters <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-proximitygroup-signal-broadcast">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/broadcast"></a>broadcast</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> parameters <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the user calls the <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a> method and has set <a class="reference internal" href="#class-proximitygroup-property-dispatch-mode"><span class="std std-ref">dispatch_mode</span></a> to <a class="reference internal" href="#class-proximitygroup-constant-mode-signal"><span class="std std-ref">MODE_SIGNAL</span></a>.</p>
+<p>The given method and its parameters are passed on to the listeners who connected to this signal of this object, as well as any <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> node this node is grouped together with.</p>
+<p><strong>Note:</strong> This signal is <em>not</em> emitted by default, as the default <a class="reference internal" href="#class-proximitygroup-property-dispatch-mode"><span class="std std-ref">dispatch_mode</span></a> is <a class="reference internal" href="#class-proximitygroup-constant-mode-proxy"><span class="std std-ref">MODE_PROXY</span></a>.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-proximitygroup-constant-mode-signal"><span id="class-proximitygroup-constant-mode-proxy"></span><span id="enum-proximitygroup-dispatchmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DispatchMode"></a>DispatchMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MODE_PROXY</strong> = <strong>0</strong> --- This <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code>'s parent will be target of <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a>.</p></li>
+<li><p><strong>MODE_SIGNAL</strong> = <strong>1</strong> --- This <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> will emit the <a class="reference internal" href="#class-proximitygroup-signal-broadcast"><span class="std std-ref">broadcast</span></a> <em>signal</em> when calling the <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a> <em>method</em>.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-proximitygroup-property-dispatch-mode">
+<li><p><a class="reference internal" href="#enum-proximitygroup-dispatchmode"><span class="std std-ref">DispatchMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dispatch_mode"></a>dispatch_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dispatch_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dispatch_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Specifies which node gets contacted on a call of method <a class="reference internal" href="#class-proximitygroup-method-broadcast"><span class="std std-ref">broadcast</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-proximitygroup-property-grid-radius">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/grid_radius"></a>grid_radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_grid_radius(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_grid_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of the space in 3D units. This also sets the amount of coordinates required to calculate whether two <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> nodes are intersecting or not. Smaller <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a> values can be used for more precise proximity checks at the cost of performance, since more groups will be created.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-proximitygroup-property-group-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/group_name"></a>group_name</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_group_name(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_group_name()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Specify the common group name, to let other <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> nodes know, if they should be auto-grouped with this node in case they intersect with each other.</p>
+<p>For example, if you have a <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> node named <code class="docutils literal notranslate"><span class="pre">"Earth"</span></code> and another called <code class="docutils literal notranslate"><span class="pre">"Mars"</span></code>, with both nodes having <code class="docutils literal notranslate"><span class="pre">"planet"</span></code> as their <a class="reference internal" href="#class-proximitygroup-property-group-name"><span class="std std-ref">group_name</span></a>. Give both planets a significantly larger <a class="reference internal" href="#class-proximitygroup-property-grid-radius"><span class="std std-ref">grid_radius</span></a> than their actual radius, position them close enough and they'll be automatically grouped.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-proximitygroup-method-broadcast">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/broadcast"></a>broadcast</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> parameters <strong>)</strong></p></li>
+</ul>
+<p>Calls on all intersecting <code class="docutils literal notranslate"><span class="pre">ProximityGroup</span></code> the given method and parameters.</p>
+<p>If the <a class="reference internal" href="#class-proximitygroup-property-dispatch-mode"><span class="std std-ref">dispatch_mode</span></a> is set to <a class="reference internal" href="#class-proximitygroup-constant-mode-proxy"><span class="std std-ref">MODE_PROXY</span></a> (the default), all calls are delegated to their respective parent <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_projectsettings.html" rel="prev" title="ProjectSettings"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_proxytexture.html" rel="next" title="ProxyTexture">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

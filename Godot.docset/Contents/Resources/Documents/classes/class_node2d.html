@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Node2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_node2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: CanvasItem&lt; Node&lt; Object Inherited By: AnimatedSprite, AudioStreamPlayer2D, BackBufferCopy, Bone2D, CPUParticles2D, Camera2D, CanvasModulate, CollisionObject2D, CollisionPolygon2D, Collis..." property="og:description"/>
+<meta content="A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index. A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprite..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Node2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_node2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_node2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_node2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_node2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_node2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_node2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_node2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_node2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_node2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_node2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_node2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_node2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_node2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_node2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_nodepath.html" rel="next" title="NodePath"/>
+<link href="class_node.html" rel="prev" title="Node"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Node2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="node2d">
+<span id="class-node2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Node2D¶"></a>Node2D<a class="headerlink" href="#node2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_animatedsprite.html#class-animatedsprite"><span class="std std-ref">AnimatedSprite</span></a>, <a class="reference internal" href="class_audiostreamplayer2d.html#class-audiostreamplayer2d"><span class="std std-ref">AudioStreamPlayer2D</span></a>, <a class="reference internal" href="class_backbuffercopy.html#class-backbuffercopy"><span class="std std-ref">BackBufferCopy</span></a>, <a class="reference internal" href="class_bone2d.html#class-bone2d"><span class="std std-ref">Bone2D</span></a>, <a class="reference internal" href="class_cpuparticles2d.html#class-cpuparticles2d"><span class="std std-ref">CPUParticles2D</span></a>, <a class="reference internal" href="class_camera2d.html#class-camera2d"><span class="std std-ref">Camera2D</span></a>, <a class="reference internal" href="class_canvasmodulate.html#class-canvasmodulate"><span class="std std-ref">CanvasModulate</span></a>, <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a>, <a class="reference internal" href="class_collisionpolygon2d.html#class-collisionpolygon2d"><span class="std std-ref">CollisionPolygon2D</span></a>, <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a>, <a class="reference internal" href="class_joint2d.html#class-joint2d"><span class="std std-ref">Joint2D</span></a>, <a class="reference internal" href="class_light2d.html#class-light2d"><span class="std std-ref">Light2D</span></a>, <a class="reference internal" href="class_lightoccluder2d.html#class-lightoccluder2d"><span class="std std-ref">LightOccluder2D</span></a>, <a class="reference internal" href="class_line2d.html#class-line2d"><span class="std std-ref">Line2D</span></a>, <a class="reference internal" href="class_listener2d.html#class-listener2d"><span class="std std-ref">Listener2D</span></a>, <a class="reference internal" href="class_meshinstance2d.html#class-meshinstance2d"><span class="std std-ref">MeshInstance2D</span></a>, <a class="reference internal" href="class_multimeshinstance2d.html#class-multimeshinstance2d"><span class="std std-ref">MultiMeshInstance2D</span></a>, <a class="reference internal" href="class_navigation2d.html#class-navigation2d"><span class="std std-ref">Navigation2D</span></a>, <a class="reference internal" href="class_navigationpolygoninstance.html#class-navigationpolygoninstance"><span class="std std-ref">NavigationPolygonInstance</span></a>, <a class="reference internal" href="class_parallaxlayer.html#class-parallaxlayer"><span class="std std-ref">ParallaxLayer</span></a>, <a class="reference internal" href="class_particles2d.html#class-particles2d"><span class="std std-ref">Particles2D</span></a>, <a class="reference internal" href="class_path2d.html#class-path2d"><span class="std std-ref">Path2D</span></a>, <a class="reference internal" href="class_pathfollow2d.html#class-pathfollow2d"><span class="std std-ref">PathFollow2D</span></a>, <a class="reference internal" href="class_polygon2d.html#class-polygon2d"><span class="std std-ref">Polygon2D</span></a>, <a class="reference internal" href="class_position2d.html#class-position2d"><span class="std std-ref">Position2D</span></a>, <a class="reference internal" href="class_raycast2d.html#class-raycast2d"><span class="std std-ref">RayCast2D</span></a>, <a class="reference internal" href="class_remotetransform2d.html#class-remotetransform2d"><span class="std std-ref">RemoteTransform2D</span></a>, <a class="reference internal" href="class_skeleton2d.html#class-skeleton2d"><span class="std std-ref">Skeleton2D</span></a>, <a class="reference internal" href="class_sprite.html#class-sprite"><span class="std std-ref">Sprite</span></a>, <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>, <a class="reference internal" href="class_touchscreenbutton.html#class-touchscreenbutton"><span class="std std-ref">TouchScreenButton</span></a>, <a class="reference internal" href="class_visibilitynotifier2d.html#class-visibilitynotifier2d"><span class="std std-ref">VisibilityNotifier2D</span></a>, <a class="reference internal" href="class_ysort.html#class-ysort"><span class="std std-ref">YSort</span></a></p>
+<p>A 2D game object, inherited by all 2D-related nodes. Has a position, rotation, scale, and Z index.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprites, inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control of the node's render order.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html"><span class="doc">Custom drawing in 2D</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/godotengine/godot-demo-projects/tree/master/2d">All 2D Demos</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 57%"/>
+<col style="width: 15%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-global-position"><span class="std std-ref">global_position</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-global-rotation"><span class="std std-ref">global_rotation</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-global-rotation-degrees"><span class="std std-ref">global_rotation_degrees</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-global-scale"><span class="std std-ref">global_scale</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-global-transform"><span class="std std-ref">global_transform</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-position"><span class="std std-ref">position</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-rotation"><span class="std std-ref">rotation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-rotation-degrees"><span class="std std-ref">rotation_degrees</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-scale"><span class="std std-ref">scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-transform"><span class="std std-ref">transform</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-z-as-relative"><span class="std std-ref">z_as_relative</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-property-z-index"><span class="std std-ref">z_index</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-apply-scale"><span class="std std-ref">apply_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> ratio <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-get-angle-to"><span class="std std-ref">get_angle_to</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-get-relative-transform-to-parent"><span class="std std-ref">get_relative_transform_to_parent</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> parent <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-global-translate"><span class="std std-ref">global_translate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-look-at"><span class="std std-ref">look_at</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-move-local-x"><span class="std std-ref">move_local_x</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> scaled=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-move-local-y"><span class="std std-ref">move_local_y</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> scaled=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-rotate"><span class="std std-ref">rotate</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radians <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-to-global"><span class="std std-ref">to_global</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> local_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-to-local"><span class="std std-ref">to_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> global_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-node2d-method-translate"><span class="std std-ref">translate</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-node2d-property-global-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_position"></a>global_position</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_position(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_position()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Global position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-global-rotation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_rotation"></a>global_rotation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_rotation(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_rotation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Global rotation in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-global-rotation-degrees">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_rotation_degrees"></a>global_rotation_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_rotation_degrees(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_rotation_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Global rotation in degrees.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-global-scale">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_scale"></a>global_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_scale(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Global scale.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-global-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_transform"></a>global_transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_global_transform(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_global_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Global <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/position"></a>position</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_position(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_position()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Position, relative to the node's parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-rotation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/rotation"></a>rotation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_rotation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_rotation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rotation in radians, relative to the node's parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-rotation-degrees">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/rotation_degrees"></a>rotation_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_rotation_degrees(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_rotation_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rotation in degrees, relative to the node's parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-scale">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scale"></a>scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The node's scale. Unscaled value: <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transform"></a>transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_transform(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Local <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-z-as-relative">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/z_as_relative"></a>z_as_relative</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_z_as_relative(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_z_relative()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the node's Z index is relative to its parent's Z index. If this node's Z index is 2 and its parent's effective Z index is 3, then this node's effective Z index will be 2 + 3 = 5.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-property-z-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/z_index"></a>z_index</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_z_index(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_z_index()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Z index. Controls the order in which the nodes render. A node with a higher Z index will display in front of others. Must be between <a class="reference internal" href="class_visualserver.html#class-visualserver-constant-canvas-item-z-min"><span class="std std-ref">VisualServer.CANVAS_ITEM_Z_MIN</span></a> and <a class="reference internal" href="class_visualserver.html#class-visualserver-constant-canvas-item-z-max"><span class="std std-ref">VisualServer.CANVAS_ITEM_Z_MAX</span></a> (inclusive).</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-node2d-method-apply-scale">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_scale"></a>apply_scale</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> ratio <strong>)</strong></p></li>
+</ul>
+<p>Multiplies the current scale by the <code class="docutils literal notranslate"><span class="pre">ratio</span></code> vector.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-get-angle-to">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_angle_to"></a>get_angle_to</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the angle between the node and the <code class="docutils literal notranslate"><span class="pre">point</span></code> in radians.</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/node2d_get_angle_to.png">Illustration of the returned angle.</a></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-get-relative-transform-to-parent">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_relative_transform_to_parent"></a>get_relative_transform_to_parent</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> parent <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> relative to this node's parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-global-translate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/global_translate"></a>global_translate</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Adds the <code class="docutils literal notranslate"><span class="pre">offset</span></code> vector to the node's global position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-look-at">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/look_at"></a>look_at</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong></p></li>
+</ul>
+<p>Rotates the node so it points towards the <code class="docutils literal notranslate"><span class="pre">point</span></code>, which is expected to use global coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-move-local-x">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_local_x"></a>move_local_x</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> scaled=false <strong>)</strong></p></li>
+</ul>
+<p>Applies a local translation on the node's X axis based on the <a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a>'s <code class="docutils literal notranslate"><span class="pre">delta</span></code>. If <code class="docutils literal notranslate"><span class="pre">scaled</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, normalizes the movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-move-local-y">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_local_y"></a>move_local_y</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> scaled=false <strong>)</strong></p></li>
+</ul>
+<p>Applies a local translation on the node's Y axis based on the <a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a>'s <code class="docutils literal notranslate"><span class="pre">delta</span></code>. If <code class="docutils literal notranslate"><span class="pre">scaled</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, normalizes the movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-rotate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotate"></a>rotate</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radians <strong>)</strong></p></li>
+</ul>
+<p>Applies a rotation to the node, in radians, starting from its current rotation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-to-global">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_global"></a>to_global</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> local_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Transforms the provided local position into a position in global coordinate space. The input is expected to be local relative to the <code class="docutils literal notranslate"><span class="pre">Node2D</span></code> it is called on. e.g. Applying this method to the positions of child nodes will correctly transform their positions into the global coordinate space, but applying it to a node's own position will give an incorrect result, as it will incorporate the node's own transformation into its global position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-to-local">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_local"></a>to_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> global_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Transforms the provided global position into a position in local coordinate space. The output will be local relative to the <code class="docutils literal notranslate"><span class="pre">Node2D</span></code> it is called on. e.g. It is appropriate for determining the positions of child nodes, but it is not appropriate for determining its own position relative to its parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-node2d-method-translate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/translate"></a>translate</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Translates the node by the given <code class="docutils literal notranslate"><span class="pre">offset</span></code> in local coordinates.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_node.html" rel="prev" title="Node"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_nodepath.html" rel="next" title="NodePath">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

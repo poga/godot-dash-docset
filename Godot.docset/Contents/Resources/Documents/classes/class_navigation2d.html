@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Navigation2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_navigation2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object 2D navigation and pathfinding node. Description: Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of Navigatio..." property="og:description"/>
+<meta content="2D navigation and pathfinding node. Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of NavigationPolygon resources. By default, these are automatically collected from child..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Navigation2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_navigation2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_navigation2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_navigation2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_navigation2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_navigation2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_navigation2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_navigation2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_navigation2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_navigation2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_navigation2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_navigation2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_navigation2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_navigation2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_navigationmesh.html" rel="next" title="NavigationMesh"/>
+<link href="class_navigation.html" rel="prev" title="Navigation"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Navigation2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="navigation2d">
+<span id="class-navigation2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Navigation2D¶"></a>Navigation2D<a class="headerlink" href="#navigation2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>2D navigation and pathfinding node.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> resources. By default, these are automatically collected from child <a class="reference internal" href="class_navigationpolygoninstance.html#class-navigationpolygoninstance"><span class="std std-ref">NavigationPolygonInstance</span></a> nodes, but they can also be added on the fly with <a class="reference internal" href="#class-navigation2d-method-navpoly-add"><span class="std std-ref">navpoly_add</span></a>.</p>
+<p><strong>Note:</strong> The current navigation system has many known issues and will not always return optimal paths as expected. These issues will be fixed in Godot 4.0.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/117">2D Navigation Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-get-closest-point"><span class="std std-ref">get_closest_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-get-closest-point-owner"><span class="std std-ref">get_closest_point_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-get-simple-path"><span class="std std-ref">get_simple_path</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> start, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> optimize=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-navpoly-add"><span class="std std-ref">navpoly_add</span></a> <strong>(</strong> <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> mesh, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-navpoly-remove"><span class="std std-ref">navpoly_remove</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigation2d-method-navpoly-set-transform"><span class="std std-ref">navpoly_set_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-navigation2d-method-get-closest-point">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point"></a>get_closest_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong></p></li>
+</ul>
+<p>Returns the navigation point closest to the point given. Points are in local coordinate space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation2d-method-get-closest-point-owner">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point_owner"></a>get_closest_point_owner</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong></p></li>
+</ul>
+<p>Returns the owner of the <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> which contains the navigation point closest to the point given. This is usually a <a class="reference internal" href="class_navigationpolygoninstance.html#class-navigationpolygoninstance"><span class="std std-ref">NavigationPolygonInstance</span></a>. For polygons added via <a class="reference internal" href="#class-navigation2d-method-navpoly-add"><span class="std std-ref">navpoly_add</span></a>, returns the owner that was given (or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the <code class="docutils literal notranslate"><span class="pre">owner</span></code> parameter was omitted).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation2d-method-get-simple-path">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_simple_path"></a>get_simple_path</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> start, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> optimize=true <strong>)</strong></p></li>
+</ul>
+<p>Returns the path between two given points. Points are in local coordinate space. If <code class="docutils literal notranslate"><span class="pre">optimize</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> (the default), the path is smoothed by merging path segments where possible.</p>
+<p><strong>Note:</strong> This method has known issues and will often return non-optimal paths. These issues will be fixed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation2d-method-navpoly-add">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navpoly_add"></a>navpoly_add</strong> <strong>(</strong> <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> mesh, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner=null <strong>)</strong></p></li>
+</ul>
+<p>Adds a <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a>. Returns an ID for use with <a class="reference internal" href="#class-navigation2d-method-navpoly-remove"><span class="std std-ref">navpoly_remove</span></a> or <a class="reference internal" href="#class-navigation2d-method-navpoly-set-transform"><span class="std std-ref">navpoly_set_transform</span></a>. If given, a <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> is applied to the polygon. The optional <code class="docutils literal notranslate"><span class="pre">owner</span></code> is used as return value for <a class="reference internal" href="#class-navigation2d-method-get-closest-point-owner"><span class="std std-ref">get_closest_point_owner</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation2d-method-navpoly-remove">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navpoly_remove"></a>navpoly_remove</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Removes the <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> with the given ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation2d-method-navpoly-set-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navpoly_set_transform"></a>navpoly_set_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform <strong>)</strong></p></li>
+</ul>
+<p>Sets the transform applied to the <a class="reference internal" href="class_navigationpolygon.html#class-navigationpolygon"><span class="std std-ref">NavigationPolygon</span></a> with the given ID.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_navigation.html" rel="prev" title="Navigation"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_navigationmesh.html" rel="next" title="NavigationMesh">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

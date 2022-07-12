@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="BakedLightmap" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_bakedlightmap.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Prerendered indirect light map for a scene. Description: Baked lightmaps are an alternative workflow for adding indirect (or baked) lig..." property="og:description"/>
+<meta content="Prerendered indirect light map for a scene. Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the GIProbe approach, baked lightmaps work fine on low-end PCs and mob..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) BakedLightmap — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_bakedlightmap.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_bakedlightmap.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_bakedlightmap.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_bakedlightmap.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_bakedlightmap.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_bakedlightmap.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_bakedlightmap.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_bakedlightmap.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_bakedlightmap.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_bakedlightmap.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_bakedlightmap.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_bakedlightmap.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_bakedlightmap.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_bakedlightmap.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_bakedlightmap.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_bakedlightmap.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_bakedlightmapdata.html" rel="next" title="BakedLightmapData"/>
+<link href="class_backbuffercopy.html" rel="prev" title="BackBufferCopy"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>BakedLightmap</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="bakedlightmap">
+<span id="class-bakedlightmap"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/BakedLightmap¶"></a>BakedLightmap<a class="headerlink" href="#bakedlightmap" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Prerendered indirect light map for a scene.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a> approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.</p>
+<p><strong>Procedural generation:</strong> Lightmap baking functionality is only available in the editor. This means <code class="docutils literal notranslate"><span class="pre">BakedLightmap</span></code> is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a> instead.</p>
+<p><strong>Note:</strong> Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/baked_lightmaps.html"><span class="doc">Baked lightmaps</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 58%"/>
+<col style="width: 13%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-atlas-generate"><span class="std std-ref">atlas_generate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-atlas-max-size"><span class="std std-ref">atlas_max_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-bias"><span class="std std-ref">bias</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.005</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-bounce-indirect-energy"><span class="std std-ref">bounce_indirect_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-bounces"><span class="std std-ref">bounces</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-capture-cell-size"><span class="std std-ref">capture_cell_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-capture-enabled"><span class="std std-ref">capture_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-capture-propagation"><span class="std std-ref">capture_propagation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-bakedlightmap-bakequality"><span class="std std-ref">BakeQuality</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-capture-quality"><span class="std std-ref">capture_quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-default-texels-per-unit"><span class="std std-ref">default_texels_per_unit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-custom-color"><span class="std std-ref">environment_custom_color</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-custom-energy"><span class="std std-ref">environment_custom_energy</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-custom-sky"><span class="std std-ref">environment_custom_sky</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-custom-sky-rotation-degrees"><span class="std std-ref">environment_custom_sky_rotation_degrees</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-min-light"><span class="std std-ref">environment_min_light</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-bakedlightmap-environmentmode"><span class="std std-ref">EnvironmentMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-environment-mode"><span class="std std-ref">environment_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-extents"><span class="std std-ref">extents</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">10,</span> <span class="pre">10,</span> <span class="pre">10</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-image-path"><span class="std std-ref">image_path</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bakedlightmapdata.html#class-bakedlightmapdata"><span class="std std-ref">BakedLightmapData</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-light-data"><span class="std std-ref">light_data</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-bakedlightmap-bakequality"><span class="std std-ref">BakeQuality</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-quality"><span class="std std-ref">quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-use-color"><span class="std std-ref">use_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-use-denoiser"><span class="std std-ref">use_denoiser</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-property-use-hdr"><span class="std std-ref">use_hdr</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-bakedlightmap-bakeerror"><span class="std std-ref">BakeError</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bakedlightmap-method-bake"><span class="std std-ref">bake</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> from_node=null, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> data_save_path="" <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-bakedlightmap-constant-bake-quality-ultra"><span id="class-bakedlightmap-constant-bake-quality-high"></span><span id="class-bakedlightmap-constant-bake-quality-medium"></span><span id="class-bakedlightmap-constant-bake-quality-low"></span><span id="enum-bakedlightmap-bakequality"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BakeQuality"></a>BakeQuality</strong>:</p>
+<ul class="simple">
+<li><p><strong>BAKE_QUALITY_LOW</strong> = <strong>0</strong> --- The lowest bake quality mode. Fastest to calculate.</p></li>
+<li><p><strong>BAKE_QUALITY_MEDIUM</strong> = <strong>1</strong> --- The default bake quality mode.</p></li>
+<li><p><strong>BAKE_QUALITY_HIGH</strong> = <strong>2</strong> --- A higher bake quality mode. Takes longer to calculate.</p></li>
+<li><p><strong>BAKE_QUALITY_ULTRA</strong> = <strong>3</strong> --- The highest bake quality mode. Takes the longest to calculate.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-bakedlightmap-constant-bake-error-no-root"><span id="class-bakedlightmap-constant-bake-error-no-lightmapper"></span><span id="class-bakedlightmap-constant-bake-error-user-aborted"></span><span id="class-bakedlightmap-constant-bake-error-invalid-mesh"></span><span id="class-bakedlightmap-constant-bake-error-lightmap-size"></span><span id="class-bakedlightmap-constant-bake-error-cant-create-image"></span><span id="class-bakedlightmap-constant-bake-error-no-meshes"></span><span id="class-bakedlightmap-constant-bake-error-no-save-path"></span><span id="class-bakedlightmap-constant-bake-error-ok"></span><span id="enum-bakedlightmap-bakeerror"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BakeError"></a>BakeError</strong>:</p>
+<ul class="simple">
+<li><p><strong>BAKE_ERROR_OK</strong> = <strong>0</strong> --- Baking was successful.</p></li>
+<li><p><strong>BAKE_ERROR_NO_SAVE_PATH</strong> = <strong>1</strong> --- Returns if no viable save path is found. This can happen where an <a class="reference internal" href="#class-bakedlightmap-property-image-path"><span class="std std-ref">image_path</span></a> is not specified or when the save location is invalid.</p></li>
+<li><p><strong>BAKE_ERROR_NO_MESHES</strong> = <strong>2</strong> --- Currently unused.</p></li>
+<li><p><strong>BAKE_ERROR_CANT_CREATE_IMAGE</strong> = <strong>3</strong> --- Returns when the baker cannot save per-mesh textures to file.</p></li>
+<li><p><strong>BAKE_ERROR_LIGHTMAP_SIZE</strong> = <strong>4</strong> --- The size of the generated lightmaps is too large.</p></li>
+<li><p><strong>BAKE_ERROR_INVALID_MESH</strong> = <strong>5</strong> --- Some mesh contains UV2 values outside the <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> range.</p></li>
+<li><p><strong>BAKE_ERROR_USER_ABORTED</strong> = <strong>6</strong> --- Returns if user cancels baking.</p></li>
+<li><p><strong>BAKE_ERROR_NO_LIGHTMAPPER</strong> = <strong>7</strong> --- Returns if lightmapper can't be created. Unless you are using a custom lightmapper, please report this as bug.</p></li>
+<li><p><strong>BAKE_ERROR_NO_ROOT</strong> = <strong>8</strong> --- There is no root node to start baking from. Either provide <code class="docutils literal notranslate"><span class="pre">from_node</span></code> argument or attach this node to a parent that should be used as root.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-bakedlightmap-constant-environment-mode-custom-color"><span id="class-bakedlightmap-constant-environment-mode-custom-sky"></span><span id="class-bakedlightmap-constant-environment-mode-scene"></span><span id="class-bakedlightmap-constant-environment-mode-disabled"></span><span id="enum-bakedlightmap-environmentmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/EnvironmentMode"></a>EnvironmentMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>ENVIRONMENT_MODE_DISABLED</strong> = <strong>0</strong> --- No environment is used during baking.</p></li>
+<li><p><strong>ENVIRONMENT_MODE_SCENE</strong> = <strong>1</strong> --- The baked environment is automatically picked from the current scene.</p></li>
+<li><p><strong>ENVIRONMENT_MODE_CUSTOM_SKY</strong> = <strong>2</strong> --- A custom sky is used as environment during baking.</p></li>
+<li><p><strong>ENVIRONMENT_MODE_CUSTOM_COLOR</strong> = <strong>3</strong> --- A custom solid color is used as environment during baking.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-bakedlightmap-property-atlas-generate">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/atlas_generate"></a>atlas_generate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_generate_atlas(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_generate_atlas_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, the lightmapper will merge the textures for all meshes into a single large layered texture. Not supported in GLES2.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-atlas-max-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/atlas_max_size"></a>atlas_max_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_atlas_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_atlas_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum size of each lightmap layer, only used when <a class="reference internal" href="#class-bakedlightmap-property-atlas-generate"><span class="std std-ref">atlas_generate</span></a> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-bias">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bias"></a>bias</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.005</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bias(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bias()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Raycasting bias used during baking to avoid floating point precision issues.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-bounce-indirect-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bounce_indirect_energy"></a>bounce_indirect_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bounce_indirect_energy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bounce_indirect_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The energy multiplier for each bounce. Higher values will make indirect lighting brighter. A value of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> represents physically accurate behavior, but higher values can be used to make indirect lighting propagate more visibly when using a low number of bounces. This can be used to speed up bake times by lowering the number of <a class="reference internal" href="#class-bakedlightmap-property-bounces"><span class="std std-ref">bounces</span></a> then increasing <a class="reference internal" href="#class-bakedlightmap-property-bounce-indirect-energy"><span class="std std-ref">bounce_indirect_energy</span></a>. Unlike <a class="reference internal" href="class_bakedlightmapdata.html#class-bakedlightmapdata-property-energy"><span class="std std-ref">BakedLightmapData.energy</span></a>, this property does not affect direct lighting emitted by light nodes, emissive materials and the environment.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-bakedlightmap-property-bounce-indirect-energy"><span class="std std-ref">bounce_indirect_energy</span></a> only has an effect if <a class="reference internal" href="#class-bakedlightmap-property-bounces"><span class="std std-ref">bounces</span></a> is set to a value greater than or equal to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-bounces">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bounces"></a>bounces</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bounces(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bounces()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of light bounces that are taken into account during baking. See also <a class="reference internal" href="#class-bakedlightmap-property-bounce-indirect-energy"><span class="std std-ref">bounce_indirect_energy</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-capture-cell-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/capture_cell_size"></a>capture_cell_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_capture_cell_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_capture_cell_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Grid size used for real-time capture information on dynamic objects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-capture-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/capture_enabled"></a>capture_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_capture_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_capture_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, an octree containing the scene's lighting information will be computed. This octree will then be used to light dynamic objects in the scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-capture-propagation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/capture_propagation"></a>capture_propagation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_capture_propagation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_capture_propagation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Bias value to reduce the amount of light propagation in the captured octree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-capture-quality">
+<li><p><a class="reference internal" href="#enum-bakedlightmap-bakequality"><span class="std std-ref">BakeQuality</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/capture_quality"></a>capture_quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_capture_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_capture_quality()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Bake quality of the capture data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-default-texels-per-unit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/default_texels_per_unit"></a>default_texels_per_unit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_default_texels_per_unit(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_default_texels_per_unit()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If a baked mesh doesn't have a UV2 size hint, this value will be used to roughly compute a suitable lightmap size.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-custom-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_custom_color"></a>environment_custom_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_custom_color(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_custom_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The environment color when <a class="reference internal" href="#class-bakedlightmap-property-environment-mode"><span class="std std-ref">environment_mode</span></a> is set to <a class="reference internal" href="#class-bakedlightmap-constant-environment-mode-custom-color"><span class="std std-ref">ENVIRONMENT_MODE_CUSTOM_COLOR</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-custom-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_custom_energy"></a>environment_custom_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_custom_energy(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_custom_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The energy scaling factor when when <a class="reference internal" href="#class-bakedlightmap-property-environment-mode"><span class="std std-ref">environment_mode</span></a> is set to <a class="reference internal" href="#class-bakedlightmap-constant-environment-mode-custom-color"><span class="std std-ref">ENVIRONMENT_MODE_CUSTOM_COLOR</span></a> or <a class="reference internal" href="#class-bakedlightmap-constant-environment-mode-custom-sky"><span class="std std-ref">ENVIRONMENT_MODE_CUSTOM_SKY</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-custom-sky">
+<li><p><a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_custom_sky"></a>environment_custom_sky</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_custom_sky(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_custom_sky()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource to use when <a class="reference internal" href="#class-bakedlightmap-property-environment-mode"><span class="std std-ref">environment_mode</span></a> is set o <a class="reference internal" href="#class-bakedlightmap-constant-environment-mode-custom-sky"><span class="std std-ref">ENVIRONMENT_MODE_CUSTOM_SKY</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-custom-sky-rotation-degrees">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_custom_sky_rotation_degrees"></a>environment_custom_sky_rotation_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_custom_sky_rotation_degrees(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_custom_sky_rotation_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rotation of the baked custom sky.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-min-light">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_min_light"></a>environment_min_light</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_min_light(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_min_light()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Minimum ambient light for all the lightmap texels. This doesn't take into account any occlusion from the scene's geometry, it simply ensures a minimum amount of light on all the lightmap texels. Can be used for artistic control on shadow color.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-environment-mode">
+<li><p><a class="reference internal" href="#enum-bakedlightmap-environmentmode"><span class="std std-ref">EnvironmentMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment_mode"></a>environment_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_environment_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_environment_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Decides which environment to use during baking.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-extents">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extents"></a>extents</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">10,</span> <span class="pre">10,</span> <span class="pre">10</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_extents(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_extents()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Size of the baked lightmap. Only meshes inside this region will be included in the baked lightmap, also used as the bounds of the captured region for dynamic lighting.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-image-path">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/image_path"></a>image_path</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_image_path(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_image_path()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Deprecated, in previous versions it determined the location where lightmaps were be saved.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-light-data">
+<li><p><a class="reference internal" href="class_bakedlightmapdata.html#class-bakedlightmapdata"><span class="std std-ref">BakedLightmapData</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_data"></a>light_data</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_light_data(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_light_data()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The calculated light data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-quality">
+<li><p><a class="reference internal" href="#enum-bakedlightmap-bakequality"><span class="std std-ref">BakeQuality</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/quality"></a>quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bake_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bake_quality()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Determines the amount of samples per texel used in indirect light baking. The amount of samples for each quality level can be configured in the project settings.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-use-color">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_color"></a>use_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Store full color values in the lightmap textures. When disabled, lightmap textures will store a single brightness channel. Can be disabled to reduce disk usage if the scene contains only white lights or you don't mind losing color information in indirect lighting.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-use-denoiser">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_denoiser"></a>use_denoiser</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_denoiser(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_denoiser()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, a lightmap denoiser will be used to reduce the noise inherent to Monte Carlo based global illumination.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-bakedlightmap-property-use-hdr">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_hdr"></a>use_hdr</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_hdr(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_hdr()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, stores the lightmap textures in a high dynamic range format (EXR). If <code class="docutils literal notranslate"><span class="pre">false</span></code>, stores the lightmap texture in a low dynamic range PNG image. This can be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> to reduce disk usage, but light values over 1.0 will be clamped and you may see banding caused by the reduced precision.</p>
+<p><strong>Note:</strong> Setting <a class="reference internal" href="#class-bakedlightmap-property-use-hdr"><span class="std std-ref">use_hdr</span></a> to <code class="docutils literal notranslate"><span class="pre">true</span></code> will decrease lightmap banding even when using the GLES2 backend or if <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-depth-hdr"><span class="std std-ref">ProjectSettings.rendering/quality/depth/hdr</span></a> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-bakedlightmap-method-bake">
+<li><p><a class="reference internal" href="#enum-bakedlightmap-bakeerror"><span class="std std-ref">BakeError</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bake"></a>bake</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> from_node=null, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> data_save_path="" <strong>)</strong></p></li>
+</ul>
+<p>Bakes the lightmap, scanning from the given <code class="docutils literal notranslate"><span class="pre">from_node</span></code> root and saves the resulting <a class="reference internal" href="class_bakedlightmapdata.html#class-bakedlightmapdata"><span class="std std-ref">BakedLightmapData</span></a> in <code class="docutils literal notranslate"><span class="pre">data_save_path</span></code>. If no root node is provided, parent of this node will be used as root instead. If no save path is provided it will try to match the path from the current <a class="reference internal" href="#class-bakedlightmap-property-light-data"><span class="std std-ref">light_data</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_backbuffercopy.html" rel="prev" title="BackBufferCopy"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_bakedlightmapdata.html" rel="next" title="BakedLightmapData">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

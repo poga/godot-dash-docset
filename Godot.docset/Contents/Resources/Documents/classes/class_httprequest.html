@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="HTTPRequest" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_httprequest.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object A node with the ability to send HTTP(S) requests. Description: A node with the ability to send HTTP requests. Uses HTTPClient internally. Can be used to make HTTP requests, i..." property="og:description"/>
+<meta content="A node with the ability to send HTTP(S) requests. A node with the ability to send HTTP requests. Uses HTTPClient internally. Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP. Wa..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) HTTPRequest — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_httprequest.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_httprequest.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_httprequest.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_httprequest.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_httprequest.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_httprequest.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_httprequest.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_httprequest.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_httprequest.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_httprequest.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_httprequest.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_httprequest.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_httprequest.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_httprequest.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_httprequest.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_httprequest.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_image.html" rel="next" title="Image"/>
+<link href="class_httpclient.html" rel="prev" title="HTTPClient"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>HTTPRequest</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="httprequest">
+<span id="class-httprequest"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/HTTPRequest¶"></a>HTTPRequest<a class="headerlink" href="#httprequest" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A node with the ability to send HTTP(S) requests.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A node with the ability to send HTTP requests. Uses <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a> internally.</p>
+<p>Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.</p>
+<p><strong>Warning:</strong> See the notes and warnings on <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a> for limitations, especially regarding SSL security.</p>
+<p><strong>Example of contacting a REST API and printing one of its returned fields:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="c1"># Create an HTTP request node and connect its completion signal.</span>
+    <span class="k">var</span> <span class="n">http_request</span> <span class="o">=</span> <span class="n">HTTPRequest</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">http_request</span><span class="p">)</span>
+    <span class="n">http_request</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"request_completed"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_http_request_completed"</span><span class="p">)</span>
+
+    <span class="c1"># Perform a GET request. The URL below returns JSON as of writing.</span>
+    <span class="k">var</span> <span class="n">error</span> <span class="o">=</span> <span class="n">http_request</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"https://httpbin.org/get"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">push_error</span><span class="p">(</span><span class="s2">"An error occurred in the HTTP request."</span><span class="p">)</span>
+
+    <span class="c1"># Perform a POST request. The URL below returns JSON as of writing.</span>
+    <span class="c1"># Note: Don't make simultaneous requests using a single HTTPRequest node.</span>
+    <span class="c1"># The snippet below is provided for reference only.</span>
+    <span class="k">var</span> <span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Godette"</span><span class="p">}</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">http_request</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"https://httpbin.org/post"</span><span class="p">,</span> <span class="p">[],</span> <span class="bp">true</span><span class="p">,</span> <span class="n">HTTPClient</span><span class="o">.</span><span class="n">METHOD_POST</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">push_error</span><span class="p">(</span><span class="s2">"An error occurred in the HTTP request."</span><span class="p">)</span>
+
+
+<span class="c1"># Called when the HTTP request is completed.</span>
+<span class="k">func</span> <span class="n">_http_request_completed</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">response_code</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">response</span> <span class="o">=</span> <span class="nb">parse_json</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">get_string_from_utf8</span><span class="p">())</span>
+
+    <span class="c1"># Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">"User-Agent"</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Example of loading and displaying an image using HTTPRequest:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="c1"># Create an HTTP request node and connect its completion signal.</span>
+    <span class="k">var</span> <span class="n">http_request</span> <span class="o">=</span> <span class="n">HTTPRequest</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">http_request</span><span class="p">)</span>
+    <span class="n">http_request</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"request_completed"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_http_request_completed"</span><span class="p">)</span>
+
+    <span class="c1"># Perform the HTTP request. The URL below returns a PNG image as of writing.</span>
+    <span class="k">var</span> <span class="n">error</span> <span class="o">=</span> <span class="n">http_request</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"https://via.placeholder.com/512"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">push_error</span><span class="p">(</span><span class="s2">"An error occurred in the HTTP request."</span><span class="p">)</span>
+
+
+<span class="c1"># Called when the HTTP request is completed.</span>
+<span class="k">func</span> <span class="n">_http_request_completed</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">response_code</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">body</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">error</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_png_from_buffer</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">push_error</span><span class="p">(</span><span class="s2">"Couldn't load the image."</span><span class="p">)</span>
+
+    <span class="k">var</span> <span class="n">texture</span> <span class="o">=</span> <span class="n">ImageTexture</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">texture</span><span class="o">.</span><span class="n">create_from_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="c1"># Display the image in a TextureRect node.</span>
+    <span class="k">var</span> <span class="n">texture_rect</span> <span class="o">=</span> <span class="n">TextureRect</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">texture_rect</span><span class="p">)</span>
+    <span class="n">texture_rect</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture</span>
+</pre></div>
+</div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/networking/http_request_class.html"><span class="doc">Making HTTP requests</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/networking/ssl_certificates.html"><span class="doc">SSL certificates</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 66%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-body-size-limit"><span class="std std-ref">body_size_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-download-chunk-size"><span class="std std-ref">download_chunk_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">65536</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-download-file"><span class="std std-ref">download_file</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-max-redirects"><span class="std std-ref">max_redirects</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-timeout"><span class="std std-ref">timeout</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-property-use-threads"><span class="std std-ref">use_threads</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-cancel-request"><span class="std std-ref">cancel_request</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-get-body-size"><span class="std std-ref">get_body_size</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-get-downloaded-bytes"><span class="std std-ref">get_downloaded_bytes</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_httpclient.html#enum-httpclient-status"><span class="std std-ref">Status</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-get-http-client-status"><span class="std std-ref">get_http_client_status</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-request"><span class="std std-ref">request</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> url, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> custom_headers=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ssl_validate_domain=true, <a class="reference internal" href="class_httpclient.html#enum-httpclient-method"><span class="std std-ref">Method</span></a> method=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> request_data="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-httprequest-method-request-raw"><span class="std std-ref">request_raw</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> url, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> custom_headers=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ssl_validate_domain=true, <a class="reference internal" href="class_httpclient.html#enum-httpclient-method"><span class="std std-ref">Method</span></a> method=0, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> request_data_raw=PoolByteArray(  ) <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-httprequest-signal-request-completed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/request_completed"></a>request_completed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> result, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> response_code, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> headers, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a request is completed.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-httprequest-constant-result-timeout"><span id="class-httprequest-constant-result-redirect-limit-reached"></span><span id="class-httprequest-constant-result-download-file-write-error"></span><span id="class-httprequest-constant-result-download-file-cant-open"></span><span id="class-httprequest-constant-result-request-failed"></span><span id="class-httprequest-constant-result-body-size-limit-exceeded"></span><span id="class-httprequest-constant-result-no-response"></span><span id="class-httprequest-constant-result-ssl-handshake-error"></span><span id="class-httprequest-constant-result-connection-error"></span><span id="class-httprequest-constant-result-cant-resolve"></span><span id="class-httprequest-constant-result-cant-connect"></span><span id="class-httprequest-constant-result-chunked-body-size-mismatch"></span><span id="class-httprequest-constant-result-success"></span><span id="enum-httprequest-result"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Result"></a>Result</strong>:</p>
+<ul class="simple">
+<li><p><strong>RESULT_SUCCESS</strong> = <strong>0</strong> --- Request successful.</p></li>
+<li><p><strong>RESULT_CHUNKED_BODY_SIZE_MISMATCH</strong> = <strong>1</strong></p></li>
+<li><p><strong>RESULT_CANT_CONNECT</strong> = <strong>2</strong> --- Request failed while connecting.</p></li>
+<li><p><strong>RESULT_CANT_RESOLVE</strong> = <strong>3</strong> --- Request failed while resolving.</p></li>
+<li><p><strong>RESULT_CONNECTION_ERROR</strong> = <strong>4</strong> --- Request failed due to connection (read/write) error.</p></li>
+<li><p><strong>RESULT_SSL_HANDSHAKE_ERROR</strong> = <strong>5</strong> --- Request failed on SSL handshake.</p></li>
+<li><p><strong>RESULT_NO_RESPONSE</strong> = <strong>6</strong> --- Request does not have a response (yet).</p></li>
+<li><p><strong>RESULT_BODY_SIZE_LIMIT_EXCEEDED</strong> = <strong>7</strong> --- Request exceeded its maximum size limit, see <a class="reference internal" href="#class-httprequest-property-body-size-limit"><span class="std std-ref">body_size_limit</span></a>.</p></li>
+<li><p><strong>RESULT_REQUEST_FAILED</strong> = <strong>8</strong> --- Request failed (currently unused).</p></li>
+<li><p><strong>RESULT_DOWNLOAD_FILE_CANT_OPEN</strong> = <strong>9</strong> --- HTTPRequest couldn't open the download file.</p></li>
+<li><p><strong>RESULT_DOWNLOAD_FILE_WRITE_ERROR</strong> = <strong>10</strong> --- HTTPRequest couldn't write to the download file.</p></li>
+<li><p><strong>RESULT_REDIRECT_LIMIT_REACHED</strong> = <strong>11</strong> --- Request reached its maximum redirect limit, see <a class="reference internal" href="#class-httprequest-property-max-redirects"><span class="std std-ref">max_redirects</span></a>.</p></li>
+<li><p><strong>RESULT_TIMEOUT</strong> = <strong>12</strong></p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-httprequest-property-body-size-limit">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/body_size_limit"></a>body_size_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_body_size_limit(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_body_size_limit()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum allowed size for response bodies.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-property-download-chunk-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/download_chunk_size"></a>download_chunk_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">65536</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_download_chunk_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_download_chunk_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of the buffer used and maximum bytes to read per iteration. See <a class="reference internal" href="class_httpclient.html#class-httpclient-property-read-chunk-size"><span class="std std-ref">HTTPClient.read_chunk_size</span></a>.</p>
+<p>Set this to a lower value (e.g. 4096 for 4 KiB) when downloading small files to decrease memory usage at the cost of download speeds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-property-download-file">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/download_file"></a>download_file</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_download_file(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_download_file()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The file to download into. Will output any received file into it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-property-max-redirects">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/max_redirects"></a>max_redirects</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_redirects(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_redirects()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Maximum number of allowed redirects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-property-timeout">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/timeout"></a>timeout</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_timeout(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_timeout()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-property-use-threads">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_threads"></a>use_threads</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_threads(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_threads()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, multithreading is used to improve performance.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-httprequest-method-cancel-request">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/cancel_request"></a>cancel_request</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Cancels the current request.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-method-get-body-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_body_size"></a>get_body_size</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the response body length.</p>
+<p><strong>Note:</strong> Some Web servers may not send a body length. In this case, the value returned will be <code class="docutils literal notranslate"><span class="pre">-1</span></code>. If using chunked transfer encoding, the body length will also be <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-method-get-downloaded-bytes">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_downloaded_bytes"></a>get_downloaded_bytes</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the amount of bytes this HTTPRequest downloaded.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-method-get-http-client-status">
+<li><p><a class="reference internal" href="class_httpclient.html#enum-httpclient-status"><span class="std std-ref">Status</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_http_client_status"></a>get_http_client_status</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current status of the underlying <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a>. See <a class="reference internal" href="class_httpclient.html#enum-httpclient-status"><span class="std std-ref">Status</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-method-request">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/request"></a>request</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> url, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> custom_headers=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ssl_validate_domain=true, <a class="reference internal" href="class_httpclient.html#enum-httpclient-method"><span class="std std-ref">Method</span></a> method=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> request_data="" <strong>)</strong></p></li>
+</ul>
+<p>Creates request on the underlying <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a>. If there is no configuration errors, it tries to connect using <a class="reference internal" href="class_httpclient.html#class-httpclient-method-connect-to-host"><span class="std std-ref">HTTPClient.connect_to_host</span></a> and passes parameters onto <a class="reference internal" href="class_httpclient.html#class-httpclient-method-request"><span class="std std-ref">HTTPClient.request</span></a>.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> if request is successfully created. (Does not imply that the server has responded), <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-unconfigured"><span class="std std-ref">@GlobalScope.ERR_UNCONFIGURED</span></a> if not in the tree, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-busy"><span class="std std-ref">@GlobalScope.ERR_BUSY</span></a> if still processing previous request, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-invalid-parameter"><span class="std std-ref">@GlobalScope.ERR_INVALID_PARAMETER</span></a> if given string is not a valid URL format, or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-connect"><span class="std std-ref">@GlobalScope.ERR_CANT_CONNECT</span></a> if not using thread and the <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a> cannot connect to host.</p>
+<p><strong>Note:</strong> When <code class="docutils literal notranslate"><span class="pre">method</span></code> is <a class="reference internal" href="class_httpclient.html#class-httpclient-constant-method-get"><span class="std std-ref">HTTPClient.METHOD_GET</span></a>, the payload sent via <code class="docutils literal notranslate"><span class="pre">request_data</span></code> might be ignored by the server or even cause the server to reject the request (check <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1">RFC 7231 section 4.3.1</a> for more details). As a workaround, you can send data as a query string in the URL. See <a class="reference internal" href="class_string.html#class-string-method-http-escape"><span class="std std-ref">String.http_escape</span></a> for an example.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-httprequest-method-request-raw">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/request_raw"></a>request_raw</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> url, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> custom_headers=PoolStringArray(  ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> ssl_validate_domain=true, <a class="reference internal" href="class_httpclient.html#enum-httpclient-method"><span class="std std-ref">Method</span></a> method=0, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> request_data_raw=PoolByteArray(  ) <strong>)</strong></p></li>
+</ul>
+<p>Creates request on the underlying <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a> using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using <a class="reference internal" href="class_httpclient.html#class-httpclient-method-connect-to-host"><span class="std std-ref">HTTPClient.connect_to_host</span></a> and passes parameters onto <a class="reference internal" href="class_httpclient.html#class-httpclient-method-request"><span class="std std-ref">HTTPClient.request</span></a>.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> if request is successfully created. (Does not imply that the server has responded), <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-unconfigured"><span class="std std-ref">@GlobalScope.ERR_UNCONFIGURED</span></a> if not in the tree, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-busy"><span class="std std-ref">@GlobalScope.ERR_BUSY</span></a> if still processing previous request, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-invalid-parameter"><span class="std std-ref">@GlobalScope.ERR_INVALID_PARAMETER</span></a> if given string is not a valid URL format, or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-connect"><span class="std std-ref">@GlobalScope.ERR_CANT_CONNECT</span></a> if not using thread and the <a class="reference internal" href="class_httpclient.html#class-httpclient"><span class="std std-ref">HTTPClient</span></a> cannot connect to host.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_httpclient.html" rel="prev" title="HTTPClient"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_image.html" rel="next" title="Image">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

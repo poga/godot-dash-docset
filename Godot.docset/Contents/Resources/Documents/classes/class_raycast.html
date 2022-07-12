@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="RayCast" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_raycast.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Query the closest object intersecting a ray. Description: A RayCast represents a line from its origin to its destination position, cast_to. It is used to query the 3..." property="og:description"/>
+<meta content="Query the closest object intersecting a ray. A RayCast represents a line from its origin to its destination position, cast_to. It is used to query the 3D space in order to find the closest object along the path of the..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) RayCast — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_raycast.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_raycast.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_raycast.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_raycast.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_raycast.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_raycast.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_raycast.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_raycast.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_raycast.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_raycast.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_raycast.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_raycast.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_raycast.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_raycast.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_raycast.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_raycast.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_raycast2d.html" rel="next" title="RayCast2D"/>
+<link href="class_range.html" rel="prev" title="Range"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>RayCast</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="raycast">
+<span id="class-raycast"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/RayCast¶"></a>RayCast<a class="headerlink" href="#raycast" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Query the closest object intersecting a ray.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A RayCast represents a line from its origin to its destination position, <code class="docutils literal notranslate"><span class="pre">cast_to</span></code>. It is used to query the 3D space in order to find the closest object along the path of the ray.</p>
+<p>RayCast can ignore some objects by adding them to the exception list via <code class="docutils literal notranslate"><span class="pre">add_exception</span></code> or by setting proper filtering with collision layers and masks.</p>
+<p>RayCast can be configured to report collisions with <a class="reference internal" href="class_area.html#class-area"><span class="std std-ref">Area</span></a>s (<a class="reference internal" href="#class-raycast-property-collide-with-areas"><span class="std std-ref">collide_with_areas</span></a>) and/or <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a>s (<a class="reference internal" href="#class-raycast-property-collide-with-bodies"><span class="std std-ref">collide_with_bodies</span></a>).</p>
+<p>Only enabled raycasts will be able to query the space and report collisions.</p>
+<p>RayCast calculates intersection every physics frame (see <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use <a class="reference internal" href="#class-raycast-method-force-raycast-update"><span class="std std-ref">force_raycast_update</span></a> after adjusting the raycast.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/physics/ray-casting.html"><span class="doc">Ray-casting</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 59%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-cast-to"><span class="std std-ref">cast_to</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">-1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-collide-with-areas"><span class="std std-ref">collide_with_areas</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-collide-with-bodies"><span class="std std-ref">collide_with_bodies</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-collision-mask"><span class="std std-ref">collision_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-debug-shape-custom-color"><span class="std std-ref">debug_shape_custom_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-debug-shape-thickness"><span class="std std-ref">debug_shape_thickness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-enabled"><span class="std std-ref">enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-property-exclude-parent"><span class="std std-ref">exclude_parent</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-add-exception"><span class="std std-ref">add_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-add-exception-rid"><span class="std std-ref">add_exception_rid</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-clear-exceptions"><span class="std std-ref">clear_exceptions</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-force-raycast-update"><span class="std std-ref">force_raycast_update</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-get-collider"><span class="std std-ref">get_collider</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-get-collider-shape"><span class="std std-ref">get_collider_shape</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-get-collision-mask-bit"><span class="std std-ref">get_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-get-collision-normal"><span class="std std-ref">get_collision_normal</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-get-collision-point"><span class="std std-ref">get_collision_point</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-is-colliding"><span class="std std-ref">is_colliding</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-remove-exception"><span class="std std-ref">remove_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-remove-exception-rid"><span class="std std-ref">remove_exception_rid</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-raycast-method-set-collision-mask-bit"><span class="std std-ref">set_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-raycast-property-cast-to">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cast_to"></a>cast_to</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">-1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cast_to(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cast_to()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ray's destination point, relative to the RayCast's <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-collide-with-areas">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collide_with_areas"></a>collide_with_areas</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collide_with_areas(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_collide_with_areas_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collision with <a class="reference internal" href="class_area.html#class-area"><span class="std std-ref">Area</span></a>s will be reported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-collide-with-bodies">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collide_with_bodies"></a>collide_with_bodies</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collide_with_bodies(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_collide_with_bodies_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collision with <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a>s will be reported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-collision-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_mask"></a>collision_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks">Collision layers and masks</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-debug-shape-custom-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/debug_shape_custom_color"></a>debug_shape_custom_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_debug_shape_custom_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_debug_shape_custom_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The custom color to use to draw the shape in the editor and at run-time if <strong>Visible Collision Shapes</strong> is enabled in the <strong>Debug</strong> menu. This color will be highlighted at run-time if the <code class="docutils literal notranslate"><span class="pre">RayCast</span></code> is colliding with something.</p>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">Color(0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0)</span></code> (by default), the color set in <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-debug-shapes-collision-shape-color"><span class="std std-ref">ProjectSettings.debug/shapes/collision/shape_color</span></a> is used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-debug-shape-thickness">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/debug_shape_thickness"></a>debug_shape_thickness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_debug_shape_thickness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_debug_shape_thickness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, a line is used as the debug shape. Otherwise, a truncated pyramid is drawn to represent the <code class="docutils literal notranslate"><span class="pre">RayCast</span></code>. Requires <strong>Visible Collision Shapes</strong> to be enabled in the <strong>Debug</strong> menu for the debug shape to be visible at run-time.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/enabled"></a>enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collisions will be reported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-property-exclude-parent">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/exclude_parent"></a>exclude_parent</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_exclude_parent_body(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_exclude_parent_body()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collisions will be ignored for this RayCast's immediate parent.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-raycast-method-add-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_exception"></a>add_exception</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Adds a collision exception so the ray does not report collisions with the specified node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-add-exception-rid">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_exception_rid"></a>add_exception_rid</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></li>
+</ul>
+<p>Adds a collision exception so the ray does not report collisions with the specified <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-clear-exceptions">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_exceptions"></a>clear_exceptions</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all collision exceptions for this ray.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-force-raycast-update">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/force_raycast_update"></a>force_raycast_update</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Updates the collision information for the ray.</p>
+<p>Use this method to update the collision information immediately instead of waiting for the next <code class="docutils literal notranslate"><span class="pre">_physics_process</span></code> call, for example if the ray or its parent has changed state.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">enabled</span></code> is not required for this to work.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-get-collider">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collider"></a>get_collider</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the first object that the ray intersects, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if no object is intersecting the ray (i.e. <a class="reference internal" href="#class-raycast-method-is-colliding"><span class="std std-ref">is_colliding</span></a> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-get-collider-shape">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collider_shape"></a>get_collider_shape</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the shape ID of the first object that the ray intersects, or <code class="docutils literal notranslate"><span class="pre">0</span></code> if no object is intersecting the ray (i.e. <a class="reference internal" href="#class-raycast-method-is-colliding"><span class="std std-ref">is_colliding</span></a> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-get-collision-mask-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_mask_bit"></a>get_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the bit index passed is turned on.</p>
+<p><strong>Note:</strong> Bit indices range from 0-19.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-get-collision-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_normal"></a>get_collision_normal</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the normal of the intersecting object's shape at the collision point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-get-collision-point">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_point"></a>get_collision_point</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the collision point at which the ray intersects the closest object.</p>
+<p><strong>Note:</strong> This point is in the <strong>global</strong> coordinate system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-is-colliding">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_colliding"></a>is_colliding</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether any object is intersecting with the ray's vector (considering the vector length).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-remove-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_exception"></a>remove_exception</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Removes a collision exception so the ray does report collisions with the specified node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-remove-exception-rid">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_exception_rid"></a>remove_exception_rid</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></li>
+</ul>
+<p>Removes a collision exception so the ray does report collisions with the specified <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-raycast-method-set-collision-mask-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_mask_bit"></a>set_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the bit index passed to the <code class="docutils literal notranslate"><span class="pre">value</span></code> passed.</p>
+<p><strong>Note:</strong> Bit indexes range from 0-19.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_range.html" rel="prev" title="Range"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_raycast2d.html" rel="next" title="RayCast2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

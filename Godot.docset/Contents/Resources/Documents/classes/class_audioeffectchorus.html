@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AudioEffectChorus" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_audioeffectchorus.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: AudioEffect&lt; Resource&lt; Reference&lt; Object Adds a chorus audio effect. Description: Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and man..." property="og:description"/>
+<meta content="Adds a chorus audio effect. Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter. float dry 1.0 float voice/1/cutoff_hz 8000.0 float vo..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AudioEffectChorus — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioeffectchorus.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_audioeffectchorus.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_audioeffectchorus.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_audioeffectchorus.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_audioeffectchorus.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_audioeffectchorus.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_audioeffectchorus.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_audioeffectchorus.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_audioeffectchorus.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_audioeffectchorus.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_audioeffectchorus.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_audioeffectchorus.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_audioeffectchorus.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_audioeffectchorus.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioeffectchorus.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioeffectchorus.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_audioeffectcompressor.html" rel="next" title="AudioEffectCompressor"/>
+<link href="class_audioeffectcapture.html" rel="prev" title="AudioEffectCapture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AudioEffectChorus</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="audioeffectchorus">
+<span id="class-audioeffectchorus"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AudioEffectChorus¶"></a>AudioEffectChorus<a class="headerlink" href="#audioeffectchorus" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Adds a chorus audio effect.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 67%"/>
+<col style="width: 10%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-dry"><span class="std std-ref">dry</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-cutoff-hz"><span class="std std-ref">voice/1/cutoff_hz</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8000.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-delay-ms"><span class="std std-ref">voice/1/delay_ms</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">15.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-depth-ms"><span class="std std-ref">voice/1/depth_ms</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-level-db"><span class="std std-ref">voice/1/level_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-pan"><span class="std std-ref">voice/1/pan</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-0.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-1-rate-hz"><span class="std std-ref">voice/1/rate_hz</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-cutoff-hz"><span class="std std-ref">voice/2/cutoff_hz</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8000.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-delay-ms"><span class="std std-ref">voice/2/delay_ms</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-depth-ms"><span class="std std-ref">voice/2/depth_ms</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-level-db"><span class="std std-ref">voice/2/level_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-pan"><span class="std std-ref">voice/2/pan</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-2-rate-hz"><span class="std std-ref">voice/2/rate_hz</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-cutoff-hz"><span class="std std-ref">voice/3/cutoff_hz</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-delay-ms"><span class="std std-ref">voice/3/delay_ms</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-depth-ms"><span class="std std-ref">voice/3/depth_ms</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-level-db"><span class="std std-ref">voice/3/level_db</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-pan"><span class="std std-ref">voice/3/pan</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-3-rate-hz"><span class="std std-ref">voice/3/rate_hz</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-cutoff-hz"><span class="std std-ref">voice/4/cutoff_hz</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-delay-ms"><span class="std std-ref">voice/4/delay_ms</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-depth-ms"><span class="std std-ref">voice/4/depth_ms</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-level-db"><span class="std std-ref">voice/4/level_db</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-pan"><span class="std std-ref">voice/4/pan</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-4-rate-hz"><span class="std std-ref">voice/4/rate_hz</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-voice-count"><span class="std std-ref">voice_count</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-property-wet"><span class="std std-ref">wet</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-cutoff-hz"><span class="std std-ref">get_voice_cutoff_hz</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-delay-ms"><span class="std std-ref">get_voice_delay_ms</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-depth-ms"><span class="std std-ref">get_voice_depth_ms</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-level-db"><span class="std std-ref">get_voice_level_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-pan"><span class="std std-ref">get_voice_pan</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-get-voice-rate-hz"><span class="std std-ref">get_voice_rate_hz</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-cutoff-hz"><span class="std std-ref">set_voice_cutoff_hz</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> cutoff_hz <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-delay-ms"><span class="std std-ref">set_voice_delay_ms</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay_ms <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-depth-ms"><span class="std std-ref">set_voice_depth_ms</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> depth_ms <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-level-db"><span class="std std-ref">set_voice_level_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> level_db <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-pan"><span class="std std-ref">set_voice_pan</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> pan <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioeffectchorus-method-set-voice-rate-hz"><span class="std std-ref">set_voice_rate_hz</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rate_hz <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audioeffectchorus-property-dry">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dry"></a>dry</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dry(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dry()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The effect's raw signal.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/cutoff_hz"></a>voice/1/cutoff_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8000.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_cutoff_hz(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_cutoff_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's cutoff frequency.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-delay-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/delay_ms"></a>voice/1/delay_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">15.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_delay_ms(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_delay_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's signal delay.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-depth-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/depth_ms"></a>voice/1/depth_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_depth_ms(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_depth_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice filter's depth.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-level-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/level_db"></a>voice/1/level_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_level_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_level_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's volume.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-pan">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/pan"></a>voice/1/pan</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_pan(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_pan()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's pan level.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-1-rate-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/1/rate_hz"></a>voice/1/rate_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_rate_hz(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_rate_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's filter rate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/cutoff_hz"></a>voice/2/cutoff_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8000.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_cutoff_hz(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_cutoff_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's cutoff frequency.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-delay-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/delay_ms"></a>voice/2/delay_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_delay_ms(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_delay_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's signal delay.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-depth-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/depth_ms"></a>voice/2/depth_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_depth_ms(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_depth_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice filter's depth.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-level-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/level_db"></a>voice/2/level_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_level_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_level_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's volume.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-pan">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/pan"></a>voice/2/pan</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_pan(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_pan()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's pan level.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-2-rate-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/2/rate_hz"></a>voice/2/rate_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_rate_hz(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_rate_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's filter rate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/cutoff_hz"></a>voice/3/cutoff_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_cutoff_hz(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_cutoff_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's cutoff frequency.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-delay-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/delay_ms"></a>voice/3/delay_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_delay_ms(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_delay_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's signal delay.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-depth-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/depth_ms"></a>voice/3/depth_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_depth_ms(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_depth_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice filter's depth.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-level-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/level_db"></a>voice/3/level_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_level_db(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_level_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's volume.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-pan">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/pan"></a>voice/3/pan</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_pan(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_pan()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's pan level.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-3-rate-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/3/rate_hz"></a>voice/3/rate_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_rate_hz(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_rate_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's filter rate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/cutoff_hz"></a>voice/4/cutoff_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_cutoff_hz(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_cutoff_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's cutoff frequency.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-delay-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/delay_ms"></a>voice/4/delay_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_delay_ms(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_delay_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's signal delay.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-depth-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/depth_ms"></a>voice/4/depth_ms</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_depth_ms(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_depth_ms()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice filter's depth.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-level-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/level_db"></a>voice/4/level_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_level_db(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_level_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's volume.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-pan">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/pan"></a>voice/4/pan</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_pan(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_pan()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's pan level.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-4-rate-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice/4/rate_hz"></a>voice/4/rate_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_rate_hz(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_rate_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The voice's filter rate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-voice-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/voice_count"></a>voice_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_voice_count(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_voice_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of voices in the effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-property-wet">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/wet"></a>wet</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_wet(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_wet()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The effect's processed signal.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_cutoff_hz"></a>get_voice_cutoff_hz</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-delay-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_delay_ms"></a>get_voice_delay_ms</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-depth-ms">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_depth_ms"></a>get_voice_depth_ms</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-level-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_level_db"></a>get_voice_level_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-pan">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_pan"></a>get_voice_pan</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-get-voice-rate-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_voice_rate_hz"></a>get_voice_rate_hz</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-cutoff-hz">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_cutoff_hz"></a>set_voice_cutoff_hz</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> cutoff_hz <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-delay-ms">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_delay_ms"></a>set_voice_delay_ms</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay_ms <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-depth-ms">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_depth_ms"></a>set_voice_depth_ms</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> depth_ms <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-level-db">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_level_db"></a>set_voice_level_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> level_db <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-pan">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_pan"></a>set_voice_pan</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> pan <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioeffectchorus-method-set-voice-rate-hz">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_voice_rate_hz"></a>set_voice_rate_hz</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> voice_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rate_hz <strong>)</strong></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_audioeffectcapture.html" rel="prev" title="AudioEffectCapture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_audioeffectcompressor.html" rel="next" title="AudioEffectCompressor">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

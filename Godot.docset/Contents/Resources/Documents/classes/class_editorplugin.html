@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorPlugin" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorplugin.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Used by the editor to extend its functionality. Description: Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a g..." property="og:description"/>
+<meta content="Used by the editor to extend its functionality. Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export pl..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorPlugin — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorplugin.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorplugin.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorplugin.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorplugin.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorplugin.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorplugin.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorplugin.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorplugin.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorplugin.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorplugin.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorplugin.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorplugin.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorplugin.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorplugin.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorplugin.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorplugin.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorproperty.html" rel="next" title="EditorProperty"/>
+<link href="class_editornavigationmeshgenerator.html" rel="prev" title="EditorNavigationMeshGenerator"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorPlugin</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorplugin">
+<span id="class-editorplugin"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorPlugin¶"></a>EditorPlugin<a class="headerlink" href="#editorplugin" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Used by the editor to extend its functionality.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Plugins are used by the editor to extend functionality. The most common types of plugins are those which edit a given node or resource type, import plugins and export plugins. See also <a class="reference internal" href="class_editorscript.html#class-editorscript"><span class="std std-ref">EditorScript</span></a> to add functions to the editor.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/plugins/editor/index.html"><span class="doc">Editor plugins</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-autoload-singleton"><span class="std std-ref">add_autoload_singleton</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_toolbutton.html#class-toolbutton"><span class="std std-ref">ToolButton</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-control-to-bottom-panel"><span class="std std-ref">add_control_to_bottom_panel</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-control-to-container"><span class="std std-ref">add_control_to_container</span></a> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-customcontrolcontainer"><span class="std std-ref">CustomControlContainer</span></a> container, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-control-to-dock"><span class="std std-ref">add_control_to_dock</span></a> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-dockslot"><span class="std std-ref">DockSlot</span></a> slot, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-custom-type"><span class="std std-ref">add_custom_type</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> base, <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> script, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-export-plugin"><span class="std std-ref">add_export_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorexportplugin.html#class-editorexportplugin"><span class="std std-ref">EditorExportPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-import-plugin"><span class="std std-ref">add_import_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorimportplugin.html#class-editorimportplugin"><span class="std std-ref">EditorImportPlugin</span></a> importer <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-inspector-plugin"><span class="std std-ref">add_inspector_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-scene-import-plugin"><span class="std std-ref">add_scene_import_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorsceneimporter.html#class-editorsceneimporter"><span class="std std-ref">EditorSceneImporter</span></a> scene_importer <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-spatial-gizmo-plugin"><span class="std std-ref">add_spatial_gizmo_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmoplugin.html#class-editorspatialgizmoplugin"><span class="std std-ref">EditorSpatialGizmoPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-tool-menu-item"><span class="std std-ref">add_tool_menu_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> handler, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> ud=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-add-tool-submenu-item"><span class="std std-ref">add_tool_submenu_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> submenu <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-apply-changes"><span class="std std-ref">apply_changes</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-build"><span class="std std-ref">build</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-disable-plugin"><span class="std std-ref">disable_plugin</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-edit"><span class="std std-ref">edit</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-enable-plugin"><span class="std std-ref">enable_plugin</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-canvas-draw-over-viewport"><span class="std std-ref">forward_canvas_draw_over_viewport</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-canvas-force-draw-over-viewport"><span class="std std-ref">forward_canvas_force_draw_over_viewport</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-canvas-gui-input"><span class="std std-ref">forward_canvas_gui_input</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-spatial-draw-over-viewport"><span class="std std-ref">forward_spatial_draw_over_viewport</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-spatial-force-draw-over-viewport"><span class="std std-ref">forward_spatial_force_draw_over_viewport</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-forward-spatial-gui-input"><span class="std std-ref">forward_spatial_gui_input</span></a> <strong>(</strong> <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a> camera, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-breakpoints"><span class="std std-ref">get_breakpoints</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-editor-interface"><span class="std std-ref">get_editor_interface</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-plugin-icon"><span class="std std-ref">get_plugin_icon</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-plugin-name"><span class="std std-ref">get_plugin_name</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_scriptcreatedialog.html#class-scriptcreatedialog"><span class="std std-ref">ScriptCreateDialog</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-script-create-dialog"><span class="std std-ref">get_script_create_dialog</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-state"><span class="std std-ref">get_state</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_undoredo.html#class-undoredo"><span class="std std-ref">UndoRedo</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-undo-redo"><span class="std std-ref">get_undo_redo</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-get-window-layout"><span class="std std-ref">get_window_layout</span></a> <strong>(</strong> <a class="reference internal" href="class_configfile.html#class-configfile"><span class="std std-ref">ConfigFile</span></a> layout <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-handles"><span class="std std-ref">handles</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-has-main-screen"><span class="std std-ref">has_main_screen</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-hide-bottom-panel"><span class="std std-ref">hide_bottom_panel</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-make-bottom-panel-item-visible"><span class="std std-ref">make_bottom_panel_item_visible</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> item <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-make-visible"><span class="std std-ref">make_visible</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> visible <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-queue-save-layout"><span class="std std-ref">queue_save_layout</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-autoload-singleton"><span class="std std-ref">remove_autoload_singleton</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-control-from-bottom-panel"><span class="std std-ref">remove_control_from_bottom_panel</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-control-from-container"><span class="std std-ref">remove_control_from_container</span></a> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-customcontrolcontainer"><span class="std std-ref">CustomControlContainer</span></a> container, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-control-from-docks"><span class="std std-ref">remove_control_from_docks</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-custom-type"><span class="std std-ref">remove_custom_type</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-export-plugin"><span class="std std-ref">remove_export_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorexportplugin.html#class-editorexportplugin"><span class="std std-ref">EditorExportPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-import-plugin"><span class="std std-ref">remove_import_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorimportplugin.html#class-editorimportplugin"><span class="std std-ref">EditorImportPlugin</span></a> importer <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-inspector-plugin"><span class="std std-ref">remove_inspector_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-scene-import-plugin"><span class="std std-ref">remove_scene_import_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorsceneimporter.html#class-editorsceneimporter"><span class="std std-ref">EditorSceneImporter</span></a> scene_importer <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-spatial-gizmo-plugin"><span class="std std-ref">remove_spatial_gizmo_plugin</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmoplugin.html#class-editorspatialgizmoplugin"><span class="std std-ref">EditorSpatialGizmoPlugin</span></a> plugin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-remove-tool-menu-item"><span class="std std-ref">remove_tool_menu_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-save-external-data"><span class="std std-ref">save_external_data</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-set-force-draw-over-forwarding-enabled"><span class="std std-ref">set_force_draw_over_forwarding_enabled</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-set-input-event-forwarding-always-enabled"><span class="std std-ref">set_input_event_forwarding_always_enabled</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-set-state"><span class="std std-ref">set_state</span></a> <strong>(</strong> <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> state <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-set-window-layout"><span class="std std-ref">set_window_layout</span></a> <strong>(</strong> <a class="reference internal" href="class_configfile.html#class-configfile"><span class="std std-ref">ConfigFile</span></a> layout <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorplugin-method-update-overlays"><span class="std std-ref">update_overlays</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorplugin-signal-main-screen-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/main_screen_changed"></a>main_screen_changed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> screen_name <strong>)</strong></p></li>
+</ul>
+<p>Emitted when user changes the workspace (<strong>2D</strong>, <strong>3D</strong>, <strong>Script</strong>, <strong>AssetLib</strong>). Also works with custom screens defined by plugins.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-signal-resource-saved">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/resource_saved"></a>resource_saved</strong> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-signal-scene-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/scene_changed"></a>scene_changed</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> scene_root <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the scene is changed in the editor. The argument will return the root node of the scene that has just become active. If this scene is new and empty, the argument will be <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-signal-scene-closed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/scene_closed"></a>scene_closed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> filepath <strong>)</strong></p></li>
+</ul>
+<p>Emitted when user closes a scene. The argument is file path to a closed scene.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-editorplugin-constant-container-project-setting-tab-right"><span id="class-editorplugin-constant-container-project-setting-tab-left"></span><span id="class-editorplugin-constant-container-property-editor-bottom"></span><span id="class-editorplugin-constant-container-canvas-editor-bottom"></span><span id="class-editorplugin-constant-container-canvas-editor-side-right"></span><span id="class-editorplugin-constant-container-canvas-editor-side-left"></span><span id="class-editorplugin-constant-container-canvas-editor-menu"></span><span id="class-editorplugin-constant-container-spatial-editor-bottom"></span><span id="class-editorplugin-constant-container-spatial-editor-side-right"></span><span id="class-editorplugin-constant-container-spatial-editor-side-left"></span><span id="class-editorplugin-constant-container-spatial-editor-menu"></span><span id="class-editorplugin-constant-container-toolbar"></span><span id="enum-editorplugin-customcontrolcontainer"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CustomControlContainer"></a>CustomControlContainer</strong>:</p>
+<ul class="simple">
+<li><p><strong>CONTAINER_TOOLBAR</strong> = <strong>0</strong></p></li>
+<li><p><strong>CONTAINER_SPATIAL_EDITOR_MENU</strong> = <strong>1</strong></p></li>
+<li><p><strong>CONTAINER_SPATIAL_EDITOR_SIDE_LEFT</strong> = <strong>2</strong></p></li>
+<li><p><strong>CONTAINER_SPATIAL_EDITOR_SIDE_RIGHT</strong> = <strong>3</strong></p></li>
+<li><p><strong>CONTAINER_SPATIAL_EDITOR_BOTTOM</strong> = <strong>4</strong></p></li>
+<li><p><strong>CONTAINER_CANVAS_EDITOR_MENU</strong> = <strong>5</strong></p></li>
+<li><p><strong>CONTAINER_CANVAS_EDITOR_SIDE_LEFT</strong> = <strong>6</strong></p></li>
+<li><p><strong>CONTAINER_CANVAS_EDITOR_SIDE_RIGHT</strong> = <strong>7</strong></p></li>
+<li><p><strong>CONTAINER_CANVAS_EDITOR_BOTTOM</strong> = <strong>8</strong></p></li>
+<li><p><strong>CONTAINER_PROPERTY_EDITOR_BOTTOM</strong> = <strong>9</strong></p></li>
+<li><p><strong>CONTAINER_PROJECT_SETTING_TAB_LEFT</strong> = <strong>10</strong></p></li>
+<li><p><strong>CONTAINER_PROJECT_SETTING_TAB_RIGHT</strong> = <strong>11</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-editorplugin-constant-dock-slot-max"><span id="class-editorplugin-constant-dock-slot-right-br"></span><span id="class-editorplugin-constant-dock-slot-right-ur"></span><span id="class-editorplugin-constant-dock-slot-right-bl"></span><span id="class-editorplugin-constant-dock-slot-right-ul"></span><span id="class-editorplugin-constant-dock-slot-left-br"></span><span id="class-editorplugin-constant-dock-slot-left-ur"></span><span id="class-editorplugin-constant-dock-slot-left-bl"></span><span id="class-editorplugin-constant-dock-slot-left-ul"></span><span id="enum-editorplugin-dockslot"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DockSlot"></a>DockSlot</strong>:</p>
+<ul class="simple">
+<li><p><strong>DOCK_SLOT_LEFT_UL</strong> = <strong>0</strong></p></li>
+<li><p><strong>DOCK_SLOT_LEFT_BL</strong> = <strong>1</strong></p></li>
+<li><p><strong>DOCK_SLOT_LEFT_UR</strong> = <strong>2</strong></p></li>
+<li><p><strong>DOCK_SLOT_LEFT_BR</strong> = <strong>3</strong></p></li>
+<li><p><strong>DOCK_SLOT_RIGHT_UL</strong> = <strong>4</strong></p></li>
+<li><p><strong>DOCK_SLOT_RIGHT_BL</strong> = <strong>5</strong></p></li>
+<li><p><strong>DOCK_SLOT_RIGHT_UR</strong> = <strong>6</strong></p></li>
+<li><p><strong>DOCK_SLOT_RIGHT_BR</strong> = <strong>7</strong></p></li>
+<li><p><strong>DOCK_SLOT_MAX</strong> = <strong>8</strong> --- Represents the size of the <a class="reference internal" href="#enum-editorplugin-dockslot"><span class="std std-ref">DockSlot</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorplugin-method-add-autoload-singleton">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_autoload_singleton"></a>add_autoload_singleton</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Adds a script at <code class="docutils literal notranslate"><span class="pre">path</span></code> to the Autoload list as <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-control-to-bottom-panel">
+<li><p><a class="reference internal" href="class_toolbutton.html#class-toolbutton"><span class="std std-ref">ToolButton</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_control_to_bottom_panel"></a>add_control_to_bottom_panel</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title <strong>)</strong></p></li>
+</ul>
+<p>Adds a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with <a class="reference internal" href="#class-editorplugin-method-remove-control-from-bottom-panel"><span class="std std-ref">remove_control_from_bottom_panel</span></a> and free it with <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-control-to-container">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_control_to_container"></a>add_control_to_container</strong> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-customcontrolcontainer"><span class="std std-ref">CustomControlContainer</span></a> container, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom control to a container (see <a class="reference internal" href="#enum-editorplugin-customcontrolcontainer"><span class="std std-ref">CustomControlContainer</span></a>). There are many locations where custom controls can be added in the editor UI.</p>
+<p>Please remember that you have to manage the visibility of your custom controls yourself (and likely hide it after adding it).</p>
+<p>When your plugin is deactivated, make sure to remove your custom control with <a class="reference internal" href="#class-editorplugin-method-remove-control-from-container"><span class="std std-ref">remove_control_from_container</span></a> and free it with <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-control-to-dock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_control_to_dock"></a>add_control_to_dock</strong> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-dockslot"><span class="std std-ref">DockSlot</span></a> slot, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Adds the control to a specific dock slot (see <a class="reference internal" href="#enum-editorplugin-dockslot"><span class="std std-ref">DockSlot</span></a> for options).</p>
+<p>If the dock is repositioned and as long as the plugin is active, the editor will save the dock position on further sessions.</p>
+<p>When your plugin is deactivated, make sure to remove your custom control with <a class="reference internal" href="#class-editorplugin-method-remove-control-from-docks"><span class="std std-ref">remove_control_from_docks</span></a> and free it with <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-custom-type">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_custom_type"></a>add_custom_type</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> base, <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> script, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed.</p>
+<p>When given node or resource is selected, the base type will be instanced (ie, "Spatial", "Control", "Resource"), then the script will be loaded and set to this object.</p>
+<p>You can use the virtual method <a class="reference internal" href="#class-editorplugin-method-handles"><span class="std std-ref">handles</span></a> to check if your custom object is being edited by checking the script or using the <code class="docutils literal notranslate"><span class="pre">is</span></code> keyword.</p>
+<p>During run-time, this will be a simple object with a script so this function does not need to be called then.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-export-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_export_plugin"></a>add_export_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorexportplugin.html#class-editorexportplugin"><span class="std std-ref">EditorExportPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Registers a new <a class="reference internal" href="class_editorexportplugin.html#class-editorexportplugin"><span class="std std-ref">EditorExportPlugin</span></a>. Export plugins are used to perform tasks when the project is being exported.</p>
+<p>See <a class="reference internal" href="#class-editorplugin-method-add-inspector-plugin"><span class="std std-ref">add_inspector_plugin</span></a> for an example of how to register a plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-import-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_import_plugin"></a>add_import_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorimportplugin.html#class-editorimportplugin"><span class="std std-ref">EditorImportPlugin</span></a> importer <strong>)</strong></p></li>
+</ul>
+<p>Registers a new <a class="reference internal" href="class_editorimportplugin.html#class-editorimportplugin"><span class="std std-ref">EditorImportPlugin</span></a>. Import plugins are used to import custom and unsupported assets as a custom <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> type.</p>
+<p><strong>Note:</strong> If you want to import custom 3D asset formats use <a class="reference internal" href="#class-editorplugin-method-add-scene-import-plugin"><span class="std std-ref">add_scene_import_plugin</span></a> instead.</p>
+<p>See <a class="reference internal" href="#class-editorplugin-method-add-inspector-plugin"><span class="std std-ref">add_inspector_plugin</span></a> for an example of how to register a plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-inspector-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_inspector_plugin"></a>add_inspector_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Registers a new <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a>. Inspector plugins are used to extend <a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a> and provide custom configuration tools for your object's properties.</p>
+<p><strong>Note:</strong> Always use <a class="reference internal" href="#class-editorplugin-method-remove-inspector-plugin"><span class="std std-ref">remove_inspector_plugin</span></a> to remove the registered <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a> when your <code class="docutils literal notranslate"><span class="pre">EditorPlugin</span></code> is disabled to prevent leaks and an unexpected behavior.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">MyInspectorPlugin</span> <span class="o">=</span> <span class="nb">preload</span><span class="p">(</span><span class="s2">"res://addons/your_addon/path/to/your/script.gd"</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">inspector_plugin</span> <span class="o">=</span> <span class="n">MyInspectorPlugin</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">_enter_tree</span><span class="p">():</span>
+    <span class="n">add_inspector_plugin</span><span class="p">(</span><span class="n">inspector_plugin</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_exit_tree</span><span class="p">():</span>
+    <span class="n">remove_inspector_plugin</span><span class="p">(</span><span class="n">inspector_plugin</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-scene-import-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_scene_import_plugin"></a>add_scene_import_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorsceneimporter.html#class-editorsceneimporter"><span class="std std-ref">EditorSceneImporter</span></a> scene_importer <strong>)</strong></p></li>
+</ul>
+<p>Registers a new <a class="reference internal" href="class_editorsceneimporter.html#class-editorsceneimporter"><span class="std std-ref">EditorSceneImporter</span></a>. Scene importers are used to import custom 3D asset formats as scenes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-spatial-gizmo-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_spatial_gizmo_plugin"></a>add_spatial_gizmo_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmoplugin.html#class-editorspatialgizmoplugin"><span class="std std-ref">EditorSpatialGizmoPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Registers a new <a class="reference internal" href="class_editorspatialgizmoplugin.html#class-editorspatialgizmoplugin"><span class="std std-ref">EditorSpatialGizmoPlugin</span></a>. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a>.</p>
+<p>See <a class="reference internal" href="#class-editorplugin-method-add-inspector-plugin"><span class="std std-ref">add_inspector_plugin</span></a> for an example of how to register a plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-tool-menu-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_tool_menu_item"></a>add_tool_menu_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> handler, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> ud=null <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom menu item to <strong>Project &gt; Tools</strong> as <code class="docutils literal notranslate"><span class="pre">name</span></code> that calls <code class="docutils literal notranslate"><span class="pre">callback</span></code> on an instance of <code class="docutils literal notranslate"><span class="pre">handler</span></code> with a parameter <code class="docutils literal notranslate"><span class="pre">ud</span></code> when user activates it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-add-tool-submenu-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_tool_submenu_item"></a>add_tool_submenu_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> submenu <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom submenu under <strong>Project &gt; Tools &gt;</strong> <code class="docutils literal notranslate"><span class="pre">name</span></code>. <code class="docutils literal notranslate"><span class="pre">submenu</span></code> should be an object of class <a class="reference internal" href="class_popupmenu.html#class-popupmenu"><span class="std std-ref">PopupMenu</span></a>. This submenu should be cleaned up using <code class="docutils literal notranslate"><span class="pre">remove_tool_menu_item(name)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-apply-changes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_changes"></a>apply_changes</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is called when the editor is about to save the project, switch to another tab, etc. It asks the plugin to apply any pending state changes to ensure consistency.</p>
+<p>This is used, for example, in shader editors to let the plugin know that it must apply the shader code being written by the user to the object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-build">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/build"></a>build</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is called when the editor is about to run the project. The plugin can then perform required operations before the project runs.</p>
+<p>This method must return a boolean. If this method returns <code class="docutils literal notranslate"><span class="pre">false</span></code>, the project will not run. The run is aborted immediately, so this also prevents all other plugins' <a class="reference internal" href="#class-editorplugin-method-build"><span class="std std-ref">build</span></a> methods from running.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Clear all the state and reset the object being edited to zero. This ensures your plugin does not keep editing a currently existing node, or a node from the wrong scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-disable-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disable_plugin"></a>disable_plugin</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called by the engine when the user disables the <code class="docutils literal notranslate"><span class="pre">EditorPlugin</span></code> in the Plugin tab of the project settings window.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-edit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/edit"></a>edit</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-enable-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/enable_plugin"></a>enable_plugin</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called by the engine when the user enables the <code class="docutils literal notranslate"><span class="pre">EditorPlugin</span></code> in the Plugin tab of the project settings window.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-canvas-draw-over-viewport">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_canvas_draw_over_viewport"></a>forward_canvas_draw_over_viewport</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called by the engine when the 2D editor's viewport is updated. Use the <code class="docutils literal notranslate"><span class="pre">overlay</span></code> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> for drawing. You can update the viewport manually by calling <a class="reference internal" href="#class-editorplugin-method-update-overlays"><span class="std std-ref">update_overlays</span></a>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">forward_canvas_draw_over_viewport</span><span class="p">(</span><span class="n">overlay</span><span class="p">):</span>
+    <span class="c1"># Draw a circle at cursor position.</span>
+    <span class="n">overlay</span><span class="o">.</span><span class="n">draw_circle</span><span class="p">(</span><span class="n">overlay</span><span class="o">.</span><span class="n">get_local_mouse_position</span><span class="p">(),</span> <span class="mi">64</span><span class="p">,</span> <span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">forward_canvas_gui_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventMouseMotion</span><span class="p">:</span>
+        <span class="c1"># Redraw viewport when cursor is moved.</span>
+        <span class="n">update_overlays</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="bp">false</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-canvas-force-draw-over-viewport">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_canvas_force_draw_over_viewport"></a>forward_canvas_force_draw_over_viewport</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is the same as <a class="reference internal" href="#class-editorplugin-method-forward-canvas-draw-over-viewport"><span class="std std-ref">forward_canvas_draw_over_viewport</span></a>, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.</p>
+<p>You need to enable calling of this method by using <a class="reference internal" href="#class-editorplugin-method-set-force-draw-over-forwarding-enabled"><span class="std std-ref">set_force_draw_over_forwarding_enabled</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-canvas-gui-input">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_canvas_gui_input"></a>forward_canvas_gui_input</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when there is a root node in the current edited scene, <a class="reference internal" href="#class-editorplugin-method-handles"><span class="std std-ref">handles</span></a> is implemented and an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> happens in the 2D viewport. Intercepts the <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a>, if <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">true</span></code> <code class="docutils literal notranslate"><span class="pre">EditorPlugin</span></code> consumes the <code class="docutils literal notranslate"><span class="pre">event</span></code>, otherwise forwards <code class="docutils literal notranslate"><span class="pre">event</span></code> to other Editor classes. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prevents the InputEvent to reach other Editor classes</span>
+<span class="k">func</span> <span class="n">forward_canvas_gui_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">forward</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="n">forward</span>
+</pre></div>
+</div>
+<p>Must <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">false</span></code> in order to forward the <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> to other Editor classes. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consumes InputEventMouseMotion and forwards other InputEvent types</span>
+<span class="k">func</span> <span class="n">forward_canvas_gui_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">forward</span> <span class="o">=</span> <span class="bp">false</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventMouseMotion</span><span class="p">:</span>
+        <span class="n">forward</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="n">forward</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-spatial-draw-over-viewport">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_spatial_draw_over_viewport"></a>forward_spatial_draw_over_viewport</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called by the engine when the 3D editor's viewport is updated. Use the <code class="docutils literal notranslate"><span class="pre">overlay</span></code> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> for drawing. You can update the viewport manually by calling <a class="reference internal" href="#class-editorplugin-method-update-overlays"><span class="std std-ref">update_overlays</span></a>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">forward_spatial_draw_over_viewport</span><span class="p">(</span><span class="n">overlay</span><span class="p">):</span>
+    <span class="c1"># Draw a circle at cursor position.</span>
+    <span class="n">overlay</span><span class="o">.</span><span class="n">draw_circle</span><span class="p">(</span><span class="n">overlay</span><span class="o">.</span><span class="n">get_local_mouse_position</span><span class="p">(),</span> <span class="mi">64</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">forward_spatial_gui_input</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventMouseMotion</span><span class="p">:</span>
+        <span class="c1"># Redraw viewport when cursor is moved.</span>
+        <span class="n">update_overlays</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="bp">false</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-spatial-force-draw-over-viewport">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_spatial_force_draw_over_viewport"></a>forward_spatial_force_draw_over_viewport</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> overlay <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is the same as <a class="reference internal" href="#class-editorplugin-method-forward-spatial-draw-over-viewport"><span class="std std-ref">forward_spatial_draw_over_viewport</span></a>, except it draws on top of everything. Useful when you need an extra layer that shows over anything else.</p>
+<p>You need to enable calling of this method by using <a class="reference internal" href="#class-editorplugin-method-set-force-draw-over-forwarding-enabled"><span class="std std-ref">set_force_draw_over_forwarding_enabled</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-forward-spatial-gui-input">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/forward_spatial_gui_input"></a>forward_spatial_gui_input</strong> <strong>(</strong> <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a> camera, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when there is a root node in the current edited scene, <a class="reference internal" href="#class-editorplugin-method-handles"><span class="std std-ref">handles</span></a> is implemented and an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> happens in the 3D viewport. Intercepts the <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a>, if <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">true</span></code> <code class="docutils literal notranslate"><span class="pre">EditorPlugin</span></code> consumes the <code class="docutils literal notranslate"><span class="pre">event</span></code>, otherwise forwards <code class="docutils literal notranslate"><span class="pre">event</span></code> to other Editor classes. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prevents the InputEvent to reach other Editor classes</span>
+<span class="k">func</span> <span class="n">forward_spatial_gui_input</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">forward</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="n">forward</span>
+</pre></div>
+</div>
+<p>Must <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">false</span></code> in order to forward the <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> to other Editor classes. Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consumes InputEventMouseMotion and forwards other InputEvent types</span>
+<span class="k">func</span> <span class="n">forward_spatial_gui_input</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">forward</span> <span class="o">=</span> <span class="bp">false</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventMouseMotion</span><span class="p">:</span>
+        <span class="n">forward</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="k">return</span> <span class="n">forward</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-breakpoints">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_breakpoints"></a>get_breakpoints</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This is for editors that edit script-based objects. You can return a list of breakpoints in the format (<code class="docutils literal notranslate"><span class="pre">script:line</span></code>), for example: <code class="docutils literal notranslate"><span class="pre">res://path_to_script.gd:25</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-editor-interface">
+<li><p><a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_editor_interface"></a>get_editor_interface</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a> object that gives you control over Godot editor's window and its functionalities.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-plugin-icon">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_plugin_icon"></a>get_plugin_icon</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method in your plugin to return a <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> in order to give it an icon.</p>
+<p>For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.</p>
+<p>Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">get_plugin_icon</span><span class="p">():</span>
+    <span class="c1"># You can use a custom icon:</span>
+    <span class="k">return</span> <span class="nb">preload</span><span class="p">(</span><span class="s2">"res://addons/my_plugin/my_plugin_icon.svg"</span><span class="p">)</span>
+    <span class="c1"># Or use a built-in icon:</span>
+    <span class="k">return</span> <span class="n">get_editor_interface</span><span class="p">()</span><span class="o">.</span><span class="n">get_base_control</span><span class="p">()</span><span class="o">.</span><span class="n">get_icon</span><span class="p">(</span><span class="s2">"Node"</span><span class="p">,</span> <span class="s2">"EditorIcons"</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-plugin-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_plugin_name"></a>get_plugin_name</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor.</p>
+<p>For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-script-create-dialog">
+<li><p><a class="reference internal" href="class_scriptcreatedialog.html#class-scriptcreatedialog"><span class="std std-ref">ScriptCreateDialog</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_script_create_dialog"></a>get_script_create_dialog</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the Editor's dialogue used for making scripts.</p>
+<p><strong>Note:</strong> Users can configure it before use.</p>
+<p><strong>Warning:</strong> Removing and freeing this node will render a part of the editor useless and may cause a crash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-state">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_state"></a>get_state</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Gets the state of your plugin editor. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-undo-redo">
+<li><p><a class="reference internal" href="class_undoredo.html#class-undoredo"><span class="std std-ref">UndoRedo</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_undo_redo"></a>get_undo_redo</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the undo/redo object. Most actions in the editor can be undoable, so use this object to make sure this happens when it's worth it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-get-window-layout">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_window_layout"></a>get_window_layout</strong> <strong>(</strong> <a class="reference internal" href="class_configfile.html#class-configfile"><span class="std std-ref">ConfigFile</span></a> layout <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Gets the GUI layout of the plugin. This is used to save the project's editor layout when <a class="reference internal" href="#class-editorplugin-method-queue-save-layout"><span class="std std-ref">queue_save_layout</span></a> is called or the editor layout was changed(For example changing the position of a dock).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-handles">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/handles"></a>handles</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Implement this function if your plugin edits a specific type of object (Resource or Node). If you return <code class="docutils literal notranslate"><span class="pre">true</span></code>, then you will get the functions <a class="reference internal" href="#class-editorplugin-method-edit"><span class="std std-ref">edit</span></a> and <a class="reference internal" href="#class-editorplugin-method-make-visible"><span class="std std-ref">make_visible</span></a> called when the editor requests them. If you have declared the methods <a class="reference internal" href="#class-editorplugin-method-forward-canvas-gui-input"><span class="std std-ref">forward_canvas_gui_input</span></a> and <a class="reference internal" href="#class-editorplugin-method-forward-spatial-gui-input"><span class="std std-ref">forward_spatial_gui_input</span></a> these will be called too.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-has-main-screen">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_main_screen"></a>has_main_screen</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this is a main screen editor plugin (it goes in the workspace selector together with <strong>2D</strong>, <strong>3D</strong>, <strong>Script</strong> and <strong>AssetLib</strong>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-hide-bottom-panel">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hide_bottom_panel"></a>hide_bottom_panel</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Minimizes the bottom panel.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-make-bottom-panel-item-visible">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_bottom_panel_item_visible"></a>make_bottom_panel_item_visible</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> item <strong>)</strong></p></li>
+</ul>
+<p>Makes a specific item in the bottom panel visible.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-make-visible">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_visible"></a>make_visible</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> visible <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This function will be called when the editor is requested to become visible. It is used for plugins that edit a specific object type.</p>
+<p>Remember that you have to manage the visibility of all your editor controls manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-queue-save-layout">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue_save_layout"></a>queue_save_layout</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Queue save the project's editor layout.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-autoload-singleton">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_autoload_singleton"></a>remove_autoload_singleton</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Removes an Autoload <code class="docutils literal notranslate"><span class="pre">name</span></code> from the list.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-control-from-bottom-panel">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_control_from_bottom_panel"></a>remove_control_from_bottom_panel</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Removes the control from the bottom panel. You have to manually <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a> the control.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-control-from-container">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_control_from_container"></a>remove_control_from_container</strong> <strong>(</strong> <a class="reference internal" href="#enum-editorplugin-customcontrolcontainer"><span class="std std-ref">CustomControlContainer</span></a> container, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Removes the control from the specified container. You have to manually <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a> the control.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-control-from-docks">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_control_from_docks"></a>remove_control_from_docks</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Removes the control from the dock. You have to manually <a class="reference internal" href="class_node.html#class-node-method-queue-free"><span class="std std-ref">Node.queue_free</span></a> the control.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-custom-type">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_custom_type"></a>remove_custom_type</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type <strong>)</strong></p></li>
+</ul>
+<p>Removes a custom type added by <a class="reference internal" href="#class-editorplugin-method-add-custom-type"><span class="std std-ref">add_custom_type</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-export-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_export_plugin"></a>remove_export_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorexportplugin.html#class-editorexportplugin"><span class="std std-ref">EditorExportPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Removes an export plugin registered by <a class="reference internal" href="#class-editorplugin-method-add-export-plugin"><span class="std std-ref">add_export_plugin</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-import-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_import_plugin"></a>remove_import_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorimportplugin.html#class-editorimportplugin"><span class="std std-ref">EditorImportPlugin</span></a> importer <strong>)</strong></p></li>
+</ul>
+<p>Removes an import plugin registered by <a class="reference internal" href="#class-editorplugin-method-add-import-plugin"><span class="std std-ref">add_import_plugin</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-inspector-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_inspector_plugin"></a>remove_inspector_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Removes an inspector plugin registered by <a class="reference internal" href="#class-editorplugin-method-add-import-plugin"><span class="std std-ref">add_import_plugin</span></a></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-scene-import-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_scene_import_plugin"></a>remove_scene_import_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorsceneimporter.html#class-editorsceneimporter"><span class="std std-ref">EditorSceneImporter</span></a> scene_importer <strong>)</strong></p></li>
+</ul>
+<p>Removes a scene importer registered by <a class="reference internal" href="#class-editorplugin-method-add-scene-import-plugin"><span class="std std-ref">add_scene_import_plugin</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-spatial-gizmo-plugin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_spatial_gizmo_plugin"></a>remove_spatial_gizmo_plugin</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmoplugin.html#class-editorspatialgizmoplugin"><span class="std std-ref">EditorSpatialGizmoPlugin</span></a> plugin <strong>)</strong></p></li>
+</ul>
+<p>Removes a gizmo plugin registered by <a class="reference internal" href="#class-editorplugin-method-add-spatial-gizmo-plugin"><span class="std std-ref">add_spatial_gizmo_plugin</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-remove-tool-menu-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_tool_menu_item"></a>remove_tool_menu_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Removes a menu <code class="docutils literal notranslate"><span class="pre">name</span></code> from <strong>Project &gt; Tools</strong>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-save-external-data">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/save_external_data"></a>save_external_data</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-set-force-draw-over-forwarding-enabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_force_draw_over_forwarding_enabled"></a>set_force_draw_over_forwarding_enabled</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Enables calling of <a class="reference internal" href="#class-editorplugin-method-forward-canvas-force-draw-over-viewport"><span class="std std-ref">forward_canvas_force_draw_over_viewport</span></a> for the 2D editor and <a class="reference internal" href="#class-editorplugin-method-forward-spatial-force-draw-over-viewport"><span class="std std-ref">forward_spatial_force_draw_over_viewport</span></a> for the 3D editor when their viewports are updated. You need to call this method only once and it will work permanently for this plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-set-input-event-forwarding-always-enabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_input_event_forwarding_always_enabled"></a>set_input_event_forwarding_always_enabled</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Use this method if you always want to receive inputs from 3D view screen inside <a class="reference internal" href="#class-editorplugin-method-forward-spatial-gui-input"><span class="std std-ref">forward_spatial_gui_input</span></a>. It might be especially usable if your plugin will want to use raycast in the scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-set-state">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_state"></a>set_state</strong> <strong>(</strong> <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> state <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Restore the state saved by <a class="reference internal" href="#class-editorplugin-method-get-state"><span class="std std-ref">get_state</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-set-window-layout">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_window_layout"></a>set_window_layout</strong> <strong>(</strong> <a class="reference internal" href="class_configfile.html#class-configfile"><span class="std std-ref">ConfigFile</span></a> layout <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Restore the plugin GUI layout saved by <a class="reference internal" href="#class-editorplugin-method-get-window-layout"><span class="std std-ref">get_window_layout</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorplugin-method-update-overlays">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_overlays"></a>update_overlays</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Updates the overlays of the 2D and 3D editor viewport. Causes methods <a class="reference internal" href="#class-editorplugin-method-forward-canvas-draw-over-viewport"><span class="std std-ref">forward_canvas_draw_over_viewport</span></a>, <a class="reference internal" href="#class-editorplugin-method-forward-canvas-force-draw-over-viewport"><span class="std std-ref">forward_canvas_force_draw_over_viewport</span></a>, <a class="reference internal" href="#class-editorplugin-method-forward-spatial-draw-over-viewport"><span class="std std-ref">forward_spatial_draw_over_viewport</span></a> and <a class="reference internal" href="#class-editorplugin-method-forward-spatial-force-draw-over-viewport"><span class="std std-ref">forward_spatial_force_draw_over_viewport</span></a> to be called.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editornavigationmeshgenerator.html" rel="prev" title="EditorNavigationMeshGenerator"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorproperty.html" rel="next" title="EditorProperty">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

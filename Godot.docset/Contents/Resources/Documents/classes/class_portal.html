@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Portal" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_portal.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Portal nodes are used to enable visibility between Room s. Description: Portal s are a special type of MeshInstance that allow the portal culling system to 'see' fro..." property="og:description"/>
+<meta content="Portal nodes are used to enable visibility between Rooms. Portals are a special type of MeshInstance that allow the portal culling system to 'see' from one room to the next. They often correspond to doors and windows..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Portal — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_portal.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_portal.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_portal.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_portal.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_portal.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_portal.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_portal.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_portal.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_portal.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_portal.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_portal.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_portal.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_portal.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_portal.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_portal.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_portal.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_position2d.html" rel="next" title="Position2D"/>
+<link href="class_popuppanel.html" rel="prev" title="PopupPanel"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Portal</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="portal">
+<span id="class-portal"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Portal¶"></a>Portal<a class="headerlink" href="#portal" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Portal nodes are used to enable visibility between <a class="reference internal" href="class_room.html#class-room"><span class="std std-ref">Room</span></a>s.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Portal</span></code>s are a special type of <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a> that allow the portal culling system to 'see' from one room to the next. They often correspond to doors and windows in level geometry. By only allowing <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a>s to see through portals, this allows the system to cull out all the objects in rooms that cannot be seen through portals. This is a form of <strong>occlusion culling</strong>, and can greatly increase performance.</p>
+<p>There are some limitations to the form of portals:</p>
+<p>They must be single sided convex polygons, and usually you would orientate their front faces <strong>outward</strong> from the <a class="reference internal" href="class_room.html#class-room"><span class="std std-ref">Room</span></a> they are placed in. The vertices should be positioned on a single plane (although their positioning does not have to be perfect).</p>
+<p>There is no need to place an opposite portal in an adjacent room, links are made two-way automatically.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 41%"/>
+<col style="width: 31%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-linked-room"><span class="std std-ref">linked_room</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-points"><span class="std std-ref">points</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">-1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-portal-active"><span class="std std-ref">portal_active</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-portal-margin"><span class="std std-ref">portal_margin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-two-way"><span class="std std-ref">two_way</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-portal-property-use-default-margin"><span class="std std-ref">use_default_margin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%"/>
+<col style="width: 96%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-portal-method-set-point"><span class="std std-ref">set_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-portal-property-linked-room">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linked_room"></a>linked_room</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_linked_room(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_linked_room()</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is a shortcut for setting the linked <a class="reference internal" href="class_room.html#class-room"><span class="std std-ref">Room</span></a> in the name of the <code class="docutils literal notranslate"><span class="pre">Portal</span></code> (the name is used during conversion).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-portal-property-points">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/points"></a>points</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">-1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_points(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_points()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The points defining the shape of the <code class="docutils literal notranslate"><span class="pre">Portal</span></code> polygon (which should be convex).</p>
+<p>These are defined in 2D, with <code class="docutils literal notranslate"><span class="pre">0,0</span></code> being the origin of the <code class="docutils literal notranslate"><span class="pre">Portal</span></code> node's <a class="reference internal" href="class_spatial.html#class-spatial-property-global-transform"><span class="std std-ref">Spatial.global_transform</span></a>.</p>
+<p><strong>Note:</strong> These raw points are sanitized for winding order internally.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-portal-property-portal-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/portal_active"></a>portal_active</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_portal_active(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_portal_active()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Visibility through <code class="docutils literal notranslate"><span class="pre">Portal</span></code>s can be turned on and off at runtime - this is useful for having closable doors.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-portal-property-portal-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/portal_margin"></a>portal_margin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_portal_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_portal_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Some objects are so big that they may be present in more than one <a class="reference internal" href="class_room.html#class-room"><span class="std std-ref">Room</span></a> ('sprawling'). As we often don't want objects that *just* breach the edges to be assigned to neighbouring rooms, you can assign an extra margin through the <code class="docutils literal notranslate"><span class="pre">Portal</span></code> to allow objects to breach without sprawling.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-portal-property-two-way">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/two_way"></a>two_way</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_two_way(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_two_way()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Portals default to being two way - see through in both directions, however you can make them one way, visible from the source room only.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-portal-property-use-default-margin">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_default_margin"></a>use_default_margin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_default_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_use_default_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>In most cases you will want to use the default <code class="docutils literal notranslate"><span class="pre">Portal</span></code> margin in your portals (this is set in the <a class="reference internal" href="class_roommanager.html#class-roommanager"><span class="std std-ref">RoomManager</span></a>).</p>
+<p>If you want to override this default, set this value to <code class="docutils literal notranslate"><span class="pre">false</span></code>, and the local <a class="reference internal" href="#class-portal-property-portal-margin"><span class="std std-ref">portal_margin</span></a> will take effect.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-portal-method-set-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point"></a>set_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets individual points. Primarily for use by the editor.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_popuppanel.html" rel="prev" title="PopupPanel"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_position2d.html" rel="next" title="Position2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

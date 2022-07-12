@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorInspectorPlugin" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorinspectorplugin.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Plugin for adding custom property editors on inspector. Description: EditorInspectorPlugin allows adding custom property editors to EditorInspector. When an object is ed..." property="og:description"/>
+<meta content="Plugin for adding custom property editors on inspector. EditorInspectorPlugin allows adding custom property editors to EditorInspector. When an object is edited, the can_handle function is called and must return true..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorInspectorPlugin — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinspectorplugin.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorinspectorplugin.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorinspectorplugin.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorinspectorplugin.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorinspectorplugin.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorinspectorplugin.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorinspectorplugin.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorinspectorplugin.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorinspectorplugin.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorinspectorplugin.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorinspectorplugin.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorinspectorplugin.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorinspectorplugin.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorinspectorplugin.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinspectorplugin.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorinspectorplugin.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorinterface.html" rel="next" title="EditorInterface"/>
+<link href="class_editorinspector.html" rel="prev" title="EditorInspector"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorInspectorPlugin</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorinspectorplugin">
+<span id="class-editorinspectorplugin"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorInspectorPlugin¶"></a>EditorInspectorPlugin<a class="headerlink" href="#editorinspectorplugin" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Plugin for adding custom property editors on inspector.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">EditorInspectorPlugin</span></code> allows adding custom property editors to <a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a>.</p>
+<p>When an object is edited, the <a class="reference internal" href="#class-editorinspectorplugin-method-can-handle"><span class="std std-ref">can_handle</span></a> function is called and must return <code class="docutils literal notranslate"><span class="pre">true</span></code> if the object type is supported.</p>
+<p>If supported, the function <a class="reference internal" href="#class-editorinspectorplugin-method-parse-begin"><span class="std std-ref">parse_begin</span></a> will be called, allowing to place custom controls at the beginning of the class.</p>
+<p>Subsequently, the <a class="reference internal" href="#class-editorinspectorplugin-method-parse-category"><span class="std std-ref">parse_category</span></a> and <a class="reference internal" href="#class-editorinspectorplugin-method-parse-property"><span class="std std-ref">parse_property</span></a> are called for every category and property. They offer the ability to add custom controls to the inspector too.</p>
+<p>Finally, <a class="reference internal" href="#class-editorinspectorplugin-method-parse-end"><span class="std std-ref">parse_end</span></a> will be called.</p>
+<p>On each of these calls, the "add" functions can be called.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">EditorInspectorPlugin</span></code>, register it using the <a class="reference internal" href="class_editorplugin.html#class-editorplugin-method-add-inspector-plugin"><span class="std std-ref">EditorPlugin.add_inspector_plugin</span></a> method first.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/plugins/editor/inspector_plugins.html"><span class="doc">Inspector plugins</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%"/>
+<col style="width: 92%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-add-custom-control"><span class="std std-ref">add_custom_control</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-add-property-editor"><span class="std std-ref">add_property_editor</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-add-property-editor-for-multiple-properties"><span class="std std-ref">add_property_editor_for_multiple_properties</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> properties, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-can-handle"><span class="std std-ref">can_handle</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-parse-begin"><span class="std std-ref">parse_begin</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-parse-category"><span class="std std-ref">parse_category</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> category <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-parse-end"><span class="std std-ref">parse_end</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorinspectorplugin-method-parse-property"><span class="std std-ref">parse_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> hint, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> hint_text, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> usage <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorinspectorplugin-method-add-custom-control">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_custom_control"></a>add_custom_control</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom control, which is not necessarily a property editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-add-property-editor">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_property_editor"></a>add_property_editor</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></li>
+</ul>
+<p>Adds a property editor for an individual property. The <code class="docutils literal notranslate"><span class="pre">editor</span></code> control must extend <a class="reference internal" href="class_editorproperty.html#class-editorproperty"><span class="std std-ref">EditorProperty</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-add-property-editor-for-multiple-properties">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_property_editor_for_multiple_properties"></a>add_property_editor_for_multiple_properties</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> properties, <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></li>
+</ul>
+<p>Adds an editor that allows modifying multiple properties. The <code class="docutils literal notranslate"><span class="pre">editor</span></code> control must extend <a class="reference internal" href="class_editorproperty.html#class-editorproperty"><span class="std std-ref">EditorProperty</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-can-handle">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/can_handle"></a>can_handle</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this object can be handled by this plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-parse-begin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse_begin"></a>parse_begin</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called to allow adding controls at the beginning of the list.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-parse-category">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse_category"></a>parse_category</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> category <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called to allow adding controls at the beginning of the category.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-parse-end">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse_end"></a>parse_end</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called to allow adding controls at the end of the list.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorinspectorplugin-method-parse-property">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse_property"></a>parse_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> hint, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> hint_text, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> usage <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called to allow adding property specific editors to the inspector. Usually these inherit <a class="reference internal" href="class_editorproperty.html#class-editorproperty"><span class="std std-ref">EditorProperty</span></a>. Returning <code class="docutils literal notranslate"><span class="pre">true</span></code> removes the built-in editor for this property, otherwise allows to insert a custom editor before the built-in one.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorinspector.html" rel="prev" title="EditorInspector"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorinterface.html" rel="next" title="EditorInterface">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

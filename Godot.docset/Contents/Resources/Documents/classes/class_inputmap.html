@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="InputMap" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_inputmap.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Singleton that manages InputEventAction. Description: Manages all InputEventAction which can be created/modified from the project settings menu Project &gt; Project Settings &gt; Input M..." property="og:description"/>
+<meta content="Singleton that manages InputEventAction. Manages all InputEventAction which can be created/modified from the project settings menu Project &gt; Project Settings &gt; Input Map or in code with add_action and action_add_event..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) InputMap — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_inputmap.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_inputmap.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_inputmap.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_inputmap.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_inputmap.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_inputmap.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_inputmap.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_inputmap.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_inputmap.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_inputmap.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_inputmap.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_inputmap.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_inputmap.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_inputmap.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_inputmap.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_inputmap.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_instanceplaceholder.html" rel="next" title="InstancePlaceholder"/>
+<link href="class_inputeventwithmodifiers.html" rel="prev" title="InputEventWithModifiers"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>InputMap</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="inputmap">
+<span id="class-inputmap"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/InputMap¶"></a>InputMap<a class="headerlink" href="#inputmap" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Singleton that manages <a class="reference internal" href="class_inputeventaction.html#class-inputeventaction"><span class="std std-ref">InputEventAction</span></a>.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Manages all <a class="reference internal" href="class_inputeventaction.html#class-inputeventaction"><span class="std std-ref">InputEventAction</span></a> which can be created/modified from the project settings menu <strong>Project &gt; Project Settings &gt; Input Map</strong> or in code with <a class="reference internal" href="#class-inputmap-method-add-action"><span class="std std-ref">add_action</span></a> and <a class="reference internal" href="#class-inputmap-method-action-add-event"><span class="std std-ref">action_add_event</span></a>. See <a class="reference internal" href="class_node.html#class-node-method-input"><span class="std std-ref">Node._input</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../tutorials/inputs/inputevent.html#inputmap">#inputmap</a> in <a class="reference internal" href="../tutorials/inputs/inputevent.html"><span class="doc">Using InputEvent</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%"/>
+<col style="width: 88%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-add-event"><span class="std std-ref">action_add_event</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-erase-event"><span class="std std-ref">action_erase_event</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-erase-events"><span class="std std-ref">action_erase_events</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-get-deadzone"><span class="std std-ref">action_get_deadzone</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-has-event"><span class="std std-ref">action_has_event</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-action-set-deadzone"><span class="std std-ref">action_set_deadzone</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-add-action"><span class="std std-ref">add_action</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone=0.5 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-erase-action"><span class="std std-ref">erase_action</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-event-is-action"><span class="std std-ref">event_is_action</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact_match=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-get-action-list"><span class="std std-ref">get_action_list</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-get-actions"><span class="std std-ref">get_actions</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-has-action"><span class="std std-ref">has_action</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-inputmap-method-load-from-globals"><span class="std std-ref">load_from_globals</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-inputmap-method-action-add-event">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_add_event"></a>action_add_event</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></li>
+</ul>
+<p>Adds an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> to an action. This <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> will trigger the action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-action-erase-event">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_erase_event"></a>action_erase_event</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></li>
+</ul>
+<p>Removes an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> from an action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-action-erase-events">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_erase_events"></a>action_erase_events</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<p>Removes all events from an action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-action-get-deadzone">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_get_deadzone"></a>action_get_deadzone</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<p>Returns a deadzone value for the action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-action-has-event">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_has_event"></a>action_has_event</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the action has the given <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> associated with it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-action-set-deadzone">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_set_deadzone"></a>action_set_deadzone</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone <strong>)</strong></p></li>
+</ul>
+<p>Sets a deadzone value for the action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-add-action">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_action"></a>add_action</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone=0.5 <strong>)</strong></p></li>
+</ul>
+<p>Adds an empty action to the <code class="docutils literal notranslate"><span class="pre">InputMap</span></code> with a configurable <code class="docutils literal notranslate"><span class="pre">deadzone</span></code>.</p>
+<p>An <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> can then be added to this action with <a class="reference internal" href="#class-inputmap-method-action-add-event"><span class="std std-ref">action_add_event</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-erase-action">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/erase_action"></a>erase_action</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<p>Removes an action from the <code class="docutils literal notranslate"><span class="pre">InputMap</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-event-is-action">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/event_is_action"></a>event_is_action</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact_match=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given event is part of an existing action. This method ignores keyboard modifiers if the given <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> is not pressed (for proper release detection). See <a class="reference internal" href="#class-inputmap-method-action-has-event"><span class="std std-ref">action_has_event</span></a> if you don't want this behavior.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact_match</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-get-action-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_action_list"></a>get_action_list</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<p>Returns an array of <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a>s associated with a given action.</p>
+<p><strong>Note:</strong> When used in the editor (e.g. a tool script or <a class="reference internal" href="class_editorplugin.html#class-editorplugin"><span class="std std-ref">EditorPlugin</span></a>), this method will return events for the editor action. If you want to access your project's input binds from the editor, read the <code class="docutils literal notranslate"><span class="pre">input/*</span></code> settings from <a class="reference internal" href="class_projectsettings.html#class-projectsettings"><span class="std std-ref">ProjectSettings</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-get-actions">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_actions"></a>get_actions</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an array of all actions in the <code class="docutils literal notranslate"><span class="pre">InputMap</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-has-action">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_action"></a>has_action</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <code class="docutils literal notranslate"><span class="pre">InputMap</span></code> has a registered action with the given name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-inputmap-method-load-from-globals">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/load_from_globals"></a>load_from_globals</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all <a class="reference internal" href="class_inputeventaction.html#class-inputeventaction"><span class="std std-ref">InputEventAction</span></a> in the <code class="docutils literal notranslate"><span class="pre">InputMap</span></code> and load it anew from <a class="reference internal" href="class_projectsettings.html#class-projectsettings"><span class="std std-ref">ProjectSettings</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_inputeventwithmodifiers.html" rel="prev" title="InputEventWithModifiers"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_instanceplaceholder.html" rel="next" title="InstancePlaceholder">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

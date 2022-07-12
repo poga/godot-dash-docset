@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Quat" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_quat.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Quaternion. Description: A unit quaternion used for representing 3D rotations. Quaternions need to be normalized to be used for rotation. It is similar to Basis, which implements matrix representat..." property="og:description"/>
+<meta content="Quaternion. A unit quaternion used for representing 3D rotations. Quaternions need to be normalized to be used for rotation. It is similar to Basis, which implements matrix representation of rotations, and can be para..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Quat — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_quat.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_quat.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_quat.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_quat.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_quat.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_quat.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_quat.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_quat.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_quat.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_quat.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_quat.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_quat.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_quat.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_quat.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_quat.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_quat.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_randomnumbergenerator.html" rel="next" title="RandomNumberGenerator"/>
+<link href="class_quadmesh.html" rel="prev" title="QuadMesh"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Quat</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="quat">
+<span id="class-quat"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Quat¶"></a>Quat<a class="headerlink" href="#quat" title="Permalink to this headline">¶</a></h1>
+<p>Quaternion.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A unit quaternion used for representing 3D rotations. Quaternions need to be normalized to be used for rotation.</p>
+<p>It is similar to Basis, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. Basis stores rotation, scale, and shearing, while Quat only stores rotation.</p>
+<p>Due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../tutorials/3d/using_transforms.html#interpolating-with-quaternions">#interpolating-with-quaternions</a> in <a class="reference internal" href="../tutorials/3d/using_transforms.html"><span class="doc">Using 3D transforms</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 48%"/>
+<col style="width: 13%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-property-w"><span class="std std-ref">w</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-property-x"><span class="std std-ref">x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-property-y"><span class="std std-ref">y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-property-z"><span class="std std-ref">z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-quat"><span class="std std-ref">Quat</span></a> <strong>(</strong> <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-quat"><span class="std std-ref">Quat</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> euler <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-quat"><span class="std std-ref">Quat</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-quat"><span class="std std-ref">Quat</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> w <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-angle-to"><span class="std std-ref">angle_to</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-cubic-slerp"><span class="std std-ref">cubic_slerp</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> b, <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> pre_a, <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> post_b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-dot"><span class="std std-ref">dot</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> b <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-get-euler"><span class="std std-ref">get_euler</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-inverse"><span class="std std-ref">inverse</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> quat <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-is-normalized"><span class="std std-ref">is_normalized</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-length"><span class="std std-ref">length</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-length-squared"><span class="std std-ref">length_squared</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-normalized"><span class="std std-ref">normalized</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-quat-method-set-axis-angle"><span class="std std-ref">set_axis_angle</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-quat-method-set-euler"><span class="std std-ref">set_euler</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> euler <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-slerp"><span class="std std-ref">slerp</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-slerpni"><span class="std std-ref">slerpni</span></a> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-quat-method-xform"><span class="std std-ref">xform</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-quat-constant-identity">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/IDENTITY"></a>IDENTITY</strong> = <strong>Quat( 0, 0, 0, 1 )</strong> --- The identity quaternion, representing no rotation. Equivalent to an identity <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> matrix. If a vector is transformed by an identity quaternion, it will not change.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-quat-property-w">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/w"></a>w</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>W component of the quaternion (real part).</p>
+<p>Quaternion components should usually not be manipulated directly.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-property-x">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/x"></a>x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>X component of the quaternion (imaginary <code class="docutils literal notranslate"><span class="pre">i</span></code> axis part).</p>
+<p>Quaternion components should usually not be manipulated directly.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-property-y">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/y"></a>y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Y component of the quaternion (imaginary <code class="docutils literal notranslate"><span class="pre">j</span></code> axis part).</p>
+<p>Quaternion components should usually not be manipulated directly.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-property-z">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/z"></a>z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Z component of the quaternion (imaginary <code class="docutils literal notranslate"><span class="pre">k</span></code> axis part).</p>
+<p>Quaternion components should usually not be manipulated directly.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-quat-method-quat">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Quat"></a>Quat</strong> <strong>(</strong> <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a quaternion from the given <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Quat"></a>Quat</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> euler <strong>)</strong></p></li>
+</ul>
+<p>Constructs a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Quat"></a>Quat</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Constructs a quaternion that will rotate around the given axis by the specified angle. The axis must be a normalized vector.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Quat"></a>Quat</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> w <strong>)</strong></p></li>
+</ul>
+<p>Constructs a quaternion defined by the given values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-angle-to">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/angle_to"></a>angle_to</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Returns the angle between this quaternion and <code class="docutils literal notranslate"><span class="pre">to</span></code>. This is the magnitude of the angle you would need to rotate by to get from one to the other.</p>
+<p><strong>Note:</strong> This method has an abnormally high amount of floating-point error, so methods such as <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-is-zero-approx"><span class="std std-ref">@GDScript.is_zero_approx</span></a> will not work reliably.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-cubic-slerp">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/cubic_slerp"></a>cubic_slerp</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> b, <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> pre_a, <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> post_b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Performs a cubic spherical interpolation between quaternions <code class="docutils literal notranslate"><span class="pre">pre_a</span></code>, this vector, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">post_b</span></code>, by the given amount <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-dot">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/dot"></a>dot</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> b <strong>)</strong></p></li>
+</ul>
+<p>Returns the dot product of two quaternions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-get-euler">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_euler"></a>get_euler</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-inverse">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/inverse"></a>inverse</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverse of the quaternion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-is-equal-approx">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_equal_approx"></a>is_equal_approx</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> quat <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this quaternion and <code class="docutils literal notranslate"><span class="pre">quat</span></code> are approximately equal, by running <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-is-equal-approx"><span class="std std-ref">@GDScript.is_equal_approx</span></a> on each component.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-is-normalized">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_normalized"></a>is_normalized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns whether the quaternion is normalized or not.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-length">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/length"></a>length</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the length of the quaternion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-length-squared">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/length_squared"></a>length_squared</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the length of the quaternion, squared.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-normalized">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/normalized"></a>normalized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the quaternion, normalized to unit length.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-set-axis-angle">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_axis_angle"></a>set_axis_angle</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> angle <strong>)</strong></p></li>
+</ul>
+<p>Sets the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-set-euler">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_euler"></a>set_euler</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> euler <strong>)</strong></p></li>
+</ul>
+<p>Sets the quaternion to a rotation specified by Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-slerp">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slerp"></a>slerp</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Returns the result of the spherical linear interpolation between this quaternion and <code class="docutils literal notranslate"><span class="pre">to</span></code> by amount <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p>
+<p><strong>Note:</strong> Both quaternions must be normalized.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-slerpni">
+<li><p><a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slerpni"></a>slerpni</strong> <strong>(</strong> <a class="reference internal" href="#class-quat"><span class="std std-ref">Quat</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Returns the result of the spherical linear interpolation between this quaternion and <code class="docutils literal notranslate"><span class="pre">to</span></code> by amount <code class="docutils literal notranslate"><span class="pre">weight</span></code>, but without checking if the rotation path is not bigger than 90 degrees.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-quat-method-xform">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xform"></a>xform</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Returns a vector transformed (multiplied) by this quaternion.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_quadmesh.html" rel="prev" title="QuadMesh"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_randomnumbergenerator.html" rel="next" title="RandomNumberGenerator">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

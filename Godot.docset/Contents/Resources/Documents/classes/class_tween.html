@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Tween" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_tween.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Smoothly animates a node's properties over time. Description: Tweens are useful for animations requiring a numerical property to be interpolated over a range of values. The n..." property="og:description"/>
+<meta content="Smoothly animates a node's properties over time. Tweens are useful for animations requiring a numerical property to be interpolated over a range of values. The name tween comes from in-betweening, an animation techniq..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Tween — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tween.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_tween.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_tween.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_tween.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_tween.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_tween.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_tween.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_tween.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_tween.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_tween.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_tween.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_tween.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_tween.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_tween.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tween.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tween.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_udpserver.html" rel="next" title="UDPServer"/>
+<link href="class_trianglemesh.html" rel="prev" title="TriangleMesh"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Tween</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="tween">
+<span id="class-tween"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Tween¶"></a>Tween<a class="headerlink" href="#tween" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Smoothly animates a node's properties over time.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Tweens are useful for animations requiring a numerical property to be interpolated over a range of values. The name <em>tween</em> comes from <em>in-betweening</em>, an animation technique where you specify <em>keyframes</em> and the computer interpolates the frames that appear between them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Tween</span></code> is more suited than <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> for animations where you don't know the final values in advance. For example, interpolating a dynamically-chosen camera zoom value is best done with a <code class="docutils literal notranslate"><span class="pre">Tween</span></code> node; it would be difficult to do the same thing with an <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> node.</p>
+<p>Here is a brief usage example that makes a 2D node move smoothly between two positions:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">tween</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="s2">"Tween"</span><span class="p">)</span>
+<span class="n">tween</span><span class="o">.</span><span class="n">interpolate_property</span><span class="p">(</span><span class="o">$</span><span class="n">Node2D</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">,</span>
+        <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">Tween</span><span class="o">.</span><span class="n">TRANS_LINEAR</span><span class="p">,</span> <span class="n">Tween</span><span class="o">.</span><span class="n">EASE_IN_OUT</span><span class="p">)</span>
+<span class="n">tween</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Many methods require a property name, such as <code class="docutils literal notranslate"><span class="pre">"position"</span></code> above. You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using <code class="docutils literal notranslate"><span class="pre">"property:component"</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">position:x</span></code>), where it would only apply to that particular component.</p>
+<p>Many of the methods accept <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <code class="docutils literal notranslate"><span class="pre">ease_type</span></code>. The first accepts an <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> constant, and refers to the way the timing of the animation is handled (see <a class="reference external" href="https://easings.net/">easings.net</a> for some examples). The second accepts an <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> constant, and controls where the <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> constants with <a class="reference internal" href="#class-tween-constant-ease-in-out"><span class="std std-ref">EASE_IN_OUT</span></a>, and use the one that looks best.</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png">Tween easing and transition types cheatsheet</a></p>
+<p><strong>Note:</strong> Tween methods will return <code class="docutils literal notranslate"><span class="pre">false</span></code> if the requested operation cannot be completed.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 53%"/>
+<col style="width: 8%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-tween-tweenprocessmode"><span class="std std-ref">TweenProcessMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-property-playback-process-mode"><span class="std std-ref">playback_process_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-property-playback-speed"><span class="std std-ref">playback_speed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-property-repeat"><span class="std std-ref">repeat</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%"/>
+<col style="width: 94%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-follow-method"><span class="std std-ref">follow_method</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> target_method, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-follow-property"><span class="std std-ref">follow_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> target_property, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-get-runtime"><span class="std std-ref">get_runtime</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-interpolate-callback"><span class="std std-ref">interpolate_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg1=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg2=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg3=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg4=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg5=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-interpolate-deferred-callback"><span class="std std-ref">interpolate_deferred_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg1=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg2=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg3=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg4=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg5=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-interpolate-method"><span class="std std-ref">interpolate_method</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-interpolate-property"><span class="std std-ref">interpolate_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-is-active"><span class="std std-ref">is_active</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-remove"><span class="std std-ref">remove</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-remove-all"><span class="std std-ref">remove_all</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-reset"><span class="std std-ref">reset</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-reset-all"><span class="std std-ref">reset_all</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-resume"><span class="std std-ref">resume</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-resume-all"><span class="std std-ref">resume_all</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-seek"><span class="std std-ref">seek</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tween-method-set-active"><span class="std std-ref">set_active</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-start"><span class="std std-ref">start</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-stop-all"><span class="std std-ref">stop_all</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-targeting-method"><span class="std std-ref">targeting_method</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> initial, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> initial_method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-targeting-property"><span class="std std-ref">targeting_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> initial, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tween-method-tell"><span class="std std-ref">tell</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tween-signal-tween-all-completed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tween_all_completed"></a>tween_all_completed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when all processes in a tween end.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-signal-tween-completed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tween_completed"></a>tween_completed</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tween ends.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-signal-tween-started">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tween_started"></a>tween_started</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tween starts.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-signal-tween-step">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tween_step"></a>tween_step</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> key, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> elapsed, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Emitted at each step of the animation.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-tween-constant-tween-process-idle"><span id="class-tween-constant-tween-process-physics"></span><span id="enum-tween-tweenprocessmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TweenProcessMode"></a>TweenProcessMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>TWEEN_PROCESS_PHYSICS</strong> = <strong>0</strong> --- The tween updates with the <code class="docutils literal notranslate"><span class="pre">_physics_process</span></code> callback.</p></li>
+<li><p><strong>TWEEN_PROCESS_IDLE</strong> = <strong>1</strong> --- The tween updates with the <code class="docutils literal notranslate"><span class="pre">_process</span></code> callback.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tween-constant-trans-back"><span id="class-tween-constant-trans-bounce"></span><span id="class-tween-constant-trans-circ"></span><span id="class-tween-constant-trans-cubic"></span><span id="class-tween-constant-trans-elastic"></span><span id="class-tween-constant-trans-expo"></span><span id="class-tween-constant-trans-quad"></span><span id="class-tween-constant-trans-quart"></span><span id="class-tween-constant-trans-quint"></span><span id="class-tween-constant-trans-sine"></span><span id="class-tween-constant-trans-linear"></span><span id="enum-tween-transitiontype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TransitionType"></a>TransitionType</strong>:</p>
+<ul class="simple">
+<li><p><strong>TRANS_LINEAR</strong> = <strong>0</strong> --- The animation is interpolated linearly.</p></li>
+<li><p><strong>TRANS_SINE</strong> = <strong>1</strong> --- The animation is interpolated using a sine function.</p></li>
+<li><p><strong>TRANS_QUINT</strong> = <strong>2</strong> --- The animation is interpolated with a quintic (to the power of 5) function.</p></li>
+<li><p><strong>TRANS_QUART</strong> = <strong>3</strong> --- The animation is interpolated with a quartic (to the power of 4) function.</p></li>
+<li><p><strong>TRANS_QUAD</strong> = <strong>4</strong> --- The animation is interpolated with a quadratic (to the power of 2) function.</p></li>
+<li><p><strong>TRANS_EXPO</strong> = <strong>5</strong> --- The animation is interpolated with an exponential (to the power of x) function.</p></li>
+<li><p><strong>TRANS_ELASTIC</strong> = <strong>6</strong> --- The animation is interpolated with elasticity, wiggling around the edges.</p></li>
+<li><p><strong>TRANS_CUBIC</strong> = <strong>7</strong> --- The animation is interpolated with a cubic (to the power of 3) function.</p></li>
+<li><p><strong>TRANS_CIRC</strong> = <strong>8</strong> --- The animation is interpolated with a function using square roots.</p></li>
+<li><p><strong>TRANS_BOUNCE</strong> = <strong>9</strong> --- The animation is interpolated by bouncing at the end.</p></li>
+<li><p><strong>TRANS_BACK</strong> = <strong>10</strong> --- The animation is interpolated backing out at ends.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tween-constant-ease-out-in"><span id="class-tween-constant-ease-in-out"></span><span id="class-tween-constant-ease-out"></span><span id="class-tween-constant-ease-in"></span><span id="enum-tween-easetype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/EaseType"></a>EaseType</strong>:</p>
+<ul class="simple">
+<li><p><strong>EASE_IN</strong> = <strong>0</strong> --- The interpolation starts slowly and speeds up towards the end.</p></li>
+<li><p><strong>EASE_OUT</strong> = <strong>1</strong> --- The interpolation starts quickly and slows down towards the end.</p></li>
+<li><p><strong>EASE_IN_OUT</strong> = <strong>2</strong> --- A combination of <a class="reference internal" href="#class-tween-constant-ease-in"><span class="std std-ref">EASE_IN</span></a> and <a class="reference internal" href="#class-tween-constant-ease-out"><span class="std std-ref">EASE_OUT</span></a>. The interpolation is slowest at both ends.</p></li>
+<li><p><strong>EASE_OUT_IN</strong> = <strong>3</strong> --- A combination of <a class="reference internal" href="#class-tween-constant-ease-in"><span class="std std-ref">EASE_IN</span></a> and <a class="reference internal" href="#class-tween-constant-ease-out"><span class="std std-ref">EASE_OUT</span></a>. The interpolation is fastest at both ends.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tween-property-playback-process-mode">
+<li><p><a class="reference internal" href="#enum-tween-tweenprocessmode"><span class="std std-ref">TweenProcessMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_process_mode"></a>playback_process_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tween_process_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tween_process_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The tween's animation process thread. See <a class="reference internal" href="#enum-tween-tweenprocessmode"><span class="std std-ref">TweenProcessMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-property-playback-speed">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_speed"></a>playback_speed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_speed_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_speed_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The tween's speed multiplier. For example, set it to <code class="docutils literal notranslate"><span class="pre">1.0</span></code> for normal speed, <code class="docutils literal notranslate"><span class="pre">2.0</span></code> for two times normal speed, or <code class="docutils literal notranslate"><span class="pre">0.5</span></code> for half of the normal speed. A value of <code class="docutils literal notranslate"><span class="pre">0</span></code> pauses the animation, but see also <a class="reference internal" href="#class-tween-method-set-active"><span class="std std-ref">set_active</span></a> or <a class="reference internal" href="#class-tween-method-stop-all"><span class="std std-ref">stop_all</span></a> for this.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-property-repeat">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/repeat"></a>repeat</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_repeat(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_repeat()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the tween loops.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tween-method-follow-method">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/follow_method"></a>follow_method</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> target_method, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Follows <code class="docutils literal notranslate"><span class="pre">method</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> and applies the returned value on <code class="docutils literal notranslate"><span class="pre">target_method</span></code> of <code class="docutils literal notranslate"><span class="pre">target</span></code>, beginning from <code class="docutils literal notranslate"><span class="pre">initial_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> later. Methods are called with consecutive values.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-follow-property">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/follow_property"></a>follow_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> target, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> target_property, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Follows <code class="docutils literal notranslate"><span class="pre">property</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> and applies it on <code class="docutils literal notranslate"><span class="pre">target_property</span></code> of <code class="docutils literal notranslate"><span class="pre">target</span></code>, beginning from <code class="docutils literal notranslate"><span class="pre">initial_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds later.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-get-runtime">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_runtime"></a>get_runtime</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the total time needed for all tweens to end. If you have two tweens, one lasting 10 seconds and the other 20 seconds, it would return 20 seconds, as by that time all tweens would have finished.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-interpolate-callback">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_callback"></a>interpolate_callback</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg1=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg2=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg3=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg4=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg5=null <strong>)</strong></p></li>
+</ul>
+<p>Calls <code class="docutils literal notranslate"><span class="pre">callback</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> after <code class="docutils literal notranslate"><span class="pre">duration</span></code>. <code class="docutils literal notranslate"><span class="pre">arg1</span></code>-<code class="docutils literal notranslate"><span class="pre">arg5</span></code> are arguments to be passed to the callback.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-interpolate-deferred-callback">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_deferred_callback"></a>interpolate_deferred_callback</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> callback, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg1=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg2=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg3=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg4=null, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> arg5=null <strong>)</strong></p></li>
+</ul>
+<p>Calls <code class="docutils literal notranslate"><span class="pre">callback</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> after <code class="docutils literal notranslate"><span class="pre">duration</span></code> on the main thread (similar to <a class="reference internal" href="class_object.html#class-object-method-call-deferred"><span class="std std-ref">Object.call_deferred</span></a>). <code class="docutils literal notranslate"><span class="pre">arg1</span></code>-<code class="docutils literal notranslate"><span class="pre">arg5</span></code> are arguments to be passed to the callback.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-interpolate-method">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_method"></a>interpolate_method</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Animates <code class="docutils literal notranslate"><span class="pre">method</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> from <code class="docutils literal notranslate"><span class="pre">initial_val</span></code> to <code class="docutils literal notranslate"><span class="pre">final_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds later. Methods are called with consecutive values.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-interpolate-property">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_property"></a>interpolate_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Animates <code class="docutils literal notranslate"><span class="pre">property</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> from <code class="docutils literal notranslate"><span class="pre">initial_val</span></code> to <code class="docutils literal notranslate"><span class="pre">final_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds later. Setting the initial value to <code class="docutils literal notranslate"><span class="pre">null</span></code> uses the current value of the property.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-is-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_active"></a>is_active</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if any tweens are currently running.</p>
+<p><strong>Note:</strong> This method doesn't consider tweens that have ended.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-remove">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove"></a>remove</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></li>
+</ul>
+<p>Stops animation and removes a tween, given its object and property/method pair. By default, all tweens are removed, unless <code class="docutils literal notranslate"><span class="pre">key</span></code> is specified.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-remove-all">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_all"></a>remove_all</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops animation and removes all tweens.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-reset">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reset"></a>reset</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></li>
+</ul>
+<p>Resets a tween to its initial value (the one given, not the one before the tween), given its object and property/method pair. By default, all tweens are removed, unless <code class="docutils literal notranslate"><span class="pre">key</span></code> is specified.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-reset-all">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reset_all"></a>reset_all</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Resets all tweens to their initial values (the ones given, not those before the tween).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-resume">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/resume"></a>resume</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></li>
+</ul>
+<p>Continues animating a stopped tween, given its object and property/method pair. By default, all tweens are resumed, unless <code class="docutils literal notranslate"><span class="pre">key</span></code> is specified.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-resume-all">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/resume_all"></a>resume_all</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Continues animating all stopped tweens.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-seek">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/seek"></a>seek</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time <strong>)</strong></p></li>
+</ul>
+<p>Sets the interpolation to the given <code class="docutils literal notranslate"><span class="pre">time</span></code> in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-set-active">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_active"></a>set_active</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></li>
+</ul>
+<p>Activates/deactivates the tween. See also <a class="reference internal" href="#class-tween-method-stop-all"><span class="std std-ref">stop_all</span></a> and <a class="reference internal" href="#class-tween-method-resume-all"><span class="std std-ref">resume_all</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-start">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/start"></a>start</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Starts the tween. You can define animations both before and after this.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-stop">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop"></a>stop</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> key="" <strong>)</strong></p></li>
+</ul>
+<p>Stops a tween, given its object and property/method pair. By default, all tweens are stopped, unless <code class="docutils literal notranslate"><span class="pre">key</span></code> is specified.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-stop-all">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop_all"></a>stop_all</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops animating all tweens.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-targeting-method">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/targeting_method"></a>targeting_method</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> initial, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> initial_method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Animates <code class="docutils literal notranslate"><span class="pre">method</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> from the value returned by <code class="docutils literal notranslate"><span class="pre">initial_method</span></code> to <code class="docutils literal notranslate"><span class="pre">final_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds later. Methods are animated by calling them with consecutive values.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-targeting-property">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/targeting_property"></a>targeting_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> property, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> initial, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> initial_val, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> final_val, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration, <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> trans_type=0, <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> ease_type=2, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay=0 <strong>)</strong></p></li>
+</ul>
+<p>Animates <code class="docutils literal notranslate"><span class="pre">property</span></code> of <code class="docutils literal notranslate"><span class="pre">object</span></code> from the current value of the <code class="docutils literal notranslate"><span class="pre">initial_val</span></code> property of <code class="docutils literal notranslate"><span class="pre">initial</span></code> to <code class="docutils literal notranslate"><span class="pre">final_val</span></code> for <code class="docutils literal notranslate"><span class="pre">duration</span></code> seconds, <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds later.</p>
+<p>Use <a class="reference internal" href="#enum-tween-transitiontype"><span class="std std-ref">TransitionType</span></a> for <code class="docutils literal notranslate"><span class="pre">trans_type</span></code> and <a class="reference internal" href="#enum-tween-easetype"><span class="std std-ref">EaseType</span></a> for <code class="docutils literal notranslate"><span class="pre">ease_type</span></code> parameters. These values control the timing and direction of the interpolation. See the class description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tween-method-tell">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tell"></a>tell</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current time of the tween.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_trianglemesh.html" rel="prev" title="TriangleMesh"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_udpserver.html" rel="next" title="UDPServer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

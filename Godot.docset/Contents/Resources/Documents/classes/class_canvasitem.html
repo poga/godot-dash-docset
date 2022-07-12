@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="CanvasItem" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_canvasitem.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Inherited By: Control, Node2D Base class of anything 2D. Description: Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent..." property="og:description"/>
+<meta content="Base class of anything 2D. Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by Control for anything GUI-related, and by Node2..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) CanvasItem — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_canvasitem.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_canvasitem.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_canvasitem.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_canvasitem.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_canvasitem.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_canvasitem.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_canvasitem.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_canvasitem.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_canvasitem.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_canvasitem.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_canvasitem.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_canvasitem.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_canvasitem.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_canvasitem.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_canvasitem.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_canvasitemmaterial.html" rel="next" title="CanvasItemMaterial"/>
+<link href="class_cameratexture.html" rel="prev" title="CameraTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>CanvasItem</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="canvasitem">
+<span id="class-canvasitem"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/CanvasItem¶"></a>CanvasItem<a class="headerlink" href="#canvasitem" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>, <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a></p>
+<p>Base class of anything 2D.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> is extended by <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> for anything GUI-related, and by <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> for anything related to the 2D engine.</p>
+<p>Any <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> can draw. For this, <a class="reference internal" href="#class-canvasitem-method-update"><span class="std std-ref">update</span></a> must be called, then <a class="reference internal" href="#class-canvasitem-constant-notification-draw"><span class="std std-ref">NOTIFICATION_DRAW</span></a> will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> are provided (see <code class="docutils literal notranslate"><span class="pre">draw_*</span></code> functions). However, they can only be used inside the <a class="reference internal" href="class_object.html#class-object-method-notification"><span class="std std-ref">Object._notification</span></a>, signal or <a class="reference internal" href="#class-canvasitem-method-draw"><span class="std std-ref">_draw</span></a> virtual functions.</p>
+<p>Canvas items are drawn in tree order. By default, children are on top of their parents so a root <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> will be drawn behind everything. This behavior can be changed on a per-item basis.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.</p>
+<p>Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.</p>
+<p><strong>Note:</strong> Unless otherwise specified, all methods that have angle parameters must have angles specified as <em>radians</em>. To convert degrees to radians, use <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-deg2rad"><span class="std std-ref">@GDScript.deg2rad</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/2d/2d_transforms.html"><span class="doc">Viewport and canvas transforms</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html"><span class="doc">Custom drawing in 2D</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/528">Audio Spectrum Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 56%"/>
+<col style="width: 19%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-light-mask"><span class="std std-ref">light_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-material"><span class="std std-ref">material</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-modulate"><span class="std std-ref">modulate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-self-modulate"><span class="std std-ref">self_modulate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-show-behind-parent"><span class="std std-ref">show_behind_parent</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-show-on-top"><span class="std std-ref">show_on_top</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-use-parent-material"><span class="std std-ref">use_parent_material</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-property-visible"><span class="std std-ref">visible</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%"/>
+<col style="width: 91%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw"><span class="std std-ref">_draw</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-arc"><span class="std std-ref">draw_arc</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> center, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radius, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> start_angle, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> end_angle, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> point_count, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-char"><span class="std std-ref">draw_char</span></a> <strong>(</strong> <a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> font, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> char, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> next, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-circle"><span class="std std-ref">draw_circle</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radius, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-colored-polygon"><span class="std std-ref">draw_colored_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> from, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-mesh"><span class="std std-ref">draw_mesh</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> mesh, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform=Transform2D( 1, 0, 0, 1, 0, 0 ), <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-multiline"><span class="std std-ref">draw_multiline</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-multiline-colors"><span class="std std-ref">draw_multiline_colors</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-multimesh"><span class="std std-ref">draw_multimesh</span></a> <strong>(</strong> <a class="reference internal" href="class_multimesh.html#class-multimesh"><span class="std std-ref">MultiMesh</span></a> multimesh, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-polyline-colors"><span class="std std-ref">draw_polyline_colors</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-primitive"><span class="std std-ref">draw_primitive</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-rect"><span class="std std-ref">draw_rect</span></a> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> filled=true, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-set-transform"><span class="std std-ref">draw_set_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rotation, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-set-transform-matrix"><span class="std std-ref">draw_set_transform_matrix</span></a> <strong>(</strong> <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-string"><span class="std std-ref">draw_string</span></a> <strong>(</strong> <a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> font, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> clip_w=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-style-box"><span class="std std-ref">draw_style_box</span></a> <strong>(</strong> <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> style_box, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-texture"><span class="std std-ref">draw_texture</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-texture-rect"><span class="std std-ref">draw_texture_rect</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> tile, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-draw-texture-rect-region"><span class="std std-ref">draw_texture_rect_region</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> src_rect, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> clip_uv=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-force-update-transform"><span class="std std-ref">force_update_transform</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-canvas"><span class="std std-ref">get_canvas</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-canvas-item"><span class="std std-ref">get_canvas_item</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-canvas-transform"><span class="std std-ref">get_canvas_transform</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-global-mouse-position"><span class="std std-ref">get_global_mouse_position</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-global-transform"><span class="std std-ref">get_global_transform</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-global-transform-with-canvas"><span class="std std-ref">get_global_transform_with_canvas</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-local-mouse-position"><span class="std std-ref">get_local_mouse_position</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-transform"><span class="std std-ref">get_transform</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-viewport-rect"><span class="std std-ref">get_viewport_rect</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-viewport-transform"><span class="std std-ref">get_viewport_transform</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_world2d.html#class-world2d"><span class="std std-ref">World2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-get-world-2d"><span class="std std-ref">get_world_2d</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-hide"><span class="std std-ref">hide</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-is-local-transform-notification-enabled"><span class="std std-ref">is_local_transform_notification_enabled</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-is-set-as-toplevel"><span class="std std-ref">is_set_as_toplevel</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-is-transform-notification-enabled"><span class="std std-ref">is_transform_notification_enabled</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-is-visible-in-tree"><span class="std std-ref">is_visible_in_tree</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-make-canvas-position-local"><span class="std std-ref">make_canvas_position_local</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a></p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-make-input-local"><span class="std std-ref">make_input_local</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-set-as-toplevel"><span class="std std-ref">set_as_toplevel</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-set-notify-local-transform"><span class="std std-ref">set_notify_local_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-set-notify-transform"><span class="std std-ref">set_notify_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-show"><span class="std std-ref">show</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-canvasitem-method-update"><span class="std std-ref">update</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-canvasitem-signal-draw">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/draw"></a>draw</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> must redraw. This can only be connected realtime, as deferred will not allow drawing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-signal-hide">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/hide"></a>hide</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when becoming hidden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-signal-item-rect-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/item_rect_changed"></a>item_rect_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the item's <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing <a class="reference internal" href="class_sprite.html#class-sprite-property-texture"><span class="std std-ref">Sprite.texture</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-signal-visibility-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/visibility_changed"></a>visibility_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the visibility (hidden/visible) changes.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-canvasitem-constant-blend-mode-disabled"><span id="class-canvasitem-constant-blend-mode-premult-alpha"></span><span id="class-canvasitem-constant-blend-mode-mul"></span><span id="class-canvasitem-constant-blend-mode-sub"></span><span id="class-canvasitem-constant-blend-mode-add"></span><span id="class-canvasitem-constant-blend-mode-mix"></span><span id="enum-canvasitem-blendmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BlendMode"></a>BlendMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BLEND_MODE_MIX</strong> = <strong>0</strong> --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.</p></li>
+<li><p><strong>BLEND_MODE_ADD</strong> = <strong>1</strong> --- Additive blending mode.</p></li>
+<li><p><strong>BLEND_MODE_SUB</strong> = <strong>2</strong> --- Subtractive blending mode.</p></li>
+<li><p><strong>BLEND_MODE_MUL</strong> = <strong>3</strong> --- Multiplicative blending mode.</p></li>
+<li><p><strong>BLEND_MODE_PREMULT_ALPHA</strong> = <strong>4</strong> --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.</p></li>
+<li><p><strong>BLEND_MODE_DISABLED</strong> = <strong>5</strong> --- Disables blending mode. Colors including alpha are written as-is. Only applicable for render targets with a transparent background. No lighting will be applied.</p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-canvasitem-constant-notification-enter-canvas"></span><span id="class-canvasitem-constant-notification-visibility-changed"></span><span id="class-canvasitem-constant-notification-draw"></span><span id="class-canvasitem-constant-notification-transform-changed"></span><ul class="simple" id="class-canvasitem-constant-notification-exit-canvas">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_TRANSFORM_CHANGED"></a>NOTIFICATION_TRANSFORM_CHANGED</strong> = <strong>2000</strong> --- The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>'s transform has changed. This notification is only received if enabled by <a class="reference internal" href="#class-canvasitem-method-set-notify-transform"><span class="std std-ref">set_notify_transform</span></a> or <a class="reference internal" href="#class-canvasitem-method-set-notify-local-transform"><span class="std std-ref">set_notify_local_transform</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_DRAW"></a>NOTIFICATION_DRAW</strong> = <strong>30</strong> --- The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> is requested to draw.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_VISIBILITY_CHANGED"></a>NOTIFICATION_VISIBILITY_CHANGED</strong> = <strong>31</strong> --- The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>'s visibility has changed.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_ENTER_CANVAS"></a>NOTIFICATION_ENTER_CANVAS</strong> = <strong>32</strong> --- The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> has entered the canvas.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_EXIT_CANVAS"></a>NOTIFICATION_EXIT_CANVAS</strong> = <strong>33</strong> --- The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> has exited the canvas.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-canvasitem-property-light-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_mask"></a>light_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_light_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_light_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rendering layers in which this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> responds to <a class="reference internal" href="class_light2d.html#class-light2d"><span class="std std-ref">Light2D</span></a> nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-material">
+<li><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/material"></a>material</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_material(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_material()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The material applied to textures on this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/modulate"></a>modulate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_modulate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_modulate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The color applied to textures on this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-self-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/self_modulate"></a>self_modulate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_self_modulate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_self_modulate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The color applied to textures on this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>. This is not inherited by children <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-show-behind-parent">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/show_behind_parent"></a>show_behind_parent</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_behind_parent(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_draw_behind_parent_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the object draws behind its parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-show-on-top">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/show_on_top"></a>show_on_top</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the object draws on top of its parent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-use-parent-material">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_parent_material"></a>use_parent_material</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_parent_material(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_use_parent_material()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the parent <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>'s <a class="reference internal" href="#class-canvasitem-property-material"><span class="std std-ref">material</span></a> property is used as this one's material.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-property-visible">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/visible"></a>visible</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_visible(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_visible()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> is drawn. The node is only visible if all of its antecedents are visible as well (in other words, <a class="reference internal" href="#class-canvasitem-method-is-visible-in-tree"><span class="std std-ref">is_visible_in_tree</span></a> must return <code class="docutils literal notranslate"><span class="pre">true</span></code>).</p>
+<p><strong>Note:</strong> For controls that inherit <a class="reference internal" href="class_popup.html#class-popup"><span class="std std-ref">Popup</span></a>, the correct way to make them visible is to call one of the multiple <code class="docutils literal notranslate"><span class="pre">popup*()</span></code> functions instead.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-canvasitem-method-draw">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_draw"></a>_draw</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Overridable function called by the engine (if defined) to draw the canvas item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-arc">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_arc"></a>draw_arc</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> center, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radius, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> start_angle, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> end_angle, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> point_count, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws a unfilled arc between the given angles. The larger the value of <code class="docutils literal notranslate"><span class="pre">point_count</span></code>, the smoother the curve. See also <a class="reference internal" href="#class-canvasitem-method-draw-circle"><span class="std std-ref">draw_circle</span></a>.</p>
+<p><strong>Note:</strong> Line drawing is not accelerated by batching if <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent lines and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedRegularPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-char">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_char"></a>draw_char</strong> <strong>(</strong> <a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> font, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> char, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> next, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ) <strong>)</strong></p></li>
+</ul>
+<p>Draws a string character using a custom font. Returns the advance, depending on the character width and kerning with an optional next character.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-circle">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_circle"></a>draw_circle</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> radius, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Draws a colored, filled circle. See also <a class="reference internal" href="#class-canvasitem-method-draw-arc"><span class="std std-ref">draw_arc</span></a>, <a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a> and <a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a>.</p>
+<p><strong>Note:</strong> Built-in antialiasing is not provided for <a class="reference internal" href="#class-canvasitem-method-draw-circle"><span class="std std-ref">draw_circle</span></a>. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedRegularPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-colored-polygon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_colored_polygon"></a>draw_colored_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws a colored polygon of any amount of points, convex or concave. Unlike <a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a>, a single color must be specified for the whole polygon.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-line">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_line"></a>draw_line</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> from, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also <a class="reference internal" href="#class-canvasitem-method-draw-multiline"><span class="std std-ref">draw_multiline</span></a> and <a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a>.</p>
+<p><strong>Note:</strong> Line drawing is not accelerated by batching if <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent lines and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedLine2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-mesh">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_mesh"></a>draw_mesh</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> mesh, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform=Transform2D( 1, 0, 0, 1, 0, 0 ), <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ) <strong>)</strong></p></li>
+</ul>
+<p>Draws a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> in 2D, using the provided texture. See <a class="reference internal" href="class_meshinstance2d.html#class-meshinstance2d"><span class="std std-ref">MeshInstance2D</span></a> for related documentation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-multiline">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_multiline"></a>draw_multiline</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws multiple disconnected lines with a uniform <code class="docutils literal notranslate"><span class="pre">color</span></code>. When drawing large amounts of lines, this is faster than using individual <a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a> calls. To draw interconnected lines, use <a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a> instead.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> are currently not implemented and have no effect. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedLine2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-multiline-colors">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_multiline_colors"></a>draw_multiline_colors</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws multiple disconnected lines with a uniform <code class="docutils literal notranslate"><span class="pre">width</span></code> and segment-by-segment coloring. Colors assigned to line segments match by index between <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">colors</span></code>. When drawing large amounts of lines, this is faster than using individual <a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a> calls. To draw interconnected lines, use <a class="reference internal" href="#class-canvasitem-method-draw-polyline-colors"><span class="std std-ref">draw_polyline_colors</span></a> instead.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> are currently not implemented and have no effect. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedLine2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-multimesh">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_multimesh"></a>draw_multimesh</strong> <strong>(</strong> <a class="reference internal" href="class_multimesh.html#class-multimesh"><span class="std std-ref">MultiMesh</span></a> multimesh, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></li>
+</ul>
+<p>Draws a <a class="reference internal" href="class_multimesh.html#class-multimesh"><span class="std std-ref">MultiMesh</span></a> in 2D with the provided texture. See <a class="reference internal" href="class_multimeshinstance2d.html#class-multimeshinstance2d"><span class="std std-ref">MultiMeshInstance2D</span></a> for related documentation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-polygon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_polygon"></a>draw_polygon</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws a solid polygon of any amount of points, convex or concave. Unlike <a class="reference internal" href="#class-canvasitem-method-draw-colored-polygon"><span class="std std-ref">draw_colored_polygon</span></a>, each point's color can be changed individually. See also <a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a> and <a class="reference internal" href="#class-canvasitem-method-draw-polyline-colors"><span class="std std-ref">draw_polyline_colors</span></a>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-polyline">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_polyline"></a>draw_polyline</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws interconnected line segments with a uniform <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> and optional antialiasing. When drawing large amounts of lines, this is faster than using individual <a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a> calls. To draw disconnected lines, use <a class="reference internal" href="#class-canvasitem-method-draw-multiline"><span class="std std-ref">draw_multiline</span></a> instead. See also <a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-polyline-colors">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_polyline_colors"></a>draw_polyline_colors</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws interconnected line segments with a uniform <code class="docutils literal notranslate"><span class="pre">width</span></code> and segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">colors</span></code>. When drawing large amounts of lines, this is faster than using individual <a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a> calls. To draw disconnected lines, use <a class="reference internal" href="#class-canvasitem-method-draw-multiline-colors"><span class="std std-ref">draw_multiline_colors</span></a> instead. See also <a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-primitive">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_primitive"></a>draw_primitive</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> points, <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></li>
+</ul>
+<p>Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. See also <a class="reference internal" href="#class-canvasitem-method-draw-line"><span class="std std-ref">draw_line</span></a>, <a class="reference internal" href="#class-canvasitem-method-draw-polyline"><span class="std std-ref">draw_polyline</span></a>, <a class="reference internal" href="#class-canvasitem-method-draw-polygon"><span class="std std-ref">draw_polygon</span></a>, and <a class="reference internal" href="#class-canvasitem-method-draw-rect"><span class="std std-ref">draw_rect</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-rect">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_rect"></a>draw_rect</strong> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> filled=true, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> width=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> antialiased=false <strong>)</strong></p></li>
+</ul>
+<p>Draws a rectangle. If <code class="docutils literal notranslate"><span class="pre">filled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the rectangle will be filled with the <code class="docutils literal notranslate"><span class="pre">color</span></code> specified. If <code class="docutils literal notranslate"><span class="pre">filled</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the rectangle will be drawn as a stroke with the <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> specified. If <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the lines will attempt to perform antialiasing using OpenGL line smoothing.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">antialiased</span></code> are only effective if <code class="docutils literal notranslate"><span class="pre">filled</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-set-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_set_transform"></a>draw_set_transform</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rotation, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-set-transform-matrix">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_set_transform_matrix"></a>draw_set_transform_matrix</strong> <strong>(</strong> <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> xform <strong>)</strong></p></li>
+</ul>
+<p>Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-string">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_string"></a>draw_string</strong> <strong>(</strong> <a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> font, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> clip_w=-1 <strong>)</strong></p></li>
+</ul>
+<p>Draws <code class="docutils literal notranslate"><span class="pre">text</span></code> using the specified <code class="docutils literal notranslate"><span class="pre">font</span></code> at the <code class="docutils literal notranslate"><span class="pre">position</span></code> (bottom-left corner using the baseline of the font). The text will have its color multiplied by <code class="docutils literal notranslate"><span class="pre">modulate</span></code>. If <code class="docutils literal notranslate"><span class="pre">clip_w</span></code> is greater than or equal to 0, the text will be clipped if it exceeds the specified width.</p>
+<p><strong>Example using the default project font:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using this method in a script that redraws constantly, move the</span>
+<span class="c1"># `default_font` declaration to a member variable assigned in `_ready()`</span>
+<span class="c1"># so the Control is only created once.</span>
+<span class="k">var</span> <span class="n">default_font</span> <span class="o">=</span> <span class="n">Control</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="o">.</span><span class="n">get_font</span><span class="p">(</span><span class="s2">"font"</span><span class="p">)</span>
+<span class="n">draw_string</span><span class="p">(</span><span class="n">default_font</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="s2">"Hello world"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="class_font.html#class-font-method-draw"><span class="std std-ref">Font.draw</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-style-box">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_style_box"></a>draw_style_box</strong> <strong>(</strong> <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> style_box, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect <strong>)</strong></p></li>
+</ul>
+<p>Draws a styled rectangle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-texture">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_texture"></a>draw_texture</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></li>
+</ul>
+<p>Draws a texture at a given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-texture-rect">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_texture_rect"></a>draw_texture_rect</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> tile, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null <strong>)</strong></p></li>
+</ul>
+<p>Draws a textured rectangle at a given position, optionally modulated by a color. If <code class="docutils literal notranslate"><span class="pre">transpose</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the texture will have its X and Y coordinates swapped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-draw-texture-rect-region">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/draw_texture_rect_region"></a>draw_texture_rect_region</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> rect, <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> src_rect, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> modulate=Color( 1, 1, 1, 1 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> transpose=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> normal_map=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> clip_uv=true <strong>)</strong></p></li>
+</ul>
+<p>Draws a textured rectangle region at a given position, optionally modulated by a color. If <code class="docutils literal notranslate"><span class="pre">transpose</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the texture will have its X and Y coordinates swapped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-force-update-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/force_update_transform"></a>force_update_transform</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-canvas">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_canvas"></a>get_canvas</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the <a class="reference internal" href="class_world2d.html#class-world2d"><span class="std std-ref">World2D</span></a> canvas where this item is in.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-canvas-item">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_canvas_item"></a>get_canvas_item</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the canvas item RID used by <a class="reference internal" href="class_visualserver.html#class-visualserver"><span class="std std-ref">VisualServer</span></a> for this item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-canvas-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_canvas_transform"></a>get_canvas_transform</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform matrix of this item's canvas.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-global-mouse-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_global_mouse_position"></a>get_global_mouse_position</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the global position of the mouse.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-global-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_global_transform"></a>get_global_transform</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the global transform matrix of this item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-global-transform-with-canvas">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_global_transform_with_canvas"></a>get_global_transform_with_canvas</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the global transform matrix of this item in relation to the canvas.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-local-mouse-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_local_mouse_position"></a>get_local_mouse_position</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the mouse position relative to this item's position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_transform"></a>get_transform</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform matrix of this item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-viewport-rect">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_viewport_rect"></a>get_viewport_rect</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the viewport's boundaries as a <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-viewport-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_viewport_transform"></a>get_viewport_transform</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns this item's transform in relation to the viewport.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-get-world-2d">
+<li><p><a class="reference internal" href="class_world2d.html#class-world2d"><span class="std std-ref">World2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_world_2d"></a>get_world_2d</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_world2d.html#class-world2d"><span class="std std-ref">World2D</span></a> where this item is in.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-hide">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hide"></a>hide</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Hide the <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> if it's currently visible. This is equivalent to setting <a class="reference internal" href="#class-canvasitem-property-visible"><span class="std std-ref">visible</span></a> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-is-local-transform-notification-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_local_transform_notification_enabled"></a>is_local_transform_notification_enabled</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if local transform notifications are communicated to children.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-is-set-as-toplevel">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_set_as_toplevel"></a>is_set_as_toplevel</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is set as top-level. See <a class="reference internal" href="#class-canvasitem-method-set-as-toplevel"><span class="std std-ref">set_as_toplevel</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-is-transform-notification-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_transform_notification_enabled"></a>is_transform_notification_enabled</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if global transform notifications are communicated to children.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-is-visible-in-tree">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_visible_in_tree"></a>is_visible_in_tree</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node is present in the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>, its <a class="reference internal" href="#class-canvasitem-property-visible"><span class="std std-ref">visible</span></a> property is <code class="docutils literal notranslate"><span class="pre">true</span></code> and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-make-canvas-position-local">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_canvas_position_local"></a>make_canvas_position_local</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Assigns <code class="docutils literal notranslate"><span class="pre">screen_point</span></code> as this node's new local transform.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-make-input-local">
+<li><p><a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_input_local"></a>make_input_local</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Transformations issued by <code class="docutils literal notranslate"><span class="pre">event</span></code>'s inputs are applied in local space instead of global space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-set-as-toplevel">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_as_toplevel"></a>set_as_toplevel</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, this <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> will <em>not</em> inherit its transform from parent <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>s. Its draw order will also be changed to make it draw on top of other <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code>s that are not set as top-level. The <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> will effectively act as if it was placed as a child of a bare <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>. See also <a class="reference internal" href="#class-canvasitem-method-is-set-as-toplevel"><span class="std std-ref">is_set_as_toplevel</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-set-notify-local-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_notify_local_transform"></a>set_notify_local_transform</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, children will be updated with local transform data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-set-notify-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_notify_transform"></a>set_notify_transform</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, children will be updated with global transform data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-show">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/show"></a>show</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Show the <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> if it's currently hidden. This is equivalent to setting <a class="reference internal" href="#class-canvasitem-property-visible"><span class="std std-ref">visible</span></a> to <code class="docutils literal notranslate"><span class="pre">true</span></code>. For controls that inherit <a class="reference internal" href="class_popup.html#class-popup"><span class="std std-ref">Popup</span></a>, the correct way to make them visible is to call one of the multiple <code class="docutils literal notranslate"><span class="pre">popup*()</span></code> functions instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-canvasitem-method-update">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update"></a>update</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Queue the <code class="docutils literal notranslate"><span class="pre">CanvasItem</span></code> for update. <a class="reference internal" href="#class-canvasitem-constant-notification-draw"><span class="std std-ref">NOTIFICATION_DRAW</span></a> will be called on idle time to request redraw.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_cameratexture.html" rel="prev" title="CameraTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_canvasitemmaterial.html" rel="next" title="CanvasItemMaterial">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

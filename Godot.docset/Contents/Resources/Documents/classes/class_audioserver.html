@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AudioServer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_audioserver.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Server interface for low-level audio access. Description: AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as ..." property="og:description"/>
+<meta content="Server interface for low-level audio access. AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface. Audio..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AudioServer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioserver.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_audioserver.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_audioserver.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_audioserver.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_audioserver.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_audioserver.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_audioserver.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_audioserver.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_audioserver.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_audioserver.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_audioserver.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_audioserver.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_audioserver.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_audioserver.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioserver.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audioserver.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_audiostream.html" rel="next" title="AudioStream"/>
+<link href="class_audioeffectstereoenhance.html" rel="prev" title="AudioEffectStereoEnhance"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AudioServer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="audioserver">
+<span id="class-audioserver"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AudioServer¶"></a>AudioServer<a class="headerlink" href="#audioserver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Server interface for low-level audio access.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">AudioServer</span></code> is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/audio/audio_buses.html"><span class="doc">Audio buses</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/525">Audio Device Changer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/527">Audio Mic Record Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/528">Audio Spectrum Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 62%"/>
+<col style="width: 13%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-property-bus-count"><span class="std std-ref">bus_count</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-property-device"><span class="std std-ref">device</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Default"</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-property-global-rate-scale"><span class="std std-ref">global_rate_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-add-bus"><span class="std std-ref">add_bus</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-add-bus-effect"><span class="std std-ref">add_bus_effect</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> effect, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-capture-get-device"><span class="std std-ref">capture_get_device</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-capture-get-device-list"><span class="std std-ref">capture_get_device_list</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-capture-set-device"><span class="std std-ref">capture_set_device</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-generate-bus-layout"><span class="std std-ref">generate_bus_layout</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-channels"><span class="std std-ref">get_bus_channels</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-effect"><span class="std std-ref">get_bus_effect</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-effect-count"><span class="std std-ref">get_bus_effect_count</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_audioeffectinstance.html#class-audioeffectinstance"><span class="std std-ref">AudioEffectInstance</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-effect-instance"><span class="std std-ref">get_bus_effect_instance</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-index"><span class="std std-ref">get_bus_index</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> bus_name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-name"><span class="std std-ref">get_bus_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-peak-volume-left-db"><span class="std std-ref">get_bus_peak_volume_left_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-peak-volume-right-db"><span class="std std-ref">get_bus_peak_volume_right_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-send"><span class="std std-ref">get_bus_send</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-bus-volume-db"><span class="std std-ref">get_bus_volume_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-device-list"><span class="std std-ref">get_device_list</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-mix-rate"><span class="std std-ref">get_mix_rate</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-output-latency"><span class="std std-ref">get_output_latency</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-audioserver-speakermode"><span class="std std-ref">SpeakerMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-speaker-mode"><span class="std std-ref">get_speaker_mode</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-time-since-last-mix"><span class="std std-ref">get_time_since_last_mix</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-get-time-to-next-mix"><span class="std std-ref">get_time_to_next_mix</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-is-bus-bypassing-effects"><span class="std std-ref">is_bus_bypassing_effects</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-is-bus-effect-enabled"><span class="std std-ref">is_bus_effect_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-is-bus-mute"><span class="std std-ref">is_bus_mute</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-is-bus-solo"><span class="std std-ref">is_bus_solo</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-lock"><span class="std std-ref">lock</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-move-bus"><span class="std std-ref">move_bus</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_index <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-remove-bus"><span class="std std-ref">remove_bus</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-remove-bus-effect"><span class="std std-ref">remove_bus_effect</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-bypass-effects"><span class="std std-ref">set_bus_bypass_effects</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-effect-enabled"><span class="std std-ref">set_bus_effect_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-layout"><span class="std std-ref">set_bus_layout</span></a> <strong>(</strong> <a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a> bus_layout <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-mute"><span class="std std-ref">set_bus_mute</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-name"><span class="std std-ref">set_bus_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-send"><span class="std std-ref">set_bus_send</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> send <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-solo"><span class="std std-ref">set_bus_solo</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-set-bus-volume-db"><span class="std std-ref">set_bus_volume_db</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> volume_db <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-swap-bus-effects"><span class="std std-ref">swap_bus_effects</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> by_effect_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audioserver-method-unlock"><span class="std std-ref">unlock</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audioserver-signal-bus-layout-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/bus_layout_changed"></a>bus_layout_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the <a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a> changes.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-audioserver-constant-speaker-surround-71"><span id="class-audioserver-constant-speaker-surround-51"></span><span id="class-audioserver-constant-speaker-surround-31"></span><span id="class-audioserver-constant-speaker-mode-stereo"></span><span id="enum-audioserver-speakermode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SpeakerMode"></a>SpeakerMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>SPEAKER_MODE_STEREO</strong> = <strong>0</strong> --- Two or fewer speakers were detected.</p></li>
+<li><p><strong>SPEAKER_SURROUND_31</strong> = <strong>1</strong> --- A 3.1 channel surround setup was detected.</p></li>
+<li><p><strong>SPEAKER_SURROUND_51</strong> = <strong>2</strong> --- A 5.1 channel surround setup was detected.</p></li>
+<li><p><strong>SPEAKER_SURROUND_71</strong> = <strong>3</strong> --- A 7.1 channel surround setup was detected.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audioserver-property-bus-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bus_count"></a>bus_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bus_count(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bus_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of available audio buses.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-property-device">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/device"></a>device</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Default"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_device(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_device()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Name of the current device for audio output (see <a class="reference internal" href="#class-audioserver-method-get-device-list"><span class="std std-ref">get_device_list</span></a>). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value <code class="docutils literal notranslate"><span class="pre">"Default"</span></code> will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to <code class="docutils literal notranslate"><span class="pre">"Default"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-property-global-rate-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/global_rate_scale"></a>global_rate_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_global_rate_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_global_rate_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Scales the rate at which audio is played (i.e. setting it to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> will make the audio be played twice as fast).</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audioserver-method-add-bus">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_bus"></a>add_bus</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds a bus at <code class="docutils literal notranslate"><span class="pre">at_position</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-add-bus-effect">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_bus_effect"></a>add_bus_effect</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> effect, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds an <a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> effect to the bus <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> at <code class="docutils literal notranslate"><span class="pre">at_position</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-capture-get-device">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/capture_get_device"></a>capture_get_device</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Name of the current device for audio input (see <a class="reference internal" href="#class-audioserver-method-capture-get-device-list"><span class="std std-ref">capture_get_device_list</span></a>). The value <code class="docutils literal notranslate"><span class="pre">"Default"</span></code> means that the system-wide default audio input is currently used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-capture-get-device-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/capture_get_device_list"></a>capture_get_device_list</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the names of all audio input devices detected on the system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-capture-set-device">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/capture_set_device"></a>capture_set_device</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets which audio input device is used for audio capture. On systems with multiple audio inputs (such as analog and USB), this can be used to select the audio input device. Setting the value <code class="docutils literal notranslate"><span class="pre">"Default"</span></code> will record audio from the system-wide default audio input. If an invalid device name is set, the value will be reverted back to <code class="docutils literal notranslate"><span class="pre">"Default"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-generate-bus-layout">
+<li><p><a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generate_bus_layout"></a>generate_bus_layout</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Generates an <a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a> using the available buses and effects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-channels">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_channels"></a>get_bus_channels</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the amount of channels of the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-effect">
+<li><p><a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_effect"></a>get_bus_effect</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_audioeffect.html#class-audioeffect"><span class="std std-ref">AudioEffect</span></a> at position <code class="docutils literal notranslate"><span class="pre">effect_idx</span></code> in bus <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-effect-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_effect_count"></a>get_bus_effect_count</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of effects on the bus at <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-effect-instance">
+<li><p><a class="reference internal" href="class_audioeffectinstance.html#class-audioeffectinstance"><span class="std std-ref">AudioEffectInstance</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_effect_instance"></a>get_bus_effect_instance</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel=0 <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_audioeffectinstance.html#class-audioeffectinstance"><span class="std std-ref">AudioEffectInstance</span></a> assigned to the given bus and effect indices (and optionally channel).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_index"></a>get_bus_index</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> bus_name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the index of the bus with the name <code class="docutils literal notranslate"><span class="pre">bus_name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_name"></a>get_bus_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the bus with the index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-peak-volume-left-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_peak_volume_left_db"></a>get_bus_peak_volume_left_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the peak volume of the left speaker at bus index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> and channel index <code class="docutils literal notranslate"><span class="pre">channel</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-peak-volume-right-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_peak_volume_right_db"></a>get_bus_peak_volume_right_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> channel <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the peak volume of the right speaker at bus index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> and channel index <code class="docutils literal notranslate"><span class="pre">channel</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-send">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_send"></a>get_bus_send</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the bus that the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> sends to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-bus-volume-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bus_volume_db"></a>get_bus_volume_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the volume of the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> in dB.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-device-list">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_device_list"></a>get_device_list</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the names of all audio devices detected on the system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-mix-rate">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_mix_rate"></a>get_mix_rate</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the sample rate at the output of the <code class="docutils literal notranslate"><span class="pre">AudioServer</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-output-latency">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_output_latency"></a>get_output_latency</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the audio driver's output latency.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-speaker-mode">
+<li><p><a class="reference internal" href="#enum-audioserver-speakermode"><span class="std std-ref">SpeakerMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_speaker_mode"></a>get_speaker_mode</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the speaker configuration.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-time-since-last-mix">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_time_since_last_mix"></a>get_time_since_last_mix</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the relative time since the last mix occurred.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-get-time-to-next-mix">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_time_to_next_mix"></a>get_time_to_next_mix</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the relative time until the next mix occurs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-is-bus-bypassing-effects">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_bus_bypassing_effects"></a>is_bus_bypassing_effects</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is bypassing effects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-is-bus-effect-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_bus_effect_enabled"></a>is_bus_effect_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the effect at index <code class="docutils literal notranslate"><span class="pre">effect_idx</span></code> on the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-is-bus-mute">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_bus_mute"></a>is_bus_mute</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is muted.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-is-bus-solo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_bus_solo"></a>is_bus_solo</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is in solo mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-lock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/lock"></a>lock</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Locks the audio driver's main loop.</p>
+<p><strong>Note:</strong> Remember to unlock it afterwards.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-move-bus">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_bus"></a>move_bus</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_index <strong>)</strong></p></li>
+</ul>
+<p>Moves the bus from index <code class="docutils literal notranslate"><span class="pre">index</span></code> to index <code class="docutils literal notranslate"><span class="pre">to_index</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-remove-bus">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_bus"></a>remove_bus</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></li>
+</ul>
+<p>Removes the bus at index <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-remove-bus-effect">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_bus_effect"></a>remove_bus_effect</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx <strong>)</strong></p></li>
+</ul>
+<p>Removes the effect at index <code class="docutils literal notranslate"><span class="pre">effect_idx</span></code> from the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-bypass-effects">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_bypass_effects"></a>set_bus_bypass_effects</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is bypassing effects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-effect-enabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_effect_enabled"></a>set_bus_effect_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the effect at index <code class="docutils literal notranslate"><span class="pre">effect_idx</span></code> on the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-layout">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_layout"></a>set_bus_layout</strong> <strong>(</strong> <a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a> bus_layout <strong>)</strong></p></li>
+</ul>
+<p>Overwrites the currently used <a class="reference internal" href="class_audiobuslayout.html#class-audiobuslayout"><span class="std std-ref">AudioBusLayout</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-mute">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_mute"></a>set_bus_mute</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is muted.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-name">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_name"></a>set_bus_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets the name of the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> to <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-send">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_send"></a>set_bus_send</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> send <strong>)</strong></p></li>
+</ul>
+<p>Connects the output of the bus at <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> to the bus named <code class="docutils literal notranslate"><span class="pre">send</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-solo">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_solo"></a>set_bus_solo</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> is in solo mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-set-bus-volume-db">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bus_volume_db"></a>set_bus_volume_db</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> volume_db <strong>)</strong></p></li>
+</ul>
+<p>Sets the volume of the bus at index <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code> to <code class="docutils literal notranslate"><span class="pre">volume_db</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-swap-bus-effects">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/swap_bus_effects"></a>swap_bus_effects</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bus_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> effect_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> by_effect_idx <strong>)</strong></p></li>
+</ul>
+<p>Swaps the position of two effects in bus <code class="docutils literal notranslate"><span class="pre">bus_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audioserver-method-unlock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/unlock"></a>unlock</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Unlocks the audio driver's main loop. (After locking it, you should always unlock it.)</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_audioeffectstereoenhance.html" rel="prev" title="AudioEffectStereoEnhance"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_audiostream.html" rel="next" title="AudioStream">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

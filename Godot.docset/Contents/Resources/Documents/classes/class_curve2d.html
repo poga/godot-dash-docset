@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Curve2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_curve2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Describes a Bézier curve in 2D space. Description: This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a Path2D, but can be m..." property="og:description"/>
+<meta content="Describes a Bézier curve in 2D space. This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a Path2D, but can be manually sampled for other purposes. It keeps a cache of precalculated p..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Curve2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_curve2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_curve2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_curve2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_curve2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_curve2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_curve2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_curve2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_curve2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_curve2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_curve2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_curve2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_curve2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_curve2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_curve2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_curve2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_curve2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_curve3d.html" rel="next" title="Curve3D"/>
+<link href="class_curve.html" rel="prev" title="Curve"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Curve2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="curve2d">
+<span id="class-curve2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Curve2D¶"></a>Curve2D<a class="headerlink" href="#curve2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Describes a Bézier curve in 2D space.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This class describes a Bézier curve in 2D space. It is mainly used to give a shape to a <a class="reference internal" href="class_path2d.html#class-path2d"><span class="std std-ref">Path2D</span></a>, but can be manually sampled for other purposes.</p>
+<p>It keeps a cache of precalculated points along the curve, to speed up further calculations.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 63%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-property-bake-interval"><span class="std std-ref">bake_interval</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-add-point"><span class="std std-ref">add_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> in=Vector2( 0, 0 ), <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> out=Vector2( 0, 0 ), <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-clear-points"><span class="std std-ref">clear_points</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-baked-length"><span class="std std-ref">get_baked_length</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-baked-points"><span class="std std-ref">get_baked_points</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-closest-offset"><span class="std std-ref">get_closest_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-closest-point"><span class="std std-ref">get_closest_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-point-count"><span class="std std-ref">get_point_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-point-in"><span class="std std-ref">get_point_in</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-point-out"><span class="std std-ref">get_point_out</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-get-point-position"><span class="std std-ref">get_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-interpolate"><span class="std std-ref">interpolate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> t <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-interpolate-baked"><span class="std std-ref">interpolate_baked</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> offset, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> cubic=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-interpolatef"><span class="std std-ref">interpolatef</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fofs <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-remove-point"><span class="std std-ref">remove_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-set-point-in"><span class="std std-ref">set_point_in</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-set-point-out"><span class="std std-ref">set_point_out</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-set-point-position"><span class="std std-ref">set_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-curve2d-method-tessellate"><span class="std std-ref">tessellate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_stages=5, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> tolerance_degrees=4 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-curve2d-property-bake-interval">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bake_interval"></a>bake_interval</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bake_interval(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bake_interval()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The distance in pixels between two adjacent cached points. Changing it forces the cache to be recomputed the next time the <a class="reference internal" href="#class-curve2d-method-get-baked-points"><span class="std std-ref">get_baked_points</span></a> or <a class="reference internal" href="#class-curve2d-method-get-baked-length"><span class="std std-ref">get_baked_length</span></a> function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-curve2d-method-add-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_point"></a>add_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> in=Vector2( 0, 0 ), <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> out=Vector2( 0, 0 ), <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds a point to a curve at <code class="docutils literal notranslate"><span class="pre">position</span></code> relative to the <code class="docutils literal notranslate"><span class="pre">Curve2D</span></code>'s position, with control points <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">at_position</span></code> is given, the point is inserted before the point number <code class="docutils literal notranslate"><span class="pre">at_position</span></code>, moving that point (and every point after) after the inserted point. If <code class="docutils literal notranslate"><span class="pre">at_position</span></code> is not given, or is an illegal value (<code class="docutils literal notranslate"><span class="pre">at_position</span> <span class="pre">&lt;0</span></code> or <code class="docutils literal notranslate"><span class="pre">at_position</span> <span class="pre">&gt;=</span> <span class="pre">[method</span> <span class="pre">get_point_count]</span></code>), the point will be appended at the end of the point list.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-clear-points">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_points"></a>clear_points</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all points from the curve.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-baked-length">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_baked_length"></a>get_baked_length</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the total length of the curve, based on the cached points. Given enough density (see <a class="reference internal" href="#class-curve2d-property-bake-interval"><span class="std std-ref">bake_interval</span></a>), it should be approximate enough.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-baked-points">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_baked_points"></a>get_baked_points</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the cache of points as a <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-closest-offset">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_offset"></a>get_closest_offset</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the closest offset to <code class="docutils literal notranslate"><span class="pre">to_point</span></code>. This offset is meant to be used in <a class="reference internal" href="#class-curve2d-method-interpolate-baked"><span class="std std-ref">interpolate_baked</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">to_point</span></code> must be in this curve's local space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-closest-point">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point"></a>get_closest_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the closest baked point (in curve's local space) to <code class="docutils literal notranslate"><span class="pre">to_point</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">to_point</span></code> must be in this curve's local space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-point-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_count"></a>get_point_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of points describing the curve.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-point-in">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_in"></a>get_point_in</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position of the control point leading to the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. The returned position is relative to the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console, and returns <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-point-out">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_out"></a>get_point_out</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position of the control point leading out of the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. The returned position is relative to the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console, and returns <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-get-point-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_position"></a>get_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position of the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console, and returns <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-interpolate">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate"></a>interpolate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> t <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position between the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code> and the vertex <code class="docutils literal notranslate"><span class="pre">idx</span> <span class="pre">+</span> <span class="pre">1</span></code>, where <code class="docutils literal notranslate"><span class="pre">t</span></code> controls if the point is the first vertex (<code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">0.0</span></code>), the last vertex (<code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">1.0</span></code>), or in between. Values of <code class="docutils literal notranslate"><span class="pre">t</span></code> outside the range (<code class="docutils literal notranslate"><span class="pre">0.0</span> <span class="pre">&gt;=</span> <span class="pre">t</span> <span class="pre">&lt;=1</span></code>) give strange, but predictable results.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">idx</span></code> is out of bounds it is truncated to the first or last vertex, and <code class="docutils literal notranslate"><span class="pre">t</span></code> is ignored. If the curve has no points, the function sends an error to the console, and returns <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-interpolate-baked">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolate_baked"></a>interpolate_baked</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> offset, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> cubic=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a point within the curve at position <code class="docutils literal notranslate"><span class="pre">offset</span></code>, where <code class="docutils literal notranslate"><span class="pre">offset</span></code> is measured as a pixel distance along the curve.</p>
+<p>To do that, it finds the two cached points where the <code class="docutils literal notranslate"><span class="pre">offset</span></code> lies between, then interpolates the values. This interpolation is cubic if <code class="docutils literal notranslate"><span class="pre">cubic</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, or linear if set to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-interpolatef">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/interpolatef"></a>interpolatef</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fofs <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position at the vertex <code class="docutils literal notranslate"><span class="pre">fofs</span></code>. It calls <a class="reference internal" href="#class-curve2d-method-interpolate"><span class="std std-ref">interpolate</span></a> using the integer part of <code class="docutils literal notranslate"><span class="pre">fofs</span></code> as <code class="docutils literal notranslate"><span class="pre">idx</span></code>, and its fractional part as <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-remove-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_point"></a>remove_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Deletes the point <code class="docutils literal notranslate"><span class="pre">idx</span></code> from the curve. Sends an error to the console if <code class="docutils literal notranslate"><span class="pre">idx</span></code> is out of bounds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-set-point-in">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_in"></a>set_point_in</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets the position of the control point leading to the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-set-point-out">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_out"></a>set_point_out</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets the position of the control point leading out of the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console. The position is relative to the vertex.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-set-point-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_position"></a>set_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets the position for the vertex <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If the index is out of bounds, the function sends an error to the console.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-curve2d-method-tessellate">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tessellate"></a>tessellate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_stages=5, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> tolerance_degrees=4 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a list of points along the curve, with a curvature controlled point density. That is, the curvier parts will have more points than the straighter parts.</p>
+<p>This approximation makes straight segments between each point, then subdivides those segments until the resulting shape is similar enough.</p>
+<p><code class="docutils literal notranslate"><span class="pre">max_stages</span></code> controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!</p>
+<p><code class="docutils literal notranslate"><span class="pre">tolerance_degrees</span></code> controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_curve.html" rel="prev" title="Curve"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_curve3d.html" rel="next" title="Curve3D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

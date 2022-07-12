@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="StreamPeer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_streampeer.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Inherited By: StreamPeerBuffer, StreamPeerGDNative, StreamPeerSSL, StreamPeerTCP Abstraction and base class for stream-based protocols. Description: StreamPeer is an abs..." property="og:description"/>
+<meta content="Abstraction and base class for stream-based protocols. StreamPeer is an abstraction and base class for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw dat..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) StreamPeer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_streampeer.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_streampeer.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_streampeer.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_streampeer.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_streampeer.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_streampeer.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_streampeer.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_streampeer.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_streampeer.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_streampeer.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_streampeer.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_streampeer.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_streampeer.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_streampeer.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_streampeer.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_streampeer.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_streampeerbuffer.html" rel="next" title="StreamPeerBuffer"/>
+<link href="class_staticbody2d.html" rel="prev" title="StaticBody2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>StreamPeer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="streampeer">
+<span id="class-streampeer"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/StreamPeer¶"></a>StreamPeer<a class="headerlink" href="#streampeer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_streampeerbuffer.html#class-streampeerbuffer"><span class="std std-ref">StreamPeerBuffer</span></a>, <a class="reference internal" href="class_streampeergdnative.html#class-streampeergdnative"><span class="std std-ref">StreamPeerGDNative</span></a>, <a class="reference internal" href="class_streampeerssl.html#class-streampeerssl"><span class="std std-ref">StreamPeerSSL</span></a>, <a class="reference internal" href="class_streampeertcp.html#class-streampeertcp"><span class="std std-ref">StreamPeerTCP</span></a></p>
+<p>Abstraction and base class for stream-based protocols.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>StreamPeer is an abstraction and base class for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw data or strings.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 61%"/>
+<col style="width: 12%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-property-big-endian"><span class="std std-ref">big_endian</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-16"><span class="std std-ref">get_16</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-32"><span class="std std-ref">get_32</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-64"><span class="std std-ref">get_64</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-8"><span class="std std-ref">get_8</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-available-bytes"><span class="std std-ref">get_available_bytes</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-data"><span class="std std-ref">get_data</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-double"><span class="std std-ref">get_double</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-float"><span class="std std-ref">get_float</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-partial-data"><span class="std std-ref">get_partial_data</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-string"><span class="std std-ref">get_string</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-u16"><span class="std std-ref">get_u16</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-u32"><span class="std std-ref">get_u32</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-u64"><span class="std std-ref">get_u64</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-u8"><span class="std std-ref">get_u8</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-utf8-string"><span class="std std-ref">get_utf8_string</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-get-var"><span class="std std-ref">get_var</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_objects=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-16"><span class="std std-ref">put_16</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-32"><span class="std std-ref">put_32</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-64"><span class="std std-ref">put_64</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-8"><span class="std std-ref">put_8</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-data"><span class="std std-ref">put_data</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-double"><span class="std std-ref">put_double</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-float"><span class="std std-ref">put_float</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-partial-data"><span class="std std-ref">put_partial_data</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-string"><span class="std std-ref">put_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-u16"><span class="std std-ref">put_u16</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-u32"><span class="std std-ref">put_u32</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-u64"><span class="std std-ref">put_u64</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-u8"><span class="std std-ref">put_u8</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-utf8-string"><span class="std std-ref">put_utf8_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-streampeer-method-put-var"><span class="std std-ref">put_var</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> full_objects=false <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-streampeer-property-big-endian">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/big_endian"></a>big_endian</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_big_endian(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_big_endian_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this <code class="docutils literal notranslate"><span class="pre">StreamPeer</span></code> will using big-endian format for encoding and decoding.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-streampeer-method-get-16">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_16"></a>get_16</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a signed 16-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_32"></a>get_32</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a signed 32-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_64"></a>get_64</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a signed 64-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_8"></a>get_8</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a signed byte from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-available-bytes">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_available_bytes"></a>get_available_bytes</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the amount of bytes this <code class="docutils literal notranslate"><span class="pre">StreamPeer</span></code> has available.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-data">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_data"></a>get_data</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes <strong>)</strong></p></li>
+</ul>
+<p>Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the <code class="docutils literal notranslate"><span class="pre">bytes</span></code> argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code and a data array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-double">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_double"></a>get_double</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a double-precision float from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-float">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_float"></a>get_float</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets a single-precision float from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-partial-data">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_partial_data"></a>get_partial_data</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes <strong>)</strong></p></li>
+</ul>
+<p>Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code, and a data array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_string"></a>get_string</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes=-1 <strong>)</strong></p></li>
+</ul>
+<p>Gets an ASCII string with byte-length <code class="docutils literal notranslate"><span class="pre">bytes</span></code> from the stream. If <code class="docutils literal notranslate"><span class="pre">bytes</span></code> is negative (default) the length will be read from the stream using the reverse process of <a class="reference internal" href="#class-streampeer-method-put-string"><span class="std std-ref">put_string</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-u16">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_u16"></a>get_u16</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets an unsigned 16-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-u32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_u32"></a>get_u32</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets an unsigned 32-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-u64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_u64"></a>get_u64</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets an unsigned 64-bit value from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-u8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_u8"></a>get_u8</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets an unsigned byte from the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-utf8-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_utf8_string"></a>get_utf8_string</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bytes=-1 <strong>)</strong></p></li>
+</ul>
+<p>Gets an UTF-8 string with byte-length <code class="docutils literal notranslate"><span class="pre">bytes</span></code> from the stream (this decodes the string sent as UTF-8). If <code class="docutils literal notranslate"><span class="pre">bytes</span></code> is negative (default) the length will be read from the stream using the reverse process of <a class="reference internal" href="#class-streampeer-method-put-utf8-string"><span class="std std-ref">put_utf8_string</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-get-var">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_var"></a>get_var</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_objects=false <strong>)</strong></p></li>
+</ul>
+<p>Gets a Variant from the stream. If <code class="docutils literal notranslate"><span class="pre">allow_objects</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, decoding objects is allowed.</p>
+<p><strong>Warning:</strong> Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-16">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_16"></a>put_16</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a signed 16-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-32">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_32"></a>put_32</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a signed 32-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-64">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_64"></a>put_64</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a signed 64-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-8">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_8"></a>put_8</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a signed byte into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-data">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_data"></a>put_data</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Sends a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-double">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_double"></a>put_double</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a double-precision float into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-float">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_float"></a>put_float</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a single-precision float into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-partial-data">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_partial_data"></a>put_partial_data</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Sends a chunk of data through the connection. If all the data could not be sent at once, only part of it will. This function returns two values, an <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code and an integer, describing how much data was actually sent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-string">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_string"></a>put_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.</p>
+<p><strong>Note:</strong> To put an ASCII string without prepending its size, you can use <a class="reference internal" href="#class-streampeer-method-put-data"><span class="std std-ref">put_data</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">put_data</span><span class="p">(</span><span class="s2">"Hello world"</span><span class="o">.</span><span class="n">to_ascii</span><span class="p">())</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-u16">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_u16"></a>put_u16</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts an unsigned 16-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-u32">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_u32"></a>put_u32</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts an unsigned 32-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-u64">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_u64"></a>put_u64</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts an unsigned 64-bit value into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-u8">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_u8"></a>put_u8</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts an unsigned byte into the stream.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-utf8-string">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_utf8_string"></a>put_utf8_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.</p>
+<p><strong>Note:</strong> To put an UTF-8 string without prepending its size, you can use <a class="reference internal" href="#class-streampeer-method-put-data"><span class="std std-ref">put_data</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">put_data</span><span class="p">(</span><span class="s2">"Hello world"</span><span class="o">.</span><span class="n">to_utf8</span><span class="p">())</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-streampeer-method-put-var">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/put_var"></a>put_var</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> full_objects=false <strong>)</strong></p></li>
+</ul>
+<p>Puts a Variant into the stream. If <code class="docutils literal notranslate"><span class="pre">full_objects</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> encoding objects is allowed (and can potentially include code).</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_staticbody2d.html" rel="prev" title="StaticBody2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_streampeerbuffer.html" rel="next" title="StreamPeerBuffer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

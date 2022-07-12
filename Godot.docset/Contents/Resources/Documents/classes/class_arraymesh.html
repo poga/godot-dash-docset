@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ArrayMesh" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_arraymesh.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Mesh&lt; Resource&lt; Reference&lt; Object Mesh type that provides utility for constructing a surface from arrays. Description: The ArrayMesh is used to construct a Mesh by specifying the attribut..." property="og:description"/>
+<meta content="Mesh type that provides utility for constructing a surface from arrays. The ArrayMesh is used to construct a Mesh by specifying the attributes as arrays. The most basic example is the creation of a single triangle: Th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ArrayMesh — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arraymesh.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_arraymesh.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_arraymesh.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_arraymesh.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_arraymesh.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_arraymesh.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_arraymesh.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_arraymesh.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_arraymesh.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_arraymesh.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_arraymesh.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_arraymesh.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_arraymesh.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_arraymesh.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arraymesh.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_arraymesh.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_arvranchor.html" rel="next" title="ARVRAnchor"/>
+<link href="class_array.html" rel="prev" title="Array"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ArrayMesh</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="arraymesh">
+<span id="class-arraymesh"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ArrayMesh¶"></a>ArrayMesh<a class="headerlink" href="#arraymesh" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> type that provides utility for constructing a surface from arrays.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code> is used to construct a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> by specifying the attributes as arrays.</p>
+<p>The most basic example is the creation of a single triangle:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">vertices</span> <span class="o">=</span> <span class="nb nb-Type">PoolVector3Array</span><span class="p">()</span>
+<span class="n">vertices</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">vertices</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">vertices</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Initialize the ArrayMesh.</span>
+<span class="k">var</span> <span class="n">arr_mesh</span> <span class="o">=</span> <span class="n">ArrayMesh</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="k">var</span> <span class="n">arrays</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">arrays</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">ArrayMesh</span><span class="o">.</span><span class="n">ARRAY_MAX</span><span class="p">)</span>
+<span class="n">arrays</span><span class="p">[</span><span class="n">ArrayMesh</span><span class="o">.</span><span class="n">ARRAY_VERTEX</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertices</span>
+<span class="c1"># Create the Mesh.</span>
+<span class="n">arr_mesh</span><span class="o">.</span><span class="n">add_surface_from_arrays</span><span class="p">(</span><span class="n">Mesh</span><span class="o">.</span><span class="n">PRIMITIVE_TRIANGLES</span><span class="p">,</span> <span class="n">arrays</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">m</span> <span class="o">=</span> <span class="n">MeshInstance</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">mesh</span> <span class="o">=</span> <span class="n">arr_mesh</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a> is ready to be added to the <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> to be shown.</p>
+<p>See also <a class="reference internal" href="class_immediategeometry.html#class-immediategeometry"><span class="std std-ref">ImmediateGeometry</span></a>, <a class="reference internal" href="class_meshdatatool.html#class-meshdatatool"><span class="std std-ref">MeshDataTool</span></a> and <a class="reference internal" href="class_surfacetool.html#class-surfacetool"><span class="std std-ref">SurfaceTool</span></a> for procedural geometry generation.</p>
+<p><strong>Note:</strong> Godot uses clockwise <a class="reference external" href="https://learnopengl.com/Advanced-OpenGL/Face-culling">winding order</a> for front faces of triangle primitive modes.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/procedural_geometry/arraymesh.html"><span class="doc">Using the ArrayMesh</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 46%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_mesh.html#enum-mesh-blendshapemode"><span class="std std-ref">BlendShapeMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-property-blend-shape-mode"><span class="std std-ref">blend_shape_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-property-custom-aabb"><span class="std std-ref">custom_aabb</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AABB(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-add-blend-shape"><span class="std std-ref">add_blend_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a> primitive, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arrays, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> blend_shapes=[  ], <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> compress_flags=2194432 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-clear-blend-shapes"><span class="std std-ref">clear_blend_shapes</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-clear-surfaces"><span class="std std-ref">clear_surfaces</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-get-blend-shape-count"><span class="std std-ref">get_blend_shape_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-get-blend-shape-name"><span class="std std-ref">get_blend_shape_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-lightmap-unwrap"><span class="std std-ref">lightmap_unwrap</span></a> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> texel_size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-regen-normalmaps"><span class="std std-ref">regen_normalmaps</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-set-blend-shape-name"><span class="std std-ref">set_blend_shape_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-find-by-name"><span class="std std-ref">surface_find_by_name</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-get-array-index-len"><span class="std std-ref">surface_get_array_index_len</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-get-array-len"><span class="std std-ref">surface_get_array_len</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-get-format"><span class="std std-ref">surface_get_format</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-get-name"><span class="std std-ref">surface_get_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-get-primitive-type"><span class="std std-ref">surface_get_primitive_type</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-remove"><span class="std std-ref">surface_remove</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-set-name"><span class="std std-ref">surface_set_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-arraymesh-method-surface-update-region"><span class="std std-ref">surface_update_region</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> offset, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-arraymesh-constant-array-max"><span id="class-arraymesh-constant-array-index"></span><span id="class-arraymesh-constant-array-weights"></span><span id="class-arraymesh-constant-array-bones"></span><span id="class-arraymesh-constant-array-tex-uv2"></span><span id="class-arraymesh-constant-array-tex-uv"></span><span id="class-arraymesh-constant-array-color"></span><span id="class-arraymesh-constant-array-tangent"></span><span id="class-arraymesh-constant-array-normal"></span><span id="class-arraymesh-constant-array-vertex"></span><span id="enum-arraymesh-arraytype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ArrayType"></a>ArrayType</strong>:</p>
+<ul class="simple">
+<li><p><strong>ARRAY_VERTEX</strong> = <strong>0</strong> --- <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a>, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a>, or <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of vertex positions.</p></li>
+<li><p><strong>ARRAY_NORMAL</strong> = <strong>1</strong> --- <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> of vertex normals.</p></li>
+<li><p><strong>ARRAY_TANGENT</strong> = <strong>2</strong> --- <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> of vertex tangents. Each element in groups of 4 floats, first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.</p></li>
+<li><p><strong>ARRAY_COLOR</strong> = <strong>3</strong> --- <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> of vertex colors.</p></li>
+<li><p><strong>ARRAY_TEX_UV</strong> = <strong>4</strong> --- <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> for UV coordinates.</p></li>
+<li><p><strong>ARRAY_TEX_UV2</strong> = <strong>5</strong> --- <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> for second UV coordinates.</p></li>
+<li><p><strong>ARRAY_BONES</strong> = <strong>6</strong> --- <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> or <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> of bone indices. Each element in groups of 4 floats.</p></li>
+<li><p><strong>ARRAY_WEIGHTS</strong> = <strong>7</strong> --- <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> of bone weights. Each element in groups of 4 floats.</p></li>
+<li><p><strong>ARRAY_INDEX</strong> = <strong>8</strong> --- <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> of integers used as indices referencing vertices, colors, normals, tangents, and textures. All of those arrays must have the same number of elements as the vertex array. No index can be beyond the vertex array size. When this index array is present, it puts the function into "index mode," where the index selects the *i*'th vertex, normal, tangent, color, UV, etc. This means if you want to have different normals or colors along an edge, you have to duplicate the vertices.</p></li>
+</ul>
+<p>For triangles, the index array is interpreted as triples, referring to the vertices of each triangle. For lines, the index array is in pairs indicating the start and end of each line.</p>
+<ul class="simple">
+<li><p><strong>ARRAY_MAX</strong> = <strong>9</strong> --- Represents the size of the <a class="reference internal" href="#enum-arraymesh-arraytype"><span class="std std-ref">ArrayType</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-arraymesh-constant-array-format-index"><span id="class-arraymesh-constant-array-format-weights"></span><span id="class-arraymesh-constant-array-format-bones"></span><span id="class-arraymesh-constant-array-format-tex-uv2"></span><span id="class-arraymesh-constant-array-format-tex-uv"></span><span id="class-arraymesh-constant-array-format-color"></span><span id="class-arraymesh-constant-array-format-tangent"></span><span id="class-arraymesh-constant-array-format-normal"></span><span id="class-arraymesh-constant-array-format-vertex"></span><span id="enum-arraymesh-arrayformat"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ArrayFormat"></a>ArrayFormat</strong>:</p>
+<ul class="simple">
+<li><p><strong>ARRAY_FORMAT_VERTEX</strong> = <strong>1</strong> --- Array format will include vertices (mandatory).</p></li>
+<li><p><strong>ARRAY_FORMAT_NORMAL</strong> = <strong>2</strong> --- Array format will include normals.</p></li>
+<li><p><strong>ARRAY_FORMAT_TANGENT</strong> = <strong>4</strong> --- Array format will include tangents.</p></li>
+<li><p><strong>ARRAY_FORMAT_COLOR</strong> = <strong>8</strong> --- Array format will include a color array.</p></li>
+<li><p><strong>ARRAY_FORMAT_TEX_UV</strong> = <strong>16</strong> --- Array format will include UVs.</p></li>
+<li><p><strong>ARRAY_FORMAT_TEX_UV2</strong> = <strong>32</strong> --- Array format will include another set of UVs.</p></li>
+<li><p><strong>ARRAY_FORMAT_BONES</strong> = <strong>64</strong> --- Array format will include bone indices.</p></li>
+<li><p><strong>ARRAY_FORMAT_WEIGHTS</strong> = <strong>128</strong> --- Array format will include bone weights.</p></li>
+<li><p><strong>ARRAY_FORMAT_INDEX</strong> = <strong>256</strong> --- Index array will be used.</p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-arraymesh-constant-no-index-array"></span><ul class="simple" id="class-arraymesh-constant-array-weights-size">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NO_INDEX_ARRAY"></a>NO_INDEX_ARRAY</strong> = <strong>-1</strong> --- Default value used for index_array_len when no indices are present.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/ARRAY_WEIGHTS_SIZE"></a>ARRAY_WEIGHTS_SIZE</strong> = <strong>4</strong> --- Amount of weights/bone indices per vertex (always 4).</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-arraymesh-property-blend-shape-mode">
+<li><p><a class="reference internal" href="class_mesh.html#enum-mesh-blendshapemode"><span class="std std-ref">BlendShapeMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/blend_shape_mode"></a>blend_shape_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_blend_shape_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_blend_shape_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the blend shape mode to one of <a class="reference internal" href="class_mesh.html#enum-mesh-blendshapemode"><span class="std std-ref">BlendShapeMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-property-custom-aabb">
+<li><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/custom_aabb"></a>custom_aabb</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AABB(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_custom_aabb(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_custom_aabb()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Overrides the <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-arraymesh-method-add-blend-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_blend_shape"></a>add_blend_shape</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Adds name for a blend shape that will be added with <a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a>. Must be called before surface is added.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-add-surface-from-arrays">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_surface_from_arrays"></a>add_surface_from_arrays</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a> primitive, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> arrays, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> blend_shapes=[  ], <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> compress_flags=2194432 <strong>)</strong></p></li>
+</ul>
+<p>Creates a new surface.</p>
+<p>Surfaces are created to be rendered using a <code class="docutils literal notranslate"><span class="pre">primitive</span></code>, which may be any of the types defined in <a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a>. (As a note, when using indices, it is recommended to only use points, lines, or triangles.) <a class="reference internal" href="class_mesh.html#class-mesh-method-get-surface-count"><span class="std std-ref">Mesh.get_surface_count</span></a> will become the <code class="docutils literal notranslate"><span class="pre">surf_idx</span></code> for this new surface.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">arrays</span></code> argument is an array of arrays. See <a class="reference internal" href="#enum-arraymesh-arraytype"><span class="std std-ref">ArrayType</span></a> for the values used in this array. For example, <code class="docutils literal notranslate"><span class="pre">arrays[0]</span></code> is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for <a class="reference internal" href="#class-arraymesh-constant-array-index"><span class="std std-ref">ARRAY_INDEX</span></a> if it is used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-clear-blend-shapes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_blend_shapes"></a>clear_blend_shapes</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all blend shapes from this <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-clear-surfaces">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_surfaces"></a>clear_surfaces</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all surfaces from this <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-get-blend-shape-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_blend_shape_count"></a>get_blend_shape_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of blend shapes that the <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code> holds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-get-blend-shape-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_blend_shape_name"></a>get_blend_shape_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the blend shape at this index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-lightmap-unwrap">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/lightmap_unwrap"></a>lightmap_unwrap</strong> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> texel_size <strong>)</strong></p></li>
+</ul>
+<p>Will perform a UV unwrap on the <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code> to prepare the mesh for lightmapping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-regen-normalmaps">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/regen_normalmaps"></a>regen_normalmaps</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Will regenerate normal maps for the <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-set-blend-shape-name">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_blend_shape_name"></a>set_blend_shape_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-find-by-name">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_find_by_name"></a>surface_find_by_name</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the index of the first surface with this name held within this <code class="docutils literal notranslate"><span class="pre">ArrayMesh</span></code>. If none are found, -1 is returned.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-get-array-index-len">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_array_index_len"></a>surface_get_array_index_len</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the length in indices of the index array in the requested surface (see <a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-get-array-len">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_array_len"></a>surface_get_array_len</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the length in vertices of the vertex array in the requested surface (see <a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-get-format">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_format"></a>surface_get_format</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the format mask of the requested surface (see <a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-get-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_name"></a>surface_get_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the name assigned to this surface.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-get-primitive-type">
+<li><p><a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_primitive_type"></a>surface_get_primitive_type</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the primitive type of the requested surface (see <a class="reference internal" href="#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">add_surface_from_arrays</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-remove">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_remove"></a>surface_remove</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong></p></li>
+</ul>
+<p>Removes a surface at position <code class="docutils literal notranslate"><span class="pre">surf_idx</span></code>, shifting greater surfaces one <code class="docutils literal notranslate"><span class="pre">surf_idx</span></code> slot down.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-set-name">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_set_name"></a>surface_set_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets a name for a given surface.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-arraymesh-method-surface-update-region">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_update_region"></a>surface_update_region</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> offset, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Updates a specified region of mesh arrays on the GPU.</p>
+<p><strong>Warning:</strong> Only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_array.html" rel="prev" title="Array"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_arvranchor.html" rel="next" title="ARVRAnchor">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

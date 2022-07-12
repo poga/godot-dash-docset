@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="RandomNumberGenerator" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_randomnumbergenerator.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object A class for generating pseudo-random numbers. Description: RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses PCG32. Note: The unde..." property="og:description"/>
+<meta content="A class for generating pseudo-random numbers. RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses PCG32. Note: The underlying algorithm is an implementation detail. As a result, it..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) RandomNumberGenerator — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_randomnumbergenerator.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_randomnumbergenerator.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_randomnumbergenerator.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_randomnumbergenerator.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_randomnumbergenerator.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_randomnumbergenerator.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_randomnumbergenerator.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_randomnumbergenerator.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_randomnumbergenerator.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_randomnumbergenerator.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_randomnumbergenerator.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_randomnumbergenerator.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_randomnumbergenerator.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_randomnumbergenerator.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_randomnumbergenerator.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_randomnumbergenerator.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_range.html" rel="next" title="Range"/>
+<link href="class_quat.html" rel="prev" title="Quat"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>RandomNumberGenerator</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="randomnumbergenerator">
+<span id="class-randomnumbergenerator"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/RandomNumberGenerator¶"></a>RandomNumberGenerator<a class="headerlink" href="#randomnumbergenerator" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A class for generating pseudo-random numbers.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses <a class="reference external" href="http://www.pcg-random.org/">PCG32</a>.</p>
+<p><strong>Note:</strong> The underlying algorithm is an implementation detail. As a result, it should not be depended upon for reproducible random streams across Godot versions.</p>
+<p>To generate a random float number (within a given range) based on a time-dependant seed:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">rng</span> <span class="o">=</span> <span class="n">RandomNumberGenerator</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="n">rng</span><span class="o">.</span><span class="n">randomize</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">my_random_number</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randf_range</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> The default values of <a class="reference internal" href="#class-randomnumbergenerator-property-seed"><span class="std std-ref">seed</span></a> and <a class="reference internal" href="#class-randomnumbergenerator-property-state"><span class="std std-ref">state</span></a> properties are pseudo-random, and changes when calling <a class="reference internal" href="#class-randomnumbergenerator-method-randomize"><span class="std std-ref">randomize</span></a>. The <code class="docutils literal notranslate"><span class="pre">0</span></code> value documented here is a placeholder, and not the actual default seed.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/math/random_number_generation.html"><span class="doc">Random number generation</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 66%"/>
+<col style="width: 8%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-property-seed"><span class="std std-ref">seed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-property-state"><span class="std std-ref">state</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randf"><span class="std std-ref">randf</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randf-range"><span class="std std-ref">randf_range</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randfn"><span class="std std-ref">randfn</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> mean=0.0, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deviation=1.0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randi"><span class="std std-ref">randi</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randi-range"><span class="std std-ref">randi_range</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-randomnumbergenerator-method-randomize"><span class="std std-ref">randomize</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-randomnumbergenerator-property-seed">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/seed"></a>seed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_seed(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_seed()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initializes the random number generator state based on the given seed value. A given seed will give a reproducible sequence of pseudo-random numbers.</p>
+<p><strong>Note:</strong> The RNG does not have an avalanche effect, and can output similar random streams given similar seeds. Consider using a hash function to improve your seed quality if they're sourced externally.</p>
+<p><strong>Note:</strong> Setting this property produces a side effect of changing the internal <a class="reference internal" href="#class-randomnumbergenerator-property-state"><span class="std std-ref">state</span></a>, so make sure to initialize the seed <em>before</em> modifying the <a class="reference internal" href="#class-randomnumbergenerator-property-state"><span class="std std-ref">state</span></a>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">rng</span> <span class="o">=</span> <span class="n">RandomNumberGenerator</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="s2">"Godot"</span><span class="p">)</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Restore to some previously saved state.</span>
+</pre></div>
+</div>
+<p><strong>Warning:</strong> the getter of this property returns the previous <a class="reference internal" href="#class-randomnumbergenerator-property-state"><span class="std std-ref">state</span></a>, and not the initial seed value, which is going to be fixed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-property-state">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/state"></a>state</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_state(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_state()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The current state of the random number generator. Save and restore this property to restore the generator to a previous state:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">rng</span> <span class="o">=</span> <span class="n">RandomNumberGenerator</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">randf</span><span class="p">())</span>
+<span class="k">var</span> <span class="n">saved_state</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">state</span> <span class="c1"># Store current state.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">randf</span><span class="p">())</span> <span class="c1"># Advance internal state.</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">saved_state</span> <span class="c1"># Restore the state.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">randf</span><span class="p">())</span> <span class="c1"># Prints the same value as in previous.</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Do not set state to arbitrary values, since the random number generator requires the state to have certain qualities to behave properly. It should only be set to values that came from the state property itself. To initialize the random number generator with arbitrary input, use <a class="reference internal" href="#class-randomnumbergenerator-property-seed"><span class="std std-ref">seed</span></a> instead.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-randomnumbergenerator-method-randf">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randf"></a>randf</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Generates a pseudo-random float between <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> (inclusive).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-method-randf-range">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randf_range"></a>randf_range</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Generates a pseudo-random float between <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> (inclusive).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-method-randfn">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randfn"></a>randfn</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> mean=0.0, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deviation=1.0 <strong>)</strong></p></li>
+</ul>
+<p>Generates a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">normally-distributed</a> pseudo-random number, using Box-Muller transform with the specified <code class="docutils literal notranslate"><span class="pre">mean</span></code> and a standard <code class="docutils literal notranslate"><span class="pre">deviation</span></code>. This is also called Gaussian distribution.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-method-randi">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randi"></a>randi</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Generates a pseudo-random 32-bit unsigned integer between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">4294967295</span></code> (inclusive).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-method-randi-range">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randi_range"></a>randi_range</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Generates a pseudo-random 32-bit signed integer between <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> (inclusive).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-randomnumbergenerator-method-randomize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/randomize"></a>randomize</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Setups a time-based seed to generator.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_quat.html" rel="prev" title="Quat"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_range.html" rel="next" title="Range">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

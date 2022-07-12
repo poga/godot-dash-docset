@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Navigation" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_navigation.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Mesh-based navigation and pathfinding node. Description: Provides navigation and pathfinding within a collection of NavigationMesh es. By default, these will be auto..." property="og:description"/>
+<meta content="Mesh-based navigation and pathfinding node. Provides navigation and pathfinding within a collection of NavigationMeshes. By default, these will be automatically collected from child NavigationMeshInstance nodes, but t..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Navigation — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_navigation.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_navigation.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_navigation.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_navigation.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_navigation.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_navigation.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_navigation.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_navigation.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_navigation.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_navigation.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_navigation.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_navigation.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_navigation.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_navigation.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_navigation2d.html" rel="next" title="Navigation2D"/>
+<link href="class_nativescript.html" rel="prev" title="NativeScript"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Navigation</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="navigation">
+<span id="class-navigation"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Navigation¶"></a>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Mesh-based navigation and pathfinding node.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Provides navigation and pathfinding within a collection of <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a>es. By default, these will be automatically collected from child <a class="reference internal" href="class_navigationmeshinstance.html#class-navigationmeshinstance"><span class="std std-ref">NavigationMeshInstance</span></a> nodes, but they can also be added on the fly with <a class="reference internal" href="#class-navigation-method-navmesh-add"><span class="std std-ref">navmesh_add</span></a>. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.</p>
+<p><strong>Note:</strong> The current navigation system has many known issues and will not always return optimal paths as expected. These issues will be fixed in Godot 4.0.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/124">3D Navmesh Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 50%"/>
+<col style="width: 22%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-property-up-vector"><span class="std std-ref">up_vector</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-get-closest-point"><span class="std std-ref">get_closest_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-get-closest-point-normal"><span class="std std-ref">get_closest_point_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-get-closest-point-owner"><span class="std std-ref">get_closest_point_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-get-closest-point-to-segment"><span class="std std-ref">get_closest_point_to_segment</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> start, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_collision=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-get-simple-path"><span class="std std-ref">get_simple_path</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> start, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> optimize=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-navmesh-add"><span class="std std-ref">navmesh_add</span></a> <strong>(</strong> <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> mesh, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> xform, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-navmesh-remove"><span class="std std-ref">navmesh_remove</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-navigation-method-navmesh-set-transform"><span class="std std-ref">navmesh_set_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> xform <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-navigation-property-up-vector">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/up_vector"></a>up_vector</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_up_vector(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_up_vector()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Defines which direction is up. By default, this is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">0)</span></code>, which is the world's "up" direction.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-navigation-method-get-closest-point">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point"></a>get_closest_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></li>
+</ul>
+<p>Returns the navigation point closest to the point given. Points are in local coordinate space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-get-closest-point-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point_normal"></a>get_closest_point_normal</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></li>
+</ul>
+<p>Returns the surface normal at the navigation point closest to the point given. Useful for rotating a navigation agent according to the navigation mesh it moves on.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-get-closest-point-owner">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point_owner"></a>get_closest_point_owner</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_point <strong>)</strong></p></li>
+</ul>
+<p>Returns the owner of the <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> which contains the navigation point closest to the point given. This is usually a <a class="reference internal" href="class_navigationmeshinstance.html#class-navigationmeshinstance"><span class="std std-ref">NavigationMeshInstance</span></a>. For meshes added via <a class="reference internal" href="#class-navigation-method-navmesh-add"><span class="std std-ref">navmesh_add</span></a>, returns the owner that was given (or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the <code class="docutils literal notranslate"><span class="pre">owner</span></code> parameter was omitted).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-get-closest-point-to-segment">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point_to_segment"></a>get_closest_point_to_segment</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> start, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_collision=false <strong>)</strong></p></li>
+</ul>
+<p>Returns the navigation point closest to the given line segment. When enabling <code class="docutils literal notranslate"><span class="pre">use_collision</span></code>, only considers intersection points between segment and navigation meshes. If multiple intersection points are found, the one closest to the segment start point is returned.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-get-simple-path">
+<li><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_simple_path"></a>get_simple_path</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> start, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> end, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> optimize=true <strong>)</strong></p></li>
+</ul>
+<p>Returns the path between two given points. Points are in local coordinate space. If <code class="docutils literal notranslate"><span class="pre">optimize</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> (the default), the agent properties associated with each <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.</p>
+<p><strong>Note:</strong> This method has known issues and will often return non-optimal paths. These issues will be fixed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-navmesh-add">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navmesh_add"></a>navmesh_add</strong> <strong>(</strong> <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> mesh, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> xform, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner=null <strong>)</strong></p></li>
+</ul>
+<p>Adds a <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a>. Returns an ID for use with <a class="reference internal" href="#class-navigation-method-navmesh-remove"><span class="std std-ref">navmesh_remove</span></a> or <a class="reference internal" href="#class-navigation-method-navmesh-set-transform"><span class="std std-ref">navmesh_set_transform</span></a>. If given, a <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> is applied to the polygon. The optional <code class="docutils literal notranslate"><span class="pre">owner</span></code> is used as return value for <a class="reference internal" href="#class-navigation-method-get-closest-point-owner"><span class="std std-ref">get_closest_point_owner</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-navmesh-remove">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navmesh_remove"></a>navmesh_remove</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Removes the <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> with the given ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-navigation-method-navmesh-set-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/navmesh_set_transform"></a>navmesh_set_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> xform <strong>)</strong></p></li>
+</ul>
+<p>Sets the transform applied to the <a class="reference internal" href="class_navigationmesh.html#class-navigationmesh"><span class="std std-ref">NavigationMesh</span></a> with the given ID.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_nativescript.html" rel="prev" title="NativeScript"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_navigation2d.html" rel="next" title="Navigation2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="KinematicBody" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_kinematicbody.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: PhysicsBody&lt; CollisionObject&lt; Spatial&lt; Node&lt; Object Kinematic body 3D node. Description: Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not af..." property="og:description"/>
+<meta content="Kinematic body 3D node. Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) KinematicBody — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_kinematicbody.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_kinematicbody.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_kinematicbody.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_kinematicbody.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_kinematicbody.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_kinematicbody.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_kinematicbody.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_kinematicbody.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_kinematicbody.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_kinematicbody.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_kinematicbody.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_kinematicbody.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_kinematicbody.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_kinematicbody.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_kinematicbody.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_kinematicbody.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_kinematicbody2d.html" rel="next" title="KinematicBody2D"/>
+<link href="class_jsonrpc.html" rel="prev" title="JSONRPC"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>KinematicBody</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="kinematicbody">
+<span id="class-kinematicbody"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/KinematicBody¶"></a>KinematicBody<a class="headerlink" href="#kinematicbody" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_physicsbody.html#class-physicsbody"><span class="std std-ref">PhysicsBody</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_collisionobject.html#class-collisionobject"><span class="std std-ref">CollisionObject</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Kinematic body 3D node.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:</p>
+<p><strong>Simulated motion:</strong> When these bodies are moved manually, either from code or from an <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> (with <a class="reference internal" href="class_animationplayer.html#class-animationplayer-property-playback-process-mode"><span class="std std-ref">AnimationPlayer.playback_process_mode</span></a> set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).</p>
+<p><strong>Kinematic characters:</strong> KinematicBody also has an API for moving objects (the <a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a> and <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but don't require advanced physics.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/physics/kinematic_character_2d.html"><span class="doc">Kinematic character (2D)</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/126">3D Kinematic Character Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/125">3D Platformer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 69%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-x"><span class="std std-ref">axis_lock_motion_x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-y"><span class="std std-ref">axis_lock_motion_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-z"><span class="std std-ref">axis_lock_motion_z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-collision-safe-margin"><span class="std std-ref">collision/safe_margin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.001</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-motion-sync-to-physics"><span class="std std-ref">motion/sync_to_physics</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-move-lock-x"><span class="std std-ref">move_lock_x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-move-lock-y"><span class="std std-ref">move_lock_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-property-move-lock-z"><span class="std std-ref">move_lock_z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%"/>
+<col style="width: 89%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-axis-lock"><span class="std std-ref">get_axis_lock</span></a> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-floor-angle"><span class="std std-ref">get_floor_angle</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 1, 0 ) <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-floor-normal"><span class="std std-ref">get_floor_normal</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-floor-velocity"><span class="std std-ref">get_floor_velocity</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-last-slide-collision"><span class="std std-ref">get_last_slide_collision</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-slide-collision"><span class="std std-ref">get_slide_collision</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> slide_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-get-slide-count"><span class="std std-ref">get_slide_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-is-on-ceiling"><span class="std std-ref">is_on_ceiling</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-is-on-floor"><span class="std std-ref">is_on_floor</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-is-on-wall"><span class="std std-ref">is_on_wall</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> rel_vec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exclude_raycast_shapes=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> test_only=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> linear_velocity, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> stop_on_slope=false, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_slides=4, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> floor_max_angle=0.785398, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> linear_velocity, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> snap, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> stop_on_slope=false, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_slides=4, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> floor_max_angle=0.785398, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-set-axis-lock"><span class="std std-ref">set_axis_lock</span></a> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-kinematicbody-method-test-move"><span class="std std-ref">test_move</span></a> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> rel_vec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-kinematicbody-property-axis-lock-motion-x">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_motion_x"></a>axis_lock_motion_x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's X axis movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-axis-lock-motion-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_motion_y"></a>axis_lock_motion_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's Y axis movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-axis-lock-motion-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_lock_motion_z"></a>axis_lock_motion_z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's Z axis movement.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-collision-safe-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision/safe_margin"></a>collision/safe_margin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.001</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_safe_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_safe_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Extra margin used for collision recovery in motion functions (see <a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a>, <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a>, <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>).</p>
+<p>If the body is at least this close to another body, it will consider them to be colliding and will be pushed away before performing the actual motion.</p>
+<p>A higher value means it's more flexible for detecting collision, which helps with consistently detecting walls and floors.</p>
+<p>A lower value forces the collision algorithm to use more exact detection, so it can be used in cases that specifically require precision, e.g at very low scale to avoid visible jittering, or for stability with a stack of kinematic bodies.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-motion-sync-to-physics">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/motion/sync_to_physics"></a>motion/sync_to_physics</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sync_to_physics(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_sync_to_physics_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the body's movement will be synchronized to the physics frame. This is useful when animating movement via <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a>, for example on moving platforms. Do <strong>not</strong> use together with <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a> functions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-move-lock-x">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/move_lock_x"></a>move_lock_x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's X axis movement. Deprecated alias for <a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-x"><span class="std std-ref">axis_lock_motion_x</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-move-lock-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/move_lock_y"></a>move_lock_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's Y axis movement. Deprecated alias for <a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-y"><span class="std std-ref">axis_lock_motion_y</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-property-move-lock-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/move_lock_z"></a>move_lock_z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_axis_lock(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_axis_lock()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lock the body's Z axis movement. Deprecated alias for <a class="reference internal" href="#class-kinematicbody-property-axis-lock-motion-z"><span class="std std-ref">axis_lock_motion_z</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-kinematicbody-method-get-axis-lock">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_axis_lock"></a>get_axis_lock</strong> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified <code class="docutils literal notranslate"><span class="pre">axis</span></code> is locked. See also <a class="reference internal" href="#class-kinematicbody-property-move-lock-x"><span class="std std-ref">move_lock_x</span></a>, <a class="reference internal" href="#class-kinematicbody-property-move-lock-y"><span class="std std-ref">move_lock_y</span></a> and <a class="reference internal" href="#class-kinematicbody-property-move-lock-z"><span class="std std-ref">move_lock_z</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-floor-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_floor_angle"></a>get_floor_angle</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 1, 0 ) <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the floor's collision angle at the last collision point according to <code class="docutils literal notranslate"><span class="pre">up_direction</span></code>, which is <code class="docutils literal notranslate"><span class="pre">Vector3.UP</span></code> by default. This value is always positive and only valid after calling <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> and when <a class="reference internal" href="#class-kinematicbody-method-is-on-floor"><span class="std std-ref">is_on_floor</span></a> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-floor-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_floor_normal"></a>get_floor_normal</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the surface normal of the floor at the last collision point. Only valid after calling <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a> and when <a class="reference internal" href="#class-kinematicbody-method-is-on-floor"><span class="std std-ref">is_on_floor</span></a> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-floor-velocity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_floor_velocity"></a>get_floor_velocity</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the linear velocity of the floor at the last collision point. Only valid after calling <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a> and when <a class="reference internal" href="#class-kinematicbody-method-is-on-floor"><span class="std std-ref">is_on_floor</span></a> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-last-slide-collision">
+<li><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_last_slide_collision"></a>get_last_slide_collision</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a>, which contains information about the latest collision that occurred during the last call to <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-slide-collision">
+<li><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slide_collision"></a>get_slide_collision</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> slide_idx <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a>, which contains information about a collision that occurred during the last call to <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>. Since the body can collide several times in a single call to <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a>, you must specify the index of the collision in the range 0 to (<a class="reference internal" href="#class-kinematicbody-method-get-slide-count"><span class="std std-ref">get_slide_count</span></a> - 1).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-get-slide-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slide_count"></a>get_slide_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of times the body collided and changed direction during the last call to <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-is-on-ceiling">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_on_ceiling"></a>is_on_ceiling</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the body collided with the ceiling on the last call of <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>. Otherwise, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-is-on-floor">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_on_floor"></a>is_on_floor</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the body collided with the floor on the last call of <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>. Otherwise, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-is-on-wall">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_on_wall"></a>is_on_wall</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the body collided with a wall on the last call of <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> or <a class="reference internal" href="#class-kinematicbody-method-move-and-slide-with-snap"><span class="std std-ref">move_and_slide_with_snap</span></a>. Otherwise, returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-move-and-collide">
+<li><p><a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_and_collide"></a>move_and_collide</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> rel_vec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exclude_raycast_shapes=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> test_only=false <strong>)</strong></p></li>
+</ul>
+<p>Moves the body along the vector <code class="docutils literal notranslate"><span class="pre">rel_vec</span></code>. The body will stop if it collides. Returns a <a class="reference internal" href="class_kinematiccollision.html#class-kinematiccollision"><span class="std std-ref">KinematicCollision</span></a>, which contains information about the collision when stopped, or when touching another body along the motion.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">test_only</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the body does not move but the would-be collision information is given.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-move-and-slide">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_and_slide"></a>move_and_slide</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> linear_velocity, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> stop_on_slope=false, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_slides=4, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> floor_max_angle=0.785398, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></li>
+</ul>
+<p>Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a <code class="docutils literal notranslate"><span class="pre">KinematicBody</span></code> or <a class="reference internal" href="class_rigidbody.html#class-rigidbody"><span class="std std-ref">RigidBody</span></a>, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.</p>
+<p>This method should be used in <a class="reference internal" href="class_node.html#class-node-method-physics-process"><span class="std std-ref">Node._physics_process</span></a> (or in a method called by <a class="reference internal" href="class_node.html#class-node-method-physics-process"><span class="std std-ref">Node._physics_process</span></a>), as it uses the physics step's <code class="docutils literal notranslate"><span class="pre">delta</span></code> value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">linear_velocity</span></code> is the velocity vector (typically meters per second). Unlike in <a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a>, you should <em>not</em> multiply it by <code class="docutils literal notranslate"><span class="pre">delta</span></code> — the physics engine handles applying the velocity.</p>
+<p><code class="docutils literal notranslate"><span class="pre">up_direction</span></code> is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of <code class="docutils literal notranslate"><span class="pre">Vector3(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, everything is considered a wall.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">stop_on_slope</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, body will not slide on slopes when you include gravity in <code class="docutils literal notranslate"><span class="pre">linear_velocity</span></code> and the body is standing still.</p>
+<p>If the body collides, it will change direction a maximum of <code class="docutils literal notranslate"><span class="pre">max_slides</span></code> times before it stops.</p>
+<p><code class="docutils literal notranslate"><span class="pre">floor_max_angle</span></code> is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">infinite_inertia</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, body will be able to push <a class="reference internal" href="class_rigidbody.html#class-rigidbody"><span class="std std-ref">RigidBody</span></a> nodes, but it won't also detect any collisions with them. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, it will interact with <a class="reference internal" href="class_rigidbody.html#class-rigidbody"><span class="std std-ref">RigidBody</span></a> nodes like with <a class="reference internal" href="class_staticbody.html#class-staticbody"><span class="std std-ref">StaticBody</span></a>.</p>
+<p>Returns the <code class="docutils literal notranslate"><span class="pre">linear_velocity</span></code> vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use <a class="reference internal" href="#class-kinematicbody-method-get-slide-collision"><span class="std std-ref">get_slide_collision</span></a>.</p>
+<p>When the body touches a moving platform, the platform's velocity is automatically added to the body motion. If a collision occurs due to the platform's motion, it will always be first in the slide collisions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-move-and-slide-with-snap">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_and_slide_with_snap"></a>move_and_slide_with_snap</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> linear_velocity, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> snap, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> up_direction=Vector3( 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> stop_on_slope=false, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_slides=4, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> floor_max_angle=0.785398, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></li>
+</ul>
+<p>Moves the body while keeping it attached to slopes. Similar to <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a>.</p>
+<p>As long as the <code class="docutils literal notranslate"><span class="pre">snap</span></code> vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting <code class="docutils literal notranslate"><span class="pre">snap</span></code> to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> or by using <a class="reference internal" href="#class-kinematicbody-method-move-and-slide"><span class="std std-ref">move_and_slide</span></a> instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-set-axis-lock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_axis_lock"></a>set_axis_lock</strong> <strong>(</strong> <a class="reference internal" href="class_physicsserver.html#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></li>
+</ul>
+<p>Locks or unlocks the specified <code class="docutils literal notranslate"><span class="pre">axis</span></code> depending on the value of <code class="docutils literal notranslate"><span class="pre">lock</span></code>. See also <a class="reference internal" href="#class-kinematicbody-property-move-lock-x"><span class="std std-ref">move_lock_x</span></a>, <a class="reference internal" href="#class-kinematicbody-property-move-lock-y"><span class="std std-ref">move_lock_y</span></a> and <a class="reference internal" href="#class-kinematicbody-property-move-lock-z"><span class="std std-ref">move_lock_z</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-kinematicbody-method-test-move">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/test_move"></a>test_move</strong> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> rel_vec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia=true <strong>)</strong></p></li>
+</ul>
+<p>Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a>, then tries to move the body along the vector <code class="docutils literal notranslate"><span class="pre">rel_vec</span></code>. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a collision would stop the body from moving along the whole path.</p>
+<p>Use <a class="reference internal" href="#class-kinematicbody-method-move-and-collide"><span class="std std-ref">move_and_collide</span></a> instead for detecting collision with touching bodies.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_jsonrpc.html" rel="prev" title="JSONRPC"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_kinematicbody2d.html" rel="next" title="KinematicBody2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

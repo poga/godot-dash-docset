@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Line2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_line2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object A 2D line. Description: A line through several points in 2D space. Supports varying width and color over the line's length, texturing, and several cap/joi..." property="og:description"/>
+<meta content="A 2D line. A line through several points in 2D space. Supports varying width and color over the line's length, texturing, and several cap/joint types. Note: By default, Godot can only draw up to 4,096 polygon points a..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Line2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_line2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_line2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_line2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_line2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_line2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_line2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_line2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_line2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_line2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_line2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_line2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_line2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_line2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_line2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_line2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_line2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_lineedit.html" rel="next" title="LineEdit"/>
+<link href="class_lightoccluder2d.html" rel="prev" title="LightOccluder2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Line2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="line2d">
+<span id="class-line2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Line2D¶"></a>Line2D<a class="headerlink" href="#line2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A 2D line.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A line through several points in 2D space. Supports varying width and color over the line's length, texturing, and several cap/joint types.</p>
+<p><strong>Note:</strong> By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-limits-buffers-canvas-polygon-buffer-size-kb"><span class="std std-ref">ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb</span></a> and <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-limits-buffers-canvas-polygon-index-buffer-size-kb"><span class="std std-ref">ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/584">Matrix Transform Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/583">2.5D Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 43%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-antialiased"><span class="std std-ref">antialiased</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-begin-cap-mode"><span class="std std-ref">begin_cap_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-default-color"><span class="std std-ref">default_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.4,</span> <span class="pre">0.5,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-end-cap-mode"><span class="std std-ref">end_cap_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_gradient.html#class-gradient"><span class="std std-ref">Gradient</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-gradient"><span class="std std-ref">gradient</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-line2d-linejointmode"><span class="std std-ref">LineJointMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-joint-mode"><span class="std std-ref">joint_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-points"><span class="std std-ref">points</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span>  <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-round-precision"><span class="std std-ref">round_precision</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-sharp-limit"><span class="std std-ref">sharp_limit</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-texture"><span class="std std-ref">texture</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-line2d-linetexturemode"><span class="std std-ref">LineTextureMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-texture-mode"><span class="std std-ref">texture_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-width"><span class="std std-ref">width</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_curve.html#class-curve"><span class="std std-ref">Curve</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-property-width-curve"><span class="std std-ref">width_curve</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-add-point"><span class="std std-ref">add_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-clear-points"><span class="std std-ref">clear_points</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-get-point-count"><span class="std std-ref">get_point_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-get-point-position"><span class="std std-ref">get_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-remove-point"><span class="std std-ref">remove_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-line2d-method-set-point-position"><span class="std std-ref">set_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-line2d-constant-line-joint-round"><span id="class-line2d-constant-line-joint-bevel"></span><span id="class-line2d-constant-line-joint-sharp"></span><span id="enum-line2d-linejointmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/LineJointMode"></a>LineJointMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>LINE_JOINT_SHARP</strong> = <strong>0</strong> --- The line's joints will be pointy. If <code class="docutils literal notranslate"><span class="pre">sharp_limit</span></code> is greater than the rotation of a joint, it becomes a bevel joint instead.</p></li>
+<li><p><strong>LINE_JOINT_BEVEL</strong> = <strong>1</strong> --- The line's joints will be bevelled/chamfered.</p></li>
+<li><p><strong>LINE_JOINT_ROUND</strong> = <strong>2</strong> --- The line's joints will be rounded.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-line2d-constant-line-cap-round"><span id="class-line2d-constant-line-cap-box"></span><span id="class-line2d-constant-line-cap-none"></span><span id="enum-line2d-linecapmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/LineCapMode"></a>LineCapMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>LINE_CAP_NONE</strong> = <strong>0</strong> --- Don't draw a line cap.</p></li>
+<li><p><strong>LINE_CAP_BOX</strong> = <strong>1</strong> --- Draws the line cap as a box.</p></li>
+<li><p><strong>LINE_CAP_ROUND</strong> = <strong>2</strong> --- Draws the line cap as a circle.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-line2d-constant-line-texture-stretch"><span id="class-line2d-constant-line-texture-tile"></span><span id="class-line2d-constant-line-texture-none"></span><span id="enum-line2d-linetexturemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/LineTextureMode"></a>LineTextureMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>LINE_TEXTURE_NONE</strong> = <strong>0</strong> --- Takes the left pixels of the texture and renders it over the whole line.</p></li>
+<li><p><strong>LINE_TEXTURE_TILE</strong> = <strong>1</strong> --- Tiles the texture over the line. The texture must be imported with <strong>Repeat</strong> enabled for it to work properly.</p></li>
+<li><p><strong>LINE_TEXTURE_STRETCH</strong> = <strong>2</strong> --- Stretches the texture across the line. Import the texture with <strong>Repeat</strong> disabled for best results.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-line2d-property-antialiased">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/antialiased"></a>antialiased</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_antialiased(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_antialiased()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the line's border will attempt to perform antialiasing by drawing thin OpenGL smooth lines on the line's edges.</p>
+<p><strong>Note:</strong> Line2D is not accelerated by batching if <a class="reference internal" href="#class-line2d-property-antialiased"><span class="std std-ref">antialiased</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><strong>Note:</strong> Due to how it works, built-in antialiasing will not look correct for translucent lines and may not work on certain platforms. As a workaround, install the <a class="reference external" href="https://github.com/godot-extended-libraries/godot-antialiased-line2d">Antialiased Line2D</a> add-on then create an AntialiasedLine2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-begin-cap-mode">
+<li><p><a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/begin_cap_mode"></a>begin_cap_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_begin_cap_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_begin_cap_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Controls the style of the line's first point. Use <a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-default-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/default_color"></a>default_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.4,</span> <span class="pre">0.5,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_default_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_default_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The line's color. Will not be used if a gradient is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-end-cap-mode">
+<li><p><a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/end_cap_mode"></a>end_cap_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_end_cap_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_end_cap_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Controls the style of the line's last point. Use <a class="reference internal" href="#enum-line2d-linecapmode"><span class="std std-ref">LineCapMode</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-gradient">
+<li><p><a class="reference internal" href="class_gradient.html#class-gradient"><span class="std std-ref">Gradient</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gradient"></a>gradient</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_gradient(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_gradient()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-joint-mode">
+<li><p><a class="reference internal" href="#enum-line2d-linejointmode"><span class="std std-ref">LineJointMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/joint_mode"></a>joint_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_joint_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_joint_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The style for the points between the start and the end.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-points">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/points"></a>points</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span>  <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_points(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_points()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The points that form the lines. The line is drawn between every point set in this array. Points are interpreted as local vectors.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-round-precision">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/round_precision"></a>round_precision</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_round_precision(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_round_precision()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-sharp-limit">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/sharp_limit"></a>sharp_limit</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sharp_limit(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sharp_limit()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The direction difference in radians between vector points. This value is only used if <code class="docutils literal notranslate"><span class="pre">joint</span> <span class="pre">mode</span></code> is set to <a class="reference internal" href="#class-line2d-constant-line-joint-sharp"><span class="std std-ref">LINE_JOINT_SHARP</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture"></a>texture</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The texture used for the line's texture. Uses <code class="docutils literal notranslate"><span class="pre">texture_mode</span></code> for drawing style.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-texture-mode">
+<li><p><a class="reference internal" href="#enum-line2d-linetexturemode"><span class="std std-ref">LineTextureMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture_mode"></a>texture_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_texture_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_texture_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The style to render the <code class="docutils literal notranslate"><span class="pre">texture</span></code> on the line. Use <a class="reference internal" href="#enum-line2d-linetexturemode"><span class="std std-ref">LineTextureMode</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-width">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/width"></a>width</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_width(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_width()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The line's width.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-property-width-curve">
+<li><p><a class="reference internal" href="class_curve.html#class-curve"><span class="std std-ref">Curve</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/width_curve"></a>width_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 64%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_curve(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_curve()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The line's width varies with the curve. The original width is simply multiply by the value of the Curve.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-line2d-method-add-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_point"></a>add_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at_position=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds a point at the <code class="docutils literal notranslate"><span class="pre">position</span></code>. Appends the point at the end of the line.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">at_position</span></code> is given, the point is inserted before the point number <code class="docutils literal notranslate"><span class="pre">at_position</span></code>, moving that point (and every point after) after the inserted point. If <code class="docutils literal notranslate"><span class="pre">at_position</span></code> is not given, or is an illegal value (<code class="docutils literal notranslate"><span class="pre">at_position</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">at_position</span> <span class="pre">&gt;=</span> <span class="pre">[method</span> <span class="pre">get_point_count]</span></code>), the point will be appended at the end of the point list.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-method-clear-points">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_points"></a>clear_points</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all points from the line.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-method-get-point-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_count"></a>get_point_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the Line2D's amount of points.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-method-get-point-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_position"></a>get_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns point <code class="docutils literal notranslate"><span class="pre">i</span></code>'s position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-method-remove-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_point"></a>remove_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i <strong>)</strong></p></li>
+</ul>
+<p>Removes the point at index <code class="docutils literal notranslate"><span class="pre">i</span></code> from the line.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-line2d-method-set-point-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_position"></a>set_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> i, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Overwrites the position in point <code class="docutils literal notranslate"><span class="pre">i</span></code> with the supplied <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_lightoccluder2d.html" rel="prev" title="LightOccluder2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_lineedit.html" rel="next" title="LineEdit">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

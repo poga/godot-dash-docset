@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Button" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_button.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: BaseButton&lt; Control&lt; CanvasItem&lt; Node&lt; Object Inherited By: CheckBox, CheckButton, ColorPickerButton, MenuButton, OptionButton, ToolButton Standard themed Button. Description: Button is t..." property="og:description"/>
+<meta content="Standard themed Button. Button is the standard themed button. It can contain text and an icon, and will display them according to the current Theme. Example of creating a button and assigning an action when pressed by..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Button — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_button.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_button.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_button.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_button.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_button.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_button.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_button.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_button.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_button.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_button.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_button.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_button.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_button.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_button.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_button.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_button.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_buttongroup.html" rel="next" title="ButtonGroup"/>
+<link href="class_boxshape.html" rel="prev" title="BoxShape"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Button</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="button">
+<span id="class-button"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Button¶"></a>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_basebutton.html#class-basebutton"><span class="std std-ref">BaseButton</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_checkbox.html#class-checkbox"><span class="std std-ref">CheckBox</span></a>, <a class="reference internal" href="class_checkbutton.html#class-checkbutton"><span class="std std-ref">CheckButton</span></a>, <a class="reference internal" href="class_colorpickerbutton.html#class-colorpickerbutton"><span class="std std-ref">ColorPickerButton</span></a>, <a class="reference internal" href="class_menubutton.html#class-menubutton"><span class="std std-ref">MenuButton</span></a>, <a class="reference internal" href="class_optionbutton.html#class-optionbutton"><span class="std std-ref">OptionButton</span></a>, <a class="reference internal" href="class_toolbutton.html#class-toolbutton"><span class="std std-ref">ToolButton</span></a></p>
+<p>Standard themed Button.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Button is the standard themed button. It can contain text and an icon, and will display them according to the current <a class="reference internal" href="class_theme.html#class-theme"><span class="std std-ref">Theme</span></a>.</p>
+<p><strong>Example of creating a button and assigning an action when pressed by code:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">"Click me"</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"pressed"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_button_pressed"</span><span class="p">)</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_button_pressed</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.</p>
+<p>See also <a class="reference internal" href="class_basebutton.html#class-basebutton"><span class="std std-ref">BaseButton</span></a> which contains common properties and methods associated with this node.</p>
+<p><strong>Note:</strong> Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use <a class="reference internal" href="class_touchscreenbutton.html#class-touchscreenbutton"><span class="std std-ref">TouchScreenButton</span></a> for buttons that trigger gameplay movement or actions, as <a class="reference internal" href="class_touchscreenbutton.html#class-touchscreenbutton"><span class="std std-ref">TouchScreenButton</span></a> supports multitouch.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/515">2D Dodge The Creeps Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/677">OS Test Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 51%"/>
+<col style="width: 10%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-button-textalign"><span class="std std-ref">TextAlign</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-align"><span class="std std-ref">align</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-clip-text"><span class="std std-ref">clip_text</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-expand-icon"><span class="std std-ref">expand_icon</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-flat"><span class="std std-ref">flat</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-icon"><span class="std std-ref">icon</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-property-text"><span class="std std-ref">text</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="theme-properties">
+<h2>Theme Properties<a class="headerlink" href="#theme-properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 52%"/>
+<col style="width: 24%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-color-font-color"><span class="std std-ref">font_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-color-font-color-disabled"><span class="std std-ref">font_color_disabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.2</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-color-font-color-focus"><span class="std std-ref">font_color_focus</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-color-font-color-hover"><span class="std std-ref">font_color_hover</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-color-font-color-pressed"><span class="std std-ref">font_color_pressed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-constant-hseparation"><span class="std std-ref">hseparation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-font-font"><span class="std std-ref">font</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-style-disabled"><span class="std std-ref">disabled</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-style-focus"><span class="std std-ref">focus</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-style-hover"><span class="std std-ref">hover</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-style-normal"><span class="std std-ref">normal</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-button-theme-style-pressed"><span class="std std-ref">pressed</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-button-constant-align-right"><span id="class-button-constant-align-center"></span><span id="class-button-constant-align-left"></span><span id="enum-button-textalign"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TextAlign"></a>TextAlign</strong>:</p>
+<ul class="simple">
+<li><p><strong>ALIGN_LEFT</strong> = <strong>0</strong> --- Align the text to the left.</p></li>
+<li><p><strong>ALIGN_CENTER</strong> = <strong>1</strong> --- Align the text to the center.</p></li>
+<li><p><strong>ALIGN_RIGHT</strong> = <strong>2</strong> --- Align the text to the right.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-button-property-align">
+<li><p><a class="reference internal" href="#enum-button-textalign"><span class="std std-ref">TextAlign</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/align"></a>align</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_text_align(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_text_align()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Text alignment policy for the button's text, use one of the <a class="reference internal" href="#enum-button-textalign"><span class="std std-ref">TextAlign</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-property-clip-text">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/clip_text"></a>clip_text</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_clip_text(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_clip_text()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-property-expand-icon">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/expand_icon"></a>expand_icon</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_expand_icon(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_expand_icon()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-property-flat">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flat"></a>flat</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flat(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_flat()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Flat buttons don't display decoration.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-property-icon">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/icon"></a>icon</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_button_icon(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_button_icon()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Button's icon, if text is present the icon will be placed before the text.</p>
+<p>To edit margin and spacing of the icon, use <code class="docutils literal notranslate"><span class="pre">hseparation</span></code> theme property of <code class="docutils literal notranslate"><span class="pre">Button</span></code> and <code class="docutils literal notranslate"><span class="pre">content_margin_*</span></code> properties of the used <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a>es.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-property-text">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/text"></a>text</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_text(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_text()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The button's text that will be displayed inside the button's area.</p>
+</section>
+<section id="theme-property-descriptions">
+<h2>Theme Property Descriptions<a class="headerlink" href="#theme-property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-button-theme-color-font-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Default text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the <code class="docutils literal notranslate"><span class="pre">Button</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-color-font-color-disabled">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_disabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.2</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-color-font-color-focus">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_focus</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-color-font-color-hover">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_hover</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is being hovered.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-color-font-color-pressed">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_pressed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is being pressed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-constant-hseparation">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>hseparation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The horizontal space between <code class="docutils literal notranslate"><span class="pre">Button</span></code>'s icon and text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-font-font">
+<li><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> <strong>font</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> of the <code class="docutils literal notranslate"><span class="pre">Button</span></code>'s text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-style-disabled">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>disabled</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-style-focus">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>focus</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is focused. It is displayed over the current <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a>, so using <a class="reference internal" href="class_styleboxempty.html#class-styleboxempty"><span class="std std-ref">StyleBoxEmpty</span></a> will just disable the focus visual effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-style-hover">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>hover</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is being hovered.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-style-normal">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>normal</strong></p></li>
+</ul>
+<p>Default <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> for the <code class="docutils literal notranslate"><span class="pre">Button</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-button-theme-style-pressed">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>pressed</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when the <code class="docutils literal notranslate"><span class="pre">Button</span></code> is being pressed.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_boxshape.html" rel="prev" title="BoxShape"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_buttongroup.html" rel="next" title="ButtonGroup">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

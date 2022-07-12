@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AnimationPlayer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_animationplayer.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Container and player of Animation resources. Description: An animation player is used for general-purpose playback of Animation resources. It contains a dictionary of animati..." property="og:description"/>
+<meta content="Container and player of Animation resources. An animation player is used for general-purpose playback of Animation resources. It contains a dictionary of animations (referenced by name) and custom blend times between..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AnimationPlayer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationplayer.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_animationplayer.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_animationplayer.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_animationplayer.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_animationplayer.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_animationplayer.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_animationplayer.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_animationplayer.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_animationplayer.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_animationplayer.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_animationplayer.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_animationplayer.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_animationplayer.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_animationplayer.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationplayer.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationplayer.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_animationrootnode.html" rel="next" title="AnimationRootNode"/>
+<link href="class_animationnodetransition.html" rel="prev" title="AnimationNodeTransition"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AnimationPlayer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="animationplayer">
+<span id="class-animationplayer"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AnimationPlayer¶"></a>AnimationPlayer<a class="headerlink" href="#animationplayer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Container and player of <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> resources.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>An animation player is used for general-purpose playback of <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.</p>
+<p><code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> is more suited than <a class="reference internal" href="class_tween.html#class-tween"><span class="std std-ref">Tween</span></a> for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an <code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> node thanks to the animation tools provided by the editor. That particular example can also be implemented with a <a class="reference internal" href="class_tween.html#class-tween"><span class="std std-ref">Tween</span></a> node, but it requires doing everything by code.</p>
+<p>Updating the target properties of animations occurs at process time.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/animation/index.html"><span class="doc">Animation</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/2d/2d_sprite_animation.html"><span class="doc">2D Sprite animation</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%"/>
+<col style="width: 49%"/>
+<col style="width: 10%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-assigned-animation"><span class="std std-ref">assigned_animation</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-autoplay"><span class="std std-ref">autoplay</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-current-animation"><span class="std std-ref">current_animation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-current-animation-length"><span class="std std-ref">current_animation_length</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-current-animation-position"><span class="std std-ref">current_animation_position</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-animationplayer-animationmethodcallmode"><span class="std std-ref">AnimationMethodCallMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-method-call-mode"><span class="std std-ref">method_call_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-playback-active"><span class="std std-ref">playback_active</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-playback-default-blend-time"><span class="std std-ref">playback_default_blend_time</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-animationplayer-animationprocessmode"><span class="std std-ref">AnimationProcessMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-playback-process-mode"><span class="std std-ref">playback_process_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-playback-speed"><span class="std std-ref">playback_speed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-reset-on-save"><span class="std std-ref">reset_on_save</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-property-root-node"><span class="std std-ref">root_node</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("..")</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-add-animation"><span class="std std-ref">add_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-advance"><span class="std std-ref">advance</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-animation-get-next"><span class="std std-ref">animation_get_next</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-animation-set-next"><span class="std std-ref">animation_set_next</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-clear-caches"><span class="std std-ref">clear_caches</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-clear-queue"><span class="std std-ref">clear_queue</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-find-animation"><span class="std std-ref">find_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-get-animation"><span class="std std-ref">get_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-get-animation-list"><span class="std std-ref">get_animation_list</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-get-blend-time"><span class="std std-ref">get_blend_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-get-playing-speed"><span class="std std-ref">get_playing_speed</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-get-queue"><span class="std std-ref">get_queue</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-has-animation"><span class="std std-ref">has_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-is-playing"><span class="std std-ref">is_playing</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name="", <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_blend=-1, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_speed=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> from_end=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-play-backwards"><span class="std std-ref">play_backwards</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name="", <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_blend=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-queue"><span class="std std-ref">queue</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-remove-animation"><span class="std std-ref">remove_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-rename-animation"><span class="std std-ref">rename_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> newname <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-seek"><span class="std std-ref">seek</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> seconds, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> update=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-set-blend-time"><span class="std std-ref">set_blend_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> sec <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationplayer-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> reset=true <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationplayer-signal-animation-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/animation_changed"></a>animation_changed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> old_name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> new_name <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a queued animation plays after the previous animation was finished. See <a class="reference internal" href="#class-animationplayer-method-queue"><span class="std std-ref">queue</span></a>.</p>
+<p><strong>Note:</strong> The signal is not emitted when the animation is changed via <a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> or from <a class="reference internal" href="class_animationtree.html#class-animationtree"><span class="std std-ref">AnimationTree</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-signal-animation-finished">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/animation_finished"></a>animation_finished</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_name <strong>)</strong></p></li>
+</ul>
+<p>Notifies when an animation finished playing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-signal-animation-started">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/animation_started"></a>animation_started</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_name <strong>)</strong></p></li>
+</ul>
+<p>Notifies when an animation starts playing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-signal-caches-cleared">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/caches_cleared"></a>caches_cleared</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Notifies when the caches have been cleared, either automatically, or manually via <a class="reference internal" href="#class-animationplayer-method-clear-caches"><span class="std std-ref">clear_caches</span></a>.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-animationplayer-constant-animation-process-manual"><span id="class-animationplayer-constant-animation-process-idle"></span><span id="class-animationplayer-constant-animation-process-physics"></span><span id="enum-animationplayer-animationprocessmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AnimationProcessMode"></a>AnimationProcessMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>ANIMATION_PROCESS_PHYSICS</strong> = <strong>0</strong> --- Process animation during the physics process. This is especially useful when animating physics bodies.</p></li>
+<li><p><strong>ANIMATION_PROCESS_IDLE</strong> = <strong>1</strong> --- Process animation during the idle process.</p></li>
+<li><p><strong>ANIMATION_PROCESS_MANUAL</strong> = <strong>2</strong> --- Do not process animation. Use <a class="reference internal" href="#class-animationplayer-method-advance"><span class="std std-ref">advance</span></a> to process the animation manually.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-animationplayer-constant-animation-method-call-immediate"><span id="class-animationplayer-constant-animation-method-call-deferred"></span><span id="enum-animationplayer-animationmethodcallmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AnimationMethodCallMode"></a>AnimationMethodCallMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>ANIMATION_METHOD_CALL_DEFERRED</strong> = <strong>0</strong> --- Batch method calls during the animation process, then do the calls after events are processed. This avoids bugs involving deleting nodes or modifying the AnimationPlayer while playing.</p></li>
+<li><p><strong>ANIMATION_METHOD_CALL_IMMEDIATE</strong> = <strong>1</strong> --- Make method calls immediately when reached in the animation.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationplayer-property-assigned-animation">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/assigned_animation"></a>assigned_animation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_assigned_animation(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_assigned_animation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also <a class="reference internal" href="#class-animationplayer-property-current-animation"><span class="std std-ref">current_animation</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-autoplay">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/autoplay"></a>autoplay</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_autoplay(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_autoplay()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the animation to play when the scene loads.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-current-animation">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_animation"></a>current_animation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current_animation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_animation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See <a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> for more information on playing animations.</p>
+<p><strong>Note:</strong> While this property appears in the inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-current-animation-length">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_animation_length"></a>current_animation_length</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_animation_length()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The length (in seconds) of the currently being played animation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-current-animation-position">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_animation_position"></a>current_animation_position</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_animation_position()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The position (in seconds) of the currently playing animation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-method-call-mode">
+<li><p><a class="reference internal" href="#enum-animationplayer-animationmethodcallmode"><span class="std std-ref">AnimationMethodCallMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/method_call_mode"></a>method_call_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_method_call_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_method_call_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The call mode to use for Call Method tracks.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-playback-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_active"></a>playback_active</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_active(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_active()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, updates animations in response to process-related notifications.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-playback-default-blend-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_default_blend_time"></a>playback_default_blend_time</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_default_blend_time(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_default_blend_time()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 precision.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-playback-process-mode">
+<li><p><a class="reference internal" href="#enum-animationplayer-animationprocessmode"><span class="std std-ref">AnimationProcessMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_process_mode"></a>playback_process_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_animation_process_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_animation_process_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The process notification in which to update animations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-playback-speed">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_speed"></a>playback_speed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_speed_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_speed_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed scaling ratio. For instance, if this value is 1, then the animation plays at normal speed. If it's 0.5, then it plays at half speed. If it's 2, then it plays at double speed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-reset-on-save">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/reset_on_save"></a>reset_on_save</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_reset_on_save_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_reset_on_save_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is used by the editor. If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the scene will be saved with the effects of the reset animation applied (as if it had been seeked to time 0), then reverted after saving.</p>
+<p>In other words, the saved scene file will contain the "default pose", as defined by the reset animation, if any, with the editor keeping the values that the nodes had before saving.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-property-root-node">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/root_node"></a>root_node</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("..")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_root(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_root()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The node from which node path references will travel.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationplayer-method-add-animation">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_animation"></a>add_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong></p></li>
+</ul>
+<p>Adds <code class="docutils literal notranslate"><span class="pre">animation</span></code> to the player accessible with the key <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-advance">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/advance"></a>advance</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></li>
+</ul>
+<p>Shifts position in the animation timeline and immediately updates the animation. <code class="docutils literal notranslate"><span class="pre">delta</span></code> is the time in seconds to shift. Events between the current frame and <code class="docutils literal notranslate"><span class="pre">delta</span></code> are handled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-animation-get-next">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_get_next"></a>animation_get_next</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the next animation in the queue.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-animation-set-next">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_set_next"></a>animation_set_next</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to <strong>)</strong></p></li>
+</ul>
+<p>Triggers the <code class="docutils literal notranslate"><span class="pre">anim_to</span></code> animation when the <code class="docutils literal notranslate"><span class="pre">anim_from</span></code> animation completes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-clear-caches">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_caches"></a>clear_caches</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> caches animated nodes. It may not notice if a node disappears; <a class="reference internal" href="#class-animationplayer-method-clear-caches"><span class="std std-ref">clear_caches</span></a> forces it to update the cache again.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-clear-queue">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_queue"></a>clear_queue</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all queued, unplayed animations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-find-animation">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_animation"></a>find_animation</strong> <strong>(</strong> <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of <code class="docutils literal notranslate"><span class="pre">animation</span></code> or an empty string if not found.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-get-animation">
+<li><p><a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_animation"></a>get_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> with key <code class="docutils literal notranslate"><span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-get-animation-list">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_animation_list"></a>get_animation_list</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the list of stored animation names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-get-blend-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_blend_time"></a>get_blend_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the blend time (in seconds) between two animations, referenced by their names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-get-playing-speed">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_playing_speed"></a>get_playing_speed</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the actual playing speed of current animation or 0 if not playing. This speed is the <a class="reference internal" href="#class-animationplayer-property-playback-speed"><span class="std std-ref">playback_speed</span></a> property multiplied by <code class="docutils literal notranslate"><span class="pre">custom_speed</span></code> argument specified when calling the <a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> method.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-get-queue">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_queue"></a>get_queue</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a list of the animation names that are currently queued to play.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-has-animation">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_animation"></a>has_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> stores an <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> with key <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-is-playing">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_playing"></a>is_playing</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if playing an animation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-play">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play"></a>play</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name="", <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_blend=-1, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_speed=1.0, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> from_end=false <strong>)</strong></p></li>
+</ul>
+<p>Plays the animation with key <code class="docutils literal notranslate"><span class="pre">name</span></code>. Custom blend times and speed can be set. If <code class="docutils literal notranslate"><span class="pre">custom_speed</span></code> is negative and <code class="docutils literal notranslate"><span class="pre">from_end</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation will play backwards (which is equivalent to calling <a class="reference internal" href="#class-animationplayer-method-play-backwards"><span class="std std-ref">play_backwards</span></a>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> keeps track of its current or last played animation with <a class="reference internal" href="#class-animationplayer-property-assigned-animation"><span class="std std-ref">assigned_animation</span></a>. If this method is called with that same animation <code class="docutils literal notranslate"><span class="pre">name</span></code>, or with no <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter, the assigned animation will resume playing if it was paused, or restart if it was stopped (see <a class="reference internal" href="#class-animationplayer-method-stop"><span class="std std-ref">stop</span></a> for both pause and stop). If the animation was already playing, it will keep playing.</p>
+<p><strong>Note:</strong> The animation will be updated the next time the <code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call <code class="docutils literal notranslate"><span class="pre">advance(0)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-play-backwards">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play_backwards"></a>play_backwards</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name="", <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> custom_blend=-1 <strong>)</strong></p></li>
+</ul>
+<p>Plays the animation with key <code class="docutils literal notranslate"><span class="pre">name</span></code> in reverse.</p>
+<p>This method is a shorthand for <a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> with <code class="docutils literal notranslate"><span class="pre">custom_speed</span> <span class="pre">=</span> <span class="pre">-1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">from_end</span> <span class="pre">=</span> <span class="pre">true</span></code>, so see its description for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-queue">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue"></a>queue</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Queues an animation for playback once the current one is done.</p>
+<p><strong>Note:</strong> If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-remove-animation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_animation"></a>remove_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Removes the animation with key <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-rename-animation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rename_animation"></a>rename_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> newname <strong>)</strong></p></li>
+</ul>
+<p>Renames an existing animation with key <code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">newname</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-seek">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/seek"></a>seek</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> seconds, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> update=false <strong>)</strong></p></li>
+</ul>
+<p>Seeks the animation to the <code class="docutils literal notranslate"><span class="pre">seconds</span></code> point in time (in seconds). If <code class="docutils literal notranslate"><span class="pre">update</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation updates too, otherwise it updates at process time. Events between the current frame and <code class="docutils literal notranslate"><span class="pre">seconds</span></code> are skipped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-set-blend-time">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_blend_time"></a>set_blend_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> anim_to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> sec <strong>)</strong></p></li>
+</ul>
+<p>Specifies a blend time (in seconds) between two animations, referenced by their names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationplayer-method-stop">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop"></a>stop</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> reset=true <strong>)</strong></p></li>
+</ul>
+<p>Stops or pauses the currently playing animation. If <code class="docutils literal notranslate"><span class="pre">reset</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation position is reset to <code class="docutils literal notranslate"><span class="pre">0</span></code> and the playback speed is reset to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">reset</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, the <a class="reference internal" href="#class-animationplayer-property-current-animation-position"><span class="std std-ref">current_animation_position</span></a> will be kept and calling <a class="reference internal" href="#class-animationplayer-method-play"><span class="std std-ref">play</span></a> or <a class="reference internal" href="#class-animationplayer-method-play-backwards"><span class="std std-ref">play_backwards</span></a> without arguments or with the same animation name as <a class="reference internal" href="#class-animationplayer-property-assigned-animation"><span class="std std-ref">assigned_animation</span></a> will resume the animation.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_animationnodetransition.html" rel="prev" title="AnimationNodeTransition"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_animationrootnode.html" rel="next" title="AnimationRootNode">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

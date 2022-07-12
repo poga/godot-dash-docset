@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="File" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_file.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Type to handle file reading and writing operations. Description: File type. This is used to permanently store data into the user device's file system and to read from it..." property="og:description"/>
+<meta content="Type to handle file reading and writing operations. File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configur..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) File — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_file.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_file.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_file.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_file.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_file.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_file.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_file.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_file.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_file.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_file.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_file.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_file.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_file.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_file.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_file.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_file.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_filedialog.html" rel="next" title="FileDialog"/>
+<link href="class_externaltexture.html" rel="prev" title="ExternalTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>File</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="file">
+<span id="class-file"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/File¶"></a>File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Type to handle file reading and writing operations.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example.</p>
+<p>Here's a sample on how to write and read from a file:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">save</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">File</span><span class="o">.</span><span class="n">WRITE</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">store_string</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="nb">load</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://save_game.dat"</span><span class="p">,</span> <span class="n">File</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
+    <span class="k">var</span> <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">get_as_text</span><span class="p">()</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">content</span>
+</pre></div>
+</div>
+<p>In the example above, the file will be saved in the user data folder as specified in the <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/io/data_paths.html">Data paths</a> documentation.</p>
+<p><strong>Note:</strong> To access project resources once exported, it is recommended to use <a class="reference internal" href="class_resourceloader.html#class-resourceloader"><span class="std std-ref">ResourceLoader</span></a> instead of the <code class="docutils literal notranslate"><span class="pre">File</span></code> API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.</p>
+<p><strong>Note:</strong> Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing <strong>Alt + F4</strong>). If you stop the project execution by pressing <strong>F8</strong> while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling <a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> at regular intervals.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/scripting/filesystem.html"><span class="doc">File system</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 60%"/>
+<col style="width: 12%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-property-endian-swap"><span class="std std-ref">endian_swap</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-close"><span class="std std-ref">close</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-eof-reached"><span class="std std-ref">eof_reached</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-file-exists"><span class="std std-ref">file_exists</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-16"><span class="std std-ref">get_16</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-32"><span class="std std-ref">get_32</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-64"><span class="std std-ref">get_64</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-8"><span class="std std-ref">get_8</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-as-text"><span class="std std-ref">get_as_text</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-buffer"><span class="std std-ref">get_buffer</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> len <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-csv-line"><span class="std std-ref">get_csv_line</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> delim="," <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-double"><span class="std std-ref">get_double</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-error"><span class="std std-ref">get_error</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-float"><span class="std std-ref">get_float</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-len"><span class="std std-ref">get_len</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-line"><span class="std std-ref">get_line</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-md5"><span class="std std-ref">get_md5</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-modified-time"><span class="std std-ref">get_modified_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-pascal-string"><span class="std std-ref">get_pascal_string</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-path"><span class="std std-ref">get_path</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-path-absolute"><span class="std std-ref">get_path_absolute</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-position"><span class="std std-ref">get_position</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-real"><span class="std std-ref">get_real</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-sha256"><span class="std std-ref">get_sha256</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-get-var"><span class="std std-ref">get_var</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_objects=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-is-open"><span class="std std-ref">is_open</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-open"><span class="std std-ref">open</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> flags <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-open-compressed"><span class="std std-ref">open_compressed</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="#enum-file-compressionmode"><span class="std std-ref">CompressionMode</span></a> compression_mode=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-open-encrypted"><span class="std std-ref">open_encrypted</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> key <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-file-method-open-encrypted-with-pass"><span class="std std-ref">open_encrypted_with_pass</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> pass <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-seek"><span class="std std-ref">seek</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-seek-end"><span class="std std-ref">seek_end</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-16"><span class="std std-ref">store_16</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-32"><span class="std std-ref">store_32</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-64"><span class="std std-ref">store_64</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-8"><span class="std std-ref">store_8</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-buffer"><span class="std std-ref">store_buffer</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> buffer <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-csv-line"><span class="std std-ref">store_csv_line</span></a> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> values, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> delim="," <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-double"><span class="std std-ref">store_double</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-float"><span class="std std-ref">store_float</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-line"><span class="std std-ref">store_line</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> line <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-pascal-string"><span class="std std-ref">store_pascal_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> string <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-real"><span class="std std-ref">store_real</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-string"><span class="std std-ref">store_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> string <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-file-method-store-var"><span class="std std-ref">store_var</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> full_objects=false <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-file-constant-write-read"><span id="class-file-constant-read-write"></span><span id="class-file-constant-write"></span><span id="class-file-constant-read"></span><span id="enum-file-modeflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ModeFlags"></a>ModeFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>READ</strong> = <strong>1</strong> --- Opens the file for read operations. The cursor is positioned at the beginning of the file.</p></li>
+<li><p><strong>WRITE</strong> = <strong>2</strong> --- Opens the file for write operations. The file is created if it does not exist, and truncated if it does.</p></li>
+<li><p><strong>READ_WRITE</strong> = <strong>3</strong> --- Opens the file for read and write operations. Does not truncate the file. The cursor is positioned at the beginning of the file.</p></li>
+<li><p><strong>WRITE_READ</strong> = <strong>7</strong> --- Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The cursor is positioned at the beginning of the file.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-file-constant-compression-gzip"><span id="class-file-constant-compression-zstd"></span><span id="class-file-constant-compression-deflate"></span><span id="class-file-constant-compression-fastlz"></span><span id="enum-file-compressionmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CompressionMode"></a>CompressionMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>COMPRESSION_FASTLZ</strong> = <strong>0</strong> --- Uses the <a class="reference external" href="http://fastlz.org/">FastLZ</a> compression method.</p></li>
+<li><p><strong>COMPRESSION_DEFLATE</strong> = <strong>1</strong> --- Uses the <a class="reference external" href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE</a> compression method.</p></li>
+<li><p><strong>COMPRESSION_ZSTD</strong> = <strong>2</strong> --- Uses the <a class="reference external" href="https://facebook.github.io/zstd/">Zstandard</a> compression method.</p></li>
+<li><p><strong>COMPRESSION_GZIP</strong> = <strong>3</strong> --- Uses the <a class="reference external" href="https://www.gzip.org/">gzip</a> compression method.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-file-property-endian-swap">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/endian_swap"></a>endian_swap</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_endian_swap(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_endian_swap()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the file is read with big-endian <a class="reference external" href="https://en.wikipedia.org/wiki/Endianness">endianness</a>. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the file is read with little-endian endianness. If in doubt, leave this to <code class="docutils literal notranslate"><span class="pre">false</span></code> as most files are written with little-endian endianness.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-file-property-endian-swap"><span class="std std-ref">endian_swap</span></a> is only about the file format, not the CPU type. The CPU endianness doesn't affect the default endianness for files written.</p>
+<p><strong>Note:</strong> This is always reset to <code class="docutils literal notranslate"><span class="pre">false</span></code> whenever you open the file. Therefore, you must set <a class="reference internal" href="#class-file-property-endian-swap"><span class="std std-ref">endian_swap</span></a> <em>after</em> opening the file, not before.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-file-method-close">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/close"></a>close</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Closes the currently opened file and prevents subsequent read/write operations. Use <a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> to persist the data to disk without closing the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-eof-reached">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/eof_reached"></a>eof_reached</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the file cursor has already read past the end of the file.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">eof_reached()</span> <span class="pre">==</span> <span class="pre">false</span></code> cannot be used to check whether there is more data available. To loop while there is more data available, use:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">file</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">file</span><span class="o">.</span><span class="n">get_len</span><span class="p">():</span>
+    <span class="c1"># Read data</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-file-exists">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/file_exists"></a>file_exists</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the file exists in the given path.</p>
+<p><strong>Note:</strong> Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See <a class="reference internal" href="class_resourceloader.html#class-resourceloader-method-exists"><span class="std std-ref">ResourceLoader.exists</span></a> for an alternative approach that takes resource remapping into account.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-flush">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/flush"></a>flush</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Writes the file's buffer to disk. Flushing is automatically performed when the file is closed. This means you don't need to call <a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> manually before closing a file using <a class="reference internal" href="#class-file-method-close"><span class="std std-ref">close</span></a>. Still, calling <a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> can be used to ensure the data is safe even if the project crashes instead of being closed gracefully.</p>
+<p><strong>Note:</strong> Only call <a class="reference internal" href="#class-file-method-flush"><span class="std std-ref">flush</span></a> when you actually need it. Otherwise, it will decrease performance due to constant disk writes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-16">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_16"></a>get_16</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 16 bits from the file as an integer. See <a class="reference internal" href="#class-file-method-store-16"><span class="std std-ref">store_16</span></a> for details on what values can be stored and retrieved this way.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_32"></a>get_32</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 32 bits from the file as an integer. See <a class="reference internal" href="#class-file-method-store-32"><span class="std std-ref">store_32</span></a> for details on what values can be stored and retrieved this way.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_64"></a>get_64</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 64 bits from the file as an integer. See <a class="reference internal" href="#class-file-method-store-64"><span class="std std-ref">store_64</span></a> for details on what values can be stored and retrieved this way.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_8"></a>get_8</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 8 bits from the file as an integer. See <a class="reference internal" href="#class-file-method-store-8"><span class="std std-ref">store_8</span></a> for details on what values can be stored and retrieved this way.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-as-text">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_as_text"></a>get_as_text</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the whole file as a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>.</p>
+<p>Text is interpreted as being UTF-8 encoded.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-buffer">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_buffer"></a>get_buffer</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> len <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns next <code class="docutils literal notranslate"><span class="pre">len</span></code> bytes of the file as a <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-csv-line">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_csv_line"></a>get_csv_line</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> delim="," <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter <code class="docutils literal notranslate"><span class="pre">delim</span></code> to use other than the default <code class="docutils literal notranslate"><span class="pre">","</span></code> (comma). This delimiter must be one-character long, and cannot be a double quotation mark.</p>
+<p>Text is interpreted as being UTF-8 encoded. Text values must be enclosed in double quotes if they include the delimiter character. Double quotes within a text value can be escaped by doubling their occurrence.</p>
+<p>For example, the following CSV lines are valid and will be properly parsed as two strings each:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">Alice</span><span class="p">,</span><span class="s2">"Hello, Bob!"</span>
+<span class="n">Bob</span><span class="p">,</span><span class="n">Alice</span><span class="o">!</span> <span class="n">What</span> <span class="n">a</span> <span class="n">surprise</span><span class="o">!</span>
+<span class="n">Alice</span><span class="p">,</span><span class="s2">"I thought you'd reply with ""Hello, world""."</span>
+</pre></div>
+</div>
+<p>Note how the second line can omit the enclosing quotes as it does not include the delimiter. However it <em>could</em> very well use quotes, it was only written without for demonstration purposes. The third line must use <code class="docutils literal notranslate"><span class="pre">""</span></code> for each quotation mark that needs to be interpreted as such instead of the end of a text value.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-double">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_double"></a>get_double</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 64 bits from the file as a floating-point number.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-error">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_error"></a>get_error</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the last error that happened when trying to perform operations. Compare with the <code class="docutils literal notranslate"><span class="pre">ERR_FILE_*</span></code> constants from <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-float">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_float"></a>get_float</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next 32 bits from the file as a floating-point number.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-len">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_len"></a>get_len</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the size of the file in bytes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-line">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_line"></a>get_line</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next line of the file as a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>.</p>
+<p>Text is interpreted as being UTF-8 encoded.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-md5">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_md5"></a>get_md5</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an MD5 String representing the file at the given path or an empty <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> on failure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-modified-time">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_modified_time"></a>get_modified_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the last time the <code class="docutils literal notranslate"><span class="pre">file</span></code> was modified in unix timestamp format or returns a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> "ERROR IN <code class="docutils literal notranslate"><span class="pre">file</span></code>". This unix timestamp can be converted to datetime by using <a class="reference internal" href="class_os.html#class-os-method-get-datetime-from-unix-time"><span class="std std-ref">OS.get_datetime_from_unix_time</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-pascal-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_pascal_string"></a>get_pascal_string</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> saved in Pascal format from the file.</p>
+<p>Text is interpreted as being UTF-8 encoded.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-path">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_path"></a>get_path</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the path as a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> for the current open file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-path-absolute">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_path_absolute"></a>get_path_absolute</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the absolute path as a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> for the current open file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-position">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_position"></a>get_position</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the file cursor's position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-real">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_real"></a>get_real</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next bits from the file as a floating-point number.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-sha256">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_sha256"></a>get_sha256</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a SHA-256 <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> representing the file at the given path or an empty <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> on failure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-get-var">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_var"></a>get_var</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_objects=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value from the file. If <code class="docutils literal notranslate"><span class="pre">allow_objects</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, decoding objects is allowed.</p>
+<p><strong>Warning:</strong> Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-is-open">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_open"></a>is_open</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the file is currently opened.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-open">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open"></a>open</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> flags <strong>)</strong></p></li>
+</ul>
+<p>Opens the file for writing or reading, depending on the flags.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-open-compressed">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open_compressed"></a>open_compressed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="#enum-file-compressionmode"><span class="std std-ref">CompressionMode</span></a> compression_mode=0 <strong>)</strong></p></li>
+</ul>
+<p>Opens a compressed file for reading or writing.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-file-method-open-compressed"><span class="std std-ref">open_compressed</span></a> can only read files that were saved by Godot, not third-party compression formats. See <a class="reference external" href="https://github.com/godotengine/godot/issues/28999">GitHub issue #28999</a> for a workaround.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-open-encrypted">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open_encrypted"></a>open_encrypted</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.</p>
+<p><strong>Note:</strong> The provided key must be 32 bytes long.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-open-encrypted-with-pass">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open_encrypted_with_pass"></a>open_encrypted_with_pass</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="#enum-file-modeflags"><span class="std std-ref">ModeFlags</span></a> mode_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> pass <strong>)</strong></p></li>
+</ul>
+<p>Opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-seek">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/seek"></a>seek</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Changes the file reading/writing cursor to the specified position (in bytes from the beginning of the file).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-seek-end">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/seek_end"></a>seek_end</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position=0 <strong>)</strong></p></li>
+</ul>
+<p>Changes the file reading/writing cursor to the specified position (in bytes from the end of the file).</p>
+<p><strong>Note:</strong> This is an offset, so you should use negative numbers or the cursor will be at the end of the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-16">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_16"></a>store_16</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores an integer as 16 bits in the file.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">value</span></code> should lie in the interval <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2^16</span> <span class="pre">-</span> <span class="pre">1]</span></code>. Any other value will overflow and wrap around.</p>
+<p>To store a signed integer, use <a class="reference internal" href="#class-file-method-store-64"><span class="std std-ref">store_64</span></a> or store a signed integer from the interval <code class="docutils literal notranslate"><span class="pre">[-2^15,</span> <span class="pre">2^15</span> <span class="pre">-</span> <span class="pre">1]</span></code> (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">MAX_15B</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span>
+<span class="k">const</span> <span class="n">MAX_16B</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span>
+
+<span class="k">func</span> <span class="n">unsigned16_to_signed</span><span class="p">(</span><span class="n">unsigned</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">unsigned</span> <span class="o">+</span> <span class="n">MAX_15B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MAX_16B</span> <span class="o">-</span> <span class="n">MAX_15B</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">f</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"user://file.dat"</span><span class="p">,</span> <span class="n">File</span><span class="o">.</span><span class="n">WRITE_READ</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">store_16</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># This wraps around and stores 65494 (2^16 - 42).</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">store_16</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span> <span class="c1"># In bounds, will store 121.</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Go back to start to read the stored value.</span>
+    <span class="k">var</span> <span class="n">read1</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_16</span><span class="p">()</span> <span class="c1"># 65494</span>
+    <span class="k">var</span> <span class="n">read2</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">get_16</span><span class="p">()</span> <span class="c1"># 121</span>
+    <span class="k">var</span> <span class="n">converted1</span> <span class="o">=</span> <span class="n">unsigned16_to_signed</span><span class="p">(</span><span class="n">read1</span><span class="p">)</span> <span class="c1"># -42</span>
+    <span class="k">var</span> <span class="n">converted2</span> <span class="o">=</span> <span class="n">unsigned16_to_signed</span><span class="p">(</span><span class="n">read2</span><span class="p">)</span> <span class="c1"># 121</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-32">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_32"></a>store_32</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores an integer as 32 bits in the file.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">value</span></code> should lie in the interval <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2^32</span> <span class="pre">-</span> <span class="pre">1]</span></code>. Any other value will overflow and wrap around.</p>
+<p>To store a signed integer, use <a class="reference internal" href="#class-file-method-store-64"><span class="std std-ref">store_64</span></a>, or convert it manually (see <a class="reference internal" href="#class-file-method-store-16"><span class="std std-ref">store_16</span></a> for an example).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-64">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_64"></a>store_64</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores an integer as 64 bits in the file.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">value</span></code> must lie in the interval <code class="docutils literal notranslate"><span class="pre">[-2^63,</span> <span class="pre">2^63</span> <span class="pre">-</span> <span class="pre">1]</span></code> (i.e. be a valid <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-8">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_8"></a>store_8</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores an integer as 8 bits in the file.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">value</span></code> should lie in the interval <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code>. Any other value will overflow and wrap around.</p>
+<p>To store a signed integer, use <a class="reference internal" href="#class-file-method-store-64"><span class="std std-ref">store_64</span></a>, or convert it manually (see <a class="reference internal" href="#class-file-method-store-16"><span class="std std-ref">store_16</span></a> for an example).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-buffer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_buffer"></a>store_buffer</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> buffer <strong>)</strong></p></li>
+</ul>
+<p>Stores the given array of bytes in the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-csv-line">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_csv_line"></a>store_csv_line</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> values, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> delim="," <strong>)</strong></p></li>
+</ul>
+<p>Store the given <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter <code class="docutils literal notranslate"><span class="pre">delim</span></code> to use other than the default <code class="docutils literal notranslate"><span class="pre">","</span></code> (comma). This delimiter must be one-character long.</p>
+<p>Text will be encoded as UTF-8.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-double">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_double"></a>store_double</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores a floating-point number as 64 bits in the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-float">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_float"></a>store_float</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores a floating-point number as 32 bits in the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-line">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_line"></a>store_line</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> line <strong>)</strong></p></li>
+</ul>
+<p>Appends <code class="docutils literal notranslate"><span class="pre">line</span></code> to the file followed by a line return character (<code class="docutils literal notranslate"><span class="pre">\n</span></code>), encoding the text as UTF-8.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-pascal-string">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_pascal_string"></a>store_pascal_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> string <strong>)</strong></p></li>
+</ul>
+<p>Stores the given <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> as a line in the file in Pascal format (i.e. also store the length of the string).</p>
+<p>Text will be encoded as UTF-8.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-real">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_real"></a>store_real</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Stores a floating-point number in the file.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-string">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_string"></a>store_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> string <strong>)</strong></p></li>
+</ul>
+<p>Appends <code class="docutils literal notranslate"><span class="pre">string</span></code> to the file without a line return, encoding the text as UTF-8.</p>
+<p><strong>Note:</strong> This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using <a class="reference internal" href="#class-file-method-store-pascal-string"><span class="std std-ref">store_pascal_string</span></a> instead. For retrieving strings from a text file, you can use <code class="docutils literal notranslate"><span class="pre">get_buffer(length).get_string_from_utf8()</span></code> (if you know the length) or <a class="reference internal" href="#class-file-method-get-as-text"><span class="std std-ref">get_as_text</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-file-method-store-var">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/store_var"></a>store_var</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> full_objects=false <strong>)</strong></p></li>
+</ul>
+<p>Stores any Variant value in the file. If <code class="docutils literal notranslate"><span class="pre">full_objects</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, encoding objects is allowed (and can potentially include code).</p>
+<p><strong>Note:</strong> Not all properties are included. Only properties that are configured with the <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-property-usage-storage"><span class="std std-ref">@GlobalScope.PROPERTY_USAGE_STORAGE</span></a> flag set will be serialized. You can add a new usage flag to a property by overriding the <a class="reference internal" href="class_object.html#class-object-method-get-property-list"><span class="std std-ref">Object._get_property_list</span></a> method in your class. You can also check how property usage is configured by calling <a class="reference internal" href="class_object.html#class-object-method-get-property-list"><span class="std std-ref">Object._get_property_list</span></a>. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-propertyusageflags"><span class="std std-ref">PropertyUsageFlags</span></a> for the possible usage flags.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_externaltexture.html" rel="prev" title="ExternalTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_filedialog.html" rel="next" title="FileDialog">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

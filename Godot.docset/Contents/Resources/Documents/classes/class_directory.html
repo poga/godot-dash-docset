@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Directory" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_directory.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Type used to handle the filesystem. Description: Directory type. It is used to manage directories and their content (not restricted to the project folder). When creating..." property="og:description"/>
+<meta content="Type used to handle the filesystem. Directory type. It is used to manage directories and their content (not restricted to the project folder). When creating a new Directory, its default opened directory will be res://..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Directory — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_directory.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_directory.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_directory.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_directory.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_directory.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_directory.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_directory.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_directory.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_directory.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_directory.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_directory.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_directory.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_directory.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_directory.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_directory.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_directory.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_dtlsserver.html" rel="next" title="DTLSServer"/>
+<link href="class_directionallight.html" rel="prev" title="DirectionalLight"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Directory</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="directory">
+<span id="class-directory"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Directory¶"></a>Directory<a class="headerlink" href="#directory" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Type used to handle the filesystem.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Directory type. It is used to manage directories and their content (not restricted to the project folder).</p>
+<p>When creating a new <code class="docutils literal notranslate"><span class="pre">Directory</span></code>, its default opened directory will be <code class="docutils literal notranslate"><span class="pre">res://</span></code>. This may change in the future, so it is advised to always use <a class="reference internal" href="#class-directory-method-open"><span class="std std-ref">open</span></a> to initialize your <code class="docutils literal notranslate"><span class="pre">Directory</span></code> where you want to operate, with explicit error checking.</p>
+<p><strong>Note:</strong> Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use <a class="reference internal" href="class_resourceloader.html#class-resourceloader"><span class="std std-ref">ResourceLoader</span></a> to access imported resources.</p>
+<p>Here is an example on how to iterate through the files of a directory:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">dir_contents</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">Directory</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="n">dir</span><span class="o">.</span><span class="n">list_dir_begin</span><span class="p">()</span>
+        <span class="k">var</span> <span class="n">file_name</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+        <span class="k">while</span> <span class="n">file_name</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">dir</span><span class="o">.</span><span class="n">current_is_dir</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Found directory: "</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Found file: "</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"An error occurred when trying to access the path."</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/scripting/filesystem.html"><span class="doc">File system</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-change-dir"><span class="std std-ref">change_dir</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> todir <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-copy"><span class="std std-ref">copy</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-current-is-dir"><span class="std std-ref">current_is_dir</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-dir-exists"><span class="std std-ref">dir_exists</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-file-exists"><span class="std std-ref">file_exists</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-current-dir"><span class="std std-ref">get_current_dir</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-current-drive"><span class="std std-ref">get_current_drive</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-drive"><span class="std std-ref">get_drive</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-drive-count"><span class="std std-ref">get_drive_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-next"><span class="std std-ref">get_next</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-get-space-left"><span class="std std-ref">get_space_left</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-list-dir-begin"><span class="std std-ref">list_dir_begin</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> skip_navigational=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> skip_hidden=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-directory-method-list-dir-end"><span class="std std-ref">list_dir_end</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-make-dir"><span class="std std-ref">make_dir</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-make-dir-recursive"><span class="std std-ref">make_dir_recursive</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-open"><span class="std std-ref">open</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-remove"><span class="std std-ref">remove</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-directory-method-rename"><span class="std std-ref">rename</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-directory-method-change-dir">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/change_dir"></a>change_dir</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> todir <strong>)</strong></p></li>
+</ul>
+<p>Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. <code class="docutils literal notranslate"><span class="pre">newdir</span></code> or <code class="docutils literal notranslate"><span class="pre">../newdir</span></code>), or an absolute path (e.g. <code class="docutils literal notranslate"><span class="pre">/tmp/newdir</span></code> or <code class="docutils literal notranslate"><span class="pre">res://somedir/newdir</span></code>).</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-copy">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/copy"></a>copy</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Copies the <code class="docutils literal notranslate"><span class="pre">from</span></code> file to the <code class="docutils literal notranslate"><span class="pre">to</span></code> destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-current-is-dir">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/current_is_dir"></a>current_is_dir</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether the current item processed with the last <a class="reference internal" href="#class-directory-method-get-next"><span class="std std-ref">get_next</span></a> call is a directory (<code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code> are considered directories).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-dir-exists">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/dir_exists"></a>dir_exists</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-file-exists">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/file_exists"></a>file_exists</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-current-dir">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_dir"></a>get_current_dir</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the absolute path to the currently opened directory (e.g. <code class="docutils literal notranslate"><span class="pre">res://folder</span></code> or <code class="docutils literal notranslate"><span class="pre">C:\tmp\folder</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-current-drive">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_drive"></a>get_current_drive</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the currently opened directory's drive index. See <a class="reference internal" href="#class-directory-method-get-drive"><span class="std std-ref">get_drive</span></a> to convert returned index to the name of the drive.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-drive">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_drive"></a>get_drive</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>On Windows, returns the name of the drive (partition) passed as an argument (e.g. <code class="docutils literal notranslate"><span class="pre">C:</span></code>). On other platforms, or if the requested drive does not exist, the method returns an empty String.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-drive-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_drive_count"></a>get_drive_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>On Windows, returns the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-next">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_next"></a>get_next</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the next element (file or directory) in the current directory (including <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>, unless <code class="docutils literal notranslate"><span class="pre">skip_navigational</span></code> was given to <a class="reference internal" href="#class-directory-method-list-dir-begin"><span class="std std-ref">list_dir_begin</span></a>).</p>
+<p>The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. <a class="reference internal" href="#class-directory-method-list-dir-end"><span class="std std-ref">list_dir_end</span></a> would not be mandatory in such a case).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-get-space-left">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_space_left"></a>get_space_left</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>On UNIX desktop systems, returns the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-list-dir-begin">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/list_dir_begin"></a>list_dir_begin</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> skip_navigational=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> skip_hidden=false <strong>)</strong></p></li>
+</ul>
+<p>Initializes the stream used to list all files and directories using the <a class="reference internal" href="#class-directory-method-get-next"><span class="std std-ref">get_next</span></a> function, closing the currently opened stream if needed. Once the stream has been processed, it should typically be closed with <a class="reference internal" href="#class-directory-method-list-dir-end"><span class="std std-ref">list_dir_end</span></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">skip_navigational</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code> are filtered out.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">skip_hidden</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, hidden files are filtered out.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-list-dir-end">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/list_dir_end"></a>list_dir_end</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Closes the current stream opened with <a class="reference internal" href="#class-directory-method-list-dir-begin"><span class="std std-ref">list_dir_begin</span></a> (whether it has been fully processed with <a class="reference internal" href="#class-directory-method-get-next"><span class="std std-ref">get_next</span></a> does not matter).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-make-dir">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_dir"></a>make_dir</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see <a class="reference internal" href="#class-directory-method-make-dir-recursive"><span class="std std-ref">make_dir_recursive</span></a>).</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-make-dir-recursive">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_dir_recursive"></a>make_dir_recursive</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Creates a target directory and all necessary intermediate directories in its path, by calling <a class="reference internal" href="#class-directory-method-make-dir"><span class="std std-ref">make_dir</span></a> recursively. The argument can be relative to the current directory, or an absolute path.</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-open">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/open"></a>open</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Opens an existing directory of the filesystem. The <code class="docutils literal notranslate"><span class="pre">path</span></code> argument can be within the project tree (<code class="docutils literal notranslate"><span class="pre">res://folder</span></code>), the user directory (<code class="docutils literal notranslate"><span class="pre">user://folder</span></code>) or an absolute path of the user filesystem (e.g. <code class="docutils literal notranslate"><span class="pre">/tmp/folder</span></code> or <code class="docutils literal notranslate"><span class="pre">C:\tmp\folder</span></code>).</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-remove">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove"></a>remove</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-directory-method-rename">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rename"></a>rename</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Renames (move) the <code class="docutils literal notranslate"><span class="pre">from</span></code> file or directory to the <code class="docutils literal notranslate"><span class="pre">to</span></code> destination. Both arguments should be paths to files or directories, either relative or absolute. If the destination file or directory exists and is not access-protected, it will be overwritten.</p>
+<p>Returns one of the <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code constants (<code class="docutils literal notranslate"><span class="pre">OK</span></code> on success).</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_directionallight.html" rel="prev" title="DirectionalLight"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_dtlsserver.html" rel="next" title="DTLSServer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="HashingContext" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_hashingcontext.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Context to compute cryptographic hashes over multiple iterations. Description: The HashingContext class provides an interface for computing cryptographic hashes over mul..." property="og:description"/>
+<meta content="Context to compute cryptographic hashes over multiple iterations. The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. This is useful for example when computing h..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) HashingContext — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_hashingcontext.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_hashingcontext.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_hashingcontext.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_hashingcontext.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_hashingcontext.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_hashingcontext.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_hashingcontext.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_hashingcontext.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_hashingcontext.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_hashingcontext.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_hashingcontext.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_hashingcontext.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_hashingcontext.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_hashingcontext.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_hashingcontext.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_hashingcontext.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_hboxcontainer.html" rel="next" title="HBoxContainer"/>
+<link href="class_groovejoint2d.html" rel="prev" title="GrooveJoint2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>HashingContext</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="hashingcontext">
+<span id="class-hashingcontext"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/HashingContext¶"></a>HashingContext<a class="headerlink" href="#hashingcontext" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Context to compute cryptographic hashes over multiple iterations.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. This is useful for example when computing hashes of big files (so you don't have to load them all in memory), network streams, and data streams in general (so you don't have to hold buffers).</p>
+<p>The <a class="reference internal" href="#enum-hashingcontext-hashtype"><span class="std std-ref">HashType</span></a> enum shows the supported hashing algorithms.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">CHUNK_SIZE</span> <span class="o">=</span> <span class="mi">1024</span>
+
+<span class="k">func</span> <span class="n">hash_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">HashingContext</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="c1"># Start a SHA-256 context.</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">HashingContext</span><span class="o">.</span><span class="n">HASH_SHA256</span><span class="p">)</span>
+    <span class="c1"># Check that file exists.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">file_exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="c1"># Open the file to hash.</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">File</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
+    <span class="c1"># Update the context after reading each chunk.</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">eof_reached</span><span class="p">():</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">get_buffer</span><span class="p">(</span><span class="n">CHUNK_SIZE</span><span class="p">))</span>
+    <span class="c1"># Get the computed hash.</span>
+    <span class="k">var</span> <span class="n">res</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+    <span class="c1"># Print the result as hex string and array.</span>
+    <span class="nb">printt</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">hex_encode</span><span class="p">(),</span> <span class="nb nb-Type">Array</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Not available in HTML5 exports.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-hashingcontext-method-finish"><span class="std std-ref">finish</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-hashingcontext-method-start"><span class="std std-ref">start</span></a> <strong>(</strong> <a class="reference internal" href="#enum-hashingcontext-hashtype"><span class="std std-ref">HashType</span></a> type <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-hashingcontext-method-update"><span class="std std-ref">update</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> chunk <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-hashingcontext-constant-hash-sha256"><span id="class-hashingcontext-constant-hash-sha1"></span><span id="class-hashingcontext-constant-hash-md5"></span><span id="enum-hashingcontext-hashtype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/HashType"></a>HashType</strong>:</p>
+<ul class="simple">
+<li><p><strong>HASH_MD5</strong> = <strong>0</strong> --- Hashing algorithm: MD5.</p></li>
+<li><p><strong>HASH_SHA1</strong> = <strong>1</strong> --- Hashing algorithm: SHA-1.</p></li>
+<li><p><strong>HASH_SHA256</strong> = <strong>2</strong> --- Hashing algorithm: SHA-256.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-hashingcontext-method-finish">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/finish"></a>finish</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Closes the current context, and return the computed hash.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-hashingcontext-method-start">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/start"></a>start</strong> <strong>(</strong> <a class="reference internal" href="#enum-hashingcontext-hashtype"><span class="std std-ref">HashType</span></a> type <strong>)</strong></p></li>
+</ul>
+<p>Starts a new hash computation of the given <code class="docutils literal notranslate"><span class="pre">type</span></code> (e.g. <a class="reference internal" href="#class-hashingcontext-constant-hash-sha256"><span class="std std-ref">HASH_SHA256</span></a> to start computation of a SHA-256).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-hashingcontext-method-update">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update"></a>update</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> chunk <strong>)</strong></p></li>
+</ul>
+<p>Updates the computation with the given <code class="docutils literal notranslate"><span class="pre">chunk</span></code> of data.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_groovejoint2d.html" rel="prev" title="GrooveJoint2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_hboxcontainer.html" rel="next" title="HBoxContainer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

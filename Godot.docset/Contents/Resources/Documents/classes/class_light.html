@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Light" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_light.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Inherited By: DirectionalLight, OmniLight, SpotLight Provides a base class for different kinds of light nodes. Description: Light is th..." property="og:description"/>
+<meta content="Provides a base class for different kinds of light nodes. Light is the abstract base class for light nodes. As it can't be instanced, it shouldn't be used directly. Other types of light nodes inherit from it. Light co..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Light — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_light.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_light.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_light.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_light.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_light.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_light.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_light.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_light.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_light.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_light.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_light.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_light.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_light.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_light.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_light.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_light.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_light2d.html" rel="next" title="Light2D"/>
+<link href="class_largetexture.html" rel="prev" title="LargeTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Light</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="light">
+<span id="class-light"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Light¶"></a>Light<a class="headerlink" href="#light" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_directionallight.html#class-directionallight"><span class="std std-ref">DirectionalLight</span></a>, <a class="reference internal" href="class_omnilight.html#class-omnilight"><span class="std std-ref">OmniLight</span></a>, <a class="reference internal" href="class_spotlight.html#class-spotlight"><span class="std std-ref">SpotLight</span></a></p>
+<p>Provides a base class for different kinds of light nodes.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Light is the <em>abstract</em> base class for light nodes. As it can't be instanced, it shouldn't be used directly. Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html"><span class="doc">3D lights and shadows</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 56%"/>
+<col style="width: 17%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-editor-only"><span class="std std-ref">editor_only</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-light-bakemode"><span class="std std-ref">BakeMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-bake-mode"><span class="std std-ref">light_bake_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-color"><span class="std std-ref">light_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-cull-mask"><span class="std std-ref">light_cull_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4294967295</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-energy"><span class="std std-ref">light_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-indirect-energy"><span class="std std-ref">light_indirect_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-negative"><span class="std std-ref">light_negative</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-size"><span class="std std-ref">light_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-light-specular"><span class="std std-ref">light_specular</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-shadow-bias"><span class="std std-ref">shadow_bias</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.15</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-shadow-color"><span class="std std-ref">shadow_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-shadow-contact"><span class="std std-ref">shadow_contact</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-shadow-enabled"><span class="std std-ref">shadow_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-property-shadow-reverse-cull-face"><span class="std std-ref">shadow_reverse_cull_face</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-light-method-get-param"><span class="std std-ref">get_param</span></a> <strong>(</strong> <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-light-method-set-param"><span class="std std-ref">set_param</span></a> <strong>(</strong> <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-light-constant-param-max"><span id="class-light-constant-param-shadow-bias-split-scale"></span><span id="class-light-constant-param-shadow-bias"></span><span id="class-light-constant-param-shadow-normal-bias"></span><span id="class-light-constant-param-shadow-split-3-offset"></span><span id="class-light-constant-param-shadow-split-2-offset"></span><span id="class-light-constant-param-shadow-split-1-offset"></span><span id="class-light-constant-param-shadow-max-distance"></span><span id="class-light-constant-param-contact-shadow-size"></span><span id="class-light-constant-param-spot-attenuation"></span><span id="class-light-constant-param-spot-angle"></span><span id="class-light-constant-param-attenuation"></span><span id="class-light-constant-param-range"></span><span id="class-light-constant-param-specular"></span><span id="class-light-constant-param-size"></span><span id="class-light-constant-param-indirect-energy"></span><span id="class-light-constant-param-energy"></span><span id="enum-light-param"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Param"></a>Param</strong>:</p>
+<ul class="simple">
+<li><p><strong>PARAM_ENERGY</strong> = <strong>0</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-light-energy"><span class="std std-ref">light_energy</span></a>.</p></li>
+<li><p><strong>PARAM_INDIRECT_ENERGY</strong> = <strong>1</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-light-indirect-energy"><span class="std std-ref">light_indirect_energy</span></a>.</p></li>
+<li><p><strong>PARAM_SIZE</strong> = <strong>2</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-light-size"><span class="std std-ref">light_size</span></a>.</p></li>
+<li><p><strong>PARAM_SPECULAR</strong> = <strong>3</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-light-specular"><span class="std std-ref">light_specular</span></a>.</p></li>
+<li><p><strong>PARAM_RANGE</strong> = <strong>4</strong> --- Constant for accessing <a class="reference internal" href="class_omnilight.html#class-omnilight-property-omni-range"><span class="std std-ref">OmniLight.omni_range</span></a> or <a class="reference internal" href="class_spotlight.html#class-spotlight-property-spot-range"><span class="std std-ref">SpotLight.spot_range</span></a>.</p></li>
+<li><p><strong>PARAM_ATTENUATION</strong> = <strong>5</strong> --- Constant for accessing <a class="reference internal" href="class_omnilight.html#class-omnilight-property-omni-attenuation"><span class="std std-ref">OmniLight.omni_attenuation</span></a> or <a class="reference internal" href="class_spotlight.html#class-spotlight-property-spot-attenuation"><span class="std std-ref">SpotLight.spot_attenuation</span></a>.</p></li>
+<li><p><strong>PARAM_SPOT_ANGLE</strong> = <strong>6</strong> --- Constant for accessing <a class="reference internal" href="class_spotlight.html#class-spotlight-property-spot-angle"><span class="std std-ref">SpotLight.spot_angle</span></a>.</p></li>
+<li><p><strong>PARAM_SPOT_ATTENUATION</strong> = <strong>7</strong> --- Constant for accessing <a class="reference internal" href="class_spotlight.html#class-spotlight-property-spot-angle-attenuation"><span class="std std-ref">SpotLight.spot_angle_attenuation</span></a>.</p></li>
+<li><p><strong>PARAM_CONTACT_SHADOW_SIZE</strong> = <strong>8</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-shadow-contact"><span class="std std-ref">shadow_contact</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_MAX_DISTANCE</strong> = <strong>9</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-max-distance"><span class="std std-ref">DirectionalLight.directional_shadow_max_distance</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_SPLIT_1_OFFSET</strong> = <strong>10</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-split-1"><span class="std std-ref">DirectionalLight.directional_shadow_split_1</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_SPLIT_2_OFFSET</strong> = <strong>11</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-split-2"><span class="std std-ref">DirectionalLight.directional_shadow_split_2</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_SPLIT_3_OFFSET</strong> = <strong>12</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-split-3"><span class="std std-ref">DirectionalLight.directional_shadow_split_3</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_NORMAL_BIAS</strong> = <strong>13</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-normal-bias"><span class="std std-ref">DirectionalLight.directional_shadow_normal_bias</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_BIAS</strong> = <strong>14</strong> --- Constant for accessing <a class="reference internal" href="#class-light-property-shadow-bias"><span class="std std-ref">shadow_bias</span></a>.</p></li>
+<li><p><strong>PARAM_SHADOW_BIAS_SPLIT_SCALE</strong> = <strong>15</strong> --- Constant for accessing <a class="reference internal" href="class_directionallight.html#class-directionallight-property-directional-shadow-bias-split-scale"><span class="std std-ref">DirectionalLight.directional_shadow_bias_split_scale</span></a>.</p></li>
+<li><p><strong>PARAM_MAX</strong> = <strong>16</strong> --- Represents the size of the <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-light-constant-bake-all"><span id="class-light-constant-bake-indirect"></span><span id="class-light-constant-bake-disabled"></span><span id="enum-light-bakemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BakeMode"></a>BakeMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BAKE_DISABLED</strong> = <strong>0</strong> --- Light is ignored when baking.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> Hiding a light does <em>not</em> affect baking.</p>
+<ul class="simple">
+<li><p><strong>BAKE_INDIRECT</strong> = <strong>1</strong> --- Only indirect lighting will be baked (default).</p></li>
+<li><p><strong>BAKE_ALL</strong> = <strong>2</strong> --- Both direct and indirect light will be baked.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> You should hide the light if you don't want it to appear twice (dynamic and baked).</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-light-property-editor-only">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/editor_only"></a>editor_only</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_editor_only(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_editor_only()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the light only appears in the editor and will not be visible at runtime.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-bake-mode">
+<li><p><a class="reference internal" href="#enum-light-bakemode"><span class="std std-ref">BakeMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_bake_mode"></a>light_bake_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bake_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bake_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The light's bake mode. See <a class="reference internal" href="#enum-light-bakemode"><span class="std std-ref">BakeMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_color"></a>light_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The light's color. An <em>overbright</em> color can be used to achieve a result equivalent to increasing the light's <a class="reference internal" href="#class-light-property-light-energy"><span class="std std-ref">light_energy</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-cull-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_cull_mask"></a>light_cull_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4294967295</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cull_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cull_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The light will affect objects in the selected layers.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_energy"></a>light_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The light's strength multiplier (this is not a physical unit). For <a class="reference internal" href="class_omnilight.html#class-omnilight"><span class="std std-ref">OmniLight</span></a> and <a class="reference internal" href="class_spotlight.html#class-spotlight"><span class="std std-ref">SpotLight</span></a>, changing this value will only change the light color's intensity, not the light's radius.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-indirect-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_indirect_energy"></a>light_indirect_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Secondary multiplier used with indirect light (light bounces). This works on both <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap"><span class="std std-ref">BakedLightmap</span></a> and <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-negative">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_negative"></a>light_negative</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_negative(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_negative()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the light's effect is reversed, darkening areas and casting bright shadows.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_size"></a>light_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of the light in Godot units. Only considered in baked lightmaps and only if <a class="reference internal" href="#class-light-property-light-bake-mode"><span class="std std-ref">light_bake_mode</span></a> is set to <a class="reference internal" href="#class-light-constant-bake-all"><span class="std std-ref">BAKE_ALL</span></a>. Increasing this value will make the shadows appear blurrier. This can be used to simulate area lights to an extent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-light-specular">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/light_specular"></a>light_specular</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The intensity of the specular blob in objects affected by the light. At <code class="docutils literal notranslate"><span class="pre">0</span></code>, the light becomes a pure diffuse light. When not baking emission, this can be used to avoid unrealistic reflections when placing lights above an emissive surface.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-shadow-bias">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shadow_bias"></a>shadow_bias</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.15</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used to adjust shadow appearance. Too small a value results in self-shadowing ("shadow acne"), while too large a value causes shadows to separate from casters ("peter-panning"). Adjust as needed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-shadow-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shadow_color"></a>shadow_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_shadow_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_shadow_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The color of shadows cast by this light.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-shadow-contact">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shadow_contact"></a>shadow_contact</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Attempts to reduce <a class="reference internal" href="#class-light-property-shadow-bias"><span class="std std-ref">shadow_bias</span></a> gap by rendering screen-space contact shadows. This has a performance impact, especially at higher values.</p>
+<p><strong>Note:</strong> Contact shadows can look broken, so leaving this property to <code class="docutils literal notranslate"><span class="pre">0.0</span></code> is recommended.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-shadow-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shadow_enabled"></a>shadow_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_shadow(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>has_shadow()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the light will cast shadows.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-property-shadow-reverse-cull-face">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/shadow_reverse_cull_face"></a>shadow_reverse_cull_face</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_shadow_reverse_cull_face(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_shadow_reverse_cull_face()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance-constant-shadow-casting-setting-double-sided"><span class="std std-ref">GeometryInstance.SHADOW_CASTING_SETTING_DOUBLE_SIDED</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-light-method-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param"></a>get_param</strong> <strong>(</strong> <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of the specified <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-light-method-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param"></a>set_param</strong> <strong>(</strong> <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the value of the specified <a class="reference internal" href="#enum-light-param"><span class="std std-ref">Param</span></a> parameter.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_largetexture.html" rel="prev" title="LargeTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_light2d.html" rel="next" title="Light2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

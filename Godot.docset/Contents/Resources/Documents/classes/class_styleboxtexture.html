@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="StyleBoxTexture" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_styleboxtexture.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: StyleBox&lt; Resource&lt; Reference&lt; Object Texture-based nine-patch StyleBox. Description: Texture-based nine-patch StyleBox, in a way similar to NinePatchRect. This stylebox performs a 3×3 sc..." property="og:description"/>
+<meta content="Texture-based nine-patch StyleBox. Texture-based nine-patch StyleBox, in a way similar to NinePatchRect. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) StyleBoxTexture — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_styleboxtexture.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_styleboxtexture.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_styleboxtexture.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_styleboxtexture.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_styleboxtexture.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_styleboxtexture.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_styleboxtexture.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_styleboxtexture.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_styleboxtexture.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_styleboxtexture.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_styleboxtexture.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_styleboxtexture.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_styleboxtexture.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_styleboxtexture.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_styleboxtexture.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_styleboxtexture.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_surfacetool.html" rel="next" title="SurfaceTool"/>
+<link href="class_styleboxline.html" rel="prev" title="StyleBoxLine"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>StyleBoxTexture</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="styleboxtexture">
+<span id="class-styleboxtexture"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/StyleBoxTexture¶"></a>StyleBoxTexture<a class="headerlink" href="#styleboxtexture" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Texture-based nine-patch <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a>.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Texture-based nine-patch <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a>, in a way similar to <a class="reference internal" href="class_ninepatchrect.html#class-ninepatchrect"><span class="std std-ref">NinePatchRect</span></a>. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 50%"/>
+<col style="width: 14%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-axis-stretch-horizontal"><span class="std std-ref">axis_stretch_horizontal</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-axis-stretch-vertical"><span class="std std-ref">axis_stretch_vertical</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-draw-center"><span class="std std-ref">draw_center</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-expand-margin-bottom"><span class="std std-ref">expand_margin_bottom</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-expand-margin-left"><span class="std std-ref">expand_margin_left</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-expand-margin-right"><span class="std std-ref">expand_margin_right</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-expand-margin-top"><span class="std std-ref">expand_margin_top</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-margin-bottom"><span class="std std-ref">margin_bottom</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-margin-left"><span class="std std-ref">margin_left</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-margin-right"><span class="std std-ref">margin_right</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-margin-top"><span class="std std-ref">margin_top</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-modulate-color"><span class="std std-ref">modulate_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-normal-map"><span class="std std-ref">normal_map</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-region-rect"><span class="std std-ref">region_rect</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Rect2(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-property-texture"><span class="std std-ref">texture</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-get-expand-margin-size"><span class="std std-ref">get_expand_margin_size</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-get-margin-size"><span class="std std-ref">get_margin_size</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-set-expand-margin-all"><span class="std std-ref">set_expand_margin_all</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-set-expand-margin-individual"><span class="std std-ref">set_expand_margin_individual</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_left, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_top, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_right, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_bottom <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-set-expand-margin-size"><span class="std std-ref">set_expand_margin_size</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-styleboxtexture-method-set-margin-size"><span class="std std-ref">set_margin_size</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-styleboxtexture-signal-texture-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/texture_changed"></a>texture_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the stylebox's texture is changed.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-styleboxtexture-constant-axis-stretch-mode-tile-fit"><span id="class-styleboxtexture-constant-axis-stretch-mode-tile"></span><span id="class-styleboxtexture-constant-axis-stretch-mode-stretch"></span><span id="enum-styleboxtexture-axisstretchmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AxisStretchMode"></a>AxisStretchMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>AXIS_STRETCH_MODE_STRETCH</strong> = <strong>0</strong> --- Stretch the stylebox's texture. This results in visible distortion unless the texture size matches the stylebox's size perfectly.</p></li>
+<li><p><strong>AXIS_STRETCH_MODE_TILE</strong> = <strong>1</strong> --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system.</p></li>
+<li><p><strong>AXIS_STRETCH_MODE_TILE_FIT</strong> = <strong>2</strong> --- Repeats the stylebox's texture to match the stylebox's size according to the nine-patch system. Unlike <a class="reference internal" href="#class-styleboxtexture-constant-axis-stretch-mode-tile"><span class="std std-ref">AXIS_STRETCH_MODE_TILE</span></a>, the texture may be slightly stretched to make the nine-patch texture tile seamlessly.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-styleboxtexture-property-axis-stretch-horizontal">
+<li><p><a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_stretch_horizontal"></a>axis_stretch_horizontal</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_h_axis_stretch_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_h_axis_stretch_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Controls how the stylebox's texture will be stretched or tiled horizontally. See <a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-axis-stretch-vertical">
+<li><p><a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/axis_stretch_vertical"></a>axis_stretch_vertical</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_v_axis_stretch_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_v_axis_stretch_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Controls how the stylebox's texture will be stretched or tiled vertically. See <a class="reference internal" href="#enum-styleboxtexture-axisstretchmode"><span class="std std-ref">AxisStretchMode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-draw-center">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/draw_center"></a>draw_center</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_center(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_draw_center_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the nine-patch texture's center tile will be drawn.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-expand-margin-bottom">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/expand_margin_bottom"></a>expand_margin_bottom</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_expand_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_expand_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Expands the bottom margin of this style box when drawing, causing it to be drawn larger than requested.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-expand-margin-left">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/expand_margin_left"></a>expand_margin_left</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_expand_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_expand_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Expands the left margin of this style box when drawing, causing it to be drawn larger than requested.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-expand-margin-right">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/expand_margin_right"></a>expand_margin_right</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_expand_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_expand_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Expands the right margin of this style box when drawing, causing it to be drawn larger than requested.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-expand-margin-top">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/expand_margin_top"></a>expand_margin_top</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_expand_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_expand_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Expands the top margin of this style box when drawing, causing it to be drawn larger than requested.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-margin-bottom">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/margin_bottom"></a>margin_bottom</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Increases the bottom margin of the 3×3 texture box.</p>
+<p>A higher value means more of the source texture is considered to be part of the bottom border of the 3×3 box.</p>
+<p>This is also the value used as fallback for <a class="reference internal" href="class_stylebox.html#class-stylebox-property-content-margin-bottom"><span class="std std-ref">StyleBox.content_margin_bottom</span></a> if it is negative.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-margin-left">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/margin_left"></a>margin_left</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Increases the left margin of the 3×3 texture box.</p>
+<p>A higher value means more of the source texture is considered to be part of the left border of the 3×3 box.</p>
+<p>This is also the value used as fallback for <a class="reference internal" href="class_stylebox.html#class-stylebox-property-content-margin-left"><span class="std std-ref">StyleBox.content_margin_left</span></a> if it is negative.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-margin-right">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/margin_right"></a>margin_right</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Increases the right margin of the 3×3 texture box.</p>
+<p>A higher value means more of the source texture is considered to be part of the right border of the 3×3 box.</p>
+<p>This is also the value used as fallback for <a class="reference internal" href="class_stylebox.html#class-stylebox-property-content-margin-right"><span class="std std-ref">StyleBox.content_margin_right</span></a> if it is negative.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-margin-top">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/margin_top"></a>margin_top</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_margin_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_margin_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Increases the top margin of the 3×3 texture box.</p>
+<p>A higher value means more of the source texture is considered to be part of the top border of the 3×3 box.</p>
+<p>This is also the value used as fallback for <a class="reference internal" href="class_stylebox.html#class-stylebox-property-content-margin-top"><span class="std std-ref">StyleBox.content_margin_top</span></a> if it is negative.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-modulate-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/modulate_color"></a>modulate_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_modulate(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_modulate()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Modulates the color of the texture when this style box is drawn.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-normal-map">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/normal_map"></a>normal_map</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_normal_map(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_normal_map()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The normal map to use when drawing this style box.</p>
+<p><strong>Note:</strong> Godot expects the normal map to use X+, Y-, and Z+ coordinates. See <a class="reference external" href="http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates">this page</a> for a comparison of normal map coordinates expected by popular engines.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-region-rect">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/region_rect"></a>region_rect</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Rect2(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_region_rect(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_region_rect()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Species a sub-region of the texture to use.</p>
+<p>This is equivalent to first wrapping the texture in an <a class="reference internal" href="class_atlastexture.html#class-atlastexture"><span class="std std-ref">AtlasTexture</span></a> with the same region.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-property-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture"></a>texture</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The texture to use when drawing this style box.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-styleboxtexture-method-get-expand-margin-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_expand_margin_size"></a>get_expand_margin_size</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the size of the given <code class="docutils literal notranslate"><span class="pre">margin</span></code>'s expand margin. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-method-get-margin-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_margin_size"></a>get_margin_size</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the size of the given <code class="docutils literal notranslate"><span class="pre">margin</span></code>. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-method-set-expand-margin-all">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_expand_margin_all"></a>set_expand_margin_all</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Sets the expand margin to <code class="docutils literal notranslate"><span class="pre">size</span></code> pixels for all margins.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-method-set-expand-margin-individual">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_expand_margin_individual"></a>set_expand_margin_individual</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_left, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_top, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_right, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size_bottom <strong>)</strong></p></li>
+</ul>
+<p>Sets the expand margin for each margin to <code class="docutils literal notranslate"><span class="pre">size_left</span></code>, <code class="docutils literal notranslate"><span class="pre">size_top</span></code>, <code class="docutils literal notranslate"><span class="pre">size_right</span></code>, and <code class="docutils literal notranslate"><span class="pre">size_bottom</span></code> pixels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-method-set-expand-margin-size">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_expand_margin_size"></a>set_expand_margin_size</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Sets the expand margin to <code class="docutils literal notranslate"><span class="pre">size</span></code> pixels for the given <code class="docutils literal notranslate"><span class="pre">margin</span></code>. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-styleboxtexture-method-set-margin-size">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_margin_size"></a>set_margin_size</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Sets the margin to <code class="docutils literal notranslate"><span class="pre">size</span></code> pixels for the given <code class="docutils literal notranslate"><span class="pre">margin</span></code>. See <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> for possible values.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_styleboxline.html" rel="prev" title="StyleBoxLine"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_surfacetool.html" rel="next" title="SurfaceTool">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

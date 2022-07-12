@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AnimationNodeStateMachine" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_animationnodestatemachine.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: AnimationRootNode&lt; AnimationNode&lt; Resource&lt; Reference&lt; Object State machine for control of animations. Description: Contains multiple nodes representing animation states, connected in a g..." property="og:description"/>
+<meta content="State machine for control of animations. Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algor..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AnimationNodeStateMachine — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationnodestatemachine.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_animationnodestatemachine.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_animationnodestatemachine.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_animationnodestatemachine.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_animationnodestatemachine.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_animationnodestatemachine.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_animationnodestatemachine.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_animationnodestatemachine.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_animationnodestatemachine.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_animationnodestatemachine.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_animationnodestatemachine.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_animationnodestatemachine.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_animationnodestatemachine.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_animationnodestatemachine.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationnodestatemachine.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationnodestatemachine.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_animationnodestatemachineplayback.html" rel="next" title="AnimationNodeStateMachinePlayback"/>
+<link href="class_animationnodeoutput.html" rel="prev" title="AnimationNodeOutput"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AnimationNodeStateMachine</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="animationnodestatemachine">
+<span id="class-animationnodestatemachine"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AnimationNodeStateMachine¶"></a>AnimationNodeStateMachine<a class="headerlink" href="#animationnodestatemachine" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_animationrootnode.html#class-animationrootnode"><span class="std std-ref">AnimationRootNode</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>State machine for control of animations.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the <a class="reference internal" href="class_animationnodestatemachineplayback.html#class-animationnodestatemachineplayback"><span class="std std-ref">AnimationNodeStateMachinePlayback</span></a> object from the <a class="reference internal" href="class_animationtree.html#class-animationtree"><span class="std std-ref">AnimationTree</span></a> node to control it programmatically.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">state_machine</span> <span class="o">=</span> <span class="o">$</span><span class="n">AnimationTree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"parameters/playback"</span><span class="p">)</span>
+<span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">"some_state"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/animation/animation_tree.html"><span class="doc">Using AnimationTree</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-add-node"><span class="std std-ref">add_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-add-transition"><span class="std std-ref">add_transition</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to, <a class="reference internal" href="class_animationnodestatemachinetransition.html#class-animationnodestatemachinetransition"><span class="std std-ref">AnimationNodeStateMachineTransition</span></a> transition <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-end-node"><span class="std std-ref">get_end_node</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-graph-offset"><span class="std std-ref">get_graph_offset</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-node"><span class="std std-ref">get_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-node-name"><span class="std std-ref">get_node_name</span></a> <strong>(</strong> <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-node-position"><span class="std std-ref">get_node_position</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-start-node"><span class="std std-ref">get_start_node</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_animationnodestatemachinetransition.html#class-animationnodestatemachinetransition"><span class="std std-ref">AnimationNodeStateMachineTransition</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-transition"><span class="std std-ref">get_transition</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-transition-count"><span class="std std-ref">get_transition_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-transition-from"><span class="std std-ref">get_transition_from</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-get-transition-to"><span class="std std-ref">get_transition_to</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-has-node"><span class="std std-ref">has_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-has-transition"><span class="std std-ref">has_transition</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-remove-node"><span class="std std-ref">remove_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-remove-transition"><span class="std std-ref">remove_transition</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-remove-transition-by-index"><span class="std std-ref">remove_transition_by_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-rename-node"><span class="std std-ref">rename_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> new_name <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-replace-node"><span class="std std-ref">replace_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-set-end-node"><span class="std std-ref">set_end_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-set-graph-offset"><span class="std std-ref">set_graph_offset</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-set-node-position"><span class="std std-ref">set_node_position</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationnodestatemachine-method-set-start-node"><span class="std std-ref">set_start_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationnodestatemachine-method-add-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_node"></a>add_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Adds a new node to the graph. The <code class="docutils literal notranslate"><span class="pre">position</span></code> is used for display in the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-add-transition">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_transition"></a>add_transition</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to, <a class="reference internal" href="class_animationnodestatemachinetransition.html#class-animationnodestatemachinetransition"><span class="std std-ref">AnimationNodeStateMachineTransition</span></a> transition <strong>)</strong></p></li>
+</ul>
+<p>Adds a transition between the given nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-end-node">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_end_node"></a>get_end_node</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the graph's end node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-graph-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_graph_offset"></a>get_graph_offset</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the draw offset of the graph. Used for display in the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-node">
+<li><p><a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node"></a>get_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the animation node with the given name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-node-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_name"></a>get_node_name</strong> <strong>(</strong> <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given animation node's name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-node-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_position"></a>get_node_position</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given node's coordinates. Used for display in the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-start-node">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_start_node"></a>get_start_node</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the graph's end node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-transition">
+<li><p><a class="reference internal" href="class_animationnodestatemachinetransition.html#class-animationnodestatemachinetransition"><span class="std std-ref">AnimationNodeStateMachineTransition</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_transition"></a>get_transition</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given transition.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-transition-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_transition_count"></a>get_transition_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of connections in the graph.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-transition-from">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_transition_from"></a>get_transition_from</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given transition's start node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-get-transition-to">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_transition_to"></a>get_transition_to</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given transition's end node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-has-node">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_node"></a>has_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the graph contains the given node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-has-transition">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_transition"></a>has_transition</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if there is a transition between the given nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-remove-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_node"></a>remove_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Deletes the given node from the graph.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-remove-transition">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_transition"></a>remove_transition</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Deletes the transition between the two specified nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-remove-transition-by-index">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_transition_by_index"></a>remove_transition_by_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Deletes the given transition by index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-rename-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rename_node"></a>rename_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> new_name <strong>)</strong></p></li>
+</ul>
+<p>Renames the given node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-replace-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/replace_node"></a>replace_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_animationnode.html#class-animationnode"><span class="std std-ref">AnimationNode</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Replaces the node and keeps its transitions unchanged.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-set-end-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_end_node"></a>set_end_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets the given node as the graph end point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-set-graph-offset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_graph_offset"></a>set_graph_offset</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset <strong>)</strong></p></li>
+</ul>
+<p>Sets the draw offset of the graph. Used for display in the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-set-node-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_node_position"></a>set_node_position</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets the node's coordinates. Used for display in the editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationnodestatemachine-method-set-start-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_start_node"></a>set_start_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Sets the given node as the graph start point.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_animationnodeoutput.html" rel="prev" title="AnimationNodeOutput"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_animationnodestatemachineplayback.html" rel="next" title="AnimationNodeStateMachinePlayback">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

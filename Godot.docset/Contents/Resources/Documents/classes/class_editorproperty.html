@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorProperty" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorproperty.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Container&lt; Control&lt; CanvasItem&lt; Node&lt; Object Custom control to edit properties for adding into the inspector. Description: This control allows property editing for one or multiple propert..." property="og:description"/>
+<meta content="Custom control to edit properties for adding into the inspector. This control allows property editing for one or multiple properties into EditorInspector. It is added via EditorInspectorPlugin. bool checkable false bo..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorProperty — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorproperty.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorproperty.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorproperty.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorproperty.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorproperty.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorproperty.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorproperty.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorproperty.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorproperty.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorproperty.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorproperty.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorproperty.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorproperty.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorproperty.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorproperty.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorproperty.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorresourceconversionplugin.html" rel="next" title="EditorResourceConversionPlugin"/>
+<link href="class_editorplugin.html" rel="prev" title="EditorPlugin"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorProperty</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorproperty">
+<span id="class-editorproperty"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorProperty¶"></a>EditorProperty<a class="headerlink" href="#editorproperty" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_container.html#class-container"><span class="std std-ref">Container</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Custom control to edit properties for adding into the inspector.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This control allows property editing for one or multiple properties into <a class="reference internal" href="class_editorinspector.html#class-editorinspector"><span class="std std-ref">EditorInspector</span></a>. It is added via <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin"><span class="std std-ref">EditorInspectorPlugin</span></a>.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 60%"/>
+<col style="width: 11%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-checkable"><span class="std std-ref">checkable</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-checked"><span class="std std-ref">checked</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-draw-red"><span class="std std-ref">draw_red</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-keying"><span class="std std-ref">keying</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-label"><span class="std std-ref">label</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-property-read-only"><span class="std std-ref">read_only</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%"/>
+<col style="width: 89%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-add-focusable"><span class="std std-ref">add_focusable</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-emit-changed"><span class="std std-ref">emit_changed</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> field="", <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> changing=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-get-edited-object"><span class="std std-ref">get_edited_object</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-get-edited-property"><span class="std std-ref">get_edited_property</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-get-tooltip-text"><span class="std std-ref">get_tooltip_text</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-set-bottom-editor"><span class="std std-ref">set_bottom_editor</span></a> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorproperty-method-update-property"><span class="std std-ref">update_property</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorproperty-signal-multiple-properties-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/multiple_properties_changed"></a>multiple_properties_changed</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> properties, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Emit it if you want multiple properties modified at the same time. Do not use if added via <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin-method-parse-property"><span class="std std-ref">EditorInspectorPlugin.parse_property</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-object-id-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/object_id_selected"></a>object_id_selected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Used by sub-inspectors. Emit it if what was selected was an Object ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-property-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/property_changed"></a>property_changed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Do not emit this manually, use the <a class="reference internal" href="#class-editorproperty-method-emit-changed"><span class="std std-ref">emit_changed</span></a> method instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-property-checked">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/property_checked"></a>property_checked</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> bool <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a property was checked. Used internally.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-property-keyed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/property_keyed"></a>property_keyed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property <strong>)</strong></p></li>
+</ul>
+<p>Emit it if you want to add this value as an animation key (check for keying being enabled first).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-property-keyed-with-value">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/property_keyed_with_value"></a>property_keyed_with_value</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Emit it if you want to key a property with a single value.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-resource-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/resource_selected"></a>resource_selected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource <strong>)</strong></p></li>
+</ul>
+<p>If you want a sub-resource to be edited, emit this signal with the resource.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-signal-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/selected"></a>selected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> focusable_idx <strong>)</strong></p></li>
+</ul>
+<p>Emitted when selected. Used internally.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorproperty-property-checkable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/checkable"></a>checkable</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_checkable(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_checkable()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used by the inspector, set to <code class="docutils literal notranslate"><span class="pre">true</span></code> when the property is checkable.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-property-checked">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/checked"></a>checked</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_checked(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_checked()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used by the inspector, set to <code class="docutils literal notranslate"><span class="pre">true</span></code> when the property is checked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-property-draw-red">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/draw_red"></a>draw_red</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_draw_red(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_draw_red()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used by the inspector, set to <code class="docutils literal notranslate"><span class="pre">true</span></code> when the property is drawn with the editor theme's warning color. This is used for editable children's properties.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-property-keying">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/keying"></a>keying</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_keying(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_keying()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used by the inspector, set to <code class="docutils literal notranslate"><span class="pre">true</span></code> when the property can add keys for animation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-property-label">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/label"></a>label</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_label(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_label()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Set this property to change the label (if you want to show one).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-property-read-only">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/read_only"></a>read_only</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_read_only(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_read_only()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Used by the inspector, set to <code class="docutils literal notranslate"><span class="pre">true</span></code> when the property is read-only.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorproperty-method-add-focusable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_focusable"></a>add_focusable</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> control <strong>)</strong></p></li>
+</ul>
+<p>If any of the controls added can gain keyboard focus, add it here. This ensures that focus will be restored if the inspector is refreshed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-emit-changed">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/emit_changed"></a>emit_changed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> field="", <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> changing=false <strong>)</strong></p></li>
+</ul>
+<p>If one or several properties have changed, this must be called. <code class="docutils literal notranslate"><span class="pre">field</span></code> is used in case your editor can modify fields separately (as an example, Vector3.x). The <code class="docutils literal notranslate"><span class="pre">changing</span></code> argument avoids the editor requesting this property to be refreshed (leave as <code class="docutils literal notranslate"><span class="pre">false</span></code> if unsure).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-get-edited-object">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edited_object"></a>get_edited_object</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the edited object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-get-edited-property">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_edited_property"></a>get_edited_property</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the edited property. If your editor is for a single property (added via <a class="reference internal" href="class_editorinspectorplugin.html#class-editorinspectorplugin-method-parse-property"><span class="std std-ref">EditorInspectorPlugin.parse_property</span></a>), then this will return the property.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-get-tooltip-text">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tooltip_text"></a>get_tooltip_text</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Must be implemented to provide a custom tooltip to the property editor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-set-bottom-editor">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bottom_editor"></a>set_bottom_editor</strong> <strong>(</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> editor <strong>)</strong></p></li>
+</ul>
+<p>Puts the <code class="docutils literal notranslate"><span class="pre">editor</span></code> control below the property label. The control must be previously added using <a class="reference internal" href="class_node.html#class-node-method-add-child"><span class="std std-ref">Node.add_child</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorproperty-method-update-property">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/update_property"></a>update_property</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>When this virtual function is called, you must update your editor.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorplugin.html" rel="prev" title="EditorPlugin"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorresourceconversionplugin.html" rel="next" title="EditorResourceConversionPlugin">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="OpenSimplexNoise" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_opensimplexnoise.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Noise generator based on Open Simplex. Description: This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that ..." property="og:description"/>
+<meta content="Noise generator based on Open Simplex. This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that configures an OpenSimplexNoise and gets samples at various positions an..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) OpenSimplexNoise — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_opensimplexnoise.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_opensimplexnoise.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_opensimplexnoise.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_opensimplexnoise.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_opensimplexnoise.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_opensimplexnoise.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_opensimplexnoise.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_opensimplexnoise.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_opensimplexnoise.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_opensimplexnoise.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_opensimplexnoise.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_opensimplexnoise.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_opensimplexnoise.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_opensimplexnoise.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_opensimplexnoise.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_opensimplexnoise.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_optionbutton.html" rel="next" title="OptionButton"/>
+<link href="class_omnilight.html" rel="prev" title="OmniLight"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>OpenSimplexNoise</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="opensimplexnoise">
+<span id="class-opensimplexnoise"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/OpenSimplexNoise¶"></a>OpenSimplexNoise<a class="headerlink" href="#opensimplexnoise" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Noise generator based on Open Simplex.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This resource allows you to configure and sample a fractal noise space. Here is a brief usage example that configures an OpenSimplexNoise and gets samples at various positions and dimensions:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">noise</span> <span class="o">=</span> <span class="n">OpenSimplexNoise</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+
+<span class="c1"># Configure</span>
+<span class="n">noise</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">()</span>
+<span class="n">noise</span><span class="o">.</span><span class="n">octaves</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">noise</span><span class="o">.</span><span class="n">period</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">noise</span><span class="o">.</span><span class="n">persistence</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="c1"># Sample</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Values:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">noise</span><span class="o">.</span><span class="n">get_noise_2d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">noise</span><span class="o">.</span><span class="n">get_noise_3d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">noise</span><span class="o">.</span><span class="n">get_noise_4d</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 64%"/>
+<col style="width: 10%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-property-lacunarity"><span class="std std-ref">lacunarity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-property-octaves"><span class="std std-ref">octaves</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-property-period"><span class="std std-ref">period</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">64.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-property-persistence"><span class="std std-ref">persistence</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-property-seed"><span class="std std-ref">seed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%"/>
+<col style="width: 88%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-image"><span class="std std-ref">get_image</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> width, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> height, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> noise_offset=Vector2( 0, 0 ) <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-1d"><span class="std std-ref">get_noise_1d</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-2d"><span class="std std-ref">get_noise_2d</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-2dv"><span class="std std-ref">get_noise_2dv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> pos <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-3d"><span class="std std-ref">get_noise_3d</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-3dv"><span class="std std-ref">get_noise_3dv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> pos <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-noise-4d"><span class="std std-ref">get_noise_4d</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> w <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a></p></td>
+<td><p><a class="reference internal" href="#class-opensimplexnoise-method-get-seamless-image"><span class="std std-ref">get_seamless_image</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-opensimplexnoise-property-lacunarity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lacunarity"></a>lacunarity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lacunarity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lacunarity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Difference in period between <a class="reference internal" href="#class-opensimplexnoise-property-octaves"><span class="std std-ref">octaves</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-property-octaves">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/octaves"></a>octaves</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_octaves(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_octaves()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of OpenSimplex noise layers that are sampled to get the fractal noise. Higher values result in more detailed noise but take more time to generate.</p>
+<p><strong>Note:</strong> The maximum allowed value is 9.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-property-period">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/period"></a>period</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">64.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_period(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_period()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Period of the base octave. A lower period results in a higher-frequency noise (more value changes across the same distance).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-property-persistence">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/persistence"></a>persistence</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_persistence(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_persistence()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Contribution factor of the different octaves. A <code class="docutils literal notranslate"><span class="pre">persistence</span></code> value of 1 means all the octaves have the same contribution, a value of 0.5 means each octave contributes half as much as the previous one.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-property-seed">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/seed"></a>seed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_seed(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_seed()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Seed used to generate random values, different seeds will generate different noise maps.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-opensimplexnoise-method-get-image">
+<li><p><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_image"></a>get_image</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> width, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> height, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> noise_offset=Vector2( 0, 0 ) <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Generate a noise image in <a class="reference internal" href="class_image.html#class-image-constant-format-l8"><span class="std std-ref">Image.FORMAT_L8</span></a> format with the requested <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>, based on the current noise parameters. If <code class="docutils literal notranslate"><span class="pre">noise_offset</span></code> is specified, then the offset value is used as the coordinates of the top-left corner of the generated noise.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-1d">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_1d"></a>get_noise_1d</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 1D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given x-coordinate.</p>
+<p><strong>Note:</strong> This method actually returns the 2D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> with fixed y-coordinate value 0.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-2d">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_2d"></a>get_noise_2d</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 2D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-2dv">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_2dv"></a>get_noise_2dv</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> pos <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 2D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-3d">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_3d"></a>get_noise_3d</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 3D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-3dv">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_3dv"></a>get_noise_3dv</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> pos <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 3D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-noise-4d">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_noise_4d"></a>get_noise_4d</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> x, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> w <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 4D noise value <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code> at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-opensimplexnoise-method-get-seamless-image">
+<li><p><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_seamless_image"></a>get_seamless_image</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Generate a tileable noise image in <a class="reference internal" href="class_image.html#class-image-constant-format-l8"><span class="std std-ref">Image.FORMAT_L8</span></a> format, based on the current noise parameters. Generated seamless images are always square (<code class="docutils literal notranslate"><span class="pre">size</span></code> × <code class="docutils literal notranslate"><span class="pre">size</span></code>).</p>
+<p><strong>Note:</strong> Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_omnilight.html" rel="prev" title="OmniLight"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_optionbutton.html" rel="next" title="OptionButton">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

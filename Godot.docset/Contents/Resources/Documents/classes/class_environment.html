@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Environment" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_environment.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Resource for environment nodes (like WorldEnvironment) that define multiple rendering options. Description: Resource for environment nodes (like WorldEnvironme..." property="og:description"/>
+<meta content="Resource for environment nodes (like WorldEnvironment) that define multiple rendering options. Resource for environment nodes (like WorldEnvironment) that define multiple environment operations (such as background Sky..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Environment — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_environment.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_environment.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_environment.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_environment.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_environment.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_environment.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_environment.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_environment.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_environment.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_environment.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_environment.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_environment.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_environment.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_environment.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_environment.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_environment.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_expression.html" rel="next" title="Expression"/>
+<link href="class_engine.html" rel="prev" title="Engine"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Environment</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="environment">
+<span id="class-environment"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Environment¶"></a>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Resource for environment nodes (like <a class="reference internal" href="class_worldenvironment.html#class-worldenvironment"><span class="std std-ref">WorldEnvironment</span></a>) that define multiple rendering options.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Resource for environment nodes (like <a class="reference internal" href="class_worldenvironment.html#class-worldenvironment"><span class="std std-ref">WorldEnvironment</span></a>) that define multiple environment operations (such as background <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> or <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>, ambient light, fog, depth-of-field...). These parameters affect the final render of the scene. The order of these operations is:</p>
+<ul class="simple">
+<li><p>Depth of Field Blur</p></li>
+<li><p>Glow</p></li>
+<li><p>Tonemap (Auto Exposure)</p></li>
+<li><p>Adjustments</p></li>
+</ul>
+<p>If the target <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> is set to "2D Without Sampling", all post-processing effects will be unavailable. With "3D Without Effects", the following options will be unavailable:</p>
+<ul class="simple">
+<li><p>Ssao</p></li>
+<li><p>Ss Reflections</p></li>
+</ul>
+<p>This can be configured for the root Viewport with <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-intended-usage-framebuffer-allocation"><span class="std std-ref">ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation</span></a>, or for specific Viewports via the <a class="reference internal" href="class_viewport.html#class-viewport-property-usage"><span class="std std-ref">Viewport.usage</span></a> property.</p>
+<p>Note that <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-intended-usage-framebuffer-allocation"><span class="std std-ref">ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation</span></a> has a mobile platform override to use "3D Without Effects" by default. It improves the performance on mobile devices, but at the same time affects the screen display on mobile devices.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/environment_and_post_processing.html"><span class="doc">Environment and post-processing</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/3d/high_dynamic_range.html"><span class="doc">High dynamic range lighting</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/123">3D Material Testers Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/110">2D HDR Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 51%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-adjustment-brightness"><span class="std std-ref">adjustment_brightness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-adjustment-color-correction"><span class="std std-ref">adjustment_color_correction</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-adjustment-contrast"><span class="std std-ref">adjustment_contrast</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-adjustment-enabled"><span class="std std-ref">adjustment_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-adjustment-saturation"><span class="std std-ref">adjustment_saturation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ambient-light-color"><span class="std std-ref">ambient_light_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ambient-light-energy"><span class="std std-ref">ambient_light_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ambient-light-sky-contribution"><span class="std std-ref">ambient_light_sky_contribution</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-auto-exposure-enabled"><span class="std std-ref">auto_exposure_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-auto-exposure-max-luma"><span class="std std-ref">auto_exposure_max_luma</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-auto-exposure-min-luma"><span class="std std-ref">auto_exposure_min_luma</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.05</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-auto-exposure-scale"><span class="std std-ref">auto_exposure_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-auto-exposure-speed"><span class="std std-ref">auto_exposure_speed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-camera-feed-id"><span class="std std-ref">background_camera_feed_id</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-canvas-max-layer"><span class="std std-ref">background_canvas_max_layer</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-color"><span class="std std-ref">background_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-energy"><span class="std std-ref">background_energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-environment-bgmode"><span class="std std-ref">BGMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-mode"><span class="std std-ref">background_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-sky"><span class="std std-ref">background_sky</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-sky-custom-fov"><span class="std std-ref">background_sky_custom_fov</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-sky-orientation"><span class="std std-ref">background_sky_orientation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Basis(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-sky-rotation"><span class="std std-ref">background_sky_rotation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-background-sky-rotation-degrees"><span class="std std-ref">background_sky_rotation_degrees</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-far-amount"><span class="std std-ref">dof_blur_far_amount</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-far-distance"><span class="std std-ref">dof_blur_far_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-far-enabled"><span class="std std-ref">dof_blur_far_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-environment-dofblurquality"><span class="std std-ref">DOFBlurQuality</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-far-quality"><span class="std std-ref">dof_blur_far_quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-far-transition"><span class="std std-ref">dof_blur_far_transition</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-near-amount"><span class="std std-ref">dof_blur_near_amount</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-near-distance"><span class="std std-ref">dof_blur_near_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-near-enabled"><span class="std std-ref">dof_blur_near_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-environment-dofblurquality"><span class="std std-ref">DOFBlurQuality</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-near-quality"><span class="std std-ref">dof_blur_near_quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-dof-blur-near-transition"><span class="std std-ref">dof_blur_near_transition</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-color"><span class="std std-ref">fog_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.5,</span> <span class="pre">0.6,</span> <span class="pre">0.7,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-depth-begin"><span class="std std-ref">fog_depth_begin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-depth-curve"><span class="std std-ref">fog_depth_curve</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-depth-enabled"><span class="std std-ref">fog_depth_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-depth-end"><span class="std std-ref">fog_depth_end</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">100.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-enabled"><span class="std std-ref">fog_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-height-curve"><span class="std std-ref">fog_height_curve</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-height-enabled"><span class="std std-ref">fog_height_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-height-max"><span class="std std-ref">fog_height_max</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-height-min"><span class="std std-ref">fog_height_min</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-sun-amount"><span class="std std-ref">fog_sun_amount</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-sun-color"><span class="std std-ref">fog_sun_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">0.9,</span> <span class="pre">0.7,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-transmit-curve"><span class="std std-ref">fog_transmit_curve</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-fog-transmit-enabled"><span class="std std-ref">fog_transmit_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-bicubic-upscale"><span class="std std-ref">glow_bicubic_upscale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-environment-glowblendmode"><span class="std std-ref">GlowBlendMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-blend-mode"><span class="std std-ref">glow_blend_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-bloom"><span class="std std-ref">glow_bloom</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-enabled"><span class="std std-ref">glow_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-hdr-luminance-cap"><span class="std std-ref">glow_hdr_luminance_cap</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-hdr-scale"><span class="std std-ref">glow_hdr_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-hdr-threshold"><span class="std std-ref">glow_hdr_threshold</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-high-quality"><span class="std std-ref">glow_high_quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-intensity"><span class="std std-ref">glow_intensity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-1"><span class="std std-ref">glow_levels/1</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-2"><span class="std std-ref">glow_levels/2</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-3"><span class="std std-ref">glow_levels/3</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-4"><span class="std std-ref">glow_levels/4</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-5"><span class="std std-ref">glow_levels/5</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-6"><span class="std std-ref">glow_levels/6</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-levels-7"><span class="std std-ref">glow_levels/7</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-glow-strength"><span class="std std-ref">glow_strength</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-depth-tolerance"><span class="std std-ref">ss_reflections_depth_tolerance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-enabled"><span class="std std-ref">ss_reflections_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-fade-in"><span class="std std-ref">ss_reflections_fade_in</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.15</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-fade-out"><span class="std std-ref">ss_reflections_fade_out</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-max-steps"><span class="std std-ref">ss_reflections_max_steps</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">64</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ss-reflections-roughness"><span class="std std-ref">ss_reflections_roughness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-ao-channel-affect"><span class="std std-ref">ssao_ao_channel_affect</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-bias"><span class="std std-ref">ssao_bias</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-environment-ssaoblur"><span class="std std-ref">SSAOBlur</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-blur"><span class="std std-ref">ssao_blur</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-color"><span class="std std-ref">ssao_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-edge-sharpness"><span class="std std-ref">ssao_edge_sharpness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-enabled"><span class="std std-ref">ssao_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-intensity"><span class="std std-ref">ssao_intensity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-intensity2"><span class="std std-ref">ssao_intensity2</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-light-affect"><span class="std std-ref">ssao_light_affect</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-environment-ssaoquality"><span class="std std-ref">SSAOQuality</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-quality"><span class="std std-ref">ssao_quality</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-radius"><span class="std std-ref">ssao_radius</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-ssao-radius2"><span class="std std-ref">ssao_radius2</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-tonemap-exposure"><span class="std std-ref">tonemap_exposure</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-environment-tonemapper"><span class="std std-ref">ToneMapper</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-tonemap-mode"><span class="std std-ref">tonemap_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-property-tonemap-white"><span class="std std-ref">tonemap_white</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-environment-method-is-glow-level-enabled"><span class="std std-ref">is_glow_level_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-environment-method-set-glow-level"><span class="std std-ref">set_glow_level</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-environment-constant-bg-max"><span id="class-environment-constant-bg-camera-feed"></span><span id="class-environment-constant-bg-canvas"></span><span id="class-environment-constant-bg-color-sky"></span><span id="class-environment-constant-bg-sky"></span><span id="class-environment-constant-bg-color"></span><span id="class-environment-constant-bg-clear-color"></span><span id="class-environment-constant-bg-keep"></span><span id="enum-environment-bgmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BGMode"></a>BGMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BG_KEEP</strong> = <strong>5</strong> --- Keeps on screen every pixel drawn in the background. Only select this mode if you really need to keep the old data. On modern GPUs it will generally not be faster than clearing the background, and can be significantly slower, particularly on mobile.</p></li>
+</ul>
+<p>It can only be safely used in fully-interior scenes (no visible sky or sky reflections). If enabled in a scene where the background is visible, "ghost trail" artifacts will be visible when moving the camera.</p>
+<ul class="simple">
+<li><p><strong>BG_CLEAR_COLOR</strong> = <strong>0</strong> --- Clears the background using the clear color defined in <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-environment-default-clear-color"><span class="std std-ref">ProjectSettings.rendering/environment/default_clear_color</span></a>.</p></li>
+<li><p><strong>BG_COLOR</strong> = <strong>1</strong> --- Clears the background using a custom clear color.</p></li>
+<li><p><strong>BG_SKY</strong> = <strong>2</strong> --- Displays a user-defined sky in the background.</p></li>
+<li><p><strong>BG_COLOR_SKY</strong> = <strong>3</strong> --- Clears the background using a custom clear color and allows defining a sky for shading and reflection. This mode is slightly faster than <a class="reference internal" href="#class-environment-constant-bg-sky"><span class="std std-ref">BG_SKY</span></a> and should be preferred in scenes where reflections can be visible, but the sky itself never is (e.g. top-down camera).</p></li>
+<li><p><strong>BG_CANVAS</strong> = <strong>4</strong> --- Displays a <a class="reference internal" href="class_canvaslayer.html#class-canvaslayer"><span class="std std-ref">CanvasLayer</span></a> in the background.</p></li>
+<li><p><strong>BG_CAMERA_FEED</strong> = <strong>6</strong> --- Displays a camera feed in the background.</p></li>
+<li><p><strong>BG_MAX</strong> = <strong>7</strong> --- Represents the size of the <a class="reference internal" href="#enum-environment-bgmode"><span class="std std-ref">BGMode</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-environment-constant-glow-blend-mode-replace"><span id="class-environment-constant-glow-blend-mode-softlight"></span><span id="class-environment-constant-glow-blend-mode-screen"></span><span id="class-environment-constant-glow-blend-mode-additive"></span><span id="enum-environment-glowblendmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/GlowBlendMode"></a>GlowBlendMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>GLOW_BLEND_MODE_ADDITIVE</strong> = <strong>0</strong> --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.</p></li>
+<li><p><strong>GLOW_BLEND_MODE_SCREEN</strong> = <strong>1</strong> --- Screen glow blending mode. Increases brightness, used frequently with bloom.</p></li>
+<li><p><strong>GLOW_BLEND_MODE_SOFTLIGHT</strong> = <strong>2</strong> --- Soft light glow blending mode. Modifies contrast, exposes shadows and highlights (vivid bloom).</p></li>
+<li><p><strong>GLOW_BLEND_MODE_REPLACE</strong> = <strong>3</strong> --- Replace glow blending mode. Replaces all pixels' color by the glow value. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-environment-constant-tone-mapper-aces-fitted"><span id="class-environment-constant-tone-mapper-aces"></span><span id="class-environment-constant-tone-mapper-filmic"></span><span id="class-environment-constant-tone-mapper-reinhardt"></span><span id="class-environment-constant-tone-mapper-linear"></span><span id="enum-environment-tonemapper"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ToneMapper"></a>ToneMapper</strong>:</p>
+<ul class="simple">
+<li><p><strong>TONE_MAPPER_LINEAR</strong> = <strong>0</strong> --- Linear tonemapper operator. Reads the linear data and passes it on unmodified. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.</p></li>
+<li><p><strong>TONE_MAPPER_REINHARDT</strong> = <strong>1</strong> --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">color</span> <span class="pre">/</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">color)</span></code>. This avoids clipping bright highlights, but the resulting image can look a bit dull.</p></li>
+<li><p><strong>TONE_MAPPER_FILMIC</strong> = <strong>2</strong> --- Filmic tonemapper operator. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than <a class="reference internal" href="#class-environment-constant-tone-mapper-reinhardt"><span class="std std-ref">TONE_MAPPER_REINHARDT</span></a>.</p></li>
+<li><p><strong>TONE_MAPPER_ACES</strong> = <strong>3</strong> --- Use the legacy Godot version of the Academy Color Encoding System tonemapper. Unlike <a class="reference internal" href="#class-environment-constant-tone-mapper-aces-fitted"><span class="std std-ref">TONE_MAPPER_ACES_FITTED</span></a>, this version of ACES does not handle bright lighting in a physically accurate way. ACES typically has a more contrasted output compared to <a class="reference internal" href="#class-environment-constant-tone-mapper-reinhardt"><span class="std std-ref">TONE_MAPPER_REINHARDT</span></a> and <a class="reference internal" href="#class-environment-constant-tone-mapper-filmic"><span class="std std-ref">TONE_MAPPER_FILMIC</span></a>.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> This tonemapping operator will be removed in Godot 4.0 in favor of the more accurate <a class="reference internal" href="#class-environment-constant-tone-mapper-aces-fitted"><span class="std std-ref">TONE_MAPPER_ACES_FITTED</span></a>.</p>
+<ul class="simple">
+<li><p><strong>TONE_MAPPER_ACES_FITTED</strong> = <strong>4</strong> --- Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to <a class="reference internal" href="#class-environment-constant-tone-mapper-reinhardt"><span class="std std-ref">TONE_MAPPER_REINHARDT</span></a> and <a class="reference internal" href="#class-environment-constant-tone-mapper-filmic"><span class="std std-ref">TONE_MAPPER_FILMIC</span></a>.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-environment-constant-dof-blur-quality-high"><span id="class-environment-constant-dof-blur-quality-medium"></span><span id="class-environment-constant-dof-blur-quality-low"></span><span id="enum-environment-dofblurquality"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DOFBlurQuality"></a>DOFBlurQuality</strong>:</p>
+<ul class="simple">
+<li><p><strong>DOF_BLUR_QUALITY_LOW</strong> = <strong>0</strong> --- Low depth-of-field blur quality (fastest).</p></li>
+<li><p><strong>DOF_BLUR_QUALITY_MEDIUM</strong> = <strong>1</strong> --- Medium depth-of-field blur quality.</p></li>
+<li><p><strong>DOF_BLUR_QUALITY_HIGH</strong> = <strong>2</strong> --- High depth-of-field blur quality (slowest).</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-environment-constant-ssao-blur-3x3"><span id="class-environment-constant-ssao-blur-2x2"></span><span id="class-environment-constant-ssao-blur-1x1"></span><span id="class-environment-constant-ssao-blur-disabled"></span><span id="enum-environment-ssaoblur"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SSAOBlur"></a>SSAOBlur</strong>:</p>
+<ul class="simple">
+<li><p><strong>SSAO_BLUR_DISABLED</strong> = <strong>0</strong> --- No blur for the screen-space ambient occlusion effect (fastest).</p></li>
+<li><p><strong>SSAO_BLUR_1x1</strong> = <strong>1</strong> --- 1×1 blur for the screen-space ambient occlusion effect.</p></li>
+<li><p><strong>SSAO_BLUR_2x2</strong> = <strong>2</strong> --- 2×2 blur for the screen-space ambient occlusion effect.</p></li>
+<li><p><strong>SSAO_BLUR_3x3</strong> = <strong>3</strong> --- 3×3 blur for the screen-space ambient occlusion effect (slowest).</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-environment-constant-ssao-quality-high"><span id="class-environment-constant-ssao-quality-medium"></span><span id="class-environment-constant-ssao-quality-low"></span><span id="enum-environment-ssaoquality"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SSAOQuality"></a>SSAOQuality</strong>:</p>
+<ul class="simple">
+<li><p><strong>SSAO_QUALITY_LOW</strong> = <strong>0</strong> --- Low quality for the screen-space ambient occlusion effect (fastest).</p></li>
+<li><p><strong>SSAO_QUALITY_MEDIUM</strong> = <strong>1</strong> --- Low quality for the screen-space ambient occlusion effect.</p></li>
+<li><p><strong>SSAO_QUALITY_HIGH</strong> = <strong>2</strong> --- Low quality for the screen-space ambient occlusion effect (slowest).</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-environment-property-adjustment-brightness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/adjustment_brightness"></a>adjustment_brightness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_adjustment_brightness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_adjustment_brightness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The global brightness value of the rendered scene. Effective only if <code class="docutils literal notranslate"><span class="pre">adjustment_enabled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-adjustment-color-correction">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/adjustment_color_correction"></a>adjustment_color_correction</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_adjustment_color_correction(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_adjustment_color_correction()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Applies the provided <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> resource to affect the global color aspect of the rendered scene. Effective only if <code class="docutils literal notranslate"><span class="pre">adjustment_enabled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-adjustment-contrast">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/adjustment_contrast"></a>adjustment_contrast</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_adjustment_contrast(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_adjustment_contrast()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The global contrast value of the rendered scene (default value is 1). Effective only if <code class="docutils literal notranslate"><span class="pre">adjustment_enabled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-adjustment-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/adjustment_enabled"></a>adjustment_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_adjustment_enable(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_adjustment_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables the <code class="docutils literal notranslate"><span class="pre">adjustment_*</span></code> properties provided by this resource. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, modifications to the <code class="docutils literal notranslate"><span class="pre">adjustment_*</span></code> properties will have no effect on the rendered scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-adjustment-saturation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/adjustment_saturation"></a>adjustment_saturation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_adjustment_saturation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_adjustment_saturation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The global color saturation value of the rendered scene (default value is 1). Effective only if <code class="docutils literal notranslate"><span class="pre">adjustment_enabled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ambient-light-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ambient_light_color"></a>ambient_light_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ambient_light_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ambient_light_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ambient light's <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ambient-light-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ambient_light_energy"></a>ambient_light_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ambient_light_energy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ambient_light_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ambient light's energy. The higher the value, the stronger the light.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ambient-light-sky-contribution">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ambient_light_sky_contribution"></a>ambient_light_sky_contribution</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ambient_light_sky_contribution(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ambient_light_sky_contribution()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Defines the amount of light that the sky brings on the scene. A value of <code class="docutils literal notranslate"><span class="pre">0.0</span></code> means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> means that <em>all</em> the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-environment-property-ambient-light-sky-contribution"><span class="std std-ref">ambient_light_sky_contribution</span></a> is internally clamped between <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> (inclusive).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-auto-exposure-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/auto_exposure_enabled"></a>auto_exposure_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_auto_exposure(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_auto_exposure()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables the tonemapping auto exposure mode of the scene renderer. If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the renderer will automatically determine the exposure setting to adapt to the scene's illumination and the observed light.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-auto-exposure-max-luma">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/auto_exposure_max_luma"></a>auto_exposure_max_luma</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_auto_exposure_max(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_auto_exposure_max()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum luminance value for the auto exposure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-auto-exposure-min-luma">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/auto_exposure_min_luma"></a>auto_exposure_min_luma</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.05</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_auto_exposure_min(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_auto_exposure_min()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The minimum luminance value for the auto exposure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-auto-exposure-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/auto_exposure_scale"></a>auto_exposure_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_auto_exposure_grey(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_auto_exposure_grey()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The scale of the auto exposure effect. Affects the intensity of auto exposure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-auto-exposure-speed">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/auto_exposure_speed"></a>auto_exposure_speed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_auto_exposure_speed(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_auto_exposure_speed()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-camera-feed-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_camera_feed_id"></a>background_camera_feed_id</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_camera_feed_id(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_camera_feed_id()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ID of the camera feed to show in the background.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-canvas-max-layer">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_canvas_max_layer"></a>background_canvas_max_layer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_canvas_max_layer(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_canvas_max_layer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum layer ID to display. Only effective when using the <a class="reference internal" href="#class-environment-constant-bg-canvas"><span class="std std-ref">BG_CANVAS</span></a> background mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_color"></a>background_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bg_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bg_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> displayed for clear areas of the scene. Only effective when using the <a class="reference internal" href="#class-environment-constant-bg-color"><span class="std std-ref">BG_COLOR</span></a> or <a class="reference internal" href="#class-environment-constant-bg-color-sky"><span class="std std-ref">BG_COLOR_SKY</span></a> background modes).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_energy"></a>background_energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bg_energy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bg_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The power of the light emitted by the background.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-mode">
+<li><p><a class="reference internal" href="#enum-environment-bgmode"><span class="std std-ref">BGMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_mode"></a>background_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_background(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_background()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The background mode. See <a class="reference internal" href="#enum-environment-bgmode"><span class="std std-ref">BGMode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-sky">
+<li><p><a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_sky"></a>background_sky</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_sky(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_sky()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource defined as background.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-sky-custom-fov">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_sky_custom_fov"></a>background_sky_custom_fov</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sky_custom_fov(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sky_custom_fov()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource's custom field of view.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-sky-orientation">
+<li><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_sky_orientation"></a>background_sky_orientation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Basis(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sky_orientation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sky_orientation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource's rotation expressed as a <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-sky-rotation">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_sky_rotation"></a>background_sky_rotation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sky_rotation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sky_rotation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource's rotation expressed as Euler angles in radians.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-background-sky-rotation-degrees">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/background_sky_rotation_degrees"></a>background_sky_rotation_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_sky_rotation_degrees(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_sky_rotation_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_sky.html#class-sky"><span class="std std-ref">Sky</span></a> resource's rotation expressed as Euler angles in degrees.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-far-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_far_amount"></a>dof_blur_far_amount</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_far_amount(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_far_amount()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of far blur for the depth-of-field effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-far-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_far_distance"></a>dof_blur_far_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_far_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_far_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The distance from the camera where the far blur effect affects the rendering.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-far-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_far_enabled"></a>dof_blur_far_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_far_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_dof_blur_far_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables the depth-of-field far blur effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-far-quality">
+<li><p><a class="reference internal" href="#enum-environment-dofblurquality"><span class="std std-ref">DOFBlurQuality</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_far_quality"></a>dof_blur_far_quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_far_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_far_quality()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The depth-of-field far blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-far-transition">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_far_transition"></a>dof_blur_far_transition</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_far_transition(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_far_transition()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The length of the transition between the no-blur area and far blur.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-near-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_near_amount"></a>dof_blur_near_amount</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_near_amount(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_near_amount()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The amount of near blur for the depth-of-field effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-near-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_near_distance"></a>dof_blur_near_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_near_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_near_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Distance from the camera where the near blur effect affects the rendering.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-near-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_near_enabled"></a>dof_blur_near_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_near_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_dof_blur_near_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables the depth-of-field near blur effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-near-quality">
+<li><p><a class="reference internal" href="#enum-environment-dofblurquality"><span class="std std-ref">DOFBlurQuality</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_near_quality"></a>dof_blur_near_quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_near_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_near_quality()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The depth-of-field near blur's quality. Higher values can mitigate the visible banding effect seen at higher strengths, but are much slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-dof-blur-near-transition">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dof_blur_near_transition"></a>dof_blur_near_transition</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dof_blur_near_transition(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dof_blur_near_transition()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The length of the transition between the near blur and no-blur area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_color"></a>fog_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.5,</span> <span class="pre">0.6,</span> <span class="pre">0.7,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fog's <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-depth-begin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_depth_begin"></a>fog_depth_begin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_depth_begin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_depth_begin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fog's depth starting distance from the camera.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-depth-curve">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_depth_curve"></a>fog_depth_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_depth_curve(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_depth_curve()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fog depth's intensity curve. A number of presets are available in the <strong>Inspector</strong> by right-clicking the curve.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-depth-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_depth_enabled"></a>fog_depth_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_depth_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_fog_depth_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the depth fog effect is enabled. When enabled, fog will appear in the distance (relative to the camera).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-depth-end">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_depth_end"></a>fog_depth_end</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">100.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_depth_end(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_depth_end()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fog's depth end distance from the camera. If this value is set to 0, it will be equal to the current camera's <a class="reference internal" href="class_camera.html#class-camera-property-far"><span class="std std-ref">Camera.far</span></a> value.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_enabled"></a>fog_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_fog_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, fog effects are enabled. <a class="reference internal" href="#class-environment-property-fog-height-enabled"><span class="std std-ref">fog_height_enabled</span></a> and/or <a class="reference internal" href="#class-environment-property-fog-depth-enabled"><span class="std std-ref">fog_depth_enabled</span></a> must be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to actually display fog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-height-curve">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_height_curve"></a>fog_height_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_height_curve(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_height_curve()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The height fog's intensity. A number of presets are available in the <strong>Inspector</strong> by right-clicking the curve.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-height-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_height_enabled"></a>fog_height_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_height_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_fog_height_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the height fog effect is enabled. When enabled, fog will appear in a defined height range, regardless of the distance from the camera. This can be used to simulate "deep water" effects with a lower performance cost compared to a dedicated shader.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-height-max">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_height_max"></a>fog_height_max</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_height_max(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_height_max()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The Y coordinate where the height fog will be the most intense. If this value is greater than <a class="reference internal" href="#class-environment-property-fog-height-min"><span class="std std-ref">fog_height_min</span></a>, fog will be displayed from bottom to top. Otherwise, it will be displayed from top to bottom.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-height-min">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_height_min"></a>fog_height_min</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_height_min(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_height_min()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The Y coordinate where the height fog will be the least intense. If this value is greater than <a class="reference internal" href="#class-environment-property-fog-height-max"><span class="std std-ref">fog_height_max</span></a>, fog will be displayed from top to bottom. Otherwise, it will be displayed from bottom to top.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-sun-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_sun_amount"></a>fog_sun_amount</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_sun_amount(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_sun_amount()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The intensity of the depth fog color transition when looking towards the sun. The sun's direction is determined automatically using the DirectionalLight node in the scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-sun-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_sun_color"></a>fog_sun_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">0.9,</span> <span class="pre">0.7,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_sun_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_sun_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The depth fog's <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> when looking towards the sun.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-transmit-curve">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_transmit_curve"></a>fog_transmit_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_transmit_curve(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fog_transmit_curve()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The intensity of the fog light transmittance effect. Amount of light that the fog transmits.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-fog-transmit-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fog_transmit_enabled"></a>fog_transmit_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fog_transmit_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_fog_transmit_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Enables fog's light transmission effect. If <code class="docutils literal notranslate"><span class="pre">true</span></code>, light will be more visible in the fog to simulate light scattering as in real life.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-bicubic-upscale">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_bicubic_upscale"></a>glow_bicubic_upscale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_bicubic_upscale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_bicubic_upscale_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Smooths out the blockiness created by sampling higher levels, at the cost of performance.</p>
+<p><strong>Note:</strong> When using the GLES2 renderer, this is only available if the GPU supports the <code class="docutils literal notranslate"><span class="pre">GL_EXT_gpu_shader4</span></code> extension.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-blend-mode">
+<li><p><a class="reference internal" href="#enum-environment-glowblendmode"><span class="std std-ref">GlowBlendMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_blend_mode"></a>glow_blend_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_blend_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_blend_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The glow blending mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-bloom">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_bloom"></a>glow_bloom</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_bloom(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_bloom()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The bloom's intensity. If set to a value higher than <code class="docutils literal notranslate"><span class="pre">0</span></code>, this will make glow visible in areas darker than the <a class="reference internal" href="#class-environment-property-glow-hdr-threshold"><span class="std std-ref">glow_hdr_threshold</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_enabled"></a>glow_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the glow effect is enabled.</p>
+<p><strong>Note:</strong> Only effective if <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-intended-usage-framebuffer-allocation"><span class="std std-ref">ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation</span></a> is <strong>3D</strong> (<em>not</em> <strong>3D Without Effects</strong>). On mobile, <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-intended-usage-framebuffer-allocation"><span class="std std-ref">ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation</span></a> defaults to <strong>3D Without Effects</strong> by default, so its <code class="docutils literal notranslate"><span class="pre">.mobile</span></code> override needs to be changed to <strong>3D</strong>.</p>
+<p><strong>Note:</strong> When using GLES3 on mobile, HDR rendering is disabled by default for performance reasons. This means glow will only be visible if <a class="reference internal" href="#class-environment-property-glow-hdr-threshold"><span class="std std-ref">glow_hdr_threshold</span></a> is decreased below <code class="docutils literal notranslate"><span class="pre">1.0</span></code> or if <a class="reference internal" href="#class-environment-property-glow-bloom"><span class="std std-ref">glow_bloom</span></a> is increased above <code class="docutils literal notranslate"><span class="pre">0.0</span></code>. Also consider increasing <a class="reference internal" href="#class-environment-property-glow-intensity"><span class="std std-ref">glow_intensity</span></a> to <code class="docutils literal notranslate"><span class="pre">1.5</span></code>. If you want glow to behave on mobile like it does on desktop (at a performance cost), enable <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-depth-hdr"><span class="std std-ref">ProjectSettings.rendering/quality/depth/hdr</span></a>'s <code class="docutils literal notranslate"><span class="pre">.mobile</span></code> override.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-hdr-luminance-cap">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_hdr_luminance_cap"></a>glow_hdr_luminance_cap</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_hdr_luminance_cap(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_hdr_luminance_cap()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The higher threshold of the HDR glow. Areas brighter than this threshold will be clamped for the purposes of the glow effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-hdr-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_hdr_scale"></a>glow_hdr_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_hdr_bleed_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_hdr_bleed_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The bleed scale of the HDR glow.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-hdr-threshold">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_hdr_threshold"></a>glow_hdr_threshold</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_hdr_bleed_threshold(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_hdr_bleed_threshold()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The lower threshold of the HDR glow. When using the GLES2 renderer (which doesn't support HDR), this needs to be below <code class="docutils literal notranslate"><span class="pre">1.0</span></code> for glow to be visible. A value of <code class="docutils literal notranslate"><span class="pre">0.9</span></code> works well in this case.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-high-quality">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_high_quality"></a>glow_high_quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_high_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_high_quality_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Takes more samples during downsample pass of glow. This ensures that single pixels are captured by glow which makes the glow look smoother and more stable during movement. However, it is very expensive and makes the glow post process take twice as long.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-intensity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_intensity"></a>glow_intensity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_intensity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_intensity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The glow intensity. When using the GLES2 renderer, this should be increased to 1.5 to compensate for the lack of HDR rendering.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-1">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/1"></a>glow_levels/1</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 1st level of glow is enabled. This is the most "local" level (least blurry).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-2">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/2"></a>glow_levels/2</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 2th level of glow is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-3">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/3"></a>glow_levels/3</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 3th level of glow is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-4">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/4"></a>glow_levels/4</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 4th level of glow is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-5">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/5"></a>glow_levels/5</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 5th level of glow is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-6">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/6"></a>glow_levels/6</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 6th level of glow is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-levels-7">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_levels/7"></a>glow_levels/7</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_level(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_glow_level_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the 7th level of glow is enabled. This is the most "global" level (blurriest).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-glow-strength">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/glow_strength"></a>glow_strength</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_glow_strength(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_glow_strength()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The glow strength. When using the GLES2 renderer, this should be increased to 1.3 to compensate for the lack of HDR rendering.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-depth-tolerance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_depth_tolerance"></a>ss_reflections_depth_tolerance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_depth_tolerance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssr_depth_tolerance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The depth tolerance for screen-space reflections.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_enabled"></a>ss_reflections_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_ssr_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a>s or <a class="reference internal" href="class_reflectionprobe.html#class-reflectionprobe"><span class="std std-ref">ReflectionProbe</span></a>s, but are slower and can't reflect surfaces occluded by others.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-fade-in">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_fade_in"></a>ss_reflections_fade_in</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.15</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_fade_in(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssr_fade_in()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-fade-out">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_fade_out"></a>ss_reflections_fade_out</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_fade_out(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssr_fade_out()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fade-out distance for screen-space reflections. Affects the area from the screen-space reflection to the "global" reflection.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-max-steps">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_max_steps"></a>ss_reflections_max_steps</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">64</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_max_steps(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssr_max_steps()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum number of steps for screen-space reflections. Higher values are slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ss-reflections-roughness">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ss_reflections_roughness"></a>ss_reflections_roughness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssr_rough(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_ssr_rough()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, screen-space reflections will take the material roughness into account.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-ao-channel-affect">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_ao_channel_affect"></a>ssao_ao_channel_affect</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_ao_channel_affect(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_ao_channel_affect()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion intensity on materials that have an AO texture defined. Values higher than <code class="docutils literal notranslate"><span class="pre">0</span></code> will make the SSAO effect visible in areas darkened by AO textures.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-bias">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_bias"></a>ssao_bias</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.01</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_bias(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_bias()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion bias. This should be kept high enough to prevent "smooth" curves from being affected by ambient occlusion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-blur">
+<li><p><a class="reference internal" href="#enum-environment-ssaoblur"><span class="std std-ref">SSAOBlur</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_blur"></a>ssao_blur</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_blur(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_blur()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion blur quality. See <a class="reference internal" href="#enum-environment-ssaoblur"><span class="std std-ref">SSAOBlur</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_color"></a>ssao_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion color.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-edge-sharpness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_edge_sharpness"></a>ssao_edge_sharpness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_edge_sharpness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_edge_sharpness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion edge sharpness.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_enabled"></a>ssao_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_ssao_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the screen-space ambient occlusion effect is enabled. This darkens objects' corners and cavities to simulate ambient light not reaching the entire object as in real life. This works well for small, dynamic objects, but baked lighting or ambient occlusion textures will do a better job at displaying ambient occlusion on large static objects. This is a costly effect and should be disabled first when running into performance issues.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-intensity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_intensity"></a>ssao_intensity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_intensity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_intensity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The primary screen-space ambient occlusion intensity. See also <a class="reference internal" href="#class-environment-property-ssao-radius"><span class="std std-ref">ssao_radius</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-intensity2">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_intensity2"></a>ssao_intensity2</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_intensity2(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_intensity2()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The secondary screen-space ambient occlusion intensity. See also <a class="reference internal" href="#class-environment-property-ssao-radius2"><span class="std std-ref">ssao_radius2</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-light-affect">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_light_affect"></a>ssao_light_affect</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_direct_light_affect(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_direct_light_affect()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion intensity in direct light. In real life, ambient occlusion only applies to indirect light, which means its effects can't be seen in direct light. Values higher than <code class="docutils literal notranslate"><span class="pre">0</span></code> will make the SSAO effect visible in direct light.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-quality">
+<li><p><a class="reference internal" href="#enum-environment-ssaoquality"><span class="std std-ref">SSAOQuality</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_quality"></a>ssao_quality</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_quality(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_quality()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The screen-space ambient occlusion quality. Higher qualities will make better use of small objects for ambient occlusion, but are slower.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-radius">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_radius"></a>ssao_radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_radius(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The primary screen-space ambient occlusion radius.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-ssao-radius2">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/ssao_radius2"></a>ssao_radius2</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_ssao_radius2(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_ssao_radius2()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The secondary screen-space ambient occlusion radius. If set to a value higher than <code class="docutils literal notranslate"><span class="pre">0</span></code>, enables the secondary screen-space ambient occlusion effect which can be used to improve the effect's appearance (at the cost of performance).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-tonemap-exposure">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tonemap_exposure"></a>tonemap_exposure</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_exposure(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_exposure()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default exposure used for tonemapping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-tonemap-mode">
+<li><p><a class="reference internal" href="#enum-environment-tonemapper"><span class="std std-ref">ToneMapper</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tonemap_mode"></a>tonemap_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemapper(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemapper()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on a LDR display. (Godot doesn't support rendering on HDR displays yet.)</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-property-tonemap-white">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tonemap_white"></a>tonemap_white</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tonemap_white(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tonemap_white()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The white reference value for tonemapping. Only effective if the <a class="reference internal" href="#class-environment-property-tonemap-mode"><span class="std std-ref">tonemap_mode</span></a> isn't set to <a class="reference internal" href="#class-environment-constant-tone-mapper-linear"><span class="std std-ref">TONE_MAPPER_LINEAR</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-environment-method-is-glow-level-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_glow_level_enabled"></a>is_glow_level_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the glow level <code class="docutils literal notranslate"><span class="pre">idx</span></code> is specified, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-environment-method-set-glow-level">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_glow_level"></a>set_glow_level</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables the glow level at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_engine.html" rel="prev" title="Engine"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_expression.html" rel="next" title="Expression">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Variant" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_variant.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="The most important data type in Godot. Description: In computer programming, a Variant class is a class that is designed to store a variety of other types. Dynamic programming languages like PHP, L..." property="og:description"/>
+<meta content="The most important data type in Godot. In computer programming, a Variant class is a class that is designed to store a variety of other types. Dynamic programming languages like PHP, Lua, JavaScript and GDScript like..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Variant — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_variant.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_variant.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_variant.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_variant.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_variant.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_variant.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_variant.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_variant.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_variant.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_variant.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_variant.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_variant.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_variant.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_variant.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_variant.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_variant.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_vboxcontainer.html" rel="next" title="VBoxContainer"/>
+<link href="class_upnpdevice.html" rel="prev" title="UPNPDevice"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Variant</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="variant">
+<span id="class-variant"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Variant¶"></a>Variant<a class="headerlink" href="#variant" title="Permalink to this headline">¶</a></h1>
+<p>The most important data type in Godot.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>In computer programming, a Variant class is a class that is designed to store a variety of other types. Dynamic programming languages like PHP, Lua, JavaScript and GDScript like to use them to store variables' data on the backend. With these Variants, properties are able to change value types freely.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">foo</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># foo is dynamically an integer</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="s2">"Now foo is a string!"</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">Reference</span><span class="o">.</span><span class="n">new</span><span class="p">()</span> <span class="c1"># foo is an Object</span>
+<span class="k">var</span> <span class="n">bar</span><span class="p">:</span> <span class="nb nb-Type">int</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># bar is a statically typed integer.</span>
+<span class="c1"># bar = "Uh oh! I can't make static variables become a different type!"</span>
+</pre></div>
+</div>
+<p>Godot tracks all scripting API variables within Variants. Without even realizing it, you use Variants all the time. When a particular language enforces its own rules for keeping data typed, then that language is applying its own custom logic over the base Variant scripting API.</p>
+<ul class="simple">
+<li><p>GDScript automatically wrap values in them. It keeps all data in plain Variants by default and then optionally enforces custom static typing rules on variable types.</p></li>
+<li><p>VisualScript tracks properties inside Variants as well, but it also uses static typing. The GUI interface enforces that properties have a particular type that doesn't change over time.</p></li>
+<li><p>C# is statically typed, but uses the Mono <code class="docutils literal notranslate"><span class="pre">object</span></code> type in place of Godot's Variant class when it needs to represent a dynamic value. <code class="docutils literal notranslate"><span class="pre">object</span></code> is the Mono runtime's equivalent of the same concept.</p></li>
+<li><p>The statically-typed language NativeScript C++ does not define a built-in Variant-like class. Godot's GDNative bindings provide their own godot::Variant class for users; Any point at which the C++ code starts interacting with the Godot runtime is a place where you might have to start wrapping data inside Variant objects.</p></li>
+</ul>
+<p>The global <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-typeof"><span class="std std-ref">@GDScript.typeof</span></a> function returns the enumerated value of the Variant type stored in the current variable (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-variant-type"><span class="std std-ref">Variant.Type</span></a>).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">foo</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">match</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">foo</span><span class="p">):</span>
+    <span class="n">TYPE_NIL</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"foo is null"</span><span class="p">)</span>
+    <span class="n">TYPE_INTEGER</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"foo is an integer"</span><span class="p">)</span>
+    <span class="n">TYPE_OBJECT</span><span class="p">:</span>
+        <span class="c1"># Note that Objects are their own special category.</span>
+        <span class="c1"># To get the name of the underlying Object type, you need the `get_class()` method.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"foo is a(n) </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">foo</span><span class="o">.</span><span class="n">get_class</span><span class="p">())</span> <span class="c1"># inject the class name into a formatted string.</span>
+        <span class="c1"># Note also that there is not yet any way to get a script's `class_name` string easily.</span>
+        <span class="c1"># To fetch that value, you need to dig deeply into a hidden ProjectSettings setting: an Array of Dictionaries called "_global_script_classes".</span>
+        <span class="c1"># Open your project.godot file to see it up close.</span>
+</pre></div>
+</div>
+<p>A Variant takes up only 20 bytes and can store almost any engine datatype inside of it. Variants are rarely used to hold information for long periods of time. Instead, they are used mainly for communication, editing, serialization and moving data around.</p>
+<p>Godot has specifically invested in making its Variant class as flexible as possible; so much so that it is used for a multitude of operations to facilitate communication between all of Godot's systems.</p>
+<p>A Variant:</p>
+<ul class="simple">
+<li><p>Can store almost any datatype.</p></li>
+<li><p>Can perform operations between many variants. GDScript uses Variant as its atomic/native datatype.</p></li>
+<li><p>Can be hashed, so it can be compared quickly to other variants.</p></li>
+<li><p>Can be used to convert safely between datatypes.</p></li>
+<li><p>Can be used to abstract calling methods and their arguments. Godot exports all its functions through variants.</p></li>
+<li><p>Can be used to defer calls or move data between threads.</p></li>
+<li><p>Can be serialized as binary and stored to disk, or transferred via network.</p></li>
+<li><p>Can be serialized to text and use it for printing values and editable settings.</p></li>
+<li><p>Can work as an exported property, so the editor can edit it universally.</p></li>
+<li><p>Can be used for dictionaries, arrays, parsers, etc.</p></li>
+</ul>
+<p><strong>Containers (Array and Dictionary):</strong> Both are implemented using variants. A <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> can match any datatype used as key to any other datatype. An <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> just holds an array of Variants. Of course, a Variant can also hold a <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> and an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> inside, making it even more flexible.</p>
+<p>Modifications to a container will modify all references to it. A <a class="reference internal" href="class_mutex.html#class-mutex"><span class="std std-ref">Mutex</span></a> should be created to lock it if multi-threaded access is desired.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../development/cpp/variant_class.html"><span class="doc">Variant class</span></a></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_upnpdevice.html" rel="prev" title="UPNPDevice"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_vboxcontainer.html" rel="next" title="VBoxContainer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

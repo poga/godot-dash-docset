@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="DynamicFont" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_dynamicfont.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Font&lt; Resource&lt; Reference&lt; Object DynamicFont renders vector font files at runtime. Description: DynamicFont renders vector font files dynamically at runtime instead of using a prerendere..." property="og:description"/>
+<meta content="DynamicFont renders vector font files at runtime. DynamicFont renders vector font files dynamically at runtime instead of using a prerendered texture atlas like BitmapFont. This trades the faster loading time of Bitma..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) DynamicFont — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dynamicfont.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_dynamicfont.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_dynamicfont.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_dynamicfont.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_dynamicfont.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_dynamicfont.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_dynamicfont.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_dynamicfont.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_dynamicfont.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_dynamicfont.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_dynamicfont.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_dynamicfont.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_dynamicfont.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_dynamicfont.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dynamicfont.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dynamicfont.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_dynamicfontdata.html" rel="next" title="DynamicFontData"/>
+<link href="class_dtlsserver.html" rel="prev" title="DTLSServer"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>DynamicFont</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="dynamicfont">
+<span id="class-dynamicfont"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/DynamicFont¶"></a>DynamicFont<a class="headerlink" href="#dynamicfont" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>DynamicFont renders vector font files at runtime.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>DynamicFont renders vector font files dynamically at runtime instead of using a prerendered texture atlas like <a class="reference internal" href="class_bitmapfont.html#class-bitmapfont"><span class="std std-ref">BitmapFont</span></a>. This trades the faster loading time of <a class="reference internal" href="class_bitmapfont.html#class-bitmapfont"><span class="std std-ref">BitmapFont</span></a>s for the ability to change font parameters like size and spacing during runtime. <a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> is used for referencing the font file paths. DynamicFont also supports defining one or more fallback fonts, which will be used when displaying a character not supported by the main font.</p>
+<p>DynamicFont uses the <a class="reference external" href="https://www.freetype.org/">FreeType</a> library for rasterization. Supported formats are TrueType (<code class="docutils literal notranslate"><span class="pre">.ttf</span></code>), OpenType (<code class="docutils literal notranslate"><span class="pre">.otf</span></code>) and Web Open Font Format 1 (<code class="docutils literal notranslate"><span class="pre">.woff</span></code>). Web Open Font Format 2 (<code class="docutils literal notranslate"><span class="pre">.woff2</span></code>) is <em>not</em> supported.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">dynamic_font</span> <span class="o">=</span> <span class="n">DynamicFont</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">dynamic_font</span><span class="o">.</span><span class="n">font_data</span> <span class="o">=</span> <span class="nb">load</span><span class="p">(</span><span class="s2">"res://BarlowCondensed-Bold.ttf"</span><span class="p">)</span>
+<span class="n">dynamic_font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="o">$</span><span class="s2">"Label"</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"custom_fonts/font"</span><span class="p">,</span> <span class="n">dynamic_font</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> DynamicFont doesn't support features such as kerning, right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use <a class="reference external" href="https://fontforge.org/">FontForge</a> to do so. In FontForge, use <strong>File &gt; Generate Fonts</strong>, click <strong>Options</strong>, choose the desired features then generate the font.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 52%"/>
+<col style="width: 17%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-extra-spacing-bottom"><span class="std std-ref">extra_spacing_bottom</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-extra-spacing-char"><span class="std std-ref">extra_spacing_char</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-extra-spacing-space"><span class="std std-ref">extra_spacing_space</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-extra-spacing-top"><span class="std std-ref">extra_spacing_top</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-font-data"><span class="std std-ref">font_data</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-outline-color"><span class="std std-ref">outline_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-outline-size"><span class="std std-ref">outline_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-size"><span class="std std-ref">size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-use-filter"><span class="std std-ref">use_filter</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-property-use-mipmaps"><span class="std std-ref">use_mipmaps</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-add-fallback"><span class="std std-ref">add_fallback</span></a> <strong>(</strong> <a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> data <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-get-available-chars"><span class="std std-ref">get_available_chars</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-get-fallback"><span class="std std-ref">get_fallback</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-get-fallback-count"><span class="std std-ref">get_fallback_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-get-spacing"><span class="std std-ref">get_spacing</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-remove-fallback"><span class="std std-ref">remove_fallback</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-set-fallback"><span class="std std-ref">set_fallback</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> data <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-dynamicfont-method-set-spacing"><span class="std std-ref">set_spacing</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-dynamicfont-constant-spacing-space"><span id="class-dynamicfont-constant-spacing-char"></span><span id="class-dynamicfont-constant-spacing-bottom"></span><span id="class-dynamicfont-constant-spacing-top"></span><span id="enum-dynamicfont-spacingtype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SpacingType"></a>SpacingType</strong>:</p>
+<ul class="simple">
+<li><p><strong>SPACING_TOP</strong> = <strong>0</strong> --- Spacing at the top.</p></li>
+<li><p><strong>SPACING_BOTTOM</strong> = <strong>1</strong> --- Spacing at the bottom.</p></li>
+<li><p><strong>SPACING_CHAR</strong> = <strong>2</strong> --- Spacing for each character.</p></li>
+<li><p><strong>SPACING_SPACE</strong> = <strong>3</strong> --- Spacing for the space character.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-dynamicfont-property-extra-spacing-bottom">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extra_spacing_bottom"></a>extra_spacing_bottom</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_spacing(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_spacing()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Extra spacing at the bottom in pixels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-extra-spacing-char">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extra_spacing_char"></a>extra_spacing_char</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_spacing(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_spacing()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Extra spacing for each character in pixels.</p>
+<p>This can be a negative number to make the distance between characters smaller.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-extra-spacing-space">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extra_spacing_space"></a>extra_spacing_space</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_spacing(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_spacing()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Extra spacing for the space character (in addition to <a class="reference internal" href="#class-dynamicfont-property-extra-spacing-char"><span class="std std-ref">extra_spacing_char</span></a>) in pixels.</p>
+<p>This can be a negative number to make the distance between words smaller.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-extra-spacing-top">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extra_spacing_top"></a>extra_spacing_top</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_spacing(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_spacing()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Extra spacing at the top in pixels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-font-data">
+<li><p><a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/font_data"></a>font_data</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_font_data(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_font_data()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The font data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-outline-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/outline_color"></a>outline_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_outline_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_outline_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The font outline's color.</p>
+<p><strong>Note:</strong> It's recommended to leave this at the default value so that you can adjust it in individual controls. For example, if the outline is made black here, it won't be possible to change its color using a Label's font outline modulate theme item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-outline-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/outline_size"></a>outline_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_outline_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_outline_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The font outline's thickness in pixels (not relative to the font size).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/size"></a>size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">16</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The font size in pixels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-use-filter">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_filter"></a>use_filter</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_filter(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_use_filter()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, filtering is used. This makes the font blurry instead of pixelated when scaling it if font oversampling is disabled or ineffective. It's recommended to enable this when using the font in a control whose size changes over time, unless a pixel art aesthetic is desired.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-property-use-mipmaps">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_mipmaps"></a>use_mipmaps</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_mipmaps(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_use_mipmaps()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, mipmapping is used. This improves the font's appearance when downscaling it if font oversampling is disabled or ineffective.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-dynamicfont-method-add-fallback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_fallback"></a>add_fallback</strong> <strong>(</strong> <a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Adds a fallback font.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-get-available-chars">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_available_chars"></a>get_available_chars</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a string containing all the characters available in the main and all the fallback fonts.</p>
+<p>If a given character is included in more than one font, it appears only once in the returned string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-get-fallback">
+<li><p><a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_fallback"></a>get_fallback</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the fallback font at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-get-fallback-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_fallback_count"></a>get_fallback_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of fallback fonts.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-get-spacing">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_spacing"></a>get_spacing</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the spacing for the given <code class="docutils literal notranslate"><span class="pre">type</span></code> (see <a class="reference internal" href="#enum-dynamicfont-spacingtype"><span class="std std-ref">SpacingType</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-remove-fallback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_fallback"></a>remove_fallback</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Removes the fallback font at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-set-fallback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_fallback"></a>set_fallback</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_dynamicfontdata.html#class-dynamicfontdata"><span class="std std-ref">DynamicFontData</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Sets the fallback font at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dynamicfont-method-set-spacing">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_spacing"></a>set_spacing</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the spacing for <code class="docutils literal notranslate"><span class="pre">type</span></code> (see <a class="reference internal" href="#enum-dynamicfont-spacingtype"><span class="std std-ref">SpacingType</span></a>) to <code class="docutils literal notranslate"><span class="pre">value</span></code> in pixels (not relative to the font size).</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_dtlsserver.html" rel="prev" title="DTLSServer"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_dynamicfontdata.html" rel="next" title="DynamicFontData">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

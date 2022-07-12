@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="GeometryInstance" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_geometryinstance.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Inherited By: CPUParticles, CSGShape, ImmediateGeometry, MeshInstance, MultiMeshInstance, Particles, SpriteBase3D Base node for geometr..." property="og:description"/>
+<meta content="Base node for geometry-based visual instances. Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials. ShadowCastingSetting cast_shadow 1 float extra_cull_..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) GeometryInstance — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_geometryinstance.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_geometryinstance.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_geometryinstance.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_geometryinstance.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_geometryinstance.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_geometryinstance.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_geometryinstance.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_geometryinstance.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_geometryinstance.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_geometryinstance.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_geometryinstance.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_geometryinstance.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_geometryinstance.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_geometryinstance.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_geometryinstance.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_geometryinstance.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_giprobe.html" rel="next" title="GIProbe"/>
+<link href="class_geometry.html" rel="prev" title="Geometry"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>GeometryInstance</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="geometryinstance">
+<span id="class-geometryinstance"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/GeometryInstance¶"></a>GeometryInstance<a class="headerlink" href="#geometryinstance" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_cpuparticles.html#class-cpuparticles"><span class="std std-ref">CPUParticles</span></a>, <a class="reference internal" href="class_csgshape.html#class-csgshape"><span class="std std-ref">CSGShape</span></a>, <a class="reference internal" href="class_immediategeometry.html#class-immediategeometry"><span class="std std-ref">ImmediateGeometry</span></a>, <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a>, <a class="reference internal" href="class_multimeshinstance.html#class-multimeshinstance"><span class="std std-ref">MultiMeshInstance</span></a>, <a class="reference internal" href="class_particles.html#class-particles"><span class="std std-ref">Particles</span></a>, <a class="reference internal" href="class_spritebase3d.html#class-spritebase3d"><span class="std std-ref">SpriteBase3D</span></a></p>
+<p>Base node for geometry-based visual instances.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 48%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-geometryinstance-shadowcastingsetting"><span class="std std-ref">ShadowCastingSetting</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-cast-shadow"><span class="std std-ref">cast_shadow</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-extra-cull-margin"><span class="std std-ref">extra_cull_margin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-generate-lightmap"><span class="std std-ref">generate_lightmap</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-geometryinstance-lightmapscale"><span class="std std-ref">LightmapScale</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-lightmap-scale"><span class="std std-ref">lightmap_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-lod-max-distance"><span class="std std-ref">lod_max_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-lod-max-hysteresis"><span class="std std-ref">lod_max_hysteresis</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-lod-min-distance"><span class="std std-ref">lod_min_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-lod-min-hysteresis"><span class="std std-ref">lod_min_hysteresis</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-material-override"><span class="std std-ref">material_override</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-property-use-in-baked-light"><span class="std std-ref">use_in_baked_light</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-method-get-flag"><span class="std std-ref">get_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-method-set-custom-aabb"><span class="std std-ref">set_custom_aabb</span></a> <strong>(</strong> <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> aabb <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-geometryinstance-method-set-flag"><span class="std std-ref">set_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-geometryinstance-constant-lightmap-scale-max"><span id="class-geometryinstance-constant-lightmap-scale-8x"></span><span id="class-geometryinstance-constant-lightmap-scale-4x"></span><span id="class-geometryinstance-constant-lightmap-scale-2x"></span><span id="class-geometryinstance-constant-lightmap-scale-1x"></span><span id="enum-geometryinstance-lightmapscale"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/LightmapScale"></a>LightmapScale</strong>:</p>
+<ul class="simple">
+<li><p><strong>LIGHTMAP_SCALE_1X</strong> = <strong>0</strong> --- The generated lightmap texture will have the original size.</p></li>
+<li><p><strong>LIGHTMAP_SCALE_2X</strong> = <strong>1</strong> --- The generated lightmap texture will be twice as large, on each axis.</p></li>
+<li><p><strong>LIGHTMAP_SCALE_4X</strong> = <strong>2</strong> --- The generated lightmap texture will be 4 times as large, on each axis.</p></li>
+<li><p><strong>LIGHTMAP_SCALE_8X</strong> = <strong>3</strong> --- The generated lightmap texture will be 8 times as large, on each axis.</p></li>
+<li><p><strong>LIGHTMAP_SCALE_MAX</strong> = <strong>4</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-geometryinstance-constant-shadow-casting-setting-shadows-only"><span id="class-geometryinstance-constant-shadow-casting-setting-double-sided"></span><span id="class-geometryinstance-constant-shadow-casting-setting-on"></span><span id="class-geometryinstance-constant-shadow-casting-setting-off"></span><span id="enum-geometryinstance-shadowcastingsetting"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ShadowCastingSetting"></a>ShadowCastingSetting</strong>:</p>
+<ul class="simple">
+<li><p><strong>SHADOW_CASTING_SETTING_OFF</strong> = <strong>0</strong> --- Will not cast any shadows.</p></li>
+<li><p><strong>SHADOW_CASTING_SETTING_ON</strong> = <strong>1</strong> --- Will cast shadows from all visible faces in the GeometryInstance.</p></li>
+</ul>
+<p>Will take culling into account, so faces not being rendered will not be taken into account when shadow casting.</p>
+<ul class="simple">
+<li><p><strong>SHADOW_CASTING_SETTING_DOUBLE_SIDED</strong> = <strong>2</strong> --- Will cast shadows from all visible faces in the GeometryInstance.</p></li>
+</ul>
+<p>Will not take culling into account, so all faces will be taken into account when shadow casting.</p>
+<ul class="simple">
+<li><p><strong>SHADOW_CASTING_SETTING_SHADOWS_ONLY</strong> = <strong>3</strong> --- Will only show the shadows casted from this object.</p></li>
+</ul>
+<p>In other words, the actual mesh will not be visible, only the shadows casted from the mesh will be.</p>
+<hr class="docutils"/>
+<p id="class-geometryinstance-constant-flag-max"><span id="class-geometryinstance-constant-flag-draw-next-frame-if-visible"></span><span id="class-geometryinstance-constant-flag-use-baked-light"></span><span id="enum-geometryinstance-flags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Flags"></a>Flags</strong>:</p>
+<ul class="simple">
+<li><p><strong>FLAG_USE_BAKED_LIGHT</strong> = <strong>0</strong> --- Will allow the GeometryInstance to be used when baking lights using a <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a> or <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap"><span class="std std-ref">BakedLightmap</span></a>.</p></li>
+<li><p><strong>FLAG_DRAW_NEXT_FRAME_IF_VISIBLE</strong> = <strong>1</strong> --- Unused in this class, exposed for consistency with <a class="reference internal" href="class_visualserver.html#enum-visualserver-instanceflags"><span class="std std-ref">InstanceFlags</span></a>.</p></li>
+<li><p><strong>FLAG_MAX</strong> = <strong>2</strong> --- Represents the size of the <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-geometryinstance-property-cast-shadow">
+<li><p><a class="reference internal" href="#enum-geometryinstance-shadowcastingsetting"><span class="std std-ref">ShadowCastingSetting</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cast_shadow"></a>cast_shadow</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cast_shadows_setting(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cast_shadows_setting()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The selected shadow casting flag. See <a class="reference internal" href="#enum-geometryinstance-shadowcastingsetting"><span class="std std-ref">ShadowCastingSetting</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-extra-cull-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extra_cull_margin"></a>extra_cull_margin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_extra_cull_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_extra_cull_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The extra distance added to the GeometryInstance's bounding box (<a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a>) to increase its cull box.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-generate-lightmap">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/generate_lightmap"></a>generate_lightmap</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_generate_lightmap(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_generate_lightmap()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When disabled, the mesh will be taken into account when computing indirect lighting, but the resulting lightmap will not be saved. Useful for emissive only materials or shadow casters.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-lightmap-scale">
+<li><p><a class="reference internal" href="#enum-geometryinstance-lightmapscale"><span class="std std-ref">LightmapScale</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lightmap_scale"></a>lightmap_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lightmap_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lightmap_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Scale factor for the generated baked lightmap. Useful for adding detail to certain mesh instances.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-lod-max-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lod_max_distance"></a>lod_max_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lod_max_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lod_max_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The GeometryInstance's max LOD distance.</p>
+<p><strong>Note:</strong> This property currently has no effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-lod-max-hysteresis">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lod_max_hysteresis"></a>lod_max_hysteresis</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lod_max_hysteresis(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lod_max_hysteresis()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The GeometryInstance's max LOD margin.</p>
+<p><strong>Note:</strong> This property currently has no effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-lod-min-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lod_min_distance"></a>lod_min_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lod_min_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lod_min_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The GeometryInstance's min LOD distance.</p>
+<p><strong>Note:</strong> This property currently has no effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-lod-min-hysteresis">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lod_min_hysteresis"></a>lod_min_hysteresis</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lod_min_hysteresis(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lod_min_hysteresis()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The GeometryInstance's min LOD margin.</p>
+<p><strong>Note:</strong> This property currently has no effect.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-material-override">
+<li><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/material_override"></a>material_override</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_material_override(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_material_override()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The material override for the whole geometry.</p>
+<p>If a material is assigned to this property, it will be used instead of any material set in any material slot of the mesh.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-property-use-in-baked-light">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_in_baked_light"></a>use_in_baked_light</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this GeometryInstance will be used when baking lights using a <a class="reference internal" href="class_giprobe.html#class-giprobe"><span class="std std-ref">GIProbe</span></a> or <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap"><span class="std std-ref">BakedLightmap</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-geometryinstance-method-get-flag">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_flag"></a>get_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> that have been set for this object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-method-set-custom-aabb">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_custom_aabb"></a>set_custom_aabb</strong> <strong>(</strong> <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> aabb <strong>)</strong></p></li>
+</ul>
+<p>Overrides the bounding box of this node with a custom one. To remove it, set an <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> with all fields set to zero.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-geometryinstance-method-set-flag">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_flag"></a>set_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> specified. See <a class="reference internal" href="#enum-geometryinstance-flags"><span class="std std-ref">Flags</span></a> for options.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_geometry.html" rel="prev" title="Geometry"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_giprobe.html" rel="next" title="GIProbe">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

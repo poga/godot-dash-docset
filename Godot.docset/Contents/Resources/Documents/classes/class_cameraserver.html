@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="CameraServer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_cameraserver.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Server keeping track of different cameras accessible in Godot. Description: The CameraServer keeps track of different cameras accessible in Godot. These are external cameras such a..." property="og:description"/>
+<meta content="Server keeping track of different cameras accessible in Godot. The CameraServer keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is nota..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) CameraServer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_cameraserver.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_cameraserver.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_cameraserver.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_cameraserver.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_cameraserver.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_cameraserver.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_cameraserver.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_cameraserver.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_cameraserver.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_cameraserver.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_cameraserver.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_cameraserver.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_cameraserver.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_cameraserver.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_cameraserver.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_cameraserver.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_cameratexture.html" rel="next" title="CameraTexture"/>
+<link href="class_camerafeed.html" rel="prev" title="CameraFeed"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>CameraServer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="cameraserver">
+<span id="class-cameraserver"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/CameraServer¶"></a>CameraServer<a class="headerlink" href="#cameraserver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Server keeping track of different cameras accessible in Godot.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">CameraServer</span></code> keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone.</p>
+<p>It is notably used to provide AR modules with a video feed from the camera.</p>
+<p><strong>Note:</strong> This class is currently only implemented on macOS and iOS. On other platforms, no <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a>s will be available.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-cameraserver-method-add-feed"><span class="std std-ref">add_feed</span></a> <strong>(</strong> <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> feed <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-cameraserver-method-feeds"><span class="std std-ref">feeds</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a></p></td>
+<td><p><a class="reference internal" href="#class-cameraserver-method-get-feed"><span class="std std-ref">get_feed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-cameraserver-method-get-feed-count"><span class="std std-ref">get_feed_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-cameraserver-method-remove-feed"><span class="std std-ref">remove_feed</span></a> <strong>(</strong> <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> feed <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-cameraserver-signal-camera-feed-added">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/camera_feed_added"></a>camera_feed_added</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> is added (e.g. a webcam is plugged in).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-cameraserver-signal-camera-feed-removed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/camera_feed_removed"></a>camera_feed_removed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> is removed (e.g. a webcam is unplugged).</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-cameraserver-constant-feed-cbcr-image"><span id="class-cameraserver-constant-feed-y-image"></span><span id="class-cameraserver-constant-feed-ycbcr-image"></span><span id="class-cameraserver-constant-feed-rgba-image"></span><span id="enum-cameraserver-feedimage"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/FeedImage"></a>FeedImage</strong>:</p>
+<ul class="simple">
+<li><p><strong>FEED_RGBA_IMAGE</strong> = <strong>0</strong> --- The RGBA camera image.</p></li>
+<li><p><strong>FEED_YCBCR_IMAGE</strong> = <strong>0</strong> --- The <a class="reference external" href="https://en.wikipedia.org/wiki/YCbCr">YCbCr</a> camera image.</p></li>
+<li><p><strong>FEED_Y_IMAGE</strong> = <strong>0</strong> --- The Y component camera image.</p></li>
+<li><p><strong>FEED_CBCR_IMAGE</strong> = <strong>1</strong> --- The CbCr component camera image.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-cameraserver-method-add-feed">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_feed"></a>add_feed</strong> <strong>(</strong> <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> feed <strong>)</strong></p></li>
+</ul>
+<p>Adds the camera <code class="docutils literal notranslate"><span class="pre">feed</span></code> to the camera server.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-cameraserver-method-feeds">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/feeds"></a>feeds</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an array of <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-cameraserver-method-get-feed">
+<li><p><a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_feed"></a>get_feed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> corresponding to the camera with the given <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-cameraserver-method-get-feed-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_feed_count"></a>get_feed_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a>s registered.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-cameraserver-method-remove-feed">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_feed"></a>remove_feed</strong> <strong>(</strong> <a class="reference internal" href="class_camerafeed.html#class-camerafeed"><span class="std std-ref">CameraFeed</span></a> feed <strong>)</strong></p></li>
+</ul>
+<p>Removes the specified camera <code class="docutils literal notranslate"><span class="pre">feed</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_camerafeed.html" rel="prev" title="CameraFeed"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_cameratexture.html" rel="next" title="CameraTexture">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

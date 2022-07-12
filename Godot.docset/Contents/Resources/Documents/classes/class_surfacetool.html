@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="SurfaceTool" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_surfacetool.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Helper tool to create geometry. Description: The SurfaceTool is used to construct a Mesh by specifying vertex attributes individually. It can be used to construct a Mesh..." property="og:description"/>
+<meta content="Helper tool to create geometry. The SurfaceTool is used to construct a Mesh by specifying vertex attributes individually. It can be used to construct a Mesh from a script. All properties except indices need to be adde..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) SurfaceTool — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_surfacetool.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_surfacetool.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_surfacetool.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_surfacetool.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_surfacetool.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_surfacetool.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_surfacetool.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_surfacetool.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_surfacetool.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_surfacetool.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_surfacetool.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_surfacetool.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_surfacetool.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_surfacetool.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_surfacetool.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_surfacetool.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_tabcontainer.html" rel="next" title="TabContainer"/>
+<link href="class_styleboxtexture.html" rel="prev" title="StyleBoxTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>SurfaceTool</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="surfacetool">
+<span id="class-surfacetool"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/SurfaceTool¶"></a>SurfaceTool<a class="headerlink" href="#surfacetool" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Helper tool to create geometry.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">SurfaceTool</span></code> is used to construct a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> by specifying vertex attributes individually. It can be used to construct a <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> from a script. All properties except indices need to be added before calling <a class="reference internal" href="#class-surfacetool-method-add-vertex"><span class="std std-ref">add_vertex</span></a>. For example, to add vertex colors and UVs:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">st</span> <span class="o">=</span> <span class="n">SurfaceTool</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="n">Mesh</span><span class="o">.</span><span class="n">PRIMITIVE_TRIANGLES</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">add_color</span><span class="p">(</span><span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">add_uv</span><span class="p">(</span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">st</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The above <code class="docutils literal notranslate"><span class="pre">SurfaceTool</span></code> now contains one vertex of a triangle which has a UV coordinate and a specified <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>. If another vertex were added without calling <a class="reference internal" href="#class-surfacetool-method-add-uv"><span class="std std-ref">add_uv</span></a> or <a class="reference internal" href="#class-surfacetool-method-add-color"><span class="std std-ref">add_color</span></a>, then the last values would be used.</p>
+<p>Vertex attributes must be passed <strong>before</strong> calling <a class="reference internal" href="#class-surfacetool-method-add-vertex"><span class="std std-ref">add_vertex</span></a>. Failure to do so will result in an error when committing the vertex information to a mesh.</p>
+<p>Additionally, the attributes used before the first vertex is added determine the format of the mesh. For example, if you only add UVs to the first vertex, you cannot add color to any of the subsequent vertices.</p>
+<p>See also <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a>, <a class="reference internal" href="class_immediategeometry.html#class-immediategeometry"><span class="std std-ref">ImmediateGeometry</span></a> and <a class="reference internal" href="class_meshdatatool.html#class-meshdatatool"><span class="std std-ref">MeshDataTool</span></a> for procedural geometry generation.</p>
+<p><strong>Note:</strong> Godot uses clockwise <a class="reference external" href="https://learnopengl.com/Advanced-OpenGL/Face-culling">winding order</a> for front faces of triangle primitive modes.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 93%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-bones"><span class="std std-ref">add_bones</span></a> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> bones <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-color"><span class="std std-ref">add_color</span></a> <strong>(</strong> <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-index"><span class="std std-ref">add_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-normal"><span class="std std-ref">add_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> normal <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-smooth-group"><span class="std std-ref">add_smooth_group</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> smooth <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-tangent"><span class="std std-ref">add_tangent</span></a> <strong>(</strong> <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> tangent <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-triangle-fan"><span class="std std-ref">add_triangle_fan</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> vertices, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors=PoolColorArray(  ), <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uv2s=PoolVector2Array(  ), <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> normals=PoolVector3Array(  ), <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> tangents=[  ] <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-uv"><span class="std std-ref">add_uv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-uv2"><span class="std std-ref">add_uv2</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv2 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-vertex"><span class="std std-ref">add_vertex</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> vertex <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-add-weights"><span class="std std-ref">add_weights</span></a> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> weights <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-append-from"><span class="std std-ref">append_from</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-begin"><span class="std std-ref">begin</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a> primitive <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-commit"><span class="std std-ref">commit</span></a> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> existing=null, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=2194432 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-commit-to-arrays"><span class="std std-ref">commit_to_arrays</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-create-from"><span class="std std-ref">create_from</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-create-from-blend-shape"><span class="std std-ref">create_from_blend_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> blend_shape <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-deindex"><span class="std std-ref">deindex</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-generate-normals"><span class="std std-ref">generate_normals</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-generate-tangents"><span class="std std-ref">generate_tangents</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-index"><span class="std std-ref">index</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-surfacetool-method-set-material"><span class="std std-ref">set_material</span></a> <strong>(</strong> <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-surfacetool-method-add-bones">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_bones"></a>add_bones</strong> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> bones <strong>)</strong></p></li>
+</ul>
+<p>Specifies an array of bones to use for the <em>next</em> vertex. <code class="docutils literal notranslate"><span class="pre">bones</span></code> must contain 4 integers.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-color">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_color"></a>add_color</strong> <strong>(</strong> <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Specifies a <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> to use for the <em>next</em> vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<p><strong>Note:</strong> The material must have <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-property-vertex-color-use-as-albedo"><span class="std std-ref">SpatialMaterial.vertex_color_use_as_albedo</span></a> enabled for the vertex color to be visible.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-index">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_index"></a>add_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></li>
+</ul>
+<p>Adds an index to index array if you are using indexed vertices. Does not need to be called before adding vertices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-normal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_normal"></a>add_normal</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> normal <strong>)</strong></p></li>
+</ul>
+<p>Specifies a normal to use for the <em>next</em> vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-smooth-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_smooth_group"></a>add_smooth_group</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> smooth <strong>)</strong></p></li>
+</ul>
+<p>Specifies whether the current vertex (if using only vertex arrays) or current index (if also using index arrays) should use smooth normals for normal calculation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-tangent">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_tangent"></a>add_tangent</strong> <strong>(</strong> <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> tangent <strong>)</strong></p></li>
+</ul>
+<p>Specifies a tangent to use for the <em>next</em> vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-triangle-fan">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_triangle_fan"></a>add_triangle_fan</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> vertices, <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uvs=PoolVector2Array(  ), <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> colors=PoolColorArray(  ), <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> uv2s=PoolVector2Array(  ), <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> normals=PoolVector3Array(  ), <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> tangents=[  ] <strong>)</strong></p></li>
+</ul>
+<p>Inserts a triangle fan made of array data into <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> being constructed.</p>
+<p>Requires the primitive type be set to <a class="reference internal" href="class_mesh.html#class-mesh-constant-primitive-triangles"><span class="std std-ref">Mesh.PRIMITIVE_TRIANGLES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-uv">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_uv"></a>add_uv</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv <strong>)</strong></p></li>
+</ul>
+<p>Specifies a set of UV coordinates to use for the <em>next</em> vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-uv2">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_uv2"></a>add_uv2</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> uv2 <strong>)</strong></p></li>
+</ul>
+<p>Specifies an optional second set of UV coordinates to use for the <em>next</em> vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-vertex">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_vertex"></a>add_vertex</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> vertex <strong>)</strong></p></li>
+</ul>
+<p>Specifies the position of current vertex. Should be called after specifying other vertex properties (e.g. Color, UV).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-add-weights">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_weights"></a>add_weights</strong> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> weights <strong>)</strong></p></li>
+</ul>
+<p>Specifies weight values to use for the <em>next</em> vertex. <code class="docutils literal notranslate"><span class="pre">weights</span></code> must contain 4 values. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-append-from">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/append_from"></a>append_from</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Append vertices from a given <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> surface onto the current vertex array with specified <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a>.</p>
+<p><strong>Note:</strong> Using <a class="reference internal" href="#class-surfacetool-method-append-from"><span class="std std-ref">append_from</span></a> on a <a class="reference internal" href="class_thread.html#class-thread"><span class="std std-ref">Thread</span></a> is much slower as the GPU must communicate data back to the CPU, while also causing the main thread to stall (as OpenGL is not thread-safe). Consider requesting a copy of the mesh, converting it to an <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> and adding vertices manually instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-begin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/begin"></a>begin</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#enum-mesh-primitivetype"><span class="std std-ref">PrimitiveType</span></a> primitive <strong>)</strong></p></li>
+</ul>
+<p>Called before adding any vertices. Takes the primitive type as an argument (e.g. <a class="reference internal" href="class_mesh.html#class-mesh-constant-primitive-triangles"><span class="std std-ref">Mesh.PRIMITIVE_TRIANGLES</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clear all information passed into the surface tool so far.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-commit">
+<li><p><a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit"></a>commit</strong> <strong>(</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> existing=null, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags=2194432 <strong>)</strong></p></li>
+</ul>
+<p>Returns a constructed <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> from current information passed in. If an existing <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> is passed in as an argument, will add an extra surface to the existing <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a>.</p>
+<p>Default flag is <a class="reference internal" href="class_mesh.html#class-mesh-constant-array-compress-default"><span class="std std-ref">Mesh.ARRAY_COMPRESS_DEFAULT</span></a> if compression is enabled. If compression is disabled the default flag is <a class="reference internal" href="class_mesh.html#class-mesh-constant-array-flag-use-octahedral-compression"><span class="std std-ref">Mesh.ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION</span></a>. See <code class="docutils literal notranslate"><span class="pre">ARRAY_COMPRESS_*</span></code> constants in <a class="reference internal" href="class_mesh.html#enum-mesh-arrayformat"><span class="std std-ref">ArrayFormat</span></a> for other flags.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-commit-to-arrays">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit_to_arrays"></a>commit_to_arrays</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Commits the data to the same format used by <a class="reference internal" href="class_arraymesh.html#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">ArrayMesh.add_surface_from_arrays</span></a>. This way you can further process the mesh data using the <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> API.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-create-from">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_from"></a>create_from</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface <strong>)</strong></p></li>
+</ul>
+<p>Creates a vertex array from an existing <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-create-from-blend-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_from_blend_shape"></a>create_from_blend_shape</strong> <strong>(</strong> <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> existing, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surface, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> blend_shape <strong>)</strong></p></li>
+</ul>
+<p>Creates a vertex array from the specified blend shape of an existing <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a>. This can be used to extract a specific pose from a blend shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-deindex">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/deindex"></a>deindex</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes the index array by expanding the vertex array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-generate-normals">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generate_normals"></a>generate_normals</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> flip=false <strong>)</strong></p></li>
+</ul>
+<p>Generates normals from vertices so you do not have to do it manually. If <code class="docutils literal notranslate"><span class="pre">flip</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the resulting normals will be inverted. <a class="reference internal" href="#class-surfacetool-method-generate-normals"><span class="std std-ref">generate_normals</span></a> should be called <em>after</em> generating geometry and <em>before</em> committing the mesh using <a class="reference internal" href="#class-surfacetool-method-commit"><span class="std std-ref">commit</span></a> or <a class="reference internal" href="#class-surfacetool-method-commit-to-arrays"><span class="std std-ref">commit_to_arrays</span></a>. For correct display of normal-mapped surfaces, you will also have to generate tangents using <a class="reference internal" href="#class-surfacetool-method-generate-tangents"><span class="std std-ref">generate_tangents</span></a>.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-surfacetool-method-generate-normals"><span class="std std-ref">generate_normals</span></a> only works if the primitive type to be set to <a class="reference internal" href="class_mesh.html#class-mesh-constant-primitive-triangles"><span class="std std-ref">Mesh.PRIMITIVE_TRIANGLES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-generate-tangents">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generate_tangents"></a>generate_tangents</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Generates a tangent vector for each vertex. Requires that each vertex have UVs and normals set already (see <a class="reference internal" href="#class-surfacetool-method-generate-normals"><span class="std std-ref">generate_normals</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-index">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/index"></a>index</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Shrinks the vertex array by creating an index array. This can improve performance by avoiding vertex reuse.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-surfacetool-method-set-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_material"></a>set_material</strong> <strong>(</strong> <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></li>
+</ul>
+<p>Sets <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> to be used by the <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> you are constructing.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_styleboxtexture.html" rel="prev" title="StyleBoxTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_tabcontainer.html" rel="next" title="TabContainer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

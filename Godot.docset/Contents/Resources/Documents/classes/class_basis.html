@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Basis" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_basis.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="3×3 matrix datatype. Description: 3×3 matrix used for 3D rotation and scale. Almost always used as an orthogonal basis for a Transform. Contains 3 vector fields X, Y and Z as its columns, which are..." property="og:description"/>
+<meta content="3×3 matrix datatype. 3×3 matrix used for 3D rotation and scale. Almost always used as an orthogonal basis for a Transform. Contains 3 vector fields X, Y and Z as its columns, which are typically interpreted as the loc..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Basis — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_basis.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_basis.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_basis.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_basis.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_basis.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_basis.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_basis.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_basis.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_basis.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_basis.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_basis.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_basis.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_basis.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_basis.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_basis.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_basis.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_bitmap.html" rel="next" title="BitMap"/>
+<link href="class_basebutton.html" rel="prev" title="BaseButton"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Basis</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="basis">
+<span id="class-basis"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Basis¶"></a>Basis<a class="headerlink" href="#basis" title="Permalink to this headline">¶</a></h1>
+<p>3×3 matrix datatype.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>3×3 matrix used for 3D rotation and scale. Almost always used as an orthogonal basis for a Transform.</p>
+<p>Contains 3 vector fields X, Y and Z as its columns, which are typically interpreted as the local basis vectors of a transformation. For such use, it is composed of a scaling and a rotation matrix, in that order (M = R.S).</p>
+<p>Can also be accessed as array of 3D vectors. These vectors are normally orthogonal to each other, but are not necessarily normalized (due to scaling).</p>
+<p>For more information, read the "Matrices and transforms" documentation article.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/math/index.html"><span class="doc">Math</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/math/matrices_and_transforms.html"><span class="doc">Matrices and transforms</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/3d/using_transforms.html"><span class="doc">Using 3D transforms</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/584">Matrix Transform Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/125">3D Platformer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/583">2.5D Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 38%"/>
+<col style="width: 27%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-property-x"><span class="std std-ref">x</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-property-y"><span class="std std-ref">y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-property-z"><span class="std std-ref">z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-basis"><span class="std std-ref">Basis</span></a> <strong>(</strong> <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-basis"><span class="std std-ref">Basis</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-basis"><span class="std std-ref">Basis</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-basis"><span class="std std-ref">Basis</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> x_axis, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> y_axis, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> z_axis <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-determinant"><span class="std std-ref">determinant</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-get-euler"><span class="std std-ref">get_euler</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-get-orthogonal-index"><span class="std std-ref">get_orthogonal_index</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-get-rotation-quat"><span class="std std-ref">get_rotation_quat</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-get-scale"><span class="std std-ref">get_scale</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-inverse"><span class="std std-ref">inverse</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a> <strong>(</strong> <a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> epsilon=1e-05 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-orthonormalized"><span class="std std-ref">orthonormalized</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-rotated"><span class="std std-ref">rotated</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-scaled"><span class="std std-ref">scaled</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-slerp"><span class="std std-ref">slerp</span></a> <strong>(</strong> <a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-tdotx"><span class="std std-ref">tdotx</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-tdoty"><span class="std std-ref">tdoty</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-tdotz"><span class="std std-ref">tdotz</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-transposed"><span class="std std-ref">transposed</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-xform"><span class="std std-ref">xform</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-basis-method-xform-inv"><span class="std std-ref">xform_inv</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-basis-constant-flip-y"></span><span id="class-basis-constant-flip-x"></span><span id="class-basis-constant-identity"></span><ul class="simple" id="class-basis-constant-flip-z">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/IDENTITY"></a>IDENTITY</strong> = <strong>Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )</strong> --- The identity basis, with no rotation or scaling applied.</p></li>
+</ul>
+<p>This is identical to calling <code class="docutils literal notranslate"><span class="pre">Basis()</span></code> without any parameters. This constant can be used to make your code clearer, and for consistency with C#.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/FLIP_X"></a>FLIP_X</strong> = <strong>Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )</strong> --- The basis that will flip something along the X axis when used in a transformation.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/FLIP_Y"></a>FLIP_Y</strong> = <strong>Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )</strong> --- The basis that will flip something along the Y axis when used in a transformation.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/FLIP_Z"></a>FLIP_Z</strong> = <strong>Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )</strong> --- The basis that will flip something along the Z axis when used in a transformation.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-basis-property-x">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/x"></a>x</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The basis matrix's X vector (column 0). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-property-y">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/y"></a>y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The basis matrix's Y vector (column 1). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-property-z">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/z"></a>z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The basis matrix's Z vector (column 2). Equivalent to array index <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-basis-method-basis">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Basis"></a>Basis</strong> <strong>(</strong> <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a pure rotation basis matrix from the given quaternion.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Basis"></a>Basis</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a pure rotation basis matrix from the given Euler angles (in the YXZ convention: when *composing*, first Y, then X, and Z last), given in the vector format as (X angle, Y angle, Z angle).</p>
+<p>Consider using the <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> constructor instead, which uses a quaternion instead of Euler angles.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Basis"></a>Basis</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></li>
+</ul>
+<p>Constructs a pure rotation basis matrix, rotated around the given <code class="docutils literal notranslate"><span class="pre">axis</span></code> by <code class="docutils literal notranslate"><span class="pre">phi</span></code>, in radians. The axis must be a normalized vector.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Basis"></a>Basis</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> x_axis, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> y_axis, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> z_axis <strong>)</strong></p></li>
+</ul>
+<p>Constructs a basis matrix from 3 axis vectors (matrix columns).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-determinant">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/determinant"></a>determinant</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the determinant of the basis matrix. If the basis is uniformly scaled, its determinant is the square of the scale.</p>
+<p>A negative determinant means the basis has a negative scale. A zero determinant means the basis isn't invertible, and is usually considered invalid.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-get-euler">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_euler"></a>get_euler</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the basis's rotation in the form of Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).</p>
+<p>Consider using the <a class="reference internal" href="#class-basis-method-get-rotation-quat"><span class="std std-ref">get_rotation_quat</span></a> method instead, which returns a <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> quaternion instead of Euler angles.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-get-orthogonal-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_orthogonal_index"></a>get_orthogonal_index</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the <a class="reference internal" href="class_gridmap.html#class-gridmap"><span class="std std-ref">GridMap</span></a> editor. For further details, refer to the Godot source code.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-get-rotation-quat">
+<li><p><a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_rotation_quat"></a>get_rotation_quat</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the basis's rotation in the form of a quaternion. See <a class="reference internal" href="#class-basis-method-get-euler"><span class="std std-ref">get_euler</span></a> if you need Euler angles, but keep in mind quaternions should generally be preferred to Euler angles.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-get-scale">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_scale"></a>get_scale</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Assuming that the matrix is the combination of a rotation and scaling, return the absolute value of scaling factors along each axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-inverse">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/inverse"></a>inverse</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverse of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-is-equal-approx">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_equal_approx"></a>is_equal_approx</strong> <strong>(</strong> <a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> epsilon=1e-05 <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this basis and <code class="docutils literal notranslate"><span class="pre">b</span></code> are approximately equal, by calling <code class="docutils literal notranslate"><span class="pre">is_equal_approx</span></code> on each component.</p>
+<p><strong>Note:</strong> For complicated reasons, the epsilon argument is always discarded. Don't use the epsilon argument, it does nothing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-orthonormalized">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/orthonormalized"></a>orthonormalized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-rotated">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rotated"></a>rotated</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> phi <strong>)</strong></p></li>
+</ul>
+<p>Introduce an additional rotation around the given axis by phi (radians). The axis must be a normalized vector.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-scaled">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/scaled"></a>scaled</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Introduce an additional scaling specified by the given 3D scaling factor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-slerp">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slerp"></a>slerp</strong> <strong>(</strong> <a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Assuming that the matrix is a proper rotation matrix, slerp performs a spherical-linear interpolation with another rotation matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-tdotx">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tdotx"></a>tdotx</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></li>
+</ul>
+<p>Transposed dot product with the X axis of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-tdoty">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tdoty"></a>tdoty</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></li>
+</ul>
+<p>Transposed dot product with the Y axis of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-tdotz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/tdotz"></a>tdotz</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> with <strong>)</strong></p></li>
+</ul>
+<p>Transposed dot product with the Z axis of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-transposed">
+<li><p><a class="reference internal" href="#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transposed"></a>transposed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the transposed version of the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-xform">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xform"></a>xform</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Returns a vector transformed (multiplied) by the matrix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-basis-method-xform-inv">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xform_inv"></a>xform_inv</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> v <strong>)</strong></p></li>
+</ul>
+<p>Returns a vector transformed (multiplied) by the transposed basis matrix.</p>
+<p><strong>Note:</strong> This results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_basebutton.html" rel="prev" title="BaseButton"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_bitmap.html" rel="next" title="BitMap">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorSpatialGizmoPlugin" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorspatialgizmoplugin.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Used by the editor to define Spatial gizmo types. Description: EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do..." property="og:description"/>
+<meta content="Used by the editor to define Spatial gizmo types. EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending EditorSpatialGizmoPlugin for the simpler gizmos, or crea..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorSpatialGizmoPlugin — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorspatialgizmoplugin.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorspatialgizmoplugin.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorspatialgizmoplugin.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorspatialgizmoplugin.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorspatialgizmoplugin.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorspatialgizmoplugin.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorspatialgizmoplugin.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorspatialgizmoplugin.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorspatialgizmoplugin.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorspatialgizmoplugin.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorspatialgizmoplugin.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorspatialgizmoplugin.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorspatialgizmoplugin.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorspatialgizmoplugin.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorspatialgizmoplugin.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorspatialgizmoplugin.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorspinslider.html" rel="next" title="EditorSpinSlider"/>
+<link href="class_editorspatialgizmo.html" rel="prev" title="EditorSpatialGizmo"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorSpatialGizmoPlugin</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorspatialgizmoplugin">
+<span id="class-editorspatialgizmoplugin"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorSpatialGizmoPlugin¶"></a>EditorSpatialGizmoPlugin<a class="headerlink" href="#editorspatialgizmoplugin" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Used by the editor to define Spatial gizmo types.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">EditorSpatialGizmoPlugin</span></code> allows you to define a new type of Gizmo. There are two main ways to do so: extending <code class="docutils literal notranslate"><span class="pre">EditorSpatialGizmoPlugin</span></code> for the simpler gizmos, or creating a new <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> type. See the tutorial in the documentation for more info.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">EditorSpatialGizmoPlugin</span></code>, register it using the <a class="reference internal" href="class_editorplugin.html#class-editorplugin-method-add-spatial-gizmo-plugin"><span class="std std-ref">EditorPlugin.add_spatial_gizmo_plugin</span></a> method first.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/plugins/editor/spatial_gizmos.html"><span class="doc">Spatial gizmo plugins</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-add-material"><span class="std std-ref">add_material</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> material <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-can-be-hidden"><span class="std std-ref">can_be_hidden</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-commit-handle"><span class="std std-ref">commit_handle</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> restore, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> cancel=false <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-create-gizmo"><span class="std std-ref">create_gizmo</span></a> <strong>(</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> spatial <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-create-handle-material"><span class="std std-ref">create_handle_material</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> billboard=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-create-icon-material"><span class="std std-ref">create_icon_material</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> on_top=false, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color=Color( 1, 1, 1, 1 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-create-material"><span class="std std-ref">create_material</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> billboard=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> on_top=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_vertex_color=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-handle-name"><span class="std std-ref">get_handle_name</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-handle-value"><span class="std std-ref">get_handle_value</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-material"><span class="std std-ref">get_material</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-name"><span class="std std-ref">get_name</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-priority"><span class="std std-ref">get_priority</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-has-gizmo"><span class="std std-ref">has_gizmo</span></a> <strong>(</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> spatial <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-is-handle-highlighted"><span class="std std-ref">is_handle_highlighted</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-is-selectable-when-hidden"><span class="std std-ref">is_selectable_when_hidden</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-redraw"><span class="std std-ref">redraw</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorspatialgizmoplugin-method-set-handle"><span class="std std-ref">set_handle</span></a> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a> camera, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-add-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_material"></a>add_material</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> material <strong>)</strong></p></li>
+</ul>
+<p>Adds a new material to the internal material list for the plugin. It can then be accessed with <a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-material"><span class="std std-ref">get_material</span></a>. Should not be overridden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-can-be-hidden">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/can_be_hidden"></a>can_be_hidden</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to define whether the gizmo can be hidden or not. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if not overridden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-commit-handle">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit_handle"></a>commit_handle</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> restore, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> cancel=false <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to commit gizmo handles. Called for this plugin's active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-create-gizmo">
+<li><p><a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_gizmo"></a>create_gizmo</strong> <strong>(</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> spatial <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to return a custom <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> for the spatial nodes of your choice, return <code class="docutils literal notranslate"><span class="pre">null</span></code> for the rest of nodes. See also <a class="reference internal" href="#class-editorspatialgizmoplugin-method-has-gizmo"><span class="std std-ref">has_gizmo</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-create-handle-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_handle_material"></a>create_handle_material</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> billboard=false, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture=null <strong>)</strong></p></li>
+</ul>
+<p>Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with <a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-material"><span class="std std-ref">get_material</span></a> and used in <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo-method-add-handles"><span class="std std-ref">EditorSpatialGizmo.add_handles</span></a>. Should not be overridden.</p>
+<p>You can optionally provide a texture to use instead of the default icon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-create-icon-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_icon_material"></a>create_icon_material</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> on_top=false, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color=Color( 1, 1, 1, 1 ) <strong>)</strong></p></li>
+</ul>
+<p>Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with <a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-material"><span class="std std-ref">get_material</span></a> and used in <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo-method-add-unscaled-billboard"><span class="std std-ref">EditorSpatialGizmo.add_unscaled_billboard</span></a>. Should not be overridden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-create-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_material"></a>create_material</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> billboard=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> on_top=false, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_vertex_color=false <strong>)</strong></p></li>
+</ul>
+<p>Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with <a class="reference internal" href="#class-editorspatialgizmoplugin-method-get-material"><span class="std std-ref">get_material</span></a> and used in <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo-method-add-mesh"><span class="std std-ref">EditorSpatialGizmo.add_mesh</span></a> and <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo-method-add-lines"><span class="std std-ref">EditorSpatialGizmo.add_lines</span></a>. Should not be overridden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-get-handle-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_handle_name"></a>get_handle_name</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to provide gizmo's handle names. Called for this plugin's active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-get-handle-value">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_handle_value"></a>get_handle_value</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Gets actual value of a handle from gizmo. Called for this plugin's active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-get-material">
+<li><p><a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_material"></a>get_material</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo=null <strong>)</strong></p></li>
+</ul>
+<p>Gets material from the internal list of materials. If an <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> is provided, it will try to get the corresponding variant (selected and/or editable).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-get-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_name"></a>get_name</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to provide the name that will appear in the gizmo visibility menu.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-get-priority">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_priority"></a>get_priority</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to set the gizmo's priority. Higher values correspond to higher priority. If a gizmo with higher priority conflicts with another gizmo, only the gizmo with higher priority will be used.</p>
+<p>All built-in editor gizmos return a priority of <code class="docutils literal notranslate"><span class="pre">-1</span></code>. If not overridden, this method will return <code class="docutils literal notranslate"><span class="pre">0</span></code>, which means custom gizmos will automatically override built-in gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-has-gizmo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_gizmo"></a>has_gizmo</strong> <strong>(</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> spatial <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to define which Spatial nodes have a gizmo from this plugin. Whenever a <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> node is added to a scene this method is called, if it returns <code class="docutils literal notranslate"><span class="pre">true</span></code> the node gets a generic <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> assigned and is added to this plugin's list of active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-is-handle-highlighted">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_handle_highlighted"></a>is_handle_highlighted</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Gets whether a handle is highlighted or not. Called for this plugin's active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-is-selectable-when-hidden">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_selectable_when_hidden"></a>is_selectable_when_hidden</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Override this method to define whether a Spatial with this gizmo should be selectable even when the gizmo is hidden.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-redraw">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/redraw"></a>redraw</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Callback to redraw the provided gizmo. Called for this plugin's active gizmos.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorspatialgizmoplugin-method-set-handle">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_handle"></a>set_handle</strong> <strong>(</strong> <a class="reference internal" href="class_editorspatialgizmo.html#class-editorspatialgizmo"><span class="std std-ref">EditorSpatialGizmo</span></a> gizmo, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a> camera, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> point <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Update the value of a handle after it has been updated. Called for this plugin's active gizmos.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorspatialgizmo.html" rel="prev" title="EditorSpatialGizmo"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorspinslider.html" rel="next" title="EditorSpinSlider">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

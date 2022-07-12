@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="NetworkedMultiplayerPeer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_networkedmultiplayerpeer.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: PacketPeer&lt; Reference&lt; Object Inherited By: MultiplayerPeerGDNative, NetworkedMultiplayerENet, WebRTCMultiplayer, WebSocketMultiplayerPeer A high-level network interface to simplify multi..." property="og:description"/>
+<meta content="A high-level network interface to simplify multiplayer interactions. Manages the connection to network peers. Assigns unique IDs to each client connected to the server. See also MultiplayerAPI. Note: The high-level mu..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) NetworkedMultiplayerPeer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerpeer.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_networkedmultiplayerpeer.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_networkedmultiplayerpeer.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_networkedmultiplayerpeer.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_networkedmultiplayerpeer.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_networkedmultiplayerpeer.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_networkedmultiplayerpeer.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_networkedmultiplayerpeer.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_networkedmultiplayerpeer.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_networkedmultiplayerpeer.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_networkedmultiplayerpeer.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_networkedmultiplayerpeer.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_networkedmultiplayerpeer.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_networkedmultiplayerpeer.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerpeer.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerpeer.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_ninepatchrect.html" rel="next" title="NinePatchRect"/>
+<link href="class_networkedmultiplayerenet.html" rel="prev" title="NetworkedMultiplayerENet"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>NetworkedMultiplayerPeer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="networkedmultiplayerpeer">
+<span id="class-networkedmultiplayerpeer"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/NetworkedMultiplayerPeer¶"></a>NetworkedMultiplayerPeer<a class="headerlink" href="#networkedmultiplayerpeer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_packetpeer.html#class-packetpeer"><span class="std std-ref">PacketPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_multiplayerpeergdnative.html#class-multiplayerpeergdnative"><span class="std std-ref">MultiplayerPeerGDNative</span></a>, <a class="reference internal" href="class_networkedmultiplayerenet.html#class-networkedmultiplayerenet"><span class="std std-ref">NetworkedMultiplayerENet</span></a>, <a class="reference internal" href="class_webrtcmultiplayer.html#class-webrtcmultiplayer"><span class="std std-ref">WebRTCMultiplayer</span></a>, <a class="reference internal" href="class_websocketmultiplayerpeer.html#class-websocketmultiplayerpeer"><span class="std std-ref">WebSocketMultiplayerPeer</span></a></p>
+<p>A high-level network interface to simplify multiplayer interactions.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Manages the connection to network peers. Assigns unique IDs to each client connected to the server. See also <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a>.</p>
+<p><strong>Note:</strong> The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html"><span class="doc">High-level multiplayer</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/537">WebRTC Signaling Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 56%"/>
+<col style="width: 6%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-property-refuse-new-connections"><span class="std std-ref">refuse_new_connections</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-networkedmultiplayerpeer-transfermode"><span class="std std-ref">TransferMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-property-transfer-mode"><span class="std std-ref">transfer_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-networkedmultiplayerpeer-connectionstatus"><span class="std std-ref">ConnectionStatus</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-method-get-connection-status"><span class="std std-ref">get_connection_status</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-method-get-packet-peer"><span class="std std-ref">get_packet_peer</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-method-get-unique-id"><span class="std std-ref">get_unique_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-method-poll"><span class="std std-ref">poll</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerpeer-method-set-target-peer"><span class="std std-ref">set_target_peer</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-networkedmultiplayerpeer-signal-connection-failed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/connection_failed"></a>connection_failed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a connection attempt fails.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-signal-connection-succeeded">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/connection_succeeded"></a>connection_succeeded</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a connection attempt succeeds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-signal-peer-connected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/peer_connected"></a>peer_connected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted by the server when a client connects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-signal-peer-disconnected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/peer_disconnected"></a>peer_disconnected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted by the server when a client disconnects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-signal-server-disconnected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/server_disconnected"></a>server_disconnected</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted by clients when the server disconnects.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-networkedmultiplayerpeer-constant-transfer-mode-reliable"><span id="class-networkedmultiplayerpeer-constant-transfer-mode-unreliable-ordered"></span><span id="class-networkedmultiplayerpeer-constant-transfer-mode-unreliable"></span><span id="enum-networkedmultiplayerpeer-transfermode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TransferMode"></a>TransferMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>TRANSFER_MODE_UNRELIABLE</strong> = <strong>0</strong> --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets may arrive in any order. Potentially faster than <a class="reference internal" href="#class-networkedmultiplayerpeer-constant-transfer-mode-unreliable-ordered"><span class="std std-ref">TRANSFER_MODE_UNRELIABLE_ORDERED</span></a>. Use for non-critical data, and always consider whether the order matters.</p></li>
+<li><p><strong>TRANSFER_MODE_UNRELIABLE_ORDERED</strong> = <strong>1</strong> --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than <a class="reference internal" href="#class-networkedmultiplayerpeer-constant-transfer-mode-reliable"><span class="std std-ref">TRANSFER_MODE_RELIABLE</span></a>. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.</p></li>
+<li><p><strong>TRANSFER_MODE_RELIABLE</strong> = <strong>2</strong> --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-networkedmultiplayerpeer-constant-connection-connected"><span id="class-networkedmultiplayerpeer-constant-connection-connecting"></span><span id="class-networkedmultiplayerpeer-constant-connection-disconnected"></span><span id="enum-networkedmultiplayerpeer-connectionstatus"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ConnectionStatus"></a>ConnectionStatus</strong>:</p>
+<ul class="simple">
+<li><p><strong>CONNECTION_DISCONNECTED</strong> = <strong>0</strong> --- The ongoing connection disconnected.</p></li>
+<li><p><strong>CONNECTION_CONNECTING</strong> = <strong>1</strong> --- A connection attempt is ongoing.</p></li>
+<li><p><strong>CONNECTION_CONNECTED</strong> = <strong>2</strong> --- The connection attempt succeeded.</p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-networkedmultiplayerpeer-constant-target-peer-broadcast"></span><ul class="simple" id="class-networkedmultiplayerpeer-constant-target-peer-server">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/TARGET_PEER_BROADCAST"></a>TARGET_PEER_BROADCAST</strong> = <strong>0</strong> --- Packets are sent to the server and then redistributed to other peers.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/TARGET_PEER_SERVER"></a>TARGET_PEER_SERVER</strong> = <strong>1</strong> --- Packets are sent to the server alone.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-networkedmultiplayerpeer-property-refuse-new-connections">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/refuse_new_connections"></a>refuse_new_connections</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_refuse_new_connections(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_refusing_new_connections()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this <code class="docutils literal notranslate"><span class="pre">NetworkedMultiplayerPeer</span></code> refuses new connections.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-property-transfer-mode">
+<li><p><a class="reference internal" href="#enum-networkedmultiplayerpeer-transfermode"><span class="std std-ref">TransferMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transfer_mode"></a>transfer_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_transfer_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_transfer_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The manner in which to send packets to the <code class="docutils literal notranslate"><span class="pre">target_peer</span></code>. See <a class="reference internal" href="#enum-networkedmultiplayerpeer-transfermode"><span class="std std-ref">TransferMode</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-networkedmultiplayerpeer-method-get-connection-status">
+<li><p><a class="reference internal" href="#enum-networkedmultiplayerpeer-connectionstatus"><span class="std std-ref">ConnectionStatus</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_status"></a>get_connection_status</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current state of the connection. See <a class="reference internal" href="#enum-networkedmultiplayerpeer-connectionstatus"><span class="std std-ref">ConnectionStatus</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-method-get-packet-peer">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_packet_peer"></a>get_packet_peer</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the ID of the <code class="docutils literal notranslate"><span class="pre">NetworkedMultiplayerPeer</span></code> who sent the most recent packet.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-method-get-unique-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_unique_id"></a>get_unique_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the ID of this <code class="docutils literal notranslate"><span class="pre">NetworkedMultiplayerPeer</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-method-poll">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/poll"></a>poll</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Waits up to 1 second to receive a new network event.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerpeer-method-set-target-peer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_target_peer"></a>set_target_peer</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Sets the peer to which packets will be sent.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> can be one of: <a class="reference internal" href="#class-networkedmultiplayerpeer-constant-target-peer-broadcast"><span class="std std-ref">TARGET_PEER_BROADCAST</span></a> to send to all connected peers, <a class="reference internal" href="#class-networkedmultiplayerpeer-constant-target-peer-server"><span class="std std-ref">TARGET_PEER_SERVER</span></a> to send to the peer acting as server, a valid peer ID to send to that specific peer, a negative peer ID to send to all peers except that one. By default, the target peer is <a class="reference internal" href="#class-networkedmultiplayerpeer-constant-target-peer-broadcast"><span class="std std-ref">TARGET_PEER_BROADCAST</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_networkedmultiplayerenet.html" rel="prev" title="NetworkedMultiplayerENet"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_ninepatchrect.html" rel="next" title="NinePatchRect">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="UndoRedo" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_undoredo.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Helper to manage undo/redo operations in the editor or custom tools. Description: Helper to manage undo/redo operations in the editor or custom tools. It works by registering metho..." property="og:description"/>
+<meta content='Helper to manage undo/redo operations in the editor or custom tools. Helper to manage undo/redo operations in the editor or custom tools. It works by registering methods and property changes inside "actions"...' name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) UndoRedo — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_undoredo.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_undoredo.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_undoredo.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_undoredo.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_undoredo.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_undoredo.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_undoredo.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_undoredo.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_undoredo.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_undoredo.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_undoredo.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_undoredo.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_undoredo.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_undoredo.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_undoredo.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_undoredo.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_upnp.html" rel="next" title="UPNP"/>
+<link href="class_udpserver.html" rel="prev" title="UDPServer"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>UndoRedo</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="undoredo">
+<span id="class-undoredo"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/UndoRedo¶"></a>UndoRedo<a class="headerlink" href="#undoredo" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Helper to manage undo/redo operations in the editor or custom tools.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Helper to manage undo/redo operations in the editor or custom tools. It works by registering methods and property changes inside "actions".</p>
+<p>Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.</p>
+<p>Here's an example on how to add an action to the Godot editor's own <code class="docutils literal notranslate"><span class="pre">UndoRedo</span></code>, from a plugin:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">undo_redo</span> <span class="o">=</span> <span class="n">get_undo_redo</span><span class="p">()</span> <span class="c1"># Method of EditorPlugin.</span>
+
+<span class="k">func</span> <span class="n">do_something</span><span class="p">():</span>
+    <span class="k">pass</span> <span class="c1"># Put your code here.</span>
+
+<span class="k">func</span> <span class="n">undo_something</span><span class="p">():</span>
+    <span class="k">pass</span> <span class="c1"># Put here the code that reverts what's done by "do_something()".</span>
+
+<span class="k">func</span> <span class="n">_on_MyButton_pressed</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">node</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="s2">"MyNode2D"</span><span class="p">)</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">create_action</span><span class="p">(</span><span class="s2">"Move the node"</span><span class="p">)</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">add_do_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"do_something"</span><span class="p">)</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">add_undo_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"undo_something"</span><span class="p">)</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">add_do_property</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">,</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">add_undo_property</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+    <span class="n">undo_redo</span><span class="o">.</span><span class="n">commit_action</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#class-undoredo-method-create-action"><span class="std std-ref">create_action</span></a>, <a class="reference internal" href="#class-undoredo-method-add-do-method"><span class="std std-ref">add_do_method</span></a>, <a class="reference internal" href="#class-undoredo-method-add-undo-method"><span class="std std-ref">add_undo_method</span></a>, <a class="reference internal" href="#class-undoredo-method-add-do-property"><span class="std std-ref">add_do_property</span></a>, <a class="reference internal" href="#class-undoredo-method-add-undo-property"><span class="std std-ref">add_undo_property</span></a>, and <a class="reference internal" href="#class-undoredo-method-commit-action"><span class="std std-ref">commit_action</span></a> should be called one after the other, like in the example. Not doing so could lead to crashes.</p>
+<p>If you don't need to register a method, you can leave <a class="reference internal" href="#class-undoredo-method-add-do-method"><span class="std std-ref">add_do_method</span></a> and <a class="reference internal" href="#class-undoredo-method-add-undo-method"><span class="std std-ref">add_undo_method</span></a> out; the same goes for properties. You can also register more than one method/property.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 87%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-do-method"><span class="std std-ref">add_do_method</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-do-property"><span class="std std-ref">add_do_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-do-reference"><span class="std std-ref">add_do_reference</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-undo-method"><span class="std std-ref">add_undo_method</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-undo-property"><span class="std std-ref">add_undo_property</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-add-undo-reference"><span class="std std-ref">add_undo_reference</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-clear-history"><span class="std std-ref">clear_history</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> increase_version=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-commit-action"><span class="std std-ref">commit_action</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-create-action"><span class="std std-ref">create_action</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="#enum-undoredo-mergemode"><span class="std std-ref">MergeMode</span></a> merge_mode=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-get-current-action-name"><span class="std std-ref">get_current_action_name</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-get-version"><span class="std std-ref">get_version</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-has-redo"><span class="std std-ref">has_redo</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-has-undo"><span class="std std-ref">has_undo</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-is-commiting-action"><span class="std std-ref">is_commiting_action</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-redo"><span class="std std-ref">redo</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-undoredo-method-undo"><span class="std std-ref">undo</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-undoredo-signal-version-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/version_changed"></a>version_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Called when <a class="reference internal" href="#class-undoredo-method-undo"><span class="std std-ref">undo</span></a> or <a class="reference internal" href="#class-undoredo-method-redo"><span class="std std-ref">redo</span></a> was called.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-undoredo-constant-merge-all"><span id="class-undoredo-constant-merge-ends"></span><span id="class-undoredo-constant-merge-disable"></span><span id="enum-undoredo-mergemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/MergeMode"></a>MergeMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MERGE_DISABLE</strong> = <strong>0</strong> --- Makes "do"/"undo" operations stay in separate actions.</p></li>
+<li><p><strong>MERGE_ENDS</strong> = <strong>1</strong> --- Makes so that the action's "do" operation is from the first action created and the "undo" operation is from the last subsequent action with the same name.</p></li>
+<li><p><strong>MERGE_ALL</strong> = <strong>2</strong> --- Makes subsequent actions with the same name be merged into one.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-undoredo-method-add-do-method">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_do_method"></a>add_do_method</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Register a method that will be called when the action is committed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-add-do-property">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_do_property"></a>add_do_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Register a property value change for "do".</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-add-do-reference">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_do_reference"></a>add_do_reference</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong></p></li>
+</ul>
+<p>Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-add-undo-method">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_undo_method"></a>add_undo_method</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Register a method that will be called when the action is undone.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-add-undo-property">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_undo_property"></a>add_undo_property</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Register a property value change for "undo".</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-add-undo-reference">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_undo_reference"></a>add_undo_reference</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object <strong>)</strong></p></li>
+</ul>
+<p>Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-clear-history">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_history"></a>clear_history</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> increase_version=true <strong>)</strong></p></li>
+</ul>
+<p>Clear the undo/redo history and associated references.</p>
+<p>Passing <code class="docutils literal notranslate"><span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">increase_version</span></code> will prevent the version number to be increased from this.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-commit-action">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit_action"></a>commit_action</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Commit the action. All "do" methods/properties are called/set when this function is called.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-create-action">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_action"></a>create_action</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="#enum-undoredo-mergemode"><span class="std std-ref">MergeMode</span></a> merge_mode=0 <strong>)</strong></p></li>
+</ul>
+<p>Create a new action. After this is called, do all your calls to <a class="reference internal" href="#class-undoredo-method-add-do-method"><span class="std std-ref">add_do_method</span></a>, <a class="reference internal" href="#class-undoredo-method-add-undo-method"><span class="std std-ref">add_undo_method</span></a>, <a class="reference internal" href="#class-undoredo-method-add-do-property"><span class="std std-ref">add_do_property</span></a>, and <a class="reference internal" href="#class-undoredo-method-add-undo-property"><span class="std std-ref">add_undo_property</span></a>, then commit the action with <a class="reference internal" href="#class-undoredo-method-commit-action"><span class="std std-ref">commit_action</span></a>.</p>
+<p>The way actions are merged is dictated by the <code class="docutils literal notranslate"><span class="pre">merge_mode</span></code> argument. See <a class="reference internal" href="#enum-undoredo-mergemode"><span class="std std-ref">MergeMode</span></a> for details.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-get-current-action-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_action_name"></a>get_current_action_name</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the name of the current action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-get-version">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_version"></a>get_version</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the version. Every time a new action is committed, the <code class="docutils literal notranslate"><span class="pre">UndoRedo</span></code>'s version number is increased automatically.</p>
+<p>This is useful mostly to check if something changed from a saved version.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-has-redo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_redo"></a>has_redo</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a "redo" action is available.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-has-undo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_undo"></a>has_undo</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if an "undo" action is available.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-is-commiting-action">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_commiting_action"></a>is_commiting_action</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the <code class="docutils literal notranslate"><span class="pre">UndoRedo</span></code> is currently committing the action, i.e. running its "do" method or property change (see <a class="reference internal" href="#class-undoredo-method-commit-action"><span class="std std-ref">commit_action</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-redo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/redo"></a>redo</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Redo the last action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-undoredo-method-undo">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/undo"></a>undo</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Undo the last action.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_udpserver.html" rel="prev" title="UDPServer"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_upnp.html" rel="next" title="UPNP">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

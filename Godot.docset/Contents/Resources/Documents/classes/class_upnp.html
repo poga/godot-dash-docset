@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="UPNP" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_upnp.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object UPNP network functions. Description: Provides UPNP functionality to discover UPNPDevice s on the local network and execute commands on them, like managing port mappings ..." property="og:description"/>
+<meta content="UPNP network functions. Provides UPNP functionality to discover UPNPDevices on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) UPNP — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnp.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_upnp.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_upnp.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_upnp.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_upnp.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_upnp.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_upnp.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_upnp.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_upnp.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_upnp.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_upnp.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_upnp.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_upnp.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_upnp.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnp.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_upnp.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_upnpdevice.html" rel="next" title="UPNPDevice"/>
+<link href="class_undoredo.html" rel="prev" title="UndoRedo"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>UPNP</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="upnp">
+<span id="class-upnp"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/UPNP¶"></a>UPNP<a class="headerlink" href="#upnp" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>UPNP network functions.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Provides UPNP functionality to discover <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>s on the local network and execute commands on them, like managing port mappings (port forwarding) and querying the local and remote network IP address. Note that methods on this class are synchronous and block the calling thread.</p>
+<p>To forward a specific port:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">PORT</span> <span class="o">=</span> <span class="mi">7777</span>
+<span class="k">var</span> <span class="n">upnp</span> <span class="o">=</span> <span class="n">UPNP</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">upnp</span><span class="o">.</span><span class="n">discover</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"InternetGatewayDevice"</span><span class="p">)</span>
+<span class="n">upnp</span><span class="o">.</span><span class="n">add_port_mapping</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To close a specific port (e.g. after you have finished using it):</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">upnp</span><span class="o">.</span><span class="n">delete_port_mapping</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> UPnP discovery blocks the current thread. To perform discovery without blocking the main thread, use <a class="reference internal" href="class_thread.html#class-thread"><span class="std std-ref">Thread</span></a>s like this:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Emitted when UPnP port mapping setup is completed (regardless of success or failure).</span>
+<span class="k">signal</span> <span class="n">upnp_completed</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+<span class="c1"># Replace this with your own server port number between 1025 and 65535.</span>
+<span class="k">const</span> <span class="n">SERVER_PORT</span> <span class="o">=</span> <span class="mi">3928</span>
+<span class="k">var</span> <span class="n">thread</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
+
+<span class="k">func</span> <span class="n">_upnp_setup</span><span class="p">(</span><span class="n">server_port</span><span class="p">):</span>
+    <span class="c1"># UPNP queries take some time.</span>
+    <span class="k">var</span> <span class="n">upnp</span> <span class="o">=</span> <span class="n">UPNP</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">err</span> <span class="o">=</span> <span class="n">upnp</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">push_error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+        <span class="n">emit_signal</span><span class="p">(</span><span class="s2">"upnp_completed"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">upnp</span><span class="o">.</span><span class="n">get_gateway</span><span class="p">()</span> <span class="ow">and</span> <span class="n">upnp</span><span class="o">.</span><span class="n">get_gateway</span><span class="p">()</span><span class="o">.</span><span class="n">is_valid_gateway</span><span class="p">():</span>
+        <span class="n">upnp</span><span class="o">.</span><span class="n">add_port_mapping</span><span class="p">(</span><span class="n">server_port</span><span class="p">,</span> <span class="n">server_port</span><span class="p">,</span> <span class="n">ProjectSettings</span><span class="o">.</span><span class="n">get_setting</span><span class="p">(</span><span class="s2">"application/config/name"</span><span class="p">),</span> <span class="s2">"UDP"</span><span class="p">)</span>
+        <span class="n">upnp</span><span class="o">.</span><span class="n">add_port_mapping</span><span class="p">(</span><span class="n">server_port</span><span class="p">,</span> <span class="n">server_port</span><span class="p">,</span> <span class="n">ProjectSettings</span><span class="o">.</span><span class="n">get_setting</span><span class="p">(</span><span class="s2">"application/config/name"</span><span class="p">),</span> <span class="s2">"TCP"</span><span class="p">)</span>
+        <span class="n">emit_signal</span><span class="p">(</span><span class="s2">"upnp_completed"</span><span class="p">,</span> <span class="n">OK</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"_upnp_setup"</span><span class="p">,</span> <span class="n">SERVER_PORT</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_exit_tree</span><span class="p">():</span>
+    <span class="c1"># Wait for thread finish here to handle game exit while the thread is running.</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">wait_to_finish</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 65%"/>
+<col style="width: 10%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-property-discover-ipv6"><span class="std std-ref">discover_ipv6</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-property-discover-local-port"><span class="std std-ref">discover_local_port</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-property-discover-multicast-if"><span class="std std-ref">discover_multicast_if</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 88%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-add-device"><span class="std std-ref">add_device</span></a> <strong>(</strong> <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-add-port-mapping"><span class="std std-ref">add_port_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port_internal=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> desc="", <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration=0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-clear-devices"><span class="std std-ref">clear_devices</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-delete-port-mapping"><span class="std std-ref">delete_port_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP" <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-discover"><span class="std std-ref">discover</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout=2000, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> ttl=2, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> device_filter="InternetGatewayDevice" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-get-device"><span class="std std-ref">get_device</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-get-device-count"><span class="std std-ref">get_device_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-get-gateway"><span class="std std-ref">get_gateway</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-query-external-address"><span class="std std-ref">query_external_address</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-remove-device"><span class="std std-ref">remove_device</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-upnp-method-set-device"><span class="std std-ref">set_device</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> device <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-upnp-constant-upnp-result-unknown-error"><span id="class-upnp-constant-upnp-result-no-devices"></span><span id="class-upnp-constant-upnp-result-no-gateway"></span><span id="class-upnp-constant-upnp-result-mem-alloc-error"></span><span id="class-upnp-constant-upnp-result-socket-error"></span><span id="class-upnp-constant-upnp-result-http-error"></span><span id="class-upnp-constant-upnp-result-invalid-param"></span><span id="class-upnp-constant-upnp-result-invalid-response"></span><span id="class-upnp-constant-upnp-result-invalid-args"></span><span id="class-upnp-constant-upnp-result-invalid-duration"></span><span id="class-upnp-constant-upnp-result-invalid-protocol"></span><span id="class-upnp-constant-upnp-result-invalid-port"></span><span id="class-upnp-constant-upnp-result-invalid-gateway"></span><span id="class-upnp-constant-upnp-result-only-permanent-lease-supported"></span><span id="class-upnp-constant-upnp-result-same-port-values-required"></span><span id="class-upnp-constant-upnp-result-conflict-with-other-mapping"></span><span id="class-upnp-constant-upnp-result-conflict-with-other-mechanism"></span><span id="class-upnp-constant-upnp-result-no-port-maps-available"></span><span id="class-upnp-constant-upnp-result-ext-port-must-be-wildcard"></span><span id="class-upnp-constant-upnp-result-remote-host-must-be-wildcard"></span><span id="class-upnp-constant-upnp-result-int-port-wildcard-not-permitted"></span><span id="class-upnp-constant-upnp-result-ext-port-wildcard-not-permitted"></span><span id="class-upnp-constant-upnp-result-src-ip-wildcard-not-permitted"></span><span id="class-upnp-constant-upnp-result-action-failed"></span><span id="class-upnp-constant-upnp-result-no-such-entry-in-array"></span><span id="class-upnp-constant-upnp-result-inconsistent-parameters"></span><span id="class-upnp-constant-upnp-result-port-mapping-not-found"></span><span id="class-upnp-constant-upnp-result-not-authorized"></span><span id="class-upnp-constant-upnp-result-success"></span><span id="enum-upnp-upnpresult"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/UPNPResult"></a>UPNPResult</strong>:</p>
+<ul class="simple">
+<li><p><strong>UPNP_RESULT_SUCCESS</strong> = <strong>0</strong> --- UPNP command or discovery was successful.</p></li>
+<li><p><strong>UPNP_RESULT_NOT_AUTHORIZED</strong> = <strong>1</strong> --- Not authorized to use the command on the <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>. May be returned when the user disabled UPNP on their router.</p></li>
+<li><p><strong>UPNP_RESULT_PORT_MAPPING_NOT_FOUND</strong> = <strong>2</strong> --- No port mapping was found for the given port, protocol combination on the given <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>.</p></li>
+<li><p><strong>UPNP_RESULT_INCONSISTENT_PARAMETERS</strong> = <strong>3</strong> --- Inconsistent parameters.</p></li>
+<li><p><strong>UPNP_RESULT_NO_SUCH_ENTRY_IN_ARRAY</strong> = <strong>4</strong> --- No such entry in array. May be returned if a given port, protocol combination is not found on an <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>.</p></li>
+<li><p><strong>UPNP_RESULT_ACTION_FAILED</strong> = <strong>5</strong> --- The action failed.</p></li>
+<li><p><strong>UPNP_RESULT_SRC_IP_WILDCARD_NOT_PERMITTED</strong> = <strong>6</strong> --- The <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> does not allow wildcard values for the source IP address.</p></li>
+<li><p><strong>UPNP_RESULT_EXT_PORT_WILDCARD_NOT_PERMITTED</strong> = <strong>7</strong> --- The <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> does not allow wildcard values for the external port.</p></li>
+<li><p><strong>UPNP_RESULT_INT_PORT_WILDCARD_NOT_PERMITTED</strong> = <strong>8</strong> --- The <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> does not allow wildcard values for the internal port.</p></li>
+<li><p><strong>UPNP_RESULT_REMOTE_HOST_MUST_BE_WILDCARD</strong> = <strong>9</strong> --- The remote host value must be a wildcard.</p></li>
+<li><p><strong>UPNP_RESULT_EXT_PORT_MUST_BE_WILDCARD</strong> = <strong>10</strong> --- The external port value must be a wildcard.</p></li>
+<li><p><strong>UPNP_RESULT_NO_PORT_MAPS_AVAILABLE</strong> = <strong>11</strong> --- No port maps are available. May also be returned if port mapping functionality is not available.</p></li>
+<li><p><strong>UPNP_RESULT_CONFLICT_WITH_OTHER_MECHANISM</strong> = <strong>12</strong> --- Conflict with other mechanism. May be returned instead of <a class="reference internal" href="#class-upnp-constant-upnp-result-conflict-with-other-mapping"><span class="std std-ref">UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING</span></a> if a port mapping conflicts with an existing one.</p></li>
+<li><p><strong>UPNP_RESULT_CONFLICT_WITH_OTHER_MAPPING</strong> = <strong>13</strong> --- Conflict with an existing port mapping.</p></li>
+<li><p><strong>UPNP_RESULT_SAME_PORT_VALUES_REQUIRED</strong> = <strong>14</strong> --- External and internal port values must be the same.</p></li>
+<li><p><strong>UPNP_RESULT_ONLY_PERMANENT_LEASE_SUPPORTED</strong> = <strong>15</strong> --- Only permanent leases are supported. Do not use the <code class="docutils literal notranslate"><span class="pre">duration</span></code> parameter when adding port mappings.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_GATEWAY</strong> = <strong>16</strong> --- Invalid gateway.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_PORT</strong> = <strong>17</strong> --- Invalid port.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_PROTOCOL</strong> = <strong>18</strong> --- Invalid protocol.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_DURATION</strong> = <strong>19</strong> --- Invalid duration.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_ARGS</strong> = <strong>20</strong> --- Invalid arguments.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_RESPONSE</strong> = <strong>21</strong> --- Invalid response.</p></li>
+<li><p><strong>UPNP_RESULT_INVALID_PARAM</strong> = <strong>22</strong> --- Invalid parameter.</p></li>
+<li><p><strong>UPNP_RESULT_HTTP_ERROR</strong> = <strong>23</strong> --- HTTP error.</p></li>
+<li><p><strong>UPNP_RESULT_SOCKET_ERROR</strong> = <strong>24</strong> --- Socket error.</p></li>
+<li><p><strong>UPNP_RESULT_MEM_ALLOC_ERROR</strong> = <strong>25</strong> --- Error allocating memory.</p></li>
+<li><p><strong>UPNP_RESULT_NO_GATEWAY</strong> = <strong>26</strong> --- No gateway available. You may need to call <a class="reference internal" href="#class-upnp-method-discover"><span class="std std-ref">discover</span></a> first, or discovery didn't detect any valid IGDs (InternetGatewayDevices).</p></li>
+<li><p><strong>UPNP_RESULT_NO_DEVICES</strong> = <strong>27</strong> --- No devices available. You may need to call <a class="reference internal" href="#class-upnp-method-discover"><span class="std std-ref">discover</span></a> first, or discovery didn't detect any valid <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>s.</p></li>
+<li><p><strong>UPNP_RESULT_UNKNOWN_ERROR</strong> = <strong>28</strong> --- Unknown error.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-upnp-property-discover-ipv6">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/discover_ipv6"></a>discover_ipv6</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_discover_ipv6(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_discover_ipv6()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, IPv6 is used for <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> discovery.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-property-discover-local-port">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/discover_local_port"></a>discover_local_port</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_discover_local_port(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_discover_local_port()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">0</span></code>, the local port to use for discovery is chosen automatically by the system. If <code class="docutils literal notranslate"><span class="pre">1</span></code>, discovery will be done from the source port 1900 (same as destination port). Otherwise, the value will be used as the port.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-property-discover-multicast-if">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/discover_multicast_if"></a>discover_multicast_if</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_discover_multicast_if(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_discover_multicast_if()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Multicast interface to use for discovery. Uses the default multicast interface if empty.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-upnp-method-add-device">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_device"></a>add_device</strong> <strong>(</strong> <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Adds the given <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> to the list of discovered devices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-add-port-mapping">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_port_mapping"></a>add_port_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port_internal=0, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> desc="", <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration=0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Adds a mapping to forward the external <code class="docutils literal notranslate"><span class="pre">port</span></code> (between 1 and 65535) on the default gateway (see <a class="reference internal" href="#class-upnp-method-get-gateway"><span class="std std-ref">get_gateway</span></a>) to the <code class="docutils literal notranslate"><span class="pre">internal_port</span></code> on the local machine for the given protocol <code class="docutils literal notranslate"><span class="pre">proto</span></code> (either <code class="docutils literal notranslate"><span class="pre">TCP</span></code> or <code class="docutils literal notranslate"><span class="pre">UDP</span></code>, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with <a class="reference internal" href="#class-upnp-method-get-gateway"><span class="std std-ref">get_gateway</span></a> and call <a class="reference internal" href="#class-upnp-method-add-port-mapping"><span class="std std-ref">add_port_mapping</span></a> on it, if any.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">internal_port</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> (the default), the same port number is used for both the external and the internal port (the <code class="docutils literal notranslate"><span class="pre">port</span></code> value).</p>
+<p>The description (<code class="docutils literal notranslate"><span class="pre">desc</span></code>) is shown in some router UIs and can be used to point out which application added the mapping. The mapping's lease duration can be limited by specifying a <code class="docutils literal notranslate"><span class="pre">duration</span></code> (in seconds). However, some routers are incompatible with one or both of these, so use with caution and add fallback logic in case of errors to retry without them if in doubt.</p>
+<p>See <a class="reference internal" href="#enum-upnp-upnpresult"><span class="std std-ref">UPNPResult</span></a> for possible return values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-clear-devices">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_devices"></a>clear_devices</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears the list of discovered devices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-delete-port-mapping">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/delete_port_mapping"></a>delete_port_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> proto="UDP" <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Deletes the port mapping for the given port and protocol combination on the default gateway (see <a class="reference internal" href="#class-upnp-method-get-gateway"><span class="std std-ref">get_gateway</span></a>) if one exists. <code class="docutils literal notranslate"><span class="pre">port</span></code> must be a valid port between 1 and 65535, <code class="docutils literal notranslate"><span class="pre">proto</span></code> can be either <code class="docutils literal notranslate"><span class="pre">TCP</span></code> or <code class="docutils literal notranslate"><span class="pre">UDP</span></code>. See <a class="reference internal" href="#enum-upnp-upnpresult"><span class="std std-ref">UPNPResult</span></a> for possible return values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-discover">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/discover"></a>discover</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout=2000, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> ttl=2, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> device_filter="InternetGatewayDevice" <strong>)</strong></p></li>
+</ul>
+<p>Discovers local <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>s. Clears the list of previously discovered devices.</p>
+<p>Filters for IGD (InternetGatewayDevice) type devices by default, as those manage port forwarding. <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the time to wait for responses in milliseconds. <code class="docutils literal notranslate"><span class="pre">ttl</span></code> is the time-to-live; only touch this if you know what you're doing.</p>
+<p>See <a class="reference internal" href="#enum-upnp-upnpresult"><span class="std std-ref">UPNPResult</span></a> for possible return values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-get-device">
+<li><p><a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_device"></a>get_device</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> at the given <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-get-device-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_device_count"></a>get_device_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of discovered <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-get-gateway">
+<li><p><a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_gateway"></a>get_gateway</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the default gateway. That is the first discovered <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> that is also a valid IGD (InternetGatewayDevice).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-query-external-address">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/query_external_address"></a>query_external_address</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the external <a class="reference internal" href="class_ip.html#class-ip"><span class="std std-ref">IP</span></a> address of the default gateway (see <a class="reference internal" href="#class-upnp-method-get-gateway"><span class="std std-ref">get_gateway</span></a>) as string. Returns an empty string on error.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-remove-device">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_device"></a>remove_device</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></li>
+</ul>
+<p>Removes the device at <code class="docutils literal notranslate"><span class="pre">index</span></code> from the list of discovered devices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-upnp-method-set-device">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_device"></a>set_device</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index, <a class="reference internal" href="class_upnpdevice.html#class-upnpdevice"><span class="std std-ref">UPNPDevice</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Sets the device at <code class="docutils literal notranslate"><span class="pre">index</span></code> from the list of discovered devices to <code class="docutils literal notranslate"><span class="pre">device</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_undoredo.html" rel="prev" title="UndoRedo"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_upnpdevice.html" rel="next" title="UPNPDevice">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

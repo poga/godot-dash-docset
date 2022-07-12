@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Camera" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_camera.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Inherited By: ARVRCamera, ClippedCamera, InterpolatedCamera Camera node, displays from a point of view. Description: Camera is a special node that displays what is v..." property="og:description"/>
+<meta content="Camera node, displays from a point of view. Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest Viewport node (when ascending the tree). Only on..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Camera — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_camera.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_camera.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_camera.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_camera.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_camera.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_camera.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_camera.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_camera.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_camera.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_camera.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_camera.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_camera.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_camera.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_camera.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_camera.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_camera.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_camera2d.html" rel="next" title="Camera2D"/>
+<link href="class_buttongroup.html" rel="prev" title="ButtonGroup"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Camera</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="camera">
+<span id="class-camera"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Camera¶"></a>Camera<a class="headerlink" href="#camera" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_arvrcamera.html#class-arvrcamera"><span class="std std-ref">ARVRCamera</span></a>, <a class="reference internal" href="class_clippedcamera.html#class-clippedcamera"><span class="std std-ref">ClippedCamera</span></a>, <a class="reference internal" href="class_interpolatedcamera.html#class-interpolatedcamera"><span class="std std-ref">InterpolatedCamera</span></a></p>
+<p>Camera node, displays from a point of view.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a>, and, without one, a scene registered in that <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> (or higher viewports) can't be displayed.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 47%"/>
+<col style="width: 15%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-cull-mask"><span class="std std-ref">cull_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1048575</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-current"><span class="std std-ref">current</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-camera-dopplertracking"><span class="std std-ref">DopplerTracking</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-doppler-tracking"><span class="std std-ref">doppler_tracking</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_environment.html#class-environment"><span class="std std-ref">Environment</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-environment"><span class="std std-ref">environment</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-far"><span class="std std-ref">far</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">100.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-fov"><span class="std std-ref">fov</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">70.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-frustum-offset"><span class="std std-ref">frustum_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-h-offset"><span class="std std-ref">h_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-camera-keepaspect"><span class="std std-ref">KeepAspect</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-keep-aspect"><span class="std std-ref">keep_aspect</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-near"><span class="std std-ref">near</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.05</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-camera-projection"><span class="std std-ref">Projection</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-projection"><span class="std std-ref">projection</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-size"><span class="std std-ref">size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-property-v-offset"><span class="std std-ref">v_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-clear-current"><span class="std std-ref">clear_current</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_next=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-get-camera-rid"><span class="std std-ref">get_camera_rid</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-get-camera-transform"><span class="std std-ref">get_camera_transform</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-get-cull-mask-bit"><span class="std std-ref">get_cull_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-get-frustum"><span class="std std-ref">get_frustum</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-is-position-behind"><span class="std std-ref">is_position_behind</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> world_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-make-current"><span class="std std-ref">make_current</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-project-local-ray-normal"><span class="std std-ref">project_local_ray_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-project-position"><span class="std std-ref">project_position</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_depth <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-project-ray-normal"><span class="std std-ref">project_ray_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-project-ray-origin"><span class="std std-ref">project_ray_origin</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-set-cull-mask-bit"><span class="std std-ref">set_cull_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-set-frustum"><span class="std std-ref">set_frustum</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-set-orthogonal"><span class="std std-ref">set_orthogonal</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-camera-method-set-perspective"><span class="std std-ref">set_perspective</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fov, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-camera-method-unproject-position"><span class="std std-ref">unproject_position</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> world_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-camera-constant-projection-frustum"><span id="class-camera-constant-projection-orthogonal"></span><span id="class-camera-constant-projection-perspective"></span><span id="enum-camera-projection"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Projection"></a>Projection</strong>:</p>
+<ul class="simple">
+<li><p><strong>PROJECTION_PERSPECTIVE</strong> = <strong>0</strong> --- Perspective projection. Objects on the screen becomes smaller when they are far away.</p></li>
+<li><p><strong>PROJECTION_ORTHOGONAL</strong> = <strong>1</strong> --- Orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.</p></li>
+<li><p><strong>PROJECTION_FRUSTUM</strong> = <strong>2</strong> --- Frustum projection. This mode allows adjusting <a class="reference internal" href="#class-camera-property-frustum-offset"><span class="std std-ref">frustum_offset</span></a> to create "tilted frustum" effects.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-camera-constant-keep-height"><span id="class-camera-constant-keep-width"></span><span id="enum-camera-keepaspect"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/KeepAspect"></a>KeepAspect</strong>:</p>
+<ul class="simple">
+<li><p><strong>KEEP_WIDTH</strong> = <strong>0</strong> --- Preserves the horizontal aspect ratio; also known as Vert- scaling. This is usually the best option for projects running in portrait mode, as taller aspect ratios will benefit from a wider vertical FOV.</p></li>
+<li><p><strong>KEEP_HEIGHT</strong> = <strong>1</strong> --- Preserves the vertical aspect ratio; also known as Hor+ scaling. This is usually the best option for projects running in landscape mode, as wider aspect ratios will automatically benefit from a wider horizontal FOV.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-camera-constant-doppler-tracking-physics-step"><span id="class-camera-constant-doppler-tracking-idle-step"></span><span id="class-camera-constant-doppler-tracking-disabled"></span><span id="enum-camera-dopplertracking"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DopplerTracking"></a>DopplerTracking</strong>:</p>
+<ul class="simple">
+<li><p><strong>DOPPLER_TRACKING_DISABLED</strong> = <strong>0</strong> --- Disables <a class="reference external" href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler effect</a> simulation (default).</p></li>
+<li><p><strong>DOPPLER_TRACKING_IDLE_STEP</strong> = <strong>1</strong> --- Simulate <a class="reference external" href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler effect</a> by tracking positions of objects that are changed in <code class="docutils literal notranslate"><span class="pre">_process</span></code>. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's <code class="docutils literal notranslate"><span class="pre">pitch</span> <span class="pre">shift</span></code>).</p></li>
+<li><p><strong>DOPPLER_TRACKING_PHYSICS_STEP</strong> = <strong>2</strong> --- Simulate <a class="reference external" href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler effect</a> by tracking positions of objects that are changed in <code class="docutils literal notranslate"><span class="pre">_physics_process</span></code>. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's <code class="docutils literal notranslate"><span class="pre">pitch</span> <span class="pre">shift</span></code>).</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-camera-property-cull-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/cull_mask"></a>cull_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1048575</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_cull_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_cull_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The culling mask that describes which 3D render layers are rendered by this camera.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-current">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current"></a>current</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_current()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the ancestor <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> is currently using this camera.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-doppler-tracking">
+<li><p><a class="reference internal" href="#enum-camera-dopplertracking"><span class="std std-ref">DopplerTracking</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/doppler_tracking"></a>doppler_tracking</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_doppler_tracking(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_doppler_tracking()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If not <a class="reference internal" href="#class-camera-constant-doppler-tracking-disabled"><span class="std std-ref">DOPPLER_TRACKING_DISABLED</span></a>, this camera will simulate the <a class="reference external" href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler effect</a> for objects changed in particular <code class="docutils literal notranslate"><span class="pre">_process</span></code> methods. The Doppler effect is only simulated for <a class="reference internal" href="class_audiostreamplayer3d.html#class-audiostreamplayer3d"><span class="std std-ref">AudioStreamPlayer3D</span></a> nodes that have <a class="reference internal" href="class_audiostreamplayer3d.html#class-audiostreamplayer3d-property-doppler-tracking"><span class="std std-ref">AudioStreamPlayer3D.doppler_tracking</span></a> set to a value other than <a class="reference internal" href="class_audiostreamplayer3d.html#class-audiostreamplayer3d-constant-doppler-tracking-disabled"><span class="std std-ref">AudioStreamPlayer3D.DOPPLER_TRACKING_DISABLED</span></a>.</p>
+<p><strong>Note:</strong> To toggle the Doppler effect preview in the editor, use the Perspective menu in the top-left corner of the 3D viewport and toggle <strong>Enable Doppler</strong>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-environment">
+<li><p><a class="reference internal" href="class_environment.html#class-environment"><span class="std std-ref">Environment</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/environment"></a>environment</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_environment(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_environment()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_environment.html#class-environment"><span class="std std-ref">Environment</span></a> to use for this camera.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-far">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/far"></a>far</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">100.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_zfar(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_zfar()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The distance to the far culling boundary for this camera relative to its local Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-fov">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fov"></a>fov</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">70.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fov(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fov()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The camera's field of view angle (in degrees). Only applicable in perspective mode. Since <a class="reference internal" href="#class-camera-property-keep-aspect"><span class="std std-ref">keep_aspect</span></a> locks one axis, <code class="docutils literal notranslate"><span class="pre">fov</span></code> sets the other axis' field of view angle.</p>
+<p>For reference, the default vertical field of view value (<code class="docutils literal notranslate"><span class="pre">70.0</span></code>) is equivalent to a horizontal FOV of:</p>
+<ul class="simple">
+<li><p>~86.07 degrees in a 4:3 viewport</p></li>
+<li><p>~96.50 degrees in a 16:10 viewport</p></li>
+<li><p>~102.45 degrees in a 16:9 viewport</p></li>
+<li><p>~117.06 degrees in a 21:9 viewport</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-frustum-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/frustum_offset"></a>frustum_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_frustum_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_frustum_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The camera's frustum offset. This can be changed from the default to create "tilted frustum" effects such as <a class="reference external" href="https://zdoom.org/wiki/Y-shearing">Y-shearing</a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-h-offset">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/h_offset"></a>h_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_h_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_h_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The horizontal (X) offset of the camera viewport.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-keep-aspect">
+<li><p><a class="reference internal" href="#enum-camera-keepaspect"><span class="std std-ref">KeepAspect</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/keep_aspect"></a>keep_aspect</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_keep_aspect_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_keep_aspect_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The axis to lock during <a class="reference internal" href="#class-camera-property-fov"><span class="std std-ref">fov</span></a>/<a class="reference internal" href="#class-camera-property-size"><span class="std std-ref">size</span></a> adjustments. Can be either <a class="reference internal" href="#class-camera-constant-keep-width"><span class="std std-ref">KEEP_WIDTH</span></a> or <a class="reference internal" href="#class-camera-constant-keep-height"><span class="std std-ref">KEEP_HEIGHT</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-near">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/near"></a>near</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.05</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_znear(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_znear()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The distance to the near culling boundary for this camera relative to its local Z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-projection">
+<li><p><a class="reference internal" href="#enum-camera-projection"><span class="std std-ref">Projection</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/projection"></a>projection</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_projection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_projection()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The camera's projection mode. In <a class="reference internal" href="#class-camera-constant-projection-perspective"><span class="std std-ref">PROJECTION_PERSPECTIVE</span></a> mode, objects' Z distance from the camera's local space scales their perceived size.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/size"></a>size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The camera's size measured as 1/2 the width or height. Only applicable in orthogonal mode. Since <a class="reference internal" href="#class-camera-property-keep-aspect"><span class="std std-ref">keep_aspect</span></a> locks on axis, <code class="docutils literal notranslate"><span class="pre">size</span></code> sets the other axis' size length.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-property-v-offset">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/v_offset"></a>v_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_v_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_v_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The vertical (Y) offset of the camera viewport.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-camera-method-clear-current">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_current"></a>clear_current</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_next=true <strong>)</strong></p></li>
+</ul>
+<p>If this is the current camera, remove it from being current. If <code class="docutils literal notranslate"><span class="pre">enable_next</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, request to make the next camera current, if any.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-get-camera-rid">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_camera_rid"></a>get_camera_rid</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the camera's RID from the <a class="reference internal" href="class_visualserver.html#class-visualserver"><span class="std std-ref">VisualServer</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-get-camera-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_camera_transform"></a>get_camera_transform</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform of the camera plus the vertical (<a class="reference internal" href="#class-camera-property-v-offset"><span class="std std-ref">v_offset</span></a>) and horizontal (<a class="reference internal" href="#class-camera-property-h-offset"><span class="std std-ref">h_offset</span></a>) offsets; and any other adjustments made to the position and orientation of the camera by subclassed cameras such as <a class="reference internal" href="class_clippedcamera.html#class-clippedcamera"><span class="std std-ref">ClippedCamera</span></a>, <a class="reference internal" href="class_interpolatedcamera.html#class-interpolatedcamera"><span class="std std-ref">InterpolatedCamera</span></a> and <a class="reference internal" href="class_arvrcamera.html#class-arvrcamera"><span class="std std-ref">ARVRCamera</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-get-cull-mask-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_cull_mask_bit"></a>get_cull_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given <code class="docutils literal notranslate"><span class="pre">layer</span></code> in the <a class="reference internal" href="#class-camera-property-cull-mask"><span class="std std-ref">cull_mask</span></a> is enabled, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-get-frustum">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_frustum"></a>get_frustum</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the camera's frustum planes in world space units as an array of <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a>s in the following order: near, far, left, top, right, bottom. Not to be confused with <a class="reference internal" href="#class-camera-property-frustum-offset"><span class="std std-ref">frustum_offset</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-is-position-behind">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_position_behind"></a>is_position_behind</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> world_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given position is behind the camera.</p>
+<p><strong>Note:</strong> A position which returns <code class="docutils literal notranslate"><span class="pre">false</span></code> may still be outside the camera's field of view.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-make-current">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/make_current"></a>make_current</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Makes this camera the current camera for the <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> (see class description). If the camera node is outside the scene tree, it will attempt to become current once it's added.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-project-local-ray-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/project_local_ray_normal"></a>project_local_ray_normal</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a normal vector from the screen point location directed along the camera. Orthogonal cameras are normalized. Perspective cameras account for perspective, screen width/height, etc.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-project-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/project_position"></a>project_position</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_depth <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 3D point in world space that maps to the given 2D coordinate in the <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> rectangle on a plane that is the given <code class="docutils literal notranslate"><span class="pre">z_depth</span></code> distance into the scene away from the camera.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-project-ray-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/project_ray_normal"></a>project_ray_normal</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a normal vector in world space, that is the result of projecting a point on the <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-project-ray-origin">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/project_ray_origin"></a>project_ray_origin</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a 3D position in world space, that is the result of projecting a point on the <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-set-cull-mask-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_cull_mask_bit"></a>set_cull_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables the given <code class="docutils literal notranslate"><span class="pre">layer</span></code> in the <a class="reference internal" href="#class-camera-property-cull-mask"><span class="std std-ref">cull_mask</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-set-frustum">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_frustum"></a>set_frustum</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> offset, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></li>
+</ul>
+<p>Sets the camera projection to frustum mode (see <a class="reference internal" href="#class-camera-constant-projection-frustum"><span class="std std-ref">PROJECTION_FRUSTUM</span></a>), by specifying a <code class="docutils literal notranslate"><span class="pre">size</span></code>, an <code class="docutils literal notranslate"><span class="pre">offset</span></code>, and the <code class="docutils literal notranslate"><span class="pre">z_near</span></code> and <code class="docutils literal notranslate"><span class="pre">z_far</span></code> clip planes in world space units.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-set-orthogonal">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_orthogonal"></a>set_orthogonal</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> size, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></li>
+</ul>
+<p>Sets the camera projection to orthogonal mode (see <a class="reference internal" href="#class-camera-constant-projection-orthogonal"><span class="std std-ref">PROJECTION_ORTHOGONAL</span></a>), by specifying a <code class="docutils literal notranslate"><span class="pre">size</span></code>, and the <code class="docutils literal notranslate"><span class="pre">z_near</span></code> and <code class="docutils literal notranslate"><span class="pre">z_far</span></code> clip planes in world space units. (As a hint, 2D games often use this projection, with values specified in pixels.)</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-set-perspective">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_perspective"></a>set_perspective</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fov, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_near, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> z_far <strong>)</strong></p></li>
+</ul>
+<p>Sets the camera projection to perspective mode (see <a class="reference internal" href="#class-camera-constant-projection-perspective"><span class="std std-ref">PROJECTION_PERSPECTIVE</span></a>), by specifying a <code class="docutils literal notranslate"><span class="pre">fov</span></code> (field of view) angle in degrees, and the <code class="docutils literal notranslate"><span class="pre">z_near</span></code> and <code class="docutils literal notranslate"><span class="pre">z_far</span></code> clip planes in world space units.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-camera-method-unproject-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/unproject_position"></a>unproject_position</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> world_point <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the 2D coordinate in the <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> rectangle that maps to the given 3D point in world space.</p>
+<p><strong>Note:</strong> When using this to position GUI elements over a 3D viewport, use <a class="reference internal" href="#class-camera-method-is-position-behind"><span class="std std-ref">is_position_behind</span></a> to prevent them from appearing if the 3D point is behind the camera:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code block is part of a script that inherits from Spatial.</span>
+<span class="c1"># `control` is a reference to a node inheriting from Control.</span>
+<span class="n">control</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">get_viewport</span><span class="p">()</span><span class="o">.</span><span class="n">get_camera</span><span class="p">()</span><span class="o">.</span><span class="n">is_position_behind</span><span class="p">(</span><span class="n">global_transform</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<span class="n">control</span><span class="o">.</span><span class="n">rect_position</span> <span class="o">=</span> <span class="n">get_viewport</span><span class="p">()</span><span class="o">.</span><span class="n">get_camera</span><span class="p">()</span><span class="o">.</span><span class="n">unproject_position</span><span class="p">(</span><span class="n">global_transform</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_buttongroup.html" rel="prev" title="ButtonGroup"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_camera2d.html" rel="next" title="Camera2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

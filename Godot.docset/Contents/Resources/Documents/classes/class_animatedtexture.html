@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AnimatedTexture" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_animatedtexture.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Texture&lt; Resource&lt; Reference&lt; Object Proxy texture for simple frame-based animations. Description: AnimatedTexture is a resource format for frame-based animations, where multiple textures..." property="og:description"/>
+<meta content="Proxy texture for simple frame-based animations. AnimatedTexture is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike Ani..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AnimatedTexture — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animatedtexture.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_animatedtexture.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_animatedtexture.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_animatedtexture.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_animatedtexture.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_animatedtexture.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_animatedtexture.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_animatedtexture.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_animatedtexture.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_animatedtexture.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_animatedtexture.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_animatedtexture.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_animatedtexture.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_animatedtexture.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animatedtexture.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animatedtexture.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_animation.html" rel="next" title="Animation"/>
+<link href="class_animatedsprite3d.html" rel="prev" title="AnimatedSprite3D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AnimatedTexture</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="animatedtexture">
+<span id="class-animatedtexture"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AnimatedTexture¶"></a>AnimatedTexture<a class="headerlink" href="#animatedtexture" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Proxy texture for simple frame-based animations.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">AnimatedTexture</span></code> is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> or <a class="reference internal" href="class_animatedsprite.html#class-animatedsprite"><span class="std std-ref">AnimatedSprite</span></a>, it isn't a <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, but has the advantage of being usable anywhere a <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> resource can be used, e.g. in a <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a>.</p>
+<p>The playback of the animation is controlled by the <a class="reference internal" href="#class-animatedtexture-property-fps"><span class="std std-ref">fps</span></a> property as well as each frame's optional delay (see <a class="reference internal" href="#class-animatedtexture-method-set-frame-delay"><span class="std std-ref">set_frame_delay</span></a>). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.</p>
+<p><code class="docutils literal notranslate"><span class="pre">AnimatedTexture</span></code> currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.</p>
+<p><strong>Note:</strong> AnimatedTexture doesn't support using <a class="reference internal" href="class_atlastexture.html#class-atlastexture"><span class="std std-ref">AtlasTexture</span></a>s. Each frame needs to be a separate <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a>.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 56%"/>
+<col style="width: 22%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-property-current-frame"><span class="std std-ref">current_frame</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p>flags</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-property-fps"><span class="std std-ref">fps</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-property-frames"><span class="std std-ref">frames</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-property-oneshot"><span class="std std-ref">oneshot</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-property-pause"><span class="std std-ref">pause</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-method-get-frame-delay"><span class="std std-ref">get_frame_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-method-get-frame-texture"><span class="std std-ref">get_frame_texture</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-method-set-frame-delay"><span class="std std-ref">set_frame_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animatedtexture-method-set-frame-texture"><span class="std std-ref">set_frame_texture</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animatedtexture-constant-max-frames">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/MAX_FRAMES"></a>MAX_FRAMES</strong> = <strong>256</strong> --- The maximum number of frames supported by <code class="docutils literal notranslate"><span class="pre">AnimatedTexture</span></code>. If you need more frames in your animation, use <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> or <a class="reference internal" href="class_animatedsprite.html#class-animatedsprite"><span class="std std-ref">AnimatedSprite</span></a>.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animatedtexture-property-current-frame">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_frame"></a>current_frame</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_current_frame(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_current_frame()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the currently visible frame of the texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-property-fps">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fps"></a>fps</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fps(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fps()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the <a class="reference internal" href="#class-animatedtexture-property-frames"><span class="std std-ref">frames</span></a> property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see <a class="reference internal" href="#class-animatedtexture-method-set-frame-delay"><span class="std std-ref">set_frame_delay</span></a>).</p>
+<p>For example, an animation with 8 frames, no frame delay and a <code class="docutils literal notranslate"><span class="pre">fps</span></code> value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-property-frames">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/frames"></a>frames</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_frames(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_frames()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of frames to use in the animation. While you can create the frames independently with <a class="reference internal" href="#class-animatedtexture-method-set-frame-texture"><span class="std std-ref">set_frame_texture</span></a>, you need to set this value for the animation to take new frames into account. The maximum number of frames is <a class="reference internal" href="#class-animatedtexture-constant-max-frames"><span class="std std-ref">MAX_FRAMES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-property-oneshot">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/oneshot"></a>oneshot</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_oneshot(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_oneshot()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation will only play once and will not loop back to the first frame after reaching the end. Note that reaching the end will not set <a class="reference internal" href="#class-animatedtexture-property-pause"><span class="std std-ref">pause</span></a> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-property-pause">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/pause"></a>pause</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pause(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_pause()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation will pause where it currently is (i.e. at <a class="reference internal" href="#class-animatedtexture-property-current-frame"><span class="std std-ref">current_frame</span></a>). The animation will continue from where it was paused when changing this property to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animatedtexture-method-get-frame-delay">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_frame_delay"></a>get_frame_delay</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given frame's delay value.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-method-get-frame-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_frame_texture"></a>get_frame_texture</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the given frame's <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-method-set-frame-delay">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_frame_delay"></a>set_frame_delay</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay <strong>)</strong></p></li>
+</ul>
+<p>Sets an additional delay (in seconds) between this frame and the next one, that will be added to the time interval defined by <a class="reference internal" href="#class-animatedtexture-property-fps"><span class="std std-ref">fps</span></a>. By default, frames have no delay defined. If a delay value is defined, the final time interval between this frame and the next will be <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">fps</span> <span class="pre">+</span> <span class="pre">delay</span></code>.</p>
+<p>For example, for an animation with 3 frames, 2 FPS and a frame delay on the second frame of 1.2, the resulting playback will be:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">Frame</span> <span class="mi">0</span><span class="p">:</span> <span class="mf">0.5</span> <span class="n">s</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span><span class="p">)</span>
+<span class="n">Frame</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">1.7</span> <span class="n">s</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">+</span> <span class="mf">1.2</span><span class="p">)</span>
+<span class="n">Frame</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">0.5</span> <span class="n">s</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span><span class="p">)</span>
+<span class="n">Total</span> <span class="n">duration</span><span class="p">:</span> <span class="mf">2.7</span> <span class="n">s</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-animatedtexture-method-set-frame-texture">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_frame_texture"></a>set_frame_texture</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> frame, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></li>
+</ul>
+<p>Assigns a <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID <a class="reference internal" href="#class-animatedtexture-property-frames"><span class="std std-ref">frames</span></a> - 1.</p>
+<p>You can define any number of textures up to <a class="reference internal" href="#class-animatedtexture-constant-max-frames"><span class="std std-ref">MAX_FRAMES</span></a>, but keep in mind that only frames from 0 to <a class="reference internal" href="#class-animatedtexture-property-frames"><span class="std std-ref">frames</span></a> - 1 will be part of the animation.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_animatedsprite3d.html" rel="prev" title="AnimatedSprite3D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_animation.html" rel="next" title="Animation">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

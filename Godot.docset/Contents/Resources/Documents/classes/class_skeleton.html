@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Skeleton" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_skeleton.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Skeleton for characters and animated objects. Description: Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see Ani..." property="og:description"/>
+<meta content="Skeleton for characters and animated objects. Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see Animation). It can also use ragdoll physics. The overall transform o..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Skeleton — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_skeleton.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_skeleton.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_skeleton.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_skeleton.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_skeleton.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_skeleton.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_skeleton.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_skeleton.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_skeleton.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_skeleton.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_skeleton.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_skeleton.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_skeleton.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_skeleton.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_skeleton.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_skeleton.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_skeleton2d.html" rel="next" title="Skeleton2D"/>
+<link href="class_shortcut.html" rel="prev" title="ShortCut"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Skeleton</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="skeleton">
+<span id="class-skeleton"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Skeleton¶"></a>Skeleton<a class="headerlink" href="#skeleton" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Skeleton for characters and animated objects.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a>). It can also use ragdoll physics.</p>
+<p>The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.</p>
+<p>Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/523">3D Inverse Kinematics Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-add-bone"><span class="std std-ref">add_bone</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-bind-child-node-to-bone"><span class="std std-ref">bind_child_node_to_bone</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-clear-bones"><span class="std std-ref">clear_bones</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-clear-bones-global-pose-override"><span class="std std-ref">clear_bones_global_pose_override</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-find-bone"><span class="std std-ref">find_bone</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-count"><span class="std std-ref">get_bone_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-custom-pose"><span class="std std-ref">get_bone_custom_pose</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-global-pose"><span class="std std-ref">get_bone_global_pose</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-global-pose-no-override"><span class="std std-ref">get_bone_global_pose_no_override</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-name"><span class="std std-ref">get_bone_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-parent"><span class="std std-ref">get_bone_parent</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-pose"><span class="std std-ref">get_bone_pose</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bone-rest"><span class="std std-ref">get_bone_rest</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-get-bound-child-nodes-to-bone"><span class="std std-ref">get_bound_child_nodes_to_bone</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-is-bone-rest-disabled"><span class="std std-ref">is_bone_rest_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-localize-rests"><span class="std std-ref">localize_rests</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-physical-bones-add-collision-exception"><span class="std std-ref">physical_bones_add_collision_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> exception <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-physical-bones-remove-collision-exception"><span class="std std-ref">physical_bones_remove_collision_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> exception <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-physical-bones-start-simulation"><span class="std std-ref">physical_bones_start_simulation</span></a> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> bones=[  ] <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-physical-bones-stop-simulation"><span class="std std-ref">physical_bones_stop_simulation</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_skinreference.html#class-skinreference"><span class="std std-ref">SkinReference</span></a></p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-register-skin"><span class="std std-ref">register_skin</span></a> <strong>(</strong> <a class="reference internal" href="class_skin.html#class-skin"><span class="std std-ref">Skin</span></a> skin <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-custom-pose"><span class="std std-ref">set_bone_custom_pose</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> custom_pose <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-disable-rest"><span class="std std-ref">set_bone_disable_rest</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-global-pose-override"><span class="std std-ref">set_bone_global_pose_override</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> pose, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> persistent=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-name"><span class="std std-ref">set_bone_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-parent"><span class="std std-ref">set_bone_parent</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> parent_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-pose"><span class="std std-ref">set_bone_pose</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> pose <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-set-bone-rest"><span class="std std-ref">set_bone_rest</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> rest <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-unbind-child-node-from-bone"><span class="std std-ref">unbind_child_node_from_bone</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-skeleton-method-unparent-bone-and-rest"><span class="std std-ref">unparent_bone_and_rest</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-skeleton-signal-skeleton-updated">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/skeleton_updated"></a>skeleton_updated</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-skeleton-constant-notification-update-skeleton">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_UPDATE_SKELETON"></a>NOTIFICATION_UPDATE_SKELETON</strong> = <strong>50</strong></p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-skeleton-method-add-bone">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_bone"></a>add_bone</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<p>Adds a bone, with name <code class="docutils literal notranslate"><span class="pre">name</span></code>. <a class="reference internal" href="#class-skeleton-method-get-bone-count"><span class="std std-ref">get_bone_count</span></a> will become the bone index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-bind-child-node-to-bone">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bind_child_node_to_bone"></a>bind_child_node_to_bone</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p><em>Deprecated soon.</em></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-clear-bones">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_bones"></a>clear_bones</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clear all the bones in this skeleton.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-clear-bones-global-pose-override">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_bones_global_pose_override"></a>clear_bones_global_pose_override</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-find-bone">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_bone"></a>find_bone</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the bone index that matches <code class="docutils literal notranslate"><span class="pre">name</span></code> as its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_count"></a>get_bone_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the amount of bones in the skeleton.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-custom-pose">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_custom_pose"></a>get_bone_custom_pose</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the custom pose of the specified bone. Custom pose is applied on top of the rest pose.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-global-pose">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_global_pose"></a>get_bone_global_pose</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-global-pose-no-override">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_global_pose_no_override"></a>get_bone_global_pose_no_override</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the overall transform of the specified bone, with respect to the skeleton, but without any global pose overrides. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_name"></a>get_bone_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the bone at index <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-parent">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_parent"></a>get_bone_parent</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the bone index which is the parent of the bone at <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>. If -1, then bone has no parent.</p>
+<p><strong>Note:</strong> The parent bone returned will always be less than <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-pose">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_pose"></a>get_bone_pose</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bone-rest">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bone_rest"></a>get_bone_rest</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the rest transform for a bone <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-get-bound-child-nodes-to-bone">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_bound_child_nodes_to_bone"></a>get_bound_child_nodes_to_bone</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p><em>Deprecated soon.</em></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-is-bone-rest-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_bone_rest_disabled"></a>is_bone_rest_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-localize-rests">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/localize_rests"></a>localize_rests</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-physical-bones-add-collision-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/physical_bones_add_collision_exception"></a>physical_bones_add_collision_exception</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> exception <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-physical-bones-remove-collision-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/physical_bones_remove_collision_exception"></a>physical_bones_remove_collision_exception</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> exception <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-physical-bones-start-simulation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/physical_bones_start_simulation"></a>physical_bones_start_simulation</strong> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> bones=[  ] <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-physical-bones-stop-simulation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/physical_bones_stop_simulation"></a>physical_bones_stop_simulation</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-register-skin">
+<li><p><a class="reference internal" href="class_skinreference.html#class-skinreference"><span class="std std-ref">SkinReference</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/register_skin"></a>register_skin</strong> <strong>(</strong> <a class="reference internal" href="class_skin.html#class-skin"><span class="std std-ref">Skin</span></a> skin <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-custom-pose">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_custom_pose"></a>set_bone_custom_pose</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> custom_pose <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-disable-rest">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_disable_rest"></a>set_bone_disable_rest</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disable <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-global-pose-override">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_global_pose_override"></a>set_bone_global_pose_override</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> pose, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> persistent=false <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-name">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_name"></a>set_bone_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-parent">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_parent"></a>set_bone_parent</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> parent_idx <strong>)</strong></p></li>
+</ul>
+<p>Sets the bone index <code class="docutils literal notranslate"><span class="pre">parent_idx</span></code> as the parent of the bone at <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>. If -1, then bone has no parent.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">parent_idx</span></code> must be less than <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-pose">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_pose"></a>set_bone_pose</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> pose <strong>)</strong></p></li>
+</ul>
+<p>Sets the pose transform for bone <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-set-bone-rest">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bone_rest"></a>set_bone_rest</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> rest <strong>)</strong></p></li>
+</ul>
+<p>Sets the rest transform for bone <code class="docutils literal notranslate"><span class="pre">bone_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-unbind-child-node-from-bone">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/unbind_child_node_from_bone"></a>unbind_child_node_from_bone</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p><em>Deprecated soon.</em></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-skeleton-method-unparent-bone-and-rest">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/unparent_bone_and_rest"></a>unparent_bone_and_rest</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bone_idx <strong>)</strong></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_shortcut.html" rel="prev" title="ShortCut"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_skeleton2d.html" rel="next" title="Skeleton2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorExportPlugin" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorexportplugin.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object A script that is executed when exporting the project. Description: EditorExportPlugin s are automatically invoked whenever the user exports the project. Their most commo..." property="og:description"/>
+<meta content="A script that is executed when exporting the project. EditorExportPlugins are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exp..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorExportPlugin — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorexportplugin.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorexportplugin.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorexportplugin.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorexportplugin.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorexportplugin.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorexportplugin.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorexportplugin.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorexportplugin.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorexportplugin.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorexportplugin.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorexportplugin.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorexportplugin.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorexportplugin.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorexportplugin.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorexportplugin.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorexportplugin.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorfeatureprofile.html" rel="next" title="EditorFeatureProfile"/>
+<link href="class_dynamicfontdata.html" rel="prev" title="DynamicFontData"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorExportPlugin</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorexportplugin">
+<span id="class-editorexportplugin"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorExportPlugin¶"></a>EditorExportPlugin<a class="headerlink" href="#editorexportplugin" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A script that is executed when exporting the project.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">EditorExportPlugin</span></code>s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, <a class="reference internal" href="#class-editorexportplugin-method-export-begin"><span class="std std-ref">_export_begin</span></a> is called at the beginning of the export process and then <a class="reference internal" href="#class-editorexportplugin-method-export-file"><span class="std std-ref">_export_file</span></a> is called for each exported file.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">EditorExportPlugin</span></code>, register it using the <a class="reference internal" href="class_editorplugin.html#class-editorplugin-method-add-export-plugin"><span class="std std-ref">EditorPlugin.add_export_plugin</span></a> method first.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2%"/>
+<col style="width: 98%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-export-begin"><span class="std std-ref">_export_begin</span></a> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> features, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> is_debug, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-export-end"><span class="std std-ref">_export_end</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-export-file"><span class="std std-ref">_export_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> features <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-file"><span class="std std-ref">add_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> file, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> remap <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-bundle-file"><span class="std std-ref">add_ios_bundle_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-cpp-code"><span class="std std-ref">add_ios_cpp_code</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> code <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-embedded-framework"><span class="std std-ref">add_ios_embedded_framework</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-framework"><span class="std std-ref">add_ios_framework</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-linker-flags"><span class="std std-ref">add_ios_linker_flags</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> flags <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-plist-content"><span class="std std-ref">add_ios_plist_content</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plist_content <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-ios-project-static-lib"><span class="std std-ref">add_ios_project_static_lib</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-add-shared-object"><span class="std std-ref">add_shared_object</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> tags <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorexportplugin-method-skip"><span class="std std-ref">skip</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorexportplugin-method-export-begin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_export_begin"></a>_export_begin</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> features, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> is_debug, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export. <code class="docutils literal notranslate"><span class="pre">features</span></code> is the list of features for the export, <code class="docutils literal notranslate"><span class="pre">is_debug</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> for debug builds, <code class="docutils literal notranslate"><span class="pre">path</span></code> is the target path for the exported project. <code class="docutils literal notranslate"><span class="pre">flags</span></code> is only used when running a runnable profile, e.g. when using native run on Android.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-export-end">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_export_end"></a>_export_end</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method to be overridden by the user. Called when the export is finished.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-export-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_export_file"></a>_export_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> type, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> features <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Virtual method to be overridden by the user. Called for each exported file, providing arguments that can be used to identify the file. <code class="docutils literal notranslate"><span class="pre">path</span></code> is the path of the file, <code class="docutils literal notranslate"><span class="pre">type</span></code> is the <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> represented by the file (e.g. <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>) and <code class="docutils literal notranslate"><span class="pre">features</span></code> is the list of features for the export.</p>
+<p>Calling <a class="reference internal" href="#class-editorexportplugin-method-skip"><span class="std std-ref">skip</span></a> inside this callback will make the file not included in the export.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_file"></a>add_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> file, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> remap <strong>)</strong></p></li>
+</ul>
+<p>Adds a custom file to be exported. <code class="docutils literal notranslate"><span class="pre">path</span></code> is the virtual path that can be used to load the file, <code class="docutils literal notranslate"><span class="pre">file</span></code> is the binary data of the file. If <code class="docutils literal notranslate"><span class="pre">remap</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, file will not be exported, but instead remapped to the given <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-bundle-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_bundle_file"></a>add_ios_bundle_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Adds an iOS bundle file from the given <code class="docutils literal notranslate"><span class="pre">path</span></code> to the exported project.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-cpp-code">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_cpp_code"></a>add_ios_cpp_code</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> code <strong>)</strong></p></li>
+</ul>
+<p>Adds a C++ code to the iOS export. The final code is created from the code appended by each active export plugin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-embedded-framework">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_embedded_framework"></a>add_ios_embedded_framework</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Adds a dynamic library (*.dylib, *.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.</p>
+<p><strong>Note:</strong> For static libraries (*.a) works in same way as <a class="reference internal" href="#class-editorexportplugin-method-add-ios-framework"><span class="std std-ref">add_ios_framework</span></a>.</p>
+<p>This method should not be used for System libraries as they are already present on the device.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-framework">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_framework"></a>add_ios_framework</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Adds a static library (*.a) or dynamic library (*.dylib, *.framework) to Linking Phase in iOS's Xcode project.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-linker-flags">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_linker_flags"></a>add_ios_linker_flags</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> flags <strong>)</strong></p></li>
+</ul>
+<p>Adds linker flags for the iOS export.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-plist-content">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_plist_content"></a>add_ios_plist_content</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> plist_content <strong>)</strong></p></li>
+</ul>
+<p>Adds content for iOS Property List files.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-ios-project-static-lib">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_ios_project_static_lib"></a>add_ios_project_static_lib</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Adds a static lib from the given <code class="docutils literal notranslate"><span class="pre">path</span></code> to the iOS project.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-add-shared-object">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_shared_object"></a>add_shared_object</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> tags <strong>)</strong></p></li>
+</ul>
+<p>Adds a shared object with the given <code class="docutils literal notranslate"><span class="pre">tags</span></code> and destination <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorexportplugin-method-skip">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/skip"></a>skip</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>To be called inside <a class="reference internal" href="#class-editorexportplugin-method-export-file"><span class="std std-ref">_export_file</span></a>. Skips the current file, so it's not included in the export.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_dynamicfontdata.html" rel="prev" title="DynamicFontData"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorfeatureprofile.html" rel="next" title="EditorFeatureProfile">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

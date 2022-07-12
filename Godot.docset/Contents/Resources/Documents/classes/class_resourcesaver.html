@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ResourceSaver" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_resourcesaver.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Singleton for saving Godot-specific resource types. Description: Singleton for saving Godot-specific resource types to the filesystem. It uses the many ResourceFormatSaver classes ..." property="og:description"/>
+<meta content="Singleton for saving Godot-specific resource types. Singleton for saving Godot-specific resource types to the filesystem. It uses the many ResourceFormatSaver classes registered in the engine (either built-in or from..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ResourceSaver — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_resourcesaver.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_resourcesaver.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_resourcesaver.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_resourcesaver.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_resourcesaver.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_resourcesaver.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_resourcesaver.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_resourcesaver.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_resourcesaver.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_resourcesaver.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_resourcesaver.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_resourcesaver.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_resourcesaver.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_resourcesaver.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_resourcesaver.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_resourcesaver.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_richtexteffect.html" rel="next" title="RichTextEffect"/>
+<link href="class_resourcepreloader.html" rel="prev" title="ResourcePreloader"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ResourceSaver</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="resourcesaver">
+<span id="class-resourcesaver"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ResourceSaver¶"></a>ResourceSaver<a class="headerlink" href="#resourcesaver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Singleton for saving Godot-specific resource types.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Singleton for saving Godot-specific resource types to the filesystem.</p>
+<p>It uses the many <a class="reference internal" href="class_resourceformatsaver.html#class-resourceformatsaver"><span class="std std-ref">ResourceFormatSaver</span></a> classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. <code class="docutils literal notranslate"><span class="pre">.tres</span></code> or <code class="docutils literal notranslate"><span class="pre">.tscn</span></code>) or binary files (e.g. <code class="docutils literal notranslate"><span class="pre">.res</span></code> or <code class="docutils literal notranslate"><span class="pre">.scn</span></code>).</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-resourcesaver-method-get-recognized-extensions"><span class="std std-ref">get_recognized_extensions</span></a> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> type <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-resourcesaver-method-save"><span class="std std-ref">save</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource, <a class="reference internal" href="#enum-resourcesaver-saverflags"><span class="std std-ref">SaverFlags</span></a> flags=0 <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-resourcesaver-constant-flag-replace-subresource-paths"><span id="class-resourcesaver-constant-flag-compress"></span><span id="class-resourcesaver-constant-flag-save-big-endian"></span><span id="class-resourcesaver-constant-flag-omit-editor-properties"></span><span id="class-resourcesaver-constant-flag-change-path"></span><span id="class-resourcesaver-constant-flag-bundle-resources"></span><span id="class-resourcesaver-constant-flag-relative-paths"></span><span id="enum-resourcesaver-saverflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SaverFlags"></a>SaverFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>FLAG_RELATIVE_PATHS</strong> = <strong>1</strong> --- Save the resource with a path relative to the scene which uses it.</p></li>
+<li><p><strong>FLAG_BUNDLE_RESOURCES</strong> = <strong>2</strong> --- Bundles external resources.</p></li>
+<li><p><strong>FLAG_CHANGE_PATH</strong> = <strong>4</strong> --- Changes the <a class="reference internal" href="class_resource.html#class-resource-property-resource-path"><span class="std std-ref">Resource.resource_path</span></a> of the saved resource to match its new location.</p></li>
+<li><p><strong>FLAG_OMIT_EDITOR_PROPERTIES</strong> = <strong>8</strong> --- Do not save editor-specific metadata (identified by their <code class="docutils literal notranslate"><span class="pre">__editor</span></code> prefix).</p></li>
+<li><p><strong>FLAG_SAVE_BIG_ENDIAN</strong> = <strong>16</strong> --- Save as big endian (see <a class="reference internal" href="class_file.html#class-file-property-endian-swap"><span class="std std-ref">File.endian_swap</span></a>).</p></li>
+<li><p><strong>FLAG_COMPRESS</strong> = <strong>32</strong> --- Compress the resource on save using <a class="reference internal" href="class_file.html#class-file-constant-compression-zstd"><span class="std std-ref">File.COMPRESSION_ZSTD</span></a>. Only available for binary resource types.</p></li>
+<li><p><strong>FLAG_REPLACE_SUBRESOURCE_PATHS</strong> = <strong>64</strong> --- Take over the paths of the saved subresources (see <a class="reference internal" href="class_resource.html#class-resource-method-take-over-path"><span class="std std-ref">Resource.take_over_path</span></a>).</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-resourcesaver-method-get-recognized-extensions">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_recognized_extensions"></a>get_recognized_extensions</strong> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> type <strong>)</strong></p></li>
+</ul>
+<p>Returns the list of extensions available for saving a resource of a given type.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-resourcesaver-method-save">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/save"></a>save</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource, <a class="reference internal" href="#enum-resourcesaver-saverflags"><span class="std std-ref">SaverFlags</span></a> flags=0 <strong>)</strong></p></li>
+</ul>
+<p>Saves a resource to disk to the given path, using a <a class="reference internal" href="class_resourceformatsaver.html#class-resourceformatsaver"><span class="std std-ref">ResourceFormatSaver</span></a> that recognizes the resource object.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">flags</span></code> bitmask can be specified to customize the save behavior.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> on success.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_resourcepreloader.html" rel="prev" title="ResourcePreloader"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_richtexteffect.html" rel="next" title="RichTextEffect">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

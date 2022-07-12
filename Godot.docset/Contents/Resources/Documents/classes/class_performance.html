@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Performance" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_performance.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Exposes performance-related data. Description: This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These..." property="og:description"/>
+<meta content="Exposes performance-related data. This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the Monit..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Performance — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_performance.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_performance.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_performance.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_performance.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_performance.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_performance.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_performance.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_performance.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_performance.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_performance.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_performance.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_performance.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_performance.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_performance.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_performance.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_performance.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_phashtranslation.html" rel="next" title="PHashTranslation"/>
+<link href="class_pckpacker.html" rel="prev" title="PCKPacker"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Performance</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="performance">
+<span id="class-performance"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Performance¶"></a>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Exposes performance-related data.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the <strong>Monitor</strong> tab in the editor's <strong>Debugger</strong> panel. By using the <a class="reference internal" href="#class-performance-method-get-monitor"><span class="std std-ref">get_monitor</span></a> method of this class, you can access this data from your code.</p>
+<p><strong>Note:</strong> A few of these monitors are only available in debug mode and will always return 0 when used in a release build.</p>
+<p><strong>Note:</strong> Many of these monitors are not updated in real-time, so there may be a short delay between changes.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-performance-method-get-monitor"><span class="std std-ref">get_monitor</span></a> <strong>(</strong> <a class="reference internal" href="#enum-performance-monitor"><span class="std std-ref">Monitor</span></a> monitor <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-performance-constant-monitor-max"><span id="class-performance-constant-audio-output-latency"></span><span id="class-performance-constant-physics-3d-island-count"></span><span id="class-performance-constant-physics-3d-collision-pairs"></span><span id="class-performance-constant-physics-3d-active-objects"></span><span id="class-performance-constant-physics-2d-island-count"></span><span id="class-performance-constant-physics-2d-collision-pairs"></span><span id="class-performance-constant-physics-2d-active-objects"></span><span id="class-performance-constant-render-usage-video-mem-total"></span><span id="class-performance-constant-render-vertex-mem-used"></span><span id="class-performance-constant-render-texture-mem-used"></span><span id="class-performance-constant-render-video-mem-used"></span><span id="class-performance-constant-render-2d-draw-calls-in-frame"></span><span id="class-performance-constant-render-2d-items-in-frame"></span><span id="class-performance-constant-render-draw-calls-in-frame"></span><span id="class-performance-constant-render-surface-changes-in-frame"></span><span id="class-performance-constant-render-shader-changes-in-frame"></span><span id="class-performance-constant-render-material-changes-in-frame"></span><span id="class-performance-constant-render-vertices-in-frame"></span><span id="class-performance-constant-render-objects-in-frame"></span><span id="class-performance-constant-object-orphan-node-count"></span><span id="class-performance-constant-object-node-count"></span><span id="class-performance-constant-object-resource-count"></span><span id="class-performance-constant-object-count"></span><span id="class-performance-constant-memory-message-buffer-max"></span><span id="class-performance-constant-memory-dynamic-max"></span><span id="class-performance-constant-memory-static-max"></span><span id="class-performance-constant-memory-dynamic"></span><span id="class-performance-constant-memory-static"></span><span id="class-performance-constant-time-physics-process"></span><span id="class-performance-constant-time-process"></span><span id="class-performance-constant-time-fps"></span><span id="enum-performance-monitor"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Monitor"></a>Monitor</strong>:</p>
+<ul class="simple">
+<li><p><strong>TIME_FPS</strong> = <strong>0</strong> --- Number of frames per second.</p></li>
+<li><p><strong>TIME_PROCESS</strong> = <strong>1</strong> --- Time it took to complete one frame, in seconds.</p></li>
+<li><p><strong>TIME_PHYSICS_PROCESS</strong> = <strong>2</strong> --- Time it took to complete one physics frame, in seconds.</p></li>
+<li><p><strong>MEMORY_STATIC</strong> = <strong>3</strong> --- Static memory currently used, in bytes. Not available in release builds.</p></li>
+<li><p><strong>MEMORY_DYNAMIC</strong> = <strong>4</strong> --- Dynamic memory currently used, in bytes. Not available in release builds.</p></li>
+<li><p><strong>MEMORY_STATIC_MAX</strong> = <strong>5</strong> --- Available static memory. Not available in release builds.</p></li>
+<li><p><strong>MEMORY_DYNAMIC_MAX</strong> = <strong>6</strong> --- Available dynamic memory. Not available in release builds.</p></li>
+<li><p><strong>MEMORY_MESSAGE_BUFFER_MAX</strong> = <strong>7</strong> --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.</p></li>
+<li><p><strong>OBJECT_COUNT</strong> = <strong>8</strong> --- Number of objects currently instanced (including nodes).</p></li>
+<li><p><strong>OBJECT_RESOURCE_COUNT</strong> = <strong>9</strong> --- Number of resources currently used.</p></li>
+<li><p><strong>OBJECT_NODE_COUNT</strong> = <strong>10</strong> --- Number of nodes currently instanced in the scene tree. This also includes the root node.</p></li>
+<li><p><strong>OBJECT_ORPHAN_NODE_COUNT</strong> = <strong>11</strong> --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.</p></li>
+<li><p><strong>RENDER_OBJECTS_IN_FRAME</strong> = <strong>12</strong> --- 3D objects drawn per frame.</p></li>
+<li><p><strong>RENDER_VERTICES_IN_FRAME</strong> = <strong>13</strong> --- Vertices drawn per frame. 3D only.</p></li>
+<li><p><strong>RENDER_MATERIAL_CHANGES_IN_FRAME</strong> = <strong>14</strong> --- Material changes per frame. 3D only.</p></li>
+<li><p><strong>RENDER_SHADER_CHANGES_IN_FRAME</strong> = <strong>15</strong> --- Shader changes per frame. 3D only.</p></li>
+<li><p><strong>RENDER_SURFACE_CHANGES_IN_FRAME</strong> = <strong>16</strong> --- Render surface changes per frame. 3D only.</p></li>
+<li><p><strong>RENDER_DRAW_CALLS_IN_FRAME</strong> = <strong>17</strong> --- Draw calls per frame. 3D only.</p></li>
+<li><p><strong>RENDER_2D_ITEMS_IN_FRAME</strong> = <strong>18</strong> --- Items or joined items drawn per frame.</p></li>
+<li><p><strong>RENDER_2D_DRAW_CALLS_IN_FRAME</strong> = <strong>19</strong> --- Draw calls per frame.</p></li>
+<li><p><strong>RENDER_VIDEO_MEM_USED</strong> = <strong>20</strong> --- The amount of video memory used, i.e. texture and vertex memory combined.</p></li>
+<li><p><strong>RENDER_TEXTURE_MEM_USED</strong> = <strong>21</strong> --- The amount of texture memory used.</p></li>
+<li><p><strong>RENDER_VERTEX_MEM_USED</strong> = <strong>22</strong> --- The amount of vertex memory used.</p></li>
+<li><p><strong>RENDER_USAGE_VIDEO_MEM_TOTAL</strong> = <strong>23</strong> --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.</p></li>
+<li><p><strong>PHYSICS_2D_ACTIVE_OBJECTS</strong> = <strong>24</strong> --- Number of active <a class="reference internal" href="class_rigidbody2d.html#class-rigidbody2d"><span class="std std-ref">RigidBody2D</span></a> nodes in the game.</p></li>
+<li><p><strong>PHYSICS_2D_COLLISION_PAIRS</strong> = <strong>25</strong> --- Number of collision pairs in the 2D physics engine.</p></li>
+<li><p><strong>PHYSICS_2D_ISLAND_COUNT</strong> = <strong>26</strong> --- Number of islands in the 2D physics engine.</p></li>
+<li><p><strong>PHYSICS_3D_ACTIVE_OBJECTS</strong> = <strong>27</strong> --- Number of active <a class="reference internal" href="class_rigidbody.html#class-rigidbody"><span class="std std-ref">RigidBody</span></a> and <a class="reference internal" href="class_vehiclebody.html#class-vehiclebody"><span class="std std-ref">VehicleBody</span></a> nodes in the game.</p></li>
+<li><p><strong>PHYSICS_3D_COLLISION_PAIRS</strong> = <strong>28</strong> --- Number of collision pairs in the 3D physics engine.</p></li>
+<li><p><strong>PHYSICS_3D_ISLAND_COUNT</strong> = <strong>29</strong> --- Number of islands in the 3D physics engine.</p></li>
+<li><p><strong>AUDIO_OUTPUT_LATENCY</strong> = <strong>30</strong> --- Output latency of the <a class="reference internal" href="class_audioserver.html#class-audioserver"><span class="std std-ref">AudioServer</span></a>.</p></li>
+<li><p><strong>MONITOR_MAX</strong> = <strong>31</strong> --- Represents the size of the <a class="reference internal" href="#enum-performance-monitor"><span class="std std-ref">Monitor</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-performance-method-get-monitor">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_monitor"></a>get_monitor</strong> <strong>(</strong> <a class="reference internal" href="#enum-performance-monitor"><span class="std std-ref">Monitor</span></a> monitor <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of one of the available monitors. You should provide one of the <a class="reference internal" href="#enum-performance-monitor"><span class="std std-ref">Monitor</span></a> constants as the argument, like this:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Performance</span><span class="o">.</span><span class="n">get_monitor</span><span class="p">(</span><span class="n">Performance</span><span class="o">.</span><span class="n">TIME_FPS</span><span class="p">))</span> <span class="c1"># Prints the FPS to the console</span>
+</pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_pckpacker.html" rel="prev" title="PCKPacker"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_phashtranslation.html" rel="next" title="PHashTranslation">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

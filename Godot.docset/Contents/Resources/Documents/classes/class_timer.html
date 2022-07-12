@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Timer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_timer.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content='Inherits: Node&lt; Object A countdown timer. Description: Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode. Note: To create a one-shot timer w...' property="og:description"/>
+<meta content='A countdown timer. Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode. Note: To create a one-shot timer without instantiating a node, use SceneTree.cre...' name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Timer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_timer.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_timer.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_timer.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_timer.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_timer.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_timer.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_timer.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_timer.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_timer.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_timer.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_timer.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_timer.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_timer.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_timer.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_timer.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_timer.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_toolbutton.html" rel="next" title="ToolButton"/>
+<link href="class_tileset.html" rel="prev" title="TileSet"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Timer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="timer">
+<span id="class-timer"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Timer¶"></a>Timer<a class="headerlink" href="#timer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A countdown timer.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.</p>
+<p><strong>Note:</strong> To create a one-shot timer without instantiating a node, use <a class="reference internal" href="class_scenetree.html#class-scenetree-method-create-timer"><span class="std std-ref">SceneTree.create_timer</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/515">2D Dodge The Creeps Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 46%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-autostart"><span class="std std-ref">autostart</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-one-shot"><span class="std std-ref">one_shot</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-paused"><span class="std std-ref">paused</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-timer-timerprocessmode"><span class="std std-ref">TimerProcessMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-process-mode"><span class="std std-ref">process_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-time-left"><span class="std std-ref">time_left</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-property-wait-time"><span class="std std-ref">wait_time</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-timer-method-is-stopped"><span class="std std-ref">is_stopped</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-timer-method-start"><span class="std std-ref">start</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-timer-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-timer-signal-timeout">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/timeout"></a>timeout</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the timer reaches 0.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-timer-constant-timer-process-idle"><span id="class-timer-constant-timer-process-physics"></span><span id="enum-timer-timerprocessmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TimerProcessMode"></a>TimerProcessMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>TIMER_PROCESS_PHYSICS</strong> = <strong>0</strong> --- Update the timer during the physics step at each frame (fixed framerate processing).</p></li>
+<li><p><strong>TIMER_PROCESS_IDLE</strong> = <strong>1</strong> --- Update the timer during the idle time at each frame.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-timer-property-autostart">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/autostart"></a>autostart</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_autostart(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>has_autostart()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the timer will automatically start when entering the scene tree.</p>
+<p><strong>Note:</strong> This property is automatically set to <code class="docutils literal notranslate"><span class="pre">false</span></code> after the timer enters the scene tree and starts.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-property-one-shot">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/one_shot"></a>one_shot</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_one_shot(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_one_shot()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the timer will stop when reaching 0. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, it will restart.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-property-paused">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/paused"></a>paused</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_paused(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_paused()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the timer is paused and will not process until it is unpaused again, even if <a class="reference internal" href="#class-timer-method-start"><span class="std std-ref">start</span></a> is called.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-property-process-mode">
+<li><p><a class="reference internal" href="#enum-timer-timerprocessmode"><span class="std std-ref">TimerProcessMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/process_mode"></a>process_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_timer_process_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_timer_process_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Processing mode. See <a class="reference internal" href="#enum-timer-timerprocessmode"><span class="std std-ref">TimerProcessMode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-property-time-left">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/time_left"></a>time_left</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_time_left()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The timer's remaining time in seconds. Returns 0 if the timer is inactive.</p>
+<p><strong>Note:</strong> You cannot set this value. To change the timer's remaining time, use <a class="reference internal" href="#class-timer-method-start"><span class="std std-ref">start</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-property-wait-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/wait_time"></a>wait_time</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_wait_time(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_wait_time()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The wait time in seconds.</p>
+<p><strong>Note:</strong> Timers can only emit once per rendered frame at most (or once per physics frame if <a class="reference internal" href="#class-timer-property-process-mode"><span class="std std-ref">process_mode</span></a> is <a class="reference internal" href="#class-timer-constant-timer-process-physics"><span class="std std-ref">TIMER_PROCESS_PHYSICS</span></a>). This means very low wait times (lower than 0.05 seconds) will behave in significantly different ways depending on the rendered framerate. For very low wait times, it is recommended to use a process loop in a script instead of using a Timer node.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-timer-method-is-stopped">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_stopped"></a>is_stopped</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the timer is stopped.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-method-start">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/start"></a>start</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec=-1 <strong>)</strong></p></li>
+</ul>
+<p>Starts the timer. Sets <code class="docutils literal notranslate"><span class="pre">wait_time</span></code> to <code class="docutils literal notranslate"><span class="pre">time_sec</span></code> if <code class="docutils literal notranslate"><span class="pre">time_sec</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>. This also resets the remaining time to <code class="docutils literal notranslate"><span class="pre">wait_time</span></code>.</p>
+<p><strong>Note:</strong> This method will not resume a paused timer. See <a class="reference internal" href="#class-timer-property-paused"><span class="std std-ref">paused</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-timer-method-stop">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop"></a>stop</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops the timer.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_tileset.html" rel="prev" title="TileSet"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_toolbutton.html" rel="next" title="ToolButton">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

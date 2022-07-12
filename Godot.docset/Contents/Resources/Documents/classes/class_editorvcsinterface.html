@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorVCSInterface" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorvcsinterface.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Version Control System (VCS) interface which reads and writes to the local VCS in use. Description: Used by the editor to display VCS extracted information in the editor. The imple..." property="og:description"/>
+<meta content="Version Control System (VCS) interface which reads and writes to the local VCS in use. Used by the editor to display VCS extracted information in the editor. The implementation of this API is included in VCS addons, w..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorVCSInterface — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorvcsinterface.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorvcsinterface.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorvcsinterface.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorvcsinterface.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorvcsinterface.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorvcsinterface.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorvcsinterface.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorvcsinterface.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorvcsinterface.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorvcsinterface.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorvcsinterface.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorvcsinterface.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorvcsinterface.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorvcsinterface.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorvcsinterface.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorvcsinterface.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_encodedobjectasid.html" rel="next" title="EncodedObjectAsID"/>
+<link href="class_editorspinslider.html" rel="prev" title="EditorSpinSlider"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorVCSInterface</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorvcsinterface">
+<span id="class-editorvcsinterface"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorVCSInterface¶"></a>EditorVCSInterface<a class="headerlink" href="#editorvcsinterface" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Version Control System (VCS) interface which reads and writes to the local VCS in use.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Used by the editor to display VCS extracted information in the editor. The implementation of this API is included in VCS addons, which are essentially GDNative plugins that need to be put into the project folder. These VCS addons are scripts which are attached (on demand) to the object instance of <code class="docutils literal notranslate"><span class="pre">EditorVCSInterface</span></code>. All the functions listed below, instead of performing the task themselves, they call the internally defined functions in the VCS addons to provide a plug-n-play experience.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-commit"><span class="std std-ref">commit</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> msg <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-get-file-diff"><span class="std std-ref">get_file_diff</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-get-modified-files-data"><span class="std std-ref">get_modified_files_data</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-get-project-name"><span class="std std-ref">get_project_name</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-get-vcs-name"><span class="std std-ref">get_vcs_name</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-initialize"><span class="std std-ref">initialize</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> project_root_path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-is-addon-ready"><span class="std std-ref">is_addon_ready</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-is-vcs-initialized"><span class="std std-ref">is_vcs_initialized</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-shut-down"><span class="std std-ref">shut_down</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-stage-file"><span class="std std-ref">stage_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorvcsinterface-method-unstage-file"><span class="std std-ref">unstage_file</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorvcsinterface-method-commit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/commit"></a>commit</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> msg <strong>)</strong></p></li>
+</ul>
+<p>Creates a version commit if the addon is initialized, else returns without doing anything. Uses the files which have been staged previously, with the commit message set to a value as provided as in the argument.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-get-file-diff">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_file_diff"></a>get_file_diff</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> objects containing the diff output from the VCS in use, if a VCS addon is initialized, else returns an empty <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> object. The diff contents also consist of some contextual lines which provide context to the observed line change in the file.</p>
+<p>Each <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> object has the line diff contents under the keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">"content"</span></code> to store a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> containing the line contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"status"</span></code> to store a <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> which contains <code class="docutils literal notranslate"><span class="pre">"+"</span></code> in case the content is a line addition but it stores a <code class="docutils literal notranslate"><span class="pre">"-"</span></code> in case of deletion and an empty string in the case the line content is neither an addition nor a deletion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"new_line_number"</span></code> to store an integer containing the new line number of the line content.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"line_count"</span></code> to store an integer containing the number of lines in the line content.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"old_line_number"</span></code> to store an integer containing the old line number of the line content.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">"offset"</span></code> to store the offset of the line change since the first contextual line content.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-get-modified-files-data">
+<li><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_modified_files_data"></a>get_modified_files_data</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> containing the path of the detected file change mapped to an integer signifying what kind of change the corresponding file has experienced.</p>
+<p>The following integer values are being used to signify that the detected file is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: New to the VCS working directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: Modified</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: Renamed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>: Deleted</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>: Typechanged</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-get-project-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_project_name"></a>get_project_name</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the project name of the VCS working directory.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-get-vcs-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vcs_name"></a>get_vcs_name</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the name of the VCS if the VCS has been initialized, else return an empty string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-initialize">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/initialize"></a>initialize</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> project_root_path <strong>)</strong></p></li>
+</ul>
+<p>Initializes the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if no failure occurs, else returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-is-addon-ready">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_addon_ready"></a>is_addon_ready</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the addon is ready to respond to function calls, else returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-is-vcs-initialized">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_vcs_initialized"></a>is_vcs_initialized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the VCS addon has been initialized, else returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-shut-down">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shut_down"></a>shut_down</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Shuts down the VCS addon to allow cleanup code to run on call. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> is no failure occurs, else returns <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-stage-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stage_file"></a>stage_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></li>
+</ul>
+<p>Stages the file which should be committed when <a class="reference internal" href="#class-editorvcsinterface-method-commit"><span class="std std-ref">commit</span></a> is called. Argument should contain the absolute path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorvcsinterface-method-unstage-file">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/unstage_file"></a>unstage_file</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> file_path <strong>)</strong></p></li>
+</ul>
+<p>Unstages the file which was staged previously to be committed, so that it is no longer committed when <a class="reference internal" href="#class-editorvcsinterface-method-commit"><span class="std std-ref">commit</span></a> is called. Argument should contain the absolute path.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorspinslider.html" rel="prev" title="EditorSpinSlider"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_encodedobjectasid.html" rel="next" title="EncodedObjectAsID">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

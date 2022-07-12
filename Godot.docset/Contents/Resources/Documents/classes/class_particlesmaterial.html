@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="ParticlesMaterial" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_particlesmaterial.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Material&lt; Resource&lt; Reference&lt; Object Particle properties for Particles and Particles2D nodes. Description: ParticlesMaterial defines particle properties and behavior. It is used in the p..." property="og:description"/>
+<meta content="Particle properties for Particles and Particles2D nodes. ParticlesMaterial defines particle properties and behavior. It is used in the process_material of Particles and Particles2D emitter nodes. Some of this material..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) ParticlesMaterial — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_particlesmaterial.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_particlesmaterial.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_particlesmaterial.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_particlesmaterial.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_particlesmaterial.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_particlesmaterial.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_particlesmaterial.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_particlesmaterial.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_particlesmaterial.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_particlesmaterial.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_particlesmaterial.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_particlesmaterial.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_particlesmaterial.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_particlesmaterial.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_particlesmaterial.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_particlesmaterial.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_path.html" rel="next" title="Path"/>
+<link href="class_particles2d.html" rel="prev" title="Particles2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>ParticlesMaterial</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="particlesmaterial">
+<span id="class-particlesmaterial"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/ParticlesMaterial¶"></a>ParticlesMaterial<a class="headerlink" href="#particlesmaterial" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Particle properties for <a class="reference internal" href="class_particles.html#class-particles"><span class="std std-ref">Particles</span></a> and <a class="reference internal" href="class_particles2d.html#class-particles2d"><span class="std std-ref">Particles2D</span></a> nodes.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>ParticlesMaterial defines particle properties and behavior. It is used in the <code class="docutils literal notranslate"><span class="pre">process_material</span></code> of <a class="reference internal" href="class_particles.html#class-particles"><span class="std std-ref">Particles</span></a> and <a class="reference internal" href="class_particles2d.html#class-particles2d"><span class="std std-ref">Particles2D</span></a> emitter nodes.</p>
+<p>Some of this material's properties are applied to each particle when emitted, while others can have a <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a> applied to vary values over the lifetime of the particle.</p>
+<p>When a randomness ratio is applied to a property it is used to scale that property by a random amount. The random ratio is used to interpolate between <code class="docutils literal notranslate"><span class="pre">1.0</span></code> and a random number less than one, the result is multiplied by the property to obtain the randomized property. For example a random ratio of <code class="docutils literal notranslate"><span class="pre">0.4</span></code> would scale the original property between <code class="docutils literal notranslate"><span class="pre">0.4-1.0</span></code> of its original value.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 52%"/>
+<col style="width: 15%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angle"><span class="std std-ref">angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angle-curve"><span class="std std-ref">angle_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angle-random"><span class="std std-ref">angle_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angular-velocity"><span class="std std-ref">angular_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angular-velocity-curve"><span class="std std-ref">angular_velocity_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-angular-velocity-random"><span class="std std-ref">angular_velocity_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-offset"><span class="std std-ref">anim_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-offset-curve"><span class="std std-ref">anim_offset_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-offset-random"><span class="std std-ref">anim_offset_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-speed"><span class="std std-ref">anim_speed</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-speed-curve"><span class="std std-ref">anim_speed_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-anim-speed-random"><span class="std std-ref">anim_speed_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-color"><span class="std std-ref">color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-color-ramp"><span class="std std-ref">color_ramp</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-damping"><span class="std std-ref">damping</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-damping-curve"><span class="std std-ref">damping_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-damping-random"><span class="std std-ref">damping_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-direction"><span class="std std-ref">direction</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-box-extents"><span class="std std-ref">emission_box_extents</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-color-texture"><span class="std std-ref">emission_color_texture</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-normal-texture"><span class="std std-ref">emission_normal_texture</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-point-count"><span class="std std-ref">emission_point_count</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-point-texture"><span class="std std-ref">emission_point_texture</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-ring-axis"><span class="std std-ref">emission_ring_axis</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-ring-height"><span class="std std-ref">emission_ring_height</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-ring-inner-radius"><span class="std std-ref">emission_ring_inner_radius</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-ring-radius"><span class="std std-ref">emission_ring_radius</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-particlesmaterial-emissionshape"><span class="std std-ref">EmissionShape</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-shape"><span class="std std-ref">emission_shape</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-emission-sphere-radius"><span class="std std-ref">emission_sphere_radius</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-flag-align-y"><span class="std std-ref">flag_align_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-flag-disable-z"><span class="std std-ref">flag_disable_z</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-flag-rotate-y"><span class="std std-ref">flag_rotate_y</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-flatness"><span class="std std-ref">flatness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-gravity"><span class="std std-ref">gravity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">-9.8,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-hue-variation"><span class="std std-ref">hue_variation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-hue-variation-curve"><span class="std std-ref">hue_variation_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-hue-variation-random"><span class="std std-ref">hue_variation_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-initial-velocity"><span class="std std-ref">initial_velocity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-initial-velocity-random"><span class="std std-ref">initial_velocity_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-lifetime-randomness"><span class="std std-ref">lifetime_randomness</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-linear-accel"><span class="std std-ref">linear_accel</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-linear-accel-curve"><span class="std std-ref">linear_accel_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-linear-accel-random"><span class="std std-ref">linear_accel_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-orbit-velocity"><span class="std std-ref">orbit_velocity</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-orbit-velocity-curve"><span class="std std-ref">orbit_velocity_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-orbit-velocity-random"><span class="std std-ref">orbit_velocity_random</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-radial-accel"><span class="std std-ref">radial_accel</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-radial-accel-curve"><span class="std std-ref">radial_accel_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-radial-accel-random"><span class="std std-ref">radial_accel_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-scale"><span class="std std-ref">scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-scale-curve"><span class="std std-ref">scale_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-scale-random"><span class="std std-ref">scale_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-spread"><span class="std std-ref">spread</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-tangential-accel"><span class="std std-ref">tangential_accel</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-tangential-accel-curve"><span class="std std-ref">tangential_accel_curve</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-tangential-accel-random"><span class="std std-ref">tangential_accel_random</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_gradienttexture.html#class-gradienttexture"><span class="std std-ref">GradientTexture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-trail-color-modifier"><span class="std std-ref">trail_color_modifier</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-trail-divisor"><span class="std std-ref">trail_divisor</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-property-trail-size-modifier"><span class="std std-ref">trail_size_modifier</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-get-flag"><span class="std std-ref">get_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-get-param"><span class="std std-ref">get_param</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-get-param-randomness"><span class="std std-ref">get_param_randomness</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-get-param-texture"><span class="std std-ref">get_param_texture</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-set-flag"><span class="std std-ref">set_flag</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> randomness <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-particlesmaterial-constant-param-max"><span id="class-particlesmaterial-constant-param-anim-offset"></span><span id="class-particlesmaterial-constant-param-anim-speed"></span><span id="class-particlesmaterial-constant-param-hue-variation"></span><span id="class-particlesmaterial-constant-param-scale"></span><span id="class-particlesmaterial-constant-param-angle"></span><span id="class-particlesmaterial-constant-param-damping"></span><span id="class-particlesmaterial-constant-param-tangential-accel"></span><span id="class-particlesmaterial-constant-param-radial-accel"></span><span id="class-particlesmaterial-constant-param-linear-accel"></span><span id="class-particlesmaterial-constant-param-orbit-velocity"></span><span id="class-particlesmaterial-constant-param-angular-velocity"></span><span id="class-particlesmaterial-constant-param-initial-linear-velocity"></span><span id="enum-particlesmaterial-parameter"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Parameter"></a>Parameter</strong>:</p>
+<ul class="simple">
+<li><p><strong>PARAM_INITIAL_LINEAR_VELOCITY</strong> = <strong>0</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set initial velocity properties.</p></li>
+<li><p><strong>PARAM_ANGULAR_VELOCITY</strong> = <strong>1</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set angular velocity properties.</p></li>
+<li><p><strong>PARAM_ORBIT_VELOCITY</strong> = <strong>2</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set orbital velocity properties.</p></li>
+<li><p><strong>PARAM_LINEAR_ACCEL</strong> = <strong>3</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set linear acceleration properties.</p></li>
+<li><p><strong>PARAM_RADIAL_ACCEL</strong> = <strong>4</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set radial acceleration properties.</p></li>
+<li><p><strong>PARAM_TANGENTIAL_ACCEL</strong> = <strong>5</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set tangential acceleration properties.</p></li>
+<li><p><strong>PARAM_DAMPING</strong> = <strong>6</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set damping properties.</p></li>
+<li><p><strong>PARAM_ANGLE</strong> = <strong>7</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set angle properties.</p></li>
+<li><p><strong>PARAM_SCALE</strong> = <strong>8</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set scale properties.</p></li>
+<li><p><strong>PARAM_HUE_VARIATION</strong> = <strong>9</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set hue variation properties.</p></li>
+<li><p><strong>PARAM_ANIM_SPEED</strong> = <strong>10</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set animation speed properties.</p></li>
+<li><p><strong>PARAM_ANIM_OFFSET</strong> = <strong>11</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-param"><span class="std std-ref">set_param</span></a>, <a class="reference internal" href="#class-particlesmaterial-method-set-param-randomness"><span class="std std-ref">set_param_randomness</span></a>, and <a class="reference internal" href="#class-particlesmaterial-method-set-param-texture"><span class="std std-ref">set_param_texture</span></a> to set animation offset properties.</p></li>
+<li><p><strong>PARAM_MAX</strong> = <strong>12</strong> --- Represents the size of the <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-particlesmaterial-constant-flag-max"><span id="class-particlesmaterial-constant-flag-disable-z"></span><span id="class-particlesmaterial-constant-flag-rotate-y"></span><span id="class-particlesmaterial-constant-flag-align-y-to-velocity"></span><span id="enum-particlesmaterial-flags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Flags"></a>Flags</strong>:</p>
+<ul class="simple">
+<li><p><strong>FLAG_ALIGN_Y_TO_VELOCITY</strong> = <strong>0</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-flag"><span class="std std-ref">set_flag</span></a> to set <a class="reference internal" href="#class-particlesmaterial-property-flag-align-y"><span class="std std-ref">flag_align_y</span></a>.</p></li>
+<li><p><strong>FLAG_ROTATE_Y</strong> = <strong>1</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-flag"><span class="std std-ref">set_flag</span></a> to set <a class="reference internal" href="#class-particlesmaterial-property-flag-rotate-y"><span class="std std-ref">flag_rotate_y</span></a>.</p></li>
+<li><p><strong>FLAG_DISABLE_Z</strong> = <strong>2</strong> --- Use with <a class="reference internal" href="#class-particlesmaterial-method-set-flag"><span class="std std-ref">set_flag</span></a> to set <a class="reference internal" href="#class-particlesmaterial-property-flag-disable-z"><span class="std std-ref">flag_disable_z</span></a>.</p></li>
+<li><p><strong>FLAG_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-particlesmaterial-constant-emission-shape-max"><span id="class-particlesmaterial-constant-emission-shape-ring"></span><span id="class-particlesmaterial-constant-emission-shape-directed-points"></span><span id="class-particlesmaterial-constant-emission-shape-points"></span><span id="class-particlesmaterial-constant-emission-shape-box"></span><span id="class-particlesmaterial-constant-emission-shape-sphere"></span><span id="class-particlesmaterial-constant-emission-shape-point"></span><span id="enum-particlesmaterial-emissionshape"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/EmissionShape"></a>EmissionShape</strong>:</p>
+<ul class="simple">
+<li><p><strong>EMISSION_SHAPE_POINT</strong> = <strong>0</strong> --- All particles will be emitted from a single point.</p></li>
+<li><p><strong>EMISSION_SHAPE_SPHERE</strong> = <strong>1</strong> --- Particles will be emitted in the volume of a sphere.</p></li>
+<li><p><strong>EMISSION_SHAPE_BOX</strong> = <strong>2</strong> --- Particles will be emitted in the volume of a box.</p></li>
+<li><p><strong>EMISSION_SHAPE_POINTS</strong> = <strong>3</strong> --- Particles will be emitted at a position determined by sampling a random point on the <a class="reference internal" href="#class-particlesmaterial-property-emission-point-texture"><span class="std std-ref">emission_point_texture</span></a>. Particle color will be modulated by <a class="reference internal" href="#class-particlesmaterial-property-emission-color-texture"><span class="std std-ref">emission_color_texture</span></a>.</p></li>
+<li><p><strong>EMISSION_SHAPE_DIRECTED_POINTS</strong> = <strong>4</strong> --- Particles will be emitted at a position determined by sampling a random point on the <a class="reference internal" href="#class-particlesmaterial-property-emission-point-texture"><span class="std std-ref">emission_point_texture</span></a>. Particle velocity and rotation will be set based on <a class="reference internal" href="#class-particlesmaterial-property-emission-normal-texture"><span class="std std-ref">emission_normal_texture</span></a>. Particle color will be modulated by <a class="reference internal" href="#class-particlesmaterial-property-emission-color-texture"><span class="std std-ref">emission_color_texture</span></a>.</p></li>
+<li><p><strong>EMISSION_SHAPE_RING</strong> = <strong>5</strong> --- Particles will be emitted in a ring or cylinder.</p></li>
+<li><p><strong>EMISSION_SHAPE_MAX</strong> = <strong>6</strong> --- Represents the size of the <a class="reference internal" href="#enum-particlesmaterial-emissionshape"><span class="std std-ref">EmissionShape</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-particlesmaterial-property-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angle"></a>angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial rotation applied to each particle, in degrees.</p>
+<p><strong>Note:</strong> Only applied when <a class="reference internal" href="#class-particlesmaterial-property-flag-disable-z"><span class="std std-ref">flag_disable_z</span></a> or <a class="reference internal" href="#class-particlesmaterial-property-flag-rotate-y"><span class="std std-ref">flag_rotate_y</span></a> are <code class="docutils literal notranslate"><span class="pre">true</span></code> or the <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> being used to draw the particle is using <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-constant-billboard-particles"><span class="std std-ref">SpatialMaterial.BILLBOARD_PARTICLES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-angle-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angle_curve"></a>angle_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's rotation will be animated along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-angle-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angle_random"></a>angle_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rotation randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-angular-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_velocity"></a>angular_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial angular velocity applied to each particle in <em>degrees</em> per second. Sets the speed of rotation of the particle.</p>
+<p><strong>Note:</strong> Only applied when <a class="reference internal" href="#class-particlesmaterial-property-flag-disable-z"><span class="std std-ref">flag_disable_z</span></a> or <a class="reference internal" href="#class-particlesmaterial-property-flag-rotate-y"><span class="std std-ref">flag_rotate_y</span></a> are <code class="docutils literal notranslate"><span class="pre">true</span></code> or the <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> being used to draw the particle is using <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-constant-billboard-particles"><span class="std std-ref">SpatialMaterial.BILLBOARD_PARTICLES</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-angular-velocity-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_velocity_curve"></a>angular_velocity_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's angular velocity will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-angular-velocity-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_velocity_random"></a>angular_velocity_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Angular velocity randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-offset">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_offset"></a>anim_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particle animation offset.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-offset-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_offset_curve"></a>anim_offset_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's animation offset will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-offset-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_offset_random"></a>anim_offset_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Animation offset randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-speed">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_speed"></a>anim_speed</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particle animation speed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-speed-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_speed_curve"></a>anim_speed_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's animation speed will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-anim-speed-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/anim_speed_random"></a>anim_speed_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Animation speed randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/color"></a>color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_color(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_color()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's initial color. If the <a class="reference internal" href="class_particles2d.html#class-particles2d"><span class="std std-ref">Particles2D</span></a>'s <code class="docutils literal notranslate"><span class="pre">texture</span></code> is defined, it will be multiplied by this color. To have particle display color in a <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a> make sure to set <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial-property-vertex-color-use-as-albedo"><span class="std std-ref">SpatialMaterial.vertex_color_use_as_albedo</span></a> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-color-ramp">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/color_ramp"></a>color_ramp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_color_ramp(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_color_ramp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's color will vary along this <a class="reference internal" href="class_gradienttexture.html#class-gradienttexture"><span class="std std-ref">GradientTexture</span></a> over its lifetime (multiplied with <a class="reference internal" href="#class-particlesmaterial-property-color"><span class="std std-ref">color</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-damping">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/damping"></a>damping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rate at which particles lose velocity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-damping-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/damping_curve"></a>damping_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Damping will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-damping-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/damping_random"></a>damping_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Damping randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-direction">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/direction"></a>direction</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_direction(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_direction()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Unit vector specifying the particles' emission direction.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-box-extents">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_box_extents"></a>emission_box_extents</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_box_extents(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_box_extents()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The box's extents if <code class="docutils literal notranslate"><span class="pre">emission_shape</span></code> is set to <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-box"><span class="std std-ref">EMISSION_SHAPE_BOX</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-color-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_color_texture"></a>emission_color_texture</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_color_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_color_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particle color will be modulated by color determined by sampling this texture at the same point as the <a class="reference internal" href="#class-particlesmaterial-property-emission-point-texture"><span class="std std-ref">emission_point_texture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-normal-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_normal_texture"></a>emission_normal_texture</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_normal_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_normal_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particle velocity and rotation will be set by sampling this texture at the same point as the <a class="reference internal" href="#class-particlesmaterial-property-emission-point-texture"><span class="std std-ref">emission_point_texture</span></a>. Used only in <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-directed-points"><span class="std std-ref">EMISSION_SHAPE_DIRECTED_POINTS</span></a>. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-point-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_point_count"></a>emission_point_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_point_count(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_point_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The number of emission points if <code class="docutils literal notranslate"><span class="pre">emission_shape</span></code> is set to <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-points"><span class="std std-ref">EMISSION_SHAPE_POINTS</span></a> or <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-directed-points"><span class="std std-ref">EMISSION_SHAPE_DIRECTED_POINTS</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-point-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_point_texture"></a>emission_point_texture</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_point_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_point_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particles will be emitted at positions determined by sampling this texture at a random position. Used with <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-points"><span class="std std-ref">EMISSION_SHAPE_POINTS</span></a> and <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-directed-points"><span class="std std-ref">EMISSION_SHAPE_DIRECTED_POINTS</span></a>. Can be created automatically from mesh or node by selecting "Create Emission Points from Mesh/Node" under the "Particles" tool in the toolbar.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-ring-axis">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_ring_axis"></a>emission_ring_axis</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_ring_axis(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_ring_axis()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The axis of the ring when using the emitter <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-ring"><span class="std std-ref">EMISSION_SHAPE_RING</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-ring-height">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_ring_height"></a>emission_ring_height</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_ring_height(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_ring_height()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The height of the ring when using the emitter <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-ring"><span class="std std-ref">EMISSION_SHAPE_RING</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-ring-inner-radius">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_ring_inner_radius"></a>emission_ring_inner_radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_ring_inner_radius(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_ring_inner_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The inner radius of the ring when using the emitter <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-ring"><span class="std std-ref">EMISSION_SHAPE_RING</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-ring-radius">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_ring_radius"></a>emission_ring_radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_ring_radius(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_ring_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The radius of the ring when using the emitter <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-ring"><span class="std std-ref">EMISSION_SHAPE_RING</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-shape">
+<li><p><a class="reference internal" href="#enum-particlesmaterial-emissionshape"><span class="std std-ref">EmissionShape</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_shape"></a>emission_shape</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_shape(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_shape()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particles will be emitted inside this region. Use <a class="reference internal" href="#enum-particlesmaterial-emissionshape"><span class="std std-ref">EmissionShape</span></a> constants for values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-emission-sphere-radius">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_sphere_radius"></a>emission_sphere_radius</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_sphere_radius(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_sphere_radius()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The sphere's radius if <code class="docutils literal notranslate"><span class="pre">emission_shape</span></code> is set to <a class="reference internal" href="#class-particlesmaterial-constant-emission-shape-sphere"><span class="std std-ref">EMISSION_SHAPE_SPHERE</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-flag-align-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flag_align_y"></a>flag_align_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Align Y axis of particle with the direction of its velocity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-flag-disable-z">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flag_disable_z"></a>flag_disable_z</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, particles will not move on the z axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-flag-rotate-y">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flag_rotate_y"></a>flag_rotate_y</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flag(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flag()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, particles rotate around Y axis by <a class="reference internal" href="#class-particlesmaterial-property-angle"><span class="std std-ref">angle</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-flatness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/flatness"></a>flatness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_flatness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_flatness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Amount of <a class="reference internal" href="#class-particlesmaterial-property-spread"><span class="std std-ref">spread</span></a> along the Y axis.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-gravity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity"></a>gravity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">0,</span> <span class="pre">-9.8,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_gravity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Gravity applied to every particle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-hue-variation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hue_variation"></a>hue_variation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial hue variation applied to each particle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-hue-variation-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hue_variation_curve"></a>hue_variation_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's hue will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-hue-variation-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hue_variation_random"></a>hue_variation_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Hue variation randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-initial-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/initial_velocity"></a>initial_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial velocity magnitude for each particle. Direction comes from <a class="reference internal" href="#class-particlesmaterial-property-spread"><span class="std std-ref">spread</span></a> and the node's orientation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-initial-velocity-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/initial_velocity_random"></a>initial_velocity_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial velocity randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-lifetime-randomness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lifetime_randomness"></a>lifetime_randomness</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lifetime_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lifetime_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Particle lifetime randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-linear-accel">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_accel"></a>linear_accel</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Linear acceleration applied to each particle in the direction of motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-linear-accel-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_accel_curve"></a>linear_accel_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's linear acceleration will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-linear-accel-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_accel_random"></a>linear_accel_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Linear acceleration randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-orbit-velocity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/orbit_velocity"></a>orbit_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 64%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.</p>
+<p><strong>Note:</strong> Only available when <a class="reference internal" href="#class-particlesmaterial-property-flag-disable-z"><span class="std std-ref">flag_disable_z</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-orbit-velocity-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/orbit_velocity_curve"></a>orbit_velocity_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's orbital velocity will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-orbit-velocity-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/orbit_velocity_random"></a>orbit_velocity_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Orbital velocity randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-radial-accel">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_accel"></a>radial_accel</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Radial acceleration applied to each particle. Makes particle accelerate away from origin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-radial-accel-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_accel_curve"></a>radial_accel_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's radial acceleration will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-radial-accel-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_accel_random"></a>radial_accel_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Radial acceleration randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scale"></a>scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Initial scale applied to each particle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-scale-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scale_curve"></a>scale_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's scale will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-scale-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scale_random"></a>scale_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Scale randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-spread">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/spread"></a>spread</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_spread(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_spread()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's initial direction range from <code class="docutils literal notranslate"><span class="pre">+spread</span></code> to <code class="docutils literal notranslate"><span class="pre">-spread</span></code> degrees.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-tangential-accel">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tangential_accel"></a>tangential_accel</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-tangential-accel-curve">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tangential_accel_curve"></a>tangential_accel_curve</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_param_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_param_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each particle's tangential acceleration will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-tangential-accel-random">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tangential_accel_random"></a>tangential_accel_random</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_param_randomness(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_param_randomness()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tangential acceleration randomness ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-trail-color-modifier">
+<li><p><a class="reference internal" href="class_gradienttexture.html#class-gradienttexture"><span class="std std-ref">GradientTexture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/trail_color_modifier"></a>trail_color_modifier</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_trail_color_modifier(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_trail_color_modifier()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Trail particles' color will vary along this <a class="reference internal" href="class_gradienttexture.html#class-gradienttexture"><span class="std std-ref">GradientTexture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-trail-divisor">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/trail_divisor"></a>trail_divisor</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_trail_divisor(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_trail_divisor()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Emitter will emit <code class="docutils literal notranslate"><span class="pre">amount</span></code> divided by <code class="docutils literal notranslate"><span class="pre">trail_divisor</span></code> particles. The remaining particles will be used as trail(s).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-property-trail-size-modifier">
+<li><p><a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/trail_size_modifier"></a>trail_size_modifier</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_trail_size_modifier(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_trail_size_modifier()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Trail particles' size will vary along this <a class="reference internal" href="class_curvetexture.html#class-curvetexture"><span class="std std-ref">CurveTexture</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-particlesmaterial-method-get-flag">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_flag"></a>get_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified flag is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param"></a>get_param</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of the specified parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-get-param-randomness">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param_randomness"></a>get_param_randomness</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the randomness ratio associated with the specified parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-get-param-texture">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_param_texture"></a>get_param_texture</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> used by the specified parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-set-flag">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_flag"></a>set_flag</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables the specified flag. See <a class="reference internal" href="#enum-particlesmaterial-flags"><span class="std std-ref">Flags</span></a> for options.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param"></a>set_param</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the specified <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-set-param-randomness">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param_randomness"></a>set_param_randomness</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> randomness <strong>)</strong></p></li>
+</ul>
+<p>Sets the randomness ratio for the specified <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-particlesmaterial-method-set-param-texture">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_param_texture"></a>set_param_texture</strong> <strong>(</strong> <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a> param, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> for the specified <a class="reference internal" href="#enum-particlesmaterial-parameter"><span class="std std-ref">Parameter</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_particles2d.html" rel="prev" title="Particles2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_path.html" rel="next" title="Path">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

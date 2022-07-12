@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="NetworkedMultiplayerENet" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_networkedmultiplayerenet.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: NetworkedMultiplayerPeer&lt; PacketPeer&lt; Reference&lt; Object PacketPeer implementation using the ENet library. Description: A PacketPeer implementation that should be passed to SceneTree.netwo..." property="og:description"/>
+<meta content="PacketPeer implementation using the ENet library. A PacketPeer implementation that should be passed to SceneTree.network_peer after being initialized as either a client or server. Events can then be handled by connect..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) NetworkedMultiplayerENet — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerenet.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_networkedmultiplayerenet.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_networkedmultiplayerenet.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_networkedmultiplayerenet.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_networkedmultiplayerenet.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_networkedmultiplayerenet.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_networkedmultiplayerenet.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_networkedmultiplayerenet.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_networkedmultiplayerenet.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_networkedmultiplayerenet.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_networkedmultiplayerenet.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_networkedmultiplayerenet.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_networkedmultiplayerenet.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_networkedmultiplayerenet.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerenet.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_networkedmultiplayerenet.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_networkedmultiplayerpeer.html" rel="next" title="NetworkedMultiplayerPeer"/>
+<link href="class_navigationpolygoninstance.html" rel="prev" title="NavigationPolygonInstance"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>NetworkedMultiplayerENet</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="networkedmultiplayerenet">
+<span id="class-networkedmultiplayerenet"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/NetworkedMultiplayerENet¶"></a>NetworkedMultiplayerENet<a class="headerlink" href="#networkedmultiplayerenet" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer"><span class="std std-ref">NetworkedMultiplayerPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_packetpeer.html#class-packetpeer"><span class="std std-ref">PacketPeer</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>PacketPeer implementation using the <a class="reference external" href="http://enet.bespin.org/index.html">ENet</a> library.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A PacketPeer implementation that should be passed to <a class="reference internal" href="class_scenetree.html#class-scenetree-property-network-peer"><span class="std std-ref">SceneTree.network_peer</span></a> after being initialized as either a client or server. Events can then be handled by connecting to <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> signals.</p>
+<p>ENet's purpose is to provide a relatively thin, simple and robust network communication layer on top of UDP (User Datagram Protocol).</p>
+<p><strong>Note:</strong> ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the <a class="reference internal" href="class_upnp.html#class-upnp"><span class="std std-ref">UPNP</span></a> class to try to forward the server port automatically when starting the server.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html"><span class="doc">High-level multiplayer</span></a></p></li>
+<li><p><a class="reference external" href="http://enet.bespin.org/usergroup0.html">http://enet.bespin.org/usergroup0.html</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 45%"/>
+<col style="width: 17%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-always-ordered"><span class="std std-ref">always_ordered</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-channel-count"><span class="std std-ref">channel_count</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-networkedmultiplayerenet-compressionmode"><span class="std std-ref">CompressionMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-compression-mode"><span class="std std-ref">compression_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-dtls-hostname"><span class="std std-ref">dtls_hostname</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-dtls-verify"><span class="std std-ref">dtls_verify</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p>refuse_new_connections</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-server-relay"><span class="std std-ref">server_relay</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-transfer-channel"><span class="std std-ref">transfer_channel</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_networkedmultiplayerpeer.html#enum-networkedmultiplayerpeer-transfermode"><span class="std std-ref">TransferMode</span></a></p></td>
+<td><p>transfer_mode</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-property-use-dtls"><span class="std std-ref">use_dtls</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 87%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-close-connection"><span class="std std-ref">close_connection</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> wait_usec=100 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-create-client"><span class="std std-ref">create_client</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> address, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> in_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> out_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> client_port=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-create-server"><span class="std std-ref">create_server</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_clients=32, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> in_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> out_bandwidth=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-disconnect-peer"><span class="std std-ref">disconnect_peer</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> now=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-get-last-packet-channel"><span class="std std-ref">get_last_packet_channel</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-get-packet-channel"><span class="std std-ref">get_packet_channel</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-get-peer-address"><span class="std std-ref">get_peer_address</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-get-peer-port"><span class="std std-ref">get_peer_port</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-set-bind-ip"><span class="std std-ref">set_bind_ip</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> ip <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-certificate"><span class="std std-ref">set_dtls_certificate</span></a> <strong>(</strong> <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> certificate <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-key"><span class="std std-ref">set_dtls_key</span></a> <strong>(</strong> <a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> key <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-networkedmultiplayerenet-method-set-peer-timeout"><span class="std std-ref">set_peer_timeout</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_limit, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_min, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_max <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-networkedmultiplayerenet-constant-compress-zstd"><span id="class-networkedmultiplayerenet-constant-compress-zlib"></span><span id="class-networkedmultiplayerenet-constant-compress-fastlz"></span><span id="class-networkedmultiplayerenet-constant-compress-range-coder"></span><span id="class-networkedmultiplayerenet-constant-compress-none"></span><span id="enum-networkedmultiplayerenet-compressionmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CompressionMode"></a>CompressionMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>COMPRESS_NONE</strong> = <strong>0</strong> --- No compression. This uses the most bandwidth, but has the upside of requiring the fewest CPU resources. This option may also be used to make network debugging using tools like Wireshark easier.</p></li>
+<li><p><strong>COMPRESS_RANGE_CODER</strong> = <strong>1</strong> --- ENet's built-in range encoding. Works well on small packets, but is not the most efficient algorithm on packets larger than 4 KB.</p></li>
+<li><p><strong>COMPRESS_FASTLZ</strong> = <strong>2</strong> --- <a class="reference external" href="http://fastlz.org/">FastLZ</a> compression. This option uses less CPU resources compared to <a class="reference internal" href="#class-networkedmultiplayerenet-constant-compress-zlib"><span class="std std-ref">COMPRESS_ZLIB</span></a>, at the expense of using more bandwidth.</p></li>
+<li><p><strong>COMPRESS_ZLIB</strong> = <strong>3</strong> --- <a class="reference external" href="https://www.zlib.net/">Zlib</a> compression. This option uses less bandwidth compared to <a class="reference internal" href="#class-networkedmultiplayerenet-constant-compress-fastlz"><span class="std std-ref">COMPRESS_FASTLZ</span></a>, at the expense of using more CPU resources. Note that this algorithm is not very efficient on packets smaller than 4 KB. Therefore, it's recommended to use other compression algorithms in most cases.</p></li>
+<li><p><strong>COMPRESS_ZSTD</strong> = <strong>4</strong> --- <a class="reference external" href="https://facebook.github.io/zstd/">Zstandard</a> compression.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-networkedmultiplayerenet-property-always-ordered">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/always_ordered"></a>always_ordered</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_always_ordered(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_always_ordered()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Enforce ordered packets when using <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-constant-transfer-mode-unreliable"><span class="std std-ref">NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE</span></a> (thus behaving similarly to <a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer-constant-transfer-mode-unreliable-ordered"><span class="std std-ref">NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE_ORDERED</span></a>). This is the only way to use ordering with the RPC system.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-channel-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/channel_count"></a>channel_count</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_channel_count(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_channel_count()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per-channel basis. This is done to combat latency and reduces ordering restrictions on packets. The delivery status of a packet in one channel won't stall the delivery of other packets in another channel.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-compression-mode">
+<li><p><a class="reference internal" href="#enum-networkedmultiplayerenet-compressionmode"><span class="std std-ref">CompressionMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/compression_mode"></a>compression_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_compression_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_compression_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.</p>
+<p><strong>Note:</strong> Most games' network design involve sending many small packets frequently (smaller than 4 KB each). If in doubt, it is recommended to keep the default compression algorithm as it works best on these small packets.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-networkedmultiplayerenet-property-compression-mode"><span class="std std-ref">compression_mode</span></a> must be set to the same value on both the server and all its clients. Clients will fail to connect if the <a class="reference internal" href="#class-networkedmultiplayerenet-property-compression-mode"><span class="std std-ref">compression_mode</span></a> set on the client differs from the one set on the server. Prior to Godot 3.4, the default <a class="reference internal" href="#class-networkedmultiplayerenet-property-compression-mode"><span class="std std-ref">compression_mode</span></a> was <a class="reference internal" href="#class-networkedmultiplayerenet-constant-compress-none"><span class="std std-ref">COMPRESS_NONE</span></a>. Nonetheless, mixing engine versions between clients and server is not recommended and not officially supported.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-dtls-hostname">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dtls_hostname"></a>dtls_hostname</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dtls_hostname(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dtls_hostname()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The hostname used for DTLS verification, to be compared against the "CN" value in the certificate provided by the server.</p>
+<p>When set to an empty string, the <code class="docutils literal notranslate"><span class="pre">address</span></code> parameter passed to <a class="reference internal" href="#class-networkedmultiplayerenet-method-create-client"><span class="std std-ref">create_client</span></a> is used instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-dtls-verify">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dtls_verify"></a>dtls_verify</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dtls_verify_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_dtls_verify_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Enable or disable certificate verification when <a class="reference internal" href="#class-networkedmultiplayerenet-property-use-dtls"><span class="std std-ref">use_dtls</span></a> <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-server-relay">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/server_relay"></a>server_relay</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_server_relay_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_server_relay_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is <code class="docutils literal notranslate"><span class="pre">false</span></code>, clients won't be automatically notified of other peers and won't be able to send them packets through the server.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-transfer-channel">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transfer_channel"></a>transfer_channel</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_transfer_channel(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_transfer_channel()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Set the default channel to be used to transfer data. By default, this value is <code class="docutils literal notranslate"><span class="pre">-1</span></code> which means that ENet will only use 2 channels: one for reliable packets, and one for unreliable packets. The channel <code class="docutils literal notranslate"><span class="pre">0</span></code> is reserved and cannot be used. Setting this member to any value between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <a class="reference internal" href="#class-networkedmultiplayerenet-property-channel-count"><span class="std std-ref">channel_count</span></a> (excluded) will force ENet to use that channel for sending data. See <a class="reference internal" href="#class-networkedmultiplayerenet-property-channel-count"><span class="std std-ref">channel_count</span></a> for more information about ENet channels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-property-use-dtls">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_dtls"></a>use_dtls</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dtls_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_dtls_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, the client or server created by this peer, will use <a class="reference internal" href="class_packetpeerdtls.html#class-packetpeerdtls"><span class="std std-ref">PacketPeerDTLS</span></a> instead of raw UDP sockets for communicating with the remote peer. This will make the communication encrypted with DTLS at the cost of higher resource usage and potentially larger packet size.</p>
+<p><strong>Note:</strong> When creating a DTLS server, make sure you setup the key/certificate pair via <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-key"><span class="std std-ref">set_dtls_key</span></a> and <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-certificate"><span class="std std-ref">set_dtls_certificate</span></a>. For DTLS clients, have a look at the <a class="reference internal" href="#class-networkedmultiplayerenet-property-dtls-verify"><span class="std std-ref">dtls_verify</span></a> option, and configure the certificate accordingly via <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-certificate"><span class="std std-ref">set_dtls_certificate</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-networkedmultiplayerenet-method-close-connection">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/close_connection"></a>close_connection</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> wait_usec=100 <strong>)</strong></p></li>
+</ul>
+<p>Closes the connection. Ignored if no connection is currently established. If this is a server it tries to notify all clients before forcibly disconnecting them. If this is a client it simply closes the connection to the server.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-create-client">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_client"></a>create_client</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> address, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> in_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> out_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> client_port=0 <strong>)</strong></p></li>
+</ul>
+<p>Create client that connects to a server at <code class="docutils literal notranslate"><span class="pre">address</span></code> using specified <code class="docutils literal notranslate"><span class="pre">port</span></code>. The given address needs to be either a fully qualified domain name (e.g. <code class="docutils literal notranslate"><span class="pre">"www.example.com"</span></code>) or an IP address in IPv4 or IPv6 format (e.g. <code class="docutils literal notranslate"><span class="pre">"192.168.1.1"</span></code>). The <code class="docutils literal notranslate"><span class="pre">port</span></code> is the port the server is listening on. The <code class="docutils literal notranslate"><span class="pre">in_bandwidth</span></code> and <code class="docutils literal notranslate"><span class="pre">out_bandwidth</span></code> parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> if a client was created, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-already-in-use"><span class="std std-ref">@GlobalScope.ERR_ALREADY_IN_USE</span></a> if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call <a class="reference internal" href="#class-networkedmultiplayerenet-method-close-connection"><span class="std std-ref">close_connection</span></a> first) or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> if the client could not be created. If <code class="docutils literal notranslate"><span class="pre">client_port</span></code> is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-create-server">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_server"></a>create_server</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> port, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_clients=32, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> in_bandwidth=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> out_bandwidth=0 <strong>)</strong></p></li>
+</ul>
+<p>Create server that listens to connections via <code class="docutils literal notranslate"><span class="pre">port</span></code>. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-bind-ip"><span class="std std-ref">set_bind_ip</span></a>. The default IP is the wildcard <code class="docutils literal notranslate"><span class="pre">"*"</span></code>, which listens on all available interfaces. <code class="docutils literal notranslate"><span class="pre">max_clients</span></code> is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see <a class="reference internal" href="#class-networkedmultiplayerenet-method-create-client"><span class="std std-ref">create_client</span></a>. Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> if a server was created, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-already-in-use"><span class="std std-ref">@GlobalScope.ERR_ALREADY_IN_USE</span></a> if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call <a class="reference internal" href="#class-networkedmultiplayerenet-method-close-connection"><span class="std std-ref">close_connection</span></a> first) or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> if the server could not be created.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-disconnect-peer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disconnect_peer"></a>disconnect_peer</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> now=false <strong>)</strong></p></li>
+</ul>
+<p>Disconnect the given peer. If "now" is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the connection will be closed immediately without flushing queued messages.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-get-last-packet-channel">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_last_packet_channel"></a>get_last_packet_channel</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the channel of the last packet fetched via <a class="reference internal" href="class_packetpeer.html#class-packetpeer-method-get-packet"><span class="std std-ref">PacketPeer.get_packet</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-get-packet-channel">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_packet_channel"></a>get_packet_channel</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the channel of the next packet that will be retrieved via <a class="reference internal" href="class_packetpeer.html#class-packetpeer-method-get-packet"><span class="std std-ref">PacketPeer.get_packet</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-get-peer-address">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_peer_address"></a>get_peer_address</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the IP address of the given peer.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-get-peer-port">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_peer_port"></a>get_peer_port</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the remote port of the given peer.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-set-bind-ip">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_bind_ip"></a>set_bind_ip</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> ip <strong>)</strong></p></li>
+</ul>
+<p>The IP used when creating a server. This is set to the wildcard <code class="docutils literal notranslate"><span class="pre">"*"</span></code> by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: <code class="docutils literal notranslate"><span class="pre">"192.168.1.1"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-set-dtls-certificate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_dtls_certificate"></a>set_dtls_certificate</strong> <strong>(</strong> <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> certificate <strong>)</strong></p></li>
+</ul>
+<p>Configure the <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a> to use when <a class="reference internal" href="#class-networkedmultiplayerenet-property-use-dtls"><span class="std std-ref">use_dtls</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. For servers, you must also setup the <a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> via <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-key"><span class="std std-ref">set_dtls_key</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-set-dtls-key">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_dtls_key"></a>set_dtls_key</strong> <strong>(</strong> <a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Configure the <a class="reference internal" href="class_cryptokey.html#class-cryptokey"><span class="std std-ref">CryptoKey</span></a> to use when <a class="reference internal" href="#class-networkedmultiplayerenet-property-use-dtls"><span class="std std-ref">use_dtls</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Remember to also call <a class="reference internal" href="#class-networkedmultiplayerenet-method-set-dtls-certificate"><span class="std std-ref">set_dtls_certificate</span></a> to setup your <a class="reference internal" href="class_x509certificate.html#class-x509certificate"><span class="std std-ref">X509Certificate</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-networkedmultiplayerenet-method-set-peer-timeout">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_peer_timeout"></a>set_peer_timeout</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_limit, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_min, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> timeout_max <strong>)</strong></p></li>
+</ul>
+<p>Sets the timeout parameters for a peer. The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">timeout_limit</span></code> is a factor that, multiplied by a value based on the average round trip time, will determine the timeout limit for a reliable packet. When that limit is reached, the timeout will be doubled, and the peer will be disconnected if that limit has reached <code class="docutils literal notranslate"><span class="pre">timeout_min</span></code>. The <code class="docutils literal notranslate"><span class="pre">timeout_max</span></code> parameter, on the other hand, defines a fixed timeout for which any packet must be acknowledged or the peer will be dropped.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_navigationpolygoninstance.html" rel="prev" title="NavigationPolygonInstance"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_networkedmultiplayerpeer.html" rel="next" title="NetworkedMultiplayerPeer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

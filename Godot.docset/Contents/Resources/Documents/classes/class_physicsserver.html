@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="PhysicsServer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_physicsserver.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Server interface for low-level physics access. Description: PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not in..." property="og:description"/>
+<meta content="Server interface for low-level physics access. PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree. void area_add_shape (..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) PhysicsServer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsserver.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_physicsserver.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_physicsserver.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_physicsserver.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_physicsserver.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_physicsserver.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_physicsserver.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_physicsserver.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_physicsserver.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_physicsserver.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_physicsserver.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_physicsserver.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_physicsserver.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_physicsserver.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsserver.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsserver.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_physicsshapequeryparameters.html" rel="next" title="PhysicsShapeQueryParameters"/>
+<link href="class_physicsmaterial.html" rel="prev" title="PhysicsMaterial"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>PhysicsServer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="physicsserver">
+<span id="class-physicsserver"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/PhysicsServer¶"></a>PhysicsServer<a class="headerlink" href="#physicsserver" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Server interface for low-level physics access.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>PhysicsServer is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-add-shape"><span class="std std-ref">area_add_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-attach-object-instance-id"><span class="std std-ref">area_attach_object_instance_id</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-clear-shapes"><span class="std std-ref">area_clear_shapes</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-create"><span class="std std-ref">area_create</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-object-instance-id"><span class="std std-ref">area_get_object_instance_id</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-param"><span class="std std-ref">area_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-shape"><span class="std std-ref">area_get_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-shape-count"><span class="std std-ref">area_get_shape_count</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-shape-transform"><span class="std std-ref">area_get_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-space"><span class="std std-ref">area_get_space</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-physicsserver-areaspaceoverridemode"><span class="std std-ref">AreaSpaceOverrideMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-space-override-mode"><span class="std std-ref">area_get_space_override_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-get-transform"><span class="std std-ref">area_get_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-is-ray-pickable"><span class="std std-ref">area_is_ray_pickable</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-remove-shape"><span class="std std-ref">area_remove_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-area-monitor-callback"><span class="std std-ref">area_set_area_monitor_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-collision-layer"><span class="std std-ref">area_set_collision_layer</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-collision-mask"><span class="std std-ref">area_set_collision_mask</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> mask <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-monitor-callback"><span class="std std-ref">area_set_monitor_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-monitorable"><span class="std std-ref">area_set_monitorable</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> monitorable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-param"><span class="std std-ref">area_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> param, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-ray-pickable"><span class="std std-ref">area_set_ray_pickable</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-shape"><span class="std std-ref">area_set_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-shape-disabled"><span class="std std-ref">area_set_shape_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-shape-transform"><span class="std std-ref">area_set_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-space"><span class="std std-ref">area_set_space</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-space-override-mode"><span class="std std-ref">area_set_space_override_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaspaceoverridemode"><span class="std std-ref">AreaSpaceOverrideMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-area-set-transform"><span class="std std-ref">area_set_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-add-central-force"><span class="std std-ref">body_add_central_force</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-add-collision-exception"><span class="std std-ref">body_add_collision_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> excepted_body <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-add-force"><span class="std std-ref">body_add_force</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-add-shape"><span class="std std-ref">body_add_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-add-torque"><span class="std std-ref">body_add_torque</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-apply-central-impulse"><span class="std std-ref">body_apply_central_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-apply-impulse"><span class="std std-ref">body_apply_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-apply-torque-impulse"><span class="std std-ref">body_apply_torque_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-attach-object-instance-id"><span class="std std-ref">body_attach_object_instance_id</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-clear-shapes"><span class="std std-ref">body_clear_shapes</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-create"><span class="std std-ref">body_create</span></a> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> mode=2, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> init_sleeping=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-collision-layer"><span class="std std-ref">body_get_collision_layer</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-collision-mask"><span class="std std-ref">body_get_collision_mask</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-direct-state"><span class="std std-ref">body_get_direct_state</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-kinematic-safe-margin"><span class="std std-ref">body_get_kinematic_safe_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-max-contacts-reported"><span class="std std-ref">body_get_max_contacts_reported</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-mode"><span class="std std-ref">body_get_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-object-instance-id"><span class="std std-ref">body_get_object_instance_id</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-param"><span class="std std-ref">body_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-shape"><span class="std std-ref">body_get_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-shape-count"><span class="std std-ref">body_get_shape_count</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-shape-transform"><span class="std std-ref">body_get_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-space"><span class="std std-ref">body_get_space</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-get-state"><span class="std std-ref">body_get_state</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodystate"><span class="std std-ref">BodyState</span></a> state <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-is-axis-locked"><span class="std std-ref">body_is_axis_locked</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-is-continuous-collision-detection-enabled"><span class="std std-ref">body_is_continuous_collision_detection_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-is-omitting-force-integration"><span class="std std-ref">body_is_omitting_force_integration</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-is-ray-pickable"><span class="std std-ref">body_is_ray_pickable</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-remove-collision-exception"><span class="std std-ref">body_remove_collision_exception</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> excepted_body <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-remove-shape"><span class="std std-ref">body_remove_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-axis-lock"><span class="std std-ref">body_set_axis_lock</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-axis-velocity"><span class="std std-ref">body_set_axis_velocity</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis_velocity <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-collision-layer"><span class="std std-ref">body_set_collision_layer</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-collision-mask"><span class="std std-ref">body_set_collision_mask</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> mask <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-enable-continuous-collision-detection"><span class="std std-ref">body_set_enable_continuous_collision_detection</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-force-integration-callback"><span class="std std-ref">body_set_force_integration_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-kinematic-safe-margin"><span class="std std-ref">body_set_kinematic_safe_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-max-contacts-reported"><span class="std std-ref">body_set_max_contacts_reported</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> amount <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-mode"><span class="std std-ref">body_set_mode</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-omit-force-integration"><span class="std std-ref">body_set_omit_force_integration</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-param"><span class="std std-ref">body_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-ray-pickable"><span class="std std-ref">body_set_ray_pickable</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-shape"><span class="std std-ref">body_set_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-shape-disabled"><span class="std std-ref">body_set_shape_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-shape-transform"><span class="std std-ref">body_set_shape_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-space"><span class="std std-ref">body_set_space</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-set-state"><span class="std std-ref">body_set_state</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodystate"><span class="std std-ref">BodyState</span></a> state, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-body-test-motion"><span class="std std-ref">body_test_motion</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> motion, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia, <a class="reference internal" href="class_physicstestmotionresult.html#class-physicstestmotionresult"><span class="std std-ref">PhysicsTestMotionResult</span></a> result=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exclude_raycast_shapes=true, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> exclude=[  ] <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-cone-twist-joint-get-param"><span class="std std-ref">cone_twist_joint_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-cone-twist-joint-set-param"><span class="std std-ref">cone_twist_joint_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-free-rid"><span class="std std-ref">free_rid</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-generic-6dof-joint-get-flag"><span class="std std-ref">generic_6dof_joint_get_flag</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> flag <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-generic-6dof-joint-get-param"><span class="std std-ref">generic_6dof_joint_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> param <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-generic-6dof-joint-set-flag"><span class="std std-ref">generic_6dof_joint_set_flag</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-generic-6dof-joint-set-param"><span class="std std-ref">generic_6dof_joint_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-get-process-info"><span class="std std-ref">get_process_info</span></a> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-processinfo"><span class="std std-ref">ProcessInfo</span></a> process_info <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-hinge-joint-get-flag"><span class="std std-ref">hinge_joint_get_flag</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-hinge-joint-get-param"><span class="std std-ref">hinge_joint_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-hinge-joint-set-flag"><span class="std std-ref">hinge_joint_set_flag</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-hinge-joint-set-param"><span class="std std-ref">hinge_joint_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-create-cone-twist"><span class="std std-ref">joint_create_cone_twist</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-create-generic-6dof"><span class="std std-ref">joint_create_generic_6dof</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-create-hinge"><span class="std std-ref">joint_create_hinge</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> hinge_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> hinge_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-create-pin"><span class="std std-ref">joint_create_pin</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-create-slider"><span class="std std-ref">joint_create_slider</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-get-solver-priority"><span class="std std-ref">joint_get_solver_priority</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-physicsserver-jointtype"><span class="std std-ref">JointType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-get-type"><span class="std std-ref">joint_get_type</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-joint-set-solver-priority"><span class="std std-ref">joint_set_solver_priority</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> priority <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-get-local-a"><span class="std std-ref">pin_joint_get_local_a</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-get-local-b"><span class="std std-ref">pin_joint_get_local_b</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-get-param"><span class="std std-ref">pin_joint_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-set-local-a"><span class="std std-ref">pin_joint_set_local_a</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_A <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-set-local-b"><span class="std std-ref">pin_joint_set_local_b</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_B <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-pin-joint-set-param"><span class="std std-ref">pin_joint_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-set-active"><span class="std std-ref">set_active</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-set-collision-iterations"><span class="std std-ref">set_collision_iterations</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> iterations <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-shape-create"><span class="std std-ref">shape_create</span></a> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a> type <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-shape-get-data"><span class="std std-ref">shape_get_data</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-shape-get-type"><span class="std std-ref">shape_get_type</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-shape-set-data"><span class="std std-ref">shape_set_data</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> data <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-slider-joint-get-param"><span class="std std-ref">slider_joint_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-slider-joint-set-param"><span class="std std-ref">slider_joint_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-create"><span class="std std-ref">space_create</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-get-direct-state"><span class="std std-ref">space_get_direct_state</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-get-param"><span class="std std-ref">space_get_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="#enum-physicsserver-spaceparameter"><span class="std std-ref">SpaceParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-is-active"><span class="std std-ref">space_is_active</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-set-active"><span class="std std-ref">space_set_active</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsserver-method-space-set-param"><span class="std std-ref">space_set_param</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="#enum-physicsserver-spaceparameter"><span class="std std-ref">SpaceParameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-physicsserver-constant-joint-6dof"><span id="class-physicsserver-constant-joint-cone-twist"></span><span id="class-physicsserver-constant-joint-slider"></span><span id="class-physicsserver-constant-joint-hinge"></span><span id="class-physicsserver-constant-joint-pin"></span><span id="enum-physicsserver-jointtype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/JointType"></a>JointType</strong>:</p>
+<ul class="simple">
+<li><p><strong>JOINT_PIN</strong> = <strong>0</strong> --- The <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> is a <a class="reference internal" href="class_pinjoint.html#class-pinjoint"><span class="std std-ref">PinJoint</span></a>.</p></li>
+<li><p><strong>JOINT_HINGE</strong> = <strong>1</strong> --- The <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> is a <a class="reference internal" href="class_hingejoint.html#class-hingejoint"><span class="std std-ref">HingeJoint</span></a>.</p></li>
+<li><p><strong>JOINT_SLIDER</strong> = <strong>2</strong> --- The <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> is a <a class="reference internal" href="class_sliderjoint.html#class-sliderjoint"><span class="std std-ref">SliderJoint</span></a>.</p></li>
+<li><p><strong>JOINT_CONE_TWIST</strong> = <strong>3</strong> --- The <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> is a <a class="reference internal" href="class_conetwistjoint.html#class-conetwistjoint"><span class="std std-ref">ConeTwistJoint</span></a>.</p></li>
+<li><p><strong>JOINT_6DOF</strong> = <strong>4</strong> --- The <a class="reference internal" href="class_joint.html#class-joint"><span class="std std-ref">Joint</span></a> is a <a class="reference internal" href="class_generic6dofjoint.html#class-generic6dofjoint"><span class="std std-ref">Generic6DOFJoint</span></a>.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-pin-joint-impulse-clamp"><span id="class-physicsserver-constant-pin-joint-damping"></span><span id="class-physicsserver-constant-pin-joint-bias"></span><span id="enum-physicsserver-pinjointparam"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/PinJointParam"></a>PinJointParam</strong>:</p>
+<ul class="simple">
+<li><p><strong>PIN_JOINT_BIAS</strong> = <strong>0</strong> --- The strength with which the pinned objects try to stay in positional relation to each other.</p></li>
+</ul>
+<p>The higher, the stronger.</p>
+<ul class="simple">
+<li><p><strong>PIN_JOINT_DAMPING</strong> = <strong>1</strong> --- The strength with which the pinned objects try to stay in velocity relation to each other.</p></li>
+</ul>
+<p>The higher, the stronger.</p>
+<ul class="simple">
+<li><p><strong>PIN_JOINT_IMPULSE_CLAMP</strong> = <strong>2</strong> --- If above 0, this value is the maximum value for an impulse that this Joint puts on its ends.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-hinge-joint-motor-max-impulse"><span id="class-physicsserver-constant-hinge-joint-motor-target-velocity"></span><span id="class-physicsserver-constant-hinge-joint-limit-relaxation"></span><span id="class-physicsserver-constant-hinge-joint-limit-softness"></span><span id="class-physicsserver-constant-hinge-joint-limit-bias"></span><span id="class-physicsserver-constant-hinge-joint-limit-lower"></span><span id="class-physicsserver-constant-hinge-joint-limit-upper"></span><span id="class-physicsserver-constant-hinge-joint-bias"></span><span id="enum-physicsserver-hingejointparam"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/HingeJointParam"></a>HingeJointParam</strong>:</p>
+<ul class="simple">
+<li><p><strong>HINGE_JOINT_BIAS</strong> = <strong>0</strong> --- The speed with which the two bodies get pulled together when they move in different directions.</p></li>
+<li><p><strong>HINGE_JOINT_LIMIT_UPPER</strong> = <strong>1</strong> --- The maximum rotation across the Hinge.</p></li>
+<li><p><strong>HINGE_JOINT_LIMIT_LOWER</strong> = <strong>2</strong> --- The minimum rotation across the Hinge.</p></li>
+<li><p><strong>HINGE_JOINT_LIMIT_BIAS</strong> = <strong>3</strong> --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.</p></li>
+<li><p><strong>HINGE_JOINT_LIMIT_SOFTNESS</strong> = <strong>4</strong></p></li>
+<li><p><strong>HINGE_JOINT_LIMIT_RELAXATION</strong> = <strong>5</strong> --- The lower this value, the more the rotation gets slowed down.</p></li>
+<li><p><strong>HINGE_JOINT_MOTOR_TARGET_VELOCITY</strong> = <strong>6</strong> --- Target speed for the motor.</p></li>
+<li><p><strong>HINGE_JOINT_MOTOR_MAX_IMPULSE</strong> = <strong>7</strong> --- Maximum acceleration for the motor.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-hinge-joint-flag-enable-motor"><span id="class-physicsserver-constant-hinge-joint-flag-use-limit"></span><span id="enum-physicsserver-hingejointflag"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/HingeJointFlag"></a>HingeJointFlag</strong>:</p>
+<ul class="simple">
+<li><p><strong>HINGE_JOINT_FLAG_USE_LIMIT</strong> = <strong>0</strong> --- If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the Hinge has a maximum and a minimum rotation.</p></li>
+<li><p><strong>HINGE_JOINT_FLAG_ENABLE_MOTOR</strong> = <strong>1</strong> --- If <code class="docutils literal notranslate"><span class="pre">true</span></code>, a motor turns the Hinge.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-slider-joint-max"><span id="class-physicsserver-constant-slider-joint-angular-orthogonal-damping"></span><span id="class-physicsserver-constant-slider-joint-angular-orthogonal-restitution"></span><span id="class-physicsserver-constant-slider-joint-angular-orthogonal-softness"></span><span id="class-physicsserver-constant-slider-joint-angular-motion-damping"></span><span id="class-physicsserver-constant-slider-joint-angular-motion-restitution"></span><span id="class-physicsserver-constant-slider-joint-angular-motion-softness"></span><span id="class-physicsserver-constant-slider-joint-angular-limit-damping"></span><span id="class-physicsserver-constant-slider-joint-angular-limit-restitution"></span><span id="class-physicsserver-constant-slider-joint-angular-limit-softness"></span><span id="class-physicsserver-constant-slider-joint-angular-limit-lower"></span><span id="class-physicsserver-constant-slider-joint-angular-limit-upper"></span><span id="class-physicsserver-constant-slider-joint-linear-orthogonal-damping"></span><span id="class-physicsserver-constant-slider-joint-linear-orthogonal-restitution"></span><span id="class-physicsserver-constant-slider-joint-linear-orthogonal-softness"></span><span id="class-physicsserver-constant-slider-joint-linear-motion-damping"></span><span id="class-physicsserver-constant-slider-joint-linear-motion-restitution"></span><span id="class-physicsserver-constant-slider-joint-linear-motion-softness"></span><span id="class-physicsserver-constant-slider-joint-linear-limit-damping"></span><span id="class-physicsserver-constant-slider-joint-linear-limit-restitution"></span><span id="class-physicsserver-constant-slider-joint-linear-limit-softness"></span><span id="class-physicsserver-constant-slider-joint-linear-limit-lower"></span><span id="class-physicsserver-constant-slider-joint-linear-limit-upper"></span><span id="enum-physicsserver-sliderjointparam"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SliderJointParam"></a>SliderJointParam</strong>:</p>
+<ul class="simple">
+<li><p><strong>SLIDER_JOINT_LINEAR_LIMIT_UPPER</strong> = <strong>0</strong> --- The maximum difference between the pivot points on their X axis before damping happens.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_LIMIT_LOWER</strong> = <strong>1</strong> --- The minimum difference between the pivot points on their X axis before damping happens.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS</strong> = <strong>2</strong> --- A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION</strong> = <strong>3</strong> --- The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_LIMIT_DAMPING</strong> = <strong>4</strong> --- The amount of damping once the slider limits are surpassed.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_MOTION_SOFTNESS</strong> = <strong>5</strong> --- A factor applied to the movement across the slider axis as long as the slider is in the limits. The lower, the slower the movement.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_MOTION_RESTITUTION</strong> = <strong>6</strong> --- The amount of restitution inside the slider limits.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_MOTION_DAMPING</strong> = <strong>7</strong> --- The amount of damping inside the slider limits.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS</strong> = <strong>8</strong> --- A factor applied to the movement across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION</strong> = <strong>9</strong> --- The amount of restitution when movement is across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING</strong> = <strong>10</strong> --- The amount of damping when movement is across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_LIMIT_UPPER</strong> = <strong>11</strong> --- The upper limit of rotation in the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_LIMIT_LOWER</strong> = <strong>12</strong> --- The lower limit of rotation in the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS</strong> = <strong>13</strong> --- A factor applied to the all rotation once the limit is surpassed.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_LIMIT_RESTITUTION</strong> = <strong>14</strong> --- The amount of restitution of the rotation when the limit is surpassed.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_LIMIT_DAMPING</strong> = <strong>15</strong> --- The amount of damping of the rotation when the limit is surpassed.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_MOTION_SOFTNESS</strong> = <strong>16</strong> --- A factor that gets applied to the all rotation in the limits.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION</strong> = <strong>17</strong> --- The amount of restitution of the rotation in the limits.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_MOTION_DAMPING</strong> = <strong>18</strong> --- The amount of damping of the rotation in the limits.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS</strong> = <strong>19</strong> --- A factor that gets applied to the all rotation across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION</strong> = <strong>20</strong> --- The amount of restitution of the rotation across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING</strong> = <strong>21</strong> --- The amount of damping of the rotation across axes orthogonal to the slider.</p></li>
+<li><p><strong>SLIDER_JOINT_MAX</strong> = <strong>22</strong> --- Represents the size of the <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-cone-twist-joint-relaxation"><span id="class-physicsserver-constant-cone-twist-joint-softness"></span><span id="class-physicsserver-constant-cone-twist-joint-bias"></span><span id="class-physicsserver-constant-cone-twist-joint-twist-span"></span><span id="class-physicsserver-constant-cone-twist-joint-swing-span"></span><span id="enum-physicsserver-conetwistjointparam"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ConeTwistJointParam"></a>ConeTwistJointParam</strong>:</p>
+<ul class="simple">
+<li><p><strong>CONE_TWIST_JOINT_SWING_SPAN</strong> = <strong>0</strong> --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.</p></li>
+</ul>
+<p>The swing span defines, how much rotation will not get corrected along the swing axis.</p>
+<p>Could be defined as looseness in the <a class="reference internal" href="class_conetwistjoint.html#class-conetwistjoint"><span class="std std-ref">ConeTwistJoint</span></a>.</p>
+<p>If below 0.05, this behavior is locked.</p>
+<ul class="simple">
+<li><p><strong>CONE_TWIST_JOINT_TWIST_SPAN</strong> = <strong>1</strong> --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.</p></li>
+</ul>
+<p>Twist is locked if below 0.05.</p>
+<ul class="simple">
+<li><p><strong>CONE_TWIST_JOINT_BIAS</strong> = <strong>2</strong> --- The speed with which the swing or twist will take place.</p></li>
+</ul>
+<p>The higher, the faster.</p>
+<ul class="simple">
+<li><p><strong>CONE_TWIST_JOINT_SOFTNESS</strong> = <strong>3</strong> --- The ease with which the Joint twists, if it's too low, it takes more force to twist the joint.</p></li>
+<li><p><strong>CONE_TWIST_JOINT_RELAXATION</strong> = <strong>4</strong> --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-g6dof-joint-angular-motor-force-limit"><span id="class-physicsserver-constant-g6dof-joint-angular-motor-target-velocity"></span><span id="class-physicsserver-constant-g6dof-joint-angular-erp"></span><span id="class-physicsserver-constant-g6dof-joint-angular-force-limit"></span><span id="class-physicsserver-constant-g6dof-joint-angular-restitution"></span><span id="class-physicsserver-constant-g6dof-joint-angular-damping"></span><span id="class-physicsserver-constant-g6dof-joint-angular-limit-softness"></span><span id="class-physicsserver-constant-g6dof-joint-angular-upper-limit"></span><span id="class-physicsserver-constant-g6dof-joint-angular-lower-limit"></span><span id="class-physicsserver-constant-g6dof-joint-linear-motor-force-limit"></span><span id="class-physicsserver-constant-g6dof-joint-linear-motor-target-velocity"></span><span id="class-physicsserver-constant-g6dof-joint-linear-damping"></span><span id="class-physicsserver-constant-g6dof-joint-linear-restitution"></span><span id="class-physicsserver-constant-g6dof-joint-linear-limit-softness"></span><span id="class-physicsserver-constant-g6dof-joint-linear-upper-limit"></span><span id="class-physicsserver-constant-g6dof-joint-linear-lower-limit"></span><span id="enum-physicsserver-g6dofjointaxisparam"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/G6DOFJointAxisParam"></a>G6DOFJointAxisParam</strong>:</p>
+<ul class="simple">
+<li><p><strong>G6DOF_JOINT_LINEAR_LOWER_LIMIT</strong> = <strong>0</strong> --- The minimum difference between the pivot points' axes.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_UPPER_LIMIT</strong> = <strong>1</strong> --- The maximum difference between the pivot points' axes.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS</strong> = <strong>2</strong> --- A factor that gets applied to the movement across the axes. The lower, the slower the movement.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_RESTITUTION</strong> = <strong>3</strong> --- The amount of restitution on the axes movement. The lower, the more velocity-energy gets lost.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_DAMPING</strong> = <strong>4</strong> --- The amount of damping that happens at the linear motion across the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_MOTOR_TARGET_VELOCITY</strong> = <strong>5</strong> --- The velocity that the joint's linear motor will attempt to reach.</p></li>
+<li><p><strong>G6DOF_JOINT_LINEAR_MOTOR_FORCE_LIMIT</strong> = <strong>6</strong> --- The maximum force that the linear motor can apply while trying to reach the target velocity.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_LOWER_LIMIT</strong> = <strong>10</strong> --- The minimum rotation in negative direction to break loose and rotate around the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_UPPER_LIMIT</strong> = <strong>11</strong> --- The minimum rotation in positive direction to break loose and rotate around the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS</strong> = <strong>12</strong> --- A factor that gets multiplied onto all rotations across the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_DAMPING</strong> = <strong>13</strong> --- The amount of rotational damping across the axes. The lower, the more dampening occurs.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_RESTITUTION</strong> = <strong>14</strong> --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_FORCE_LIMIT</strong> = <strong>15</strong> --- The maximum amount of force that can occur, when rotating around the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_ERP</strong> = <strong>16</strong> --- When correcting the crossing of limits in rotation across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY</strong> = <strong>17</strong> --- Target speed for the motor at the axes.</p></li>
+<li><p><strong>G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT</strong> = <strong>18</strong> --- Maximum acceleration for the motor at the axes.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-g6dof-joint-flag-enable-linear-motor"><span id="class-physicsserver-constant-g6dof-joint-flag-enable-motor"></span><span id="class-physicsserver-constant-g6dof-joint-flag-enable-angular-limit"></span><span id="class-physicsserver-constant-g6dof-joint-flag-enable-linear-limit"></span><span id="enum-physicsserver-g6dofjointaxisflag"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/G6DOFJointAxisFlag"></a>G6DOFJointAxisFlag</strong>:</p>
+<ul class="simple">
+<li><p><strong>G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT</strong> = <strong>0</strong> --- If <code class="docutils literal notranslate"><span class="pre">set</span></code> there is linear motion possible within the given limits.</p></li>
+<li><p><strong>G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT</strong> = <strong>1</strong> --- If <code class="docutils literal notranslate"><span class="pre">set</span></code> there is rotational motion possible.</p></li>
+<li><p><strong>G6DOF_JOINT_FLAG_ENABLE_MOTOR</strong> = <strong>4</strong> --- If <code class="docutils literal notranslate"><span class="pre">set</span></code> there is a rotational motor across these axes.</p></li>
+<li><p><strong>G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR</strong> = <strong>5</strong> --- If <code class="docutils literal notranslate"><span class="pre">set</span></code> there is a linear motor on this axis that targets a specific velocity.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-shape-custom"><span id="class-physicsserver-constant-shape-heightmap"></span><span id="class-physicsserver-constant-shape-concave-polygon"></span><span id="class-physicsserver-constant-shape-convex-polygon"></span><span id="class-physicsserver-constant-shape-cylinder"></span><span id="class-physicsserver-constant-shape-capsule"></span><span id="class-physicsserver-constant-shape-box"></span><span id="class-physicsserver-constant-shape-sphere"></span><span id="class-physicsserver-constant-shape-ray"></span><span id="class-physicsserver-constant-shape-plane"></span><span id="enum-physicsserver-shapetype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ShapeType"></a>ShapeType</strong>:</p>
+<ul class="simple">
+<li><p><strong>SHAPE_PLANE</strong> = <strong>0</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_planeshape.html#class-planeshape"><span class="std std-ref">PlaneShape</span></a>.</p></li>
+<li><p><strong>SHAPE_RAY</strong> = <strong>1</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_rayshape.html#class-rayshape"><span class="std std-ref">RayShape</span></a>.</p></li>
+<li><p><strong>SHAPE_SPHERE</strong> = <strong>2</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_sphereshape.html#class-sphereshape"><span class="std std-ref">SphereShape</span></a>.</p></li>
+<li><p><strong>SHAPE_BOX</strong> = <strong>3</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_boxshape.html#class-boxshape"><span class="std std-ref">BoxShape</span></a>.</p></li>
+<li><p><strong>SHAPE_CAPSULE</strong> = <strong>4</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_capsuleshape.html#class-capsuleshape"><span class="std std-ref">CapsuleShape</span></a>.</p></li>
+<li><p><strong>SHAPE_CYLINDER</strong> = <strong>5</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_cylindershape.html#class-cylindershape"><span class="std std-ref">CylinderShape</span></a>.</p></li>
+<li><p><strong>SHAPE_CONVEX_POLYGON</strong> = <strong>6</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_convexpolygonshape.html#class-convexpolygonshape"><span class="std std-ref">ConvexPolygonShape</span></a>.</p></li>
+<li><p><strong>SHAPE_CONCAVE_POLYGON</strong> = <strong>7</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a>.</p></li>
+<li><p><strong>SHAPE_HEIGHTMAP</strong> = <strong>8</strong> --- The <a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> is a <a class="reference internal" href="class_heightmapshape.html#class-heightmapshape"><span class="std std-ref">HeightMapShape</span></a>.</p></li>
+<li><p><strong>SHAPE_CUSTOM</strong> = <strong>9</strong> --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-area-param-priority"><span id="class-physicsserver-constant-area-param-angular-damp"></span><span id="class-physicsserver-constant-area-param-linear-damp"></span><span id="class-physicsserver-constant-area-param-gravity-point-attenuation"></span><span id="class-physicsserver-constant-area-param-gravity-distance-scale"></span><span id="class-physicsserver-constant-area-param-gravity-is-point"></span><span id="class-physicsserver-constant-area-param-gravity-vector"></span><span id="class-physicsserver-constant-area-param-gravity"></span><span id="enum-physicsserver-areaparameter"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AreaParameter"></a>AreaParameter</strong>:</p>
+<ul class="simple">
+<li><p><strong>AREA_PARAM_GRAVITY</strong> = <strong>0</strong> --- Constant to set/get gravity strength in an area.</p></li>
+<li><p><strong>AREA_PARAM_GRAVITY_VECTOR</strong> = <strong>1</strong> --- Constant to set/get gravity vector/center in an area.</p></li>
+<li><p><strong>AREA_PARAM_GRAVITY_IS_POINT</strong> = <strong>2</strong> --- Constant to set/get whether the gravity vector of an area is a direction, or a center point.</p></li>
+<li><p><strong>AREA_PARAM_GRAVITY_DISTANCE_SCALE</strong> = <strong>3</strong> --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.</p></li>
+<li><p><strong>AREA_PARAM_GRAVITY_POINT_ATTENUATION</strong> = <strong>4</strong> --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by <a class="reference internal" href="#class-physicsserver-constant-area-param-gravity-distance-scale"><span class="std std-ref">AREA_PARAM_GRAVITY_DISTANCE_SCALE</span></a>.</p></li>
+<li><p><strong>AREA_PARAM_LINEAR_DAMP</strong> = <strong>5</strong> --- Constant to set/get the linear dampening factor of an area.</p></li>
+<li><p><strong>AREA_PARAM_ANGULAR_DAMP</strong> = <strong>6</strong> --- Constant to set/get the angular dampening factor of an area.</p></li>
+<li><p><strong>AREA_PARAM_PRIORITY</strong> = <strong>7</strong> --- Constant to set/get the priority (order of processing) of an area.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-area-space-override-replace-combine"><span id="class-physicsserver-constant-area-space-override-replace"></span><span id="class-physicsserver-constant-area-space-override-combine-replace"></span><span id="class-physicsserver-constant-area-space-override-combine"></span><span id="class-physicsserver-constant-area-space-override-disabled"></span><span id="enum-physicsserver-areaspaceoverridemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AreaSpaceOverrideMode"></a>AreaSpaceOverrideMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>AREA_SPACE_OVERRIDE_DISABLED</strong> = <strong>0</strong> --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.</p></li>
+<li><p><strong>AREA_SPACE_OVERRIDE_COMBINE</strong> = <strong>1</strong> --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.</p></li>
+<li><p><strong>AREA_SPACE_OVERRIDE_COMBINE_REPLACE</strong> = <strong>2</strong> --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.</p></li>
+<li><p><strong>AREA_SPACE_OVERRIDE_REPLACE</strong> = <strong>3</strong> --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.</p></li>
+<li><p><strong>AREA_SPACE_OVERRIDE_REPLACE_COMBINE</strong> = <strong>4</strong> --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-body-mode-character"><span id="class-physicsserver-constant-body-mode-rigid"></span><span id="class-physicsserver-constant-body-mode-kinematic"></span><span id="class-physicsserver-constant-body-mode-static"></span><span id="enum-physicsserver-bodymode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BodyMode"></a>BodyMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BODY_MODE_STATIC</strong> = <strong>0</strong> --- Constant for static bodies.</p></li>
+<li><p><strong>BODY_MODE_KINEMATIC</strong> = <strong>1</strong> --- Constant for kinematic bodies.</p></li>
+<li><p><strong>BODY_MODE_RIGID</strong> = <strong>2</strong> --- Constant for rigid bodies.</p></li>
+<li><p><strong>BODY_MODE_CHARACTER</strong> = <strong>3</strong> --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-body-param-max"><span id="class-physicsserver-constant-body-param-angular-damp"></span><span id="class-physicsserver-constant-body-param-linear-damp"></span><span id="class-physicsserver-constant-body-param-gravity-scale"></span><span id="class-physicsserver-constant-body-param-mass"></span><span id="class-physicsserver-constant-body-param-friction"></span><span id="class-physicsserver-constant-body-param-bounce"></span><span id="enum-physicsserver-bodyparameter"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BodyParameter"></a>BodyParameter</strong>:</p>
+<ul class="simple">
+<li><p><strong>BODY_PARAM_BOUNCE</strong> = <strong>0</strong> --- Constant to set/get a body's bounce factor.</p></li>
+<li><p><strong>BODY_PARAM_FRICTION</strong> = <strong>1</strong> --- Constant to set/get a body's friction.</p></li>
+<li><p><strong>BODY_PARAM_MASS</strong> = <strong>2</strong> --- Constant to set/get a body's mass.</p></li>
+<li><p><strong>BODY_PARAM_GRAVITY_SCALE</strong> = <strong>3</strong> --- Constant to set/get a body's gravity multiplier.</p></li>
+<li><p><strong>BODY_PARAM_LINEAR_DAMP</strong> = <strong>4</strong> --- Constant to set/get a body's linear dampening factor.</p></li>
+<li><p><strong>BODY_PARAM_ANGULAR_DAMP</strong> = <strong>5</strong> --- Constant to set/get a body's angular dampening factor.</p></li>
+<li><p><strong>BODY_PARAM_MAX</strong> = <strong>6</strong> --- Represents the size of the <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-body-state-can-sleep"><span id="class-physicsserver-constant-body-state-sleeping"></span><span id="class-physicsserver-constant-body-state-angular-velocity"></span><span id="class-physicsserver-constant-body-state-linear-velocity"></span><span id="class-physicsserver-constant-body-state-transform"></span><span id="enum-physicsserver-bodystate"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BodyState"></a>BodyState</strong>:</p>
+<ul class="simple">
+<li><p><strong>BODY_STATE_TRANSFORM</strong> = <strong>0</strong> --- Constant to set/get the current transform matrix of the body.</p></li>
+<li><p><strong>BODY_STATE_LINEAR_VELOCITY</strong> = <strong>1</strong> --- Constant to set/get the current linear velocity of the body.</p></li>
+<li><p><strong>BODY_STATE_ANGULAR_VELOCITY</strong> = <strong>2</strong> --- Constant to set/get the current angular velocity of the body.</p></li>
+<li><p><strong>BODY_STATE_SLEEPING</strong> = <strong>3</strong> --- Constant to sleep/wake up a body, or to get whether it is sleeping.</p></li>
+<li><p><strong>BODY_STATE_CAN_SLEEP</strong> = <strong>4</strong> --- Constant to set/get whether the body can sleep.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-area-body-removed"><span id="class-physicsserver-constant-area-body-added"></span><span id="enum-physicsserver-areabodystatus"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AreaBodyStatus"></a>AreaBodyStatus</strong>:</p>
+<ul class="simple">
+<li><p><strong>AREA_BODY_ADDED</strong> = <strong>0</strong> --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.</p></li>
+<li><p><strong>AREA_BODY_REMOVED</strong> = <strong>1</strong> --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-info-island-count"><span id="class-physicsserver-constant-info-collision-pairs"></span><span id="class-physicsserver-constant-info-active-objects"></span><span id="enum-physicsserver-processinfo"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ProcessInfo"></a>ProcessInfo</strong>:</p>
+<ul class="simple">
+<li><p><strong>INFO_ACTIVE_OBJECTS</strong> = <strong>0</strong> --- Constant to get the number of objects that are not sleeping.</p></li>
+<li><p><strong>INFO_COLLISION_PAIRS</strong> = <strong>1</strong> --- Constant to get the number of possible collisions.</p></li>
+<li><p><strong>INFO_ISLAND_COUNT</strong> = <strong>2</strong> --- Constant to get the number of space regions where a collision could occur.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-space-param-constraint-default-bias"><span id="class-physicsserver-constant-space-param-body-angular-velocity-damp-ratio"></span><span id="class-physicsserver-constant-space-param-body-time-to-sleep"></span><span id="class-physicsserver-constant-space-param-body-angular-velocity-sleep-threshold"></span><span id="class-physicsserver-constant-space-param-body-linear-velocity-sleep-threshold"></span><span id="class-physicsserver-constant-space-param-body-max-allowed-penetration"></span><span id="class-physicsserver-constant-space-param-contact-max-separation"></span><span id="class-physicsserver-constant-space-param-contact-recycle-radius"></span><span id="enum-physicsserver-spaceparameter"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SpaceParameter"></a>SpaceParameter</strong>:</p>
+<ul class="simple">
+<li><p><strong>SPACE_PARAM_CONTACT_RECYCLE_RADIUS</strong> = <strong>0</strong> --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.</p></li>
+<li><p><strong>SPACE_PARAM_CONTACT_MAX_SEPARATION</strong> = <strong>1</strong> --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.</p></li>
+<li><p><strong>SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION</strong> = <strong>2</strong> --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.</p></li>
+<li><p><strong>SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD</strong> = <strong>3</strong> --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.</p></li>
+<li><p><strong>SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD</strong> = <strong>4</strong> --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.</p></li>
+<li><p><strong>SPACE_PARAM_BODY_TIME_TO_SLEEP</strong> = <strong>5</strong> --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.</p></li>
+<li><p><strong>SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO</strong> = <strong>6</strong></p></li>
+<li><p><strong>SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS</strong> = <strong>7</strong> --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-physicsserver-constant-body-axis-angular-z"><span id="class-physicsserver-constant-body-axis-angular-y"></span><span id="class-physicsserver-constant-body-axis-angular-x"></span><span id="class-physicsserver-constant-body-axis-linear-z"></span><span id="class-physicsserver-constant-body-axis-linear-y"></span><span id="class-physicsserver-constant-body-axis-linear-x"></span><span id="enum-physicsserver-bodyaxis"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BodyAxis"></a>BodyAxis</strong>:</p>
+<ul class="simple">
+<li><p><strong>BODY_AXIS_LINEAR_X</strong> = <strong>1</strong></p></li>
+<li><p><strong>BODY_AXIS_LINEAR_Y</strong> = <strong>2</strong></p></li>
+<li><p><strong>BODY_AXIS_LINEAR_Z</strong> = <strong>4</strong></p></li>
+<li><p><strong>BODY_AXIS_ANGULAR_X</strong> = <strong>8</strong></p></li>
+<li><p><strong>BODY_AXIS_ANGULAR_Y</strong> = <strong>16</strong></p></li>
+<li><p><strong>BODY_AXIS_ANGULAR_Z</strong> = <strong>32</strong></p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-physicsserver-method-area-add-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_add_shape"></a>area_add_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-attach-object-instance-id">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_attach_object_instance_id"></a>area_attach_object_instance_id</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Assigns the area to a descendant of <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a>, so it can exist in the node tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-clear-shapes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_clear_shapes"></a>area_clear_shapes</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong></p></li>
+</ul>
+<p>Removes all shapes from an area. It does not delete the shapes, so they can be reassigned later.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-create">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_create"></a>area_create</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Creates an <a class="reference internal" href="class_area.html#class-area"><span class="std std-ref">Area</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-object-instance-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_object_instance_id"></a>area_get_object_instance_id</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the instance ID of the object the area is assigned to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-param">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_param"></a>area_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns an area parameter value. A list of available parameters is on the <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-shape">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_shape"></a>area_get_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the nth shape of an area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-shape-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_shape_count"></a>area_get_shape_count</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of shapes assigned to an area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-shape-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_shape_transform"></a>area_get_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform matrix of a shape within an area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-space">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_space"></a>area_get_space</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the space assigned to the area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-space-override-mode">
+<li><p><a class="reference internal" href="#enum-physicsserver-areaspaceoverridemode"><span class="std std-ref">AreaSpaceOverrideMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_space_override_mode"></a>area_get_space_override_mode</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the space override mode for the area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-get-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_get_transform"></a>area_get_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform matrix for an area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-is-ray-pickable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_is_ray_pickable"></a>area_is_ray_pickable</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, area collides with rays.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-remove-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_remove_shape"></a>area_remove_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong></p></li>
+</ul>
+<p>Removes a shape from an area. It does not delete the shape, so it can be reassigned later.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-area-monitor-callback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_area_monitor_callback"></a>area_set_area_monitor_callback</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-collision-layer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_collision_layer"></a>area_set_collision_layer</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong></p></li>
+</ul>
+<p>Assigns the area to one or many physics layers.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-collision-mask">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_collision_mask"></a>area_set_collision_mask</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> mask <strong>)</strong></p></li>
+</ul>
+<p>Sets which physics layers the area will monitor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-monitor-callback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_monitor_callback"></a>area_set_monitor_callback</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></li>
+</ul>
+<p>Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:</p>
+<p>1: <a class="reference internal" href="#class-physicsserver-constant-area-body-added"><span class="std std-ref">AREA_BODY_ADDED</span></a> or <a class="reference internal" href="#class-physicsserver-constant-area-body-removed"><span class="std std-ref">AREA_BODY_REMOVED</span></a>, depending on whether the object entered or exited the area.</p>
+<p>2: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the object that entered/exited the area.</p>
+<p>3: Instance ID of the object that entered/exited the area.</p>
+<p>4: The shape index of the object that entered/exited the area.</p>
+<p>5: The shape index of the area where the object entered/exited.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-monitorable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_monitorable"></a>area_set_monitorable</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> monitorable <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_param"></a>area_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> param, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the value for an area parameter. A list of available parameters is on the <a class="reference internal" href="#enum-physicsserver-areaparameter"><span class="std std-ref">AreaParameter</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-ray-pickable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_ray_pickable"></a>area_set_ray_pickable</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets object pickable with rays.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_shape"></a>area_set_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong></p></li>
+</ul>
+<p>Substitutes a given area shape by another. The old shape is selected by its index, the new one by its <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-shape-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_shape_disabled"></a>area_set_shape_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-shape-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_shape_transform"></a>area_set_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the transform matrix for an area shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-space">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_space"></a>area_set_space</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></li>
+</ul>
+<p>Assigns a space to the area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-space-override-mode">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_space_override_mode"></a>area_set_space_override_mode</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="#enum-physicsserver-areaspaceoverridemode"><span class="std std-ref">AreaSpaceOverrideMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Sets the space override mode for the area. The modes are described in the <a class="reference internal" href="#enum-physicsserver-areaspaceoverridemode"><span class="std std-ref">AreaSpaceOverrideMode</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-area-set-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/area_set_transform"></a>area_set_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the transform matrix for an area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-add-central-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_add_central_force"></a>body_add_central_force</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-add-collision-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_add_collision_exception"></a>body_add_collision_exception</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> excepted_body <strong>)</strong></p></li>
+</ul>
+<p>Adds a body to the list of bodies exempt from collisions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-add-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_add_force"></a>body_add_force</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-add-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_add_shape"></a>body_add_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ), <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-add-torque">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_add_torque"></a>body_add_torque</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-apply-central-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_apply_central_impulse"></a>body_apply_central_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-apply-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_apply_impulse"></a>body_apply_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<p>Gives the body a push at a <code class="docutils literal notranslate"><span class="pre">position</span></code> in the direction of the <code class="docutils literal notranslate"><span class="pre">impulse</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-apply-torque-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_apply_torque_impulse"></a>body_apply_torque_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> impulse <strong>)</strong></p></li>
+</ul>
+<p>Gives the body a push to rotate it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-attach-object-instance-id">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_attach_object_instance_id"></a>body_attach_object_instance_id</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Assigns the area to a descendant of <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a>, so it can exist in the node tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-clear-shapes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_clear_shapes"></a>body_clear_shapes</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Removes all shapes from a body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-create">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_create"></a>body_create</strong> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> mode=2, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> init_sleeping=false <strong>)</strong></p></li>
+</ul>
+<p>Creates a physics body. The first parameter can be any value from <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> constants, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-collision-layer">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_collision_layer"></a>body_get_collision_layer</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the physics layer or layers a body belongs to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-collision-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_collision_mask"></a>body_get_collision_mask</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the physics layer or layers a body can collide with.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-direct-state">
+<li><p><a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_direct_state"></a>body_get_direct_state</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_physicsdirectbodystate.html#class-physicsdirectbodystate"><span class="std std-ref">PhysicsDirectBodyState</span></a> of the body. Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if the body is destroyed or removed from the physics space.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-kinematic-safe-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_kinematic_safe_margin"></a>body_get_kinematic_safe_margin</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-max-contacts-reported">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_max_contacts_reported"></a>body_get_max_contacts_reported</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the maximum contacts that can be reported. See <a class="reference internal" href="#class-physicsserver-method-body-set-max-contacts-reported"><span class="std std-ref">body_set_max_contacts_reported</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-mode">
+<li><p><a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_mode"></a>body_get_mode</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the body mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-object-instance-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_object_instance_id"></a>body_get_object_instance_id</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the instance ID of the object the area is assigned to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_param"></a>body_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of a body parameter. A list of available parameters is on the <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-shape">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_shape"></a>body_get_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the nth shape of a body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-shape-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_shape_count"></a>body_get_shape_count</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of shapes assigned to a body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-shape-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_shape_transform"></a>body_get_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the transform matrix of a body shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-space">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_space"></a>body_get_space</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the space assigned to a body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-get-state">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_get_state"></a>body_get_state</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodystate"><span class="std std-ref">BodyState</span></a> state <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a body state.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-is-axis-locked">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_is_axis_locked"></a>body_is_axis_locked</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-is-continuous-collision-detection-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_is_continuous_collision_detection_enabled"></a>body_is_continuous_collision_detection_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the continuous collision detection mode is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-is-omitting-force-integration">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_is_omitting_force_integration"></a>body_is_omitting_force_integration</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether a body uses a callback function to calculate its own physics (see <a class="reference internal" href="#class-physicsserver-method-body-set-force-integration-callback"><span class="std std-ref">body_set_force_integration_callback</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-is-ray-pickable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_is_ray_pickable"></a>body_is_ray_pickable</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the body can be detected by rays.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-remove-collision-exception">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_remove_collision_exception"></a>body_remove_collision_exception</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> excepted_body <strong>)</strong></p></li>
+</ul>
+<p>Removes a body from the list of bodies exempt from collisions.</p>
+<p>Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-remove-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_remove_shape"></a>body_remove_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong></p></li>
+</ul>
+<p>Removes a shape from a body. The shape is not deleted, so it can be reused afterwards.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-axis-lock">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_axis_lock"></a>body_set_axis_lock</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyaxis"><span class="std std-ref">BodyAxis</span></a> axis, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> lock <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-axis-velocity">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_axis_velocity"></a>body_set_axis_velocity</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> axis_velocity <strong>)</strong></p></li>
+</ul>
+<p>Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-collision-layer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_collision_layer"></a>body_set_collision_layer</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> layer <strong>)</strong></p></li>
+</ul>
+<p>Sets the physics layer or layers a body belongs to.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-collision-mask">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_collision_mask"></a>body_set_collision_mask</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> mask <strong>)</strong></p></li>
+</ul>
+<p>Sets the physics layer or layers a body can collide with.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-enable-continuous-collision-detection">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_enable_continuous_collision_detection"></a>body_set_enable_continuous_collision_detection</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the continuous collision detection mode is enabled.</p>
+<p>Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-force-integration-callback">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_force_integration_callback"></a>body_set_force_integration_callback</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata=null <strong>)</strong></p></li>
+</ul>
+<p>Sets the function used to calculate physics for an object, if that object allows it (see <a class="reference internal" href="#class-physicsserver-method-body-set-omit-force-integration"><span class="std std-ref">body_set_omit_force_integration</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-kinematic-safe-margin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_kinematic_safe_margin"></a>body_set_kinematic_safe_margin</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-max-contacts-reported">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_max_contacts_reported"></a>body_set_max_contacts_reported</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> amount <strong>)</strong></p></li>
+</ul>
+<p>Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-mode">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_mode"></a>body_set_mode</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Sets the body mode, from one of the <a class="reference internal" href="#enum-physicsserver-bodymode"><span class="std std-ref">BodyMode</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-omit-force-integration">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_omit_force_integration"></a>body_set_omit_force_integration</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets whether a body uses a callback function to calculate its own physics (see <a class="reference internal" href="#class-physicsserver-method-body-set-force-integration-callback"><span class="std std-ref">body_set_force_integration_callback</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_param"></a>body_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a body parameter. A list of available parameters is on the <a class="reference internal" href="#enum-physicsserver-bodyparameter"><span class="std std-ref">BodyParameter</span></a> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-ray-pickable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_ray_pickable"></a>body_set_ray_pickable</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets the body pickable with rays if <code class="docutils literal notranslate"><span class="pre">enabled</span></code> is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_shape"></a>body_set_shape</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong></p></li>
+</ul>
+<p>Substitutes a given body shape by another. The old shape is selected by its index, the new one by its <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-shape-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_shape_disabled"></a>body_set_shape_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-shape-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_shape_transform"></a>body_set_shape_transform</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the transform matrix for a body shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-space">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_space"></a>body_set_space</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></li>
+</ul>
+<p>Assigns a space to the body (see <a class="reference internal" href="#class-physicsserver-method-space-create"><span class="std std-ref">space_create</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-set-state">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_set_state"></a>body_set_state</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="#enum-physicsserver-bodystate"><span class="std std-ref">BodyState</span></a> state, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a body state (see <a class="reference internal" href="#enum-physicsserver-bodystate"><span class="std std-ref">BodyState</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-body-test-motion">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/body_test_motion"></a>body_test_motion</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> motion, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> infinite_inertia, <a class="reference internal" href="class_physicstestmotionresult.html#class-physicstestmotionresult"><span class="std std-ref">PhysicsTestMotionResult</span></a> result=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exclude_raycast_shapes=true, <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> exclude=[  ] <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if a collision would result from moving in the given direction from a given point in space. <a class="reference internal" href="class_physicstestmotionresult.html#class-physicstestmotionresult"><span class="std std-ref">PhysicsTestMotionResult</span></a> can be passed to return additional information in.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-cone-twist-joint-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/cone_twist_joint_get_param"></a>cone_twist_joint_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a cone_twist_joint parameter (see <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-cone-twist-joint-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/cone_twist_joint_set_param"></a>cone_twist_joint_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a cone_twist_joint parameter (see <a class="reference internal" href="#enum-physicsserver-conetwistjointparam"><span class="std std-ref">ConeTwistJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-free-rid">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/free_rid"></a>free_rid</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> rid <strong>)</strong></p></li>
+</ul>
+<p>Destroys any of the objects created by PhysicsServer. If the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> passed is not one of the objects that can be created by PhysicsServer, an error will be sent to the console.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-generic-6dof-joint-get-flag">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generic_6dof_joint_get_flag"></a>generic_6dof_joint_get_flag</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> flag <strong>)</strong></p></li>
+</ul>
+<p>Gets a generic_6_DOF_joint flag (see <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-generic-6dof-joint-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generic_6dof_joint_get_param"></a>generic_6dof_joint_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> param <strong>)</strong></p></li>
+</ul>
+<p>Gets a generic_6_DOF_joint parameter (see <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-generic-6dof-joint-set-flag">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generic_6dof_joint_set_flag"></a>generic_6dof_joint_set_flag</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets a generic_6_DOF_joint flag (see <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisflag"><span class="std std-ref">G6DOFJointAxisFlag</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-generic-6dof-joint-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generic_6dof_joint_set_param"></a>generic_6dof_joint_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, Vector3.Axis axis, <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a generic_6_DOF_joint parameter (see <a class="reference internal" href="#enum-physicsserver-g6dofjointaxisparam"><span class="std std-ref">G6DOFJointAxisParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-get-process-info">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_process_info"></a>get_process_info</strong> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-processinfo"><span class="std std-ref">ProcessInfo</span></a> process_info <strong>)</strong></p></li>
+</ul>
+<p>Returns information about the current state of the 3D physics engine. See <a class="reference internal" href="#enum-physicsserver-processinfo"><span class="std std-ref">ProcessInfo</span></a> for a list of available states. Only implemented for Godot Physics.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-hinge-joint-get-flag">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hinge_joint_get_flag"></a>hinge_joint_get_flag</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> flag <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a hinge_joint flag (see <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-hinge-joint-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hinge_joint_get_param"></a>hinge_joint_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a hinge_joint parameter (see <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-hinge-joint-set-flag">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hinge_joint_set_flag"></a>hinge_joint_set_flag</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> flag, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>Sets a hinge_joint flag (see <a class="reference internal" href="#enum-physicsserver-hingejointflag"><span class="std std-ref">HingeJointFlag</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-hinge-joint-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hinge_joint_set_param"></a>hinge_joint_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a hinge_joint parameter (see <a class="reference internal" href="#enum-physicsserver-hingejointparam"><span class="std std-ref">HingeJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-create-cone-twist">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_create_cone_twist"></a>joint_create_cone_twist</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></li>
+</ul>
+<p>Creates a <a class="reference internal" href="class_conetwistjoint.html#class-conetwistjoint"><span class="std std-ref">ConeTwistJoint</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-create-generic-6dof">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_create_generic_6dof"></a>joint_create_generic_6dof</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></li>
+</ul>
+<p>Creates a <a class="reference internal" href="class_generic6dofjoint.html#class-generic6dofjoint"><span class="std std-ref">Generic6DOFJoint</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-create-hinge">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_create_hinge"></a>joint_create_hinge</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> hinge_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> hinge_B <strong>)</strong></p></li>
+</ul>
+<p>Creates a <a class="reference internal" href="class_hingejoint.html#class-hingejoint"><span class="std std-ref">HingeJoint</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-create-pin">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_create_pin"></a>joint_create_pin</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_B <strong>)</strong></p></li>
+</ul>
+<p>Creates a <a class="reference internal" href="class_pinjoint.html#class-pinjoint"><span class="std std-ref">PinJoint</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-create-slider">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_create_slider"></a>joint_create_slider</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_A, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_A, <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_B, <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> local_ref_B <strong>)</strong></p></li>
+</ul>
+<p>Creates a <a class="reference internal" href="class_sliderjoint.html#class-sliderjoint"><span class="std std-ref">SliderJoint</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-get-solver-priority">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_get_solver_priority"></a>joint_get_solver_priority</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the priority value of the Joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-get-type">
+<li><p><a class="reference internal" href="#enum-physicsserver-jointtype"><span class="std std-ref">JointType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_get_type"></a>joint_get_type</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the type of the Joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-joint-set-solver-priority">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joint_set_solver_priority"></a>joint_set_solver_priority</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> priority <strong>)</strong></p></li>
+</ul>
+<p>Sets the priority value of the Joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-get-local-a">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_get_local_a"></a>pin_joint_get_local_a</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns position of the joint in the local space of body a of the joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-get-local-b">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_get_local_b"></a>pin_joint_get_local_b</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns position of the joint in the local space of body b of the joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_get_param"></a>pin_joint_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a pin_joint parameter (see <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-set-local-a">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_set_local_a"></a>pin_joint_set_local_a</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_A <strong>)</strong></p></li>
+</ul>
+<p>Sets position of the joint in the local space of body a of the joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-set-local-b">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_set_local_b"></a>pin_joint_set_local_b</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_B <strong>)</strong></p></li>
+</ul>
+<p>Sets position of the joint in the local space of body b of the joint.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-pin-joint-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pin_joint_set_param"></a>pin_joint_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets a pin_joint parameter (see <a class="reference internal" href="#enum-physicsserver-pinjointparam"><span class="std std-ref">PinJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-set-active">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_active"></a>set_active</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></li>
+</ul>
+<p>Activates or deactivates the 3D physics engine.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-set-collision-iterations">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_iterations"></a>set_collision_iterations</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> iterations <strong>)</strong></p></li>
+</ul>
+<p>Sets the amount of iterations for calculating velocities of colliding bodies. The greater the amount of iterations, the more accurate the collisions will be. However, a greater amount of iterations requires more CPU power, which can decrease performance. The default value is <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<p><strong>Note:</strong> Only has an effect when using the GodotPhysics engine, not the default Bullet physics engine.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-shape-create">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_create"></a>shape_create</strong> <strong>(</strong> <a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a> type <strong>)</strong></p></li>
+</ul>
+<p>Creates a shape of a type from <a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a>. Does not assign it to a body or an area. To do so, you must use <a class="reference internal" href="#class-physicsserver-method-area-set-shape"><span class="std std-ref">area_set_shape</span></a> or <a class="reference internal" href="#class-physicsserver-method-body-set-shape"><span class="std std-ref">body_set_shape</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-shape-get-data">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_get_data"></a>shape_get_data</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the shape data.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-shape-get-type">
+<li><p><a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_get_type"></a>shape_get_type</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the type of shape (see <a class="reference internal" href="#enum-physicsserver-shapetype"><span class="std std-ref">ShapeType</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-shape-set-data">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_set_data"></a>shape_set_data</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> shape, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> data <strong>)</strong></p></li>
+</ul>
+<p>Sets the shape data that defines its shape and size. The data to be passed depends on the kind of shape created <a class="reference internal" href="#class-physicsserver-method-shape-get-type"><span class="std std-ref">shape_get_type</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-slider-joint-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slider_joint_get_param"></a>slider_joint_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets a slider_joint parameter (see <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-slider-joint-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/slider_joint_set_param"></a>slider_joint_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> joint, <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Gets a slider_joint parameter (see <a class="reference internal" href="#enum-physicsserver-sliderjointparam"><span class="std std-ref">SliderJointParam</span></a> constants).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-create">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_create"></a>space_create</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Creates a space. A space is a collection of parameters for the physics engine that can be assigned to an area or a body. It can be assigned to an area with <a class="reference internal" href="#class-physicsserver-method-area-set-space"><span class="std std-ref">area_set_space</span></a>, or to a body with <a class="reference internal" href="#class-physicsserver-method-body-set-space"><span class="std std-ref">body_set_space</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-get-direct-state">
+<li><p><a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_get_direct_state"></a>space_get_direct_state</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong></p></li>
+</ul>
+<p>Returns the state of a space, a <a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a>. This object can be used to make collision/intersection queries.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-get-param">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_get_param"></a>space_get_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="#enum-physicsserver-spaceparameter"><span class="std std-ref">SpaceParameter</span></a> param <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the value of a space parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-is-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_is_active"></a>space_is_active</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether the space is active.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-set-active">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_set_active"></a>space_set_active</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> active <strong>)</strong></p></li>
+</ul>
+<p>Marks a space as active. It will not have an effect, unless it is assigned to an area or body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsserver-method-space-set-param">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/space_set_param"></a>space_set_param</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> space, <a class="reference internal" href="#enum-physicsserver-spaceparameter"><span class="std std-ref">SpaceParameter</span></a> param, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the value for a space parameter. A list of available parameters is on the <a class="reference internal" href="#enum-physicsserver-spaceparameter"><span class="std std-ref">SpaceParameter</span></a> constants.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_physicsmaterial.html" rel="prev" title="PhysicsMaterial"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_physicsshapequeryparameters.html" rel="next" title="PhysicsShapeQueryParameters">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

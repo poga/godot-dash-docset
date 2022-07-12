@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="TextureProgress" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_textureprogress.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Range&lt; Control&lt; CanvasItem&lt; Node&lt; Object Texture-based progress bar. Useful for loading screens and life or stamina bars. Description: TextureProgress works like ProgressBar, but uses up ..." property="og:description"/>
+<meta content="Texture-based progress bar. Useful for loading screens and life or stamina bars. TextureProgress works like ProgressBar, but uses up to 3 textures instead of Godot's Theme resource. It can be used to create horizontal..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) TextureProgress — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_textureprogress.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_textureprogress.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_textureprogress.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_textureprogress.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_textureprogress.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_textureprogress.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_textureprogress.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_textureprogress.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_textureprogress.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_textureprogress.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_textureprogress.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_textureprogress.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_textureprogress.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_textureprogress.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_textureprogress.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_textureprogress.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_texturerect.html" rel="next" title="TextureRect"/>
+<link href="class_texturelayered.html" rel="prev" title="TextureLayered"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>TextureProgress</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="textureprogress">
+<span id="class-textureprogress"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/TextureProgress¶"></a>TextureProgress<a class="headerlink" href="#textureprogress" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_range.html#class-range"><span class="std std-ref">Range</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Texture-based progress bar. Useful for loading screens and life or stamina bars.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>TextureProgress works like <a class="reference internal" href="class_progressbar.html#class-progressbar"><span class="std std-ref">ProgressBar</span></a>, but uses up to 3 textures instead of Godot's <a class="reference internal" href="class_theme.html#class-theme"><span class="std std-ref">Theme</span></a> resource. It can be used to create horizontal, vertical and radial progress bars.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 55%"/>
+<col style="width: 17%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_control.html#enum-control-mousefilter"><span class="std std-ref">MouseFilter</span></a></p></td>
+<td><p>mouse_filter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-nine-patch-stretch"><span class="std std-ref">nine_patch_stretch</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-radial-center-offset"><span class="std std-ref">radial_center_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-radial-fill-degrees"><span class="std std-ref">radial_fill_degrees</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">360.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-radial-initial-angle"><span class="std std-ref">radial_initial_angle</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-stretch-margin-bottom"><span class="std std-ref">stretch_margin_bottom</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-stretch-margin-left"><span class="std std-ref">stretch_margin_left</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-stretch-margin-right"><span class="std std-ref">stretch_margin_right</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-stretch-margin-top"><span class="std std-ref">stretch_margin_top</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-texture-over"><span class="std std-ref">texture_over</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-texture-progress-offset"><span class="std std-ref">texture_progress_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-texture-under"><span class="std std-ref">texture_under</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-tint-over"><span class="std std-ref">tint_over</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-tint-progress"><span class="std std-ref">tint_progress</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-property-tint-under"><span class="std std-ref">tint_under</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%"/>
+<col style="width: 88%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-method-get-stretch-margin"><span class="std std-ref">get_stretch_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-textureprogress-method-set-stretch-margin"><span class="std std-ref">set_stretch_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-textureprogress-constant-fill-clockwise-and-counter-clockwise"><span id="class-textureprogress-constant-fill-bilinear-top-and-bottom"></span><span id="class-textureprogress-constant-fill-bilinear-left-and-right"></span><span id="class-textureprogress-constant-fill-counter-clockwise"></span><span id="class-textureprogress-constant-fill-clockwise"></span><span id="class-textureprogress-constant-fill-bottom-to-top"></span><span id="class-textureprogress-constant-fill-top-to-bottom"></span><span id="class-textureprogress-constant-fill-right-to-left"></span><span id="class-textureprogress-constant-fill-left-to-right"></span><span id="enum-textureprogress-fillmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/FillMode"></a>FillMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>FILL_LEFT_TO_RIGHT</strong> = <strong>0</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from left to right.</p></li>
+<li><p><strong>FILL_RIGHT_TO_LEFT</strong> = <strong>1</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from right to left.</p></li>
+<li><p><strong>FILL_TOP_TO_BOTTOM</strong> = <strong>2</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from top to bottom.</p></li>
+<li><p><strong>FILL_BOTTOM_TO_TOP</strong> = <strong>3</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from bottom to top.</p></li>
+<li><p><strong>FILL_CLOCKWISE</strong> = <strong>4</strong> --- Turns the node into a radial bar. The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills clockwise. See <a class="reference internal" href="#class-textureprogress-property-radial-center-offset"><span class="std std-ref">radial_center_offset</span></a>, <a class="reference internal" href="#class-textureprogress-property-radial-initial-angle"><span class="std std-ref">radial_initial_angle</span></a> and <a class="reference internal" href="#class-textureprogress-property-radial-fill-degrees"><span class="std std-ref">radial_fill_degrees</span></a> to control the way the bar fills up.</p></li>
+<li><p><strong>FILL_COUNTER_CLOCKWISE</strong> = <strong>5</strong> --- Turns the node into a radial bar. The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills counterclockwise. See <a class="reference internal" href="#class-textureprogress-property-radial-center-offset"><span class="std std-ref">radial_center_offset</span></a>, <a class="reference internal" href="#class-textureprogress-property-radial-initial-angle"><span class="std std-ref">radial_initial_angle</span></a> and <a class="reference internal" href="#class-textureprogress-property-radial-fill-degrees"><span class="std std-ref">radial_fill_degrees</span></a> to control the way the bar fills up.</p></li>
+<li><p><strong>FILL_BILINEAR_LEFT_AND_RIGHT</strong> = <strong>6</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from the center, expanding both towards the left and the right.</p></li>
+<li><p><strong>FILL_BILINEAR_TOP_AND_BOTTOM</strong> = <strong>7</strong> --- The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills from the center, expanding both towards the top and the bottom.</p></li>
+<li><p><strong>FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE</strong> = <strong>8</strong> --- Turns the node into a radial bar. The <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> fills radially from the center, expanding both clockwise and counterclockwise. See <a class="reference internal" href="#class-textureprogress-property-radial-center-offset"><span class="std std-ref">radial_center_offset</span></a>, <a class="reference internal" href="#class-textureprogress-property-radial-initial-angle"><span class="std std-ref">radial_initial_angle</span></a> and <a class="reference internal" href="#class-textureprogress-property-radial-fill-degrees"><span class="std std-ref">radial_fill_degrees</span></a> to control the way the bar fills up.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-textureprogress-property-fill-mode">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/fill_mode"></a>fill_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fill_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fill_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The fill direction. See <a class="reference internal" href="#enum-textureprogress-fillmode"><span class="std std-ref">FillMode</span></a> for possible values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-nine-patch-stretch">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/nine_patch_stretch"></a>nine_patch_stretch</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_nine_patch_stretch(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_nine_patch_stretch()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, Godot treats the bar's textures like in <a class="reference internal" href="class_ninepatchrect.html#class-ninepatchrect"><span class="std std-ref">NinePatchRect</span></a>. Use the <code class="docutils literal notranslate"><span class="pre">stretch_margin_*</span></code> properties like <a class="reference internal" href="#class-textureprogress-property-stretch-margin-bottom"><span class="std std-ref">stretch_margin_bottom</span></a> to set up the nine patch's 3×3 grid. When using a radial <a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a>, this setting will enable stretching.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-radial-center-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_center_offset"></a>radial_center_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_radial_center_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_radial_center_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Offsets <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> if <a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a> is <a class="reference internal" href="#class-textureprogress-constant-fill-clockwise"><span class="std std-ref">FILL_CLOCKWISE</span></a> or <a class="reference internal" href="#class-textureprogress-constant-fill-counter-clockwise"><span class="std std-ref">FILL_COUNTER_CLOCKWISE</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-radial-fill-degrees">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_fill_degrees"></a>radial_fill_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">360.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_fill_degrees(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_fill_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Upper limit for the fill of <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> if <a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a> is <a class="reference internal" href="#class-textureprogress-constant-fill-clockwise"><span class="std std-ref">FILL_CLOCKWISE</span></a> or <a class="reference internal" href="#class-textureprogress-constant-fill-counter-clockwise"><span class="std std-ref">FILL_COUNTER_CLOCKWISE</span></a>. When the node's <code class="docutils literal notranslate"><span class="pre">value</span></code> is equal to its <code class="docutils literal notranslate"><span class="pre">max_value</span></code>, the texture fills up to this angle.</p>
+<p>See <a class="reference internal" href="class_range.html#class-range-property-value"><span class="std std-ref">Range.value</span></a>, <a class="reference internal" href="class_range.html#class-range-property-max-value"><span class="std std-ref">Range.max_value</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-radial-initial-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/radial_initial_angle"></a>radial_initial_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_radial_initial_angle(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_radial_initial_angle()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Starting angle for the fill of <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a> if <a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a> is <a class="reference internal" href="#class-textureprogress-constant-fill-clockwise"><span class="std std-ref">FILL_CLOCKWISE</span></a> or <a class="reference internal" href="#class-textureprogress-constant-fill-counter-clockwise"><span class="std std-ref">FILL_COUNTER_CLOCKWISE</span></a>. When the node's <code class="docutils literal notranslate"><span class="pre">value</span></code> is equal to its <code class="docutils literal notranslate"><span class="pre">min_value</span></code>, the texture doesn't show up at all. When the <code class="docutils literal notranslate"><span class="pre">value</span></code> increases, the texture fills and tends towards <a class="reference internal" href="#class-textureprogress-property-radial-fill-degrees"><span class="std std-ref">radial_fill_degrees</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-stretch-margin-bottom">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stretch_margin_bottom"></a>stretch_margin_bottom</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_stretch_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_stretch_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-stretch-margin-left">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stretch_margin_left"></a>stretch_margin_left</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_stretch_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_stretch_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The width of the 9-patch's left column.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-stretch-margin-right">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stretch_margin_right"></a>stretch_margin_right</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_stretch_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_stretch_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The width of the 9-patch's right column.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-stretch-margin-top">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stretch_margin_top"></a>stretch_margin_top</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_stretch_margin(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_stretch_margin()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The height of the 9-patch's top row.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-texture-over">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture_over"></a>texture_over</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_over_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_over_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-texture-progress">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture_progress"></a>texture_progress</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_progress_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_progress_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> that clips based on the node's <code class="docutils literal notranslate"><span class="pre">value</span></code> and <a class="reference internal" href="#class-textureprogress-property-fill-mode"><span class="std std-ref">fill_mode</span></a>. As <code class="docutils literal notranslate"><span class="pre">value</span></code> increased, the texture fills up. It shows entirely when <code class="docutils literal notranslate"><span class="pre">value</span></code> reaches <code class="docutils literal notranslate"><span class="pre">max_value</span></code>. It doesn't show at all if <code class="docutils literal notranslate"><span class="pre">value</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">min_value</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> property comes from <a class="reference internal" href="class_range.html#class-range"><span class="std std-ref">Range</span></a>. See <a class="reference internal" href="class_range.html#class-range-property-value"><span class="std std-ref">Range.value</span></a>, <a class="reference internal" href="class_range.html#class-range-property-min-value"><span class="std std-ref">Range.min_value</span></a>, <a class="reference internal" href="class_range.html#class-range-property-max-value"><span class="std std-ref">Range.max_value</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-texture-progress-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture_progress_offset"></a>texture_progress_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_texture_progress_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_texture_progress_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The offset of <a class="reference internal" href="#class-textureprogress-property-texture-progress"><span class="std std-ref">texture_progress</span></a>. Useful for <a class="reference internal" href="#class-textureprogress-property-texture-over"><span class="std std-ref">texture_over</span></a> and <a class="reference internal" href="#class-textureprogress-property-texture-under"><span class="std std-ref">texture_under</span></a> with fancy borders, to avoid transparent margins in your progress texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-texture-under">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/texture_under"></a>texture_under</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_under_texture(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_under_texture()</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> that draws under the progress bar. The bar's background.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-tint-over">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tint_over"></a>tint_over</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tint_over(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tint_over()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Multiplies the color of the bar's <code class="docutils literal notranslate"><span class="pre">texture_over</span></code> texture. The effect is similar to <a class="reference internal" href="class_canvasitem.html#class-canvasitem-property-modulate"><span class="std std-ref">CanvasItem.modulate</span></a>, except it only affects this specific texture instead of the entire node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-tint-progress">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tint_progress"></a>tint_progress</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tint_progress(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tint_progress()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Multiplies the color of the bar's <code class="docutils literal notranslate"><span class="pre">texture_progress</span></code> texture.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-property-tint-under">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tint_under"></a>tint_under</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tint_under(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tint_under()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Multiplies the color of the bar's <code class="docutils literal notranslate"><span class="pre">texture_under</span></code> texture.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-textureprogress-method-get-stretch-margin">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_stretch_margin"></a>get_stretch_margin</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-textureprogress-method-set-stretch-margin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_stretch_margin"></a>set_stretch_margin</strong> <strong>(</strong> <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-margin"><span class="std std-ref">Margin</span></a> margin, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> value <strong>)</strong></p></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_texturelayered.html" rel="prev" title="TextureLayered"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_texturerect.html" rel="next" title="TextureRect">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

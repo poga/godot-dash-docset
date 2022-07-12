@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="FileDialog" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_filedialog.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: ConfirmationDialog&lt; AcceptDialog&lt; WindowDialog&lt; Popup&lt; Control&lt; CanvasItem&lt; Node&lt; Object Dialog for selecting files or directories in the filesystem. Description: FileDialog is a preset d..." property="og:description"/>
+<meta content="Dialog for selecting files or directories in the filesystem. FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) FileDialog — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_filedialog.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_filedialog.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_filedialog.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_filedialog.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_filedialog.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_filedialog.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_filedialog.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_filedialog.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_filedialog.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_filedialog.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_filedialog.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_filedialog.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_filedialog.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_filedialog.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_filedialog.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_filedialog.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_filesystemdock.html" rel="next" title="FileSystemDock"/>
+<link href="class_file.html" rel="prev" title="File"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>FileDialog</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="filedialog">
+<span id="class-filedialog"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/FileDialog¶"></a>FileDialog<a class="headerlink" href="#filedialog" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_confirmationdialog.html#class-confirmationdialog"><span class="std std-ref">ConfirmationDialog</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_acceptdialog.html#class-acceptdialog"><span class="std std-ref">AcceptDialog</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_windowdialog.html#class-windowdialog"><span class="std std-ref">WindowDialog</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_popup.html#class-popup"><span class="std std-ref">Popup</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Dialog for selecting files or directories in the filesystem.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window title according to the <a class="reference internal" href="#class-filedialog-property-mode"><span class="std std-ref">mode</span></a>. If you want to use a custom title, disable this by setting <a class="reference internal" href="#class-filedialog-property-mode-overrides-title"><span class="std std-ref">mode_overrides_title</span></a> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 47%"/>
+<col style="width: 24%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-filedialog-access"><span class="std std-ref">Access</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-access"><span class="std std-ref">access</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-current-dir"><span class="std std-ref">current_dir</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"res://"</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-current-file"><span class="std std-ref">current_file</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-current-path"><span class="std std-ref">current_path</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"res://"</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p>dialog_hide_on_ok</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-filters"><span class="std std-ref">filters</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolStringArray(</span>  <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-filedialog-mode"><span class="std std-ref">Mode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-mode"><span class="std std-ref">mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-mode-overrides-title"><span class="std std-ref">mode_overrides_title</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-property-show-hidden-files"><span class="std std-ref">show_hidden_files</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p>window_title</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Save</span> <span class="pre">a</span> <span class="pre">File"</span></code> <em>(parent override)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-add-filter"><span class="std std-ref">add_filter</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> filter <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-clear-filters"><span class="std std-ref">clear_filters</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-deselect-items"><span class="std std-ref">deselect_items</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_lineedit.html#class-lineedit"><span class="std std-ref">LineEdit</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-get-line-edit"><span class="std std-ref">get_line_edit</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vboxcontainer.html#class-vboxcontainer"><span class="std std-ref">VBoxContainer</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-get-vbox"><span class="std std-ref">get_vbox</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-filedialog-method-invalidate"><span class="std std-ref">invalidate</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="theme-properties">
+<h2>Theme Properties<a class="headerlink" href="#theme-properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 58%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-color-file-icon-modulate"><span class="std std-ref">file_icon_modulate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-color-files-disabled"><span class="std std-ref">files_disabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0.7</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-color-folder-icon-modulate"><span class="std std-ref">folder_icon_modulate</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-icon-file"><span class="std std-ref">file</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-icon-folder"><span class="std std-ref">folder</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-icon-parent-folder"><span class="std std-ref">parent_folder</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-icon-reload"><span class="std std-ref">reload</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-filedialog-theme-icon-toggle-hidden"><span class="std std-ref">toggle_hidden</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-filedialog-signal-dir-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/dir_selected"></a>dir_selected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> dir <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the user selects a directory.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-signal-file-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/file_selected"></a>file_selected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the user selects a file by double-clicking it or pressing the <strong>OK</strong> button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-signal-files-selected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/files_selected"></a>files_selected</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> paths <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the user selects multiple files.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-filedialog-constant-mode-save-file"><span id="class-filedialog-constant-mode-open-any"></span><span id="class-filedialog-constant-mode-open-dir"></span><span id="class-filedialog-constant-mode-open-files"></span><span id="class-filedialog-constant-mode-open-file"></span><span id="enum-filedialog-mode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Mode"></a>Mode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MODE_OPEN_FILE</strong> = <strong>0</strong> --- The dialog allows selecting one, and only one file.</p></li>
+<li><p><strong>MODE_OPEN_FILES</strong> = <strong>1</strong> --- The dialog allows selecting multiple files.</p></li>
+<li><p><strong>MODE_OPEN_DIR</strong> = <strong>2</strong> --- The dialog only allows selecting a directory, disallowing the selection of any file.</p></li>
+<li><p><strong>MODE_OPEN_ANY</strong> = <strong>3</strong> --- The dialog allows selecting one file or directory.</p></li>
+<li><p><strong>MODE_SAVE_FILE</strong> = <strong>4</strong> --- The dialog will warn when a file exists.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-filedialog-constant-access-filesystem"><span id="class-filedialog-constant-access-userdata"></span><span id="class-filedialog-constant-access-resources"></span><span id="enum-filedialog-access"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Access"></a>Access</strong>:</p>
+<ul class="simple">
+<li><p><strong>ACCESS_RESOURCES</strong> = <strong>0</strong> --- The dialog only allows accessing files under the <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> path (<code class="docutils literal notranslate"><span class="pre">res://</span></code>).</p></li>
+<li><p><strong>ACCESS_USERDATA</strong> = <strong>1</strong> --- The dialog only allows accessing files under user data path (<code class="docutils literal notranslate"><span class="pre">user://</span></code>).</p></li>
+<li><p><strong>ACCESS_FILESYSTEM</strong> = <strong>2</strong> --- The dialog allows accessing files on the whole file system.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-filedialog-property-access">
+<li><p><a class="reference internal" href="#enum-filedialog-access"><span class="std std-ref">Access</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/access"></a>access</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_access(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_access()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The file system access scope. See enum <code class="docutils literal notranslate"><span class="pre">Access</span></code> constants.</p>
+<p><strong>Warning:</strong> Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See <a class="reference external" href="https://github.com/godotengine/godot-proposals/issues/1123">godot-proposals#1123</a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-current-dir">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_dir"></a>current_dir</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"res://"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current_dir(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_dir()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The current working directory of the file dialog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-current-file">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_file"></a>current_file</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current_file(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_file()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The currently selected file of the file dialog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-current-path">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_path"></a>current_path</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"res://"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current_path(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_path()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The currently selected file path of the file dialog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-filters">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/filters"></a>filters</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolStringArray(</span>  <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_filters(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_filters()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The available file type filters. For example, this shows only <code class="docutils literal notranslate"><span class="pre">.png</span></code> and <code class="docutils literal notranslate"><span class="pre">.gd</span></code> files: <code class="docutils literal notranslate"><span class="pre">set_filters(PoolStringArray(["*.png</span> <span class="pre">;</span> <span class="pre">PNG</span> <span class="pre">Images","*.gd</span> <span class="pre">;</span> <span class="pre">GDScript</span> <span class="pre">Files"]))</span></code>. Multiple file types can also be specified in a single filter. <code class="docutils literal notranslate"><span class="pre">"*.png,</span> <span class="pre">*.jpg,</span> <span class="pre">*.jpeg</span> <span class="pre">;</span> <span class="pre">Supported</span> <span class="pre">Images"</span></code> will show both PNG and JPEG files when selected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-mode">
+<li><p><a class="reference internal" href="#enum-filedialog-mode"><span class="std std-ref">Mode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mode"></a>mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The dialog's open or save mode, which affects the selection behavior. See enum <code class="docutils literal notranslate"><span class="pre">Mode</span></code> constants.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-mode-overrides-title">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mode_overrides_title"></a>mode_overrides_title</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mode_overrides_title(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_mode_overriding_title()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, changing the <code class="docutils literal notranslate"><span class="pre">Mode</span></code> property will set the window title accordingly (e.g. setting mode to <a class="reference internal" href="#class-filedialog-constant-mode-open-file"><span class="std std-ref">MODE_OPEN_FILE</span></a> will change the window title to "Open a File").</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-property-show-hidden-files">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/show_hidden_files"></a>show_hidden_files</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_show_hidden_files(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_showing_hidden_files()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the dialog will show hidden files.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-filedialog-method-add-filter">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_filter"></a>add_filter</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> filter <strong>)</strong></p></li>
+</ul>
+<p>Adds <code class="docutils literal notranslate"><span class="pre">filter</span></code> to the list of filters, which restricts what files can be picked.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">filter</span></code> should be of the form <code class="docutils literal notranslate"><span class="pre">"filename.extension</span> <span class="pre">;</span> <span class="pre">Description"</span></code>, where filename and extension can be <code class="docutils literal notranslate"><span class="pre">*</span></code> to match any string. Filters starting with <code class="docutils literal notranslate"><span class="pre">.</span></code> (i.e. empty filenames) are not allowed.</p>
+<p>Example filters: <code class="docutils literal notranslate"><span class="pre">"*.png</span> <span class="pre">;</span> <span class="pre">PNG</span> <span class="pre">Images"</span></code>, <code class="docutils literal notranslate"><span class="pre">"project.godot</span> <span class="pre">;</span> <span class="pre">Godot</span> <span class="pre">Project"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-method-clear-filters">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_filters"></a>clear_filters</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clear all the added filters in the dialog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-method-deselect-items">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/deselect_items"></a>deselect_items</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clear currently selected items in the dialog.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-method-get-line-edit">
+<li><p><a class="reference internal" href="class_lineedit.html#class-lineedit"><span class="std std-ref">LineEdit</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_line_edit"></a>get_line_edit</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the LineEdit for the selected file.</p>
+<p><strong>Warning:</strong> This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their <a class="reference internal" href="class_canvasitem.html#class-canvasitem-property-visible"><span class="std std-ref">CanvasItem.visible</span></a> property.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-method-get-vbox">
+<li><p><a class="reference internal" href="class_vboxcontainer.html#class-vboxcontainer"><span class="std std-ref">VBoxContainer</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vbox"></a>get_vbox</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the vertical box container of the dialog, custom controls can be added to it.</p>
+<p><strong>Warning:</strong> This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their <a class="reference internal" href="class_canvasitem.html#class-canvasitem-property-visible"><span class="std std-ref">CanvasItem.visible</span></a> property.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-method-invalidate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/invalidate"></a>invalidate</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Invalidate and update the current dialog content list.</p>
+</section>
+<section id="theme-property-descriptions">
+<h2>Theme Property Descriptions<a class="headerlink" href="#theme-property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-filedialog-theme-color-file-icon-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>file_icon_modulate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color modulation applied to the file icon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-color-files-disabled">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>files_disabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0.7</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color tint for disabled files (when the <code class="docutils literal notranslate"><span class="pre">FileDialog</span></code> is used in open folder mode).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-color-folder-icon-modulate">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>folder_icon_modulate</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color modulation applied to the folder icon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-icon-file">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>file</strong></p></li>
+</ul>
+<p>Custom icon for files.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-icon-folder">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>folder</strong></p></li>
+</ul>
+<p>Custom icon for folders.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-icon-parent-folder">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>parent_folder</strong></p></li>
+</ul>
+<p>Custom icon for the parent folder arrow.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-icon-reload">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>reload</strong></p></li>
+</ul>
+<p>Custom icon for the reload button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-filedialog-theme-icon-toggle-hidden">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>toggle_hidden</strong></p></li>
+</ul>
+<p>Custom icon for the toggle hidden button.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_file.html" rel="prev" title="File"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_filesystemdock.html" rel="next" title="FileSystemDock">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

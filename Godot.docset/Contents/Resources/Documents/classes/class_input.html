@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Input" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_input.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object A singleton that deals with inputs. Description: A singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and ..." property="og:description"/>
+<meta content="A singleton that deals with inputs. A singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the Input Map tab in th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Input — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_input.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_input.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_input.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_input.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_input.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_input.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_input.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_input.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_input.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_input.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_input.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_input.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_input.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_input.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_input.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_input.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_inputevent.html" rel="next" title="InputEvent"/>
+<link href="class_immediategeometry.html" rel="prev" title="ImmediateGeometry"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Input</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="input">
+<span id="class-input"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Input¶"></a>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A singleton that deals with inputs.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A singleton that deals with inputs. This includes key presses, mouse buttons and movement, joypads, and input actions. Actions and their events can be set in the <strong>Input Map</strong> tab in the <strong>Project &gt; Project Settings</strong>, or with the <a class="reference internal" href="class_inputmap.html#class-inputmap"><span class="std std-ref">InputMap</span></a> class.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/inputs/index.html"><span class="doc">Inputs</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/515">2D Dodge The Creeps Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-action-press"><span class="std std-ref">action_press</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> strength=1.0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-action-release"><span class="std std-ref">action_release</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-add-joy-mapping"><span class="std std-ref">add_joy_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mapping, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> update_existing=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-flush-buffered-events"><span class="std std-ref">flush_buffered_events</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-accelerometer"><span class="std std-ref">get_accelerometer</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-action-raw-strength"><span class="std std-ref">get_action_raw_strength</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-action-strength"><span class="std std-ref">get_action_strength</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-axis"><span class="std std-ref">get_axis</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_action, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_action <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-connected-joypads"><span class="std std-ref">get_connected_joypads</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-current-cursor-shape"><span class="std std-ref">get_current_cursor_shape</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-gravity"><span class="std std-ref">get_gravity</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-gyroscope"><span class="std std-ref">get_gyroscope</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-axis"><span class="std std-ref">get_joy_axis</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-axis-index-from-string"><span class="std std-ref">get_joy_axis_index_from_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> axis <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-axis-string"><span class="std std-ref">get_joy_axis_string</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis_index <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-button-index-from-string"><span class="std std-ref">get_joy_button_index_from_string</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> button <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-button-string"><span class="std std-ref">get_joy_button_string</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button_index <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-guid"><span class="std std-ref">get_joy_guid</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-name"><span class="std std-ref">get_joy_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-vibration-duration"><span class="std std-ref">get_joy_vibration_duration</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-joy-vibration-strength"><span class="std std-ref">get_joy_vibration_strength</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-last-mouse-speed"><span class="std std-ref">get_last_mouse_speed</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-magnetometer"><span class="std std-ref">get_magnetometer</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-mouse-button-mask"><span class="std std-ref">get_mouse_button_mask</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-input-mousemode"><span class="std std-ref">MouseMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-mouse-mode"><span class="std std-ref">get_mouse_mode</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-get-vector"><span class="std std-ref">get_vector</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_x, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_x, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_y, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone=-1.0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-action-just-pressed"><span class="std std-ref">is_action_just_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-action-just-released"><span class="std std-ref">is_action_just_released</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-action-pressed"><span class="std std-ref">is_action_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-joy-button-pressed"><span class="std std-ref">is_joy_button_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-joy-known"><span class="std std-ref">is_joy_known</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-key-pressed"><span class="std std-ref">is_key_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> scancode <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-mouse-button-pressed"><span class="std std-ref">is_mouse_button_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> scancode <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-joy-connection-changed"><span class="std std-ref">joy_connection_changed</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> connected, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> guid <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-parse-input-event"><span class="std std-ref">parse_input_event</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-remove-joy-mapping"><span class="std std-ref">remove_joy_mapping</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> guid <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-accelerometer"><span class="std std-ref">set_accelerometer</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-custom-mouse-cursor"><span class="std std-ref">set_custom_mouse_cursor</span></a> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> image, <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> shape=0, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> hotspot=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-default-cursor-shape"><span class="std std-ref">set_default_cursor_shape</span></a> <strong>(</strong> <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> shape=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-gravity"><span class="std std-ref">set_gravity</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-gyroscope"><span class="std std-ref">set_gyroscope</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-magnetometer"><span class="std std-ref">set_magnetometer</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-mouse-mode"><span class="std std-ref">set_mouse_mode</span></a> <strong>(</strong> <a class="reference internal" href="#enum-input-mousemode"><span class="std std-ref">MouseMode</span></a> mode <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-set-use-accumulated-input"><span class="std std-ref">set_use_accumulated_input</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-start-joy-vibration"><span class="std std-ref">start_joy_vibration</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weak_magnitude, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> strong_magnitude, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-stop-joy-vibration"><span class="std std-ref">stop_joy_vibration</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-vibrate-handheld"><span class="std std-ref">vibrate_handheld</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration_ms=500 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-input-method-warp-mouse-position"><span class="std std-ref">warp_mouse_position</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-input-signal-joy-connection-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/joy_connection_changed"></a>joy_connection_changed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> connected <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a joypad device has been connected or disconnected.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-input-constant-mouse-mode-confined"><span id="class-input-constant-mouse-mode-captured"></span><span id="class-input-constant-mouse-mode-hidden"></span><span id="class-input-constant-mouse-mode-visible"></span><span id="enum-input-mousemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/MouseMode"></a>MouseMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MOUSE_MODE_VISIBLE</strong> = <strong>0</strong> --- Makes the mouse cursor visible if it is hidden.</p></li>
+<li><p><strong>MOUSE_MODE_HIDDEN</strong> = <strong>1</strong> --- Makes the mouse cursor hidden if it is visible.</p></li>
+<li><p><strong>MOUSE_MODE_CAPTURED</strong> = <strong>2</strong> --- Captures the mouse. The mouse will be hidden and its position locked at the center of the screen.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> If you want to process the mouse's movement in this mode, you need to use <a class="reference internal" href="class_inputeventmousemotion.html#class-inputeventmousemotion-property-relative"><span class="std std-ref">InputEventMouseMotion.relative</span></a>.</p>
+<ul class="simple">
+<li><p><strong>MOUSE_MODE_CONFINED</strong> = <strong>3</strong> --- Makes the mouse cursor visible but confines it to the game window.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-input-constant-cursor-help"><span id="class-input-constant-cursor-hsplit"></span><span id="class-input-constant-cursor-vsplit"></span><span id="class-input-constant-cursor-move"></span><span id="class-input-constant-cursor-fdiagsize"></span><span id="class-input-constant-cursor-bdiagsize"></span><span id="class-input-constant-cursor-hsize"></span><span id="class-input-constant-cursor-vsize"></span><span id="class-input-constant-cursor-forbidden"></span><span id="class-input-constant-cursor-can-drop"></span><span id="class-input-constant-cursor-drag"></span><span id="class-input-constant-cursor-busy"></span><span id="class-input-constant-cursor-wait"></span><span id="class-input-constant-cursor-cross"></span><span id="class-input-constant-cursor-pointing-hand"></span><span id="class-input-constant-cursor-ibeam"></span><span id="class-input-constant-cursor-arrow"></span><span id="enum-input-cursorshape"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CursorShape"></a>CursorShape</strong>:</p>
+<ul class="simple">
+<li><p><strong>CURSOR_ARROW</strong> = <strong>0</strong> --- Arrow cursor. Standard, default pointing cursor.</p></li>
+<li><p><strong>CURSOR_IBEAM</strong> = <strong>1</strong> --- I-beam cursor. Usually used to show where the text cursor will appear when the mouse is clicked.</p></li>
+<li><p><strong>CURSOR_POINTING_HAND</strong> = <strong>2</strong> --- Pointing hand cursor. Usually used to indicate the pointer is over a link or other interactable item.</p></li>
+<li><p><strong>CURSOR_CROSS</strong> = <strong>3</strong> --- Cross cursor. Typically appears over regions in which a drawing operation can be performed or for selections.</p></li>
+<li><p><strong>CURSOR_WAIT</strong> = <strong>4</strong> --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.</p></li>
+<li><p><strong>CURSOR_BUSY</strong> = <strong>5</strong> --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).</p></li>
+<li><p><strong>CURSOR_DRAG</strong> = <strong>6</strong> --- Drag cursor. Usually displayed when dragging something.</p></li>
+<li><p><strong>CURSOR_CAN_DROP</strong> = <strong>7</strong> --- Can drop cursor. Usually displayed when dragging something to indicate that it can be dropped at the current position.</p></li>
+<li><p><strong>CURSOR_FORBIDDEN</strong> = <strong>8</strong> --- Forbidden cursor. Indicates that the current action is forbidden (for example, when dragging something) or that the control at a position is disabled.</p></li>
+<li><p><strong>CURSOR_VSIZE</strong> = <strong>9</strong> --- Vertical resize mouse cursor. A double-headed vertical arrow. It tells the user they can resize the window or the panel vertically.</p></li>
+<li><p><strong>CURSOR_HSIZE</strong> = <strong>10</strong> --- Horizontal resize mouse cursor. A double-headed horizontal arrow. It tells the user they can resize the window or the panel horizontally.</p></li>
+<li><p><strong>CURSOR_BDIAGSIZE</strong> = <strong>11</strong> --- Window resize mouse cursor. The cursor is a double-headed arrow that goes from the bottom left to the top right. It tells the user they can resize the window or the panel both horizontally and vertically.</p></li>
+<li><p><strong>CURSOR_FDIAGSIZE</strong> = <strong>12</strong> --- Window resize mouse cursor. The cursor is a double-headed arrow that goes from the top left to the bottom right, the opposite of <a class="reference internal" href="#class-input-constant-cursor-bdiagsize"><span class="std std-ref">CURSOR_BDIAGSIZE</span></a>. It tells the user they can resize the window or the panel both horizontally and vertically.</p></li>
+<li><p><strong>CURSOR_MOVE</strong> = <strong>13</strong> --- Move cursor. Indicates that something can be moved.</p></li>
+<li><p><strong>CURSOR_VSPLIT</strong> = <strong>14</strong> --- Vertical split mouse cursor. On Windows, it's the same as <a class="reference internal" href="#class-input-constant-cursor-vsize"><span class="std std-ref">CURSOR_VSIZE</span></a>.</p></li>
+<li><p><strong>CURSOR_HSPLIT</strong> = <strong>15</strong> --- Horizontal split mouse cursor. On Windows, it's the same as <a class="reference internal" href="#class-input-constant-cursor-hsize"><span class="std std-ref">CURSOR_HSIZE</span></a>.</p></li>
+<li><p><strong>CURSOR_HELP</strong> = <strong>16</strong> --- Help cursor. Usually a question mark.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-input-method-action-press">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_press"></a>action_press</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> strength=1.0 <strong>)</strong></p></li>
+</ul>
+<p>This will simulate pressing the specified action.</p>
+<p>The strength can be used for non-boolean actions, it's ranged between 0 and 1 representing the intensity of the given action.</p>
+<p><strong>Note:</strong> This method will not cause any <a class="reference internal" href="class_node.html#class-node-method-input"><span class="std std-ref">Node._input</span></a> calls. It is intended to be used with <a class="reference internal" href="#class-input-method-is-action-pressed"><span class="std std-ref">is_action_pressed</span></a> and <a class="reference internal" href="#class-input-method-is-action-just-pressed"><span class="std std-ref">is_action_just_pressed</span></a>. If you want to simulate <code class="docutils literal notranslate"><span class="pre">_input</span></code>, use <a class="reference internal" href="#class-input-method-parse-input-event"><span class="std std-ref">parse_input_event</span></a> instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-action-release">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/action_release"></a>action_release</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action <strong>)</strong></p></li>
+</ul>
+<p>If the specified action is already pressed, this will release it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-add-joy-mapping">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_joy_mapping"></a>add_joy_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mapping, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> update_existing=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-flush-buffered-events">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/flush_buffered_events"></a>flush_buffered_events</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (<a class="reference internal" href="#class-input-method-set-use-accumulated-input"><span class="std std-ref">set_use_accumulated_input</span></a>) or agile input flushing (<a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-input-devices-buffering-agile-event-flushing"><span class="std std-ref">ProjectSettings.input_devices/buffering/agile_event_flushing</span></a>).</p>
+<p>The engine will already do this itself at key execution points (at least once per frame). However, this can be useful in advanced cases where you want precise control over the timing of event handling.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-accelerometer">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_accelerometer"></a>get_accelerometer</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the acceleration of the device's accelerometer sensor, if the device has one. Otherwise, the method returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<p>Note this method returns an empty <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> when running from the editor even when your device has an accelerometer. You must export your project to a supported device to read values from the accelerometer.</p>
+<p><strong>Note:</strong> This method only works on iOS, Android, and UWP. On other platforms, it always returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>. On Android the unit of measurement for each axis is m/s² while on iOS and UWP it's a multiple of the Earth's gravitational acceleration <code class="docutils literal notranslate"><span class="pre">g</span></code> (~9.81 m/s²).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-action-raw-strength">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_action_raw_strength"></a>get_action_raw_strength</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a value between 0 and 1 representing the raw intensity of the given action, ignoring the action's deadzone. In most cases, you should use <a class="reference internal" href="#class-input-method-get-action-strength"><span class="std std-ref">get_action_strength</span></a> instead.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-action-strength">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_action_strength"></a>get_action_strength</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-axis">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_axis"></a>get_axis</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_action, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_action <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Get axis input by specifying two actions, one negative and one positive.</p>
+<p>This is a shorthand for writing <code class="docutils literal notranslate"><span class="pre">Input.get_action_strength("positive_action")</span> <span class="pre">-</span> <span class="pre">Input.get_action_strength("negative_action")</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-connected-joypads">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connected_joypads"></a>get_connected_joypads</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> containing the device IDs of all currently connected joypads.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-current-cursor-shape">
+<li><p><a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_cursor_shape"></a>get_current_cursor_shape</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the currently assigned cursor shape (see <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-gravity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_gravity"></a>get_gravity</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the gravity of the device's accelerometer sensor, if the device has one. Otherwise, the method returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<p><strong>Note:</strong> This method only works on Android and iOS. On other platforms, it always returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>. On Android the unit of measurement for each axis is m/s² while on iOS it's a multiple of the Earth's gravitational acceleration <code class="docutils literal notranslate"><span class="pre">g</span></code> (~9.81 m/s²).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-gyroscope">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_gyroscope"></a>get_gyroscope</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope sensor, if the device has one. Otherwise, the method returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<p><strong>Note:</strong> This method only works on Android and iOS. On other platforms, it always returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-axis">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_axis"></a>get_joy_axis</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current value of the joypad axis at given index (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-axis-index-from-string">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_axis_index_from_string"></a>get_joy_axis_index_from_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> axis <strong>)</strong></p></li>
+</ul>
+<p>Returns the index of the provided axis name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-axis-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_axis_string"></a>get_joy_axis_string</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> axis_index <strong>)</strong></p></li>
+</ul>
+<p>Receives a <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a> axis and returns its equivalent name as a string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-button-index-from-string">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_button_index_from_string"></a>get_joy_button_index_from_string</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> button <strong>)</strong></p></li>
+</ul>
+<p>Returns the index of the provided button name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-button-string">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_button_string"></a>get_joy_button_string</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button_index <strong>)</strong></p></li>
+</ul>
+<p>Receives a gamepad button from <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a> and returns its equivalent name as a string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-guid">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_guid"></a>get_joy_guid</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a SDL2-compatible device GUID on platforms that use gamepad remapping. Returns <code class="docutils literal notranslate"><span class="pre">"Default</span> <span class="pre">Gamepad"</span></code> otherwise.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_name"></a>get_joy_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Returns the name of the joypad at the specified device index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-vibration-duration">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_vibration_duration"></a>get_joy_vibration_duration</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Returns the duration of the current vibration effect in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-joy-vibration-strength">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_joy_vibration_strength"></a>get_joy_vibration_strength</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Returns the strength of the joypad vibration: x is the strength of the weak motor, and y is the strength of the strong motor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-last-mouse-speed">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_last_mouse_speed"></a>get_last_mouse_speed</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the mouse speed for the last time the cursor was moved, and this until the next frame where the mouse moves. This means that even if the mouse is not moving, this function will still return the value of the last motion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-magnetometer">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_magnetometer"></a>get_magnetometer</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<p><strong>Note:</strong> This method only works on Android, iOS and UWP. On other platforms, it always returns <a class="reference internal" href="class_vector3.html#class-vector3-constant-zero"><span class="std std-ref">Vector3.ZERO</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-mouse-button-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_mouse_button_mask"></a>get_mouse_button_mask</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-mouse-mode">
+<li><p><a class="reference internal" href="#enum-input-mousemode"><span class="std std-ref">MouseMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_mouse_mode"></a>get_mouse_mode</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the mouse mode. See the constants for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-get-vector">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_vector"></a>get_vector</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_x, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_x, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> negative_y, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> positive_y, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> deadzone=-1.0 <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets an input vector by specifying four actions for the positive and negative X and Y axes.</p>
+<p>This method is useful when getting vector input, such as from a joystick, directional pad, arrows, or WASD. The vector has its length limited to 1 and has a circular deadzone, which is useful for using vector input as movement.</p>
+<p>By default, the deadzone is automatically calculated from the average of the action deadzones. However, you can override the deadzone to be whatever you want (on the range of 0 to 1).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-action-just-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_action_just_pressed"></a>is_action_just_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when the user starts pressing the action event, meaning it's <code class="docutils literal notranslate"><span class="pre">true</span></code> only on the frame that the user pressed down the button.</p>
+<p>This is useful for code that needs to run only once when an action is pressed, instead of every frame while it's pressed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<p><strong>Note:</strong> Due to keyboard ghosting, <a class="reference internal" href="#class-input-method-is-action-just-pressed"><span class="std std-ref">is_action_just_pressed</span></a> may return <code class="docutils literal notranslate"><span class="pre">false</span></code> even if one of the action's keys is pressed. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events">Input examples</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-action-just-released">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_action_just_released"></a>is_action_just_released</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when the user stops pressing the action event, meaning it's <code class="docutils literal notranslate"><span class="pre">true</span></code> only on the frame that the user released the button.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-action-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_action_pressed"></a>is_action_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> action, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> exact=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">exact</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, it ignores the input modifiers for <a class="reference internal" href="class_inputeventkey.html#class-inputeventkey"><span class="std std-ref">InputEventKey</span></a> and <a class="reference internal" href="class_inputeventmousebutton.html#class-inputeventmousebutton"><span class="std std-ref">InputEventMouseButton</span></a> events, and the direction for <a class="reference internal" href="class_inputeventjoypadmotion.html#class-inputeventjoypadmotion"><span class="std std-ref">InputEventJoypadMotion</span></a> events.</p>
+<p><strong>Note:</strong> Due to keyboard ghosting, <a class="reference internal" href="#class-input-method-is-action-pressed"><span class="std std-ref">is_action_pressed</span></a> may return <code class="docutils literal notranslate"><span class="pre">false</span></code> even if one of the action's keys is pressed. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events">Input examples</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-joy-button-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_joy_button_pressed"></a>is_joy_button_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are pressing the joypad button (see <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-joy-known">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_joy_known"></a>is_joy_known</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the system knows the specified device. This means that it sets all button and axis indices exactly as defined in <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-joysticklist"><span class="std std-ref">JoystickList</span></a>. Unknown joypads are not expected to match these constants, but you can still retrieve events from them.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-key-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_key_pressed"></a>is_key_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> scancode <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are pressing the key in the current keyboard layout. You can pass a <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-keylist"><span class="std std-ref">KeyList</span></a> constant.</p>
+<p><a class="reference internal" href="#class-input-method-is-key-pressed"><span class="std std-ref">is_key_pressed</span></a> is only recommended over <a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a> in non-game applications. This ensures that shortcut keys behave as expected depending on the user's keyboard layout, as keyboard shortcuts are generally dependent on the keyboard layout in non-game applications. If in doubt, use <a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a>.</p>
+<p><strong>Note:</strong> Due to keyboard ghosting, <a class="reference internal" href="#class-input-method-is-key-pressed"><span class="std std-ref">is_key_pressed</span></a> may return <code class="docutils literal notranslate"><span class="pre">false</span></code> even if one of the action's keys is pressed. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events">Input examples</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-mouse-button-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_mouse_button_pressed"></a>is_mouse_button_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> button <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are pressing the mouse button specified with <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-buttonlist"><span class="std std-ref">ButtonList</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-is-physical-key-pressed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_physical_key_pressed"></a>is_physical_key_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> scancode <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if you are pressing the key in the physical location on the 101/102-key US QWERTY keyboard. You can pass a <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-keylist"><span class="std std-ref">KeyList</span></a> constant.</p>
+<p><a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a> is recommended over <a class="reference internal" href="#class-input-method-is-key-pressed"><span class="std std-ref">is_key_pressed</span></a> for in-game actions, as it will make W/A/S/D layouts work regardless of the user's keyboard layout. <a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a> will also ensure that the top row number keys work on any keyboard layout. If in doubt, use <a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a>.</p>
+<p><strong>Note:</strong> Due to keyboard ghosting, <a class="reference internal" href="#class-input-method-is-physical-key-pressed"><span class="std std-ref">is_physical_key_pressed</span></a> may return <code class="docutils literal notranslate"><span class="pre">false</span></code> even if one of the action's keys is pressed. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events">Input examples</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-joy-connection-changed">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/joy_connection_changed"></a>joy_connection_changed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> connected, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> guid <strong>)</strong></p></li>
+</ul>
+<p>Notifies the <code class="docutils literal notranslate"><span class="pre">Input</span></code> singleton that a connection has changed, to update the state for the <code class="docutils literal notranslate"><span class="pre">device</span></code> index.</p>
+<p>This is used internally and should not have to be called from user scripts. See <a class="reference internal" href="#class-input-signal-joy-connection-changed"><span class="std std-ref">joy_connection_changed</span></a> for the signal emitted when this is triggered internally.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-parse-input-event">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse_input_event"></a>parse_input_event</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></li>
+</ul>
+<p>Feeds an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> to the game. Can be used to artificially trigger input events from code. Also generates <a class="reference internal" href="class_node.html#class-node-method-input"><span class="std std-ref">Node._input</span></a> calls.</p>
+<p>Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">InputEventAction</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="s2">"ui_cancel"</span>
+<span class="n">a</span><span class="o">.</span><span class="n">pressed</span> <span class="o">=</span> <span class="bp">true</span>
+<span class="n">Input</span><span class="o">.</span><span class="n">parse_input_event</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-remove-joy-mapping">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_joy_mapping"></a>remove_joy_mapping</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> guid <strong>)</strong></p></li>
+</ul>
+<p>Removes all mappings from the internal database that match the given GUID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-accelerometer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_accelerometer"></a>set_accelerometer</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the acceleration value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.</p>
+<p><strong>Note:</strong> This value can be immediately overwritten by the hardware sensor value on Android and iOS.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-custom-mouse-cursor">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_custom_mouse_cursor"></a>set_custom_mouse_cursor</strong> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> image, <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> shape=0, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> hotspot=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing <code class="docutils literal notranslate"><span class="pre">null</span></code> to the image parameter resets to the system cursor. See <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> for the list of shapes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">image</span></code>'s size must be lower than 256×256.</p>
+<p><code class="docutils literal notranslate"><span class="pre">hotspot</span></code> must be within <code class="docutils literal notranslate"><span class="pre">image</span></code>'s size.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="class_animatedtexture.html#class-animatedtexture"><span class="std std-ref">AnimatedTexture</span></a>s aren't supported as custom mouse cursors. If using an <a class="reference internal" href="class_animatedtexture.html#class-animatedtexture"><span class="std std-ref">AnimatedTexture</span></a>, only the first frame will be displayed.</p>
+<p><strong>Note:</strong> Only images imported with the <strong>Lossless</strong>, <strong>Lossy</strong> or <strong>Uncompressed</strong> compression modes are supported. The <strong>Video RAM</strong> compression mode can't be used for custom cursors.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-default-cursor-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_default_cursor_shape"></a>set_default_cursor_shape</strong> <strong>(</strong> <a class="reference internal" href="#enum-input-cursorshape"><span class="std std-ref">CursorShape</span></a> shape=0 <strong>)</strong></p></li>
+</ul>
+<p>Sets the default cursor shape to be used in the viewport instead of <a class="reference internal" href="#class-input-constant-cursor-arrow"><span class="std std-ref">CURSOR_ARROW</span></a>.</p>
+<p><strong>Note:</strong> If you want to change the default cursor shape for <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>'s nodes, use <a class="reference internal" href="class_control.html#class-control-property-mouse-default-cursor-shape"><span class="std std-ref">Control.mouse_default_cursor_shape</span></a> instead.</p>
+<p><strong>Note:</strong> This method generates an <a class="reference internal" href="class_inputeventmousemotion.html#class-inputeventmousemotion"><span class="std std-ref">InputEventMouseMotion</span></a> to update cursor immediately.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-gravity">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_gravity"></a>set_gravity</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the gravity value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.</p>
+<p><strong>Note:</strong> This value can be immediately overwritten by the hardware sensor value on Android and iOS.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-gyroscope">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_gyroscope"></a>set_gyroscope</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the value of the rotation rate of the gyroscope sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.</p>
+<p><strong>Note:</strong> This value can be immediately overwritten by the hardware sensor value on Android and iOS.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-magnetometer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_magnetometer"></a>set_magnetometer</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the value of the magnetic field of the magnetometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.</p>
+<p><strong>Note:</strong> This value can be immediately overwritten by the hardware sensor value on Android and iOS.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-mouse-mode">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_mouse_mode"></a>set_mouse_mode</strong> <strong>(</strong> <a class="reference internal" href="#enum-input-mousemode"><span class="std std-ref">MouseMode</span></a> mode <strong>)</strong></p></li>
+</ul>
+<p>Sets the mouse mode. See the constants for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-set-use-accumulated-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_use_accumulated_input"></a>set_use_accumulated_input</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Enables or disables the accumulation of similar input events sent by the operating system. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.</p>
+<p>Input accumulation is enabled by default. It can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-start-joy-vibration">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/start_joy_vibration"></a>start_joy_vibration</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weak_magnitude, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> strong_magnitude, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> duration=0 <strong>)</strong></p></li>
+</ul>
+<p>Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. <code class="docutils literal notranslate"><span class="pre">weak_magnitude</span></code> is the strength of the weak motor (between 0 and 1) and <code class="docutils literal notranslate"><span class="pre">strong_magnitude</span></code> is the strength of the strong motor (between 0 and 1). <code class="docutils literal notranslate"><span class="pre">duration</span></code> is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).</p>
+<p><strong>Note:</strong> Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-stop-joy-vibration">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop_joy_vibration"></a>stop_joy_vibration</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> device <strong>)</strong></p></li>
+</ul>
+<p>Stops the vibration of the joypad.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-vibrate-handheld">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/vibrate_handheld"></a>vibrate_handheld</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> duration_ms=500 <strong>)</strong></p></li>
+</ul>
+<p>Vibrate Android and iOS devices.</p>
+<p><strong>Note:</strong> It needs <code class="docutils literal notranslate"><span class="pre">VIBRATE</span></code> permission for Android at export settings. iOS does not support duration.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-input-method-warp-mouse-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/warp_mouse_position"></a>warp_mouse_position</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the game window.</p>
+<p>Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if <a class="reference internal" href="#enum-input-mousemode"><span class="std std-ref">MouseMode</span></a> is set to <a class="reference internal" href="#class-input-constant-mouse-mode-confined"><span class="std std-ref">MOUSE_MODE_CONFINED</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_immediategeometry.html" rel="prev" title="ImmediateGeometry"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_inputevent.html" rel="next" title="InputEvent">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorResourcePreview" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorresourcepreview.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Helper to generate previews of resources or files. Description: This object is used to generate previews for resources of files. Note: This class shouldn't be instantiated di..." property="og:description"/>
+<meta content="Helper to generate previews of resources or files. This object is used to generate previews for resources of files. Note: This class shouldn't be instantiated directly. Instead, access the singleton using EditorInterf..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorResourcePreview — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorresourcepreview.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorresourcepreview.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorresourcepreview.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorresourcepreview.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorresourcepreview.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorresourcepreview.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorresourcepreview.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorresourcepreview.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorresourcepreview.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorresourcepreview.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorresourcepreview.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorresourcepreview.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorresourcepreview.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorresourcepreview.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorresourcepreview.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorresourcepreview.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorresourcepreviewgenerator.html" rel="next" title="EditorResourcePreviewGenerator"/>
+<link href="class_editorresourcepicker.html" rel="prev" title="EditorResourcePicker"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorResourcePreview</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorresourcepreview">
+<span id="class-editorresourcepreview"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorResourcePreview¶"></a>EditorResourcePreview<a class="headerlink" href="#editorresourcepreview" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Helper to generate previews of resources or files.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This object is used to generate previews for resources of files.</p>
+<p><strong>Note:</strong> This class shouldn't be instantiated directly. Instead, access the singleton using <a class="reference internal" href="class_editorinterface.html#class-editorinterface-method-get-resource-previewer"><span class="std std-ref">EditorInterface.get_resource_previewer</span></a>.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2%"/>
+<col style="width: 98%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorresourcepreview-method-add-preview-generator"><span class="std std-ref">add_preview_generator</span></a> <strong>(</strong> <a class="reference internal" href="class_editorresourcepreviewgenerator.html#class-editorresourcepreviewgenerator"><span class="std std-ref">EditorResourcePreviewGenerator</span></a> generator <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorresourcepreview-method-check-for-invalidation"><span class="std std-ref">check_for_invalidation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorresourcepreview-method-queue-edited-resource-preview"><span class="std std-ref">queue_edited_resource_preview</span></a> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> receiver_func, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorresourcepreview-method-queue-resource-preview"><span class="std std-ref">queue_resource_preview</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> receiver_func, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorresourcepreview-method-remove-preview-generator"><span class="std std-ref">remove_preview_generator</span></a> <strong>(</strong> <a class="reference internal" href="class_editorresourcepreviewgenerator.html#class-editorresourcepreviewgenerator"><span class="std std-ref">EditorResourcePreviewGenerator</span></a> generator <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorresourcepreview-signal-preview-invalidated">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/preview_invalidated"></a>preview_invalidated</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Emitted if a preview was invalidated (changed). <code class="docutils literal notranslate"><span class="pre">path</span></code> corresponds to the path of the preview.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorresourcepreview-method-add-preview-generator">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_preview_generator"></a>add_preview_generator</strong> <strong>(</strong> <a class="reference internal" href="class_editorresourcepreviewgenerator.html#class-editorresourcepreviewgenerator"><span class="std std-ref">EditorResourcePreviewGenerator</span></a> generator <strong>)</strong></p></li>
+</ul>
+<p>Create an own, custom preview generator.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorresourcepreview-method-check-for-invalidation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/check_for_invalidation"></a>check_for_invalidation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Check if the resource changed, if so, it will be invalidated and the corresponding signal emitted.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorresourcepreview-method-queue-edited-resource-preview">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue_edited_resource_preview"></a>queue_edited_resource_preview</strong> <strong>(</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> resource, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> receiver_func, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata <strong>)</strong></p></li>
+</ul>
+<p>Queue the <code class="docutils literal notranslate"><span class="pre">resource</span></code> being edited for preview. Once the preview is ready, the <code class="docutils literal notranslate"><span class="pre">receiver</span></code>'s <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> will be called. The <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> must take the following four arguments: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> preview, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> thumbnail_preview, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata. <code class="docutils literal notranslate"><span class="pre">userdata</span></code> can be anything, and will be returned when <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> is called.</p>
+<p><strong>Note:</strong> If it was not possible to create the preview the <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> will still be called, but the preview will be null.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorresourcepreview-method-queue-resource-preview">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue_resource_preview"></a>queue_resource_preview</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> receiver, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> receiver_func, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata <strong>)</strong></p></li>
+</ul>
+<p>Queue a resource file located at <code class="docutils literal notranslate"><span class="pre">path</span></code> for preview. Once the preview is ready, the <code class="docutils literal notranslate"><span class="pre">receiver</span></code>'s <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> will be called. The <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> must take the following four arguments: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> preview, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> thumbnail_preview, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata. <code class="docutils literal notranslate"><span class="pre">userdata</span></code> can be anything, and will be returned when <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> is called.</p>
+<p><strong>Note:</strong> If it was not possible to create the preview the <code class="docutils literal notranslate"><span class="pre">receiver_func</span></code> will still be called, but the preview will be null.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorresourcepreview-method-remove-preview-generator">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_preview_generator"></a>remove_preview_generator</strong> <strong>(</strong> <a class="reference internal" href="class_editorresourcepreviewgenerator.html#class-editorresourcepreviewgenerator"><span class="std std-ref">EditorResourcePreviewGenerator</span></a> generator <strong>)</strong></p></li>
+</ul>
+<p>Removes a custom preview generator.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorresourcepicker.html" rel="prev" title="EditorResourcePicker"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorresourcepreviewgenerator.html" rel="next" title="EditorResourcePreviewGenerator">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

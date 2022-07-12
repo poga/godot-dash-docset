@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="CollisionObject2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_collisionobject2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object Inherited By: Area2D, PhysicsBody2D Base node for 2D collision objects. Description: CollisionObject2D is the base class for 2D physics objects. It can ho..." property="og:description"/>
+<meta content="Base node for 2D collision objects. CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision Shape2Ds. Each shape must be assigned to a shape owner. The CollisionObject2D can..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) CollisionObject2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_collisionobject2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_collisionobject2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_collisionobject2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_collisionobject2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_collisionobject2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_collisionobject2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_collisionobject2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_collisionobject2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_collisionobject2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_collisionobject2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_collisionobject2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_collisionobject2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_collisionobject2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_collisionobject2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_collisionobject2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_collisionobject2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_collisionpolygon.html" rel="next" title="CollisionPolygon"/>
+<link href="class_collisionobject.html" rel="prev" title="CollisionObject"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>CollisionObject2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="collisionobject2d">
+<span id="class-collisionobject2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/CollisionObject2D¶"></a>CollisionObject2D<a class="headerlink" href="#collisionobject2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_area2d.html#class-area2d"><span class="std std-ref">Area2D</span></a>, <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a></p>
+<p>Base node for 2D collision objects.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s. Each shape must be assigned to a <em>shape owner</em>. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the <code class="docutils literal notranslate"><span class="pre">shape_owner_*</span></code> methods.</p>
+<p><strong>Note:</strong> Only collisions between objects within the same canvas (<a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> canvas or <a class="reference internal" href="class_canvaslayer.html#class-canvaslayer"><span class="std std-ref">CanvasLayer</span></a>) are supported. The behavior of collisions between objects in different canvases is undefined.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 68%"/>
+<col style="width: 9%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-property-collision-mask"><span class="std std-ref">collision_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-property-input-pickable"><span class="std std-ref">input_pickable</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-input-event"><span class="std std-ref">_input_event</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> viewport, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-create-shape-owner"><span class="std std-ref">create_shape_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-get-collision-layer-bit"><span class="std std-ref">get_collision_layer_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-get-collision-mask-bit"><span class="std std-ref">get_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-get-rid"><span class="std std-ref">get_rid</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-get-shape-owner-one-way-collision-margin"><span class="std std-ref">get_shape_owner_one_way_collision_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-get-shape-owners"><span class="std std-ref">get_shape_owners</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-is-shape-owner-disabled"><span class="std std-ref">is_shape_owner_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-is-shape-owner-one-way-collision-enabled"><span class="std std-ref">is_shape_owner_one_way_collision_enabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-remove-shape-owner"><span class="std std-ref">remove_shape_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-set-collision-layer-bit"><span class="std std-ref">set_collision_layer_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-set-collision-mask-bit"><span class="std std-ref">set_collision_mask_bit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-find-owner"><span class="std std-ref">shape_find_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-add-shape"><span class="std std-ref">shape_owner_add_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-clear-shapes"><span class="std std-ref">shape_owner_clear_shapes</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-get-owner"><span class="std std-ref">shape_owner_get_owner</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-get-shape"><span class="std std-ref">shape_owner_get_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-get-shape-count"><span class="std std-ref">shape_owner_get_shape_count</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-get-shape-index"><span class="std std-ref">shape_owner_get_shape_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-get-transform"><span class="std std-ref">shape_owner_get_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-remove-shape"><span class="std std-ref">shape_owner_remove_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-set-disabled"><span class="std std-ref">shape_owner_set_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-set-one-way-collision"><span class="std std-ref">shape_owner_set_one_way_collision</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-set-one-way-collision-margin"><span class="std std-ref">shape_owner_set_one_way_collision_margin</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-collisionobject2d-method-shape-owner-set-transform"><span class="std std-ref">shape_owner_set_transform</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-collisionobject2d-signal-input-event">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/input_event"></a>input_event</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> viewport, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong></p></li>
+</ul>
+<p>Emitted when an input event occurs. Requires <a class="reference internal" href="#class-collisionobject2d-property-input-pickable"><span class="std std-ref">input_pickable</span></a> to be <code class="docutils literal notranslate"><span class="pre">true</span></code> and at least one <code class="docutils literal notranslate"><span class="pre">collision_layer</span></code> bit to be set. See <a class="reference internal" href="#class-collisionobject2d-method-input-event"><span class="std std-ref">_input_event</span></a> for details.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-signal-mouse-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/mouse_entered"></a>mouse_entered</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the mouse pointer enters any of this object's shapes. Requires <a class="reference internal" href="#class-collisionobject2d-property-input-pickable"><span class="std std-ref">input_pickable</span></a> to be <code class="docutils literal notranslate"><span class="pre">true</span></code> and at least one <code class="docutils literal notranslate"><span class="pre">collision_layer</span></code> bit to be set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-signal-mouse-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/mouse_exited"></a>mouse_exited</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the mouse pointer exits all this object's shapes. Requires <a class="reference internal" href="#class-collisionobject2d-property-input-pickable"><span class="std std-ref">input_pickable</span></a> to be <code class="docutils literal notranslate"><span class="pre">true</span></code> and at least one <code class="docutils literal notranslate"><span class="pre">collision_layer</span></code> bit to be set.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-collisionobject2d-property-collision-layer">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_layer"></a>collision_layer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_layer(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_layer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The physics layers this CollisionObject2D is in. Collision objects can exist in one or more of 32 different layers. See also <a class="reference internal" href="#class-collisionobject2d-property-collision-mask"><span class="std std-ref">collision_mask</span></a>.</p>
+<p><strong>Note:</strong> A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See <a class="reference external" href="https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks">Collision layers and masks</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-property-collision-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/collision_mask"></a>collision_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_collision_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_collision_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The physics layers this CollisionObject2D scans. Collision objects can scan one or more of 32 different layers. See also <a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a>.</p>
+<p><strong>Note:</strong> A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See <a class="reference external" href="https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks">Collision layers and masks</a> in the documentation for more information.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-property-input-pickable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/input_pickable"></a>input_pickable</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pickable(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_pickable()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. Requires at least one <a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a> bit to be set.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-collisionobject2d-method-input-event">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_input_event"></a>_input_event</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> viewport, <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_idx <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Accepts unhandled <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a>s. Requires <a class="reference internal" href="#class-collisionobject2d-property-input-pickable"><span class="std std-ref">input_pickable</span></a> to be <code class="docutils literal notranslate"><span class="pre">true</span></code>. <code class="docutils literal notranslate"><span class="pre">shape_idx</span></code> is the child index of the clicked <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>. Connect to the <code class="docutils literal notranslate"><span class="pre">input_event</span></code> signal to easily pick up these events.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-create-shape-owner">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_shape_owner"></a>create_shape_owner</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> owner <strong>)</strong></p></li>
+</ul>
+<p>Creates a new shape owner for the given object. Returns <code class="docutils literal notranslate"><span class="pre">owner_id</span></code> of the new owner for future reference.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-get-collision-layer-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_layer_bit"></a>get_collision_layer_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether or not the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> of the <a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a> is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-get-collision-mask-bit">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_collision_mask_bit"></a>get_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether or not the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> of the <a class="reference internal" href="#class-collisionobject2d-property-collision-mask"><span class="std std-ref">collision_mask</span></a> is set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-get-rid">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_rid"></a>get_rid</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the object's <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-get-shape-owner-one-way-collision-margin">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_shape_owner_one_way_collision_margin"></a>get_shape_owner_one_way_collision_margin</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <code class="docutils literal notranslate"><span class="pre">one_way_collision_margin</span></code> of the shape owner identified by given <code class="docutils literal notranslate"><span class="pre">owner_id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-get-shape-owners">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_shape_owners"></a>get_shape_owners</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> of <code class="docutils literal notranslate"><span class="pre">owner_id</span></code> identifiers. You can use these ids in other methods that take <code class="docutils literal notranslate"><span class="pre">owner_id</span></code> as an argument.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-is-shape-owner-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_shape_owner_disabled"></a>is_shape_owner_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the shape owner and its shapes are disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-is-shape-owner-one-way-collision-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_shape_owner_one_way_collision_enabled"></a>is_shape_owner_one_way_collision_enabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if collisions for the shape owner originating from this <code class="docutils literal notranslate"><span class="pre">CollisionObject2D</span></code> will not be reported to collided with <code class="docutils literal notranslate"><span class="pre">CollisionObject2D</span></code>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-remove-shape-owner">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_shape_owner"></a>remove_shape_owner</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong></p></li>
+</ul>
+<p>Removes the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-set-collision-layer-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_layer_bit"></a>set_collision_layer_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, sets the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the the <a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, clears the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the the <a class="reference internal" href="#class-collisionobject2d-property-collision-layer"><span class="std std-ref">collision_layer</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-set-collision-mask-bit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_collision_mask_bit"></a>set_collision_mask_bit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> bit, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, sets the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the the <a class="reference internal" href="#class-collisionobject2d-property-collision-mask"><span class="std std-ref">collision_mask</span></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">value</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, clears the specified <code class="docutils literal notranslate"><span class="pre">bit</span></code> in the the <a class="reference internal" href="#class-collisionobject2d-property-collision-mask"><span class="std std-ref">collision_mask</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-find-owner">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_find_owner"></a>shape_find_owner</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_index <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <code class="docutils literal notranslate"><span class="pre">owner_id</span></code> of the given shape.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-add-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_add_shape"></a>shape_owner_add_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> shape <strong>)</strong></p></li>
+</ul>
+<p>Adds a <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> to the shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-clear-shapes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_clear_shapes"></a>shape_owner_clear_shapes</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong></p></li>
+</ul>
+<p>Removes all shapes from the shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-get-owner">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_get_owner"></a>shape_owner_get_owner</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the parent object of the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-get-shape">
+<li><p><a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_get_shape"></a>shape_owner_get_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> with the given id from the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-get-shape-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_get_shape_count"></a>shape_owner_get_shape_count</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of shapes the given shape owner contains.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-get-shape-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_get_shape_index"></a>shape_owner_get_shape_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the child index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> with the given id from the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-get-transform">
+<li><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_get_transform"></a>shape_owner_get_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the shape owner's <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-remove-shape">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_remove_shape"></a>shape_owner_remove_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> shape_id <strong>)</strong></p></li>
+</ul>
+<p>Removes a shape from the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-set-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_set_disabled"></a>shape_owner_set_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, disables the given shape owner.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-set-one-way-collision">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_set_one_way_collision"></a>shape_owner_set_one_way_collision</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, collisions for the shape owner originating from this <code class="docutils literal notranslate"><span class="pre">CollisionObject2D</span></code> will not be reported to collided with <code class="docutils literal notranslate"><span class="pre">CollisionObject2D</span></code>s.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-set-one-way-collision-margin">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_set_one_way_collision_margin"></a>shape_owner_set_one_way_collision_margin</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">one_way_collision_margin</span></code> of the shape owner identified by given <code class="docutils literal notranslate"><span class="pre">owner_id</span></code> to <code class="docutils literal notranslate"><span class="pre">margin</span></code> pixels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-collisionobject2d-method-shape-owner-set-transform">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/shape_owner_set_transform"></a>shape_owner_set_transform</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> owner_id, <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> transform <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> of the given shape owner.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_collisionobject.html" rel="prev" title="CollisionObject"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_collisionpolygon.html" rel="next" title="CollisionPolygon">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

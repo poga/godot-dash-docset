@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="PopupMenu" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_popupmenu.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Popup&lt; Control&lt; CanvasItem&lt; Node&lt; Object PopupMenu displays a list of options. Description: PopupMenu is a Control that displays a list of options. They are popular in toolbars or context..." property="og:description"/>
+<meta content="PopupMenu displays a list of options. PopupMenu is a Control that displays a list of options. They are popular in toolbars or context menus. bool allow_search false FocusMode focus_mode 2 (parent override) bool hide_o..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) PopupMenu — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popupmenu.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_popupmenu.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_popupmenu.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_popupmenu.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_popupmenu.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_popupmenu.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_popupmenu.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_popupmenu.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_popupmenu.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_popupmenu.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_popupmenu.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_popupmenu.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_popupmenu.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_popupmenu.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popupmenu.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popupmenu.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_popuppanel.html" rel="next" title="PopupPanel"/>
+<link href="class_popupdialog.html" rel="prev" title="PopupDialog"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>PopupMenu</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="popupmenu">
+<span id="class-popupmenu"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/PopupMenu¶"></a>PopupMenu<a class="headerlink" href="#popupmenu" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_popup.html#class-popup"><span class="std std-ref">Popup</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>PopupMenu displays a list of options.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> is a <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> that displays a list of options. They are popular in toolbars or context menus.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 59%"/>
+<col style="width: 16%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-property-allow-search"><span class="std std-ref">allow_search</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_control.html#enum-control-focusmode"><span class="std std-ref">FocusMode</span></a></p></td>
+<td><p>focus_mode</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code> <em>(parent override)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-property-hide-on-checkable-item-selection"><span class="std std-ref">hide_on_checkable_item_selection</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-property-hide-on-item-selection"><span class="std std-ref">hide_on_item_selection</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-property-hide-on-state-item-selection"><span class="std std-ref">hide_on_state_item_selection</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-property-submenu-popup-delay"><span class="std std-ref">submenu_popup_delay</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.3</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%"/>
+<col style="width: 88%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-check-item"><span class="std std-ref">add_check_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-check-shortcut"><span class="std std-ref">add_check_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-check-item"><span class="std std-ref">add_icon_check_item</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-check-shortcut"><span class="std std-ref">add_icon_check_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-item"><span class="std std-ref">add_icon_item</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-radio-check-item"><span class="std std-ref">add_icon_radio_check_item</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-radio-check-shortcut"><span class="std std-ref">add_icon_radio_check_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-icon-shortcut"><span class="std std-ref">add_icon_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-item"><span class="std std-ref">add_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_states, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> default_state=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-radio-check-item"><span class="std std-ref">add_radio_check_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-radio-check-shortcut"><span class="std std-ref">add_radio_check_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label="", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-shortcut"><span class="std std-ref">add_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-add-submenu-item"><span class="std std-ref">add_submenu_item</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> submenu, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-current-index"><span class="std std-ref">get_current_index</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-count"><span class="std std-ref">get_item_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-icon"><span class="std std-ref">get_item_icon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-id"><span class="std std-ref">get_item_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-index"><span class="std std-ref">get_item_index</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-metadata"><span class="std std-ref">get_item_metadata</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-shortcut"><span class="std std-ref">get_item_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-submenu"><span class="std std-ref">get_item_submenu</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-text"><span class="std std-ref">get_item_text</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-get-item-tooltip"><span class="std std-ref">get_item_tooltip</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-hide-on-window-lose-focus"><span class="std std-ref">is_hide_on_window_lose_focus</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-checkable"><span class="std std-ref">is_item_checkable</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-checked"><span class="std std-ref">is_item_checked</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-disabled"><span class="std std-ref">is_item_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-radio-checkable"><span class="std std-ref">is_item_radio_checkable</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-separator"><span class="std std-ref">is_item_separator</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-is-item-shortcut-disabled"><span class="std std-ref">is_item_shortcut_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-remove-item"><span class="std std-ref">remove_item</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-hide-on-window-lose-focus"><span class="std std-ref">set_hide_on_window_lose_focus</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-accelerator"><span class="std std-ref">set_item_accelerator</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-as-checkable"><span class="std std-ref">set_item_as_checkable</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-as-radio-checkable"><span class="std std-ref">set_item_as_radio_checkable</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-as-separator"><span class="std std-ref">set_item_as_separator</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> checked <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-disabled"><span class="std std-ref">set_item_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-icon"><span class="std std-ref">set_item_icon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-id"><span class="std std-ref">set_item_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-metadata"><span class="std std-ref">set_item_metadata</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> metadata <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-multistate"><span class="std std-ref">set_item_multistate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> state <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-shortcut"><span class="std std-ref">set_item_shortcut</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-shortcut-disabled"><span class="std std-ref">set_item_shortcut_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-submenu"><span class="std std-ref">set_item_submenu</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> submenu <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-text"><span class="std std-ref">set_item_text</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-set-item-tooltip"><span class="std std-ref">set_item_tooltip</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> tooltip <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-toggle-item-checked"><span class="std std-ref">toggle_item_checked</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-method-toggle-item-multistate"><span class="std std-ref">toggle_item_multistate</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="theme-properties">
+<h2>Theme Properties<a class="headerlink" href="#theme-properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 56%"/>
+<col style="width: 22%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-color-font-color"><span class="std std-ref">font_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-color-font-color-accel"><span class="std std-ref">font_color_accel</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.7,</span> <span class="pre">0.7,</span> <span class="pre">0.7,</span> <span class="pre">0.8</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-color-font-color-disabled"><span class="std std-ref">font_color_disabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.4,</span> <span class="pre">0.4,</span> <span class="pre">0.4,</span> <span class="pre">0.8</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-color-font-color-hover"><span class="std std-ref">font_color_hover</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-color-font-color-separator"><span class="std std-ref">font_color_separator</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-constant-hseparation"><span class="std std-ref">hseparation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-constant-vseparation"><span class="std std-ref">vseparation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-font-font"><span class="std std-ref">font</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-icon-checked"><span class="std std-ref">checked</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-icon-radio-checked"><span class="std std-ref">radio_checked</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-icon-radio-unchecked"><span class="std std-ref">radio_unchecked</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-icon-submenu"><span class="std std-ref">submenu</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-icon-unchecked"><span class="std std-ref">unchecked</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-hover"><span class="std std-ref">hover</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-labeled-separator-left"><span class="std std-ref">labeled_separator_left</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-labeled-separator-right"><span class="std std-ref">labeled_separator_right</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-panel"><span class="std std-ref">panel</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-panel-disabled"><span class="std std-ref">panel_disabled</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popupmenu-theme-style-separator"><span class="std std-ref">separator</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popupmenu-signal-id-focused">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/id_focused"></a>id_focused</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted when user navigated to an item of some <code class="docutils literal notranslate"><span class="pre">id</span></code> using <code class="docutils literal notranslate"><span class="pre">ui_up</span></code> or <code class="docutils literal notranslate"><span class="pre">ui_down</span></code> action.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-signal-id-pressed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/id_pressed"></a>id_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted when an item of some <code class="docutils literal notranslate"><span class="pre">id</span></code> is pressed or its accelerator is activated.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-signal-index-pressed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/index_pressed"></a>index_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when an item of some <code class="docutils literal notranslate"><span class="pre">index</span></code> is pressed or its accelerator is activated.</p>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popupmenu-property-allow-search">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/allow_search"></a>allow_search</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_allow_search(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_allow_search()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, allows navigating <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> with letter keys.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-property-hide-on-checkable-item-selection">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hide_on_checkable_item_selection"></a>hide_on_checkable_item_selection</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_hide_on_checkable_item_selection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_hide_on_checkable_item_selection()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, hides the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> when a checkbox or radio button is selected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-property-hide-on-item-selection">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hide_on_item_selection"></a>hide_on_item_selection</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_hide_on_item_selection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_hide_on_item_selection()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, hides the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> when an item is selected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-property-hide-on-state-item-selection">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/hide_on_state_item_selection"></a>hide_on_state_item_selection</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_hide_on_state_item_selection(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_hide_on_state_item_selection()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, hides the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> when a state item is selected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-property-submenu-popup-delay">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/submenu_popup_delay"></a>submenu_popup_delay</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_submenu_popup_delay(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_submenu_popup_delay()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the delay time in seconds for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popupmenu-method-add-check-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_check_item"></a>add_check_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new checkable item with text <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-check-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_check_shortcut"></a>add_check_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a new checkable item and assigns the specified <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> to it. Sets the label of the checkbox to the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a>'s name.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-check-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_check_item"></a>add_icon_check_item</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new checkable item with text <code class="docutils literal notranslate"><span class="pre">label</span></code> and icon <code class="docutils literal notranslate"><span class="pre">texture</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-check-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_check_shortcut"></a>add_icon_check_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a new checkable item and assigns the specified <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> and icon <code class="docutils literal notranslate"><span class="pre">texture</span></code> to it. Sets the label of the checkbox to the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a>'s name.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_item"></a>add_icon_item</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new item with text <code class="docutils literal notranslate"><span class="pre">label</span></code> and icon <code class="docutils literal notranslate"><span class="pre">texture</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-radio-check-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_radio_check_item"></a>add_icon_radio_check_item</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Same as <a class="reference internal" href="#class-popupmenu-method-add-icon-check-item"><span class="std std-ref">add_icon_check_item</span></a>, but uses a radio check button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-radio-check-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_radio_check_shortcut"></a>add_icon_radio_check_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Same as <a class="reference internal" href="#class-popupmenu-method-add-icon-check-shortcut"><span class="std std-ref">add_icon_check_shortcut</span></a>, but uses a radio check button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-icon-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_icon_shortcut"></a>add_icon_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> texture, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a new item and assigns the specified <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> and icon <code class="docutils literal notranslate"><span class="pre">texture</span></code> to it. Sets the label of the checkbox to the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a>'s name.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_item"></a>add_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new item with text <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-multistate-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_multistate_item"></a>add_multistate_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> max_states, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> default_state=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new multistate item with text <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
+<p>Contrarily to normal binary items, multistate items can have more than two states, as defined by <code class="docutils literal notranslate"><span class="pre">max_states</span></code>. Each press or activate of the item will increase the state by one. The default value is defined by <code class="docutils literal notranslate"><span class="pre">default_state</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-radio-check-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_radio_check_item"></a>add_radio_check_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel=0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new radio check button with text <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided, as well as an accelerator (<code class="docutils literal notranslate"><span class="pre">accel</span></code>). If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index. If no <code class="docutils literal notranslate"><span class="pre">accel</span></code> is provided then the default <code class="docutils literal notranslate"><span class="pre">0</span></code> will be assigned to it. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-radio-check-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_radio_check_shortcut"></a>add_radio_check_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a new radio check button and assigns a <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> to it. Sets the label of the checkbox to the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a>'s name.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See <a class="reference internal" href="#class-popupmenu-method-set-item-checked"><span class="std std-ref">set_item_checked</span></a> for more info on how to control it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-separator">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_separator"></a>add_separator</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label="", <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds a separator between items. Separators also occupy an index, which you can set by using the <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">label</span></code> can optionally be provided, which will appear at the center of the separator.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_shortcut"></a>add_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Adds a <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-add-submenu-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_submenu_item"></a>add_submenu_item</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> label, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> submenu, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id=-1 <strong>)</strong></p></li>
+</ul>
+<p>Adds an item that will act as a submenu of the parent <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> node when clicked. The <code class="docutils literal notranslate"><span class="pre">submenu</span></code> argument is the name of the child <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> node that will be shown when the item is clicked.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">id</span></code> can optionally be provided. If no <code class="docutils literal notranslate"><span class="pre">id</span></code> is provided, one will be created from the index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes all items from the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-current-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_current_index"></a>get_current_index</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the index of the currently focused item. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if no item is focused.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-accelerator">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_accelerator"></a>get_item_accelerator</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the accelerator of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. Accelerators are special combinations of keys that activate the item, no matter which control is focused.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_count"></a>get_item_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of items in the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-icon">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_icon"></a>get_item_icon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the icon of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_id"></a>get_item_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the id of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. <code class="docutils literal notranslate"><span class="pre">id</span></code> can be manually assigned, while index can not.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-index">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_index"></a>get_item_index</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the index of the item containing the specified <code class="docutils literal notranslate"><span class="pre">id</span></code>. Index is automatically assigned to each item by the engine. Index can not be set manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-metadata">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_metadata"></a>get_item_metadata</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the metadata of the specified item, which might be of any type. You can set it with <a class="reference internal" href="#class-popupmenu-method-set-item-metadata"><span class="std std-ref">set_item_metadata</span></a>, which provides a simple way of assigning context data to items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-shortcut">
+<li><p><a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_shortcut"></a>get_item_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> associated with the specified <code class="docutils literal notranslate"><span class="pre">idx</span></code> item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-submenu">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_submenu"></a>get_item_submenu</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the submenu name of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. See <a class="reference internal" href="#class-popupmenu-method-add-submenu-item"><span class="std std-ref">add_submenu_item</span></a> for more info on how to add a submenu.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-text">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_text"></a>get_item_text</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the text of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-get-item-tooltip">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_item_tooltip"></a>get_item_tooltip</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the tooltip associated with the specified index index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-hide-on-window-lose-focus">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_hide_on_window_lose_focus"></a>is_hide_on_window_lose_focus</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the popup will be hidden when the window loses focus or not.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-checkable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_checkable"></a>is_item_checkable</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is checkable in some way, i.e. if it has a checkbox or radio button.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-checked">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_checked"></a>is_item_checked</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is checked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_disabled"></a>is_item_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is disabled. When it is disabled it can't be selected, or its action invoked.</p>
+<p>See <a class="reference internal" href="#class-popupmenu-method-set-item-disabled"><span class="std std-ref">set_item_disabled</span></a> for more info on how to disable an item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-radio-checkable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_radio_checkable"></a>is_item_radio_checkable</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> has radio button-style checkability.</p>
+<p><strong>Note:</strong> This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-separator">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_separator"></a>is_item_separator</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item is a separator. If it is, it will be displayed as a line. See <a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a> for more info on how to add a separator.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-is-item-shortcut-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_item_shortcut_disabled"></a>is_item_shortcut_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified item's shortcut is disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-remove-item">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_item"></a>remove_item</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Removes the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> from the menu.</p>
+<p><strong>Note:</strong> The indices of items after the removed item will be shifted by one.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-hide-on-window-lose-focus">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_hide_on_window_lose_focus"></a>set_hide_on_window_lose_focus</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Hides the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> when the window loses focus.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-accelerator">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_accelerator"></a>set_item_accelerator</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> accel <strong>)</strong></p></li>
+</ul>
+<p>Sets the accelerator of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. Accelerators are special combinations of keys that activate the item, no matter which control is focused.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-as-checkable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_as_checkable"></a>set_item_as_checkable</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets whether the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> has a checkbox. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, sets the type of the item to plain text.</p>
+<p><strong>Note:</strong> Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-as-radio-checkable">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_as_radio_checkable"></a>set_item_as_radio_checkable</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets the type of the item at the specified index <code class="docutils literal notranslate"><span class="pre">idx</span></code> to radio button. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, sets the type of the item to plain text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-as-separator">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_as_separator"></a>set_item_as_separator</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Mark the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> as a separator, which means that it would be displayed as a line. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, sets the type of the item to plain text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-checked">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_checked"></a>set_item_checked</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> checked <strong>)</strong></p></li>
+</ul>
+<p>Sets the checkstate status of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_disabled"></a>set_item_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<p>Enables/disables the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. When it is disabled, it can't be selected and its action can't be invoked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-icon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_icon"></a>set_item_icon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></li>
+</ul>
+<p>Replaces the <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon of the specified <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-id">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_id"></a>set_item_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-metadata">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_metadata"></a>set_item_metadata</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> metadata <strong>)</strong></p></li>
+</ul>
+<p>Sets the metadata of an item, which may be of any type. You can later get it with <a class="reference internal" href="#class-popupmenu-method-get-item-metadata"><span class="std std-ref">get_item_metadata</span></a>, which provides a simple way of assigning context data to items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-multistate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_multistate"></a>set_item_multistate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> state <strong>)</strong></p></li>
+</ul>
+<p>Sets the state of a multistate item. See <a class="reference internal" href="#class-popupmenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-shortcut">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_shortcut"></a>set_item_shortcut</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> shortcut, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> global=false <strong>)</strong></p></li>
+</ul>
+<p>Sets a <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> for the specified item <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-shortcut-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_shortcut_disabled"></a>set_item_shortcut_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<p>Disables the <a class="reference internal" href="class_shortcut.html#class-shortcut"><span class="std std-ref">ShortCut</span></a> of the specified index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-submenu">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_submenu"></a>set_item_submenu</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> submenu <strong>)</strong></p></li>
+</ul>
+<p>Sets the submenu of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. The submenu is the name of a child <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> node that would be shown when the item is clicked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-text">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_text"></a>set_item_text</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Sets the text of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-set-item-tooltip">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_item_tooltip"></a>set_item_tooltip</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> tooltip <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> tooltip of the item at the specified index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-toggle-item-checked">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/toggle_item_checked"></a>toggle_item_checked</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Toggles the check state of the item of the specified index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-method-toggle-item-multistate">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/toggle_item_multistate"></a>toggle_item_multistate</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Cycle to the next state of a multistate item. See <a class="reference internal" href="#class-popupmenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
+</section>
+<section id="theme-property-descriptions">
+<h2>Theme Property Descriptions<a class="headerlink" href="#theme-property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popupmenu-theme-color-font-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The default text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> for menu items' names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-color-font-color-accel">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_accel</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.7,</span> <span class="pre">0.7,</span> <span class="pre">0.7,</span> <span class="pre">0.8</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The text <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used for shortcuts and accelerators that show next to the menu item name when defined. See <a class="reference internal" href="#class-popupmenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a> for more info on accelerators.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-color-font-color-disabled">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_disabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.4,</span> <span class="pre">0.4,</span> <span class="pre">0.4,</span> <span class="pre">0.8</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used for disabled menu items' text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-color-font-color-hover">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_hover</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used for the hovered text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-color-font-color-separator">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_separator</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">0.88,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> used for labeled separators' text. See <a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-constant-hseparation">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>hseparation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The horizontal space between the item's name and the shortcut text/submenu arrow.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-constant-vseparation">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>vseparation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The vertical space between each menu item.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-font-font">
+<li><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> <strong>font</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> used for the menu items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-icon-checked">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>checked</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon for the checked checkbox items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-icon-radio-checked">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>radio_checked</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon for the checked radio button items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-icon-radio-unchecked">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>radio_unchecked</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon for the unchecked radio button items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-icon-submenu">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>submenu</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon for the submenu arrow.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-icon-unchecked">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>unchecked</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon for the unchecked checkbox items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-hover">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>hover</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> displayed when the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> item is hovered.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-labeled-separator-left">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>labeled_separator_left</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> for the left side of labeled separator. See <a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-labeled-separator-right">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>labeled_separator_right</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> for the right side of labeled separator. See <a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-panel">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>panel</strong></p></li>
+</ul>
+<p>Default <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> of the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> items.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-panel-disabled">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>panel_disabled</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when the <code class="docutils literal notranslate"><span class="pre">PopupMenu</span></code> item is disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popupmenu-theme-style-separator">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>separator</strong></p></li>
+</ul>
+<p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used for the separators. See <a class="reference internal" href="#class-popupmenu-method-add-separator"><span class="std std-ref">add_separator</span></a>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_popupdialog.html" rel="prev" title="PopupDialog"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_popuppanel.html" rel="next" title="PopupPanel">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

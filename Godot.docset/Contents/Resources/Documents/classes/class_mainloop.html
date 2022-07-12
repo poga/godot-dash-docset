@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="MainLoop" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_mainloop.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Inherited By: SceneTree Abstract base class for the game's main loop. Description: MainLoop is the abstract base class for a Godot project's game loop. It is inherited by SceneTree..." property="og:description"/>
+<meta content="Abstract base class for the game's main loop. MainLoop is the abstract base class for a Godot project's game loop. It is inherited by SceneTree, which is the default game loop implementation used in Godot projects, th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) MainLoop — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mainloop.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_mainloop.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_mainloop.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_mainloop.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_mainloop.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_mainloop.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_mainloop.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_mainloop.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_mainloop.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_mainloop.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_mainloop.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_mainloop.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_mainloop.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_mainloop.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mainloop.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mainloop.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_margincontainer.html" rel="next" title="MarginContainer"/>
+<link href="class_listener2d.html" rel="prev" title="Listener2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>MainLoop</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="mainloop">
+<span id="class-mainloop"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/MainLoop¶"></a>MainLoop<a class="headerlink" href="#mainloop" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a></p>
+<p>Abstract base class for the game's main loop.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">MainLoop</span></code> is the abstract base class for a Godot project's game loop. It is inherited by <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a>, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own <code class="docutils literal notranslate"><span class="pre">MainLoop</span></code> subclass instead of the scene tree.</p>
+<p>Upon the application start, a <code class="docutils literal notranslate"><span class="pre">MainLoop</span></code> implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a <a class="reference internal" href="class_scenetree.html#class-scenetree"><span class="std std-ref">SceneTree</span></a> is created) unless a main <a class="reference internal" href="class_script.html#class-script"><span class="std std-ref">Script</span></a> is provided from the command line (with e.g. <code class="docutils literal notranslate"><span class="pre">godot</span> <span class="pre">-s</span> <span class="pre">my_loop.gd</span></code>, which should then be a <code class="docutils literal notranslate"><span class="pre">MainLoop</span></code> implementation.</p>
+<p>Here is an example script implementing a simple <code class="docutils literal notranslate"><span class="pre">MainLoop</span></code>:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">MainLoop</span>
+
+<span class="k">var</span> <span class="n">time_elapsed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="n">keys_typed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="n">quit</span> <span class="o">=</span> <span class="bp">false</span>
+
+<span class="k">func</span> <span class="n">_initialize</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Initialized:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"  Starting time: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">time_elapsed</span><span class="p">))</span>
+
+<span class="k">func</span> <span class="n">_idle</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="n">time_elapsed</span> <span class="o">+=</span> <span class="n">delta</span>
+    <span class="c1"># Return true to end the main loop.</span>
+    <span class="k">return</span> <span class="n">quit</span>
+
+<span class="k">func</span> <span class="n">_input_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># Record keys.</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventKey</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">pressed</span> <span class="ow">and</span> <span class="o">!</span><span class="n">event</span><span class="o">.</span><span class="n">echo</span><span class="p">:</span>
+        <span class="n">keys_typed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">OS</span><span class="o">.</span><span class="n">get_scancode_string</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">scancode</span><span class="p">))</span>
+        <span class="c1"># Quit on Escape press.</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">scancode</span> <span class="o">==</span> <span class="n">KEY_ESCAPE</span><span class="p">:</span>
+            <span class="n">quit</span> <span class="o">=</span> <span class="bp">true</span>
+    <span class="c1"># Quit on any mouse click.</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="n">InputEventMouseButton</span><span class="p">:</span>
+        <span class="n">quit</span> <span class="o">=</span> <span class="bp">true</span>
+
+<span class="k">func</span> <span class="n">_finalize</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Finalized:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"  End time: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">time_elapsed</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"  Keys typed: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="nb">var2str</span><span class="p">(</span><span class="n">keys_typed</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 87%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-drop-files"><span class="std std-ref">_drop_files</span></a> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> files, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_screen <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-finalize"><span class="std std-ref">_finalize</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-global-menu-action"><span class="std std-ref">_global_menu_action</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-idle"><span class="std std-ref">_idle</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-initialize"><span class="std std-ref">_initialize</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-input-event"><span class="std std-ref">_input_event</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-input-text"><span class="std std-ref">_input_text</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-iteration"><span class="std std-ref">_iteration</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-finish"><span class="std std-ref">finish</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#id1"><span class="std std-ref">idle</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mainloop-method-init"><span class="std std-ref">init</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#id2"><span class="std std-ref">input_event</span></a> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#id3"><span class="std std-ref">input_text</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#id4"><span class="std std-ref">iteration</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-mainloop-signal-on-request-permissions-result">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/on_request_permissions_result"></a>on_request_permissions_result</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> permission, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> granted <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a user responds to a permission request.</p>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-mainloop-constant-notification-app-resumed"></span><span id="class-mainloop-constant-notification-os-ime-update"></span><span id="class-mainloop-constant-notification-crash"></span><span id="class-mainloop-constant-notification-wm-about"></span><span id="class-mainloop-constant-notification-translation-changed"></span><span id="class-mainloop-constant-notification-os-memory-warning"></span><span id="class-mainloop-constant-notification-wm-unfocus-request"></span><span id="class-mainloop-constant-notification-wm-go-back-request"></span><span id="class-mainloop-constant-notification-wm-quit-request"></span><span id="class-mainloop-constant-notification-wm-focus-out"></span><span id="class-mainloop-constant-notification-wm-focus-in"></span><span id="class-mainloop-constant-notification-wm-mouse-exit"></span><span id="class-mainloop-constant-notification-wm-mouse-enter"></span><ul class="simple" id="class-mainloop-constant-notification-app-paused">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_MOUSE_ENTER"></a>NOTIFICATION_WM_MOUSE_ENTER</strong> = <strong>1002</strong> --- Notification received from the OS when the mouse enters the game window.</p></li>
+</ul>
+<p>Implemented on desktop and web platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_MOUSE_EXIT"></a>NOTIFICATION_WM_MOUSE_EXIT</strong> = <strong>1003</strong> --- Notification received from the OS when the mouse leaves the game window.</p></li>
+</ul>
+<p>Implemented on desktop and web platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_FOCUS_IN"></a>NOTIFICATION_WM_FOCUS_IN</strong> = <strong>1004</strong> --- Notification received from the OS when the game window is focused.</p></li>
+</ul>
+<p>Implemented on all platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_FOCUS_OUT"></a>NOTIFICATION_WM_FOCUS_OUT</strong> = <strong>1005</strong> --- Notification received from the OS when the game window is unfocused.</p></li>
+</ul>
+<p>Implemented on all platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_QUIT_REQUEST"></a>NOTIFICATION_WM_QUIT_REQUEST</strong> = <strong>1006</strong> --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).</p></li>
+</ul>
+<p>Implemented on desktop platforms.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_GO_BACK_REQUEST"></a>NOTIFICATION_WM_GO_BACK_REQUEST</strong> = <strong>1007</strong> --- Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_UNFOCUS_REQUEST"></a>NOTIFICATION_WM_UNFOCUS_REQUEST</strong> = <strong>1008</strong> --- Notification received from the OS when an unfocus request is sent (e.g. another OS window wants to take the focus).</p></li>
+</ul>
+<p>No supported platforms currently send this notification.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_OS_MEMORY_WARNING"></a>NOTIFICATION_OS_MEMORY_WARNING</strong> = <strong>1009</strong> --- Notification received from the OS when the application is exceeding its allocated memory.</p></li>
+</ul>
+<p>Specific to the iOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_TRANSLATION_CHANGED"></a>NOTIFICATION_TRANSLATION_CHANGED</strong> = <strong>1010</strong> --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like <a class="reference internal" href="class_object.html#class-object-method-tr"><span class="std std-ref">Object.tr</span></a>.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_WM_ABOUT"></a>NOTIFICATION_WM_ABOUT</strong> = <strong>1011</strong> --- Notification received from the OS when a request for "About" information is sent.</p></li>
+</ul>
+<p>Specific to the macOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_CRASH"></a>NOTIFICATION_CRASH</strong> = <strong>1012</strong> --- Notification received from Godot's crash handler when the engine is about to crash.</p></li>
+</ul>
+<p>Implemented on desktop platforms if the crash handler is enabled.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_OS_IME_UPDATE"></a>NOTIFICATION_OS_IME_UPDATE</strong> = <strong>1013</strong> --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).</p></li>
+</ul>
+<p>Specific to the macOS platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_APP_RESUMED"></a>NOTIFICATION_APP_RESUMED</strong> = <strong>1014</strong> --- Notification received from the OS when the app is resumed.</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+<ul class="simple">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_APP_PAUSED"></a>NOTIFICATION_APP_PAUSED</strong> = <strong>1015</strong> --- Notification received from the OS when the app is paused.</p></li>
+</ul>
+<p>Specific to the Android platform.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-mainloop-method-drop-files">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_drop_files"></a>_drop_files</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> files, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_screen <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-finalize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_finalize"></a>_finalize</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called before the program exits.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-global-menu-action">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_global_menu_action"></a>_global_menu_action</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when the user performs an action in the system global menu (e.g. the Mac OS menu bar).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-idle">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_idle"></a>_idle</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called each idle frame with the time since the last idle frame as argument (in seconds). Equivalent to <a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a>.</p>
+<p>If implemented, the method must return a boolean value. <code class="docutils literal notranslate"><span class="pre">true</span></code> ends the main loop, while <code class="docutils literal notranslate"><span class="pre">false</span></code> lets it proceed to the next frame.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-initialize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_initialize"></a>_initialize</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called once during initialization.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-input-event">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_input_event"></a>_input_event</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called whenever an <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> is received by the main loop.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-input-text">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_input_text"></a>_input_text</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Deprecated callback, does not do anything. Use <a class="reference internal" href="#class-mainloop-method-input-event"><span class="std std-ref">_input_event</span></a> to parse text input. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-iteration">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_iteration"></a>_iteration</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called each physics frame with the time since the last physics frame as argument (<code class="docutils literal notranslate"><span class="pre">delta</span></code>, in seconds). Equivalent to <a class="reference internal" href="class_node.html#class-node-method-physics-process"><span class="std std-ref">Node._physics_process</span></a>.</p>
+<p>If implemented, the method must return a boolean value. <code class="docutils literal notranslate"><span class="pre">true</span></code> ends the main loop, while <code class="docutils literal notranslate"><span class="pre">false</span></code> lets it proceed to the next frame.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-finish">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/finish"></a>finish</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-finalize"><span class="std std-ref">_finalize</span></a> instead. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id1">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/idle"></a>idle</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-idle"><span class="std std-ref">_idle</span></a> instead. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mainloop-method-init">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/init"></a>init</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-initialize"><span class="std std-ref">_initialize</span></a> instead. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id2">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/input_event"></a>input_event</strong> <strong>(</strong> <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> event <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-input-event"><span class="std std-ref">_input_event</span></a> instead. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id3">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/input_text"></a>input_text</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-input-text"><span class="std std-ref">_input_text</span></a> instead. Will be removed in Godot 4.0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="id4">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/iteration"></a>iteration</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></li>
+</ul>
+<p>Should not be called manually, override <a class="reference internal" href="#class-mainloop-method-iteration"><span class="std std-ref">_iteration</span></a> instead. Will be removed in Godot 4.0.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_listener2d.html" rel="prev" title="Listener2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_margincontainer.html" rel="next" title="MarginContainer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

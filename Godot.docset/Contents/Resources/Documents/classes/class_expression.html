@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Expression" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_expression.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object A class that stores an expression you can execute. Description: An expression can be made of any arithmetic operation, built-in math function call, method call of a pass..." property="og:description"/>
+<meta content="A class that stores an expression you can execute. An expression can be made of any arithmetic operation, built-in math function call, method call of a passed instance, or built-in type construction call. An example e..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Expression — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_expression.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_expression.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_expression.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_expression.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_expression.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_expression.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_expression.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_expression.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_expression.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_expression.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_expression.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_expression.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_expression.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_expression.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_expression.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_expression.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_externaltexture.html" rel="next" title="ExternalTexture"/>
+<link href="class_environment.html" rel="prev" title="Environment"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Expression</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="expression">
+<span id="class-expression"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Expression¶"></a>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A class that stores an expression you can execute.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>An expression can be made of any arithmetic operation, built-in math function call, method call of a passed instance, or built-in type construction call.</p>
+<p>An example expression text using the built-in math functions could be <code class="docutils literal notranslate"><span class="pre">sqrt(pow(3,2)</span> <span class="pre">+</span> <span class="pre">pow(4,2))</span></code>.</p>
+<p>In the following example we use a <a class="reference internal" href="class_lineedit.html#class-lineedit"><span class="std std-ref">LineEdit</span></a> node to write our expression and show the result.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">onready</span> <span class="k">var</span> <span class="n">expression</span> <span class="o">=</span> <span class="n">Expression</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="o">$</span><span class="n">LineEdit</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"text_entered"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">"_on_text_entered"</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_on_text_entered</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">error</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">expression</span><span class="o">.</span><span class="n">get_error_text</span><span class="p">())</span>
+        <span class="k">return</span>
+    <span class="k">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">execute</span><span class="p">([],</span> <span class="nb nb-Type">null</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">expression</span><span class="o">.</span><span class="n">has_execute_failed</span><span class="p">():</span>
+        <span class="o">$</span><span class="n">LineEdit</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 83%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-expression-method-execute"><span class="std std-ref">execute</span></a> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> inputs=[  ], <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> base_instance=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> show_error=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-expression-method-get-error-text"><span class="std std-ref">get_error_text</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-expression-method-has-execute-failed"><span class="std std-ref">has_execute_failed</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-expression-method-parse"><span class="std std-ref">parse</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> expression, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> input_names=PoolStringArray(  ) <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-expression-method-execute">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/execute"></a>execute</strong> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> inputs=[  ], <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> base_instance=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> show_error=true <strong>)</strong></p></li>
+</ul>
+<p>Executes the expression that was previously parsed by <a class="reference internal" href="#class-expression-method-parse"><span class="std std-ref">parse</span></a> and returns the result. Before you use the returned object, you should check if the method failed by calling <a class="reference internal" href="#class-expression-method-has-execute-failed"><span class="std std-ref">has_execute_failed</span></a>.</p>
+<p>If you defined input variables in <a class="reference internal" href="#class-expression-method-parse"><span class="std std-ref">parse</span></a>, you can specify their values in the inputs array, in the same order.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-expression-method-get-error-text">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_error_text"></a>get_error_text</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the error text if <a class="reference internal" href="#class-expression-method-parse"><span class="std std-ref">parse</span></a> has failed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-expression-method-has-execute-failed">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_execute_failed"></a>has_execute_failed</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <a class="reference internal" href="#class-expression-method-execute"><span class="std std-ref">execute</span></a> has failed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-expression-method-parse">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/parse"></a>parse</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> expression, <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> input_names=PoolStringArray(  ) <strong>)</strong></p></li>
+</ul>
+<p>Parses the expression and returns an <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> code.</p>
+<p>You can optionally specify names of variables that may appear in the expression with <code class="docutils literal notranslate"><span class="pre">input_names</span></code>, so that you can bind them when it gets executed.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_environment.html" rel="prev" title="Environment"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_externaltexture.html" rel="next" title="ExternalTexture">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

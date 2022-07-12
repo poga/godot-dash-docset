@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="NodePath" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_nodepath.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Pre-parsed scene tree path. Description: A pre-parsed relative or absolute path in a scene tree, for use with Node.get_node and similar functions. It can reference a node, a resource within a node,..." property="og:description"/>
+<meta content="Pre-parsed scene tree path. A pre-parsed relative or absolute path in a scene tree, for use with Node.get_node and similar functions. It can reference a node, a resource within a node, or a property of a node or resou..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) NodePath — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_nodepath.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_nodepath.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_nodepath.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_nodepath.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_nodepath.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_nodepath.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_nodepath.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_nodepath.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_nodepath.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_nodepath.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_nodepath.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_nodepath.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_nodepath.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_noisetexture.html" rel="next" title="NoiseTexture"/>
+<link href="class_node2d.html" rel="prev" title="Node2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>NodePath</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="nodepath">
+<span id="class-nodepath"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/NodePath¶"></a>NodePath<a class="headerlink" href="#nodepath" title="Permalink to this headline">¶</a></h1>
+<p>Pre-parsed scene tree path.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A pre-parsed relative or absolute path in a scene tree, for use with <a class="reference internal" href="class_node.html#class-node-method-get-node"><span class="std std-ref">Node.get_node</span></a> and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For instance, <code class="docutils literal notranslate"><span class="pre">"Path2D/PathFollow2D/Sprite:texture:size"</span></code> would refer to the <code class="docutils literal notranslate"><span class="pre">size</span></code> property of the <code class="docutils literal notranslate"><span class="pre">texture</span></code> resource on the node named <code class="docutils literal notranslate"><span class="pre">"Sprite"</span></code> which is a child of the other named nodes in the path.</p>
+<p>You will usually just pass a string to <a class="reference internal" href="class_node.html#class-node-method-get-node"><span class="std std-ref">Node.get_node</span></a> and it will be automatically converted, but you may occasionally want to parse a path ahead of time with <code class="docutils literal notranslate"><span class="pre">NodePath</span></code> or the literal syntax <code class="docutils literal notranslate"><span class="pre">@"path"</span></code>. Exporting a <code class="docutils literal notranslate"><span class="pre">NodePath</span></code> variable will give you a node selection widget in the properties panel of the editor, which can often be useful.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">NodePath</span></code> is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.</p>
+<p>Some examples of NodePaths include the following:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># No leading slash means it is relative to the current node.</span>
+<span class="err">@</span><span class="s2">"A"</span> <span class="c1"># Immediate child A</span>
+<span class="err">@</span><span class="s2">"A/B"</span> <span class="c1"># A's child B</span>
+<span class="err">@</span><span class="s2">"."</span> <span class="c1"># The current node.</span>
+<span class="err">@</span><span class="s2">".."</span> <span class="c1"># The parent node.</span>
+<span class="err">@</span><span class="s2">"../C"</span> <span class="c1"># A sibling node C.</span>
+<span class="c1"># A leading slash means it is absolute from the SceneTree.</span>
+<span class="err">@</span><span class="s2">"/root"</span> <span class="c1"># Equivalent to get_tree().get_root().</span>
+<span class="err">@</span><span class="s2">"/root/Main"</span> <span class="c1"># If your main scene's root node were named "Main".</span>
+<span class="err">@</span><span class="s2">"/root/MyAutoload"</span> <span class="c1"># If you have an autoloaded node or scene.</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> In the editor, <code class="docutils literal notranslate"><span class="pre">NodePath</span></code> properties are automatically updated when moving, renaming or deleting a node in the scene tree, but they are never updated at runtime.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/520">2D Role Playing Game Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-nodepath"><span class="std std-ref">NodePath</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-as-property-path"><span class="std std-ref">get_as_property_path</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-concatenated-subnames"><span class="std std-ref">get_concatenated_subnames</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-name"><span class="std std-ref">get_name</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-name-count"><span class="std std-ref">get_name_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-subname"><span class="std std-ref">get_subname</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-get-subname-count"><span class="std std-ref">get_subname_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-is-absolute"><span class="std std-ref">is_absolute</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-nodepath-method-is-empty"><span class="std std-ref">is_empty</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-nodepath-method-nodepath">
+<li><p><a class="reference internal" href="#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/NodePath"></a>NodePath</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Creates a NodePath from a string, e.g. <code class="docutils literal notranslate"><span class="pre">"Path2D/PathFollow2D/Sprite:texture:size"</span></code>. A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, <code class="docutils literal notranslate"><span class="pre">"."</span></code> and <code class="docutils literal notranslate"><span class="pre">".."</span></code> indicate the current node and its parent.</p>
+<p>The "subnames" optionally included after the path to the target node can point to resources or properties, and can also be nested.</p>
+<p>Examples of valid NodePaths (assuming that those nodes exist and have the referenced resources or properties):</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Points to the Sprite node</span>
+<span class="s2">"Path2D/PathFollow2D/Sprite"</span>
+<span class="c1"># Points to the Sprite node and its "texture" resource.</span>
+<span class="c1"># get_node() would retrieve "Sprite", while get_node_and_resource()</span>
+<span class="c1"># would retrieve both the Sprite node and the "texture" resource.</span>
+<span class="s2">"Path2D/PathFollow2D/Sprite:texture"</span>
+<span class="c1"># Points to the Sprite node and its "position" property.</span>
+<span class="s2">"Path2D/PathFollow2D/Sprite:position"</span>
+<span class="c1"># Points to the Sprite node and the "x" component of its "position" property.</span>
+<span class="s2">"Path2D/PathFollow2D/Sprite:position:x"</span>
+<span class="c1"># Absolute path (from "root")</span>
+<span class="s2">"/root/Level/Path2D"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-as-property-path">
+<li><p><a class="reference internal" href="#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_as_property_path"></a>get_as_property_path</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a node path with a colon character (<code class="docutils literal notranslate"><span class="pre">:</span></code>) prepended, transforming it to a pure property path with no node name (defaults to resolving from the current node).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will be parsed as a node path to the "x" property in the "position" node</span>
+<span class="k">var</span> <span class="n">node_path</span> <span class="o">=</span> <span class="nb nb-Type">NodePath</span><span class="p">(</span><span class="s2">"position:x"</span><span class="p">)</span>
+<span class="c1"># This will be parsed as a node path to the "x" component of the "position" property in the current node</span>
+<span class="k">var</span> <span class="n">property_path</span> <span class="o">=</span> <span class="n">node_path</span><span class="o">.</span><span class="n">get_as_property_path</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">property_path</span><span class="p">)</span> <span class="c1"># :position:x</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-concatenated-subnames">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_concatenated_subnames"></a>get_concatenated_subnames</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns all subnames concatenated with a colon character (<code class="docutils literal notranslate"><span class="pre">:</span></code>) as separator, i.e. the right side of the first colon in a node path.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">nodepath</span> <span class="o">=</span> <span class="nb nb-Type">NodePath</span><span class="p">(</span><span class="s2">"Path2D/PathFollow2D/Sprite:texture:load_path"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nodepath</span><span class="o">.</span><span class="n">get_concatenated_subnames</span><span class="p">())</span> <span class="c1"># texture:load_path</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_name"></a>get_name</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Gets the node name indicated by <code class="docutils literal notranslate"><span class="pre">idx</span></code> (0 to <a class="reference internal" href="#class-nodepath-method-get-name-count"><span class="std std-ref">get_name_count</span></a>).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">node_path</span> <span class="o">=</span> <span class="nb nb-Type">NodePath</span><span class="p">(</span><span class="s2">"Path2D/PathFollow2D/Sprite"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node_path</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># Path2D</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node_path</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># PathFollow2D</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node_path</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Sprite</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-name-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_name_count"></a>get_name_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the number of node names which make up the path. Subnames (see <a class="reference internal" href="#class-nodepath-method-get-subname-count"><span class="std std-ref">get_subname_count</span></a>) are not included.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">"Path2D/PathFollow2D/Sprite"</span></code> has 3 names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-subname">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_subname"></a>get_subname</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Gets the resource or property name indicated by <code class="docutils literal notranslate"><span class="pre">idx</span></code> (0 to <a class="reference internal" href="#class-nodepath-method-get-subname-count"><span class="std std-ref">get_subname_count</span></a>).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">node_path</span> <span class="o">=</span> <span class="nb nb-Type">NodePath</span><span class="p">(</span><span class="s2">"Path2D/PathFollow2D/Sprite:texture:load_path"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node_path</span><span class="o">.</span><span class="n">get_subname</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># texture</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">node_path</span><span class="o">.</span><span class="n">get_subname</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># load_path</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-get-subname-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_subname_count"></a>get_subname_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Gets the number of resource or property names ("subnames") in the path. Each subname is listed after a colon character (<code class="docutils literal notranslate"><span class="pre">:</span></code>) in the node path.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">"Path2D/PathFollow2D/Sprite:texture:load_path"</span></code> has 2 subnames.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-is-absolute">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_absolute"></a>is_absolute</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node path is absolute (as opposed to relative), which means that it starts with a slash character (<code class="docutils literal notranslate"><span class="pre">/</span></code>). Absolute node paths can be used to access the root node (<code class="docutils literal notranslate"><span class="pre">"/root"</span></code>) or autoloads (e.g. <code class="docutils literal notranslate"><span class="pre">"/global"</span></code> if a "global" autoload was registered).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-nodepath-method-is-empty">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_empty"></a>is_empty</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the node path is empty.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_node2d.html" rel="prev" title="Node2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_noisetexture.html" rel="next" title="NoiseTexture">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

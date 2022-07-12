@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Area2D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_area2d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: CollisionObject2D&lt; Node2D&lt; CanvasItem&lt; Node&lt; Object 2D area for detection and physics and audio influence. Description: 2D area that detects CollisionObject2D nodes overlapping, entering,..." property="og:description"/>
+<meta content="2D area for detection and physics and audio influence. 2D area that detects CollisionObject2D nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route a..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Area2D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_area2d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_area2d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_area2d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_area2d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_area2d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_area2d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_area2d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_area2d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_area2d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_area2d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_area2d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_area2d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_area2d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_area2d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_area2d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_area2d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_array.html" rel="next" title="Array"/>
+<link href="class_area.html" rel="prev" title="Area"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Area2D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="area2d">
+<span id="class-area2d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Area2D¶"></a>Area2D<a class="headerlink" href="#area2d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node2d.html#class-node2d"><span class="std std-ref">Node2D</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>2D area for detection and physics and audio influence.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>2D area that detects <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to a custom audio bus.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/physics/using_area_2d.html"><span class="doc">Using Area2D</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/515">2D Dodge The Creeps Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/121">2D Pong Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/120">2D Platformer Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 52%"/>
+<col style="width: 14%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-angular-damp"><span class="std std-ref">angular_damp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-audio-bus-name"><span class="std std-ref">audio_bus_name</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Master"</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-audio-bus-override"><span class="std std-ref">audio_bus_override</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-gravity"><span class="std std-ref">gravity</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">98.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-gravity-distance-scale"><span class="std std-ref">gravity_distance_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-gravity-point"><span class="std std-ref">gravity_point</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-gravity-vec"><span class="std std-ref">gravity_vec</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-linear-damp"><span class="std std-ref">linear_damp</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-monitorable"><span class="std std-ref">monitorable</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-priority"><span class="std std-ref">priority</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-area2d-spaceoverride"><span class="std std-ref">SpaceOverride</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-property-space-override"><span class="std std-ref">space_override</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-method-get-overlapping-areas"><span class="std std-ref">get_overlapping_areas</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-method-get-overlapping-bodies"><span class="std std-ref">get_overlapping_bodies</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-method-overlaps-area"><span class="std std-ref">overlaps_area</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-area2d-method-overlaps-body"><span class="std std-ref">overlaps_body</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-area2d-signal-area-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/area_entered"></a>area_entered</strong> <strong>(</strong> <a class="reference internal" href="#class-area2d"><span class="std std-ref">Area2D</span></a> area <strong>)</strong></p></li>
+</ul>
+<p>Emitted when another Area2D enters this Area2D. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> the other Area2D.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-area-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/area_exited"></a>area_exited</strong> <strong>(</strong> <a class="reference internal" href="#class-area2d"><span class="std std-ref">Area2D</span></a> area <strong>)</strong></p></li>
+</ul>
+<p>Emitted when another Area2D exits this Area2D. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> the other Area2D.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-area-shape-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/area_shape_entered"></a>area_shape_entered</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area_rid, <a class="reference internal" href="#class-area2d"><span class="std std-ref">Area2D</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> area_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when one of another Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s enters one of this Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the other Area2D's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> the other Area2D.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of the other Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">area.shape_owner_get_owner(area_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of this Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-area-shape-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/area_shape_exited"></a>area_shape_exited</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> area_rid, <a class="reference internal" href="#class-area2d"><span class="std std-ref">Area2D</span></a> area, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> area_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when one of another Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s exits one of this Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the other Area2D's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area</span></code> the other Area2D.</p>
+<p><code class="docutils literal notranslate"><span class="pre">area_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of the other Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">area.shape_owner_get_owner(area_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of this Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-body-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_entered"></a>body_entered</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a> enters this Area2D. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>s are detected if the <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> has Collision <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-body-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_exited"></a>body_exited</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a> exits this Area2D. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>s are detected if the <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> has Collision <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the other <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-body-shape-entered">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_shape_entered"></a>body_shape_entered</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_rid, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> body_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when one of a <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>'s <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s enters one of this Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>s are detected if the <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> has Collision <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a>'s <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">body.shape_owner_get_owner(body_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of this Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-signal-body-shape-exited">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/body_shape_exited"></a>body_shape_exited</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> body_rid, <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> body_shape_index, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> local_shape_index <strong>)</strong></p></li>
+</ul>
+<p>Emitted when one of a <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>'s <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s exits one of this Area2D's <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s. Requires <a class="reference internal" href="#class-area2d-property-monitoring"><span class="std std-ref">monitoring</span></a> to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>s are detected if the <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a> has Collision <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a>s.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_rid</span></code> the <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tileset.html#class-tileset"><span class="std std-ref">TileSet</span></a>'s <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d"><span class="std std-ref">CollisionObject2D</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body</span></code> the <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a>, if it exists in the tree, of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">body_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of the <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a> used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">body.shape_owner_get_owner(body_shape_index)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">local_shape_index</span></code> the index of the <a class="reference internal" href="class_shape2d.html#class-shape2d"><span class="std std-ref">Shape2D</span></a> of this Area2D used by the <a class="reference internal" href="class_physics2dserver.html#class-physics2dserver"><span class="std std-ref">Physics2DServer</span></a>. Get the <a class="reference internal" href="class_collisionshape2d.html#class-collisionshape2d"><span class="std std-ref">CollisionShape2D</span></a> node with <code class="docutils literal notranslate"><span class="pre">self.shape_owner_get_owner(local_shape_index)</span></code>.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-area2d-constant-space-override-replace-combine"><span id="class-area2d-constant-space-override-replace"></span><span id="class-area2d-constant-space-override-combine-replace"></span><span id="class-area2d-constant-space-override-combine"></span><span id="class-area2d-constant-space-override-disabled"></span><span id="enum-area2d-spaceoverride"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/SpaceOverride"></a>SpaceOverride</strong>:</p>
+<ul class="simple">
+<li><p><strong>SPACE_OVERRIDE_DISABLED</strong> = <strong>0</strong> --- This area does not affect gravity/damping.</p></li>
+<li><p><strong>SPACE_OVERRIDE_COMBINE</strong> = <strong>1</strong> --- This area adds its gravity/damping values to whatever has been calculated so far (in <a class="reference internal" href="#class-area2d-property-priority"><span class="std std-ref">priority</span></a> order).</p></li>
+<li><p><strong>SPACE_OVERRIDE_COMBINE_REPLACE</strong> = <strong>2</strong> --- This area adds its gravity/damping values to whatever has been calculated so far (in <a class="reference internal" href="#class-area2d-property-priority"><span class="std std-ref">priority</span></a> order), ignoring any lower priority areas.</p></li>
+<li><p><strong>SPACE_OVERRIDE_REPLACE</strong> = <strong>3</strong> --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.</p></li>
+<li><p><strong>SPACE_OVERRIDE_REPLACE_COMBINE</strong> = <strong>4</strong> --- This area replaces any gravity/damping calculated so far (in <a class="reference internal" href="#class-area2d-property-priority"><span class="std std-ref">priority</span></a> order), but keeps calculating the rest of the areas.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-area2d-property-angular-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_damp"></a>angular_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_angular_damp(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_angular_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rate at which objects stop spinning in this area. Represents the angular velocity lost per second.</p>
+<p>See <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-physics-2d-default-angular-damp"><span class="std std-ref">ProjectSettings.physics/2d/default_angular_damp</span></a> for more details about damping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-audio-bus-name">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/audio_bus_name"></a>audio_bus_name</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Master"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_audio_bus_name(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_audio_bus_name()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The name of the area's audio bus.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-audio-bus-override">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/audio_bus_override"></a>audio_bus_override</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_audio_bus_override(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_overriding_audio_bus()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the area's audio bus overrides the default audio bus.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-gravity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity"></a>gravity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">98.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_gravity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The area's gravity intensity (in pixels per second squared). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-gravity-distance-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity_distance_scale"></a>gravity_distance_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity_distance_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_gravity_distance_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-gravity-point">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity_point"></a>gravity_point</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity_is_point(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_gravity_a_point()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, gravity is calculated from a point (set via <a class="reference internal" href="#class-area2d-property-gravity-vec"><span class="std std-ref">gravity_vec</span></a>). See also <a class="reference internal" href="#class-area2d-property-space-override"><span class="std std-ref">space_override</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-gravity-vec">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/gravity_vec"></a>gravity_vec</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_gravity_vector(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_gravity_vector()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The area's gravity vector (not normalized). If gravity is a point (see <a class="reference internal" href="#class-area2d-property-gravity-point"><span class="std std-ref">gravity_point</span></a>), this will be the point of attraction.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-linear-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_damp"></a>linear_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_linear_damp(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_linear_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rate at which objects stop moving in this area. Represents the linear velocity lost per second.</p>
+<p>See <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-physics-2d-default-linear-damp"><span class="std std-ref">ProjectSettings.physics/2d/default_linear_damp</span></a> for more details about damping.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-monitorable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/monitorable"></a>monitorable</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_monitorable(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_monitorable()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, other monitoring areas can detect this area.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-monitoring">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/monitoring"></a>monitoring</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_monitoring(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_monitoring()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the area detects bodies or areas entering and exiting it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-priority">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/priority"></a>priority</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_priority(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_priority()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The area's priority. Higher priority areas are processed first.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-property-space-override">
+<li><p><a class="reference internal" href="#enum-area2d-spaceoverride"><span class="std std-ref">SpaceOverride</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/space_override"></a>space_override</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_space_override_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_space_override_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Override mode for gravity and damping calculations within this area. See <a class="reference internal" href="#enum-area2d-spaceoverride"><span class="std std-ref">SpaceOverride</span></a> for possible values.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-area2d-method-get-overlapping-areas">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_overlapping_areas"></a>get_overlapping_areas</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a list of intersecting <code class="docutils literal notranslate"><span class="pre">Area2D</span></code>s. The overlapping area's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d-property-collision-layer"><span class="std std-ref">CollisionObject2D.collision_layer</span></a> must be part of this area's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d-property-collision-mask"><span class="std std-ref">CollisionObject2D.collision_mask</span></a> in order to be detected.</p>
+<p>For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-method-get-overlapping-bodies">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_overlapping_bodies"></a>get_overlapping_bodies</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a list of intersecting <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a>s. The overlapping body's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d-property-collision-layer"><span class="std std-ref">CollisionObject2D.collision_layer</span></a> must be part of this area's <a class="reference internal" href="class_collisionobject2d.html#class-collisionobject2d-property-collision-mask"><span class="std std-ref">CollisionObject2D.collision_mask</span></a> in order to be detected.</p>
+<p>For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-method-overlaps-area">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/overlaps_area"></a>overlaps_area</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> area <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the given area overlaps the Area2D.</p>
+<p><strong>Note:</strong> The result of this test is not immediate after moving objects. For performance, the list of overlaps is updated once per frame and before the physics step. Consider using signals instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-area2d-method-overlaps-body">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/overlaps_body"></a>overlaps_body</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> body <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the given physics body overlaps the Area2D.</p>
+<p><strong>Note:</strong> The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">body</span></code> argument can either be a <a class="reference internal" href="class_physicsbody2d.html#class-physicsbody2d"><span class="std std-ref">PhysicsBody2D</span></a> or a <a class="reference internal" href="class_tilemap.html#class-tilemap"><span class="std std-ref">TileMap</span></a> instance (while TileMaps are not physics bodies themselves, they register their tiles with collision shapes as a virtual physics body).</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_area.html" rel="prev" title="Area"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_array.html" rel="next" title="Array">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

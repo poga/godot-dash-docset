@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Tabs" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_tabs.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Control&lt; CanvasItem&lt; Node&lt; Object Tabs control. Description: Simple tabs control, similar to TabContainer but is only in charge of drawing tabs, not interacting with children. Properties:..." property="og:description"/>
+<meta content="Tabs control. Simple tabs control, similar to TabContainer but is only in charge of drawing tabs, not interacting with children. int current_tab 0 bool drag_to_rearrange_enabled false bool scrolling_enabled true TabAl..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Tabs — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tabs.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_tabs.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_tabs.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_tabs.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_tabs.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_tabs.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_tabs.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_tabs.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_tabs.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_tabs.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_tabs.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_tabs.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_tabs.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_tabs.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tabs.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_tabs.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_tcp_server.html" rel="next" title="TCP_Server"/>
+<link href="class_tabcontainer.html" rel="prev" title="TabContainer"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Tabs</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="tabs">
+<span id="class-tabs"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Tabs¶"></a>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Tabs control.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Simple tabs control, similar to <a class="reference internal" href="class_tabcontainer.html#class-tabcontainer"><span class="std std-ref">TabContainer</span></a> but is only in charge of drawing tabs, not interacting with children.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%"/>
+<col style="width: 50%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-property-current-tab"><span class="std std-ref">current_tab</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-property-drag-to-rearrange-enabled"><span class="std std-ref">drag_to_rearrange_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-property-scrolling-enabled"><span class="std std-ref">scrolling_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-tabs-tabalign"><span class="std std-ref">TabAlign</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-property-tab-align"><span class="std std-ref">tab_align</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-tabs-closebuttondisplaypolicy"><span class="std std-ref">CloseButtonDisplayPolicy</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-property-tab-close-display-policy"><span class="std std-ref">tab_close_display_policy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-add-tab"><span class="std std-ref">add_tab</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title="", <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-ensure-tab-visible"><span class="std std-ref">ensure_tab_visible</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-offset-buttons-visible"><span class="std std-ref">get_offset_buttons_visible</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-previous-tab"><span class="std std-ref">get_previous_tab</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-select-with-rmb"><span class="std std-ref">get_select_with_rmb</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-count"><span class="std std-ref">get_tab_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-disabled"><span class="std std-ref">get_tab_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-icon"><span class="std std-ref">get_tab_icon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-offset"><span class="std std-ref">get_tab_offset</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-rect"><span class="std std-ref">get_tab_rect</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tab-title"><span class="std std-ref">get_tab_title</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-get-tabs-rearrange-group"><span class="std std-ref">get_tabs_rearrange_group</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-move-tab"><span class="std std-ref">move_tab</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-remove-tab"><span class="std std-ref">remove_tab</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-set-select-with-rmb"><span class="std std-ref">set_select_with_rmb</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-set-tab-disabled"><span class="std std-ref">set_tab_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-set-tab-icon"><span class="std std-ref">set_tab_icon</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-set-tab-title"><span class="std std-ref">set_tab_title</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-tabs-method-set-tabs-rearrange-group"><span class="std std-ref">set_tabs_rearrange_group</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> group_id <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="theme-properties">
+<h2>Theme Properties<a class="headerlink" href="#theme-properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 52%"/>
+<col style="width: 24%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-color-font-color-bg"><span class="std std-ref">font_color_bg</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.69,</span> <span class="pre">0.69,</span> <span class="pre">0.69,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-color-font-color-disabled"><span class="std std-ref">font_color_disabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.2</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-color-font-color-fg"><span class="std std-ref">font_color_fg</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-constant-hseparation"><span class="std std-ref">hseparation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-constant-label-valign-bg"><span class="std std-ref">label_valign_bg</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-constant-label-valign-fg"><span class="std std-ref">label_valign_fg</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-constant-top-margin"><span class="std std-ref">top_margin</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">24</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-font-font"><span class="std std-ref">font</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-icon-close"><span class="std std-ref">close</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-icon-decrement"><span class="std std-ref">decrement</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-icon-decrement-highlight"><span class="std std-ref">decrement_highlight</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-icon-increment"><span class="std std-ref">increment</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-icon-increment-highlight"><span class="std std-ref">increment_highlight</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-style-button"><span class="std std-ref">button</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-style-button-pressed"><span class="std std-ref">button_pressed</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-style-tab-bg"><span class="std std-ref">tab_bg</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-style-tab-disabled"><span class="std std-ref">tab_disabled</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-tabs-theme-style-tab-fg"><span class="std std-ref">tab_fg</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tabs-signal-reposition-active-tab-request">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/reposition_active_tab_request"></a>reposition_active_tab_request</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx_to <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the active tab is rearranged via mouse drag. See <a class="reference internal" href="#class-tabs-property-drag-to-rearrange-enabled"><span class="std std-ref">drag_to_rearrange_enabled</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-signal-right-button-pressed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/right_button_pressed"></a>right_button_pressed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tab is right-clicked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-signal-tab-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tab_changed"></a>tab_changed</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab <strong>)</strong></p></li>
+</ul>
+<p>Emitted when switching to another tab.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-signal-tab-clicked">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tab_clicked"></a>tab_clicked</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tab is clicked, even if it is the current tab.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-signal-tab-close">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tab_close"></a>tab_close</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tab is closed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-signal-tab-hover">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tab_hover"></a>tab_hover</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a tab is hovered by the mouse.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-tabs-constant-align-max"><span id="class-tabs-constant-align-right"></span><span id="class-tabs-constant-align-center"></span><span id="class-tabs-constant-align-left"></span><span id="enum-tabs-tabalign"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/TabAlign"></a>TabAlign</strong>:</p>
+<ul class="simple">
+<li><p><strong>ALIGN_LEFT</strong> = <strong>0</strong> --- Align the tabs to the left.</p></li>
+<li><p><strong>ALIGN_CENTER</strong> = <strong>1</strong> --- Align the tabs to the center.</p></li>
+<li><p><strong>ALIGN_RIGHT</strong> = <strong>2</strong> --- Align the tabs to the right.</p></li>
+<li><p><strong>ALIGN_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-tabs-tabalign"><span class="std std-ref">TabAlign</span></a> enum.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-tabs-constant-close-button-max"><span id="class-tabs-constant-close-button-show-always"></span><span id="class-tabs-constant-close-button-show-active-only"></span><span id="class-tabs-constant-close-button-show-never"></span><span id="enum-tabs-closebuttondisplaypolicy"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/CloseButtonDisplayPolicy"></a>CloseButtonDisplayPolicy</strong>:</p>
+<ul class="simple">
+<li><p><strong>CLOSE_BUTTON_SHOW_NEVER</strong> = <strong>0</strong> --- Never show the close buttons.</p></li>
+<li><p><strong>CLOSE_BUTTON_SHOW_ACTIVE_ONLY</strong> = <strong>1</strong> --- Only show the close button on the currently active tab.</p></li>
+<li><p><strong>CLOSE_BUTTON_SHOW_ALWAYS</strong> = <strong>2</strong> --- Show the close button on all tabs.</p></li>
+<li><p><strong>CLOSE_BUTTON_MAX</strong> = <strong>3</strong> --- Represents the size of the <a class="reference internal" href="#enum-tabs-closebuttondisplaypolicy"><span class="std std-ref">CloseButtonDisplayPolicy</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tabs-property-current-tab">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_tab"></a>current_tab</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_current_tab(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_current_tab()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Select tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-property-drag-to-rearrange-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/drag_to_rearrange_enabled"></a>drag_to_rearrange_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_drag_to_rearrange_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_drag_to_rearrange_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, tabs can be rearranged with mouse drag.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-property-scrolling-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/scrolling_enabled"></a>scrolling_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_scrolling_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_scrolling_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the mouse's scroll wheel can be used to navigate the scroll view.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-property-tab-align">
+<li><p><a class="reference internal" href="#enum-tabs-tabalign"><span class="std std-ref">TabAlign</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tab_align"></a>tab_align</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tab_align(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tab_align()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The alignment of all tabs. See <a class="reference internal" href="#enum-tabs-tabalign"><span class="std std-ref">TabAlign</span></a> for details.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-property-tab-close-display-policy">
+<li><p><a class="reference internal" href="#enum-tabs-closebuttondisplaypolicy"><span class="std std-ref">CloseButtonDisplayPolicy</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/tab_close_display_policy"></a>tab_close_display_policy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_tab_close_display_policy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_tab_close_display_policy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets when the close button will appear on the tabs. See <a class="reference internal" href="#enum-tabs-closebuttondisplaypolicy"><span class="std std-ref">CloseButtonDisplayPolicy</span></a> for details.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tabs-method-add-tab">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_tab"></a>add_tab</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title="", <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon=null <strong>)</strong></p></li>
+</ul>
+<p>Adds a new tab.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-ensure-tab-visible">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/ensure_tab_visible"></a>ensure_tab_visible</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Moves the scroll view to make the tab visible.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-offset-buttons-visible">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_offset_buttons_visible"></a>get_offset_buttons_visible</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-previous-tab">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_previous_tab"></a>get_previous_tab</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the previously active tab index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-select-with-rmb">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_select_with_rmb"></a>get_select_with_rmb</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if select with right mouse button is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_count"></a>get_tab_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of tabs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_disabled"></a>get_tab_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code> is disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-icon">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_icon"></a>get_tab_icon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> for the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the tab has no <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-offset">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_offset"></a>get_tab_offset</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of hidden tabs offsetted to the left.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-rect">
+<li><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_rect"></a>get_tab_rect</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns tab <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> with local position and size.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tab-title">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tab_title"></a>get_tab_title</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the title of the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-get-tabs-rearrange-group">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_tabs_rearrange_group"></a>get_tabs_rearrange_group</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <code class="docutils literal notranslate"><span class="pre">Tabs</span></code>' rearrange group ID.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-move-tab">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/move_tab"></a>move_tab</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Moves a tab from <code class="docutils literal notranslate"><span class="pre">from</span></code> to <code class="docutils literal notranslate"><span class="pre">to</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-remove-tab">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_tab"></a>remove_tab</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx <strong>)</strong></p></li>
+</ul>
+<p>Removes the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-set-select-with-rmb">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_select_with_rmb"></a>set_select_with_rmb</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, enables selecting a tab with the right mouse button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-set-tab-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_tab_disabled"></a>set_tab_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">disabled</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, disables the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>, making it non-interactable.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-set-tab-icon">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_tab_icon"></a>set_tab_icon</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> icon <strong>)</strong></p></li>
+</ul>
+<p>Sets an <code class="docutils literal notranslate"><span class="pre">icon</span></code> for the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-set-tab-title">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_tab_title"></a>set_tab_title</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> tab_idx, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> title <strong>)</strong></p></li>
+</ul>
+<p>Sets a <code class="docutils literal notranslate"><span class="pre">title</span></code> for the tab at index <code class="docutils literal notranslate"><span class="pre">tab_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-method-set-tabs-rearrange-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_tabs_rearrange_group"></a>set_tabs_rearrange_group</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> group_id <strong>)</strong></p></li>
+</ul>
+<p>Defines the rearrange group ID. Choose for each <code class="docutils literal notranslate"><span class="pre">Tabs</span></code> the same value to dragging tabs between <code class="docutils literal notranslate"><span class="pre">Tabs</span></code>. Enable drag with <a class="reference internal" href="#class-tabs-property-drag-to-rearrange-enabled"><span class="std std-ref">drag_to_rearrange_enabled</span></a>.</p>
+</section>
+<section id="theme-property-descriptions">
+<h2>Theme Property Descriptions<a class="headerlink" href="#theme-property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-tabs-theme-color-font-color-bg">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_bg</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.69,</span> <span class="pre">0.69,</span> <span class="pre">0.69,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Font color of inactive tabs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-color-font-color-disabled">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_disabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.9,</span> <span class="pre">0.2</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Font color of disabled tabs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-color-font-color-fg">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>font_color_fg</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">0.94,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Font color of the currently selected tab.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-constant-hseparation">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>hseparation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The horizontal separation between the tabs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-constant-label-valign-bg">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>label_valign_bg</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-constant-label-valign-fg">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>label_valign_fg</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-constant-top-margin">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>top_margin</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">24</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-font-font">
+<li><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> <strong>font</strong></p></li>
+</ul>
+<p>The font used to draw tab names.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-icon-close">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>close</strong></p></li>
+</ul>
+<p>The icon for the close button (see <a class="reference internal" href="#class-tabs-property-tab-close-display-policy"><span class="std std-ref">tab_close_display_policy</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-icon-decrement">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>decrement</strong></p></li>
+</ul>
+<p>Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-icon-decrement-highlight">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>decrement_highlight</strong></p></li>
+</ul>
+<p>Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-icon-increment">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>increment</strong></p></li>
+</ul>
+<p>Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-icon-increment-highlight">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>increment_highlight</strong></p></li>
+</ul>
+<p>Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-style-button">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>button</strong></p></li>
+</ul>
+<p>Background of the close button when it's being hovered with the cursor.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-style-button-pressed">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>button_pressed</strong></p></li>
+</ul>
+<p>Background of the close button when it's being pressed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-style-tab-bg">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>tab_bg</strong></p></li>
+</ul>
+<p>The style of an inactive tab.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-style-tab-disabled">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>tab_disabled</strong></p></li>
+</ul>
+<p>The style of a disabled tab</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-tabs-theme-style-tab-fg">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>tab_fg</strong></p></li>
+</ul>
+<p>The style of the currently selected tab.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_tabcontainer.html" rel="prev" title="TabContainer"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_tcp_server.html" rel="next" title="TCP_Server">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

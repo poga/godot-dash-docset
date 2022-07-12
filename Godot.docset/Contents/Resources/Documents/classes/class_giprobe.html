@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="GIProbe" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_giprobe.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Real-time global illumination (GI) probe. Description: GIProbe s are used to provide high-quality real-time indirect light to scenes. T..." property="og:description"/>
+<meta content="Real-time global illumination (GI) probe. GIProbes are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simula..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) GIProbe — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_giprobe.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_giprobe.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_giprobe.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_giprobe.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_giprobe.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_giprobe.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_giprobe.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_giprobe.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_giprobe.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_giprobe.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_giprobe.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_giprobe.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_giprobe.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_giprobe.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_giprobe.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_giprobe.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_giprobedata.html" rel="next" title="GIProbeData"/>
+<link href="class_geometryinstance.html" rel="prev" title="GeometryInstance"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>GIProbe</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="giprobe">
+<span id="class-giprobe"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/GIProbe¶"></a>GIProbe<a class="headerlink" href="#giprobe" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Real-time global illumination (GI) probe.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.</p>
+<p>Having <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the <a class="reference internal" href="class_projectsettings.html#class-projectsettings"><span class="std std-ref">ProjectSettings</span></a> using <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-quality-voxel-cone-tracing-high-quality"><span class="std std-ref">ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality</span></a>.</p>
+<p><strong>Procedural generation:</strong> <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> can be baked in an exported project, which makes it suitable for procedurally generated or user-built levels as long as all the geometry is generated in advance.</p>
+<p><strong>Performance:</strong> <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap"><span class="std std-ref">BakedLightmap</span></a> instead). To provide a fallback for low-end hardware, consider adding an option to disable <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> in your project's options menus. A <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> node can be disabled by hiding it.</p>
+<p><strong>Note:</strong> Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh. To further prevent light leaks, you can also strategically place temporary <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a> nodes with <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance-property-use-in-baked-light"><span class="std std-ref">GeometryInstance.use_in_baked_light</span></a> enabled. These temporary nodes can then be hidden after baking the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> node.</p>
+<p><strong>Note:</strong> Due to a renderer limitation, emissive <a class="reference internal" href="class_shadermaterial.html#class-shadermaterial"><span class="std std-ref">ShaderMaterial</span></a>s cannot emit light when used in a <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>. Only emissive <a class="reference internal" href="class_spatialmaterial.html#class-spatialmaterial"><span class="std std-ref">SpatialMaterial</span></a>s can emit light in a <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/3d/gi_probes.html"><span class="doc">Using GIProbe</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 48%"/>
+<col style="width: 21%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-bias"><span class="std std-ref">bias</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-compress"><span class="std std-ref">compress</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_giprobedata.html#class-giprobedata"><span class="std std-ref">GIProbeData</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-data"><span class="std std-ref">data</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-dynamic-range"><span class="std std-ref">dynamic_range</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-energy"><span class="std std-ref">energy</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-extents"><span class="std std-ref">extents</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">10,</span> <span class="pre">10,</span> <span class="pre">10</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-interior"><span class="std std-ref">interior</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-normal-bias"><span class="std std-ref">normal_bias</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-propagation"><span class="std std-ref">propagation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-giprobe-subdiv"><span class="std std-ref">Subdiv</span></a></p></td>
+<td><p><a class="reference internal" href="#class-giprobe-property-subdiv"><span class="std std-ref">subdiv</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%"/>
+<col style="width: 96%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-giprobe-method-bake"><span class="std std-ref">bake</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> from_node=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> create_visual_debug=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-giprobe-method-debug-bake"><span class="std std-ref">debug_bake</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-giprobe-constant-subdiv-max"><span id="class-giprobe-constant-subdiv-512"></span><span id="class-giprobe-constant-subdiv-256"></span><span id="class-giprobe-constant-subdiv-128"></span><span id="class-giprobe-constant-subdiv-64"></span><span id="enum-giprobe-subdiv"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Subdiv"></a>Subdiv</strong>:</p>
+<ul class="simple">
+<li><p><strong>SUBDIV_64</strong> = <strong>0</strong> --- Use 64 subdivisions. This is the lowest quality setting, but the fastest. Use it if you can, but especially use it on lower-end hardware.</p></li>
+<li><p><strong>SUBDIV_128</strong> = <strong>1</strong> --- Use 128 subdivisions. This is the default quality setting.</p></li>
+<li><p><strong>SUBDIV_256</strong> = <strong>2</strong> --- Use 256 subdivisions.</p></li>
+<li><p><strong>SUBDIV_512</strong> = <strong>3</strong> --- Use 512 subdivisions. This is the highest quality setting, but the slowest. On lower-end hardware, this could cause the GPU to stall.</p></li>
+<li><p><strong>SUBDIV_MAX</strong> = <strong>4</strong> --- Represents the size of the <a class="reference internal" href="#enum-giprobe-subdiv"><span class="std std-ref">Subdiv</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-giprobe-property-bias">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bias"></a>bias</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bias(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bias()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Offsets the lookup of the light contribution from the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and <a class="reference internal" href="#class-giprobe-property-normal-bias"><span class="std std-ref">normal_bias</span></a> should be played around with to minimize self-shadowing and light leaking.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">bias</span></code> should usually be above 1.0 as that is the size of the voxels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-compress">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/compress"></a>compress</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_compress(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_compressed()</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Deprecated.</em> This property has been deprecated due to known bugs and no longer has any effect when enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-data">
+<li><p><a class="reference internal" href="class_giprobedata.html#class-giprobedata"><span class="std std-ref">GIProbeData</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/data"></a>data</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_probe_data(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_probe_data()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_giprobedata.html#class-giprobedata"><span class="std std-ref">GIProbeData</span></a> resource that holds the data for this <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-dynamic-range">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/dynamic_range"></a>dynamic_range</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_dynamic_range(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_dynamic_range()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The maximum brightness that the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> will recognize. Brightness will be scaled within this range.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-energy">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/energy"></a>energy</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_energy(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_energy()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Energy multiplier. Makes the lighting contribution from the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> brighter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-extents">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/extents"></a>extents</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector3(</span> <span class="pre">10,</span> <span class="pre">10,</span> <span class="pre">10</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_extents(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_extents()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The size of the area covered by the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>. If you make the extents larger without increasing the subdivisions with <a class="reference internal" href="#class-giprobe-property-subdiv"><span class="std std-ref">subdiv</span></a>, the size of each cell will increase and result in lower detailed lighting.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-interior">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/interior"></a>interior</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_interior(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_interior()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, ignores the sky contribution when calculating lighting.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-normal-bias">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/normal_bias"></a>normal_bias</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_normal_bias(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_normal_bias()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Offsets the lookup into the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> based on the object's normal direction. Can be used to reduce some self-shadowing artifacts.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-propagation">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/propagation"></a>propagation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_propagation(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_propagation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>How much light propagates through the probe internally. A higher value allows light to spread further.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-property-subdiv">
+<li><p><a class="reference internal" href="#enum-giprobe-subdiv"><span class="std std-ref">Subdiv</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/subdiv"></a>subdiv</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_subdiv(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_subdiv()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Number of times to subdivide the grid that the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-giprobe-method-bake">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bake"></a>bake</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> from_node=null, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> create_visual_debug=false <strong>)</strong></p></li>
+</ul>
+<p>Bakes the effect from all <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance"><span class="std std-ref">GeometryInstance</span></a>s marked with <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance-property-use-in-baked-light"><span class="std std-ref">GeometryInstance.use_in_baked_light</span></a> and <a class="reference internal" href="class_light.html#class-light"><span class="std std-ref">Light</span></a>s marked with either <a class="reference internal" href="class_light.html#class-light-constant-bake-indirect"><span class="std std-ref">Light.BAKE_INDIRECT</span></a> or <a class="reference internal" href="class_light.html#class-light-constant-bake-all"><span class="std std-ref">Light.BAKE_ALL</span></a>. If <code class="docutils literal notranslate"><span class="pre">create_visual_debug</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, after baking the light, this will generate a <a class="reference internal" href="class_multimesh.html#class-multimesh"><span class="std std-ref">MultiMesh</span></a> that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>'s data and debug any issues that may be occurring.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-giprobe-method-bake"><span class="std std-ref">bake</span></a> works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code> generally takes from 5 to 20 seconds in most scenes. Reducing <a class="reference internal" href="#class-giprobe-property-subdiv"><span class="std std-ref">subdiv</span></a> can speed up baking.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance"><span class="std std-ref">GeometryInstance</span></a>s and <a class="reference internal" href="class_light.html#class-light"><span class="std std-ref">Light</span></a>s must be fully ready before <a class="reference internal" href="#class-giprobe-method-bake"><span class="std std-ref">bake</span></a> is called. If you are procedurally creating those and some meshes or lights are missing from your baked <code class="docutils literal notranslate"><span class="pre">GIProbe</span></code>, use <code class="docutils literal notranslate"><span class="pre">call_deferred("bake")</span></code> instead of calling <a class="reference internal" href="#class-giprobe-method-bake"><span class="std std-ref">bake</span></a> directly.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-giprobe-method-debug-bake">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/debug_bake"></a>debug_bake</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Calls <a class="reference internal" href="#class-giprobe-method-bake"><span class="std std-ref">bake</span></a> with <code class="docutils literal notranslate"><span class="pre">create_visual_debug</span></code> enabled.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_geometryinstance.html" rel="prev" title="GeometryInstance"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_giprobedata.html" rel="next" title="GIProbeData">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Color" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_color.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Color in RGBA format using floats on the range of 0 to 1. Description: A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for opacity. Values ar..." property="og:description"/>
+<meta content="Color in RGBA format using floats on the range of 0 to 1. A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for opacity. Values are in floating-point and usually r..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Color — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_color.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_color.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_color.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_color.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_color.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_color.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_color.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_color.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_color.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_color.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_color.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_color.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_color.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_color.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_color.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_color.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_colorpicker.html" rel="next" title="ColorPicker"/>
+<link href="class_collisionshape2d.html" rel="prev" title="CollisionShape2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Color</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="color">
+<span id="class-color"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Color¶"></a>Color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h1>
+<p>Color in RGBA format using floats on the range of 0 to 1.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for opacity. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).</p>
+<p>You can also create a color from standardized color names by using <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-colorn"><span class="std std-ref">@GDScript.ColorN</span></a> or directly using the color constants defined here. The standardized color set is based on the <a class="reference external" href="https://en.wikipedia.org/wiki/X11_color_names">X11 color names</a>.</p>
+<p>If you want to supply values in a range of 0 to 255, you should use <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-color8"><span class="std std-ref">@GDScript.Color8</span></a>.</p>
+<p><strong>Note:</strong> In a boolean context, a Color will evaluate to <code class="docutils literal notranslate"><span class="pre">false</span></code> if it's equal to <code class="docutils literal notranslate"><span class="pre">Color(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1)</span></code> (opaque black). Otherwise, a Color will always evaluate to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png">Color constants cheatsheet</a></p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/517">2D GD Paint Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/146">Tween Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/133">GUI Drag And Drop Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 50%"/>
+<col style="width: 13%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-a"><span class="std std-ref">a</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-a8"><span class="std std-ref">a8</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">255</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-b"><span class="std std-ref">b</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-b8"><span class="std std-ref">b8</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-g"><span class="std std-ref">g</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-g8"><span class="std std-ref">g8</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-h"><span class="std std-ref">h</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-r"><span class="std std-ref">r</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-r8"><span class="std std-ref">r8</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-s"><span class="std std-ref">s</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-property-v"><span class="std std-ref">v</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-color"><span class="std std-ref">Color</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-color"><span class="std std-ref">Color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-color"><span class="std std-ref">Color</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> r, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> g, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> b <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-color"><span class="std std-ref">Color</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> r, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> g, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> a <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-blend"><span class="std std-ref">blend</span></a> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> over <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-contrasted"><span class="std std-ref">contrasted</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-darkened"><span class="std std-ref">darkened</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-from-hsv"><span class="std std-ref">from_hsv</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> h, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> s, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> v, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> a=1.0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-gray"><span class="std std-ref">gray</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-inverted"><span class="std std-ref">inverted</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-lightened"><span class="std std-ref">lightened</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-linear-interpolate"><span class="std std-ref">linear_interpolate</span></a> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-abgr32"><span class="std std-ref">to_abgr32</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-abgr64"><span class="std std-ref">to_abgr64</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-argb32"><span class="std std-ref">to_argb32</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-argb64"><span class="std std-ref">to_argb64</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-html"><span class="std std-ref">to_html</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_alpha=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-rgba32"><span class="std std-ref">to_rgba32</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-color-method-to-rgba64"><span class="std std-ref">to_rgba64</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-color-constant-yellow"></span><span id="class-color-constant-whitesmoke"></span><span id="class-color-constant-white"></span><span id="class-color-constant-wheat"></span><span id="class-color-constant-webpurple"></span><span id="class-color-constant-webmaroon"></span><span id="class-color-constant-webgreen"></span><span id="class-color-constant-webgray"></span><span id="class-color-constant-violet"></span><span id="class-color-constant-turquoise"></span><span id="class-color-constant-transparent"></span><span id="class-color-constant-tomato"></span><span id="class-color-constant-thistle"></span><span id="class-color-constant-teal"></span><span id="class-color-constant-tan"></span><span id="class-color-constant-steelblue"></span><span id="class-color-constant-springgreen"></span><span id="class-color-constant-snow"></span><span id="class-color-constant-slategray"></span><span id="class-color-constant-slateblue"></span><span id="class-color-constant-skyblue"></span><span id="class-color-constant-silver"></span><span id="class-color-constant-sienna"></span><span id="class-color-constant-seashell"></span><span id="class-color-constant-seagreen"></span><span id="class-color-constant-sandybrown"></span><span id="class-color-constant-salmon"></span><span id="class-color-constant-saddlebrown"></span><span id="class-color-constant-royalblue"></span><span id="class-color-constant-rosybrown"></span><span id="class-color-constant-red"></span><span id="class-color-constant-rebeccapurple"></span><span id="class-color-constant-purple"></span><span id="class-color-constant-powderblue"></span><span id="class-color-constant-plum"></span><span id="class-color-constant-pink"></span><span id="class-color-constant-peru"></span><span id="class-color-constant-peachpuff"></span><span id="class-color-constant-papayawhip"></span><span id="class-color-constant-palevioletred"></span><span id="class-color-constant-paleturquoise"></span><span id="class-color-constant-palegreen"></span><span id="class-color-constant-palegoldenrod"></span><span id="class-color-constant-orchid"></span><span id="class-color-constant-orangered"></span><span id="class-color-constant-orange"></span><span id="class-color-constant-olivedrab"></span><span id="class-color-constant-olive"></span><span id="class-color-constant-oldlace"></span><span id="class-color-constant-navyblue"></span><span id="class-color-constant-navajowhite"></span><span id="class-color-constant-moccasin"></span><span id="class-color-constant-mistyrose"></span><span id="class-color-constant-mintcream"></span><span id="class-color-constant-midnightblue"></span><span id="class-color-constant-mediumvioletred"></span><span id="class-color-constant-mediumturquoise"></span><span id="class-color-constant-mediumspringgreen"></span><span id="class-color-constant-mediumslateblue"></span><span id="class-color-constant-mediumseagreen"></span><span id="class-color-constant-mediumpurple"></span><span id="class-color-constant-mediumorchid"></span><span id="class-color-constant-mediumblue"></span><span id="class-color-constant-mediumaquamarine"></span><span id="class-color-constant-maroon"></span><span id="class-color-constant-magenta"></span><span id="class-color-constant-linen"></span><span id="class-color-constant-limegreen"></span><span id="class-color-constant-lime"></span><span id="class-color-constant-lightyellow"></span><span id="class-color-constant-lightsteelblue"></span><span id="class-color-constant-lightslategray"></span><span id="class-color-constant-lightskyblue"></span><span id="class-color-constant-lightseagreen"></span><span id="class-color-constant-lightsalmon"></span><span id="class-color-constant-lightpink"></span><span id="class-color-constant-lightgreen"></span><span id="class-color-constant-lightgray"></span><span id="class-color-constant-lightgoldenrod"></span><span id="class-color-constant-lightcyan"></span><span id="class-color-constant-lightcoral"></span><span id="class-color-constant-lightblue"></span><span id="class-color-constant-lemonchiffon"></span><span id="class-color-constant-lawngreen"></span><span id="class-color-constant-lavenderblush"></span><span id="class-color-constant-lavender"></span><span id="class-color-constant-khaki"></span><span id="class-color-constant-ivory"></span><span id="class-color-constant-indigo"></span><span id="class-color-constant-indianred"></span><span id="class-color-constant-hotpink"></span><span id="class-color-constant-honeydew"></span><span id="class-color-constant-greenyellow"></span><span id="class-color-constant-green"></span><span id="class-color-constant-gray"></span><span id="class-color-constant-goldenrod"></span><span id="class-color-constant-gold"></span><span id="class-color-constant-ghostwhite"></span><span id="class-color-constant-gainsboro"></span><span id="class-color-constant-fuchsia"></span><span id="class-color-constant-forestgreen"></span><span id="class-color-constant-floralwhite"></span><span id="class-color-constant-firebrick"></span><span id="class-color-constant-dodgerblue"></span><span id="class-color-constant-dimgray"></span><span id="class-color-constant-deepskyblue"></span><span id="class-color-constant-deeppink"></span><span id="class-color-constant-darkviolet"></span><span id="class-color-constant-darkturquoise"></span><span id="class-color-constant-darkslategray"></span><span id="class-color-constant-darkslateblue"></span><span id="class-color-constant-darkseagreen"></span><span id="class-color-constant-darksalmon"></span><span id="class-color-constant-darkred"></span><span id="class-color-constant-darkorchid"></span><span id="class-color-constant-darkorange"></span><span id="class-color-constant-darkolivegreen"></span><span id="class-color-constant-darkmagenta"></span><span id="class-color-constant-darkkhaki"></span><span id="class-color-constant-darkgreen"></span><span id="class-color-constant-darkgray"></span><span id="class-color-constant-darkgoldenrod"></span><span id="class-color-constant-darkcyan"></span><span id="class-color-constant-darkblue"></span><span id="class-color-constant-cyan"></span><span id="class-color-constant-crimson"></span><span id="class-color-constant-cornsilk"></span><span id="class-color-constant-cornflower"></span><span id="class-color-constant-coral"></span><span id="class-color-constant-chocolate"></span><span id="class-color-constant-chartreuse"></span><span id="class-color-constant-cadetblue"></span><span id="class-color-constant-burlywood"></span><span id="class-color-constant-brown"></span><span id="class-color-constant-blueviolet"></span><span id="class-color-constant-blue"></span><span id="class-color-constant-blanchedalmond"></span><span id="class-color-constant-black"></span><span id="class-color-constant-bisque"></span><span id="class-color-constant-beige"></span><span id="class-color-constant-azure"></span><span id="class-color-constant-aquamarine"></span><span id="class-color-constant-aqua"></span><span id="class-color-constant-antiquewhite"></span><span id="class-color-constant-aliceblue"></span><ul class="simple" id="class-color-constant-yellowgreen">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/aliceblue"></a>aliceblue</strong> = <strong>Color( 0.94, 0.97, 1, 1 )</strong> --- Alice blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/antiquewhite"></a>antiquewhite</strong> = <strong>Color( 0.98, 0.92, 0.84, 1 )</strong> --- Antique white color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/aqua"></a>aqua</strong> = <strong>Color( 0, 1, 1, 1 )</strong> --- Aqua color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/aquamarine"></a>aquamarine</strong> = <strong>Color( 0.5, 1, 0.83, 1 )</strong> --- Aquamarine color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/azure"></a>azure</strong> = <strong>Color( 0.94, 1, 1, 1 )</strong> --- Azure color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/beige"></a>beige</strong> = <strong>Color( 0.96, 0.96, 0.86, 1 )</strong> --- Beige color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/bisque"></a>bisque</strong> = <strong>Color( 1, 0.89, 0.77, 1 )</strong> --- Bisque color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/black"></a>black</strong> = <strong>Color( 0, 0, 0, 1 )</strong> --- Black color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/blanchedalmond"></a>blanchedalmond</strong> = <strong>Color( 1, 0.92, 0.8, 1 )</strong> --- Blanche almond color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/blue"></a>blue</strong> = <strong>Color( 0, 0, 1, 1 )</strong> --- Blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/blueviolet"></a>blueviolet</strong> = <strong>Color( 0.54, 0.17, 0.89, 1 )</strong> --- Blue violet color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/brown"></a>brown</strong> = <strong>Color( 0.65, 0.16, 0.16, 1 )</strong> --- Brown color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/burlywood"></a>burlywood</strong> = <strong>Color( 0.87, 0.72, 0.53, 1 )</strong> --- Burly wood color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/cadetblue"></a>cadetblue</strong> = <strong>Color( 0.37, 0.62, 0.63, 1 )</strong> --- Cadet blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/chartreuse"></a>chartreuse</strong> = <strong>Color( 0.5, 1, 0, 1 )</strong> --- Chartreuse color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/chocolate"></a>chocolate</strong> = <strong>Color( 0.82, 0.41, 0.12, 1 )</strong> --- Chocolate color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/coral"></a>coral</strong> = <strong>Color( 1, 0.5, 0.31, 1 )</strong> --- Coral color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/cornflower"></a>cornflower</strong> = <strong>Color( 0.39, 0.58, 0.93, 1 )</strong> --- Cornflower color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/cornsilk"></a>cornsilk</strong> = <strong>Color( 1, 0.97, 0.86, 1 )</strong> --- Corn silk color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/crimson"></a>crimson</strong> = <strong>Color( 0.86, 0.08, 0.24, 1 )</strong> --- Crimson color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/cyan"></a>cyan</strong> = <strong>Color( 0, 1, 1, 1 )</strong> --- Cyan color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkblue"></a>darkblue</strong> = <strong>Color( 0, 0, 0.55, 1 )</strong> --- Dark blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkcyan"></a>darkcyan</strong> = <strong>Color( 0, 0.55, 0.55, 1 )</strong> --- Dark cyan color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkgoldenrod"></a>darkgoldenrod</strong> = <strong>Color( 0.72, 0.53, 0.04, 1 )</strong> --- Dark goldenrod color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkgray"></a>darkgray</strong> = <strong>Color( 0.66, 0.66, 0.66, 1 )</strong> --- Dark gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkgreen"></a>darkgreen</strong> = <strong>Color( 0, 0.39, 0, 1 )</strong> --- Dark green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkkhaki"></a>darkkhaki</strong> = <strong>Color( 0.74, 0.72, 0.42, 1 )</strong> --- Dark khaki color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkmagenta"></a>darkmagenta</strong> = <strong>Color( 0.55, 0, 0.55, 1 )</strong> --- Dark magenta color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkolivegreen"></a>darkolivegreen</strong> = <strong>Color( 0.33, 0.42, 0.18, 1 )</strong> --- Dark olive green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkorange"></a>darkorange</strong> = <strong>Color( 1, 0.55, 0, 1 )</strong> --- Dark orange color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkorchid"></a>darkorchid</strong> = <strong>Color( 0.6, 0.2, 0.8, 1 )</strong> --- Dark orchid color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkred"></a>darkred</strong> = <strong>Color( 0.55, 0, 0, 1 )</strong> --- Dark red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darksalmon"></a>darksalmon</strong> = <strong>Color( 0.91, 0.59, 0.48, 1 )</strong> --- Dark salmon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkseagreen"></a>darkseagreen</strong> = <strong>Color( 0.56, 0.74, 0.56, 1 )</strong> --- Dark sea green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkslateblue"></a>darkslateblue</strong> = <strong>Color( 0.28, 0.24, 0.55, 1 )</strong> --- Dark slate blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkslategray"></a>darkslategray</strong> = <strong>Color( 0.18, 0.31, 0.31, 1 )</strong> --- Dark slate gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkturquoise"></a>darkturquoise</strong> = <strong>Color( 0, 0.81, 0.82, 1 )</strong> --- Dark turquoise color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/darkviolet"></a>darkviolet</strong> = <strong>Color( 0.58, 0, 0.83, 1 )</strong> --- Dark violet color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/deeppink"></a>deeppink</strong> = <strong>Color( 1, 0.08, 0.58, 1 )</strong> --- Deep pink color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/deepskyblue"></a>deepskyblue</strong> = <strong>Color( 0, 0.75, 1, 1 )</strong> --- Deep sky blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/dimgray"></a>dimgray</strong> = <strong>Color( 0.41, 0.41, 0.41, 1 )</strong> --- Dim gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/dodgerblue"></a>dodgerblue</strong> = <strong>Color( 0.12, 0.56, 1, 1 )</strong> --- Dodger blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/firebrick"></a>firebrick</strong> = <strong>Color( 0.7, 0.13, 0.13, 1 )</strong> --- Firebrick color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/floralwhite"></a>floralwhite</strong> = <strong>Color( 1, 0.98, 0.94, 1 )</strong> --- Floral white color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/forestgreen"></a>forestgreen</strong> = <strong>Color( 0.13, 0.55, 0.13, 1 )</strong> --- Forest green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/fuchsia"></a>fuchsia</strong> = <strong>Color( 1, 0, 1, 1 )</strong> --- Fuchsia color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/gainsboro"></a>gainsboro</strong> = <strong>Color( 0.86, 0.86, 0.86, 1 )</strong> --- Gainsboro color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/ghostwhite"></a>ghostwhite</strong> = <strong>Color( 0.97, 0.97, 1, 1 )</strong> --- Ghost white color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/gold"></a>gold</strong> = <strong>Color( 1, 0.84, 0, 1 )</strong> --- Gold color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/goldenrod"></a>goldenrod</strong> = <strong>Color( 0.85, 0.65, 0.13, 1 )</strong> --- Goldenrod color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/gray"></a>gray</strong> = <strong>Color( 0.75, 0.75, 0.75, 1 )</strong> --- Gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/green"></a>green</strong> = <strong>Color( 0, 1, 0, 1 )</strong> --- Green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/greenyellow"></a>greenyellow</strong> = <strong>Color( 0.68, 1, 0.18, 1 )</strong> --- Green yellow color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/honeydew"></a>honeydew</strong> = <strong>Color( 0.94, 1, 0.94, 1 )</strong> --- Honeydew color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/hotpink"></a>hotpink</strong> = <strong>Color( 1, 0.41, 0.71, 1 )</strong> --- Hot pink color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/indianred"></a>indianred</strong> = <strong>Color( 0.8, 0.36, 0.36, 1 )</strong> --- Indian red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/indigo"></a>indigo</strong> = <strong>Color( 0.29, 0, 0.51, 1 )</strong> --- Indigo color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/ivory"></a>ivory</strong> = <strong>Color( 1, 1, 0.94, 1 )</strong> --- Ivory color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/khaki"></a>khaki</strong> = <strong>Color( 0.94, 0.9, 0.55, 1 )</strong> --- Khaki color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lavender"></a>lavender</strong> = <strong>Color( 0.9, 0.9, 0.98, 1 )</strong> --- Lavender color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lavenderblush"></a>lavenderblush</strong> = <strong>Color( 1, 0.94, 0.96, 1 )</strong> --- Lavender blush color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lawngreen"></a>lawngreen</strong> = <strong>Color( 0.49, 0.99, 0, 1 )</strong> --- Lawn green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lemonchiffon"></a>lemonchiffon</strong> = <strong>Color( 1, 0.98, 0.8, 1 )</strong> --- Lemon chiffon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightblue"></a>lightblue</strong> = <strong>Color( 0.68, 0.85, 0.9, 1 )</strong> --- Light blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightcoral"></a>lightcoral</strong> = <strong>Color( 0.94, 0.5, 0.5, 1 )</strong> --- Light coral color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightcyan"></a>lightcyan</strong> = <strong>Color( 0.88, 1, 1, 1 )</strong> --- Light cyan color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightgoldenrod"></a>lightgoldenrod</strong> = <strong>Color( 0.98, 0.98, 0.82, 1 )</strong> --- Light goldenrod color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightgray"></a>lightgray</strong> = <strong>Color( 0.83, 0.83, 0.83, 1 )</strong> --- Light gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightgreen"></a>lightgreen</strong> = <strong>Color( 0.56, 0.93, 0.56, 1 )</strong> --- Light green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightpink"></a>lightpink</strong> = <strong>Color( 1, 0.71, 0.76, 1 )</strong> --- Light pink color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightsalmon"></a>lightsalmon</strong> = <strong>Color( 1, 0.63, 0.48, 1 )</strong> --- Light salmon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightseagreen"></a>lightseagreen</strong> = <strong>Color( 0.13, 0.7, 0.67, 1 )</strong> --- Light sea green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightskyblue"></a>lightskyblue</strong> = <strong>Color( 0.53, 0.81, 0.98, 1 )</strong> --- Light sky blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightslategray"></a>lightslategray</strong> = <strong>Color( 0.47, 0.53, 0.6, 1 )</strong> --- Light slate gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightsteelblue"></a>lightsteelblue</strong> = <strong>Color( 0.69, 0.77, 0.87, 1 )</strong> --- Light steel blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lightyellow"></a>lightyellow</strong> = <strong>Color( 1, 1, 0.88, 1 )</strong> --- Light yellow color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/lime"></a>lime</strong> = <strong>Color( 0, 1, 0, 1 )</strong> --- Lime color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/limegreen"></a>limegreen</strong> = <strong>Color( 0.2, 0.8, 0.2, 1 )</strong> --- Lime green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/linen"></a>linen</strong> = <strong>Color( 0.98, 0.94, 0.9, 1 )</strong> --- Linen color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/magenta"></a>magenta</strong> = <strong>Color( 1, 0, 1, 1 )</strong> --- Magenta color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/maroon"></a>maroon</strong> = <strong>Color( 0.69, 0.19, 0.38, 1 )</strong> --- Maroon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumaquamarine"></a>mediumaquamarine</strong> = <strong>Color( 0.4, 0.8, 0.67, 1 )</strong> --- Medium aquamarine color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumblue"></a>mediumblue</strong> = <strong>Color( 0, 0, 0.8, 1 )</strong> --- Medium blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumorchid"></a>mediumorchid</strong> = <strong>Color( 0.73, 0.33, 0.83, 1 )</strong> --- Medium orchid color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumpurple"></a>mediumpurple</strong> = <strong>Color( 0.58, 0.44, 0.86, 1 )</strong> --- Medium purple color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumseagreen"></a>mediumseagreen</strong> = <strong>Color( 0.24, 0.7, 0.44, 1 )</strong> --- Medium sea green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumslateblue"></a>mediumslateblue</strong> = <strong>Color( 0.48, 0.41, 0.93, 1 )</strong> --- Medium slate blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumspringgreen"></a>mediumspringgreen</strong> = <strong>Color( 0, 0.98, 0.6, 1 )</strong> --- Medium spring green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumturquoise"></a>mediumturquoise</strong> = <strong>Color( 0.28, 0.82, 0.8, 1 )</strong> --- Medium turquoise color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mediumvioletred"></a>mediumvioletred</strong> = <strong>Color( 0.78, 0.08, 0.52, 1 )</strong> --- Medium violet red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/midnightblue"></a>midnightblue</strong> = <strong>Color( 0.1, 0.1, 0.44, 1 )</strong> --- Midnight blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mintcream"></a>mintcream</strong> = <strong>Color( 0.96, 1, 0.98, 1 )</strong> --- Mint cream color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/mistyrose"></a>mistyrose</strong> = <strong>Color( 1, 0.89, 0.88, 1 )</strong> --- Misty rose color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/moccasin"></a>moccasin</strong> = <strong>Color( 1, 0.89, 0.71, 1 )</strong> --- Moccasin color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/navajowhite"></a>navajowhite</strong> = <strong>Color( 1, 0.87, 0.68, 1 )</strong> --- Navajo white color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/navyblue"></a>navyblue</strong> = <strong>Color( 0, 0, 0.5, 1 )</strong> --- Navy blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/oldlace"></a>oldlace</strong> = <strong>Color( 0.99, 0.96, 0.9, 1 )</strong> --- Old lace color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/olive"></a>olive</strong> = <strong>Color( 0.5, 0.5, 0, 1 )</strong> --- Olive color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/olivedrab"></a>olivedrab</strong> = <strong>Color( 0.42, 0.56, 0.14, 1 )</strong> --- Olive drab color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/orange"></a>orange</strong> = <strong>Color( 1, 0.65, 0, 1 )</strong> --- Orange color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/orangered"></a>orangered</strong> = <strong>Color( 1, 0.27, 0, 1 )</strong> --- Orange red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/orchid"></a>orchid</strong> = <strong>Color( 0.85, 0.44, 0.84, 1 )</strong> --- Orchid color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/palegoldenrod"></a>palegoldenrod</strong> = <strong>Color( 0.93, 0.91, 0.67, 1 )</strong> --- Pale goldenrod color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/palegreen"></a>palegreen</strong> = <strong>Color( 0.6, 0.98, 0.6, 1 )</strong> --- Pale green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/paleturquoise"></a>paleturquoise</strong> = <strong>Color( 0.69, 0.93, 0.93, 1 )</strong> --- Pale turquoise color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/palevioletred"></a>palevioletred</strong> = <strong>Color( 0.86, 0.44, 0.58, 1 )</strong> --- Pale violet red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/papayawhip"></a>papayawhip</strong> = <strong>Color( 1, 0.94, 0.84, 1 )</strong> --- Papaya whip color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/peachpuff"></a>peachpuff</strong> = <strong>Color( 1, 0.85, 0.73, 1 )</strong> --- Peach puff color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/peru"></a>peru</strong> = <strong>Color( 0.8, 0.52, 0.25, 1 )</strong> --- Peru color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/pink"></a>pink</strong> = <strong>Color( 1, 0.75, 0.8, 1 )</strong> --- Pink color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/plum"></a>plum</strong> = <strong>Color( 0.87, 0.63, 0.87, 1 )</strong> --- Plum color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/powderblue"></a>powderblue</strong> = <strong>Color( 0.69, 0.88, 0.9, 1 )</strong> --- Powder blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/purple"></a>purple</strong> = <strong>Color( 0.63, 0.13, 0.94, 1 )</strong> --- Purple color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/rebeccapurple"></a>rebeccapurple</strong> = <strong>Color( 0.4, 0.2, 0.6, 1 )</strong> --- Rebecca purple color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/red"></a>red</strong> = <strong>Color( 1, 0, 0, 1 )</strong> --- Red color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/rosybrown"></a>rosybrown</strong> = <strong>Color( 0.74, 0.56, 0.56, 1 )</strong> --- Rosy brown color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/royalblue"></a>royalblue</strong> = <strong>Color( 0.25, 0.41, 0.88, 1 )</strong> --- Royal blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/saddlebrown"></a>saddlebrown</strong> = <strong>Color( 0.55, 0.27, 0.07, 1 )</strong> --- Saddle brown color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/salmon"></a>salmon</strong> = <strong>Color( 0.98, 0.5, 0.45, 1 )</strong> --- Salmon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/sandybrown"></a>sandybrown</strong> = <strong>Color( 0.96, 0.64, 0.38, 1 )</strong> --- Sandy brown color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/seagreen"></a>seagreen</strong> = <strong>Color( 0.18, 0.55, 0.34, 1 )</strong> --- Sea green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/seashell"></a>seashell</strong> = <strong>Color( 1, 0.96, 0.93, 1 )</strong> --- Seashell color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/sienna"></a>sienna</strong> = <strong>Color( 0.63, 0.32, 0.18, 1 )</strong> --- Sienna color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/silver"></a>silver</strong> = <strong>Color( 0.75, 0.75, 0.75, 1 )</strong> --- Silver color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/skyblue"></a>skyblue</strong> = <strong>Color( 0.53, 0.81, 0.92, 1 )</strong> --- Sky blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/slateblue"></a>slateblue</strong> = <strong>Color( 0.42, 0.35, 0.8, 1 )</strong> --- Slate blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/slategray"></a>slategray</strong> = <strong>Color( 0.44, 0.5, 0.56, 1 )</strong> --- Slate gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/snow"></a>snow</strong> = <strong>Color( 1, 0.98, 0.98, 1 )</strong> --- Snow color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/springgreen"></a>springgreen</strong> = <strong>Color( 0, 1, 0.5, 1 )</strong> --- Spring green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/steelblue"></a>steelblue</strong> = <strong>Color( 0.27, 0.51, 0.71, 1 )</strong> --- Steel blue color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/tan"></a>tan</strong> = <strong>Color( 0.82, 0.71, 0.55, 1 )</strong> --- Tan color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/teal"></a>teal</strong> = <strong>Color( 0, 0.5, 0.5, 1 )</strong> --- Teal color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/thistle"></a>thistle</strong> = <strong>Color( 0.85, 0.75, 0.85, 1 )</strong> --- Thistle color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/tomato"></a>tomato</strong> = <strong>Color( 1, 0.39, 0.28, 1 )</strong> --- Tomato color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/transparent"></a>transparent</strong> = <strong>Color( 1, 1, 1, 0 )</strong> --- Transparent color (white with no alpha).</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/turquoise"></a>turquoise</strong> = <strong>Color( 0.25, 0.88, 0.82, 1 )</strong> --- Turquoise color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/violet"></a>violet</strong> = <strong>Color( 0.93, 0.51, 0.93, 1 )</strong> --- Violet color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/webgray"></a>webgray</strong> = <strong>Color( 0.5, 0.5, 0.5, 1 )</strong> --- Web gray color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/webgreen"></a>webgreen</strong> = <strong>Color( 0, 0.5, 0, 1 )</strong> --- Web green color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/webmaroon"></a>webmaroon</strong> = <strong>Color( 0.5, 0, 0, 1 )</strong> --- Web maroon color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/webpurple"></a>webpurple</strong> = <strong>Color( 0.5, 0, 0.5, 1 )</strong> --- Web purple color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/wheat"></a>wheat</strong> = <strong>Color( 0.96, 0.87, 0.7, 1 )</strong> --- Wheat color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/white"></a>white</strong> = <strong>Color( 1, 1, 1, 1 )</strong> --- White color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/whitesmoke"></a>whitesmoke</strong> = <strong>Color( 0.96, 0.96, 0.96, 1 )</strong> --- White smoke color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/yellow"></a>yellow</strong> = <strong>Color( 1, 1, 0, 1 )</strong> --- Yellow color.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/yellowgreen"></a>yellowgreen</strong> = <strong>Color( 0.6, 0.8, 0.2, 1 )</strong> --- Yellow green color.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-color-property-a">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/a"></a>a</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color's alpha component, typically on the range of 0 to 1. A value of 0 means that the color is fully transparent. A value of 1 means that the color is fully opaque.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-a8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/a8"></a>a8</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">255</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Wrapper for <a class="reference internal" href="#class-color-property-a"><span class="std std-ref">a</span></a> that uses the range 0 to 255 instead of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-b">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/b"></a>b</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color's blue component, typically on the range of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-b8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/b8"></a>b8</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Wrapper for <a class="reference internal" href="#class-color-property-b"><span class="std std-ref">b</span></a> that uses the range 0 to 255 instead of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-g">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/g"></a>g</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color's green component, typically on the range of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-g8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/g8"></a>g8</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Wrapper for <a class="reference internal" href="#class-color-property-g"><span class="std std-ref">g</span></a> that uses the range 0 to 255 instead of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-h">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/h"></a>h</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The HSV hue of this color, on the range 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-r">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/r"></a>r</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color's red component, typically on the range of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-r8">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/r8"></a>r8</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Wrapper for <a class="reference internal" href="#class-color-property-r"><span class="std std-ref">r</span></a> that uses the range 0 to 255 instead of 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-s">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/s"></a>s</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The HSV saturation of this color, on the range 0 to 1.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-property-v">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/v"></a>v</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%"/>
+<col style="width: 45%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The HSV value (brightness) of this color, on the range 0 to 1.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-color-method-color">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Color"></a>Color</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. See also <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-colorn"><span class="std std-ref">@GDScript.ColorN</span></a>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Each of the following creates the same color RGBA(178, 217, 10, 255).</span>
+<span class="k">var</span> <span class="n">c1</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="s2">"#ffb2d90a"</span><span class="p">)</span> <span class="c1"># ARGB format with "#".</span>
+<span class="k">var</span> <span class="n">c2</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="s2">"ffb2d90a"</span><span class="p">)</span> <span class="c1"># ARGB format.</span>
+<span class="k">var</span> <span class="n">c3</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="s2">"#b2d90a"</span><span class="p">)</span> <span class="c1"># RGB format with "#".</span>
+<span class="k">var</span> <span class="n">c4</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="s2">"b2d90a"</span><span class="p">)</span> <span class="c1"># RGB format.</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Color"></a>Color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a color from a 32-bit integer in RGBA format (each byte represents a color channel).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">274</span><span class="p">)</span> <span class="c1"># Similar to Color(0.0, 0.0, 0.004, 0.07)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Color"></a>Color</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> r, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> g, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> b <strong>)</strong></p></li>
+</ul>
+<p>Constructs a color from RGB values, typically between 0 and 1. Alpha will be 1.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span> <span class="c1"># Similar to Color8(51, 255, 178, 255)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/Color"></a>Color</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> r, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> g, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> b, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> a <strong>)</strong></p></li>
+</ul>
+<p>Constructs a color from RGBA values, typically between 0 and 1.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># Similar to Color8(51, 255, 178, 204)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-blend">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend"></a>blend</strong> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> over <strong>)</strong></p></li>
+</ul>
+<p>Returns a new color resulting from blending this color over another. If the color is opaque, the result is also opaque. The second color may have a range of alpha values.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">bg</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Green with alpha of 50%</span>
+<span class="k">var</span> <span class="n">fg</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Red with alpha of 50%</span>
+<span class="k">var</span> <span class="n">blended_color</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="n">blend</span><span class="p">(</span><span class="n">fg</span><span class="p">)</span> <span class="c1"># Brown with alpha of 75%</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-contrasted">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/contrasted"></a>contrasted</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the most contrasting color.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">contrasted_color</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">contrasted</span><span class="p">()</span> <span class="c1"># Equivalent to RGBA(204, 229, 102, 255)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-darkened">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/darkened"></a>darkened</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount <strong>)</strong></p></li>
+</ul>
+<p>Returns a new color resulting from making this color darker by the specified percentage (ratio from 0 to 1).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">green</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">darkgreen</span> <span class="o">=</span> <span class="n">green</span><span class="o">.</span><span class="n">darkened</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span> <span class="c1"># 20% darker than regular green</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-from-hsv">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/from_hsv"></a>from_hsv</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> h, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> s, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> v, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> a=1.0 <strong>)</strong></p></li>
+</ul>
+<p>Constructs a color from an HSV profile. <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">s</span></code>, and <code class="docutils literal notranslate"><span class="pre">v</span></code> are values between 0 and 1.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">from_hsv</span><span class="p">(</span><span class="mf">0.58</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.79</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="c1"># Equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-gray">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/gray"></a>gray</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color's grayscale representation.</p>
+<p>The gray value is calculated as <code class="docutils literal notranslate"><span class="pre">(r</span> <span class="pre">+</span> <span class="pre">g</span> <span class="pre">+</span> <span class="pre">b)</span> <span class="pre">/</span> <span class="pre">3</span></code>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">gray</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gray</span><span class="p">()</span> <span class="c1"># A value of 0.466667</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-inverted">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/inverted"></a>inverted</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the inverted color <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">-</span> <span class="pre">r,</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">g,</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">b,</span> <span class="pre">a)</span></code>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">inverted_color</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">inverted</span><span class="p">()</span> <span class="c1"># Equivalent to Color(0.7, 0.6, 0.1)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-is-equal-approx">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_equal_approx"></a>is_equal_approx</strong> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> color <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this color and <code class="docutils literal notranslate"><span class="pre">color</span></code> are approximately equal, by running <a class="reference internal" href="class_%40gdscript.html#class-gdscript-method-is-equal-approx"><span class="std std-ref">@GDScript.is_equal_approx</span></a> on each component.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-lightened">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/lightened"></a>lightened</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> amount <strong>)</strong></p></li>
+</ul>
+<p>Returns a new color resulting from making this color lighter by the specified percentage (ratio from 0 to 1).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">green</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">lightgreen</span> <span class="o">=</span> <span class="n">green</span><span class="o">.</span><span class="n">lightened</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span> <span class="c1"># 20% lighter than regular green</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-linear-interpolate">
+<li><p><a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/linear_interpolate"></a>linear_interpolate</strong> <strong>(</strong> <a class="reference internal" href="#class-color"><span class="std std-ref">Color</span></a> to, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight <strong>)</strong></p></li>
+</ul>
+<p>Returns the linear interpolation with another color. The interpolation factor <code class="docutils literal notranslate"><span class="pre">weight</span></code> is between 0 and 1.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c1</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">c2</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">li_c</span> <span class="o">=</span> <span class="n">c1</span><span class="o">.</span><span class="n">linear_interpolate</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Equivalent to Color(0.5, 0.5, 0.0)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-abgr32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_abgr32"></a>to_abgr32</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 32-bit integer in ABGR format (each byte represents a color channel). ABGR is the reversed version of the default format.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_abgr32</span><span class="p">())</span> <span class="c1"># Prints 4281565439</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-abgr64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_abgr64"></a>to_abgr64</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 64-bit integer in ABGR format (each word represents a color channel). ABGR is the reversed version of the default format.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_abgr64</span><span class="p">())</span> <span class="c1"># Prints -225178692812801</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-argb32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_argb32"></a>to_argb32</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 32-bit integer in ARGB format (each byte represents a color channel). ARGB is more compatible with DirectX.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_argb32</span><span class="p">())</span> <span class="c1"># Prints 4294934323</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-argb64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_argb64"></a>to_argb64</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 64-bit integer in ARGB format (each word represents a color channel). ARGB is more compatible with DirectX.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_argb64</span><span class="p">())</span> <span class="c1"># Prints -2147470541</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-html">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_html"></a>to_html</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_alpha=true <strong>)</strong></p></li>
+</ul>
+<p>Returns the color's HTML hexadecimal color string in ARGB format (ex: <code class="docutils literal notranslate"><span class="pre">ff34f822</span></code>).</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">with_alpha</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> excludes alpha from the hexadecimal string.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">c</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span> <span class="c1"># Returns "7fffffff"</span>
+<span class="k">var</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span> <span class="c1"># Returns "ffffff"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-rgba32">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_rgba32"></a>to_rgba32</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 32-bit integer in RGBA format (each byte represents a color channel). RGBA is Godot's default format.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_rgba32</span><span class="p">())</span> <span class="c1"># Prints 4286526463</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-color-method-to-rgba64">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_rgba64"></a>to_rgba64</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the color converted to a 64-bit integer in RGBA format (each word represents a color channel). RGBA is Godot's default format.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">color</span> <span class="o">=</span> <span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">to_rgba64</span><span class="p">())</span> <span class="c1"># Prints -140736629309441</span>
+</pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_collisionshape2d.html" rel="prev" title="CollisionShape2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_colorpicker.html" rel="next" title="ColorPicker">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

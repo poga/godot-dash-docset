@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AnimationTreePlayer" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_animationtreeplayer.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Node&lt; Object Deprecated. Animation player that uses a node graph for blending animations. Superseded by AnimationTree. Description: Deprecated. A node graph tool for blending multiple ani..." property="og:description"/>
+<meta content="Deprecated. Animation player that uses a node graph for blending animations. Superseded by AnimationTree. Deprecated. A node graph tool for blending multiple animations bound to an AnimationPlayer. Especially useful f..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AnimationTreePlayer — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationtreeplayer.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_animationtreeplayer.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_animationtreeplayer.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_animationtreeplayer.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_animationtreeplayer.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_animationtreeplayer.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_animationtreeplayer.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_animationtreeplayer.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_animationtreeplayer.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_animationtreeplayer.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_animationtreeplayer.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_animationtreeplayer.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_animationtreeplayer.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_animationtreeplayer.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationtreeplayer.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_animationtreeplayer.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_area.html" rel="next" title="Area"/>
+<link href="class_animationtree.html" rel="prev" title="AnimationTree"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AnimationTreePlayer</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="animationtreeplayer">
+<span id="class-animationtreeplayer"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AnimationTreePlayer¶"></a>AnimationTreePlayer<a class="headerlink" href="#animationtreeplayer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><em>Deprecated.</em> Animation player that uses a node graph for blending animations. Superseded by <a class="reference internal" href="class_animationtree.html#class-animationtree"><span class="std std-ref">AnimationTree</span></a>.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><em>Deprecated.</em> A node graph tool for blending multiple animations bound to an <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a>. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.</p>
+<p>It takes <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a>s from an <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> node and mixes them depending on the graph.</p>
+<p>See <a class="reference internal" href="class_animationtree.html#class-animationtree"><span class="std std-ref">AnimationTree</span></a> for a more full-featured replacement of this node.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/animation/animation_tree.html"><span class="doc">Using AnimationTree</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 48%"/>
+<col style="width: 11%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-property-active"><span class="std std-ref">active</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-property-base-path"><span class="std std-ref">base_path</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("..")</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-property-master-player"><span class="std std-ref">master_player</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-animationtreeplayer-animationprocessmode"><span class="std std-ref">AnimationProcessMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-property-playback-process-mode"><span class="std std-ref">playback_process_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-add-node"><span class="std std-ref">add_node</span></a> <strong>(</strong> <a class="reference internal" href="#enum-animationtreeplayer-nodetype"><span class="std std-ref">NodeType</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-advance"><span class="std std-ref">advance</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-get-animation"><span class="std std-ref">animation_node_get_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-get-master-animation"><span class="std std-ref">animation_node_get_master_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-get-position"><span class="std std-ref">animation_node_get_position</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-set-animation"><span class="std std-ref">animation_node_set_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-set-filter-path"><span class="std std-ref">animation_node_set_filter_path</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-animation-node-set-master-animation"><span class="std std-ref">animation_node_set_master_animation</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> source <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-are-nodes-connected"><span class="std std-ref">are_nodes_connected</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> dst_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend2-node-get-amount"><span class="std std-ref">blend2_node_get_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend2-node-set-amount"><span class="std std-ref">blend2_node_set_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> blend <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend2-node-set-filter-path"><span class="std std-ref">blend2_node_set_filter_path</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend3-node-get-amount"><span class="std std-ref">blend3_node_get_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend3-node-set-amount"><span class="std std-ref">blend3_node_set_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> blend <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend4-node-get-amount"><span class="std std-ref">blend4_node_get_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-blend4-node-set-amount"><span class="std std-ref">blend4_node_set_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> blend <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-connect-nodes"><span class="std std-ref">connect_nodes</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> dst_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-disconnect-nodes"><span class="std std-ref">disconnect_nodes</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-get-node-list"><span class="std std-ref">get_node_list</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-mix-node-get-amount"><span class="std std-ref">mix_node_get_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-mix-node-set-amount"><span class="std std-ref">mix_node_set_amount</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> ratio <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-exists"><span class="std std-ref">node_exists</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-get-input-count"><span class="std std-ref">node_get_input_count</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-get-input-source"><span class="std std-ref">node_get_input_source</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-get-position"><span class="std std-ref">node_get_position</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-animationtreeplayer-nodetype"><span class="std std-ref">NodeType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-get-type"><span class="std std-ref">node_get_type</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-rename"><span class="std std-ref">node_rename</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> node, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> new_name <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-node-set-position"><span class="std std-ref">node_set_position</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-get-autorestart-delay"><span class="std std-ref">oneshot_node_get_autorestart_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-get-autorestart-random-delay"><span class="std std-ref">oneshot_node_get_autorestart_random_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-get-fadein-time"><span class="std std-ref">oneshot_node_get_fadein_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-get-fadeout-time"><span class="std std-ref">oneshot_node_get_fadeout_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-has-autorestart"><span class="std std-ref">oneshot_node_has_autorestart</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-is-active"><span class="std std-ref">oneshot_node_is_active</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-autorestart"><span class="std std-ref">oneshot_node_set_autorestart</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-autorestart-delay"><span class="std std-ref">oneshot_node_set_autorestart_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay_sec <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-autorestart-random-delay"><span class="std std-ref">oneshot_node_set_autorestart_random_delay</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rand_sec <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-fadein-time"><span class="std std-ref">oneshot_node_set_fadein_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-fadeout-time"><span class="std std-ref">oneshot_node_set_fadeout_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-set-filter-path"><span class="std std-ref">oneshot_node_set_filter_path</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-start"><span class="std std-ref">oneshot_node_start</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-oneshot-node-stop"><span class="std std-ref">oneshot_node_stop</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-recompute-caches"><span class="std std-ref">recompute_caches</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-remove-node"><span class="std std-ref">remove_node</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-reset"><span class="std std-ref">reset</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-timescale-node-get-scale"><span class="std std-ref">timescale_node_get_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-timescale-node-set-scale"><span class="std std-ref">timescale_node_set_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> scale <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-timeseek-node-seek"><span class="std std-ref">timeseek_node_seek</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> seconds <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-delete-input"><span class="std std-ref">transition_node_delete_input</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-get-current"><span class="std std-ref">transition_node_get_current</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-get-input-count"><span class="std std-ref">transition_node_get_input_count</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-get-xfade-time"><span class="std std-ref">transition_node_get_xfade_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-has-input-auto-advance"><span class="std std-ref">transition_node_has_input_auto_advance</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-set-current"><span class="std std-ref">transition_node_set_current</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-set-input-auto-advance"><span class="std std-ref">transition_node_set_input_auto_advance</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-set-input-count"><span class="std std-ref">transition_node_set_input_count</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> count <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-animationtreeplayer-method-transition-node-set-xfade-time"><span class="std std-ref">transition_node_set_xfade_time</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-animationtreeplayer-constant-node-transition"><span id="class-animationtreeplayer-constant-node-timeseek"></span><span id="class-animationtreeplayer-constant-node-timescale"></span><span id="class-animationtreeplayer-constant-node-blend4"></span><span id="class-animationtreeplayer-constant-node-blend3"></span><span id="class-animationtreeplayer-constant-node-blend2"></span><span id="class-animationtreeplayer-constant-node-mix"></span><span id="class-animationtreeplayer-constant-node-oneshot"></span><span id="class-animationtreeplayer-constant-node-animation"></span><span id="class-animationtreeplayer-constant-node-output"></span><span id="enum-animationtreeplayer-nodetype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/NodeType"></a>NodeType</strong>:</p>
+<ul class="simple">
+<li><p><strong>NODE_OUTPUT</strong> = <strong>0</strong> --- Output node.</p></li>
+<li><p><strong>NODE_ANIMATION</strong> = <strong>1</strong> --- Animation node.</p></li>
+<li><p><strong>NODE_ONESHOT</strong> = <strong>2</strong> --- OneShot node.</p></li>
+<li><p><strong>NODE_MIX</strong> = <strong>3</strong> --- Mix node.</p></li>
+<li><p><strong>NODE_BLEND2</strong> = <strong>4</strong> --- Blend2 node.</p></li>
+<li><p><strong>NODE_BLEND3</strong> = <strong>5</strong> --- Blend3 node.</p></li>
+<li><p><strong>NODE_BLEND4</strong> = <strong>6</strong> --- Blend4 node.</p></li>
+<li><p><strong>NODE_TIMESCALE</strong> = <strong>7</strong> --- TimeScale node.</p></li>
+<li><p><strong>NODE_TIMESEEK</strong> = <strong>8</strong> --- TimeSeek node.</p></li>
+<li><p><strong>NODE_TRANSITION</strong> = <strong>9</strong> --- Transition node.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-animationtreeplayer-constant-animation-process-idle"><span id="class-animationtreeplayer-constant-animation-process-physics"></span><span id="enum-animationtreeplayer-animationprocessmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AnimationProcessMode"></a>AnimationProcessMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>ANIMATION_PROCESS_PHYSICS</strong> = <strong>0</strong> --- Process animation during the physics process. This is especially useful when animating physics bodies.</p></li>
+<li><p><strong>ANIMATION_PROCESS_IDLE</strong> = <strong>1</strong> --- Process animation during the idle process.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationtreeplayer-property-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/active"></a>active</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_active(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_active()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code> is able to play animations.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-property-base-path">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/base_path"></a>base_path</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("..")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_base_path(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_base_path()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The node from which to relatively access other nodes.</p>
+<p>It accesses the bones, so it should point to the same node the <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> would point its Root Node at.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-property-master-player">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/master_player"></a>master_player</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath("")</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_master_player(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_master_player()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The path to the <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a> from which this <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code> binds animations to animation nodes.</p>
+<p>Once set, <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> nodes can be added to the <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-property-playback-process-mode">
+<li><p><a class="reference internal" href="#enum-animationtreeplayer-animationprocessmode"><span class="std std-ref">AnimationProcessMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playback_process_mode"></a>playback_process_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_animation_process_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_animation_process_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The thread in which to update animations.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-animationtreeplayer-method-add-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_node"></a>add_node</strong> <strong>(</strong> <a class="reference internal" href="#enum-animationtreeplayer-nodetype"><span class="std std-ref">NodeType</span></a> type, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Adds a <code class="docutils literal notranslate"><span class="pre">type</span></code> node to the graph with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-advance">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/advance"></a>advance</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delta <strong>)</strong></p></li>
+</ul>
+<p>Shifts position in the animation timeline. <code class="docutils literal notranslate"><span class="pre">delta</span></code> is the time in seconds to shift. Events between the current frame and <code class="docutils literal notranslate"><span class="pre">delta</span></code> are handled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-get-animation">
+<li><p><a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_get_animation"></a>animation_node_get_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_animationplayer.html#class-animationplayer"><span class="std std-ref">AnimationPlayer</span></a>'s <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> bound to the <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code>'s animation node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-get-master-animation">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_get_master_animation"></a>animation_node_get_master_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the name of the <a class="reference internal" href="#class-animationtreeplayer-property-master-player"><span class="std std-ref">master_player</span></a>'s <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> bound to this animation node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-get-position">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_get_position"></a>animation_node_get_position</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the absolute playback timestamp of the animation node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-set-animation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_set_animation"></a>animation_node_set_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> animation <strong>)</strong></p></li>
+</ul>
+<p>Binds a new <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> from the <a class="reference internal" href="#class-animationtreeplayer-property-master-player"><span class="std std-ref">master_player</span></a> to the <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code>'s animation node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-set-filter-path">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_set_filter_path"></a>animation_node_set_filter_path</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the animation node with ID <code class="docutils literal notranslate"><span class="pre">id</span></code> turns off the track modifying the property at <code class="docutils literal notranslate"><span class="pre">path</span></code>. The modified node's children continue to animate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-animation-node-set-master-animation">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/animation_node_set_master_animation"></a>animation_node_set_master_animation</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> source <strong>)</strong></p></li>
+</ul>
+<p>Binds the <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> named <code class="docutils literal notranslate"><span class="pre">source</span></code> from <a class="reference internal" href="#class-animationtreeplayer-property-master-player"><span class="std std-ref">master_player</span></a> to the animation node <code class="docutils literal notranslate"><span class="pre">id</span></code>. Recalculates caches.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-are-nodes-connected">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/are_nodes_connected"></a>are_nodes_connected</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> dst_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether node <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">dst_id</span></code> are connected at the specified slot.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend2-node-get-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend2_node_get_amount"></a>blend2_node_get_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the blend amount of a Blend2 node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend2-node-set-amount">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend2_node_set_amount"></a>blend2_node_set_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> blend <strong>)</strong></p></li>
+</ul>
+<p>Sets the blend amount of a Blend2 node given its name and value.</p>
+<p>A Blend2 node blends two animations (A and B) with the amount between 0 and 1.</p>
+<p>At 0, output is input A. Towards 1, the influence of A gets lessened, the influence of B gets raised. At 1, output is input B.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend2-node-set-filter-path">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend2_node_set_filter_path"></a>blend2_node_set_filter_path</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the Blend2 node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> turns off the track modifying the property at <code class="docutils literal notranslate"><span class="pre">path</span></code>. The modified node's children continue to animate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend3-node-get-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend3_node_get_amount"></a>blend3_node_get_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the blend amount of a Blend3 node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend3-node-set-amount">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend3_node_set_amount"></a>blend3_node_set_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> blend <strong>)</strong></p></li>
+</ul>
+<p>Sets the blend amount of a Blend3 node given its name and value.</p>
+<p>A Blend3 Node blends three animations (A, B-, B+) with the amount between -1 and 1.</p>
+<p>At -1, output is input B-. From -1 to 0, the influence of B- gets lessened, the influence of A gets raised and the influence of B+ is 0. At 0, output is input A. From 0 to 1, the influence of A gets lessened, the influence of B+ gets raised and the influence of B+ is 0. At 1, output is input B+.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend4-node-get-amount">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend4_node_get_amount"></a>blend4_node_get_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the blend amount of a Blend4 node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-blend4-node-set-amount">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/blend4_node_set_amount"></a>blend4_node_set_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> blend <strong>)</strong></p></li>
+</ul>
+<p>Sets the blend amount of a Blend4 node given its name and value.</p>
+<p>A Blend4 Node blends two pairs of animations.</p>
+<p>The two pairs are blended like Blend2 and then added together.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-connect-nodes">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/connect_nodes"></a>connect_nodes</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> dst_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong></p></li>
+</ul>
+<p>Connects node <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">dst_id</span></code> at the specified input slot.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-disconnect-nodes">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disconnect_nodes"></a>disconnect_nodes</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> dst_input_idx <strong>)</strong></p></li>
+</ul>
+<p>Disconnects nodes connected to <code class="docutils literal notranslate"><span class="pre">id</span></code> at the specified input slot.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-get-node-list">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_list"></a>get_node_list</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> containing the name of all nodes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-mix-node-get-amount">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/mix_node_get_amount"></a>mix_node_get_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the mix amount of a Mix node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-mix-node-set-amount">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/mix_node_set_amount"></a>mix_node_set_amount</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> ratio <strong>)</strong></p></li>
+</ul>
+<p>Sets the mix amount of a Mix node given its name and value.</p>
+<p>A Mix node adds input b to input a by the amount given by ratio.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-exists">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_exists"></a>node_exists</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> node <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Check if a node exists (by name).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-get-input-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_get_input_count"></a>node_get_input_count</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the input count for a given node. Different types of nodes have different amount of inputs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-get-input-source">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_get_input_source"></a>node_get_input_source</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the input source for a given node input.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-get-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_get_position"></a>node_get_position</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns position of a node in the graph given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-get-type">
+<li><p><a class="reference internal" href="#enum-animationtreeplayer-nodetype"><span class="std std-ref">NodeType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_get_type"></a>node_get_type</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Gets the node type, will return from <a class="reference internal" href="#enum-animationtreeplayer-nodetype"><span class="std std-ref">NodeType</span></a> enum.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-rename">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_rename"></a>node_rename</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> node, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> new_name <strong>)</strong></p></li>
+</ul>
+<p>Renames a node in the graph.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-node-set-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/node_set_position"></a>node_set_position</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> screen_position <strong>)</strong></p></li>
+</ul>
+<p>Sets the position of a node in the graph given its name and position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-get-autorestart-delay">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_get_autorestart_delay"></a>oneshot_node_get_autorestart_delay</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the autostart delay of a OneShot node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-get-autorestart-random-delay">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_get_autorestart_random_delay"></a>oneshot_node_get_autorestart_random_delay</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the autostart random delay of a OneShot node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-get-fadein-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_get_fadein_time"></a>oneshot_node_get_fadein_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the fade in time of a OneShot node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-get-fadeout-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_get_fadeout_time"></a>oneshot_node_get_fadeout_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the fade out time of a OneShot node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-has-autorestart">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_has_autorestart"></a>oneshot_node_has_autorestart</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether a OneShot node will auto restart given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-is-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_is_active"></a>oneshot_node_is_active</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether a OneShot node is active given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-autorestart">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_autorestart"></a>oneshot_node_set_autorestart</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>Sets the autorestart property of a OneShot node given its name and value.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-autorestart-delay">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_autorestart_delay"></a>oneshot_node_set_autorestart_delay</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> delay_sec <strong>)</strong></p></li>
+</ul>
+<p>Sets the autorestart delay of a OneShot node given its name and value in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-autorestart-random-delay">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_autorestart_random_delay"></a>oneshot_node_set_autorestart_random_delay</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> rand_sec <strong>)</strong></p></li>
+</ul>
+<p>Sets the autorestart random delay of a OneShot node given its name and value in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-fadein-time">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_fadein_time"></a>oneshot_node_set_fadein_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></li>
+</ul>
+<p>Sets the fade in time of a OneShot node given its name and value in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-fadeout-time">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_fadeout_time"></a>oneshot_node_set_fadeout_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></li>
+</ul>
+<p>Sets the fade out time of a OneShot node given its name and value in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-set-filter-path">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_set_filter_path"></a>oneshot_node_set_filter_path</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> path, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the OneShot node with ID <code class="docutils literal notranslate"><span class="pre">id</span></code> turns off the track modifying the property at <code class="docutils literal notranslate"><span class="pre">path</span></code>. The modified node's children continue to animate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-start">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_start"></a>oneshot_node_start</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Starts a OneShot node given its name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-oneshot-node-stop">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/oneshot_node_stop"></a>oneshot_node_stop</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Stops the OneShot node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-recompute-caches">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/recompute_caches"></a>recompute_caches</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Manually recalculates the cache of track information generated from animation nodes. Needed when external sources modify the animation nodes' state.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-remove-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_node"></a>remove_node</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Removes the animation node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-reset">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reset"></a>reset</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Resets this <code class="docutils literal notranslate"><span class="pre">AnimationTreePlayer</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-timescale-node-get-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/timescale_node_get_scale"></a>timescale_node_get_scale</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the time scale value of the TimeScale node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-timescale-node-set-scale">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/timescale_node_set_scale"></a>timescale_node_set_scale</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> scale <strong>)</strong></p></li>
+</ul>
+<p>Sets the time scale of the TimeScale node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p>
+<p>The TimeScale node is used to speed <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a>s up if the scale is above 1 or slow them down if it is below 1.</p>
+<p>If applied after a blend or mix, affects all input animations to that blend or mix.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-timeseek-node-seek">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/timeseek_node_seek"></a>timeseek_node_seek</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> seconds <strong>)</strong></p></li>
+</ul>
+<p>Sets the time seek value of the TimeSeek node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">seconds</span></code>.</p>
+<p>This functions as a seek in the <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a> or the blend or mix of <a class="reference internal" href="class_animation.html#class-animation"><span class="std std-ref">Animation</span></a>s input in it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-delete-input">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_delete_input"></a>transition_node_delete_input</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong></p></li>
+</ul>
+<p>Deletes the input at <code class="docutils literal notranslate"><span class="pre">input_idx</span></code> for the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-get-current">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_get_current"></a>transition_node_get_current</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the index of the currently evaluated input for the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-get-input-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_get_input_count"></a>transition_node_get_input_count</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of inputs for the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>. You can add inputs by right-clicking on the transition node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-get-xfade-time">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_get_xfade_time"></a>transition_node_get_xfade_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the cross fade time for the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-has-input-auto-advance">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_has_input_auto_advance"></a>transition_node_has_input_auto_advance</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the input at <code class="docutils literal notranslate"><span class="pre">input_idx</span></code> on the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> is set to automatically advance to the next input upon completion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-set-current">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_set_current"></a>transition_node_set_current</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx <strong>)</strong></p></li>
+</ul>
+<p>The transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> sets its current input at <code class="docutils literal notranslate"><span class="pre">input_idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-set-input-auto-advance">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_set_input_auto_advance"></a>transition_node_set_input_auto_advance</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> input_idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable <strong>)</strong></p></li>
+</ul>
+<p>The transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> advances to its next input automatically when the input at <code class="docutils literal notranslate"><span class="pre">input_idx</span></code> completes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-set-input-count">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_set_input_count"></a>transition_node_set_input_count</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> count <strong>)</strong></p></li>
+</ul>
+<p>Resizes the number of inputs available for the transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-animationtreeplayer-method-transition-node-set-xfade-time">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/transition_node_set_xfade_time"></a>transition_node_set_xfade_time</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec <strong>)</strong></p></li>
+</ul>
+<p>The transition node with name <code class="docutils literal notranslate"><span class="pre">id</span></code> sets its cross fade time to <code class="docutils literal notranslate"><span class="pre">time_sec</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_animationtree.html" rel="prev" title="AnimationTree"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_area.html" rel="next" title="Area">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

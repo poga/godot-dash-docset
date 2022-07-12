@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Mesh" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_mesh.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Resource&lt; Reference&lt; Object Inherited By: ArrayMesh, PrimitiveMesh A Resource that contains vertex array-based geometry. Description: Mesh is a type of Resource that contains vertex array..." property="og:description"/>
+<meta content="A Resource that contains vertex array-based geometry. Mesh is a type of Resource that contains vertex array-based geometry, divided in surfaces. Each surface contains a completely separate array and a material used to..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Mesh — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mesh.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_mesh.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_mesh.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_mesh.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_mesh.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_mesh.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_mesh.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_mesh.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_mesh.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_mesh.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_mesh.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_mesh.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_mesh.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_mesh.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mesh.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_mesh.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_meshdatatool.html" rel="next" title="MeshDataTool"/>
+<link href="class_menubutton.html" rel="prev" title="MenuButton"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Mesh</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="mesh">
+<span id="class-mesh"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Mesh¶"></a>Mesh<a class="headerlink" href="#mesh" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a>, <a class="reference internal" href="class_primitivemesh.html#class-primitivemesh"><span class="std std-ref">PrimitiveMesh</span></a></p>
+<p>A <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> that contains vertex array-based geometry.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Mesh is a type of <a class="reference internal" href="class_resource.html#class-resource"><span class="std std-ref">Resource</span></a> that contains vertex array-based geometry, divided in <em>surfaces</em>. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/123">3D Material Testers Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/126">3D Kinematic Character Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/125">3D Platformer Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/678">Third Person Shooter Demo</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 56%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-property-lightmap-size-hint"><span class="std std-ref">lightmap_size_hint</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-create-convex-shape"><span class="std std-ref">create_convex_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> clean=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> simplify=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-mesh"><span class="std std-ref">Mesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-create-outline"><span class="std std-ref">create_outline</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-create-trimesh-shape"><span class="std std-ref">create_trimesh_shape</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_trianglemesh.html#class-trianglemesh"><span class="std std-ref">TriangleMesh</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-generate-triangle-mesh"><span class="std std-ref">generate_triangle_mesh</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-get-aabb"><span class="std std-ref">get_aabb</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-get-faces"><span class="std std-ref">get_faces</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-get-surface-count"><span class="std std-ref">get_surface_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-surface-get-arrays"><span class="std std-ref">surface_get_arrays</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-surface-get-blend-shape-arrays"><span class="std std-ref">surface_get_blend_shape_arrays</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a></p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-surface-get-material"><span class="std std-ref">surface_get_material</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-mesh-method-surface-set-material"><span class="std std-ref">surface_set_material</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-mesh-constant-primitive-triangle-fan"><span id="class-mesh-constant-primitive-triangle-strip"></span><span id="class-mesh-constant-primitive-triangles"></span><span id="class-mesh-constant-primitive-line-loop"></span><span id="class-mesh-constant-primitive-line-strip"></span><span id="class-mesh-constant-primitive-lines"></span><span id="class-mesh-constant-primitive-points"></span><span id="enum-mesh-primitivetype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/PrimitiveType"></a>PrimitiveType</strong>:</p>
+<ul class="simple">
+<li><p><strong>PRIMITIVE_POINTS</strong> = <strong>0</strong> --- Render array as points (one vertex equals one point).</p></li>
+<li><p><strong>PRIMITIVE_LINES</strong> = <strong>1</strong> --- Render array as lines (every two vertices a line is created).</p></li>
+<li><p><strong>PRIMITIVE_LINE_STRIP</strong> = <strong>2</strong> --- Render array as line strip.</p></li>
+<li><p><strong>PRIMITIVE_LINE_LOOP</strong> = <strong>3</strong> --- Render array as line loop (like line strip, but closed).</p></li>
+<li><p><strong>PRIMITIVE_TRIANGLES</strong> = <strong>4</strong> --- Render array as triangles (every three vertices a triangle is created).</p></li>
+<li><p><strong>PRIMITIVE_TRIANGLE_STRIP</strong> = <strong>5</strong> --- Render array as triangle strips.</p></li>
+<li><p><strong>PRIMITIVE_TRIANGLE_FAN</strong> = <strong>6</strong> --- Render array as triangle fans.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-mesh-constant-blend-shape-mode-relative"><span id="class-mesh-constant-blend-shape-mode-normalized"></span><span id="enum-mesh-blendshapemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/BlendShapeMode"></a>BlendShapeMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>BLEND_SHAPE_MODE_NORMALIZED</strong> = <strong>0</strong> --- Blend shapes are normalized.</p></li>
+<li><p><strong>BLEND_SHAPE_MODE_RELATIVE</strong> = <strong>1</strong> --- Blend shapes are relative to base weight.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-mesh-constant-array-compress-default"><span id="class-mesh-constant-array-flag-use-octahedral-compression"></span><span id="class-mesh-constant-array-flag-use-16-bit-bones"></span><span id="class-mesh-constant-array-flag-use-2d-vertices"></span><span id="class-mesh-constant-array-compress-index"></span><span id="class-mesh-constant-array-compress-weights"></span><span id="class-mesh-constant-array-compress-bones"></span><span id="class-mesh-constant-array-compress-tex-uv2"></span><span id="class-mesh-constant-array-compress-tex-uv"></span><span id="class-mesh-constant-array-compress-color"></span><span id="class-mesh-constant-array-compress-tangent"></span><span id="class-mesh-constant-array-compress-normal"></span><span id="class-mesh-constant-array-compress-vertex"></span><span id="class-mesh-constant-array-compress-base"></span><span id="class-mesh-constant-array-format-index"></span><span id="class-mesh-constant-array-format-weights"></span><span id="class-mesh-constant-array-format-bones"></span><span id="class-mesh-constant-array-format-tex-uv2"></span><span id="class-mesh-constant-array-format-tex-uv"></span><span id="class-mesh-constant-array-format-color"></span><span id="class-mesh-constant-array-format-tangent"></span><span id="class-mesh-constant-array-format-normal"></span><span id="class-mesh-constant-array-format-vertex"></span><span id="enum-mesh-arrayformat"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ArrayFormat"></a>ArrayFormat</strong>:</p>
+<ul class="simple">
+<li><p><strong>ARRAY_FORMAT_VERTEX</strong> = <strong>1</strong> --- Mesh array contains vertices. All meshes require a vertex array so this should always be present.</p></li>
+<li><p><strong>ARRAY_FORMAT_NORMAL</strong> = <strong>2</strong> --- Mesh array contains normals.</p></li>
+<li><p><strong>ARRAY_FORMAT_TANGENT</strong> = <strong>4</strong> --- Mesh array contains tangents.</p></li>
+<li><p><strong>ARRAY_FORMAT_COLOR</strong> = <strong>8</strong> --- Mesh array contains colors.</p></li>
+<li><p><strong>ARRAY_FORMAT_TEX_UV</strong> = <strong>16</strong> --- Mesh array contains UVs.</p></li>
+<li><p><strong>ARRAY_FORMAT_TEX_UV2</strong> = <strong>32</strong> --- Mesh array contains second UV.</p></li>
+<li><p><strong>ARRAY_FORMAT_BONES</strong> = <strong>64</strong> --- Mesh array contains bones.</p></li>
+<li><p><strong>ARRAY_FORMAT_WEIGHTS</strong> = <strong>128</strong> --- Mesh array contains bone weights.</p></li>
+<li><p><strong>ARRAY_FORMAT_INDEX</strong> = <strong>256</strong> --- Mesh array uses indices.</p></li>
+<li><p><strong>ARRAY_COMPRESS_BASE</strong> = <strong>9</strong> --- Used internally to calculate other <code class="docutils literal notranslate"><span class="pre">ARRAY_COMPRESS_*</span></code> enum values. Do not use.</p></li>
+<li><p><strong>ARRAY_COMPRESS_VERTEX</strong> = <strong>512</strong> --- Flag used to mark a compressed (half float) vertex array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_NORMAL</strong> = <strong>1024</strong> --- Flag used to mark a compressed (half float) normal array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_TANGENT</strong> = <strong>2048</strong> --- Flag used to mark a compressed (half float) tangent array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_COLOR</strong> = <strong>4096</strong> --- Flag used to mark a compressed (half float) color array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_TEX_UV</strong> = <strong>8192</strong> --- Flag used to mark a compressed (half float) UV coordinates array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_TEX_UV2</strong> = <strong>16384</strong> --- Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.</p></li>
+<li><p><strong>ARRAY_COMPRESS_BONES</strong> = <strong>32768</strong> --- Flag used to mark a compressed bone array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_WEIGHTS</strong> = <strong>65536</strong> --- Flag used to mark a compressed (half float) weight array.</p></li>
+<li><p><strong>ARRAY_COMPRESS_INDEX</strong> = <strong>131072</strong> --- Flag used to mark a compressed index array.</p></li>
+<li><p><strong>ARRAY_FLAG_USE_2D_VERTICES</strong> = <strong>262144</strong> --- Flag used to mark that the array contains 2D vertices.</p></li>
+<li><p><strong>ARRAY_FLAG_USE_16_BIT_BONES</strong> = <strong>524288</strong> --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.</p></li>
+<li><p><strong>ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION</strong> = <strong>2097152</strong> --- Flag used to mark that the array uses an octahedral representation of normal and tangent vectors rather than cartesian.</p></li>
+<li><p><strong>ARRAY_COMPRESS_DEFAULT</strong> = <strong>2194432</strong> --- Used to set flags <a class="reference internal" href="#class-mesh-constant-array-compress-vertex"><span class="std std-ref">ARRAY_COMPRESS_VERTEX</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-normal"><span class="std std-ref">ARRAY_COMPRESS_NORMAL</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-tangent"><span class="std std-ref">ARRAY_COMPRESS_TANGENT</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-color"><span class="std std-ref">ARRAY_COMPRESS_COLOR</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-tex-uv"><span class="std std-ref">ARRAY_COMPRESS_TEX_UV</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-tex-uv2"><span class="std std-ref">ARRAY_COMPRESS_TEX_UV2</span></a>, <a class="reference internal" href="#class-mesh-constant-array-compress-weights"><span class="std std-ref">ARRAY_COMPRESS_WEIGHTS</span></a>, and <a class="reference internal" href="#class-mesh-constant-array-flag-use-octahedral-compression"><span class="std std-ref">ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION</span></a> quickly.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-mesh-constant-array-max"><span id="class-mesh-constant-array-index"></span><span id="class-mesh-constant-array-weights"></span><span id="class-mesh-constant-array-bones"></span><span id="class-mesh-constant-array-tex-uv2"></span><span id="class-mesh-constant-array-tex-uv"></span><span id="class-mesh-constant-array-color"></span><span id="class-mesh-constant-array-tangent"></span><span id="class-mesh-constant-array-normal"></span><span id="class-mesh-constant-array-vertex"></span><span id="enum-mesh-arraytype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/ArrayType"></a>ArrayType</strong>:</p>
+<ul class="simple">
+<li><p><strong>ARRAY_VERTEX</strong> = <strong>0</strong> --- Array of vertices.</p></li>
+<li><p><strong>ARRAY_NORMAL</strong> = <strong>1</strong> --- Array of normals.</p></li>
+<li><p><strong>ARRAY_TANGENT</strong> = <strong>2</strong> --- Array of tangents as an array of floats, 4 floats per tangent.</p></li>
+<li><p><strong>ARRAY_COLOR</strong> = <strong>3</strong> --- Array of colors.</p></li>
+<li><p><strong>ARRAY_TEX_UV</strong> = <strong>4</strong> --- Array of UV coordinates.</p></li>
+<li><p><strong>ARRAY_TEX_UV2</strong> = <strong>5</strong> --- Array of second set of UV coordinates.</p></li>
+<li><p><strong>ARRAY_BONES</strong> = <strong>6</strong> --- Array of bone data.</p></li>
+<li><p><strong>ARRAY_WEIGHTS</strong> = <strong>7</strong> --- Array of weights.</p></li>
+<li><p><strong>ARRAY_INDEX</strong> = <strong>8</strong> --- Array of indices.</p></li>
+<li><p><strong>ARRAY_MAX</strong> = <strong>9</strong> --- Represents the size of the <a class="reference internal" href="#enum-mesh-arraytype"><span class="std std-ref">ArrayType</span></a> enum.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-mesh-property-lightmap-size-hint">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/lightmap_size_hint"></a>lightmap_size_hint</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_lightmap_size_hint(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_lightmap_size_hint()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets a hint to be used for lightmap resolution in <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap"><span class="std std-ref">BakedLightmap</span></a>. Overrides <a class="reference internal" href="class_bakedlightmap.html#class-bakedlightmap-property-default-texels-per-unit"><span class="std std-ref">BakedLightmap.default_texels_per_unit</span></a>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-mesh-method-create-convex-shape">
+<li><p><a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_convex_shape"></a>create_convex_shape</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> clean=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> simplify=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Calculate a <a class="reference internal" href="class_convexpolygonshape.html#class-convexpolygonshape"><span class="std std-ref">ConvexPolygonShape</span></a> from the mesh.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">clean</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> (default), duplicate and interior vertices are removed automatically. You can set it to <code class="docutils literal notranslate"><span class="pre">false</span></code> to make the process faster if not needed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">simplify</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-create-outline">
+<li><p><a class="reference internal" href="#class-mesh"><span class="std std-ref">Mesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_outline"></a>create_outline</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> margin <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Calculate an outline mesh at a defined offset (margin) from the original mesh.</p>
+<p><strong>Note:</strong> This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-create-trimesh-shape">
+<li><p><a class="reference internal" href="class_shape.html#class-shape"><span class="std std-ref">Shape</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_trimesh_shape"></a>create_trimesh_shape</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Calculate a <a class="reference internal" href="class_concavepolygonshape.html#class-concavepolygonshape"><span class="std std-ref">ConcavePolygonShape</span></a> from the mesh.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-generate-triangle-mesh">
+<li><p><a class="reference internal" href="class_trianglemesh.html#class-trianglemesh"><span class="std std-ref">TriangleMesh</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/generate_triangle_mesh"></a>generate_triangle_mesh</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Generate a <a class="reference internal" href="class_trianglemesh.html#class-trianglemesh"><span class="std std-ref">TriangleMesh</span></a> from the mesh.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-get-aabb">
+<li><p><a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_aabb"></a>get_aabb</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the smallest <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> enclosing this mesh in local space. Not affected by <code class="docutils literal notranslate"><span class="pre">custom_aabb</span></code>. See also <a class="reference internal" href="class_visualinstance.html#class-visualinstance-method-get-transformed-aabb"><span class="std std-ref">VisualInstance.get_transformed_aabb</span></a>.</p>
+<p><strong>Note:</strong> This is only implemented for <a class="reference internal" href="class_arraymesh.html#class-arraymesh"><span class="std std-ref">ArrayMesh</span></a> and <a class="reference internal" href="class_primitivemesh.html#class-primitivemesh"><span class="std std-ref">PrimitiveMesh</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-get-faces">
+<li><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_faces"></a>get_faces</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-get-surface-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_surface_count"></a>get_surface_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the amount of surfaces that the <code class="docutils literal notranslate"><span class="pre">Mesh</span></code> holds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-surface-get-arrays">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_arrays"></a>surface_get_arrays</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface (see <a class="reference internal" href="class_arraymesh.html#class-arraymesh-method-add-surface-from-arrays"><span class="std std-ref">ArrayMesh.add_surface_from_arrays</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-surface-get-blend-shape-arrays">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_blend_shape_arrays"></a>surface_get_blend_shape_arrays</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the blend shape arrays for the requested surface.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-surface-get-material">
+<li><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_get_material"></a>surface_get_material</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> in a given surface. Surface is rendered using this material.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-mesh-method-surface-set-material">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/surface_set_material"></a>surface_set_material</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> surf_idx, <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> material <strong>)</strong></p></li>
+</ul>
+<p>Sets a <a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> for a given surface. Surface will be rendered using this material.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_menubutton.html" rel="prev" title="MenuButton"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_meshdatatool.html" rel="next" title="MeshDataTool">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

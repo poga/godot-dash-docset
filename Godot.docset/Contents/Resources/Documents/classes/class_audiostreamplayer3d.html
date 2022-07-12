@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AudioStreamPlayer3D" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_audiostreamplayer3d.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Spatial&lt; Node&lt; Object Plays positional sound in 3D space. Description: Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable posi..." property="og:description"/>
+<meta content="Plays positional sound in 3D space. Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automati..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AudioStreamPlayer3D — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_audiostreamplayer3d.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_audiostreamplayer3d.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_audiostreamplayer3d.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_audiostreamplayer3d.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_audiostreamplayer3d.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_audiostreamplayer3d.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_audiostreamplayer3d.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_audiostreamplayer3d.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_audiostreamplayer3d.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_audiostreamplayer3d.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_audiostreamplayer3d.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_audiostreamplayer3d.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_audiostreamplayer3d.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_audiostreamrandompitch.html" rel="next" title="AudioStreamRandomPitch"/>
+<link href="class_audiostreamplayer2d.html" rel="prev" title="AudioStreamPlayer2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AudioStreamPlayer3D</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="audiostreamplayer3d">
+<span id="class-audiostreamplayer3d"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AudioStreamPlayer3D¶"></a>AudioStreamPlayer3D<a class="headerlink" href="#audiostreamplayer3d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Plays positional sound in 3D space.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automatically applied to distant sounds. This can be disabled by setting <a class="reference internal" href="#class-audiostreamplayer3d-property-attenuation-filter-cutoff-hz"><span class="std std-ref">attenuation_filter_cutoff_hz</span></a> to <code class="docutils literal notranslate"><span class="pre">20500</span></code>.</p>
+<p>By default, audio is heard from the camera position. This can be changed by adding a <a class="reference internal" href="class_listener.html#class-listener"><span class="std std-ref">Listener</span></a> node to the scene and enabling it by calling <a class="reference internal" href="class_listener.html#class-listener-method-make-current"><span class="std std-ref">Listener.make_current</span></a> on it.</p>
+<p>See also <a class="reference internal" href="class_audiostreamplayer.html#class-audiostreamplayer"><span class="std std-ref">AudioStreamPlayer</span></a> to play a sound non-positionally.</p>
+<p><strong>Note:</strong> Hiding an <code class="docutils literal notranslate"><span class="pre">AudioStreamPlayer3D</span></code> node does not disable its audio output. To temporarily disable an <code class="docutils literal notranslate"><span class="pre">AudioStreamPlayer3D</span></code>'s audio output, set <a class="reference internal" href="#class-audiostreamplayer3d-property-unit-db"><span class="std std-ref">unit_db</span></a> to a very low value like <code class="docutils literal notranslate"><span class="pre">-100</span></code> (which isn't audible to human hearing).</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/audio/audio_streams.html"><span class="doc">Audio streams</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 59%"/>
+<col style="width: 7%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-area-mask"><span class="std std-ref">area_mask</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-attenuation-filter-cutoff-hz"><span class="std std-ref">attenuation_filter_cutoff_hz</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-attenuation-filter-db"><span class="std std-ref">attenuation_filter_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-24.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-audiostreamplayer3d-attenuationmodel"><span class="std std-ref">AttenuationModel</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-attenuation-model"><span class="std std-ref">attenuation_model</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-autoplay"><span class="std std-ref">autoplay</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-bus"><span class="std std-ref">bus</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Master"</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-audiostreamplayer3d-dopplertracking"><span class="std std-ref">DopplerTracking</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-doppler-tracking"><span class="std std-ref">doppler_tracking</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-emission-angle-degrees"><span class="std std-ref">emission_angle_degrees</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-emission-angle-enabled"><span class="std std-ref">emission_angle_enabled</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-emission-angle-filter-attenuation-db"><span class="std std-ref">emission_angle_filter_attenuation_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-12.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-max-db"><span class="std std-ref">max_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-max-distance"><span class="std std-ref">max_distance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-audiostreamplayer3d-outofrangemode"><span class="std std-ref">OutOfRangeMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-out-of-range-mode"><span class="std std-ref">out_of_range_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-pitch-scale"><span class="std std-ref">pitch_scale</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-playing"><span class="std std-ref">playing</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-stream"><span class="std std-ref">stream</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-stream-paused"><span class="std std-ref">stream_paused</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-unit-db"><span class="std std-ref">unit_db</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-property-unit-size"><span class="std std-ref">unit_size</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-method-get-playback-position"><span class="std std-ref">get_playback_position</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_audiostreamplayback.html#class-audiostreamplayback"><span class="std std-ref">AudioStreamPlayback</span></a></p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-method-get-stream-playback"><span class="std std-ref">get_stream_playback</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-method-play"><span class="std std-ref">play</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from_position=0.0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-method-seek"><span class="std std-ref">seek</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> to_position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-audiostreamplayer3d-method-stop"><span class="std std-ref">stop</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audiostreamplayer3d-signal-finished">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/finished"></a>finished</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the audio stops playing.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-audiostreamplayer3d-constant-attenuation-disabled"><span id="class-audiostreamplayer3d-constant-attenuation-logarithmic"></span><span id="class-audiostreamplayer3d-constant-attenuation-inverse-square-distance"></span><span id="class-audiostreamplayer3d-constant-attenuation-inverse-distance"></span><span id="enum-audiostreamplayer3d-attenuationmodel"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/AttenuationModel"></a>AttenuationModel</strong>:</p>
+<ul class="simple">
+<li><p><strong>ATTENUATION_INVERSE_DISTANCE</strong> = <strong>0</strong> --- Linear dampening of loudness according to distance.</p></li>
+<li><p><strong>ATTENUATION_INVERSE_SQUARE_DISTANCE</strong> = <strong>1</strong> --- Squared dampening of loudness according to distance.</p></li>
+<li><p><strong>ATTENUATION_LOGARITHMIC</strong> = <strong>2</strong> --- Logarithmic dampening of loudness according to distance.</p></li>
+<li><p><strong>ATTENUATION_DISABLED</strong> = <strong>3</strong> --- No dampening of loudness according to distance. The sound will still be heard positionally, unlike an <a class="reference internal" href="class_audiostreamplayer.html#class-audiostreamplayer"><span class="std std-ref">AudioStreamPlayer</span></a>. <a class="reference internal" href="#class-audiostreamplayer3d-constant-attenuation-disabled"><span class="std std-ref">ATTENUATION_DISABLED</span></a> can be combined with a <a class="reference internal" href="#class-audiostreamplayer3d-property-max-distance"><span class="std std-ref">max_distance</span></a> value greater than <code class="docutils literal notranslate"><span class="pre">0.0</span></code> to achieve linear attenuation clamped to a sphere of a defined size.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-audiostreamplayer3d-constant-out-of-range-pause"><span id="class-audiostreamplayer3d-constant-out-of-range-mix"></span><span id="enum-audiostreamplayer3d-outofrangemode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/OutOfRangeMode"></a>OutOfRangeMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>OUT_OF_RANGE_MIX</strong> = <strong>0</strong> --- Mix this audio in, even when it's out of range. This increases CPU usage, but keeps the sound playing at the correct position if the camera leaves and enters the <code class="docutils literal notranslate"><span class="pre">AudioStreamPlayer3D</span></code>'s <a class="reference internal" href="#class-audiostreamplayer3d-property-max-distance"><span class="std std-ref">max_distance</span></a> radius.</p></li>
+<li><p><strong>OUT_OF_RANGE_PAUSE</strong> = <strong>1</strong> --- Pause this audio when it gets out of range. This decreases CPU usage, but will cause the sound to restart if the camera leaves and enters the <code class="docutils literal notranslate"><span class="pre">AudioStreamPlayer3D</span></code>'s <a class="reference internal" href="#class-audiostreamplayer3d-property-max-distance"><span class="std std-ref">max_distance</span></a> radius.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-audiostreamplayer3d-constant-doppler-tracking-physics-step"><span id="class-audiostreamplayer3d-constant-doppler-tracking-idle-step"></span><span id="class-audiostreamplayer3d-constant-doppler-tracking-disabled"></span><span id="enum-audiostreamplayer3d-dopplertracking"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/DopplerTracking"></a>DopplerTracking</strong>:</p>
+<ul class="simple">
+<li><p><strong>DOPPLER_TRACKING_DISABLED</strong> = <strong>0</strong> --- Disables doppler tracking.</p></li>
+<li><p><strong>DOPPLER_TRACKING_IDLE_STEP</strong> = <strong>1</strong> --- Executes doppler tracking in idle step (every rendered frame).</p></li>
+<li><p><strong>DOPPLER_TRACKING_PHYSICS_STEP</strong> = <strong>2</strong> --- Executes doppler tracking in physics step (every simulated physics frame).</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audiostreamplayer3d-property-area-mask">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/area_mask"></a>area_mask</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_area_mask(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_area_mask()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Determines which <a class="reference internal" href="class_area.html#class-area"><span class="std std-ref">Area</span></a> layers affect the sound for reverb and audio bus effects. Areas can be used to redirect <a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a>s so that they play in a certain audio bus. An example of how you might use this is making a "water" area so that sounds played in the water are redirected through an audio bus to make them sound like they are being played underwater.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-attenuation-filter-cutoff-hz">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/attenuation_filter_cutoff_hz"></a>attenuation_filter_cutoff_hz</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_attenuation_filter_cutoff_hz(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_attenuation_filter_cutoff_hz()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Dampens audio using a low-pass filter above this frequency, in Hz. To disable the dampening effect entirely, set this to <code class="docutils literal notranslate"><span class="pre">20500</span></code> as this frequency is above the human hearing limit.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-attenuation-filter-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/attenuation_filter_db"></a>attenuation_filter_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-24.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_attenuation_filter_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_attenuation_filter_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Amount how much the filter affects the loudness, in decibels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-attenuation-model">
+<li><p><a class="reference internal" href="#enum-audiostreamplayer3d-attenuationmodel"><span class="std std-ref">AttenuationModel</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/attenuation_model"></a>attenuation_model</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_attenuation_model(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_attenuation_model()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Decides if audio should get quieter with distance linearly, quadratically, logarithmically, or not be affected by distance, effectively disabling attenuation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-autoplay">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/autoplay"></a>autoplay</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_autoplay(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_autoplay_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, audio plays when the AudioStreamPlayer3D node is added to scene tree.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-bus">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/bus"></a>bus</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%"/>
+<col style="width: 59%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">"Master"</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_bus(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_bus()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The bus on which this audio is playing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-doppler-tracking">
+<li><p><a class="reference internal" href="#enum-audiostreamplayer3d-dopplertracking"><span class="std std-ref">DopplerTracking</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/doppler_tracking"></a>doppler_tracking</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_doppler_tracking(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_doppler_tracking()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Decides in which step the <a class="reference external" href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler effect</a> should be calculated.</p>
+<p><strong>Note:</strong> Only effective if the current <a class="reference internal" href="class_camera.html#class-camera"><span class="std std-ref">Camera</span></a>'s <a class="reference internal" href="class_camera.html#class-camera-property-doppler-tracking"><span class="std std-ref">Camera.doppler_tracking</span></a> property is set to a value other than <a class="reference internal" href="class_camera.html#class-camera-constant-doppler-tracking-disabled"><span class="std std-ref">Camera.DOPPLER_TRACKING_DISABLED</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-emission-angle-degrees">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_angle_degrees"></a>emission_angle_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">45.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_angle(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_angle()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The angle in which the audio reaches cameras undampened.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-emission-angle-enabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_angle_enabled"></a>emission_angle_enabled</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_angle_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_emission_angle_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the audio should be dampened according to the direction of the sound.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-emission-angle-filter-attenuation-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/emission_angle_filter_attenuation_db"></a>emission_angle_filter_attenuation_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-12.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_emission_angle_filter_attenuation_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_emission_angle_filter_attenuation_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Dampens audio if camera is outside of <a class="reference internal" href="#class-audiostreamplayer3d-property-emission-angle-degrees"><span class="std std-ref">emission_angle_degrees</span></a> and <a class="reference internal" href="#class-audiostreamplayer3d-property-emission-angle-enabled"><span class="std std-ref">emission_angle_enabled</span></a> is set by this factor, in decibels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-max-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/max_db"></a>max_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 63%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the absolute maximum of the soundlevel, in decibels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-max-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/max_distance"></a>max_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_max_distance(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_max_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the distance from which the <a class="reference internal" href="#class-audiostreamplayer3d-property-out-of-range-mode"><span class="std std-ref">out_of_range_mode</span></a> takes effect. Has no effect if set to 0.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-out-of-range-mode">
+<li><p><a class="reference internal" href="#enum-audiostreamplayer3d-outofrangemode"><span class="std std-ref">OutOfRangeMode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/out_of_range_mode"></a>out_of_range_mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_out_of_range_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_out_of_range_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Decides if audio should pause when source is outside of <a class="reference internal" href="#class-audiostreamplayer3d-property-max-distance"><span class="std std-ref">max_distance</span></a> range.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-pitch-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/pitch_scale"></a>pitch_scale</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pitch_scale(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_pitch_scale()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-playing">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/playing"></a>playing</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 44%"/>
+<col style="width: 56%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_playing()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, audio is playing.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-stream">
+<li><p><a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stream"></a>stream</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_stream(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_stream()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a> resource to be played.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-stream-paused">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/stream_paused"></a>stream_paused</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_stream_paused(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_stream_paused()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the playback is paused. You can resume it by setting <a class="reference internal" href="#class-audiostreamplayer3d-property-stream-paused"><span class="std std-ref">stream_paused</span></a> to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-unit-db">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/unit_db"></a>unit_db</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_unit_db(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_unit_db()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The base sound level unaffected by dampening, in decibels.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-property-unit-size">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/unit_size"></a>unit_size</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_unit_size(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_unit_size()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The factor for the attenuation effect. Higher values make the sound audible over a larger distance.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-audiostreamplayer3d-method-get-playback-position">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_playback_position"></a>get_playback_position</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the position in the <a class="reference internal" href="class_audiostream.html#class-audiostream"><span class="std std-ref">AudioStream</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-method-get-stream-playback">
+<li><p><a class="reference internal" href="class_audiostreamplayback.html#class-audiostreamplayback"><span class="std std-ref">AudioStreamPlayback</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_stream_playback"></a>get_stream_playback</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_audiostreamplayback.html#class-audiostreamplayback"><span class="std std-ref">AudioStreamPlayback</span></a> object associated with this <code class="docutils literal notranslate"><span class="pre">AudioStreamPlayer3D</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-method-play">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/play"></a>play</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from_position=0.0 <strong>)</strong></p></li>
+</ul>
+<p>Plays the audio from the given position <code class="docutils literal notranslate"><span class="pre">from_position</span></code>, in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-method-seek">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/seek"></a>seek</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> to_position <strong>)</strong></p></li>
+</ul>
+<p>Sets the position from which audio will be played, in seconds.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-audiostreamplayer3d-method-stop">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/stop"></a>stop</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Stops the audio.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_audiostreamplayer2d.html" rel="prev" title="AudioStreamPlayer2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_audiostreamrandompitch.html" rel="next" title="AudioStreamRandomPitch">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="CSGPolygon" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_csgpolygon.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: CSGPrimitive&lt; CSGShape&lt; GeometryInstance&lt; VisualInstance&lt; CullInstance&lt; Spatial&lt; Node&lt; Object Extrudes a 2D polygon shape to create a 3D mesh. Description: An array of 2D points is extrud..." property="og:description"/>
+<meta content="Extrudes a 2D polygon shape to create a 3D mesh. An array of 2D points is extruded to quickly and easily create a variety of 3D meshes. See also CSGMesh for using 3D meshes as CSG nodes. Note: CSG nodes are intended t..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) CSGPolygon — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_csgpolygon.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_csgpolygon.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_csgpolygon.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_csgpolygon.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_csgpolygon.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_csgpolygon.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_csgpolygon.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_csgpolygon.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_csgpolygon.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_csgpolygon.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_csgpolygon.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_csgpolygon.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_csgpolygon.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_csgpolygon.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_csgpolygon.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_csgpolygon.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_csgprimitive.html" rel="next" title="CSGPrimitive"/>
+<link href="class_csgmesh.html" rel="prev" title="CSGMesh"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>CSGPolygon</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="csgpolygon">
+<span id="class-csgpolygon"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/CSGPolygon¶"></a>CSGPolygon<a class="headerlink" href="#csgpolygon" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_csgprimitive.html#class-csgprimitive"><span class="std std-ref">CSGPrimitive</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_csgshape.html#class-csgshape"><span class="std std-ref">CSGShape</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_geometryinstance.html#class-geometryinstance"><span class="std std-ref">GeometryInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_visualinstance.html#class-visualinstance"><span class="std std-ref">VisualInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_cullinstance.html#class-cullinstance"><span class="std std-ref">CullInstance</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_spatial.html#class-spatial"><span class="std std-ref">Spatial</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Extrudes a 2D polygon shape to create a 3D mesh.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>An array of 2D points is extruded to quickly and easily create a variety of 3D meshes. See also <a class="reference internal" href="class_csgmesh.html#class-csgmesh"><span class="std std-ref">CSGMesh</span></a> for using 3D meshes as CSG nodes.</p>
+<p><strong>Note:</strong> CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a <a class="reference internal" href="class_meshinstance.html#class-meshinstance"><span class="std std-ref">MeshInstance</span></a> with a <a class="reference internal" href="class_primitivemesh.html#class-primitivemesh"><span class="std std-ref">PrimitiveMesh</span></a>. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="$DOCS_URL/tutorials/3d/csg_tools.html">Prototyping levels with CSG</a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 41%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-depth"><span class="std std-ref">depth</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-material"><span class="std std-ref">material</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-csgpolygon-mode"><span class="std std-ref">Mode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-continuous-u"><span class="std std-ref">path_continuous_u</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-interval"><span class="std std-ref">path_interval</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-csgpolygon-pathintervaltype"><span class="std std-ref">PathIntervalType</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-interval-type"><span class="std std-ref">path_interval_type</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-joined"><span class="std std-ref">path_joined</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-local"><span class="std std-ref">path_local</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-node"><span class="std std-ref">path_node</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#enum-csgpolygon-pathrotation"><span class="std std-ref">PathRotation</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-rotation"><span class="std std-ref">path_rotation</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-simplify-angle"><span class="std std-ref">path_simplify_angle</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-path-u-distance"><span class="std std-ref">path_u_distance</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-smooth-faces"><span class="std std-ref">smooth_faces</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-spin-degrees"><span class="std std-ref">spin_degrees</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-csgpolygon-property-spin-sides"><span class="std std-ref">spin_sides</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-csgpolygon-constant-mode-path"><span id="class-csgpolygon-constant-mode-spin"></span><span id="class-csgpolygon-constant-mode-depth"></span><span id="enum-csgpolygon-mode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Mode"></a>Mode</strong>:</p>
+<ul class="simple">
+<li><p><strong>MODE_DEPTH</strong> = <strong>0</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape is extruded along the negative Z axis.</p></li>
+<li><p><strong>MODE_SPIN</strong> = <strong>1</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape is extruded by rotating it around the Y axis.</p></li>
+<li><p><strong>MODE_PATH</strong> = <strong>2</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape is extruded along the <a class="reference internal" href="class_path.html#class-path"><span class="std std-ref">Path</span></a> specified in <a class="reference internal" href="#class-csgpolygon-property-path-node"><span class="std std-ref">path_node</span></a>.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-csgpolygon-constant-path-rotation-path-follow"><span id="class-csgpolygon-constant-path-rotation-path"></span><span id="class-csgpolygon-constant-path-rotation-polygon"></span><span id="enum-csgpolygon-pathrotation"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/PathRotation"></a>PathRotation</strong>:</p>
+<ul class="simple">
+<li><p><strong>PATH_ROTATION_POLYGON</strong> = <strong>0</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape is not rotated.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> Requires the path's Z coordinates to continually decrease to ensure viable shapes.</p>
+<ul class="simple">
+<li><p><strong>PATH_ROTATION_PATH</strong> = <strong>1</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape is rotated along the path, but it is not rotated around the path axis.</p></li>
+</ul>
+<p><strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Note:"></a>Note:</strong> Requires the path's Z coordinates to continually decrease to ensure viable shapes.</p>
+<ul class="simple">
+<li><p><strong>PATH_ROTATION_PATH_FOLLOW</strong> = <strong>2</strong> --- The <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> shape follows the path and its rotations around the path axis.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-csgpolygon-constant-path-interval-subdivide"><span id="class-csgpolygon-constant-path-interval-distance"></span><span id="enum-csgpolygon-pathintervaltype"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/PathIntervalType"></a>PathIntervalType</strong>:</p>
+<ul class="simple">
+<li><p><strong>PATH_INTERVAL_DISTANCE</strong> = <strong>0</strong> --- When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is set to <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, <a class="reference internal" href="#class-csgpolygon-property-path-interval"><span class="std std-ref">path_interval</span></a> will determine the distance, in meters, each interval of the path will extrude.</p></li>
+<li><p><strong>PATH_INTERVAL_SUBDIVIDE</strong> = <strong>1</strong> --- When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is set to <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, <a class="reference internal" href="#class-csgpolygon-property-path-interval"><span class="std std-ref">path_interval</span></a> will subdivide the polygons along the path.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-csgpolygon-property-depth">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/depth"></a>depth</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_depth(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_depth()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-depth"><span class="std std-ref">MODE_DEPTH</span></a>, the depth of the extrusion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-material">
+<li><p><a class="reference internal" href="class_material.html#class-material"><span class="std std-ref">Material</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/material"></a>material</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_material(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_material()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Material to use for the resulting mesh. The UV maps the top half of the material to the extruded shape (U along the the length of the extrusions and V around the outline of the <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a>), the bottom-left quarter to the front end face, and the bottom-right quarter to the back end face.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-mode">
+<li><p><a class="reference internal" href="#enum-csgpolygon-mode"><span class="std std-ref">Mode</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/mode"></a>mode</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 61%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_mode(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_mode()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> used to extrude the <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-continuous-u">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_continuous_u"></a>path_continuous_u</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_continuous_u(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_path_continuous_u()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, by default, the top half of the <a class="reference internal" href="#class-csgpolygon-property-material"><span class="std std-ref">material</span></a> is stretched along the entire length of the extruded shape. If <code class="docutils literal notranslate"><span class="pre">false</span></code> the top half of the material is repeated every step of the extrusion.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-interval">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_interval"></a>path_interval</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_interval(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_interval()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, the path interval or ratio of path points to extrusions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-interval-type">
+<li><p><a class="reference internal" href="#enum-csgpolygon-pathintervaltype"><span class="std std-ref">PathIntervalType</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_interval_type"></a>path_interval_type</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_interval_type(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_interval_type()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, this will determine if the interval should be by distance (<a class="reference internal" href="#class-csgpolygon-constant-path-interval-distance"><span class="std std-ref">PATH_INTERVAL_DISTANCE</span></a>) or subdivision fractions (<a class="reference internal" href="#class-csgpolygon-constant-path-interval-subdivide"><span class="std std-ref">PATH_INTERVAL_SUBDIVIDE</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-joined">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_joined"></a>path_joined</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_joined(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_path_joined()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, if <code class="docutils literal notranslate"><span class="pre">true</span></code> the ends of the path are joined, by adding an extrusion between the last and first points of the path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-local">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_local"></a>path_local</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_local(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_path_local()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, if <code class="docutils literal notranslate"><span class="pre">true</span></code> the <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> of the <code class="docutils literal notranslate"><span class="pre">CSGPolygon</span></code> is used as the starting point for the extrusions, not the <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> of the <a class="reference internal" href="#class-csgpolygon-property-path-node"><span class="std std-ref">path_node</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-node">
+<li><p><a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_node"></a>path_node</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_node(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_node()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, the location of the <a class="reference internal" href="class_path.html#class-path"><span class="std std-ref">Path</span></a> object used to extrude the <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-rotation">
+<li><p><a class="reference internal" href="#enum-csgpolygon-pathrotation"><span class="std std-ref">PathRotation</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_rotation"></a>path_rotation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_rotation(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_rotation()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, the <a class="reference internal" href="#enum-csgpolygon-pathrotation"><span class="std std-ref">PathRotation</span></a> method used to rotate the <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> as it is extruded.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-simplify-angle">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_simplify_angle"></a>path_simplify_angle</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_simplify_angle(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_simplify_angle()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, extrusions that are less than this angle, will be merged together to reduce polygon count.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-path-u-distance">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/path_u_distance"></a>path_u_distance</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_path_u_distance(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_path_u_distance()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-path"><span class="std std-ref">MODE_PATH</span></a>, this is the distance along the path, in meters, the texture coordinates will tile. When set to 0, texture coordinates will match geometry exactly with no tiling.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-polygon">
+<li><p><a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/polygon"></a>polygon</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PoolVector2Array(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_polygon(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_polygon()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The point array that defines the 2D polygon that is extruded. This can be a convex or concave polygon with 3 or more points. The polygon must <em>not</em> have any intersecting edges. Otherwise, triangulation will fail and no mesh will be generated.</p>
+<p><strong>Note:</strong> If only 1 or 2 points are defined in <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a>, no mesh will be generated.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-smooth-faces">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/smooth_faces"></a>smooth_faces</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_smooth_faces(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_smooth_faces()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, applies smooth shading to the extrusions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-spin-degrees">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/spin_degrees"></a>spin_degrees</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_spin_degrees(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_spin_degrees()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-spin"><span class="std std-ref">MODE_SPIN</span></a>, the total number of degrees the <a class="reference internal" href="#class-csgpolygon-property-polygon"><span class="std std-ref">polygon</span></a> is rotated when extruding.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-csgpolygon-property-spin-sides">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/spin_sides"></a>spin_sides</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_spin_sides(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_spin_sides()</p></td>
+</tr>
+</tbody>
+</table>
+<p>When <a class="reference internal" href="#class-csgpolygon-property-mode"><span class="std std-ref">mode</span></a> is <a class="reference internal" href="#class-csgpolygon-constant-mode-spin"><span class="std std-ref">MODE_SPIN</span></a>, the number of extrusions made.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_csgmesh.html" rel="prev" title="CSGMesh"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_csgprimitive.html" rel="next" title="CSGPrimitive">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="String" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_string.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Built-in string class. Description: This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference..." property="og:description"/>
+<meta content="Built-in string class. This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference-counted and use a copy-on-write..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) String — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_string.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_string.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_string.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_string.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_string.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_string.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_string.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_string.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_string.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_string.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_string.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_string.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_string.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_string.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_string.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_string.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_stylebox.html" rel="next" title="StyleBox"/>
+<link href="class_streamtexture.html" rel="prev" title="StreamTexture"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>String</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="string">
+<span id="class-string"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/String¶"></a>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h1>
+<p>Built-in string class.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference-counted and use a copy-on-write approach, so passing them around is cheap in resources.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_format_string.html"><span class="doc">GDScript format strings</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-string"><span class="std std-ref">String</span></a> <strong>(</strong> <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> from <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-begins-with"><span class="std std-ref">begins_with</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-bigrams"><span class="std std-ref">bigrams</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-c-escape"><span class="std std-ref">c_escape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-c-unescape"><span class="std std-ref">c_unescape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-capitalize"><span class="std std-ref">capitalize</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-casecmp-to"><span class="std std-ref">casecmp_to</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-count"><span class="std std-ref">count</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-countn"><span class="std std-ref">countn</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-dedent"><span class="std std-ref">dedent</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-empty"><span class="std std-ref">empty</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-ends-with"><span class="std std-ref">ends_with</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-string-method-erase"><span class="std std-ref">erase</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> chars <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-find"><span class="std std-ref">find</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-find-last"><span class="std std-ref">find_last</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-findn"><span class="std std-ref">findn</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-format"><span class="std std-ref">format</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> values, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> placeholder="{_}" <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-get-base-dir"><span class="std std-ref">get_base_dir</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-get-basename"><span class="std std-ref">get_basename</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-get-extension"><span class="std std-ref">get_extension</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-get-file"><span class="std std-ref">get_file</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-hash"><span class="std std-ref">hash</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-hex-to-int"><span class="std std-ref">hex_to_int</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-http-escape"><span class="std std-ref">http_escape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-http-unescape"><span class="std std-ref">http_unescape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-humanize-size"><span class="std std-ref">humanize_size</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-indent"><span class="std std-ref">indent</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> prefix <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-insert"><span class="std std-ref">insert</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-abs-path"><span class="std std-ref">is_abs_path</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-rel-path"><span class="std std-ref">is_rel_path</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-subsequence-of"><span class="std std-ref">is_subsequence_of</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-subsequence-ofi"><span class="std std-ref">is_subsequence_ofi</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-filename"><span class="std std-ref">is_valid_filename</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-float"><span class="std std-ref">is_valid_float</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-hex-number"><span class="std std-ref">is_valid_hex_number</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_prefix=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-html-color"><span class="std std-ref">is_valid_html_color</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-identifier"><span class="std std-ref">is_valid_identifier</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-integer"><span class="std std-ref">is_valid_integer</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-is-valid-ip-address"><span class="std std-ref">is_valid_ip_address</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-json-escape"><span class="std std-ref">json_escape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-left"><span class="std std-ref">left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-length"><span class="std std-ref">length</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-lstrip"><span class="std std-ref">lstrip</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> chars <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-match"><span class="std std-ref">match</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> expr <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-matchn"><span class="std std-ref">matchn</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> expr <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-md5-buffer"><span class="std std-ref">md5_buffer</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-md5-text"><span class="std std-ref">md5_text</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-naturalnocasecmp-to"><span class="std std-ref">naturalnocasecmp_to</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-nocasecmp-to"><span class="std std-ref">nocasecmp_to</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-ord-at"><span class="std std-ref">ord_at</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-pad-decimals"><span class="std std-ref">pad_decimals</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> digits <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-pad-zeros"><span class="std std-ref">pad_zeros</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> digits <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-percent-decode"><span class="std std-ref">percent_decode</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-percent-encode"><span class="std std-ref">percent_encode</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-plus-file"><span class="std std-ref">plus_file</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-repeat"><span class="std std-ref">repeat</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> count <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-replace"><span class="std std-ref">replace</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> forwhat <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-replacen"><span class="std std-ref">replacen</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> forwhat <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-rfind"><span class="std std-ref">rfind</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-rfindn"><span class="std std-ref">rfindn</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-right"><span class="std std-ref">right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-rsplit"><span class="std std-ref">rsplit</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> maxsplit=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-rstrip"><span class="std std-ref">rstrip</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> chars <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-sha1-buffer"><span class="std std-ref">sha1_buffer</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-sha1-text"><span class="std std-ref">sha1_text</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-sha256-buffer"><span class="std std-ref">sha256_buffer</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-sha256-text"><span class="std std-ref">sha256_text</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-similarity"><span class="std std-ref">similarity</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-simplify-path"><span class="std std-ref">simplify_path</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-split"><span class="std std-ref">split</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> maxsplit=0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-split-floats"><span class="std std-ref">split_floats</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-strip-edges"><span class="std std-ref">strip_edges</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> left=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> right=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-strip-escapes"><span class="std std-ref">strip_escapes</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-substr"><span class="std std-ref">substr</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> len=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-ascii"><span class="std std-ref">to_ascii</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-float"><span class="std std-ref">to_float</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-int"><span class="std std-ref">to_int</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-lower"><span class="std std-ref">to_lower</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-upper"><span class="std std-ref">to_upper</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-utf8"><span class="std std-ref">to_utf8</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-to-wchar"><span class="std std-ref">to_wchar</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-trim-prefix"><span class="std std-ref">trim_prefix</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> prefix <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-trim-suffix"><span class="std std-ref">trim_suffix</span></a> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> suffix <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-validate-node-name"><span class="std std-ref">validate_node_name</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-xml-escape"><span class="std std-ref">xml_escape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-string-method-xml-unescape"><span class="std std-ref">xml_unescape</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-string-method-string">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_plane.html#class-plane"><span class="std std-ref">Plane</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_quat.html#class-quat"><span class="std std-ref">Quat</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_aabb.html#class-aabb"><span class="std std-ref">AABB</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_nodepath.html#class-nodepath"><span class="std std-ref">NodePath</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolvector2array.html#class-poolvector2array"><span class="std std-ref">PoolVector2Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/String"></a>String</strong> <strong>(</strong> <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a> from <strong>)</strong></p></li>
+</ul>
+<p>Constructs a new String from the given <a class="reference internal" href="class_poolcolorarray.html#class-poolcolorarray"><span class="std std-ref">PoolColorArray</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-begins-with">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/begins_with"></a>begins_with</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the string begins with the given string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-bigrams">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/bigrams"></a>bigrams</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an array containing the bigrams (pairs of consecutive letters) of this string.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Bigrams"</span><span class="o">.</span><span class="n">bigrams</span><span class="p">())</span> <span class="c1"># Prints "[Bi, ig, gr, ra, am, ms]"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-c-escape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/c_escape"></a>c_escape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with special characters escaped using the C language standard.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-c-unescape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/c_unescape"></a>c_unescape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are <code class="docutils literal notranslate"><span class="pre">\'</span></code>, <code class="docutils literal notranslate"><span class="pre">\"</span></code>, <code class="docutils literal notranslate"><span class="pre">\?</span></code>, <code class="docutils literal notranslate"><span class="pre">\\</span></code>, <code class="docutils literal notranslate"><span class="pre">\a</span></code>, <code class="docutils literal notranslate"><span class="pre">\b</span></code>, <code class="docutils literal notranslate"><span class="pre">\f</span></code>, <code class="docutils literal notranslate"><span class="pre">\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\r</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code>, <code class="docutils literal notranslate"><span class="pre">\v</span></code>.</p>
+<p><strong>Note:</strong> Unlike the GDScript parser, this method doesn't support the <code class="docutils literal notranslate"><span class="pre">\uXXXX</span></code> escape sequence.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-capitalize">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/capitalize"></a>capitalize</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Changes the case of some letters. Replaces underscores with spaces, adds spaces before in-word uppercase characters, converts all letters to lowercase, then capitalizes the first letter and every letter following a space character. For <code class="docutils literal notranslate"><span class="pre">capitalize</span> <span class="pre">camelCase</span> <span class="pre">mixed_with_underscores</span></code>, it will return <code class="docutils literal notranslate"><span class="pre">Capitalize</span> <span class="pre">Camel</span> <span class="pre">Case</span> <span class="pre">Mixed</span> <span class="pre">With</span> <span class="pre">Underscores</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-casecmp-to">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/casecmp_to"></a>casecmp_to</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Performs a case-sensitive comparison to another string. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if less than, <code class="docutils literal notranslate"><span class="pre">1</span></code> if greater than, or <code class="docutils literal notranslate"><span class="pre">0</span></code> if equal. "less than" or "greater than" are determined by the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode code points</a> of each string, which roughly matches the alphabetical order.</p>
+<p><strong>Behavior with different string lengths:</strong> Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the "base" string is longer than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is shorter than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string. Keep in mind this length is determined by the number of Unicode codepoints, <em>not</em> the actual visible characters.</p>
+<p><strong>Behavior with empty strings:</strong> Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is empty, <code class="docutils literal notranslate"><span class="pre">1</span></code> if the <code class="docutils literal notranslate"><span class="pre">to</span></code> string is empty or <code class="docutils literal notranslate"><span class="pre">0</span></code> if both strings are empty.</p>
+<p>To get a boolean result from a string comparison, use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator instead. See also <a class="reference internal" href="#class-string-method-nocasecmp-to"><span class="std std-ref">nocasecmp_to</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/count"></a>count</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to=0 <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of occurrences of substring <code class="docutils literal notranslate"><span class="pre">what</span></code> between <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> positions. If <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> equals 0 the whole string will be used. If only <code class="docutils literal notranslate"><span class="pre">to</span></code> equals 0 the remained substring will be used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-countn">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/countn"></a>countn</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to=0 <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of occurrences of substring <code class="docutils literal notranslate"><span class="pre">what</span></code> (ignoring case) between <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> positions. If <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> equals 0 the whole string will be used. If only <code class="docutils literal notranslate"><span class="pre">to</span></code> equals 0 the remained substring will be used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-dedent">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/dedent"></a>dedent</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with indentation (leading tabs and spaces) removed. See also <a class="reference internal" href="#class-string-method-indent"><span class="std std-ref">indent</span></a> to add indentation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-empty">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/empty"></a>empty</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the length of the string equals <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-ends-with">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/ends_with"></a>ends_with</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the string ends with the given string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-erase">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/erase"></a>erase</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> chars <strong>)</strong></p></li>
+</ul>
+<p>Erases <code class="docutils literal notranslate"><span class="pre">chars</span></code> characters from the string starting from <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-find">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find"></a>find</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></li>
+</ul>
+<p>Finds the first occurrence of a substring. Returns the starting position of the substring or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not found. Optionally, the initial search index can be passed.</p>
+<p><strong>Note:</strong> If you just want to know whether a string contains a substring, use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator as follows:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Will evaluate to `false`.</span>
+<span class="k">if</span> <span class="s2">"i"</span> <span class="ow">in</span> <span class="s2">"team"</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-find-last">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/find_last"></a>find_last</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what <strong>)</strong></p></li>
+</ul>
+<p>Finds the last occurrence of a substring. Returns the starting position of the substring or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not found.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-findn">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/findn"></a>findn</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=0 <strong>)</strong></p></li>
+</ul>
+<p>Finds the first occurrence of a substring, ignoring case. Returns the starting position of the substring or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not found. Optionally, the initial search index can be passed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-format">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/format"></a>format</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> values, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> placeholder="{_}" <strong>)</strong></p></li>
+</ul>
+<p>Formats the string by replacing all occurrences of <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> with <code class="docutils literal notranslate"><span class="pre">values</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-get-base-dir">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_base_dir"></a>get_base_dir</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>If the string is a valid file path, returns the base directory name.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-get-basename">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_basename"></a>get_basename</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>If the string is a valid file path, returns the full file path without the extension.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-get-extension">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_extension"></a>get_extension</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the extension without the leading period character (<code class="docutils literal notranslate"><span class="pre">.</span></code>) if the string is a valid file name or path. If the string does not contain an extension, returns an empty string instead.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"/path/to/file.txt"</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "txt"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "txt"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"file.sample.txt"</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "txt"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">".txt"</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "txt"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"file.txt."</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "" (empty string)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"file.txt.."</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "" (empty string)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"txt"</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "" (empty string)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">get_extension</span><span class="p">())</span>  <span class="c1"># "" (empty string)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-get-file">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_file"></a>get_file</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>If the string is a valid file path, returns the filename.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-hash">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hash"></a>hash</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the 32-bit hash value representing the string's contents.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">String</span></code>s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does <em>not</em> imply the strings are equal, because different strings can have identical hash values due to hash collisions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-hex-to-int">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hex_to_int"></a>hex_to_int</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts a string containing a hexadecimal number into an integer. Hexadecimal strings are expected to be prefixed with "<code class="docutils literal notranslate"><span class="pre">0x</span></code>" otherwise <code class="docutils literal notranslate"><span class="pre">0</span></code> is returned.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"0xff"</span><span class="o">.</span><span class="n">hex_to_int</span><span class="p">())</span> <span class="c1"># Print "255"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-http-escape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/http_escape"></a>http_escape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Escapes (encodes) a string to URL friendly format. Also referred to as 'URL encode'.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"https://example.org/?escaped="</span> <span class="o">+</span> <span class="s2">"Godot Engine:'docs'"</span><span class="o">.</span><span class="n">http_escape</span><span class="p">())</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-http-unescape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/http_unescape"></a>http_unescape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Unescapes (decodes) a string in URL encoded format. Also referred to as 'URL decode'.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"https://example.org/?escaped="</span> <span class="o">+</span> <span class="s2">"Godot</span><span class="si">%20E</span><span class="s2">ngine%3A</span><span class="si">%27d</span><span class="s2">ocs%27"</span><span class="o">.</span><span class="n">http_unescape</span><span class="p">())</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-humanize-size">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/humanize_size"></a>humanize_size</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> size <strong>)</strong></p></li>
+</ul>
+<p>Converts <code class="docutils literal notranslate"><span class="pre">size</span></code> represented as number of bytes to human-readable format using internationalized set of data size units, namely: B, KiB, MiB, GiB, TiB, PiB, EiB. Note that the next smallest unit is picked automatically to hold at most 1024 units.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">bytes</span> <span class="o">=</span> <span class="mi">133790307</span>
+<span class="k">var</span> <span class="n">size</span> <span class="o">=</span> <span class="nb nb-Type">String</span><span class="o">.</span><span class="n">humanize_size</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="c1"># prints "127.5 MiB"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-indent">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/indent"></a>indent</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> prefix <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with lines indented with <code class="docutils literal notranslate"><span class="pre">prefix</span></code>.</p>
+<p>For example, the string can be indented with two tabs using <code class="docutils literal notranslate"><span class="pre">"\t\t"</span></code>, or four spaces using <code class="docutils literal notranslate"><span class="pre">"</span>    <span class="pre">"</span></code>. The prefix can be any string so it can also be used to comment out strings with e.g. <code class="docutils literal notranslate"><span class="pre">"#</span> <span class="pre">"</span></code>. See also <a class="reference internal" href="#class-string-method-dedent"><span class="std std-ref">dedent</span></a> to remove indentation.</p>
+<p><strong>Note:</strong> Empty lines are kept empty.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-insert">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/insert"></a>insert</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with the substring <code class="docutils literal notranslate"><span class="pre">what</span></code> inserted at the given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-abs-path">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_abs_path"></a>is_abs_path</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>If the string is a path to a file or directory, returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the path is absolute.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-rel-path">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_rel_path"></a>is_rel_path</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>If the string is a path to a file or directory, returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the path is relative.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-subsequence-of">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_subsequence_of"></a>is_subsequence_of</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string is a subsequence of the given string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-subsequence-ofi">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_subsequence_ofi"></a>is_subsequence_ofi</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string is a subsequence of the given string, without considering case.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-filename">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_filename"></a>is_valid_filename</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string is free from characters that aren't allowed in file names, those being:</p>
+<p><code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">/</span> <span class="pre">\</span> <span class="pre">?</span> <span class="pre">*</span> <span class="pre">"</span> <span class="pre">|</span> <span class="pre">%</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span></code></p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-float">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_float"></a>is_valid_float</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string contains a valid float. This is inclusive of integers, and also supports exponents:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"1.7"</span><span class="o">.</span><span class="n">is_valid_float</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"24"</span><span class="o">.</span><span class="n">is_valid_float</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"7e3"</span><span class="o">.</span><span class="n">is_valid_float</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="o">.</span><span class="n">is_valid_float</span><span class="p">())</span> <span class="c1"># Prints "False"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-hex-number">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_hex_number"></a>is_valid_hex_number</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> with_prefix=false <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string contains a valid hexadecimal number. If <code class="docutils literal notranslate"><span class="pre">with_prefix</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, then a validity of the hexadecimal number is determined by <code class="docutils literal notranslate"><span class="pre">0x</span></code> prefix, for instance: <code class="docutils literal notranslate"><span class="pre">0xDEADC0DE</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-html-color">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_html_color"></a>is_valid_html_color</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string contains a valid color in hexadecimal HTML notation. Other HTML notations such as named colors or <code class="docutils literal notranslate"><span class="pre">hsl()</span></code> colors aren't considered valid by this method and will return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-identifier">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_identifier"></a>is_valid_identifier</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (<code class="docutils literal notranslate"><span class="pre">_</span></code>) and the first character may not be a digit.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"good_ident_1"</span><span class="o">.</span><span class="n">is_valid_identifier</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1st_bad_ident"</span><span class="o">.</span><span class="n">is_valid_identifier</span><span class="p">())</span> <span class="c1"># Prints "False"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"bad_ident_#2"</span><span class="o">.</span><span class="n">is_valid_identifier</span><span class="p">())</span> <span class="c1"># Prints "False"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-integer">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_integer"></a>is_valid_integer</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string contains a valid integer.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"7"</span><span class="o">.</span><span class="n">is_valid_int</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"14.6"</span><span class="o">.</span><span class="n">is_valid_int</span><span class="p">())</span> <span class="c1"># Prints "False"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"L"</span><span class="o">.</span><span class="n">is_valid_int</span><span class="p">())</span> <span class="c1"># Prints "False"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"+3"</span><span class="o">.</span><span class="n">is_valid_int</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-12"</span><span class="o">.</span><span class="n">is_valid_int</span><span class="p">())</span> <span class="c1"># Prints "True"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-is-valid-ip-address">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_valid_ip_address"></a>is_valid_ip_address</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this string contains only a well-formatted IPv4 or IPv6 address. This method considers <a class="reference external" href="https://en.wikipedia.org/wiki/Reserved_IP_addresses">reserved IP addresses</a> such as <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code> as valid.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-json-escape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/json_escape"></a>json_escape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with special characters escaped using the JSON standard.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-left">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/left"></a>left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Returns a number of characters from the left of the string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-length">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/length"></a>length</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the string's amount of characters.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-lstrip">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/lstrip"></a>lstrip</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> chars <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with characters removed from the left. The <code class="docutils literal notranslate"><span class="pre">chars</span></code> argument is a string specifying the set of characters to be removed.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">chars</span></code> is not a prefix. See <a class="reference internal" href="#class-string-method-trim-prefix"><span class="std std-ref">trim_prefix</span></a> method that will remove a single prefix string rather than a set of characters.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-match">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/match"></a>match</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> expr <strong>)</strong></p></li>
+</ul>
+<p>Does a simple case-sensitive expression match, where <code class="docutils literal notranslate"><span class="pre">"*"</span></code> matches zero or more arbitrary characters and <code class="docutils literal notranslate"><span class="pre">"?"</span></code> matches any single character except a period (<code class="docutils literal notranslate"><span class="pre">"."</span></code>). An empty string or empty expression always evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-matchn">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/matchn"></a>matchn</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> expr <strong>)</strong></p></li>
+</ul>
+<p>Does a simple case-insensitive expression match, where <code class="docutils literal notranslate"><span class="pre">"*"</span></code> matches zero or more arbitrary characters and <code class="docutils literal notranslate"><span class="pre">"?"</span></code> matches any single character except a period (<code class="docutils literal notranslate"><span class="pre">"."</span></code>). An empty string or empty expression always evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-md5-buffer">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/md5_buffer"></a>md5_buffer</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the MD5 hash of the string as an array of bytes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-md5-text">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/md5_text"></a>md5_text</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the MD5 hash of the string as a string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-naturalnocasecmp-to">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/naturalnocasecmp_to"></a>naturalnocasecmp_to</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Performs a case-insensitive <em>natural order</em> comparison to another string. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if less than, <code class="docutils literal notranslate"><span class="pre">1</span></code> if greater than, or <code class="docutils literal notranslate"><span class="pre">0</span></code> if equal. "less than" or "greater than" are determined by the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode code points</a> of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.</p>
+<p>When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">...]</span></code> instead of <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">10,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">...]</span></code>.</p>
+<p><strong>Behavior with different string lengths:</strong> Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the "base" string is longer than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is shorter than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string. Keep in mind this length is determined by the number of Unicode codepoints, <em>not</em> the actual visible characters.</p>
+<p><strong>Behavior with empty strings:</strong> Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is empty, <code class="docutils literal notranslate"><span class="pre">1</span></code> if the <code class="docutils literal notranslate"><span class="pre">to</span></code> string is empty or <code class="docutils literal notranslate"><span class="pre">0</span></code> if both strings are empty.</p>
+<p>To get a boolean result from a string comparison, use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator instead. See also <a class="reference internal" href="#class-string-method-nocasecmp-to"><span class="std std-ref">nocasecmp_to</span></a> and <a class="reference internal" href="#class-string-method-casecmp-to"><span class="std std-ref">casecmp_to</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-nocasecmp-to">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/nocasecmp_to"></a>nocasecmp_to</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Performs a case-insensitive comparison to another string. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if less than, <code class="docutils literal notranslate"><span class="pre">1</span></code> if greater than, or <code class="docutils literal notranslate"><span class="pre">0</span></code> if equal. "less than" or "greater than" are determined by the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Unicode code points</a> of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.</p>
+<p><strong>Behavior with different string lengths:</strong> Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> if the "base" string is longer than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is shorter than the <code class="docutils literal notranslate"><span class="pre">to</span></code> string. Keep in mind this length is determined by the number of Unicode codepoints, <em>not</em> the actual visible characters.</p>
+<p><strong>Behavior with empty strings:</strong> Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the "base" string is empty, <code class="docutils literal notranslate"><span class="pre">1</span></code> if the <code class="docutils literal notranslate"><span class="pre">to</span></code> string is empty or <code class="docutils literal notranslate"><span class="pre">0</span></code> if both strings are empty.</p>
+<p>To get a boolean result from a string comparison, use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator instead. See also <a class="reference internal" href="#class-string-method-casecmp-to"><span class="std std-ref">casecmp_to</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-ord-at">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/ord_at"></a>ord_at</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> at <strong>)</strong></p></li>
+</ul>
+<p>Returns the character code at position <code class="docutils literal notranslate"><span class="pre">at</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-pad-decimals">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pad_decimals"></a>pad_decimals</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> digits <strong>)</strong></p></li>
+</ul>
+<p>Formats a number to have an exact number of <code class="docutils literal notranslate"><span class="pre">digits</span></code> after the decimal point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-pad-zeros">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/pad_zeros"></a>pad_zeros</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> digits <strong>)</strong></p></li>
+</ul>
+<p>Formats a number to have an exact number of <code class="docutils literal notranslate"><span class="pre">digits</span></code> before the decimal point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-percent-decode">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/percent_decode"></a>percent_decode</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Decode a percent-encoded string. See <a class="reference internal" href="#class-string-method-percent-encode"><span class="std std-ref">percent_encode</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-percent-encode">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/percent_encode"></a>percent_encode</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Percent-encodes a string. Encodes parameters in a URL when sending a HTTP GET request (and bodies of form-urlencoded POST requests).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-plus-file">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/plus_file"></a>plus_file</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> file <strong>)</strong></p></li>
+</ul>
+<p>If the string is a path, this concatenates <code class="docutils literal notranslate"><span class="pre">file</span></code> at the end of the string as a subpath. E.g. <code class="docutils literal notranslate"><span class="pre">"this/is".plus_file("path")</span> <span class="pre">==</span> <span class="pre">"this/is/path"</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-repeat">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/repeat"></a>repeat</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> count <strong>)</strong></p></li>
+</ul>
+<p>Returns original string repeated a number of times. The number of repetitions is given by the argument.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-replace">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/replace"></a>replace</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> forwhat <strong>)</strong></p></li>
+</ul>
+<p>Replaces occurrences of a case-sensitive substring with the given one inside the string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-replacen">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/replacen"></a>replacen</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> forwhat <strong>)</strong></p></li>
+</ul>
+<p>Replaces occurrences of a case-insensitive substring with the given one inside the string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-rfind">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rfind"></a>rfind</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></li>
+</ul>
+<p>Performs a case-sensitive search for a substring, but starts from the end of the string instead of the beginning.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-rfindn">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rfindn"></a>rfindn</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> what, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from=-1 <strong>)</strong></p></li>
+</ul>
+<p>Performs a case-insensitive search for a substring, but starts from the end of the string instead of the beginning.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-right">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/right"></a>right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Returns the right side of the string from a given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-rsplit">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rsplit"></a>rsplit</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> maxsplit=0 <strong>)</strong></p></li>
+</ul>
+<p>Splits the string by a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> string and returns an array of the substrings, starting from right.</p>
+<p>The splits in the returned array are sorted in the same order as the original string, from left to right.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">maxsplit</span></code> is specified, it defines the number of splits to do from the right up to <code class="docutils literal notranslate"><span class="pre">maxsplit</span></code>. The default value of 0 means that all items are split, thus giving the same result as <a class="reference internal" href="#class-string-method-split"><span class="std std-ref">split</span></a>.</p>
+<p>Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">some_string</span> <span class="o">=</span> <span class="s2">"One,Two,Three,Four"</span>
+<span class="k">var</span> <span class="n">some_array</span> <span class="o">=</span> <span class="n">some_string</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="bp">true</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="o">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># Prints 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints "One,Two,Three"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints "Four"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-rstrip">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/rstrip"></a>rstrip</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> chars <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with characters removed from the right. The <code class="docutils literal notranslate"><span class="pre">chars</span></code> argument is a string specifying the set of characters to be removed.</p>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">chars</span></code> is not a suffix. See <a class="reference internal" href="#class-string-method-trim-suffix"><span class="std std-ref">trim_suffix</span></a> method that will remove a single suffix string rather than a set of characters.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-sha1-buffer">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sha1_buffer"></a>sha1_buffer</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the SHA-1 hash of the string as an array of bytes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-sha1-text">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sha1_text"></a>sha1_text</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the SHA-1 hash of the string as a string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-sha256-buffer">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sha256_buffer"></a>sha256_buffer</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the SHA-256 hash of the string as an array of bytes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-sha256-text">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/sha256_text"></a>sha256_text</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the SHA-256 hash of the string as a string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-similarity">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/similarity"></a>similarity</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> text <strong>)</strong></p></li>
+</ul>
+<p>Returns the similarity index (<a class="reference external" href="https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient">Sorensen-Dice coefficient</a>) of this string compared to another. A result of 1.0 means totally similar, while 0.0 means totally dissimilar.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"ABC123"</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">"ABC123"</span><span class="p">))</span> <span class="c1"># Prints "1"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ABC123"</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">"XYZ456"</span><span class="p">))</span> <span class="c1"># Prints "0"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ABC123"</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">"123ABC"</span><span class="p">))</span> <span class="c1"># Prints "0.8"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ABC123"</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">"abc123"</span><span class="p">))</span> <span class="c1"># Prints "0.4"</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-simplify-path">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/simplify_path"></a>simplify_path</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a simplified canonical path.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-split">
+<li><p><a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/split"></a>split</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> maxsplit=0 <strong>)</strong></p></li>
+</ul>
+<p>Splits the string by a <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> string and returns an array of the substrings. The <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> can be of any length.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">maxsplit</span></code> is specified, it defines the number of splits to do from the left up to <code class="docutils literal notranslate"><span class="pre">maxsplit</span></code>. The default value of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that all items are split.</p>
+<p>Example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">some_string</span> <span class="o">=</span> <span class="s2">"One,Two,Three,Four"</span>
+<span class="k">var</span> <span class="n">some_array</span> <span class="o">=</span> <span class="n">some_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="bp">true</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="o">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># Prints 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints "One"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_array</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints "Two,Three,Four"</span>
+</pre></div>
+</div>
+<p>If you need to split strings with more complex rules, use the <a class="reference internal" href="class_regex.html#class-regex"><span class="std std-ref">RegEx</span></a> class instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-split-floats">
+<li><p><a class="reference internal" href="class_poolrealarray.html#class-poolrealarray"><span class="std std-ref">PoolRealArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/split_floats"></a>split_floats</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> delimiter, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> allow_empty=true <strong>)</strong></p></li>
+</ul>
+<p>Splits the string in floats by using a delimiter string and returns an array of the substrings.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">"1,2.5,3"</span></code> will return <code class="docutils literal notranslate"><span class="pre">[1,2.5,3]</span></code> if split by <code class="docutils literal notranslate"><span class="pre">","</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-strip-edges">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/strip_edges"></a>strip_edges</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> left=true, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> right=true <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string stripped of any non-printable character (including tabulations, spaces and line breaks) at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-strip-escapes">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/strip_escapes"></a>strip_escapes</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string stripped of any escape character. These include all non-printable control characters of the first page of the ASCII table (&lt; 32), such as tabulation (<code class="docutils literal notranslate"><span class="pre">\t</span></code> in C) and newline (<code class="docutils literal notranslate"><span class="pre">\n</span></code> and <code class="docutils literal notranslate"><span class="pre">\r</span></code>) characters, but not spaces.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-substr">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/substr"></a>substr</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> len=-1 <strong>)</strong></p></li>
+</ul>
+<p>Returns part of the string from the position <code class="docutils literal notranslate"><span class="pre">from</span></code> with length <code class="docutils literal notranslate"><span class="pre">len</span></code>. Argument <code class="docutils literal notranslate"><span class="pre">len</span></code> is optional and using <code class="docutils literal notranslate"><span class="pre">-1</span></code> will return remaining characters from given position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-ascii">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_ascii"></a>to_ascii</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts the String (which is a character array) to <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> (which is an array of bytes). The conversion is faster compared to <a class="reference internal" href="#class-string-method-to-utf8"><span class="std std-ref">to_utf8</span></a>, as this method assumes that all the characters in the String are ASCII characters.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-float">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_float"></a>to_float</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts a string containing a decimal number into a <code class="docutils literal notranslate"><span class="pre">float</span></code>. The method will stop on the first non-number character except the first <code class="docutils literal notranslate"><span class="pre">.</span></code> (decimal point), and <code class="docutils literal notranslate"><span class="pre">e</span></code> which is used for exponential.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"12.3"</span><span class="o">.</span><span class="n">to_float</span><span class="p">())</span> <span class="c1"># 12.3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1.2.3"</span><span class="o">.</span><span class="n">to_float</span><span class="p">())</span> <span class="c1"># 1.2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"12ab3"</span><span class="o">.</span><span class="n">to_float</span><span class="p">())</span> <span class="c1"># 12</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1e3"</span><span class="o">.</span><span class="n">to_float</span><span class="p">())</span> <span class="c1"># 1000</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-int">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_int"></a>to_int</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts a string containing an integer number into an <code class="docutils literal notranslate"><span class="pre">int</span></code>. The method will remove any non-number character and stop if it encounters a <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"123"</span><span class="o">.</span><span class="n">to_int</span><span class="p">())</span> <span class="c1"># 123</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a1b2c3"</span><span class="o">.</span><span class="n">to_int</span><span class="p">())</span> <span class="c1"># 123</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1.2.3"</span><span class="o">.</span><span class="n">to_int</span><span class="p">())</span> <span class="c1"># 1</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-lower">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_lower"></a>to_lower</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the string converted to lowercase.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-upper">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_upper"></a>to_upper</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the string converted to uppercase.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-utf8">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_utf8"></a>to_utf8</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts the String (which is an array of characters) to <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> (which is an array of bytes). The conversion is a bit slower than <a class="reference internal" href="#class-string-method-to-ascii"><span class="std std-ref">to_ascii</span></a>, but supports all UTF-8 characters. Therefore, you should prefer this function over <a class="reference internal" href="#class-string-method-to-ascii"><span class="std std-ref">to_ascii</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-to-wchar">
+<li><p><a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/to_wchar"></a>to_wchar</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Converts the String (which is an array of characters) to <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> (which is an array of bytes).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-trim-prefix">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/trim_prefix"></a>trim_prefix</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> prefix <strong>)</strong></p></li>
+</ul>
+<p>Removes a given string from the start if it starts with it or leaves the string unchanged.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-trim-suffix">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/trim_suffix"></a>trim_suffix</strong> <strong>(</strong> <a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> suffix <strong>)</strong></p></li>
+</ul>
+<p>Removes a given string from the end if it ends with it or leaves the string unchanged.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-validate-node-name">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/validate_node_name"></a>validate_node_name</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Removes any characters from the string that are prohibited in <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> names (<code class="docutils literal notranslate"><span class="pre">.</span></code> <code class="docutils literal notranslate"><span class="pre">:</span></code> <code class="docutils literal notranslate"><span class="pre">@</span></code> <code class="docutils literal notranslate"><span class="pre">/</span></code> <code class="docutils literal notranslate"><span class="pre">"</span></code>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-xml-escape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xml_escape"></a>xml_escape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with special characters escaped using the XML standard.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-string-method-xml-unescape">
+<li><p><a class="reference internal" href="#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/xml_unescape"></a>xml_unescape</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a copy of the string with escaped characters replaced by their meanings according to the XML standard.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_streamtexture.html" rel="prev" title="StreamTexture"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_stylebox.html" rel="next" title="StyleBox">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

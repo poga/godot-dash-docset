@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Popup" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_popup.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Control&lt; CanvasItem&lt; Node&lt; Object Inherited By: PopupDialog, PopupMenu, PopupPanel, WindowDialog Base container control for popups and dialogs. Description: Popup is a base Control used t..." property="og:description"/>
+<meta content="Base container control for popups and dialogs. Popup is a base Control used to show dialogs and popups. It's a subwindow and modal by default (see Control) and has helpers for custom popup behavior. All popup methods..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Popup — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popup.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_popup.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_popup.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_popup.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_popup.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_popup.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_popup.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_popup.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_popup.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_popup.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_popup.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_popup.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_popup.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_popup.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popup.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_popup.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_popupdialog.html" rel="next" title="PopupDialog"/>
+<link href="class_poolvector3array.html" rel="prev" title="PoolVector3Array"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Popup</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="popup">
+<span id="class-popup"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Popup¶"></a>Popup<a class="headerlink" href="#popup" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_popupdialog.html#class-popupdialog"><span class="std std-ref">PopupDialog</span></a>, <a class="reference internal" href="class_popupmenu.html#class-popupmenu"><span class="std std-ref">PopupMenu</span></a>, <a class="reference internal" href="class_popuppanel.html#class-popuppanel"><span class="std std-ref">PopupPanel</span></a>, <a class="reference internal" href="class_windowdialog.html#class-windowdialog"><span class="std std-ref">WindowDialog</span></a></p>
+<p>Base container control for popups and dialogs.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Popup is a base <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> used to show dialogs and popups. It's a subwindow and modal by default (see <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 53%"/>
+<col style="width: 26%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-popup-property-popup-exclusive"><span class="std std-ref">popup_exclusive</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p>visible</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code> <em>(parent override)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 97%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-popup"><span class="std std-ref">popup</span></a> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> bounds=Rect2( 0, 0, 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-popup-centered"><span class="std std-ref">popup_centered</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-popup-centered-clamped"><span class="std std-ref">popup_centered_clamped</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size=Vector2( 0, 0 ), <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fallback_ratio=0.75 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-popup-centered-minsize"><span class="std std-ref">popup_centered_minsize</span></a> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> minsize=Vector2( 0, 0 ) <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-popup-centered-ratio"><span class="std std-ref">popup_centered_ratio</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> ratio=0.75 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-popup-method-set-as-minsize"><span class="std std-ref">set_as_minsize</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popup-signal-about-to-show">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/about_to_show"></a>about_to_show</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a popup is about to be shown. This is often used in <a class="reference internal" href="class_popupmenu.html#class-popupmenu"><span class="std std-ref">PopupMenu</span></a> to clear the list of options then create a new one according to the current context.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-signal-popup-hide">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/popup_hide"></a>popup_hide</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a popup is hidden.</p>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<span id="class-popup-constant-notification-post-popup"></span><ul class="simple" id="class-popup-constant-notification-popup-hide">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_POST_POPUP"></a>NOTIFICATION_POST_POPUP</strong> = <strong>80</strong> --- Notification sent right after the popup is shown.</p></li>
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Constant/NOTIFICATION_POPUP_HIDE"></a>NOTIFICATION_POPUP_HIDE</strong> = <strong>81</strong> --- Notification sent right after the popup is hidden.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popup-property-popup-exclusive">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/popup_exclusive"></a>popup_exclusive</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_exclusive(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_exclusive()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the popup will not be hidden when a click event occurs outside of it, or when it receives the <code class="docutils literal notranslate"><span class="pre">ui_cancel</span></code> action event.</p>
+<p><strong>Note:</strong> Enabling this property doesn't affect the Close or Cancel buttons' behavior in dialogs that inherit from this class. As a workaround, you can use <a class="reference internal" href="class_windowdialog.html#class-windowdialog-method-get-close-button"><span class="std std-ref">WindowDialog.get_close_button</span></a> or <a class="reference internal" href="class_confirmationdialog.html#class-confirmationdialog-method-get-cancel"><span class="std std-ref">ConfirmationDialog.get_cancel</span></a> and hide the buttons in question by setting their <a class="reference internal" href="class_canvasitem.html#class-canvasitem-property-visible"><span class="std std-ref">CanvasItem.visible</span></a> property to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-popup-method-popup">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/popup"></a>popup</strong> <strong>(</strong> <a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> bounds=Rect2( 0, 0, 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Popup (show the control in modal form).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-method-popup-centered">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/popup_centered"></a>popup_centered</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-method-popup-centered-clamped">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/popup_centered_clamped"></a>popup_centered_clamped</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> size=Vector2( 0, 0 ), <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> fallback_ratio=0.75 <strong>)</strong></p></li>
+</ul>
+<p>Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, clamping the size to <code class="docutils literal notranslate"><span class="pre">size</span></code>, then ensuring the popup is no larger than the viewport size multiplied by <code class="docutils literal notranslate"><span class="pre">fallback_ratio</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-method-popup-centered-minsize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/popup_centered_minsize"></a>popup_centered_minsize</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> minsize=Vector2( 0, 0 ) <strong>)</strong></p></li>
+</ul>
+<p>Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, ensuring the size is never smaller than <code class="docutils literal notranslate"><span class="pre">minsize</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-method-popup-centered-ratio">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/popup_centered_ratio"></a>popup_centered_ratio</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> ratio=0.75 <strong>)</strong></p></li>
+</ul>
+<p>Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, scaled at a ratio of size of the screen.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-popup-method-set-as-minsize">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_as_minsize"></a>set_as_minsize</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Shrink popup to keep to the minimum size of content.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_poolvector3array.html" rel="prev" title="PoolVector3Array"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_popupdialog.html" rel="next" title="PopupDialog">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

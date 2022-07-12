@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Dictionary" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_dictionary.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Dictionary type. Description: Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. D..." property="og:description"/>
+<meta content="Dictionary type. Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the ins..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Dictionary — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_dictionary.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_dictionary.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_dictionary.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_dictionary.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_dictionary.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_dictionary.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_dictionary.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_dictionary.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_dictionary.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_dictionary.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_dictionary.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_dictionary.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_dictionary.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_directionallight.html" rel="next" title="DirectionalLight"/>
+<link href="class_dampedspringjoint2d.html" rel="prev" title="DampedSpringJoint2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Dictionary</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="dictionary">
+<span id="class-dictionary"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Dictionary¶"></a>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h1>
+<p>Dictionary type.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding elements, even though this may not be reflected when printing the dictionary. In other programming languages, this data structure is sometimes referred to as a hash map or associative array.</p>
+<p>You can define a dictionary by placing a comma-separated list of <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pairs in curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>Erasing elements while iterating over them <strong>is not supported</strong> and will result in undefined behavior.</p>
+<p><strong>Note:</strong> Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use <a class="reference internal" href="#class-dictionary-method-duplicate"><span class="std std-ref">duplicate</span></a>.</p>
+<p>Creating a dictionary:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Creates an empty dictionary.</span>
+
+<span class="k">var</span> <span class="n">dict_variable_key</span> <span class="o">=</span> <span class="s2">"Another key name"</span>
+<span class="k">var</span> <span class="n">dict_variable_value</span> <span class="o">=</span> <span class="s2">"value2"</span>
+<span class="k">var</span> <span class="n">another_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Some key name"</span><span class="p">:</span> <span class="s2">"value1"</span><span class="p">,</span>
+    <span class="n">dict_variable_key</span><span class="p">:</span> <span class="n">dict_variable_value</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="n">points_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"White"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"Yellow"</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">"Orange"</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+
+<span class="c1"># Alternative Lua-style syntax.</span>
+<span class="c1"># Doesn't require quotes around keys, but only string constants can be used as key names.</span>
+<span class="c1"># Additionally, key names must start with a letter or an underscore.</span>
+<span class="c1"># Here, `some_key` is a string literal, not a variable!</span>
+<span class="n">another_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">some_key</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can access a dictionary's values by referencing the appropriate key. In the above example, <code class="docutils literal notranslate"><span class="pre">points_dict["White"]</span></code> will return <code class="docutils literal notranslate"><span class="pre">50</span></code>. You can also write <code class="docutils literal notranslate"><span class="pre">points_dict.White</span></code>, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable).</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="p">(</span><span class="nb nb-Type">String</span><span class="p">,</span> <span class="s2">"White"</span><span class="p">,</span> <span class="s2">"Yellow"</span><span class="p">,</span> <span class="s2">"Orange"</span><span class="p">)</span> <span class="k">var</span> <span class="n">my_color</span>
+<span class="k">var</span> <span class="n">points_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"White"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"Yellow"</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">"Orange"</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="c1"># We can't use dot syntax here as `my_color` is a variable.</span>
+    <span class="k">var</span> <span class="n">points</span> <span class="o">=</span> <span class="n">points_dict</span><span class="p">[</span><span class="n">my_color</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the above code, <code class="docutils literal notranslate"><span class="pre">points</span></code> will be assigned the value that is paired with the appropriate color selected in <code class="docutils literal notranslate"><span class="pre">my_color</span></code>.</p>
+<p>Dictionaries can contain more complex data:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"First Array"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span> <span class="c1"># Assigns an Array to a String key.</span>
+</pre></div>
+</div>
+<p>To add a key to an existing dictionary, access it like an existing key and assign to it:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">points_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"White"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"Yellow"</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s2">"Orange"</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="n">points_dict</span><span class="p">[</span><span class="s2">"Blue"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># Add "Blue" as a key and assign 150 as its value.</span>
+</pre></div>
+</div>
+<p>Finally, dictionaries can contain different types of keys and values in the same dictionary:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a valid dictionary.</span>
+<span class="c1"># To access the string "Nested value" below, use `my_dict.sub_dict.sub_key` or `my_dict["sub_dict"]["sub_key"]`.</span>
+<span class="c1"># Indexing styles can be mixed and matched depending on your needs.</span>
+<span class="k">var</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"String Key"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="s2">"Hello"</span><span class="p">,</span>
+    <span class="s2">"sub_dict"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sub_key"</span><span class="p">:</span> <span class="s2">"Nested value"</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Unlike <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>s, you can't compare dictionaries directly:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="k">func</span> <span class="n">compare_arrays</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">array1</span> <span class="o">==</span> <span class="n">array2</span><span class="p">)</span> <span class="c1"># Will print true.</span>
+
+<span class="k">var</span> <span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">var</span> <span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="k">func</span> <span class="n">compare_dictionaries</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span> <span class="o">==</span> <span class="n">dict2</span><span class="p">)</span> <span class="c1"># Will NOT print true.</span>
+</pre></div>
+</div>
+<p>You need to first calculate the dictionary's hash with <a class="reference internal" href="#class-dictionary-method-hash"><span class="std std-ref">hash</span></a> before you can compare them:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">var</span> <span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="k">func</span> <span class="n">compare_dictionaries</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span> <span class="o">==</span> <span class="n">dict2</span><span class="o">.</span><span class="n">hash</span><span class="p">())</span> <span class="c1"># Will print true.</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> When declaring a dictionary with <code class="docutils literal notranslate"><span class="pre">const</span></code>, the dictionary itself can still be mutated by defining the values of individual keys. Using <code class="docutils literal notranslate"><span class="pre">const</span></code> will only prevent assigning the constant with another value after it was initialized.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../tutorials/scripting/gdscript/gdscript_basics.html#dictionary">#dictionary</a> in <a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_basics.html"><span class="doc">GDScript basics</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/677">OS Test Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 78%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-duplicate"><span class="std std-ref">duplicate</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-empty"><span class="std std-ref">empty</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-erase"><span class="std std-ref">erase</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-get"><span class="std std-ref">get</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> default=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-has"><span class="std std-ref">has</span></a> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-has-all"><span class="std std-ref">has_all</span></a> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> keys <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-hash"><span class="std std-ref">hash</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-keys"><span class="std std-ref">keys</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-size"><span class="std std-ref">size</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-dictionary-method-values"><span class="std std-ref">values</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-dictionary-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clear the dictionary, removing all key/value pairs.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-duplicate">
+<li><p><a class="reference internal" href="#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/duplicate"></a>duplicate</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> deep=false <strong>)</strong></p></li>
+</ul>
+<p>Creates a copy of the dictionary, and returns it. The <code class="docutils literal notranslate"><span class="pre">deep</span></code> parameter causes inner dictionaries and arrays to be copied recursively, but does not apply to objects.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-empty">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/empty"></a>empty</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the dictionary is empty.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-erase">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/erase"></a>erase</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Erase a dictionary key/value pair by key. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given key was present in the dictionary, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<p><strong>Note:</strong> Don't erase elements while iterating over the dictionary. You can iterate over the <a class="reference internal" href="#class-dictionary-method-keys"><span class="std std-ref">keys</span></a> array instead.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-get">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get"></a>get</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> default=null <strong>)</strong></p></li>
+</ul>
+<p>Returns the current value for the specified key in the <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>. If the key does not exist, the method returns the value of the optional default argument, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if it is omitted.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-has">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has"></a>has</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> key <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the dictionary has a given key.</p>
+<p><strong>Note:</strong> This is equivalent to using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator as follows:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Will evaluate to `true`.</span>
+<span class="k">if</span> <span class="s2">"godot"</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"godot"</span><span class="p">:</span> <span class="s2">"engine"</span><span class="p">}:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>This method (like the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator) will evaluate to <code class="docutils literal notranslate"><span class="pre">true</span></code> as long as the key exists, even if the associated value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-has-all">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_all"></a>has_all</strong> <strong>(</strong> <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> keys <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the dictionary has all the keys in the given array.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-hash">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/hash"></a>hash</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns a hashed 32-bit integer value representing the dictionary contents. This can be used to compare dictionaries by value:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="k">var</span> <span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="c1"># The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict1</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span> <span class="o">==</span> <span class="n">dict2</span><span class="o">.</span><span class="n">hash</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Dictionaries with the same keys/values but in a different order will have a different hash.</p>
+<p><strong>Note:</strong> Dictionaries with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does <em>not</em> imply the dictionaries are equal, because different dictionaries can have identical hash values due to hash collisions.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-keys">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/keys"></a>keys</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the list of keys in the <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-size">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/size"></a>size</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of keys in the dictionary.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-dictionary-method-values">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/values"></a>values</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the list of values in the <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_dampedspringjoint2d.html" rel="prev" title="DampedSpringJoint2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_directionallight.html" rel="next" title="DirectionalLight">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

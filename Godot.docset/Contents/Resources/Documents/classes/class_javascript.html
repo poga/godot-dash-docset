@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="JavaScript" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_javascript.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Singleton that connects the engine with the browser's JavaScript context in HTML5 export. Description: The JavaScript singleton is implemented only in the HTML5 export. It's used t..." property="og:description"/>
+<meta content="Singleton that connects the engine with the browser's JavaScript context in HTML5 export. The JavaScript singleton is implemented only in the HTML5 export. It's used to access the browser's JavaScript context. This al..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) JavaScript — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_javascript.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_javascript.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_javascript.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_javascript.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_javascript.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_javascript.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_javascript.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_javascript.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_javascript.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_javascript.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_javascript.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_javascript.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_javascript.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_javascript.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_javascript.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_javascript.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_javascriptobject.html" rel="next" title="JavaScriptObject"/>
+<link href="class_javaclasswrapper.html" rel="prev" title="JavaClassWrapper"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>JavaScript</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="javascript">
+<span id="class-javascript"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/JavaScript¶"></a>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Singleton that connects the engine with the browser's JavaScript context in HTML5 export.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The JavaScript singleton is implemented only in the HTML5 export. It's used to access the browser's JavaScript context. This allows interaction with embedding pages or calling third-party JavaScript APIs.</p>
+<p><strong>Note:</strong> This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See <a class="reference external" href="https://docs.godotengine.org/en/3.4/development/compiling/compiling_for_web.html">Compiling for the Web</a> in the documentation for more information.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../tutorials/export/exporting_for_web.html#calling-javascript-from-script">#calling-javascript-from-script</a> in <a class="reference internal" href="../tutorials/export/exporting_for_web.html"><span class="doc">Exporting for the Web</span></a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 82%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a></p></td>
+<td><p><a class="reference internal" href="#class-javascript-method-create-callback"><span class="std std-ref">create_callback</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-javascript-method-create-object"><span class="std std-ref">create_object</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> object, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-javascript-method-download-buffer"><span class="std std-ref">download_buffer</span></a> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> buffer, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mime="application/octet-stream" <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-javascript-method-eval"><span class="std std-ref">eval</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> code, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_global_execution_context=false <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a></p></td>
+<td><p><a class="reference internal" href="#class-javascript-method-get-interface"><span class="std std-ref">get_interface</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> interface <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-javascript-method-create-callback">
+<li><p><a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_callback"></a>create_callback</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> object, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method <strong>)</strong></p></li>
+</ul>
+<p>Creates a reference to a script function that can be used as a callback by JavaScript. The reference must be kept until the callback happens, or it won't be called at all. See <a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a> for usage.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-javascript-method-create-object">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_object"></a>create_object</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> object, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Creates a new JavaScript object using the <code class="docutils literal notranslate"><span class="pre">new</span></code> constructor. The <code class="docutils literal notranslate"><span class="pre">object</span></code> must a valid property of the JavaScript <code class="docutils literal notranslate"><span class="pre">window</span></code>. See <a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a> for usage.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-javascript-method-download-buffer">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/download_buffer"></a>download_buffer</strong> <strong>(</strong> <a class="reference internal" href="class_poolbytearray.html#class-poolbytearray"><span class="std std-ref">PoolByteArray</span></a> buffer, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> mime="application/octet-stream" <strong>)</strong></p></li>
+</ul>
+<p>Prompts the user to download a file containing the specified <code class="docutils literal notranslate"><span class="pre">buffer</span></code>. The file will have the given <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">mime</span></code> type.</p>
+<p><strong>Note:</strong> The browser may override the <a class="reference external" href="https://en.wikipedia.org/wiki/Media_type">MIME type</a> provided based on the file <code class="docutils literal notranslate"><span class="pre">name</span></code>'s extension.</p>
+<p><strong>Note:</strong> Browsers might block the download if <a class="reference internal" href="#class-javascript-method-download-buffer"><span class="std std-ref">download_buffer</span></a> is not being called from a user interaction (e.g. button click).</p>
+<p><strong>Note:</strong> Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-javascript-method-eval">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/eval"></a>eval</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> code, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> use_global_execution_context=false <strong>)</strong></p></li>
+</ul>
+<p>Execute the string <code class="docutils literal notranslate"><span class="pre">code</span></code> as JavaScript code within the browser window. This is a call to the actual global JavaScript function <code class="docutils literal notranslate"><span class="pre">eval()</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">use_global_execution_context</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-javascript-method-get-interface">
+<li><p><a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_interface"></a>get_interface</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> interface <strong>)</strong></p></li>
+</ul>
+<p>Returns an interface to a JavaScript object that can be used by scripts. The <code class="docutils literal notranslate"><span class="pre">interface</span></code> must be a valid property of the JavaScript <code class="docutils literal notranslate"><span class="pre">window</span></code>. The callback must accept a single <a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> argument, which will contain the JavaScript <code class="docutils literal notranslate"><span class="pre">arguments</span></code>. See <a class="reference internal" href="class_javascriptobject.html#class-javascriptobject"><span class="std std-ref">JavaScriptObject</span></a> for usage.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_javaclasswrapper.html" rel="prev" title="JavaClassWrapper"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_javascriptobject.html" rel="next" title="JavaScriptObject">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

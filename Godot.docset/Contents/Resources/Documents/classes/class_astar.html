@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="AStar" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_astar.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object An implementation of A* to find the shortest paths among connected points in space. Description: A* (A star) is a computer algorithm that is widely used in pathfinding a..." property="og:description"/>
+<meta content="An implementation of A* to find the shortest paths among connected points in space. A* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) AStar — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_astar.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_astar.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_astar.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_astar.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_astar.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_astar.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_astar.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_astar.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_astar.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_astar.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_astar.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_astar.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_astar.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_astar.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_astar.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_astar.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_astar2d.html" rel="next" title="AStar2D"/>
+<link href="class_aspectratiocontainer.html" rel="prev" title="AspectRatioContainer"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>AStar</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="astar">
+<span id="class-astar"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/AStar¶"></a>AStar<a class="headerlink" href="#astar" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>An implementation of A* to find the shortest paths among connected points in space.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A* implementation uses points in three-dimensional space and Euclidean distances by default.</p>
+<p>You must add points manually with <a class="reference internal" href="#class-astar-method-add-point"><span class="std std-ref">add_point</span></a> and create segments manually with <a class="reference internal" href="#class-astar-method-connect-points"><span class="std std-ref">connect_points</span></a>. Then you can test if there is a path between two points with the <a class="reference internal" href="#class-astar-method-are-points-connected"><span class="std std-ref">are_points_connected</span></a> function, get a path containing indices by <a class="reference internal" href="#class-astar-method-get-id-path"><span class="std std-ref">get_id_path</span></a>, or one containing actual coordinates with <a class="reference internal" href="#class-astar-method-get-point-path"><span class="std std-ref">get_point_path</span></a>.</p>
+<p>It is also possible to use non-Euclidean distances. To do so, create a class that extends <code class="docutils literal notranslate"><span class="pre">AStar</span></code> and override methods <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> and <a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a>. Both take two indices and return a length, as is shown in the following example.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">MyAStar</span><span class="p">:</span>
+    <span class="k">extends</span> <span class="n">AStar</span>
+
+    <span class="k">func</span> <span class="n">_compute_cost</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="k">func</span> <span class="n">_estimate_cost</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">v</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a> should return a lower bound of the distance, i.e. <code class="docutils literal notranslate"><span class="pre">_estimate_cost(u,</span> <span class="pre">v)</span> <span class="pre">&lt;=</span> <span class="pre">_compute_cost(u,</span> <span class="pre">v)</span></code>. This serves as a hint to the algorithm because the custom <code class="docutils literal notranslate"><span class="pre">_compute_cost</span></code> might be computation-heavy. If this is not the case, make <a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a> return the same value as <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> to provide the algorithm with the most accurate information.</p>
+<p>If the default <a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a> and <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> methods are used, or if the supplied <a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a> method returns a lower bound of the cost, then the paths returned by A* will be the lowest-cost paths. Here, the cost of a path equals the sum of the <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> results of all segments in the path multiplied by the <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code>s of the endpoints of the respective segments. If the default methods are used and the <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code>s of all points are set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, then this equals the sum of Euclidean distances of all segments in the path.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 79%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-estimate-cost"><span class="std std-ref">_estimate_cost</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-add-point"><span class="std std-ref">add_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight_scale=1.0 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-are-points-connected"><span class="std std-ref">are_points_connected</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-clear"><span class="std std-ref">clear</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-connect-points"><span class="std std-ref">connect_points</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-disconnect-points"><span class="std std-ref">disconnect_points</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-available-point-id"><span class="std std-ref">get_available_point_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-closest-point"><span class="std std-ref">get_closest_point</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_position, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> include_disabled=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-closest-position-in-segment"><span class="std std-ref">get_closest_position_in_segment</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-id-path"><span class="std std-ref">get_id_path</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-capacity"><span class="std std-ref">get_point_capacity</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-connections"><span class="std std-ref">get_point_connections</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-count"><span class="std std-ref">get_point_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-path"><span class="std std-ref">get_point_path</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-position"><span class="std std-ref">get_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-point-weight-scale"><span class="std std-ref">get_point_weight_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-get-points"><span class="std std-ref">get_points</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-has-point"><span class="std std-ref">has_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-astar-method-is-point-disabled"><span class="std std-ref">is_point_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-remove-point"><span class="std std-ref">remove_point</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-reserve-space"><span class="std std-ref">reserve_space</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> num_nodes <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-set-point-disabled"><span class="std std-ref">set_point_disabled</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-set-point-position"><span class="std std-ref">set_point_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-astar-method-set-point-weight-scale"><span class="std std-ref">set_point_weight_scale</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight_scale <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-astar-method-compute-cost">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_compute_cost"></a>_compute_cost</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when computing the cost between two connected points.</p>
+<p>Note that this function is hidden in the default <code class="docutils literal notranslate"><span class="pre">AStar</span></code> class.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-estimate-cost">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_estimate_cost"></a>_estimate_cost</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>Called when estimating the cost between a point and the path's ending point.</p>
+<p>Note that this function is hidden in the default <code class="docutils literal notranslate"><span class="pre">AStar</span></code> class.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-add-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_point"></a>add_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight_scale=1.0 <strong>)</strong></p></li>
+</ul>
+<p>Adds a new point at the given position with the given identifier. The <code class="docutils literal notranslate"><span class="pre">id</span></code> must be 0 or larger, and the <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code> must be 1 or larger.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code> is multiplied by the result of <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code>s to form a path.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">astar</span> <span class="o">=</span> <span class="n">AStar</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Adds the point (1, 0, 0) with weight_scale 4 and id 1</span>
+</pre></div>
+</div>
+<p>If there already exists a point for the given <code class="docutils literal notranslate"><span class="pre">id</span></code>, its position and weight scale are updated to the given values.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-are-points-connected">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/are_points_connected"></a>are_points_connected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether the two given points are directly connected by a segment. If <code class="docutils literal notranslate"><span class="pre">bidirectional</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, returns whether movement from <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">to_id</span></code> is possible through this segment.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-clear">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear"></a>clear</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Clears all the points and segments.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-connect-points">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/connect_points"></a>connect_points</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong></p></li>
+</ul>
+<p>Creates a segment between the given points. If <code class="docutils literal notranslate"><span class="pre">bidirectional</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, only movement from <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">to_id</span></code> is allowed, not the reverse direction.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">astar</span> <span class="o">=</span> <span class="n">AStar</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-disconnect-points">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/disconnect_points"></a>disconnect_points</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> bidirectional=true <strong>)</strong></p></li>
+</ul>
+<p>Deletes the segment between the given points. If <code class="docutils literal notranslate"><span class="pre">bidirectional</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, only movement from <code class="docutils literal notranslate"><span class="pre">id</span></code> to <code class="docutils literal notranslate"><span class="pre">to_id</span></code> is prevented, and a unidirectional segment possibly remains.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-available-point-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_available_point_id"></a>get_available_point_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the next available point ID with no point associated to it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-closest-point">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_point"></a>get_closest_point</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_position, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> include_disabled=false <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the ID of the closest point to <code class="docutils literal notranslate"><span class="pre">to_position</span></code>, optionally taking disabled points into account. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if there are no points in the points pool.</p>
+<p><strong>Note:</strong> If several points are the closest to <code class="docutils literal notranslate"><span class="pre">to_position</span></code>, the one with the smallest ID will be returned, ensuring a deterministic result.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-closest-position-in-segment">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_closest_position_in_segment"></a>get_closest_position_in_segment</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> to_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the closest position to <code class="docutils literal notranslate"><span class="pre">to_position</span></code> that resides inside a segment between two connected points.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">astar</span> <span class="o">=</span> <span class="n">AStar</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">res</span> <span class="o">=</span> <span class="n">astar</span><span class="o">.</span><span class="n">get_closest_position_in_segment</span><span class="p">(</span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># Returns (0, 3, 0)</span>
+</pre></div>
+</div>
+<p>The result is in the segment that goes from <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">5</span></code>. It's the closest position in the segment to the given point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-id-path">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_id_path"></a>get_id_path</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong></p></li>
+</ul>
+<p>Returns an array with the IDs of the points that form the path found by AStar between the given points. The array is ordered from the starting point to the ending point of the path.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">astar</span> <span class="o">=</span> <span class="n">AStar</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Default weight is 1</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">false</span><span class="p">)</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">false</span><span class="p">)</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">false</span><span class="p">)</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">false</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="n">res</span> <span class="o">=</span> <span class="n">astar</span><span class="o">.</span><span class="n">get_id_path</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Returns [1, 2, 3]</span>
+</pre></div>
+</div>
+<p>If you change the 2nd point's weight to 3, then the result will be <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">4,</span> <span class="pre">3]</span></code> instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-capacity">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_capacity"></a>get_point_capacity</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the capacity of the structure backing the points, useful in conjunction with <code class="docutils literal notranslate"><span class="pre">reserve_space</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-connections">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_connections"></a>get_point_connections</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Returns an array with the IDs of the points that form the connection with the given point.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">astar</span> <span class="o">=</span> <span class="n">AStar</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+<span class="n">astar</span><span class="o">.</span><span class="n">connect_points</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="n">neighbors</span> <span class="o">=</span> <span class="n">astar</span><span class="o">.</span><span class="n">get_point_connections</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Returns [2, 3]</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_count"></a>get_point_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of points currently in the points pool.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-path">
+<li><p><a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_path"></a>get_point_path</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> from_id, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> to_id <strong>)</strong></p></li>
+</ul>
+<p>Returns an array with the points that are in the path found by AStar between the given points. The array is ordered from the starting point to the ending point of the path.</p>
+<p><strong>Note:</strong> This method is not thread-safe. If called from a <a class="reference internal" href="class_thread.html#class-thread"><span class="std std-ref">Thread</span></a>, it will return an empty <a class="reference internal" href="class_poolvector3array.html#class-poolvector3array"><span class="std std-ref">PoolVector3Array</span></a> and will print an error message.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_position"></a>get_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the position of the point associated with the given <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-point-weight-scale">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_point_weight_scale"></a>get_point_weight_scale</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the weight scale of the point associated with the given <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-get-points">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_points"></a>get_points</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns an array of all points.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-has-point">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_point"></a>has_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether a point associated with the given <code class="docutils literal notranslate"><span class="pre">id</span></code> exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-is-point-disabled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_point_disabled"></a>is_point_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns whether a point is disabled or not for pathfinding. By default, all points are enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-remove-point">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/remove_point"></a>remove_point</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Removes the point associated with the given <code class="docutils literal notranslate"><span class="pre">id</span></code> from the points pool.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-reserve-space">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reserve_space"></a>reserve_space</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> num_nodes <strong>)</strong></p></li>
+</ul>
+<p>Reserves space internally for <code class="docutils literal notranslate"><span class="pre">num_nodes</span></code> points, useful if you're adding a known large number of points at once, for a grid for instance. New capacity must be greater or equals to old capacity.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-set-point-disabled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_disabled"></a>set_point_disabled</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> disabled=true <strong>)</strong></p></li>
+</ul>
+<p>Disables or enables the specified point for pathfinding. Useful for making a temporary obstacle.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-set-point-position">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_position"></a>set_point_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">position</span></code> for the point with the given <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-astar-method-set-point-weight-scale">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_point_weight_scale"></a>set_point_weight_scale</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> weight_scale <strong>)</strong></p></li>
+</ul>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code> for the point with the given <code class="docutils literal notranslate"><span class="pre">id</span></code>. The <code class="docutils literal notranslate"><span class="pre">weight_scale</span></code> is multiplied by the result of <a class="reference internal" href="#class-astar-method-compute-cost"><span class="std std-ref">_compute_cost</span></a> when determining the overall cost of traveling across a segment from a neighboring point to this point.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_aspectratiocontainer.html" rel="prev" title="AspectRatioContainer"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_astar2d.html" rel="next" title="AStar2D">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

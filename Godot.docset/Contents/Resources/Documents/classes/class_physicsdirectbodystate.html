@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="PhysicsDirectBodyState" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_physicsdirectbodystate.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Object Direct access object to a physics body in the PhysicsServer. Description: Provides direct access to a physics body in the PhysicsServer, allowing safe changes to physics properties..." property="og:description"/>
+<meta content="Direct access object to a physics body in the PhysicsServer. Provides direct access to a physics body in the PhysicsServer, allowing safe changes to physics properties. This object is passed via the direct state callb..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) PhysicsDirectBodyState — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsdirectbodystate.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_physicsdirectbodystate.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_physicsdirectbodystate.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_physicsdirectbodystate.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_physicsdirectbodystate.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_physicsdirectbodystate.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_physicsdirectbodystate.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_physicsdirectbodystate.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_physicsdirectbodystate.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_physicsdirectbodystate.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_physicsdirectbodystate.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_physicsdirectbodystate.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_physicsdirectbodystate.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_physicsdirectbodystate.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsdirectbodystate.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_physicsdirectbodystate.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_physicsdirectspacestate.html" rel="next" title="PhysicsDirectSpaceState"/>
+<link href="class_physicsbody2d.html" rel="prev" title="PhysicsBody2D"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>PhysicsDirectBodyState</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="physicsdirectbodystate">
+<span id="class-physicsdirectbodystate"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/PhysicsDirectBodyState¶"></a>PhysicsDirectBodyState<a class="headerlink" href="#physicsdirectbodystate" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Direct access object to a physics body in the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Provides direct access to a physics body in the <a class="reference internal" href="class_physicsserver.html#class-physicsserver"><span class="std std-ref">PhysicsServer</span></a>, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See <a class="reference internal" href="class_rigidbody.html#class-rigidbody-method-integrate-forces"><span class="std std-ref">RigidBody._integrate_forces</span></a>.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/physics/physics_introduction.html"><span class="doc">Physics introduction</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/physics/ray-casting.html"><span class="doc">Ray-casting</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-angular-velocity"><span class="std std-ref">angular_velocity</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-center-of-mass"><span class="std std-ref">center_of_mass</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-inverse-inertia"><span class="std std-ref">inverse_inertia</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-inverse-mass"><span class="std std-ref">inverse_mass</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-linear-velocity"><span class="std std-ref">linear_velocity</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-principal-inertia-axes"><span class="std std-ref">principal_inertia_axes</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-sleeping"><span class="std std-ref">sleeping</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-step"><span class="std std-ref">step</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-total-angular-damp"><span class="std std-ref">total_angular_damp</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-total-gravity"><span class="std std-ref">total_gravity</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-total-linear-damp"><span class="std std-ref">total_linear_damp</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-property-transform"><span class="std std-ref">transform</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-add-central-force"><span class="std std-ref">add_central_force</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-add-force"><span class="std std-ref">add_force</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-add-torque"><span class="std std-ref">add_torque</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-apply-central-impulse"><span class="std std-ref">apply_central_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-apply-impulse"><span class="std std-ref">apply_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-apply-torque-impulse"><span class="std std-ref">apply_torque_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider"><span class="std std-ref">get_contact_collider</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider-id"><span class="std std-ref">get_contact_collider_id</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider-object"><span class="std std-ref">get_contact_collider_object</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider-position"><span class="std std-ref">get_contact_collider_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider-shape"><span class="std std-ref">get_contact_collider_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-collider-velocity-at-position"><span class="std std-ref">get_contact_collider_velocity_at_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-count"><span class="std std-ref">get_contact_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-impulse"><span class="std std-ref">get_contact_impulse</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-local-normal"><span class="std std-ref">get_contact_local_normal</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-local-position"><span class="std std-ref">get_contact_local_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-contact-local-shape"><span class="std std-ref">get_contact_local_shape</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-space-state"><span class="std std-ref">get_space_state</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a></p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-get-velocity-at-local-position"><span class="std std-ref">get_velocity_at_local_position</span></a> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-physicsdirectbodystate-method-integrate-forces"><span class="std std-ref">integrate_forces</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-physicsdirectbodystate-property-angular-velocity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/angular_velocity"></a>angular_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_angular_velocity(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_angular_velocity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's rotational velocity in axis-angle format. The magnitude of the vector is the rotation rate in <em>radians</em> per second.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-center-of-mass">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/center_of_mass"></a>center_of_mass</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_center_of_mass()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-inverse-inertia">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/inverse_inertia"></a>inverse_inertia</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 70%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_inverse_inertia()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The inverse of the inertia of the body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-inverse-mass">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/inverse_mass"></a>inverse_mass</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_inverse_mass()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The inverse of the mass of the body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-linear-velocity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/linear_velocity"></a>linear_velocity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 74%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_linear_velocity(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_linear_velocity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's linear velocity in units per second.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-principal-inertia-axes">
+<li><p><a class="reference internal" href="class_basis.html#class-basis"><span class="std std-ref">Basis</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/principal_inertia_axes"></a>principal_inertia_axes</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_principal_inertia_axes()</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-sleeping">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/sleeping"></a>sleeping</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_sleep_state(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>is_sleeping()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, this body is currently sleeping (not active).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-step">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/step"></a>step</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 55%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_step()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The timestep (delta) used for the simulation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-total-angular-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/total_angular_damp"></a>total_angular_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_total_angular_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rate at which the body stops rotating, if there are not any other forces moving it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-total-gravity">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/total_gravity"></a>total_gravity</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 68%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_total_gravity()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The total gravity vector being currently applied to this body.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-total-linear-damp">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/total_linear_damp"></a>total_linear_damp</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_total_linear_damp()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The rate at which the body stops moving, if there are not any other forces moving it.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-property-transform">
+<li><p><a class="reference internal" href="class_transform.html#class-transform"><span class="std std-ref">Transform</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/transform"></a>transform</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_transform(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_transform()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The body's transformation matrix.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-physicsdirectbodystate-method-add-central-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_central_force"></a>add_central_force</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force <strong>)</strong></p></li>
+</ul>
+<p>Adds a constant directional force without affecting rotation.</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">add_force(force,</span> <span class="pre">Vector3(0,0,0))</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-add-force">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_force"></a>add_force</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> force, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position <strong>)</strong></p></li>
+</ul>
+<p>Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-add-torque">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_torque"></a>add_torque</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> torque <strong>)</strong></p></li>
+</ul>
+<p>Adds a constant rotational force without affecting position.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-apply-central-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_central_impulse"></a>apply_central_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></li>
+</ul>
+<p>Applies a single directional impulse without affecting rotation.</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">apply_impulse(Vector3(0,</span> <span class="pre">0,</span> <span class="pre">0),</span> <span class="pre">impulse)</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-apply-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_impulse"></a>apply_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> position, <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></li>
+</ul>
+<p>Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-apply-torque-impulse">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/apply_torque_impulse"></a>apply_torque_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> j <strong>)</strong></p></li>
+</ul>
+<p>Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the vector <code class="docutils literal notranslate"><span class="pre">j</span></code> passed as parameter.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider">
+<li><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider"></a>get_contact_collider</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the collider's <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider_id"></a>get_contact_collider_id</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the collider's object id.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider-object">
+<li><p><a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider_object"></a>get_contact_collider_object</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the collider object.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider_position"></a>get_contact_collider_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the contact position in the collider.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider-shape">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider_shape"></a>get_contact_collider_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the collider's shape index.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-collider-velocity-at-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_collider_velocity_at_position"></a>get_contact_collider_velocity_at_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the linear velocity vector at the collider's contact point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_count"></a>get_contact_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of contacts this body has with other bodies.</p>
+<p><strong>Note:</strong> By default, this returns 0 unless bodies are configured to monitor contacts. See <a class="reference internal" href="class_rigidbody.html#class-rigidbody-property-contact-monitor"><span class="std std-ref">RigidBody.contact_monitor</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-impulse">
+<li><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_impulse"></a>get_contact_impulse</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Impulse created by the contact. Only implemented for Bullet physics.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-local-normal">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_local_normal"></a>get_contact_local_normal</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the local normal at the contact point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-local-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_local_position"></a>get_contact_local_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the local position of the contact point.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-contact-local-shape">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_contact_local_shape"></a>get_contact_local_shape</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> contact_idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the local shape index of the collision.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-space-state">
+<li><p><a class="reference internal" href="class_physicsdirectspacestate.html#class-physicsdirectspacestate"><span class="std std-ref">PhysicsDirectSpaceState</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_space_state"></a>get_space_state</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the current state of the space, useful for queries.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-get-velocity-at-local-position">
+<li><p><a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_velocity_at_local_position"></a>get_velocity_at_local_position</strong> <strong>(</strong> <a class="reference internal" href="class_vector3.html#class-vector3"><span class="std std-ref">Vector3</span></a> local_position <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the body's velocity at the given relative position, including both translation and rotation.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-physicsdirectbodystate-method-integrate-forces">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/integrate_forces"></a>integrate_forces</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Calls the built-in force integration code.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_physicsbody2d.html" rel="prev" title="PhysicsBody2D"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_physicsdirectspacestate.html" rel="next" title="PhysicsDirectSpaceState">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

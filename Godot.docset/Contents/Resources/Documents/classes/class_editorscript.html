@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="EditorScript" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_editorscript.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object Base script that can be used to add extension functions to the editor. Description: Scripts extending this class and implementing its_run method can be executed from the..." property="og:description"/>
+<meta content="Base script that can be used to add extension functions to the editor. Scripts extending this class and implementing its _run method can be executed from the Script Editor's File &gt; Run menu option (or by pressing Ctrl..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) EditorScript — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorscript.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_editorscript.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_editorscript.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_editorscript.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_editorscript.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_editorscript.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_editorscript.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_editorscript.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_editorscript.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_editorscript.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_editorscript.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_editorscript.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_editorscript.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_editorscript.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorscript.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_editorscript.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_editorscriptpicker.html" rel="next" title="EditorScriptPicker"/>
+<link href="class_editorscenepostimport.html" rel="prev" title="EditorScenePostImport"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>EditorScript</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="editorscript">
+<span id="class-editorscript"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/EditorScript¶"></a>EditorScript<a class="headerlink" href="#editorscript" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Base script that can be used to add extension functions to the editor.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Scripts extending this class and implementing its <a class="reference internal" href="#class-editorscript-method-run"><span class="std std-ref">_run</span></a> method can be executed from the Script Editor's <strong>File &gt; Run</strong> menu option (or by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+X</span></code>) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using <a class="reference internal" href="class_editorplugin.html#class-editorplugin"><span class="std std-ref">EditorPlugin</span></a>s instead.</p>
+<p><strong>Note:</strong> Extending scripts need to have <code class="docutils literal notranslate"><span class="pre">tool</span></code> mode enabled.</p>
+<p><strong>Example script:</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">tool</span>
+<span class="k">extends</span> <span class="n">EditorScript</span>
+
+<span class="k">func</span> <span class="n">_run</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello from the Godot Editor!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot <strong>Output</strong> dock.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorscript-method-run"><span class="std std-ref">_run</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-editorscript-method-add-root-node"><span class="std std-ref">add_root_node</span></a> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorscript-method-get-editor-interface"><span class="std std-ref">get_editor_interface</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-editorscript-method-get-scene"><span class="std std-ref">get_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-editorscript-method-run">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/_run"></a>_run</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></li>
+</ul>
+<p>This method is executed by the Editor when <strong>File &gt; Run</strong> is used.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorscript-method-add-root-node">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/add_root_node"></a>add_root_node</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Adds <code class="docutils literal notranslate"><span class="pre">node</span></code> as a child of the root node in the editor context.</p>
+<p><strong>Warning:</strong> The implementation of this method is currently disabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorscript-method-get-editor-interface">
+<li><p><a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_editor_interface"></a>get_editor_interface</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_editorinterface.html#class-editorinterface"><span class="std std-ref">EditorInterface</span></a> singleton instance.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-editorscript-method-get-scene">
+<li><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_scene"></a>get_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the Editor's currently active scene.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_editorscenepostimport.html" rel="prev" title="EditorScenePostImport"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_editorscriptpicker.html" rel="next" title="EditorScriptPicker">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

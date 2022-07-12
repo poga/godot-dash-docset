@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="SceneTree" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_scenetree.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: MainLoop&lt; Object Manages the game loop via a hierarchy of nodes. Description: As one of the most important classes, the SceneTree manages the hierarchy of nodes in a scene as well as scen..." property="og:description"/>
+<meta content="Manages the game loop via a hierarchy of nodes. As one of the most important classes, the SceneTree manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. Th..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) SceneTree — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_scenetree.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_scenetree.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_scenetree.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_scenetree.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_scenetree.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_scenetree.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_scenetree.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_scenetree.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_scenetree.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_scenetree.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_scenetree.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_scenetree.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_scenetree.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_scenetree.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_scenetree.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_scenetree.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_scenetreetimer.html" rel="next" title="SceneTreeTimer"/>
+<link href="class_scenestate.html" rel="prev" title="SceneState"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>SceneTree</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="scenetree">
+<span id="class-scenetree"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/SceneTree¶"></a>SceneTree<a class="headerlink" href="#scenetree" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_mainloop.html#class-mainloop"><span class="std std-ref">MainLoop</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>Manages the game loop via a hierarchy of nodes.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>As one of the most important classes, the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. an "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> is the default <a class="reference internal" href="class_mainloop.html#class-mainloop"><span class="std std-ref">MainLoop</span></a> implementation used by scenes, and is thus in charge of the game loop.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/scripting/scene_tree.html"><span class="doc">Using SceneTree</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html"><span class="doc">Multiple resolutions</span></a></p></li>
+</ul>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 56%"/>
+<col style="width: 6%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-current-scene"><span class="std std-ref">current_scene</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-debug-collisions-hint"><span class="std std-ref">debug_collisions_hint</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-debug-navigation-hint"><span class="std std-ref">debug_navigation_hint</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-edited-scene-root"><span class="std std-ref">edited_scene_root</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-multiplayer"><span class="std std-ref">multiplayer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-multiplayer-poll"><span class="std std-ref">multiplayer_poll</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer"><span class="std std-ref">NetworkedMultiplayerPeer</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-paused"><span class="std std-ref">paused</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-refuse-new-network-connections"><span class="std std-ref">refuse_new_network_connections</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-root"><span class="std std-ref">root</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-property-use-font-oversampling"><span class="std std-ref">use_font_oversampling</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 86%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-call-group"><span class="std std-ref">call_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-call-group-flags"><span class="std std-ref">call_group_flags</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-change-scene"><span class="std std-ref">change_scene</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-change-scene-to"><span class="std std-ref">change_scene_to</span></a> <strong>(</strong> <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a> packed_scene <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_scenetreetimer.html#class-scenetreetimer"><span class="std std-ref">SceneTreeTimer</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-create-timer"><span class="std std-ref">create_timer</span></a> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> pause_mode_process=true <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-frame"><span class="std std-ref">get_frame</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-network-connected-peers"><span class="std std-ref">get_network_connected_peers</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-network-unique-id"><span class="std std-ref">get_network_unique_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-node-count"><span class="std std-ref">get_node_count</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-nodes-in-group"><span class="std std-ref">get_nodes_in_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-get-rpc-sender-id"><span class="std std-ref">get_rpc_sender_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-has-group"><span class="std std-ref">has_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-has-network-peer"><span class="std std-ref">has_network_peer</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-is-input-handled"><span class="std std-ref">is_input_handled</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-is-network-server"><span class="std std-ref">is_network_server</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-notify-group"><span class="std std-ref">notify_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> notification <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-notify-group-flags"><span class="std std-ref">notify_group_flags</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> call_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> notification <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-queue-delete"><span class="std std-ref">queue_delete</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-quit"><span class="std std-ref">quit</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> exit_code=-1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-reload-current-scene"><span class="std std-ref">reload_current_scene</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-auto-accept-quit"><span class="std std-ref">set_auto_accept_quit</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-group"><span class="std std-ref">set_group</span></a> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-group-flags"><span class="std std-ref">set_group_flags</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> call_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-input-as-handled"><span class="std std-ref">set_input_as_handled</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-quit-on-go-back"><span class="std std-ref">set_quit_on_go_back</span></a> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-scenetree-method-set-screen-stretch"><span class="std std-ref">set_screen_stretch</span></a> <strong>(</strong> <a class="reference internal" href="#enum-scenetree-stretchmode"><span class="std std-ref">StretchMode</span></a> mode, <a class="reference internal" href="#enum-scenetree-stretchaspect"><span class="std std-ref">StretchAspect</span></a> aspect, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> minsize, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> scale=1 <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-scenetree-signal-connected-to-server">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/connected_to_server"></a>connected_to_server</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> successfully connected to a server. Only emitted on clients.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-connection-failed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/connection_failed"></a>connection_failed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> fails to establish a connection to a server. Only emitted on clients.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-files-dropped">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/files_dropped"></a>files_dropped</strong> <strong>(</strong> <a class="reference internal" href="class_poolstringarray.html#class-poolstringarray"><span class="std std-ref">PoolStringArray</span></a> files, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> screen <strong>)</strong></p></li>
+</ul>
+<p>Emitted when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-global-menu-action">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/global_menu_action"></a>global_menu_action</strong> <strong>(</strong> <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> id, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> meta <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever global menu item is clicked.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-idle-frame">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/idle_frame"></a>idle_frame</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted immediately before <a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a> is called on every node in the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-network-peer-connected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/network_peer_connected"></a>network_peer_connected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-network-peer-disconnected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/network_peer_disconnected"></a>network_peer_disconnected</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> id <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> disconnects from a peer. Clients get notified when other clients disconnect from the same server.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-node-added">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/node_added"></a>node_added</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever a node is added to the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-node-configuration-warning-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/node_configuration_warning_changed"></a>node_configuration_warning_changed</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Emitted when a node's configuration changed. Only emitted in <code class="docutils literal notranslate"><span class="pre">tool</span></code> mode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-node-removed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/node_removed"></a>node_removed</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever a node is removed from the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-node-renamed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/node_renamed"></a>node_renamed</strong> <strong>(</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> node <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever a node is renamed.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-physics-frame">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/physics_frame"></a>physics_frame</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted immediately before <a class="reference internal" href="class_node.html#class-node-method-physics-process"><span class="std std-ref">Node._physics_process</span></a> is called on every node in the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-screen-resized">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/screen_resized"></a>screen_resized</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the screen resolution (fullscreen) or window size (windowed) changes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-server-disconnected">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/server_disconnected"></a>server_disconnected</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> disconnected from server. Only emitted on clients.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-signal-tree-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/tree_changed"></a>tree_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted whenever the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> hierarchy changed (children being moved or renamed, etc.).</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-scenetree-constant-group-call-unique"><span id="class-scenetree-constant-group-call-realtime"></span><span id="class-scenetree-constant-group-call-reverse"></span><span id="class-scenetree-constant-group-call-default"></span><span id="enum-scenetree-groupcallflags"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/GroupCallFlags"></a>GroupCallFlags</strong>:</p>
+<ul class="simple">
+<li><p><strong>GROUP_CALL_DEFAULT</strong> = <strong>0</strong> --- Call a group with no flags (default).</p></li>
+<li><p><strong>GROUP_CALL_REVERSE</strong> = <strong>1</strong> --- Call a group in reverse scene order.</p></li>
+<li><p><strong>GROUP_CALL_REALTIME</strong> = <strong>2</strong> --- Call a group immediately (calls are normally made on idle).</p></li>
+<li><p><strong>GROUP_CALL_UNIQUE</strong> = <strong>4</strong> --- Call a group only once even if the call is executed many times.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-scenetree-constant-stretch-mode-viewport"><span id="class-scenetree-constant-stretch-mode-2d"></span><span id="class-scenetree-constant-stretch-mode-disabled"></span><span id="enum-scenetree-stretchmode"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/StretchMode"></a>StretchMode</strong>:</p>
+<ul class="simple">
+<li><p><strong>STRETCH_MODE_DISABLED</strong> = <strong>0</strong> --- No stretching.</p></li>
+<li><p><strong>STRETCH_MODE_2D</strong> = <strong>1</strong> --- Render stretching in higher resolution (interpolated).</p></li>
+<li><p><strong>STRETCH_MODE_VIEWPORT</strong> = <strong>2</strong> --- Keep the specified display resolution. No interpolation. Content may appear pixelated.</p></li>
+</ul>
+<hr class="docutils"/>
+<p id="class-scenetree-constant-stretch-aspect-expand"><span id="class-scenetree-constant-stretch-aspect-keep-height"></span><span id="class-scenetree-constant-stretch-aspect-keep-width"></span><span id="class-scenetree-constant-stretch-aspect-keep"></span><span id="class-scenetree-constant-stretch-aspect-ignore"></span><span id="enum-scenetree-stretchaspect"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/StretchAspect"></a>StretchAspect</strong>:</p>
+<ul class="simple">
+<li><p><strong>STRETCH_ASPECT_IGNORE</strong> = <strong>0</strong> --- Fill the window with the content stretched to cover excessive space. Content may appear stretched.</p></li>
+<li><p><strong>STRETCH_ASPECT_KEEP</strong> = <strong>1</strong> --- Retain the same aspect ratio by padding with black bars on either axis. This prevents distortion.</p></li>
+<li><p><strong>STRETCH_ASPECT_KEEP_WIDTH</strong> = <strong>2</strong> --- Expand vertically. Left/right black bars may appear if the window is too wide.</p></li>
+<li><p><strong>STRETCH_ASPECT_KEEP_HEIGHT</strong> = <strong>3</strong> --- Expand horizontally. Top/bottom black bars may appear if the window is too tall.</p></li>
+<li><p><strong>STRETCH_ASPECT_EXPAND</strong> = <strong>4</strong> --- Expand in both directions, retaining the same aspect ratio. This prevents distortion while avoiding black bars.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-scenetree-property-current-scene">
+<li><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/current_scene"></a>current_scene</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 72%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_current_scene(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_current_scene()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The current scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-debug-collisions-hint">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/debug_collisions_hint"></a>debug_collisions_hint</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_debug_collisions_hint(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_debugging_collisions_hint()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, collision shapes will be visible when running the game from the editor for debugging purposes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-debug-navigation-hint">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/debug_navigation_hint"></a>debug_navigation_hint</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_debug_navigation_hint(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_debugging_navigation_hint()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, navigation polygons will be visible when running the game from the editor for debugging purposes.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-edited-scene-root">
+<li><p><a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/edited_scene_root"></a>edited_scene_root</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_edited_scene_root(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_edited_scene_root()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The root of the edited scene.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-multiplayer">
+<li><p><a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/multiplayer"></a>multiplayer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_multiplayer(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_multiplayer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> instance for this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-multiplayer-poll">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/multiplayer_poll"></a>multiplayer_poll</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 77%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_multiplayer_poll_enabled(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_multiplayer_poll_enabled()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> (default value), enables automatic polling of the <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> for this SceneTree during <a class="reference internal" href="#class-scenetree-signal-idle-frame"><span class="std std-ref">idle_frame</span></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">false</span></code>, you need to manually call <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi-method-poll"><span class="std std-ref">MultiplayerAPI.poll</span></a> to process network packets and deliver RPCs/RSETs. This allows running RPCs/RSETs in a different loop (e.g. physics, thread, specific time step) and for manual <a class="reference internal" href="class_mutex.html#class-mutex"><span class="std std-ref">Mutex</span></a> protection when accessing the <a class="reference internal" href="class_multiplayerapi.html#class-multiplayerapi"><span class="std std-ref">MultiplayerAPI</span></a> from threads.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-network-peer">
+<li><p><a class="reference internal" href="class_networkedmultiplayerpeer.html#class-networkedmultiplayerpeer"><span class="std std-ref">NetworkedMultiplayerPeer</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/network_peer"></a>network_peer</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 71%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Setter</em></p></td>
+<td><p>set_network_peer(value)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Getter</em></p></td>
+<td><p>get_network_peer()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> will become a network server (check with <a class="reference internal" href="#class-scenetree-method-is-network-server"><span class="std std-ref">is_network_server</span></a>) and will set the root node's network mode to master, or it will become a regular peer with the root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s signals.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-paused">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/paused"></a>paused</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_pause(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_paused()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> is paused. Doing so will have the following behavior:</p>
+<ul class="simple">
+<li><p>2D and 3D physics will be stopped. This includes signals and collision detection.</p></li>
+<li><p><a class="reference internal" href="class_node.html#class-node-method-process"><span class="std std-ref">Node._process</span></a>, <a class="reference internal" href="class_node.html#class-node-method-physics-process"><span class="std std-ref">Node._physics_process</span></a> and <a class="reference internal" href="class_node.html#class-node-method-input"><span class="std std-ref">Node._input</span></a> will not be called anymore in nodes.</p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-refuse-new-network-connections">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/refuse_new_network_connections"></a>refuse_new_network_connections</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 80%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_refuse_new_network_connections(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_refusing_new_network_connections()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> refuses new incoming connections.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-root">
+<li><p><a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/root"></a>root</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 55%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_root()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s root <a class="reference internal" href="class_viewport.html#class-viewport"><span class="std std-ref">Viewport</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-property-use-font-oversampling">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/use_font_oversampling"></a>use_font_oversampling</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_use_font_oversampling(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_using_font_oversampling()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, font oversampling is enabled. This means that <a class="reference internal" href="class_dynamicfont.html#class-dynamicfont"><span class="std std-ref">DynamicFont</span></a>s will be rendered at higher or lower size than configured based on the viewport's scaling ratio. For example, in a viewport scaled with a factor 1.5, a font configured with size 14 would be rendered with size 21 (<code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">*</span> <span class="pre">1.5</span></code>).</p>
+<p><strong>Note:</strong> Font oversampling is only used if the viewport stretch mode is <a class="reference internal" href="#class-scenetree-constant-stretch-mode-viewport"><span class="std std-ref">STRETCH_MODE_VIEWPORT</span></a>, and if the stretch aspect mode is different from <a class="reference internal" href="#class-scenetree-constant-stretch-aspect-ignore"><span class="std std-ref">STRETCH_ASPECT_IGNORE</span></a>.</p>
+<p><strong>Note:</strong> This property is set automatically for the active <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> when the project starts based on the configuration of <code class="docutils literal notranslate"><span class="pre">rendering/quality/dynamic_fonts/use_oversampling</span></code> in <a class="reference internal" href="class_projectsettings.html#class-projectsettings"><span class="std std-ref">ProjectSettings</span></a>. The property can however be overridden at runtime as needed.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-scenetree-method-call-group">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/call_group"></a>call_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Calls <code class="docutils literal notranslate"><span class="pre">method</span></code> on each member of the given group. You can pass arguments to <code class="docutils literal notranslate"><span class="pre">method</span></code> by specifying them at the end of the method call. This method is equivalent of calling <a class="reference internal" href="#class-scenetree-method-call-group-flags"><span class="std std-ref">call_group_flags</span></a> with <a class="reference internal" href="#class-scenetree-constant-group-call-default"><span class="std std-ref">GROUP_CALL_DEFAULT</span></a> flag.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">method</span></code> may only have 5 arguments at most (7 arguments passed to this method in total).</p>
+<p><strong>Note:</strong> Due to design limitations, <a class="reference internal" href="#class-scenetree-method-call-group"><span class="std std-ref">call_group</span></a> will fail silently if one of the arguments is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p><strong>Note:</strong> <a class="reference internal" href="#class-scenetree-method-call-group"><span class="std std-ref">call_group</span></a> will always call methods with an one-frame delay, in a way similar to <a class="reference internal" href="class_object.html#class-object-method-call-deferred"><span class="std std-ref">Object.call_deferred</span></a>. To call methods immediately, use <a class="reference internal" href="#class-scenetree-method-call-group-flags"><span class="std std-ref">call_group_flags</span></a> with the <a class="reference internal" href="#class-scenetree-constant-group-call-realtime"><span class="std std-ref">GROUP_CALL_REALTIME</span></a> flag.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-call-group-flags">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/call_group_flags"></a>call_group_flags</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, ... <strong>)</strong> <abbr title="This method accepts any number of arguments after the ones described here.">vararg</abbr></p></li>
+</ul>
+<p>Calls <code class="docutils literal notranslate"><span class="pre">method</span></code> on each member of the given group, respecting the given <a class="reference internal" href="#enum-scenetree-groupcallflags"><span class="std std-ref">GroupCallFlags</span></a>. You can pass arguments to <code class="docutils literal notranslate"><span class="pre">method</span></code> by specifying them at the end of the method call.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">method</span></code> may only have 5 arguments at most (8 arguments passed to this method in total).</p>
+<p><strong>Note:</strong> Due to design limitations, <a class="reference internal" href="#class-scenetree-method-call-group-flags"><span class="std std-ref">call_group_flags</span></a> will fail silently if one of the arguments is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call the method immediately and in reverse order.</span>
+<span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">call_group_flags</span><span class="p">(</span><span class="n">SceneTree</span><span class="o">.</span><span class="n">GROUP_CALL_REALTIME</span> <span class="o">|</span> <span class="n">SceneTree</span><span class="o">.</span><span class="n">GROUP_CALL_REVERSE</span><span class="p">,</span> <span class="s2">"bases"</span><span class="p">,</span> <span class="s2">"destroy"</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-change-scene">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/change_scene"></a>change_scene</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> path <strong>)</strong></p></li>
+</ul>
+<p>Changes the running scene to the one at the given <code class="docutils literal notranslate"><span class="pre">path</span></code>, after loading it into a <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a> and creating a new instance.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> on success, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-open"><span class="std std-ref">@GlobalScope.ERR_CANT_OPEN</span></a> if the <code class="docutils literal notranslate"><span class="pre">path</span></code> cannot be loaded into a <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>, or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> if that scene cannot be instantiated.</p>
+<p><strong>Note:</strong> The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the <a class="reference internal" href="#class-scenetree-method-change-scene"><span class="std std-ref">change_scene</span></a> call.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-change-scene-to">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/change_scene_to"></a>change_scene_to</strong> <strong>(</strong> <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a> packed_scene <strong>)</strong></p></li>
+</ul>
+<p>Changes the running scene to a new instance of the given <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> on success or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> if the scene cannot be instantiated.</p>
+<p><strong>Note:</strong> The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the <a class="reference internal" href="#class-scenetree-method-change-scene-to"><span class="std std-ref">change_scene_to</span></a> call.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-create-timer">
+<li><p><a class="reference internal" href="class_scenetreetimer.html#class-scenetreetimer"><span class="std std-ref">SceneTreeTimer</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/create_timer"></a>create_timer</strong> <strong>(</strong> <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> time_sec, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> pause_mode_process=true <strong>)</strong></p></li>
+</ul>
+<p>Returns a <a class="reference internal" href="class_scenetreetimer.html#class-scenetreetimer"><span class="std std-ref">SceneTreeTimer</span></a> which will <a class="reference internal" href="class_scenetreetimer.html#class-scenetreetimer-signal-timeout"><span class="std std-ref">SceneTreeTimer.timeout</span></a> after the given time in seconds elapsed in this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>. If <code class="docutils literal notranslate"><span class="pre">pause_mode_process</span></code> is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, pausing the <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code> will also pause the timer.</p>
+<p>Commonly used to create a one-shot delay timer as in the following example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">some_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"start"</span><span class="p">)</span>
+    <span class="nb">yield</span><span class="p">(</span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="s2">"timeout"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The timer will be automatically freed after its time elapses.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-frame">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_frame"></a>get_frame</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current frame number, i.e. the total frame count since the application started.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-network-connected-peers">
+<li><p><a class="reference internal" href="class_poolintarray.html#class-poolintarray"><span class="std std-ref">PoolIntArray</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_network_connected_peers"></a>get_network_connected_peers</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the peer IDs of all connected peers of this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-network-unique-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_network_unique_id"></a>get_network_unique_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the unique peer ID of this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-node-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_node_count"></a>get_node_count</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the number of nodes in this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-nodes-in-group">
+<li><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_nodes_in_group"></a>get_nodes_in_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group <strong>)</strong></p></li>
+</ul>
+<p>Returns a list of all nodes assigned to the given group.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-get-rpc-sender-id">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_rpc_sender_id"></a>get_rpc_sender_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the sender's peer ID for the most recently received RPC call.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-has-group">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_group"></a>has_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> name <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the given group exists.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-has-network-peer">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/has_network_peer"></a>has_network_peer</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if there is a <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> set.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-is-input-handled">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_input_handled"></a>is_input_handled</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the most recent <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> was marked as handled with <a class="reference internal" href="#class-scenetree-method-set-input-as-handled"><span class="std std-ref">set_input_as_handled</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-is-network-server">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_network_server"></a>is_network_server</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this <code class="docutils literal notranslate"><span class="pre">SceneTree</span></code>'s <a class="reference internal" href="#class-scenetree-property-network-peer"><span class="std std-ref">network_peer</span></a> is in server mode (listening for connections).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-notify-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/notify_group"></a>notify_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> notification <strong>)</strong></p></li>
+</ul>
+<p>Sends the given notification to all members of the <code class="docutils literal notranslate"><span class="pre">group</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-notify-group-flags">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/notify_group_flags"></a>notify_group_flags</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> call_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> notification <strong>)</strong></p></li>
+</ul>
+<p>Sends the given notification to all members of the <code class="docutils literal notranslate"><span class="pre">group</span></code>, respecting the given <a class="reference internal" href="#enum-scenetree-groupcallflags"><span class="std std-ref">GroupCallFlags</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-queue-delete">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/queue_delete"></a>queue_delete</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> obj <strong>)</strong></p></li>
+</ul>
+<p>Queues the given object for deletion, delaying the call to <a class="reference internal" href="class_object.html#class-object-method-free"><span class="std std-ref">Object.free</span></a> to after the current frame.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-quit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/quit"></a>quit</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> exit_code=-1 <strong>)</strong></p></li>
+</ul>
+<p>Quits the application at the end of the current iteration. A process <code class="docutils literal notranslate"><span class="pre">exit_code</span></code> can optionally be passed as an argument. If this argument is <code class="docutils literal notranslate"><span class="pre">0</span></code> or greater, it will override the <a class="reference internal" href="class_os.html#class-os-property-exit-code"><span class="std std-ref">OS.exit_code</span></a> defined before quitting the application.</p>
+<p><strong>Note:</strong> On iOS this method doesn't work. Instead, as recommended by the iOS Human Interface Guidelines, the user is expected to close apps via the Home button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-reload-current-scene">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/reload_current_scene"></a>reload_current_scene</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Reloads the currently active scene.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> on success, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-unconfigured"><span class="std std-ref">@GlobalScope.ERR_UNCONFIGURED</span></a> if no <a class="reference internal" href="#class-scenetree-property-current-scene"><span class="std std-ref">current_scene</span></a> was defined yet, <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-open"><span class="std std-ref">@GlobalScope.ERR_CANT_OPEN</span></a> if <a class="reference internal" href="#class-scenetree-property-current-scene"><span class="std std-ref">current_scene</span></a> cannot be loaded into a <a class="reference internal" href="class_packedscene.html#class-packedscene"><span class="std std-ref">PackedScene</span></a>, or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> if the scene cannot be instantiated.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-auto-accept-quit">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_auto_accept_quit"></a>set_auto_accept_quit</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the application automatically accepts quitting. Enabled by default.</p>
+<p>For mobile platforms, see <a class="reference internal" href="#class-scenetree-method-set-quit-on-go-back"><span class="std std-ref">set_quit_on_go_back</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-group">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_group"></a>set_group</strong> <strong>(</strong> <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the given <code class="docutils literal notranslate"><span class="pre">property</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code> on all members of the given group.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-group-flags">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_group_flags"></a>set_group_flags</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> call_flags, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> group, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> property, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> value <strong>)</strong></p></li>
+</ul>
+<p>Sets the given <code class="docutils literal notranslate"><span class="pre">property</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code> on all members of the given group, respecting the given <a class="reference internal" href="#enum-scenetree-groupcallflags"><span class="std std-ref">GroupCallFlags</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-input-as-handled">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_input_as_handled"></a>set_input_as_handled</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Marks the most recent <a class="reference internal" href="class_inputevent.html#class-inputevent"><span class="std std-ref">InputEvent</span></a> as handled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-quit-on-go-back">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_quit_on_go_back"></a>set_quit_on_go_back</strong> <strong>(</strong> <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enabled <strong>)</strong></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the application quits automatically on going back (e.g. on Android). Enabled by default.</p>
+<p>To handle 'Go Back' button when this option is disabled, use <a class="reference internal" href="class_mainloop.html#class-mainloop-constant-notification-wm-go-back-request"><span class="std std-ref">MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-scenetree-method-set-screen-stretch">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_screen_stretch"></a>set_screen_stretch</strong> <strong>(</strong> <a class="reference internal" href="#enum-scenetree-stretchmode"><span class="std std-ref">StretchMode</span></a> mode, <a class="reference internal" href="#enum-scenetree-stretchaspect"><span class="std std-ref">StretchAspect</span></a> aspect, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> minsize, <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> scale=1 <strong>)</strong></p></li>
+</ul>
+<p>Configures screen stretching to the given <a class="reference internal" href="#enum-scenetree-stretchmode"><span class="std std-ref">StretchMode</span></a>, <a class="reference internal" href="#enum-scenetree-stretchaspect"><span class="std std-ref">StretchAspect</span></a>, minimum size and <code class="docutils literal notranslate"><span class="pre">scale</span></code>.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_scenestate.html" rel="prev" title="SceneState"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_scenetreetimer.html" rel="next" title="SceneTreeTimer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

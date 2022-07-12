@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="GraphNode" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_graphnode.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Container&lt; Control&lt; CanvasItem&lt; Node&lt; Object A GraphNode is a container with potentially several input and output slots allowing connections between GraphNodes. Slots can have different, ..." property="og:description"/>
+<meta content="A GraphNode is a container with potentially several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types. A GraphNode is a container. Each GraphNode can have sev..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) GraphNode — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_graphnode.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_graphnode.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_graphnode.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_graphnode.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_graphnode.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_graphnode.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_graphnode.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_graphnode.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_graphnode.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_graphnode.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_graphnode.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_graphnode.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_graphnode.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_graphnode.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_graphnode.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_graphnode.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_gridcontainer.html" rel="next" title="GridContainer"/>
+<link href="class_graphedit.html" rel="prev" title="GraphEdit"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>GraphNode</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="graphnode">
+<span id="class-graphnode"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/GraphNode¶"></a>GraphNode<a class="headerlink" href="#graphnode" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_container.html#class-container"><span class="std std-ref">Container</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_canvasitem.html#class-canvasitem"><span class="std std-ref">CanvasItem</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_node.html#class-node"><span class="std std-ref">Node</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A GraphNode is a container with potentially several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A GraphNode is a container. Each GraphNode can have several input and output slots, sometimes referred to as ports, allowing connections between GraphNodes. To add a slot to GraphNode, add any <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>-derived child node to it.</p>
+<p>After adding at least one child to GraphNode new sections will be automatically created in the Inspector called 'Slot'. When 'Slot' is expanded you will see list with index number for each slot. You can click on each of them to expand further.</p>
+<p>In the Inspector you can enable (show) or disable (hide) slots. By default, all slots are disabled so you may not see any slots on your GraphNode initially. You can assign a type to each slot. Only slots of the same type will be able to connect to each other. You can also assign colors to slots. A tuple of input and output slots is defined for each GUI element included in the GraphNode. Input connections are on the left and output connections are on the right side of GraphNode. Only enabled slots are counted as connections.</p>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 48%"/>
+<col style="width: 18%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-comment"><span class="std std-ref">comment</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-offset"><span class="std std-ref">offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-graphnode-overlay"><span class="std std-ref">Overlay</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-overlay"><span class="std std-ref">overlay</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-resizable"><span class="std std-ref">resizable</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-selected"><span class="std std-ref">selected</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-show-close"><span class="std std-ref">show_close</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-property-title"><span class="std std-ref">title</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%"/>
+<col style="width: 93%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-clear-all-slots"><span class="std std-ref">clear_all_slots</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-clear-slot"><span class="std std-ref">clear_slot</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-input-color"><span class="std std-ref">get_connection_input_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-input-count"><span class="std std-ref">get_connection_input_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-input-position"><span class="std std-ref">get_connection_input_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-input-type"><span class="std std-ref">get_connection_input_type</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-output-color"><span class="std std-ref">get_connection_output_color</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-output-count"><span class="std std-ref">get_connection_output_count</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-output-position"><span class="std std-ref">get_connection_output_position</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-connection-output-type"><span class="std std-ref">get_connection_output_type</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-slot-color-left"><span class="std std-ref">get_slot_color_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-slot-color-right"><span class="std std-ref">get_slot_color_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-slot-type-left"><span class="std std-ref">get_slot_type_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-get-slot-type-right"><span class="std std-ref">get_slot_type_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-is-slot-enabled-left"><span class="std std-ref">is_slot_enabled_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-is-slot-enabled-right"><span class="std std-ref">is_slot_enabled_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot"><span class="std std-ref">set_slot</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_left, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_left, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_left, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_right, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_right, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_right, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> custom_left=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> custom_right=null <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-color-left"><span class="std std-ref">set_slot_color_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_left <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-color-right"><span class="std std-ref">set_slot_color_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_right <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-enabled-left"><span class="std std-ref">set_slot_enabled_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_left <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-enabled-right"><span class="std std-ref">set_slot_enabled_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_right <strong>)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-type-left"><span class="std std-ref">set_slot_type_left</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_left <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>void</p></td>
+<td><p><a class="reference internal" href="#class-graphnode-method-set-slot-type-right"><span class="std std-ref">set_slot_type_right</span></a> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_right <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="theme-properties">
+<h2>Theme Properties<a class="headerlink" href="#theme-properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 53%"/>
+<col style="width: 20%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-color-close-color"><span class="std std-ref">close_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-color-resizer-color"><span class="std std-ref">resizer_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-color-title-color"><span class="std std-ref">title_color</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-constant-close-offset"><span class="std std-ref">close_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">18</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-constant-port-offset"><span class="std std-ref">port_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-constant-separation"><span class="std std-ref">separation</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-constant-title-offset"><span class="std std-ref">title_offset</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-font-title-font"><span class="std std-ref">title_font</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-icon-close"><span class="std std-ref">close</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-icon-port"><span class="std std-ref">port</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-icon-resizer"><span class="std std-ref">resizer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-breakpoint"><span class="std std-ref">breakpoint</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-comment"><span class="std std-ref">comment</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-commentfocus"><span class="std std-ref">commentfocus</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-defaultfocus"><span class="std std-ref">defaultfocus</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-defaultframe"><span class="std std-ref">defaultframe</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-frame"><span class="std std-ref">frame</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-position"><span class="std std-ref">position</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a></p></td>
+<td><p><a class="reference internal" href="#class-graphnode-theme-style-selectedframe"><span class="std std-ref">selectedframe</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-graphnode-signal-close-request">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/close_request"></a>close_request</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the GraphNode is requested to be closed. Happens on clicking the close button (see <a class="reference internal" href="#class-graphnode-property-show-close"><span class="std std-ref">show_close</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-signal-dragged">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/dragged"></a>dragged</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> from, <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> to <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the GraphNode is dragged.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-signal-offset-changed">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/offset_changed"></a>offset_changed</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the GraphNode is moved.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-signal-raise-request">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/raise_request"></a>raise_request</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-signal-resize-request">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/resize_request"></a>resize_request</strong> <strong>(</strong> <a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> new_minsize <strong>)</strong></p></li>
+</ul>
+<p>Emitted when the GraphNode is requested to be resized. Happens on dragging the resizer handle (see <a class="reference internal" href="#class-graphnode-property-resizable"><span class="std std-ref">resizable</span></a>).</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-signal-slot-updated">
+<li><p><strong><a class="dashAnchor" name="//apple_ref/cpp/Callback/slot_updated"></a>slot_updated</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Emitted when any GraphNode's slot is updated.</p>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-graphnode-constant-overlay-position"><span id="class-graphnode-constant-overlay-breakpoint"></span><span id="class-graphnode-constant-overlay-disabled"></span><span id="enum-graphnode-overlay"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Overlay"></a>Overlay</strong>:</p>
+<ul class="simple">
+<li><p><strong>OVERLAY_DISABLED</strong> = <strong>0</strong> --- No overlay is shown.</p></li>
+<li><p><strong>OVERLAY_BREAKPOINT</strong> = <strong>1</strong> --- Show overlay set in the <code class="docutils literal notranslate"><span class="pre">breakpoint</span></code> theme property.</p></li>
+<li><p><strong>OVERLAY_POSITION</strong> = <strong>2</strong> --- Show overlay set in the <code class="docutils literal notranslate"><span class="pre">position</span></code> theme property.</p></li>
+</ul>
+</section>
+<section id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-graphnode-property-comment">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/comment"></a>comment</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_comment(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_comment()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the GraphNode is a comment node.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-offset">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/offset"></a>offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vector2(</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_offset(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_offset()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The offset of the GraphNode, relative to the scroll offset of the <a class="reference internal" href="class_graphedit.html#class-graphedit"><span class="std std-ref">GraphEdit</span></a>.</p>
+<p><strong>Note:</strong> You cannot use position directly, as <a class="reference internal" href="class_graphedit.html#class-graphedit"><span class="std std-ref">GraphEdit</span></a> is a <a class="reference internal" href="class_container.html#class-container"><span class="std std-ref">Container</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-overlay">
+<li><p><a class="reference internal" href="#enum-graphnode-overlay"><span class="std std-ref">Overlay</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/overlay"></a>overlay</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 65%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_overlay(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_overlay()</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sets the overlay shown above the GraphNode. See <a class="reference internal" href="#enum-graphnode-overlay"><span class="std std-ref">Overlay</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-resizable">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/resizable"></a>resizable</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_resizable(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_resizable()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the user can resize the GraphNode.</p>
+<p><strong>Note:</strong> Dragging the handle will only emit the <a class="reference internal" href="#class-graphnode-signal-resize-request"><span class="std std-ref">resize_request</span></a> signal, the GraphNode needs to be resized manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-selected">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/selected"></a>selected</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 66%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_selected(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_selected()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the GraphNode is selected.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-show-close">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/show_close"></a>show_close</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%"/>
+<col style="width: 73%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_show_close_button(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>is_close_button_visible()</p></td>
+</tr>
+</tbody>
+</table>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the close button will be visible.</p>
+<p><strong>Note:</strong> Pressing it will only emit the <a class="reference internal" href="#class-graphnode-signal-close-request"><span class="std std-ref">close_request</span></a> signal, the GraphNode needs to be removed manually.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-property-title">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Property/title"></a>title</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 62%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">""</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Setter</em></p></td>
+<td><p>set_title(value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Getter</em></p></td>
+<td><p>get_title()</p></td>
+</tr>
+</tbody>
+</table>
+<p>The text displayed in the GraphNode's title bar.</p>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-graphnode-method-clear-all-slots">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_all_slots"></a>clear_all_slots</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Disables all input and output slots of the GraphNode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-clear-slot">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/clear_slot"></a>clear_slot</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Disables input and output slot whose index is <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-input-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_input_color"></a>get_connection_input_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the input connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-input-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_input_count"></a>get_connection_input_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of enabled input slots (connections) to the GraphNode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-input-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_input_position"></a>get_connection_input_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the position of the input connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-input-type">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_input_type"></a>get_connection_input_type</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the type of the input connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-output-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_output_color"></a>get_connection_output_color</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the output connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-output-count">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_output_count"></a>get_connection_output_count</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Returns the number of enabled output slots (connections) of the GraphNode.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-output-position">
+<li><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_output_position"></a>get_connection_output_position</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the position of the output connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-connection-output-type">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_connection_output_type"></a>get_connection_output_type</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong></p></li>
+</ul>
+<p>Returns the type of the output connection <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-slot-color-left">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slot_color_left"></a>get_slot_color_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the left (input) <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-slot-color-right">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slot_color_right"></a>get_slot_color_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the right (output) <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-slot-type-left">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slot_type_left"></a>get_slot_type_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the left (input) type of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-get-slot-type-right">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_slot_type_right"></a>get_slot_type_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the right (output) type of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-is-slot-enabled-left">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_slot_enabled_left"></a>is_slot_enabled_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if left (input) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-is-slot-enabled-right">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_slot_enabled_right"></a>is_slot_enabled_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if right (output) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot"></a>set_slot</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_left, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_left, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_left, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_right, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_right, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_right, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> custom_left=null, <a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> custom_right=null <strong>)</strong></p></li>
+</ul>
+<p>Sets properties of the slot with ID <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">enable_left</span></code>/<code class="docutils literal notranslate"><span class="pre">right</span></code>, a port will appear and the slot will be able to be connected from this side.</p>
+<p><code class="docutils literal notranslate"><span class="pre">type_left</span></code>/<code class="docutils literal notranslate"><span class="pre">right</span></code> is an arbitrary type of the port. Only ports with the same type values can be connected.</p>
+<p><code class="docutils literal notranslate"><span class="pre">color_left</span></code>/<code class="docutils literal notranslate"><span class="pre">right</span></code> is the tint of the port's icon on this side.</p>
+<p><code class="docutils literal notranslate"><span class="pre">custom_left</span></code>/<code class="docutils literal notranslate"><span class="pre">right</span></code> is a custom texture for this side's port.</p>
+<p><strong>Note:</strong> This method only sets properties of the slot. To create the slot, add a <a class="reference internal" href="class_control.html#class-control"><span class="std std-ref">Control</span></a>-derived child to the GraphNode.</p>
+<p>Individual properties can be set using one of the <code class="docutils literal notranslate"><span class="pre">set_slot_*</span></code> methods. You must enable at least one side of the slot to do so.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-color-left">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_color_left"></a>set_slot_color_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_left <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the left (input) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> to <code class="docutils literal notranslate"><span class="pre">color_left</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-color-right">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_color_right"></a>set_slot_color_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> color_right <strong>)</strong></p></li>
+</ul>
+<p>Sets the <a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> of the right (output) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> to <code class="docutils literal notranslate"><span class="pre">color_right</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-enabled-left">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_enabled_left"></a>set_slot_enabled_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_left <strong>)</strong></p></li>
+</ul>
+<p>Toggles the left (input) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If <code class="docutils literal notranslate"><span class="pre">enable_left</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, a port will appear on the left side and the slot will be able to be connected from this side.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-enabled-right">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_enabled_right"></a>set_slot_enabled_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> enable_right <strong>)</strong></p></li>
+</ul>
+<p>Toggles the right (output) side of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code>. If <code class="docutils literal notranslate"><span class="pre">enable_right</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, a port will appear on the right side and the slot will be able to be connected from this side.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-type-left">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_type_left"></a>set_slot_type_left</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_left <strong>)</strong></p></li>
+</ul>
+<p>Sets the left (input) type of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> to <code class="docutils literal notranslate"><span class="pre">type_left</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-method-set-slot-type-right">
+<li><p>void <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/set_slot_type_right"></a>set_slot_type_right</strong> <strong>(</strong> <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> idx, <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> type_right <strong>)</strong></p></li>
+</ul>
+<p>Sets the right (output) type of the slot <code class="docutils literal notranslate"><span class="pre">idx</span></code> to <code class="docutils literal notranslate"><span class="pre">type_right</span></code>.</p>
+</section>
+<section id="theme-property-descriptions">
+<h2>Theme Property Descriptions<a class="headerlink" href="#theme-property-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-graphnode-theme-color-close-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>close_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color modulation applied to the close button icon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-color-resizer-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>resizer_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The color modulation applied to the resizer icon.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-color-title-color">
+<li><p><a class="reference internal" href="class_color.html#class-color"><span class="std std-ref">Color</span></a> <strong>title_color</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Color(</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Color of the title text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-constant-close-offset">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>close_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">18</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The vertical offset of the close button.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-constant-port-offset">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>port_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Horizontal offset for the ports.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-constant-separation">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>separation</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 61%"/>
+<col style="width: 39%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The vertical distance between ports.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-constant-title-offset">
+<li><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>title_offset</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%"/>
+<col style="width: 42%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>Default</em></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Vertical offset of the title text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-font-title-font">
+<li><p><a class="reference internal" href="class_font.html#class-font"><span class="std std-ref">Font</span></a> <strong>title_font</strong></p></li>
+</ul>
+<p>Font used for the title text.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-icon-close">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>close</strong></p></li>
+</ul>
+<p>The icon for the close button, visible when <a class="reference internal" href="#class-graphnode-property-show-close"><span class="std std-ref">show_close</span></a> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-icon-port">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>port</strong></p></li>
+</ul>
+<p>The icon used for representing ports.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-icon-resizer">
+<li><p><a class="reference internal" href="class_texture.html#class-texture"><span class="std std-ref">Texture</span></a> <strong>resizer</strong></p></li>
+</ul>
+<p>The icon used for resizer, visible when <a class="reference internal" href="#class-graphnode-property-resizable"><span class="std std-ref">resizable</span></a> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-breakpoint">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>breakpoint</strong></p></li>
+</ul>
+<p>The background used when <a class="reference internal" href="#class-graphnode-property-overlay"><span class="std std-ref">overlay</span></a> is set to <a class="reference internal" href="#class-graphnode-constant-overlay-breakpoint"><span class="std std-ref">OVERLAY_BREAKPOINT</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-comment">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>comment</strong></p></li>
+</ul>
+<p>The <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when <a class="reference internal" href="#class-graphnode-property-comment"><span class="std std-ref">comment</span></a> is enabled.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-commentfocus">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>commentfocus</strong></p></li>
+</ul>
+<p>The <a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> used when <a class="reference internal" href="#class-graphnode-property-comment"><span class="std std-ref">comment</span></a> is enabled and the <code class="docutils literal notranslate"><span class="pre">GraphNode</span></code> is focused.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-defaultfocus">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>defaultfocus</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-defaultframe">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>defaultframe</strong></p></li>
+</ul>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-frame">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>frame</strong></p></li>
+</ul>
+<p>The default background for <code class="docutils literal notranslate"><span class="pre">GraphNode</span></code>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-position">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>position</strong></p></li>
+</ul>
+<p>The background used when <a class="reference internal" href="#class-graphnode-property-overlay"><span class="std std-ref">overlay</span></a> is set to <a class="reference internal" href="#class-graphnode-constant-overlay-position"><span class="std std-ref">OVERLAY_POSITION</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-graphnode-theme-style-selectedframe">
+<li><p><a class="reference internal" href="class_stylebox.html#class-stylebox"><span class="std std-ref">StyleBox</span></a> <strong>selectedframe</strong></p></li>
+</ul>
+<p>The background used when the <code class="docutils literal notranslate"><span class="pre">GraphNode</span></code> is selected.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_graphedit.html" rel="prev" title="GraphEdit"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_gridcontainer.html" rel="next" title="GridContainer">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>

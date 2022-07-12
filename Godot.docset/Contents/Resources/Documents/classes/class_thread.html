@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="Thread" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="classes/class_thread.html" property="og:url"/>
+<meta content="Godot Engine documentation" property="og:site_name"/>
+<meta content="Inherits: Reference&lt; Object A unit of execution in a process. Description: A unit of execution in a process. Can run methods on Object s simultaneously. The use of synchronization via Mutex or Sema..." property="og:description"/>
+<meta content="A unit of execution in a process. A unit of execution in a process. Can run methods on Objects simultaneously. The use of synchronization via Mutex or Semaphore is advised if working with shared objects. Note: Breakpo..." name="description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"><title>(DEV) Thread — Godot Engine (3.4) documentation in English</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/js/custom.js"></script>
+<script src="../_static/js/theme.js"></script><meta content="#3d8fcc" name="theme-color"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_thread.html" hreflang="en" rel="alternate"/>
+<link href="https://docs.godotengine.org/de/stable/classes/class_thread.html" hreflang="de" rel="alternate"/>
+<link href="https://docs.godotengine.org/es/stable/classes/class_thread.html" hreflang="es" rel="alternate"/>
+<link href="https://docs.godotengine.org/fr/stable/classes/class_thread.html" hreflang="fr" rel="alternate"/>
+<link href="https://docs.godotengine.org/fi/stable/classes/class_thread.html" hreflang="fi" rel="alternate"/>
+<link href="https://docs.godotengine.org/it/stable/classes/class_thread.html" hreflang="it" rel="alternate"/>
+<link href="https://docs.godotengine.org/ja/stable/classes/class_thread.html" hreflang="ja" rel="alternate"/>
+<link href="https://docs.godotengine.org/ko/stable/classes/class_thread.html" hreflang="ko" rel="alternate"/>
+<link href="https://docs.godotengine.org/pl/stable/classes/class_thread.html" hreflang="pl" rel="alternate"/>
+<link href="https://docs.godotengine.org/pt_BR/stable/classes/class_thread.html" hreflang="pt-br" rel="alternate"/>
+<link href="https://docs.godotengine.org/ru/stable/classes/class_thread.html" hreflang="ru" rel="alternate"/>
+<link href="https://docs.godotengine.org/uk/stable/classes/class_thread.html" hreflang="uk" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_CN/stable/classes/class_thread.html" hreflang="zh-cn" rel="alternate"/>
+<link href="https://docs.godotengine.org/zh_TW/stable/classes/class_thread.html" hreflang="zh-tw" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_thread.html" hreflang="x-default" rel="alternate"/>
+<link href="https://docs.godotengine.org/en/stable/classes/class_thread.html" rel="canonical"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="class_tilemap.html" rel="next" title="TileMap"/>
+<link href="class_theme.html" rel="prev" title="Theme"/>
+</meta></head>
+<body class="wy-body-for-nav">
+<div class="wy-grid-for-nav">
+
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift"><nav aria-label="Mobile navigation menu" class="wy-nav-top">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../index.html">Godot Engine</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content">
+<div aria-label="Page navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a class="icon icon-home" href="../index.html"></a> »</li>
+<li><a href="index.html">Godot API</a> »</li>
+<li>Thread</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div itemprop="articleBody">
+<section id="thread">
+<span id="class-thread"></span><h1><a class="dashAnchor" name="//apple_ref/cpp/Class/Thread¶"></a>Thread<a class="headerlink" href="#thread" title="Permalink to this headline">¶</a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_reference.html#class-reference"><span class="std std-ref">Reference</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a></p>
+<p>A unit of execution in a process.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A unit of execution in a process. Can run methods on <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a>s simultaneously. The use of synchronization via <a class="reference internal" href="class_mutex.html#class-mutex"><span class="std std-ref">Mutex</span></a> or <a class="reference internal" href="class_semaphore.html#class-semaphore"><span class="std std-ref">Semaphore</span></a> is advised if working with shared objects.</p>
+<p><strong>Note:</strong> Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.</p>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tutorials/performance/threads/using_multiple_threads.html"><span class="doc">Using multiple threads</span></a></p></li>
+<li><p><a class="reference internal" href="../tutorials/performance/threads/thread_safe_apis.html"><span class="doc">Thread-safe APIs</span></a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/asset-library/asset/676">3D Voxel Demo</a></p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 85%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
+<td><p><a class="reference internal" href="#class-thread-method-get-id"><span class="std std-ref">get_id</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-thread-method-is-active"><span class="std std-ref">is_active</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
+<td><p><a class="reference internal" href="#class-thread-method-is-alive"><span class="std std-ref">is_alive</span></a> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
+<td><p><a class="reference internal" href="#class-thread-method-start"><span class="std std-ref">start</span></a> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> instance, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata=null, <a class="reference internal" href="#enum-thread-priority"><span class="std std-ref">Priority</span></a> priority=1 <strong>)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
+<td><p><a class="reference internal" href="#class-thread-method-wait-to-finish"><span class="std std-ref">wait_to_finish</span></a> <strong>(</strong> <strong>)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h2>
+<p id="class-thread-constant-priority-high"><span id="class-thread-constant-priority-normal"></span><span id="class-thread-constant-priority-low"></span><span id="enum-thread-priority"></span>enum <strong><a class="dashAnchor" name="//apple_ref/cpp/Enum/Priority"></a>Priority</strong>:</p>
+<ul class="simple">
+<li><p><strong>PRIORITY_LOW</strong> = <strong>0</strong> --- A thread running with lower priority than normally.</p></li>
+<li><p><strong>PRIORITY_NORMAL</strong> = <strong>1</strong> --- A thread with a standard priority.</p></li>
+<li><p><strong>PRIORITY_HIGH</strong> = <strong>2</strong> --- A thread running with higher priority than normally.</p></li>
+</ul>
+</section>
+<section id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="class-thread-method-get-id">
+<li><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/get_id"></a>get_id</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns the current <code class="docutils literal notranslate"><span class="pre">Thread</span></code>'s ID, uniquely identifying it among all threads. If the <code class="docutils literal notranslate"><span class="pre">Thread</span></code> is not running this returns an empty string.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-thread-method-is-active">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_active"></a>is_active</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this <code class="docutils literal notranslate"><span class="pre">Thread</span></code> has been started. Once started, this will return <code class="docutils literal notranslate"><span class="pre">true</span></code> until it is joined using <a class="reference internal" href="#class-thread-method-wait-to-finish"><span class="std std-ref">wait_to_finish</span></a>. For checking if a <code class="docutils literal notranslate"><span class="pre">Thread</span></code> is still executing its task, use <a class="reference internal" href="#class-thread-method-is-alive"><span class="std std-ref">is_alive</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-thread-method-is-alive">
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/is_alive"></a>is_alive</strong> <strong>(</strong> <strong>)</strong> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></li>
+</ul>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this <code class="docutils literal notranslate"><span class="pre">Thread</span></code> is currently running. This is useful for determining if <a class="reference internal" href="#class-thread-method-wait-to-finish"><span class="std std-ref">wait_to_finish</span></a> can be called without blocking the calling thread.</p>
+<p>To check if a <code class="docutils literal notranslate"><span class="pre">Thread</span></code> is joinable, use <a class="reference internal" href="#class-thread-method-is-active"><span class="std std-ref">is_active</span></a>.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-thread-method-start">
+<li><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/start"></a>start</strong> <strong>(</strong> <a class="reference internal" href="class_object.html#class-object"><span class="std std-ref">Object</span></a> instance, <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> method, <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> userdata=null, <a class="reference internal" href="#enum-thread-priority"><span class="std std-ref">Priority</span></a> priority=1 <strong>)</strong></p></li>
+</ul>
+<p>Starts a new <code class="docutils literal notranslate"><span class="pre">Thread</span></code> that runs <code class="docutils literal notranslate"><span class="pre">method</span></code> on object <code class="docutils literal notranslate"><span class="pre">instance</span></code> with <code class="docutils literal notranslate"><span class="pre">userdata</span></code> passed as an argument. Even if no userdata is passed, <code class="docutils literal notranslate"><span class="pre">method</span></code> must accept one argument and it will be null. The <code class="docutils literal notranslate"><span class="pre">priority</span></code> of the <code class="docutils literal notranslate"><span class="pre">Thread</span></code> can be changed by passing a value from the <a class="reference internal" href="#enum-thread-priority"><span class="std std-ref">Priority</span></a> enum.</p>
+<p>Returns <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-ok"><span class="std std-ref">@GlobalScope.OK</span></a> on success, or <a class="reference internal" href="class_%40globalscope.html#class-globalscope-constant-err-cant-create"><span class="std std-ref">@GlobalScope.ERR_CANT_CREATE</span></a> on failure.</p>
+<hr class="docutils"/>
+<ul class="simple" id="class-thread-method-wait-to-finish">
+<li><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong><a class="dashAnchor" name="//apple_ref/cpp/Method/wait_to_finish"></a>wait_to_finish</strong> <strong>(</strong> <strong>)</strong></p></li>
+</ul>
+<p>Joins the <code class="docutils literal notranslate"><span class="pre">Thread</span></code> and waits for it to finish. Returns the output of the method passed to <a class="reference internal" href="#class-thread-method-start"><span class="std std-ref">start</span></a>.</p>
+<p>Should either be used when you want to retrieve the value returned from the method called by the <code class="docutils literal notranslate"><span class="pre">Thread</span></code> or before freeing the instance that contains the <code class="docutils literal notranslate"><span class="pre">Thread</span></code>.</p>
+<p>To determine if this can be called without blocking the calling thread, check if <a class="reference internal" href="#class-thread-method-is-alive"><span class="std std-ref">is_alive</span></a> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p><strong>Note:</strong> After the <code class="docutils literal notranslate"><span class="pre">Thread</span></code> finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.</p>
+</section>
+</section>
+</div>
+</div>
+<footer><div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+<a accesskey="p" class="btn btn-neutral float-left" href="class_theme.html" rel="prev" title="Theme"><span aria-hidden="true" class="fa fa-arrow-circle-left"></span> Previous</a>
+<a accesskey="n" class="btn btn-neutral float-right" href="class_tilemap.html" rel="next" title="TileMap">Next <span aria-hidden="true" class="fa fa-arrow-circle-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<p>© Copyright 2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0).</p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+</div>
+</div>
+</section>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+</body>
+</html>
