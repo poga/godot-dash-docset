@@ -16,8 +16,10 @@ docpath = 'Godot.docset/Contents/Resources/Documents'
 indexPagePath =os.path.join(docpath, "index.html")
 soup = BeautifulSoup(open(indexPagePath).read())
 
-def dashAnchor(entryType, entryName):
-    tag = BeautifulSoup(f"<a name=\"//apple_ref/cpp/{entryType}/{entryName}\" class=\"dashAnchor\"></a>")
+def dashAnchor(entryType, entryName, id):
+    if not id:
+        id = ""
+    tag = BeautifulSoup(f"<a name=\"//apple_ref/cpp/{entryType}/{entryName}\" class=\"dashAnchor\" id=\"{id}\"></a>")
     return tag
 
 def parseClass(relpath):
@@ -28,55 +30,55 @@ def parseClass(relpath):
     # Title
     h1 = soup.select_one('h1')
     if h1:
-        h1.insert(0, dashAnchor('Class', h1.text.strip()))
+        h1.insert(0, dashAnchor('Class', h1.text.strip(), False))
 
     # Constants
-    anchor = '#constants'
-    href = relpath + anchor
     consts = soup.select("section[id=constants] > ul > li > p > strong:first-child")
     for c in consts:
-        c.insert(0, dashAnchor('Constant', c.text))
+        anchor = f"constants-{c.text}"
+        href = relpath + "#" + anchor
+        c.insert(0, dashAnchor('Constant', c.text, anchor ))
         print('indexing constant ', c.text, ' ', href)
         cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?, ?, ?)', (c.text, 'Constant', href))
 
 
     # signals
     signals = soup.select("section[id=signals] > ul > li > p > strong")
-    anchor = '#signals'
-    href = relpath + anchor
     for s in signals:
         if s.text != '(' and s.text != ')':
-            s.insert(0, dashAnchor('Callback', s.text))
+            anchor = f"signals-{s.text}"
+            href = relpath + "#" + anchor
+            s.insert(0, dashAnchor('Callback', s.text, anchor))
             print('indexing callback ', s.text, ' ', href)
             cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?, ?, ?)', (s.text, 'Callback', href))
 
     # enums
     enums = soup.select("section[id=enumerations] > p > strong")
-    anchor = "#enumerations"
-    href = relpath + anchor
     for e in enums:
+        anchor = f"enumerations-{e.text}"
+        href = relpath + "#" + anchor
         print('indexing enum ', e.text, ' ', href)
-        e.insert(0, dashAnchor('Enum', e.text))
+        e.insert(0, dashAnchor('Enum', e.text, anchor))
         cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?, ?, ?)', (e.text, 'Enum', href))
 
     #properties
-    anchor = '#properties'
-    href = relpath + anchor
     props = soup.select("section[id=property-descriptions] > ul > li > p > strong")
     for p in props:
+        anchor = f"properties-{p.text}"
+        href = relpath + "#" + anchor
         print('indexing property ', p.text, ' ', href)
-        p.insert(0, dashAnchor('Property', p.text))
+        p.insert(0, dashAnchor('Property', p.text, anchor ))
         cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?, ?, ?)', (p.text, 'Property', href))
         print(p)
 
     #methods
-    anchor = '#methods'
-    href = relpath + anchor
     methods = soup.select("section[id=method-descriptions] > ul > li > p > strong")
     for m in methods:
         if m.text != '(' and m.text != ')':
+            anchor = f"methods-{m.text}"
+            href = relpath + "#" + anchor
             print('indexing method ', m.text, ' ', href)
-            m.insert(0, dashAnchor('Method', m.text))
+            m.insert(0, dashAnchor('Method', m.text, anchor))
             cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?, ?, ?)', (m.text, 'Method', href))
 
     #remove sidebar
